@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JSFFlowViewLayout version="1.0">
+  <Drawing gridVisible="true" snapOn="true" />
+  <JSFFlowResource path="/*" location="30,30" dimension="56,36" />
+  <JSFFlowResource path="/jspLayout/manage/manageMain.jsp" location="180,30" dimension="236,36" />
+  <JSFFlowResource path="/jspLayout/manage/productCategoryCreate.jsp" location="480,30" dimension="302,36" />
+  <JSFFlowResource path="/jspLayout/manage/productCategoryEdit.jsp" location="30,130" dimension="290,36" />
+  <JSFFlowNavigationCase id="/*,/jspLayout/manage/productCategoryCreate.jsp,productCategoryCreate,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="58,48" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/*,/jspLayout/manage/manageMain.jsp,manageLogin,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="86,48" />
+      <AbsolutePoint location="180,48" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/*,/jspLayout/manage/productCategoryEdit.jsp,productCategoryEdit,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="58,48" />
+      <AbsolutePoint location="175,148" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+</JSFFlowViewLayout>
+

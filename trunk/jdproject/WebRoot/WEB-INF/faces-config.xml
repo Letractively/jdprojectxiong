@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+    version="1.2">
+    <application>
+  		<!-- <view-handler>com.icesoft.faces.facelets.D2DFaceletViewHandler</view-handler> -->
+  		<variable-resolver>org.springframework.web.jsf.DelegatingVariableResolver</variable-resolver>
+  		<locale-config>
+   			<default-locale>zh_CN</default-locale>
+   			<supported-locale>en</supported-locale>
+  		</locale-config>
+  		<!--
+  		<message-bundle>com.kuaican.web.vo.icefaces.resources.messages</message-bundle>
+  		-->
+ 	</application>
+	<managed-bean>
+        <managed-bean-name>bean</managed-bean-name>
+        <managed-bean-class>com.test.Bean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>managePanelMenu</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.richfaces.ManagePanelMenu</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>manageHeaderMenu</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.richfaces.ManageHeaderMenu</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+
+	</managed-bean>
+    <managed-bean>
+	<managed-bean-name>productCategory</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.ProductCategoryBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>productCategoryCreate</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.ProductCategoryCreateBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <navigation-rule>
+    	<from-view-id>/*</from-view-id>
+  		<navigation-case>
+     		<from-outcome>manageLogin</from-outcome>
+    		<to-view-id>/jspLayout/manage/manageMain.jsp</to-view-id>
+  		</navigation-case>
+  		<navigation-case>
+  			<from-outcome>productCategoryCreate</from-outcome>
+			<to-view-id>/jspLayout/manage/productCategoryCreate.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>productCategoryEdit</from-outcome>
+			<to-view-id>/jspLayout/manage/productCategoryEdit.jsp</to-view-id>
+		</navigation-case>
+
+
+ 	</navigation-rule>
+    
+	
+</faces-config>
