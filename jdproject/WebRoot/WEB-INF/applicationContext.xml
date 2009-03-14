@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+
+<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:mysql://localhost/ejd</value>
+		</property>
+		<property name="username">
+			<value>sa</value>
+		</property>
+		<property name="password">
+			<value></value>
+		</property>
+	</bean>
+
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<!-- <property name="configLocation"
+			value="/WEB-INF/classes/hibernate.cfg.xml">
+		</property> -->
+	    <property name="mappingResources">
+			<list>
+				<value>com/ejd/web/bo/Productcategory.hbm.xml</value>
+				<!-- <value>com/kuaican/web/bo/Customer.hbm.xml</value>
+				<value>com/kuaican/web/bo/Dish.hbm.xml</value>
+				<value>com/kuaican/web/bo/Orders.hbm.xml</value>
+				<value>com/kuaican/web/bo/Ordersdetail.hbm.xml</value>
+				<value>com/kuaican/web/bo/OrdersDojo.hbm.xml</value>
+				<value>com/kuaican/web/bo/OrdersdetailDojo.hbm.xml</value>
+				 -->
+			</list>
+		</property>
+		
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+	</bean>
+     
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<!--   配置事务拦截器-->
+	<bean id="transactionInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">
+        <!--   事务拦截器bean需要依赖注入一个事务管理器 -->
+        <property name="transactionManager" ref="transactionManager"/>
+        <property name="transactionAttributes">
+            <!--   下面定义事务传播属性-->
+            <props>
+                <prop key="insert*">PROPAGATION_REQUIRED</prop>
+                <prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+                <prop key="*">PROPAGATION_REQUIRED</prop>
+            </props>
+        </property>
+    </bean>
+    <!-- 定义BeanNameAutoProxyCreator,该bean是个bean后处理器，无需被引用，因此没有id属性这个bean后处理器，根据事务拦截器为目标bean自动创建事务代理-->
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+    	<!--   指定对满足哪些bean name的bean自动生成业务代理  -->   
+		<property name="beanNames">
+    	<!--   下面是所有需要自动创建事务代理的bean-->
+        <value>*Dao,*Service</value>
+        
+            <!--   此处可增加其他需要自动创建事务代理的bean-->
+        </property>
+        <!--   下面定义BeanNameAutoProxyCreator所需的事务拦截器-->
+        <property name="interceptorNames">
+            <list>
+                <value>transactionInterceptor</value> 
+                    <!-- 此处可增加其他新的Interceptor -->
+            </list>
+        </property>
+    </bean>
+    <bean id="productCategoryDao" class="com.ejd.data.dao.impl.ProductCategoryDaoImpl" scope="singleton">
+    	<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+    </bean>
+    <bean id="productCategoryService" class="com.ejd.model.service.impl.ProductCategoryServiceImpl" scope="singleton" depends-on="productCategoryDao">
+		<property name="productCategoryDao">
+			<ref bean="productCategoryDao" />
+		</property>
+	</bean>
+<!-- 
+	<bean id="customerDao" class="com.kuaican.data.dao.impl.CustomerDaoImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="customerService" class="com.kuaican.model.service.impl.CustomerServiceImpl">
+		<property name="customerDao">
+			<ref bean="customerDao" />
+		</property>
+	</bean>
+	<bean id="dishDao" class="com.kuaican.data.dao.impl.DishDaoImpl" scope="singleton">
+	    <property name="sessionFactory">
+	        <ref local="sessionFactory"/>
+	    </property>
+	</bean>
+	<bean id="dishService" class="com.kuaican.model.service.impl.DishServiceImpl" depends-on="dishDao" scope="singleton">
+	    <property name="dishDao">
+	        <ref bean="dishDao"/>
+	    </property>
+	</bean>
+	<bean id="orderDao" class="com.kuaican.data.dao.impl.OrderDaoImpl" scope="singleton">
+	    <property name="sessionFactory">
+	        <ref local="sessionFactory"/>
+	    </property>
+	</bean>
+	<bean id="orderService" class="com.kuaican.model.service.impl.OrderServiceImpl" depends-on="orderDao" scope="singleton">
+	    <property name="orderDao">
+	        <ref bean="orderDao"/>
+	    </property>
+	</bean>
+	<bean id="address" class="com.kuaican.web.vo.Address"></bean> -->
+</beans>
