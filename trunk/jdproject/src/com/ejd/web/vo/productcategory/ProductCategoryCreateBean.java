@@ -37,7 +37,7 @@ public class ProductCategoryCreateBean extends ProductCategoryBaseBean {
 	public void setNewProductCategory(ProductCategory newProductCategory) {
 		this.newProductCategory = newProductCategory;
 	}
-	public void createProductCategory() throws ProductCategoryException{
+	public void createProductCategory() throws ProductCategoryException {
 		if (this.getProductCategoryService() == null) {
 			ApplicationContext appctx = FacesContextUtils.getWebApplicationContext(FacesContext.getCurrentInstance());
 			IProductCategoryService em = (IProductCategoryService) appctx.getBean("productCategoryService");
