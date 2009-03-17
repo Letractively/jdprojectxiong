@@ -33,14 +33,34 @@
 	</managed-bean>
     <managed-bean>
 	<managed-bean-name>productCategory</managed-bean-name>
-	<managed-bean-class>com.ejd.web.vo.ProductCategoryBean</managed-bean-class>
+	<managed-bean-class>com.ejd.web.vo.ProductCategoryTabBean</managed-bean-class>
 	<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
 	<managed-bean-name>productCategoryCreate</managed-bean-name>
-	<managed-bean-class>com.ejd.web.vo.ProductCategoryCreateBean</managed-bean-class>
+	<managed-bean-class>com.ejd.web.vo.productcategory.ProductCategoryCreateBean</managed-bean-class>
 	<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>productCategoryEdit</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.productcategory.ProductCategoryEditBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+  <managed-bean-name>extendedTableBean</managed-bean-name>
+  <managed-bean-class>com.test.ExtendedTableBean</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+  <managed-property>
+  	<property-name>capitals</property-name>
+   	<value>#{capitalsBean.capitals}</value>
+  </managed-property>
+ </managed-bean>
+	<managed-bean>
+  <managed-bean-name>capitalsBean</managed-bean-name>
+  <managed-bean-class>com.test.CapitalsBean</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
+	
     <navigation-rule>
     	<from-view-id>/*</from-view-id>
   		<navigation-case>
