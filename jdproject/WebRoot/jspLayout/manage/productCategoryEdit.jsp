@@ -30,11 +30,11 @@ xmlns:rich="http://richfaces.org/rich">
                 		<rich:message for="categoryName" />
                 		<h:outputLabel id="labelnumber" value="类型序号：" for="serialNumber"></h:outputLabel>
 						<h:inputText value="#{productCategoryEdit.editProductCategory.serialNumber}" id="serialNumber" onblur="if(/\D/.test(this.value)){alert('只能输入数字');this.select();}">
-                    		<!-- <rich:beanValidator summary="序号有误"/> -->
+                    		<!--<rich:beanValidator summary="序号有误"/> -->
                     	</h:inputText>
                 		<rich:message for="serialNumber" />
                 		<h:outputText id="kongone" value=""></h:outputText>
-                			<a4j:commandButton id="actionupdate" action="#{productCategoryEdit.updateProductCategory}" reRender="editpanel" value="更新"/>
+                			<a4j:commandButton id="actionupdate" action="#{productCategoryEdit.updateProductCategory}" actionListener="#{productCategoryEdit.richBeanValidate}" reRender="editpanel,table" value="更新"/>
                 		<h:outputText id="kongtwo" value=" "></h:outputText>
 					</h:panelGrid>
 					<h:panelGrid columns="3" columnClasses="table-one-column,table-two-column,table-three-column">
@@ -48,7 +48,7 @@ xmlns:rich="http://richfaces.org/rich">
 
 					<h:panelGrid columns="1" id="productcategorylist"  columnClasses="top,top">
         			<rich:extendedDataTable value="#{productCategoryEdit.productCategorysDataModel}" var="cat" id="table" rows="15"
-            		width="500px" height="280px" sortMode="#{productCategoryEdit.sortMode}" 
+            		width="340px" height="280px" sortMode="#{productCategoryEdit.sortMode}" 
                 	selectionMode="#{productCategoryEdit.selectionMode}"
                 	selection="#{productCategoryEdit.selection}"
                 	binding="#{productCategoryEdit.table}">
@@ -65,8 +65,8 @@ xmlns:rich="http://richfaces.org/rich">
                 			<h:outputText value="#{cat.serialNumber}"/>
             			</rich:column> 
             		
-						<a4j:support id="supportone" event="onclick" ignoreDupResponses="true" requestDelay="500"  action="#{productCategoryEdit.takeSelection}" reRender="categoryName,serialNumber"/>
-            			<a4j:support id="supporttwo" event="onkeyup" ignoreDupResponses="true" requestDelay="500"  action="#{productCategoryEdit.takeSelection}" reRender="categoryName,serialNumber"/>
+						<a4j:support id="supportone" event="onclick" ignoreDupResponses="true" requestDelay="500"  action="#{productCategoryEdit.takeSelection}" actionListener="#{productCategoryEdit.richBeanValidateNone}" reRender="categoryName,serialNumber"/>
+            			<a4j:support id="supporttwo" event="onkeyup" ignoreDupResponses="true" requestDelay="500"  action="#{productCategoryEdit.takeSelection}" actionListener="#{productCategoryEdit.richBeanValidateNone}" reRender="categoryName,serialNumber"/>
         				</rich:extendedDataTable>
       					<rich:datascroller align="left" for="table" maxPages="20"
 						page="#{productCategoryEdit.scrollerPage}" id="sc2"/>
