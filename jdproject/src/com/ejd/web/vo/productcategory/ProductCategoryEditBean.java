@@ -4,13 +4,19 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.faces.component.UIComponent;
+import javax.faces.component.UIViewRoot;
+import javax.faces.component.html.HtmlInputText;
 import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
 
 import org.apache.commons.beanutils.PropertyUtils;
 import org.richfaces.component.UIExtendedDataTable;
 import org.richfaces.model.DataProvider;
 import org.richfaces.model.ExtendedTableDataModel;
 import org.richfaces.model.selection.SimpleSelection;
+import org.richfaces.validator.BeanValidator;
+import org.richfaces.validator.FacesBeanValidator;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.jsf.FacesContextUtils;
 
@@ -18,6 +24,7 @@ import com.ejd.model.exception.ProductCategoryException;
 import com.ejd.model.service.iface.IProductCategoryService;
 import com.ejd.web.bo.Productcategory;
 import com.ejd.web.vo.productcategory.ProductCategoryItem;
+
 public class ProductCategoryEditBean extends ProductCategoryBaseBean {
 	private String newProgressString="请填写以下信息";
 	private String searchProductCategoryName = "";
@@ -153,9 +160,44 @@ public class ProductCategoryEditBean extends ProductCategoryBaseBean {
 		
 		return null;
 	}
-	public String updateProductCategory() {
-		if (table.isRowAvailable()) {
-			
+	public void richBeanValidate(ActionEvent event) {
+		FacesContext context= FacesContext.getCurrentInstance();
+		UIViewRoot view = context.getViewRoot();
+		HtmlInputText inputText = (HtmlInputText) view.findComponent("manageTemplateView:productcategoryEditform:categoryName");
+		FacesBeanValidator beanValidator = new FacesBeanValidator();
+		inputText.addValidator(beanValidator);
+		HtmlInputText inputTexto = (HtmlInputText) view.findComponent("manageTemplateView:productcategoryEditform:serialNumber");
+		inputTexto.addValidator(beanValidator);
+	}
+	public void richBeanValidateNone(ActionEvent event) {
+		FacesContext context= FacesContext.getCurrentInstance();
+		UIViewRoot view = context.getViewRoot();
+		HtmlInputText inputText = (HtmlInputText) view.findComponent("manageTemplateView:productcategoryEditform:categoryName");
+		FacesBeanValidator beanValidator = new FacesBeanValidator();
+		inputText.removeValidator(beanValidator);
+		inputText.setValid(Boolean.TRUE);
+		HtmlInputText inputTexto = (HtmlInputText) view.findComponent("manageTemplateView:productcategoryEditform:serialNumber");
+		inputTexto.removeValidator(beanValidator);
+		inputTexto.setValid(Boolean.TRUE);
+	}
+	public String updateProductCategory() throws ProductCategoryException {
+		if (this.getProductCategoryService() == null) {
+			ApplicationContext appctx = FacesContextUtils.getWebApplicationContext(FacesContext.getCurrentInstance());
+			IProductCategoryService em = (IProductCategoryService) appctx.getBean("productCategoryService");
+			this.setProductCategoryService(em);
+		}
+		Productcategory productCategory =(Productcategory) this.getProductCategoryService().getProductCategoryByName(editProductCategory.getCategoryName());
+		
+		if (productCategory != null) {
+			setNewProgressString(editProductCategory.getCategoryName()+" 已存在！");
+		} else {
+			Productcategory newproductCategory = (Productcategory) this.getProductCategoryService().getProductCategoryById(editProductCategory.getId());
+			newproductCategory.setCategoryName(editProductCategory.getCategoryName());
+			newproductCategory.setSerialNumber(editProductCategory.getSerialNumber());
+			this.getProductCategoryService().updateProductCategory(newproductCategory);
+			setNewProgressString(editProductCategory.getCategoryName()+" 保存成功!");
+			selectedProductCategory.setCategoryName(editProductCategory.getCategoryName());
+			selectedProductCategory.setSerialNumber(editProductCategory.getSerialNumber());
 		}
 		return null;
 	}
