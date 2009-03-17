@@ -28,7 +28,6 @@ import javax.faces.component.UIComponent;
 import javax.faces.event.ValueChangeEvent;
 
 import org.richfaces.component.UITabPanel;
-
 /**
  * @author $Autor$
  *
