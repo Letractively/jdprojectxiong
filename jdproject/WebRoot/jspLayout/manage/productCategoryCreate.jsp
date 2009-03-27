@@ -34,7 +34,7 @@ xmlns:rich="http://richfaces.org/rich">
                     	</h:inputText>
                 		<rich:message for="serialNumber" />
                 		<h:outputText value=" "></h:outputText>
-                			<a4j:commandButton action="#{productCategoryCreate.createProductCategory}" reRender="newpanel" value="Submit"/>
+                			<a4j:commandButton action="#{productCategoryCreate.createProductCategory}" reRender="newpanel" value="保存"/>
                 		<h:outputText value=" "></h:outputText>
 					</h:panelGrid>
 					</fieldset>
