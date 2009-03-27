@@ -11,6 +11,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
 import org.apache.commons.beanutils.PropertyUtils;
+import org.hibernate.validator.Validator;
 import org.richfaces.component.UIExtendedDataTable;
 import org.richfaces.model.DataProvider;
 import org.richfaces.model.ExtendedTableDataModel;
@@ -38,8 +39,9 @@ public class ProductCategoryEditBean extends ProductCategoryBaseBean {
 	private SimpleSelection selection = new SimpleSelection();
     private ProductCategoryItem selectedProductCategory = new ProductCategoryItem();
     private ProductCategory editProductCategory = new ProductCategory();
-    
-	public String getNewProgressString() {
+    private FacesBeanValidator categoryNameValidator = new FacesBeanValidator();
+    private FacesBeanValidator serialNumberValidator = new FacesBeanValidator();
+    public String getNewProgressString() {
 		return newProgressString;
 	}
 	public void setNewProgressString(String newProgressString) {
@@ -101,6 +103,19 @@ public class ProductCategoryEditBean extends ProductCategoryBaseBean {
 	public void setEditProductCategory(ProductCategory editProductCategory) {
 		this.editProductCategory = editProductCategory;
 	}
+	
+	public FacesBeanValidator getCategoryNameValidator() {
+		return categoryNameValidator;
+	}
+	public void setCategoryNameValidator(FacesBeanValidator categoryNameValidator) {
+		this.categoryNameValidator = categoryNameValidator;
+	}
+	public FacesBeanValidator getSerialNumberValidator() {
+		return serialNumberValidator;
+	}
+	public void setSerialNumberValidator(FacesBeanValidator serialNumberValidator) {
+		this.serialNumberValidator = serialNumberValidator;
+	}
 	public ProductCategoryEditBean() {
 		init();
 	}
@@ -142,6 +157,18 @@ public class ProductCategoryEditBean extends ProductCategoryBaseBean {
 	}
 	public String takeSelection() {
 		//this.setSelectedProductCategory(null);
+		//
+		//FacesContext context= FacesContext.getCurrentInstance();
+		//UIViewRoot view = context.getViewRoot();
+		//HtmlInputText inputText = (HtmlInputText) view.findComponent("manageTemplateView:productcategoryEditform:categoryName");
+		//FacesBeanValidator beanValidator = new FacesBeanValidator();
+		//inputText.setValid(Boolean.TRUE);
+		//inputText.removeValidator(this.getCategoryNameValidator());
+		//HtmlInputText inputTexto = (HtmlInputText) view.findComponent("manageTemplateView:productcategoryEditform:serialNumber");
+		//inputTexto.setValid(Boolean.TRUE);
+		//inputTexto.removeValidator(this.getSerialNumberValidator());
+		
+		//
 		Iterator<Object> iterator = getSelection().getKeys();
 		while (iterator.hasNext()){
 			Object key = iterator.next();
@@ -165,19 +192,19 @@ public class ProductCategoryEditBean extends ProductCategoryBaseBean {
 		UIViewRoot view = context.getViewRoot();
 		HtmlInputText inputText = (HtmlInputText) view.findComponent("manageTemplateView:productcategoryEditform:categoryName");
 		FacesBeanValidator beanValidator = new FacesBeanValidator();
-		inputText.addValidator(beanValidator);
+		inputText.addValidator(this.getCategoryNameValidator());
 		HtmlInputText inputTexto = (HtmlInputText) view.findComponent("manageTemplateView:productcategoryEditform:serialNumber");
-		inputTexto.addValidator(beanValidator);
+		inputTexto.addValidator(this.getSerialNumberValidator());
 	}
 	public void richBeanValidateNone(ActionEvent event) {
 		FacesContext context= FacesContext.getCurrentInstance();
 		UIViewRoot view = context.getViewRoot();
 		HtmlInputText inputText = (HtmlInputText) view.findComponent("manageTemplateView:productcategoryEditform:categoryName");
 		FacesBeanValidator beanValidator = new FacesBeanValidator();
-		inputText.removeValidator(beanValidator);
+		inputText.removeValidator(this.getCategoryNameValidator());
 		inputText.setValid(Boolean.TRUE);
 		HtmlInputText inputTexto = (HtmlInputText) view.findComponent("manageTemplateView:productcategoryEditform:serialNumber");
-		inputTexto.removeValidator(beanValidator);
+		inputTexto.removeValidator(this.getSerialNumberValidator());
 		inputTexto.setValid(Boolean.TRUE);
 	}
 	public String updateProductCategory() throws ProductCategoryException {
@@ -186,23 +213,54 @@ public class ProductCategoryEditBean extends ProductCategoryBaseBean {
 			IProductCategoryService em = (IProductCategoryService) appctx.getBean("productCategoryService");
 			this.setProductCategoryService(em);
 		}
+		if (editProductCategory == null) {
+			return null;
+		}
 		Productcategory productCategory =(Productcategory) this.getProductCategoryService().getProductCategoryByName(editProductCategory.getCategoryName());
 		
 		if (productCategory != null) {
-			setNewProgressString(editProductCategory.getCategoryName()+" 已存在！");
+			setNewProgressString("\""+editProductCategory.getCategoryName()+"\"已存在！");
 		} else {
 			Productcategory newproductCategory = (Productcategory) this.getProductCategoryService().getProductCategoryById(editProductCategory.getId());
 			newproductCategory.setCategoryName(editProductCategory.getCategoryName());
 			newproductCategory.setSerialNumber(editProductCategory.getSerialNumber());
 			this.getProductCategoryService().updateProductCategory(newproductCategory);
-			setNewProgressString(editProductCategory.getCategoryName()+" 保存成功!");
+			setNewProgressString("\""+editProductCategory.getCategoryName()+"\"保存成功!");
 			selectedProductCategory.setCategoryName(editProductCategory.getCategoryName());
 			selectedProductCategory.setSerialNumber(editProductCategory.getSerialNumber());
 		}
 		return null;
 	}
-	public String searchProductCategoryByName() {
-		return null;
+	public String searchProductCategoryByName() throws ProductCategoryException{
+		if (this.getProductCategoryService() == null) {
+			ApplicationContext appctx = FacesContextUtils.getWebApplicationContext(FacesContext.getCurrentInstance());
+			IProductCategoryService em = (IProductCategoryService) appctx.getBean("productCategoryService");
+			this.setProductCategoryService(em);
+		}
+		if ("".equals(searchProductCategoryName)) {
+			return null;
+		} else {
+			if (productCategorys != null && productCategorys.size() > 0) {
+				productCategorys.clear();
+			}
+			if (selectedProductCategory != null) {
+				this.setSelectedProductCategory (new ProductCategoryItem());
+			}
+			if (editProductCategory != null) {
+				this.setEditProductCategory(new ProductCategory());
+			}
+			Productcategory newProductCategory = new Productcategory();
+			newProductCategory = this.getProductCategoryService().getProductCategoryByName(searchProductCategoryName);
+			ProductCategoryItem productCategoryItem = new ProductCategoryItem();
+			if (newProductCategory != null) {
+				productCategoryItem.setId(newProductCategory.getId());
+				productCategoryItem.setCategoryName(newProductCategory.getCategoryName());
+				productCategoryItem.setSerialNumber(newProductCategory.getSerialNumber());
+				productCategoryItem.setSelected(Boolean.FALSE);
+			}
+			productCategorys.add(productCategoryItem);
+			return null;
+		}
 	}
 	public String searchAllProductCategory() throws ProductCategoryException{ 
 		if (this.getProductCategorys() != null) {
@@ -222,4 +280,31 @@ public class ProductCategoryEditBean extends ProductCategoryBaseBean {
 		this.setProductCategorys(newproductCategorys);
 		return null;
 	}
+	public String deleteProductCategory() throws ProductCategoryException {
+		if (this.getProductCategoryService() == null) {
+			ApplicationContext appctx = FacesContextUtils.getWebApplicationContext(FacesContext.getCurrentInstance());
+			IProductCategoryService em = (IProductCategoryService) appctx.getBean("productCategoryService");
+			this.setProductCategoryService(em);
+		}
+		if (editProductCategory == null) {
+			return null;
+		} else if (editProductCategory.getId() == null || "".equals(editProductCategory.getId())) {
+			return null;
+		}
+		Productcategory productCategory =(Productcategory) this.getProductCategoryService().getProductCategoryById(editProductCategory.getId());
+		
+		if (productCategory == null) {
+			return null;
+		} else if (!(editProductCategory.getCategoryName().equals(productCategory.getCategoryName()))) {
+			setNewProgressString("您删除的种类名称：\""+editProductCategory.getCategoryName()+"\"与实际的种类名称\""+productCategory.getCategoryName()+"\"不符，不能删除!");
+			return null;
+		} else {
+			this.getProductCategoryService().delProductCategoryById(productCategory.getId());
+			setNewProgressString("\""+editProductCategory.getCategoryName()+"\"删除成功!");
+			productCategorys.remove(selectedProductCategory);
+			editProductCategory = new ProductCategory();
+		}
+		return null;
+	}
+
 }
