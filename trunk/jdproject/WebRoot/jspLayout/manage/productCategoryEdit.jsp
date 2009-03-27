@@ -18,41 +18,52 @@ xmlns:rich="http://richfaces.org/rich">
     			<h:form id="productcategoryEditform">
     			<fieldset class="demo_fieldset">
 				<legend class="demo_legend"><h:outputText value="#{manageHeaderMenu.menuTitle}"/></legend>
-    			
-    				<h:panelGrid id="editpanel" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+    			    <a4j:region id = "editregion" renderRegionOnly="false">
+    			    <h:panelGrid id="editpanel" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
 						<f:facet name="header">
-                			<h:outputText value="#{productCategoryEdit.newProgressString}" id="newProgress"/>
+							<h:outputText value="#{productCategoryEdit.newProgressString}" id="newProgress"/>
             			</f:facet>
 						<h:outputLabel id="labelname" value="类型名称：" for="categoryName"></h:outputLabel>
 						<h:inputText value="#{productCategoryEdit.editProductCategory.categoryName}" id="categoryName">
-							<!--<rich:beanValidator summary="类型有误"/> -->
+							<rich:beanValidator binding="#{productCategoryEdit.categoryNameValidator}" summary="类型有误"/>
                 		</h:inputText>
                 		<rich:message for="categoryName" />
                 		<h:outputLabel id="labelnumber" value="类型序号：" for="serialNumber"></h:outputLabel>
 						<h:inputText value="#{productCategoryEdit.editProductCategory.serialNumber}" id="serialNumber" onblur="if(/\D/.test(this.value)){alert('只能输入数字');this.select();}">
-                    		<!--<rich:beanValidator summary="序号有误"/> -->
+                    		<rich:beanValidator binding="#{productCategoryEdit.serialNumberValidator}" summary="序号有误"/>
                     	</h:inputText>
                 		<rich:message for="serialNumber" />
                 		<h:outputText id="kongone" value=""></h:outputText>
-                			<a4j:commandButton id="actionupdate" action="#{productCategoryEdit.updateProductCategory}" actionListener="#{productCategoryEdit.richBeanValidate}" reRender="editpanel,table" value="更新"/>
+							<h:panelGroup>
+                				<a4j:commandButton id="actionupdate" action="#{productCategoryEdit.updateProductCategory}" actionListener="#{productCategoryEdit.richBeanValidate}" reRender="editpanel,table" value="更新"/>
+								<h:outputText id="blankone" value="  "></h:outputText>
+								<a4j:commandButton id="actionupdele" action="#{productCategoryEdit.deleteProductCategory}" actionListener="#{productCategoryEdit.richBeanValidate}" onclick="if (!confirm('确认删除此记录吗?')) return false;" reRender="editpanel,table" value="删除"/>
+							</h:panelGroup>
                 		<h:outputText id="kongtwo" value=" "></h:outputText>
 					</h:panelGrid>
+					</a4j:region>
+					<a4j:region id="searchregion" renderRegionOnly="false">
 					<h:panelGrid columns="3" columnClasses="table-one-column,table-two-column,table-three-column">
 						<h:outputLabel id="labelsearch" value="按名称查询" for="searchProductCategoryName"></h:outputLabel>
-						<h:inputText id="searchProductCategoryName" value="#{productCategoryEdit.searchProductCategoryName}"></h:inputText>
+						
+						<h:inputText id="searchProductCategoryName" value="#{productCategoryEdit.searchProductCategoryName}">
+								<a4j:support id="searchProductCategoryNamesp" event="onblur" reRender="searchProductCategoryName"></a4j:support>
+						</h:inputText>
 						<h:panelGroup>
-							<a4j:commandButton id="searchbtn" action="#{productCategoryEdit.searchProductCategoryByName}" value="查询" immediate="true" reRender="productcategorylist"></a4j:commandButton>
-							<a4j:commandButton id="allbtn" action="#{productCategoryEdit.searchAllProductCategory}" value="所有" immediate="true" reRender="productcategorylist"></a4j:commandButton>
+							<a4j:commandButton id="searchbtn" action="#{productCategoryEdit.searchProductCategoryByName}" value="查询" limitToList="true" ajaxSingle="true" immediate="false" reRender="productcategorylist,editpanel"></a4j:commandButton>
+							<h:outputText id="blanktwo" value="  "></h:outputText>
+							<a4j:commandButton id="allbtn" action="#{productCategoryEdit.searchAllProductCategory}" value="所有" immediate="true" limitToList="true"  reRender="productcategorylist,editpanel"></a4j:commandButton>
 						</h:panelGroup>
 					</h:panelGrid>
-
+					</a4j:region>
+					<a4j:region id = "tableregion" renderRegionOnly="false">
 					<h:panelGrid columns="1" id="productcategorylist"  columnClasses="top,top">
         			<rich:extendedDataTable value="#{productCategoryEdit.productCategorysDataModel}" var="cat" id="table" rows="15"
-            		width="340px" height="280px" sortMode="#{productCategoryEdit.sortMode}" 
+            		width="400px" height="254px" sortMode="#{productCategoryEdit.sortMode}" 
                 	selectionMode="#{productCategoryEdit.selectionMode}"
                 	selection="#{productCategoryEdit.selection}"
                 	binding="#{productCategoryEdit.table}">
-            			<rich:column id="columnone" sortable="true" sortBy="#{cat.categoryName}" width="170px" label="种类名称">
+						<rich:column id="columnone" sortable="true" sortBy="#{cat.categoryName}" width="170px" label="种类名称">
                 			<f:facet name="header">
                     			<h:outputText id="headertextname" value="种类名称"/>
                 			</f:facet>
@@ -65,14 +76,16 @@ xmlns:rich="http://richfaces.org/rich">
                 			<h:outputText value="#{cat.serialNumber}"/>
             			</rich:column> 
             		
-						<a4j:support id="supportone" event="onclick" ignoreDupResponses="true" requestDelay="500"  action="#{productCategoryEdit.takeSelection}" actionListener="#{productCategoryEdit.richBeanValidateNone}" reRender="categoryName,serialNumber"/>
-            			<a4j:support id="supporttwo" event="onkeyup" ignoreDupResponses="true" requestDelay="500"  action="#{productCategoryEdit.takeSelection}" actionListener="#{productCategoryEdit.richBeanValidateNone}" reRender="categoryName,serialNumber"/>
+						<a4j:support id="supportone" event="onclick" ignoreDupResponses="true" requestDelay="1"  action="#{productCategoryEdit.takeSelection}"  reRender="editpanel" ajaxSingle="true"/>
+            			<a4j:support id="supporttwo" event="onkeyup" ignoreDupResponses="true" requestDelay="1"  action="#{productCategoryEdit.takeSelection}"  reRender="editpanel" ajaxSingle="true"/>
         				</rich:extendedDataTable>
       					<rich:datascroller align="left" for="table" maxPages="20"
 						page="#{productCategoryEdit.scrollerPage}" id="sc2"/>
         
         
         			</h:panelGrid>
+
+					</a4j:region>
 					</fieldset>
     			</h:form>
     		</ui:define>
