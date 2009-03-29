@@ -8,3 +8,11 @@ CREATE TABLE  `ejd`.`productcategory` (
 
 
 CREATE DATABASE `ejd` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+DROP TABLE IF EXISTS `ejd`.`productbrand`;
+CREATE TABLE  `ejd`.`productbrand` (
+  `id` int(11) NOT NULL,
+  `brandname` varchar(20) NOT NULL,
+  `serialnumber` int(11) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
