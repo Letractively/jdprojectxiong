@@ -9,6 +9,7 @@ import javax.faces.component.UIViewRoot;
 import javax.faces.component.html.HtmlInputText;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
+import javax.faces.model.SelectItem;
 
 import org.apache.commons.beanutils.PropertyUtils;
 import org.hibernate.validator.Validator;
@@ -32,6 +33,12 @@ public class ProductCategoryEditBean extends ProductCategoryBaseBean {
 	private String sortMode="single";
 	private String selectionMode="single";
 	private int scrollerPage;
+	private int recordNumberShow = 10;
+	private SelectItem[] recordNumbers = {
+			new SelectItem(new Integer(10),"10"),
+			new SelectItem(new Integer(20),"20"),
+			new SelectItem(new Integer(30),"30")
+	};
 	private UIExtendedDataTable table;
 
 	private ExtendedTableDataModel<ProductCategoryItem> dataModel;
@@ -39,8 +46,6 @@ public class ProductCategoryEditBean extends ProductCategoryBaseBean {
 	private SimpleSelection selection = new SimpleSelection();
     private ProductCategoryItem selectedProductCategory = new ProductCategoryItem();
     private ProductCategory editProductCategory = new ProductCategory();
-    private FacesBeanValidator categoryNameValidator = new FacesBeanValidator();
-    private FacesBeanValidator serialNumberValidator = new FacesBeanValidator();
     public String getNewProgressString() {
 		return newProgressString;
 	}
@@ -71,6 +76,20 @@ public class ProductCategoryEditBean extends ProductCategoryBaseBean {
 	}
 	public void setScrollerPage(int scrollerPage) {
 		this.scrollerPage = scrollerPage;
+	}
+	
+	public int getRecordNumberShow() {
+		return recordNumberShow;
+	}
+	public void setRecordNumberShow(int recordNumberShow) {
+		this.recordNumberShow = recordNumberShow;
+	}
+	
+	public SelectItem[] getRecordNumbers() {
+		return recordNumbers;
+	}
+	public void setRecordNumbers(SelectItem[] recordNumbers) {
+		this.recordNumbers = recordNumbers;
 	}
 	public UIExtendedDataTable getTable() {
 		return table;
@@ -104,18 +123,6 @@ public class ProductCategoryEditBean extends ProductCategoryBaseBean {
 		this.editProductCategory = editProductCategory;
 	}
 	
-	public FacesBeanValidator getCategoryNameValidator() {
-		return categoryNameValidator;
-	}
-	public void setCategoryNameValidator(FacesBeanValidator categoryNameValidator) {
-		this.categoryNameValidator = categoryNameValidator;
-	}
-	public FacesBeanValidator getSerialNumberValidator() {
-		return serialNumberValidator;
-	}
-	public void setSerialNumberValidator(FacesBeanValidator serialNumberValidator) {
-		this.serialNumberValidator = serialNumberValidator;
-	}
 	public ProductCategoryEditBean() {
 		init();
 	}
@@ -187,26 +194,6 @@ public class ProductCategoryEditBean extends ProductCategoryBaseBean {
 		
 		return null;
 	}
-	public void richBeanValidate(ActionEvent event) {
-		FacesContext context= FacesContext.getCurrentInstance();
-		UIViewRoot view = context.getViewRoot();
-		HtmlInputText inputText = (HtmlInputText) view.findComponent("manageTemplateView:productcategoryEditform:categoryName");
-		FacesBeanValidator beanValidator = new FacesBeanValidator();
-		inputText.addValidator(this.getCategoryNameValidator());
-		HtmlInputText inputTexto = (HtmlInputText) view.findComponent("manageTemplateView:productcategoryEditform:serialNumber");
-		inputTexto.addValidator(this.getSerialNumberValidator());
-	}
-	public void richBeanValidateNone(ActionEvent event) {
-		FacesContext context= FacesContext.getCurrentInstance();
-		UIViewRoot view = context.getViewRoot();
-		HtmlInputText inputText = (HtmlInputText) view.findComponent("manageTemplateView:productcategoryEditform:categoryName");
-		FacesBeanValidator beanValidator = new FacesBeanValidator();
-		inputText.removeValidator(this.getCategoryNameValidator());
-		inputText.setValid(Boolean.TRUE);
-		HtmlInputText inputTexto = (HtmlInputText) view.findComponent("manageTemplateView:productcategoryEditform:serialNumber");
-		inputTexto.removeValidator(this.getSerialNumberValidator());
-		inputTexto.setValid(Boolean.TRUE);
-	}
 	public String updateProductCategory() throws ProductCategoryException {
 		if (this.getProductCategoryService() == null) {
 			ApplicationContext appctx = FacesContextUtils.getWebApplicationContext(FacesContext.getCurrentInstance());
@@ -220,7 +207,7 @@ public class ProductCategoryEditBean extends ProductCategoryBaseBean {
 		
 		if (productCategory != null) {
 			setNewProgressString("\""+editProductCategory.getCategoryName()+"\"已存在！");
-		} else {
+		} else if ((editProductCategory.getId() != null) && (!"".equals(editProductCategory.getId()))) {
 			Productcategory newproductCategory = (Productcategory) this.getProductCategoryService().getProductCategoryById(editProductCategory.getId());
 			newproductCategory.setCategoryName(editProductCategory.getCategoryName());
 			newproductCategory.setSerialNumber(editProductCategory.getSerialNumber());
