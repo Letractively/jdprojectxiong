@@ -27,6 +27,7 @@
 	    <property name="mappingResources">
 			<list>
 				<value>com/ejd/web/bo/Productcategory.hbm.xml</value>
+				<value>com/ejd/web/bo/Productbrand.hbm.xml</value>
 				<!-- <value>com/kuaican/web/bo/Customer.hbm.xml</value>
 				<value>com/kuaican/web/bo/Dish.hbm.xml</value>
 				<value>com/kuaican/web/bo/Orders.hbm.xml</value>
@@ -91,6 +92,16 @@
     <bean id="productCategoryService" class="com.ejd.model.service.impl.ProductCategoryServiceImpl" scope="singleton" depends-on="productCategoryDao">
 		<property name="productCategoryDao">
 			<ref bean="productCategoryDao" />
+		</property>
+	</bean>
+	<bean id="productBrandDao" class="com.ejd.data.dao.impl.ProductBrandDaoImpl" scope="singleton">
+    	<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+    </bean>
+    <bean id="productBrandService" class="com.ejd.model.service.impl.ProductBrandServiceImpl" scope="singleton" depends-on="productBrandDao">
+		<property name="productBrandDao">
+			<ref bean="productBrandDao" />
 		</property>
 	</bean>
 <!-- 
