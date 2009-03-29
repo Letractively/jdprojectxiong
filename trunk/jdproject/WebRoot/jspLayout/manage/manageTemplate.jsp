@@ -46,15 +46,25 @@ xmlns:rich="http://richfaces.org/rich">
 		<rich:toolBar id="tbar" width="100%" height="20px" itemSeparator="/css/images/icons/menu_separater.gif">
 			<rich:dropDownMenu id="dmone" value="基础数据" >
 				<rich:menuGroup id="mgone" value="产品类型">
-                	<rich:menuItem id="mione" submitMode="ajax" value="新建" action="#{manageHeaderMenu.updateCurrent}" actionListener="#{manageHeaderMenu.actionListener}" immediate="true">
+                	<rich:menuItem id="mione" submitMode="ajax" value="新建" action="#{manageHeaderMenu.updateCurrent}" immediate="true">
                 		<f:param name="current" value="productCategoryCreate"/>
+						<f:param name="ctitle" value="基础数据>>产品类型>>新建"></f:param>
                 	</rich:menuItem>
-                	<rich:menuItem id="mitwo" submitMode="ajax" value="编辑" action="#{manageHeaderMenu.updateCurrent}" actionListener="#{manageHeaderMenu.actionListener}" immediate="true">
+                	<rich:menuItem id="mitwo" submitMode="ajax" value="编辑" action="#{manageHeaderMenu.updateCurrent}" immediate="true">
                 		<f:param name="current" value="productCategoryEdit"/>
+						<f:param name="ctitle" value="基础数据>>产品类型>>编辑"></f:param>
                 	</rich:menuItem>
                 </rich:menuGroup>
-                <rich:menuItem submitMode="ajax" value="Open"
-                    action="#{manageHeaderMenu.updateCurrent}" />
+                <rich:menuGroup id="mbtwo" value="产品品牌">
+                	<rich:menuItem id="mibone" submitMode="ajax" value="新建" action="#{manageHeaderMenu.updateCurrent}" immediate="true">
+                		<f:param name="current" value="productBrandCreate"/>
+						<f:param name="ctitle" value="基础数据>>产品品牌>>新建"></f:param>
+                	</rich:menuItem>
+                	<rich:menuItem id="mibtwo" submitMode="ajax" value="编辑" action="#{manageHeaderMenu.updateCurrent}" immediate="true">
+                		<f:param name="current" value="productCategoryEdit"/>
+						<f:param name="ctitle" value="基础数据>>产品品牌>>编辑"></f:param>
+                	</rich:menuItem>
+                </rich:menuGroup>
                 <rich:menuGroup value="Save As...">
                     <rich:menuItem submitMode="ajax" value="Save" 
                         action="#{manageHeaderMenu.updateCurrent}" />
