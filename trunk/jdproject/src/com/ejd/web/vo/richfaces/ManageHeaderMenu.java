@@ -26,6 +26,7 @@ public class ManageHeaderMenu {
     {
 		FacesContext context = FacesContext.getCurrentInstance();
         Map map = context.getExternalContext().getRequestParameterMap();
+        this.setMenuTitle(map.get("ctitle").toString());
         return (String) map.get("current");
     }
 	public void actionListener(ActionEvent event) {
