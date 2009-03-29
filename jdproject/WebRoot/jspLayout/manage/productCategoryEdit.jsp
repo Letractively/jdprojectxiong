@@ -17,27 +17,27 @@ xmlns:rich="http://richfaces.org/rich">
     		<ui:define name="content">
     			<h:form id="productcategoryEditform">
     			<fieldset class="demo_fieldset">
-				<legend class="demo_legend"><h:outputText value="#{manageHeaderMenu.menuTitle}"/></legend>
+				<legend class="demo_legend"><h:outputText value="#{manageHeaderMenu.menuTitle}" styleClass="simple-text"/></legend>
     			    <a4j:region id = "editregion" renderRegionOnly="false">
-    			    <h:panelGrid id="editpanel" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+    			    <h:panelGrid id="editpanel" columns="3" rowClasses="table-row,table-odd-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
 						<f:facet name="header">
 							<h:outputText value="#{productCategoryEdit.newProgressString}" id="newProgress"/>
             			</f:facet>
 						<h:outputLabel id="labelname" value="类型名称：" for="categoryName"></h:outputLabel>
 						<h:inputText value="#{productCategoryEdit.editProductCategory.categoryName}" id="categoryName">
-							<rich:beanValidator binding="#{productCategoryEdit.categoryNameValidator}" summary="类型有误"/>
+							<rich:beanValidator summary="类型有误"/>
                 		</h:inputText>
                 		<rich:message for="categoryName" />
                 		<h:outputLabel id="labelnumber" value="类型序号：" for="serialNumber"></h:outputLabel>
 						<h:inputText value="#{productCategoryEdit.editProductCategory.serialNumber}" id="serialNumber" onblur="if(/\D/.test(this.value)){alert('只能输入数字');this.select();}">
-                    		<rich:beanValidator binding="#{productCategoryEdit.serialNumberValidator}" summary="序号有误"/>
+                    		<rich:beanValidator summary="序号有误"/>
                     	</h:inputText>
                 		<rich:message for="serialNumber" />
                 		<h:outputText id="kongone" value=""></h:outputText>
 							<h:panelGroup>
-                				<a4j:commandButton id="actionupdate" action="#{productCategoryEdit.updateProductCategory}" actionListener="#{productCategoryEdit.richBeanValidate}" reRender="editpanel,table" value="更新"/>
+                				<a4j:commandButton id="actionupdate" action="#{productCategoryEdit.updateProductCategory}" reRender="editpanel,table,sc2" value="更新"/>
 								<h:outputText id="blankone" value="  "></h:outputText>
-								<a4j:commandButton id="actionupdele" action="#{productCategoryEdit.deleteProductCategory}" actionListener="#{productCategoryEdit.richBeanValidate}" onclick="if (!confirm('确认删除此记录吗?')) return false;" reRender="editpanel,table" value="删除"/>
+								<a4j:commandButton id="actionupdele" action="#{productCategoryEdit.deleteProductCategory}" onclick="if (!confirm('确认删除此记录吗?')) return false;" reRender="editpanel,table,sc2" value="删除"/>
 							</h:panelGroup>
                 		<h:outputText id="kongtwo" value=" "></h:outputText>
 					</h:panelGrid>
@@ -53,13 +53,19 @@ xmlns:rich="http://richfaces.org/rich">
 							<a4j:commandButton id="searchbtn" action="#{productCategoryEdit.searchProductCategoryByName}" value="查询" limitToList="true" ajaxSingle="true" immediate="false" reRender="productcategorylist,editpanel"></a4j:commandButton>
 							<h:outputText id="blanktwo" value="  "></h:outputText>
 							<a4j:commandButton id="allbtn" action="#{productCategoryEdit.searchAllProductCategory}" value="所有" immediate="true" limitToList="true"  reRender="productcategorylist,editpanel"></a4j:commandButton>
+							<h:outputText id="recordnumberh" value="每页显示"></h:outputText>
+							<h:selectOneMenu id="recordshownumber" value="#{productCategoryEdit.recordNumberShow}">
+								<f:selectItems id="recorednumbersitems" value="#{productCategoryEdit.recordNumbers}"/>
+								<a4j:support event="onchange" reRender="recordshownumber,table,sc2"></a4j:support>
+							</h:selectOneMenu>
+							<h:outputText id="recordnumberf" value="条"></h:outputText>
 						</h:panelGroup>
 					</h:panelGrid>
 					</a4j:region>
 					<a4j:region id = "tableregion" renderRegionOnly="false">
 					<h:panelGrid columns="1" id="productcategorylist"  columnClasses="top,top">
-        			<rich:extendedDataTable value="#{productCategoryEdit.productCategorysDataModel}" var="cat" id="table" rows="15"
-            		width="400px" height="254px" sortMode="#{productCategoryEdit.sortMode}" 
+        			<rich:extendedDataTable value="#{productCategoryEdit.productCategorysDataModel}" var="cat" id="table" rows="#{productCategoryEdit.recordNumberShow}" frame="below" border="1" 
+            		width="340px" height="254px" sortMode="#{productCategoryEdit.sortMode}" 
                 	selectionMode="#{productCategoryEdit.selectionMode}"
                 	selection="#{productCategoryEdit.selection}"
                 	binding="#{productCategoryEdit.table}">
