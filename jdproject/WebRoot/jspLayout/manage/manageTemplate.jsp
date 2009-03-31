@@ -61,7 +61,7 @@ xmlns:rich="http://richfaces.org/rich">
 						<f:param name="ctitle" value="基础数据>>产品品牌>>新建"></f:param>
                 	</rich:menuItem>
                 	<rich:menuItem id="mibtwo" submitMode="ajax" value="编辑" action="#{manageHeaderMenu.updateCurrent}" immediate="true">
-                		<f:param name="current" value="productCategoryEdit"/>
+                		<f:param name="current" value="productBrandEdit"/>
 						<f:param name="ctitle" value="基础数据>>产品品牌>>编辑"></f:param>
                 	</rich:menuItem>
                 </rich:menuGroup>
