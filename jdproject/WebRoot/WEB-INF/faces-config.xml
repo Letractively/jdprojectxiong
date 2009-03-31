@@ -51,6 +51,11 @@
 	<managed-bean-class>com.ejd.web.vo.productbrand.ProductBrandCreateBean</managed-bean-class>
 	<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>productBrandEdit</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.productbrand.ProductBrandEditBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
   <managed-bean>
   <managed-bean-name>extendedTableBean</managed-bean-name>
   <managed-bean-class>com.test.ExtendedTableBean</managed-bean-class>
@@ -86,7 +91,7 @@
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>productBrandEdit</from-outcome>
-			<to-view-id>/jspLayout/manage/productCategoryEdit.jsp</to-view-id>
+			<to-view-id>/jspLayout/manage/productBrandEdit.jsp</to-view-id>
 		</navigation-case>
 
  	</navigation-rule>
