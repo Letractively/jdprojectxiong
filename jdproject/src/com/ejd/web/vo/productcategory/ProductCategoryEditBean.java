@@ -163,19 +163,6 @@ public class ProductCategoryEditBean extends ProductCategoryBaseBean {
 		return dataModel;
 	}
 	public String takeSelection() {
-		//this.setSelectedProductCategory(null);
-		//
-		//FacesContext context= FacesContext.getCurrentInstance();
-		//UIViewRoot view = context.getViewRoot();
-		//HtmlInputText inputText = (HtmlInputText) view.findComponent("manageTemplateView:productcategoryEditform:categoryName");
-		//FacesBeanValidator beanValidator = new FacesBeanValidator();
-		//inputText.setValid(Boolean.TRUE);
-		//inputText.removeValidator(this.getCategoryNameValidator());
-		//HtmlInputText inputTexto = (HtmlInputText) view.findComponent("manageTemplateView:productcategoryEditform:serialNumber");
-		//inputTexto.setValid(Boolean.TRUE);
-		//inputTexto.removeValidator(this.getSerialNumberValidator());
-		
-		//
 		Iterator<Object> iterator = getSelection().getKeys();
 		while (iterator.hasNext()){
 			Object key = iterator.next();
