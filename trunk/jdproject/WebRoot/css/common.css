@@ -672,7 +672,7 @@ div.reviews{margin:5px 0}
   
 }
 .table-odd-row {
-  font-size: 10pt;border:2px solid;
+  font-size: 10pt;border:0px solid;
   background-color: rgb(233, 249, 244);
 }
 
