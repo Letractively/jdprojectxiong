@@ -138,9 +138,11 @@ public class ProductCategoryEditBean extends ProductCategoryBaseBean {
 				private static final long serialVersionUID = 5054087821033164847L;
 
 				public ProductCategoryItem getItemByKey(Object key) {
-					for(ProductCategoryItem c : productCategorys){
-						if (key.equals(getKey(c))){
-							return c;
+					if ((productCategorys !=null) && (productCategorys.size()) > 0) {
+						for(ProductCategoryItem c : productCategorys){
+							if (key.equals(getKey(c))){
+								return c;
+							}
 						}
 					}
 					return null;
@@ -223,6 +225,9 @@ public class ProductCategoryEditBean extends ProductCategoryBaseBean {
 			if (editProductCategory != null) {
 				this.setEditProductCategory(new ProductCategory());
 			}
+			if (selection  != null) {
+				this.setSelection(new SimpleSelection());
+			}
 			Productcategory newProductCategory = new Productcategory();
 			newProductCategory = this.getProductCategoryService().getProductCategoryByName(searchProductCategoryName);
 			ProductCategoryItem productCategoryItem = new ProductCategoryItem();
@@ -231,8 +236,10 @@ public class ProductCategoryEditBean extends ProductCategoryBaseBean {
 				productCategoryItem.setCategoryName(newProductCategory.getCategoryName());
 				productCategoryItem.setSerialNumber(newProductCategory.getSerialNumber());
 				productCategoryItem.setSelected(Boolean.FALSE);
+				productCategorys.add(productCategoryItem);
+				
 			}
-			productCategorys.add(productCategoryItem);
+			
 			return null;
 		}
 	}
