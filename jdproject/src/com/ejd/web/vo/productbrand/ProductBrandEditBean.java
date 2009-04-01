@@ -223,6 +223,9 @@ public class ProductBrandEditBean extends ProductBrandBaseBean {
 			if (editProductBrand != null) {
 				this.setEditProductBrand(new ProductBrand());
 			}
+			if (selection  != null) {
+				this.setSelection(new SimpleSelection());
+			}
 			Productbrand newProductBrand = new Productbrand();
 			newProductBrand = this.getProductBrandService().getProductBrandByName(searchProductBrandName);
 			ProductBrandItem productBrandItem = new ProductBrandItem();
@@ -231,8 +234,8 @@ public class ProductBrandEditBean extends ProductBrandBaseBean {
 				productBrandItem.setBrandName(newProductBrand.getBrandName());
 				productBrandItem.setSerialNumber(newProductBrand.getSerialNumber());
 				productBrandItem.setSelected(Boolean.FALSE);
+				productBrands.add(productBrandItem);
 			}
-			productBrands.add(productBrandItem);
 			return null;
 		}
 	}
