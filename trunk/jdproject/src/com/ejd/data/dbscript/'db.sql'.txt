@@ -1,18 +1,78 @@
-DROP TABLE IF EXISTS `ejd`.`productcategory`;
-CREATE TABLE  `ejd`.`productcategory` (
-  `id` int(11) NOT NULL,
-  `categoryname` varchar(20) NOT NULL,
-  `serialnumber` int(11) default NULL,
-  PRIMARY KEY  (`id`)
+DROP TABLE IF EXISTS `ejd`.`PRODUCTBRAND`;
+CREATE TABLE  `ejd`.`PRODUCTBRAND` (
+  `ID` int(11) NOT NULL,
+  `BRANDNAME` varchar(20) NOT NULL,
+  `SERIALNUMBER` int(11) DEFAULT 1,
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `ejd`.`PRODUCTCATEGORY`;
+CREATE TABLE  `ejd`.`PRODUCTCATEGORY` (
+  `ID` int(11) NOT NULL,
+  `CATEGORYNAME` varchar(20) NOT NULL,
+  `SERIALNUMBER` int(11) DEFAULT 1,
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `ejd`.`STAKEHOLDER`;
+CREATE TABLE  `ejd`.`STAKEHOLDER` (
+  `ID` int(11) NOT NULL,
+  `MNEMONICCHARS` varchar(50) NOT NULL,
+  `SHORTNAME` varchar(50) NOT NULL,
+  `FULLNAME` varchar(100) NOT NULL,
+  `PROVINCE` varchar(50),
+  `CITY` varchar(20),
+  `COUNTY` varchar(20),
+  `PHONE` varchar(100),
+  `TAX` varchar(100),
+  `URL` varchar(100),
+  `REMARKS` varchar(1000),
+  `STATUS` varchar(1) NOT NULL,
+  `TYPE` varchar(1) NOT NULL,
+  `TAXACCOUNTS` varchar(100),
+  PRIMARY KEY  (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-CREATE DATABASE `ejd` /*!40100 DEFAULT CHARACTER SET utf8 */;
+DROP TABLE IF EXISTS `ejd`.`PERSON`;
+CREATE TABLE  `ejd`.`PERSON` (
+  `ID` int(11) NOT NULL,
+  `NAME` varchar(20) NOT NULL,
+  `AGE` int(11),
+  `SEX` varchar(6),
+  `PHONE` varchar(30),
+  `TAX` varchar(30),
+  `MOBILE` varchar(30),
+  `EMAIL` varchar(50),
+  `ADDRESS` varchar(100),
+  `PRINCIPALSHIP` varchar(20),
+  `REMARK` varchar(200),
+  `STAKEHOLDERID` int(11),
+  `SORTORDER` int(4) DEFAULT 1,
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS `ejd`.`productbrand`;
-CREATE TABLE  `ejd`.`productbrand` (
-  `id` int(11) NOT NULL,
-  `brandname` varchar(20) NOT NULL,
-  `serialnumber` int(11) default NULL,
-  PRIMARY KEY  (`id`)
+
+DROP TABLE IF EXISTS `ejd`.`ADDRESS`;
+CREATE TABLE  `ejd`.`ADDRESS` (
+  `ID` int(11) NOT NULL,
+  `ADDRESS` varchar(100) NOT NULL,
+  `ZIP` varchar(6),
+  `DESC` varchar(20) NOT NULL,
+  `STAKEHOLDERID` int(11),
+  `SORTORDER` int(4) DEFAULT 1,
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `ejd`.`BANK`;
+CREATE TABLE  `ejd`.`BANK` (
+  `ID` int(11) NOT NULL,
+  `ACCOUNTNAME` varchar(50) NOT NULL,
+  `ACCOUNTNUMBER` varchar(16) NOT NULL,
+  `BANKNAME` varchar(50) NOT NULL,
+  `BANKADDRESS` varchar(100),
+  `STAKEHOLDERID` int(11) NULL,
+  `SORTORDER` int(4) DEFAULT 1,
+  PRIMARY KEY  (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
