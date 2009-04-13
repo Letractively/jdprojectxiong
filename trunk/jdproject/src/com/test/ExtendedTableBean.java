@@ -4,12 +4,21 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.faces.context.FacesContext;
+
+import com.ejd.web.bo.Person;
+import com.ejd.web.bo.Stakeholder;
 import com.test.Capital;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.richfaces.component.UIExtendedDataTable;
 import org.richfaces.model.DataProvider;
 import org.richfaces.model.ExtendedTableDataModel;
 import org.richfaces.model.selection.SimpleSelection;
+import org.springframework.context.ApplicationContext;
+import org.springframework.web.jsf.FacesContextUtils;
 
 /**
  * @author Ilya Shaikovsky
@@ -42,6 +51,15 @@ public class ExtendedTableBean {
 	}
 
 	public ExtendedTableBean() {
+		ApplicationContext appctx = FacesContextUtils.getWebApplicationContext(FacesContext.getCurrentInstance());
+
+		SessionFactory at=(SessionFactory)appctx.getBean("sessionFactory",SessionFactory.class);
+		Session aa = at.openSession();
+		 Stakeholder s = new Stakeholder("abcd", "bcde", "aaaaaaaaa", "sc", "yc", "ym",
+					"121212221", "1221212", "www.sohu.com", "woaini", "A", "C", "1342222222");
+		aa.beginTransaction();
+		aa.save(s);
+		aa.flush();
 	}
 	
 	public ExtendedTableDataModel<Capital> getCapitalsDataModel() {
@@ -85,7 +103,32 @@ public class ExtendedTableBean {
 					setSelectedCapital((Capital) table.getRowData());
 				}
 			}
-		
+			ApplicationContext appctx = FacesContextUtils.getWebApplicationContext(FacesContext.getCurrentInstance());
+			Transaction tx = null;
+			SessionFactory at=(SessionFactory)appctx.getBean("sessionFactory",SessionFactory.class);
+			Session aa = at.openSession();
+			 Stakeholder s = new Stakeholder("abcd", "bcde", "aaaaaaaaa", "sc", "yc", "ym",
+						"121212221", "1221212", "www.sohu.com", "woaini", "A", "C", "1342222222");
+			tx = aa.beginTransaction();
+			Person p1 = new Person("name", 19, "sex", "phone", "tax", "mobile", "email", "address",
+					"ship", "remark", 1);
+			Person p2 = new Person();
+			p2.setName("name1");
+			p2.setAge(19);
+			p2.setSex("male");
+			p2.setPhone("1233333");
+			p2.setTax("34434");
+			p2.setMobile("12456777");
+			p2.setEmail("jqhero792sohu.com");
+			p2.setAddress("address");
+			p2.setPrincipalship("mana");
+			p2.setSortOrder(3);
+			p2.setStakeholder(s);
+			s.getConatctMans().add(p2);
+			aa.save(s);
+			//aa.save(p2);
+			tx.commit();
+			aa.flush();
 		return null;
 	}
 	public String saveUpdate() {
