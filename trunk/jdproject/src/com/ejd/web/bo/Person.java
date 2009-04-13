@@ -14,17 +14,17 @@ public class Person extends AbstractPerson implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Person(String name, Integer stakeholderId) {
-		super(name, stakeholderId);
+	public Person(String name) {
+		super(name);
 	}
 
 	/** full constructor */
 	public Person(String name, Integer age, String sex, String phone,
 			String tax, String mobile, String email, String address,
-			String principalship, String remark, Integer stakeholderId,
+			String principalship, String remark,
 			Integer sortOrder) {
 		super(name, age, sex, phone, tax, mobile, email, address,
-				principalship, remark, stakeholderId, sortOrder);
+				principalship, remark, sortOrder);
 	}
 
 	public Stakeholder getStakeholder() {
