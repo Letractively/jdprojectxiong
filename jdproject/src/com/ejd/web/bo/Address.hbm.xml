@@ -19,9 +19,6 @@
         <property name="desc" type="java.lang.String">
             <column name="DESC" length="20" not-null="true" />
         </property>
-        <property name="stakeholderId" type="java.lang.Integer">
-            <column name="STAKEHOLDERID" not-null="false" />
-        </property>
         <property name="sortOrder" type="java.lang.Integer">
             <column name="SORTORDER" not-null="true" />
         </property>

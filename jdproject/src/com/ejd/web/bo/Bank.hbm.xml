@@ -22,9 +22,6 @@
         <property name="bankAddress" type="java.lang.String">
             <column name="BANKADDRESS" length="100" />
         </property>
-        <property name="stakeholderId" type="java.lang.Integer">
-            <column name="stakeholderid" not-null="false" />
-        </property>
         <property name="sortOrder" type="java.lang.Integer">
             <column name="SORTORDER" not-null="true" />
         </property>
