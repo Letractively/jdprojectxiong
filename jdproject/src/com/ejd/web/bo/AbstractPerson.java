@@ -23,7 +23,6 @@ public abstract class AbstractPerson extends java.lang.Object implements
 	private String address;
 	private String principalship;
 	private String remark;
-	private Integer stakeholderId;
 	private Integer sortOrder;
 
 	// Constructors
@@ -33,15 +32,14 @@ public abstract class AbstractPerson extends java.lang.Object implements
 	}
 
 	/** minimal constructor */
-	public AbstractPerson(String name, Integer stakeholderId) {
+	public AbstractPerson(String name) {
 		this.name = name;
-		this.stakeholderId = stakeholderId;
 	}
 
 	/** full constructor */
 	public AbstractPerson(String name, Integer age, String sex, String phone,
 			String tax, String mobile, String email, String address,
-			String principalship, String remark, Integer stakeholderId,
+			String principalship, String remark,
 			Integer sortOrder) {
 		this.name = name;
 		this.age = age;
@@ -53,7 +51,6 @@ public abstract class AbstractPerson extends java.lang.Object implements
 		this.address = address;
 		this.principalship = principalship;
 		this.remark = remark;
-		this.stakeholderId = stakeholderId;
 		this.sortOrder = sortOrder;
 	}
 
@@ -145,14 +142,6 @@ public abstract class AbstractPerson extends java.lang.Object implements
 
 	public void setRemark(String remark) {
 		this.remark = remark;
-	}
-
-	public Integer getStakeholderId() {
-		return this.stakeholderId;
-	}
-
-	public void setStakeholderId(Integer stakeholderId) {
-		this.stakeholderId = stakeholderId;
 	}
 
 	public Integer getSortOrder() {

@@ -17,7 +17,6 @@ public abstract class AbstractBank extends java.lang.Object implements
 	private String accountNumber;
 	private String bankName;
 	private String bankAddress;
-	private Integer stakeholderId;
 	private Integer sortOrder;
 	
 	// Constructors
@@ -28,22 +27,20 @@ public abstract class AbstractBank extends java.lang.Object implements
 
 	/** minimal constructor */
 	public AbstractBank(String accountName, String accountNumber,
-			String bankName, String bankAddress, Integer sortOrder) {
+			String bankName, Integer sortOrder) {
 		this.accountName = accountName;
 		this.accountNumber = accountNumber;
 		this.bankName = bankName;
-		this.bankAddress = bankAddress;
 		this.sortOrder = sortOrder;
 	}
 
 	/** full constructor */
 	public AbstractBank(String accountName, String accountNumber,
-			String bankName, String bankAddress, Integer stakeholderId, Integer sortOrder) {
+			String bankName, String bankAddress, Integer sortOrder) {
 		this.accountName = accountName;
 		this.accountNumber = accountNumber;
 		this.bankName = bankName;
 		this.bankAddress = bankAddress;
-		this.stakeholderId = stakeholderId;
 		this.sortOrder = sortOrder;
 	}
 
@@ -87,14 +84,6 @@ public abstract class AbstractBank extends java.lang.Object implements
 
 	public void setBankAddress(String bankAddress) {
 		this.bankAddress = bankAddress;
-	}
-
-	public Integer getStakeholderId() {
-		return this.stakeholderId;
-	}
-
-	public void setStakeholderId(Integer stakeholderId) {
-		this.stakeholderId = stakeholderId;
 	}
 
 	public Integer getSortOrder() {
