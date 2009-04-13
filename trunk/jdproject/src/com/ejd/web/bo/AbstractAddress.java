@@ -16,7 +16,6 @@ public abstract class AbstractAddress extends java.lang.Object implements
 	private String address;
 	private String zip;
 	private String desc;
-	private Integer stakeholderId;
 	private Integer sortOrder;
 
 	// Constructors
@@ -26,20 +25,17 @@ public abstract class AbstractAddress extends java.lang.Object implements
 	}
 
 	/** minimal constructor */
-	public AbstractAddress(String address,String zip, String desc , Integer sortOrder) {
+	public AbstractAddress(String address, String desc , Integer sortOrder) {
 		this.address = address;
-		this.zip = zip;
 		this.desc = desc;
 		this.sortOrder = sortOrder;
 	}
 
 	/** full constructor */
-	public AbstractAddress(String address, String zip, String desc,
-			Integer stakeholderId , Integer sortOrder) {
+	public AbstractAddress(String address, String zip, String desc, Integer sortOrder) {
 		this.address = address;
 		this.zip = zip;
 		this.desc = desc;
-		this.stakeholderId = stakeholderId;
 		this.sortOrder = sortOrder;
 	}
 
@@ -75,14 +71,6 @@ public abstract class AbstractAddress extends java.lang.Object implements
 
 	public void setDesc(String desc) {
 		this.desc = desc;
-	}
-
-	public Integer getStakeholderId() {
-		return this.stakeholderId;
-	}
-
-	public void setStakeholderId(Integer stakeholderId) {
-		this.stakeholderId = stakeholderId;
 	}
 
 	public Integer getSortOrder() {
