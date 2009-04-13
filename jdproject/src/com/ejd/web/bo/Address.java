@@ -14,14 +14,13 @@ public class Address extends AbstractAddress implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Address(String address,String zip, String desc,Integer sortOrder) {
-		super(address, zip, desc, sortOrder);
+	public Address(String address, String desc,Integer sortOrder) {
+		super(address, desc, sortOrder);
 	}
 
 	/** full constructor */
-	public Address(String address, String zip, String desc,
-			Integer stakeholderId, Integer sortOrder) {
-		super(address, zip, desc, stakeholderId, sortOrder);
+	public Address(String address, String zip, String desc, Integer sortOrder) {
+		super(address, zip, desc, sortOrder);
 	}
 
 	public Stakeholder getStakeholder() {

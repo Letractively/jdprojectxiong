@@ -21,8 +21,8 @@ public class Bank extends AbstractBank implements java.io.Serializable {
 
 	/** full constructor */
 	public Bank(String accountName, String accountNumber, String bankName,
-			String bankAddress, Integer stakeholderId, Integer sortOrder) {
-		super(accountName, accountNumber, bankName, bankAddress, stakeholderId, sortOrder);
+			 Integer sortOrder) {
+		super(accountName, accountNumber, bankName, sortOrder);
 	}
 
 	public Stakeholder getStakeholder() {
