@@ -28,6 +28,10 @@
 			<list>
 				<value>com/ejd/web/bo/Productcategory.hbm.xml</value>
 				<value>com/ejd/web/bo/Productbrand.hbm.xml</value>
+				<value>com/ejd/web/bo/Stakeholder.hbm.xml</value>
+				<value>com/ejd/web/bo/Address.hbm.xml</value>
+				<value>com/ejd/web/bo/Bank.hbm.xml</value>
+				<value>com/ejd/web/bo/Person.hbm.xml</value>
 				<!-- <value>com/kuaican/web/bo/Customer.hbm.xml</value>
 				<value>com/kuaican/web/bo/Dish.hbm.xml</value>
 				<value>com/kuaican/web/bo/Orders.hbm.xml</value>
