@@ -40,9 +40,6 @@
         <property name="remark" type="java.lang.String">
             <column name="REMARK" length="200" />
         </property>
-        <property name="stakeholderId" type="java.lang.Integer">
-            <column name="STAKEHOLDERID" not-null="false" />
-        </property>
         <property name="sortOrder" type="java.lang.Integer">
             <column name="SORTORDER" />
         </property>
