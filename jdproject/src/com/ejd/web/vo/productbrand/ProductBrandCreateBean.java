@@ -13,12 +13,12 @@ import com.ejd.web.vo.productbrand.ProductBrand;
 public class ProductBrandCreateBean extends ProductBrandBaseBean {
 	
 	//this is for create new productBrand start
-	private String newProgressString="请填写以下信息";
+	private String newProgressString="";
 	private ProductBrand newProductBrand =  new ProductBrand(); 
 	
 	//this is for create new productBrand end
 	public ProductBrandCreateBean() {
-		init();
+		//init();
 	}
 	protected void init() {
 		ApplicationContext appctx = FacesContextUtils.getWebApplicationContext(FacesContext.getCurrentInstance());
@@ -46,13 +46,13 @@ public class ProductBrandCreateBean extends ProductBrandBaseBean {
 		Productbrand productBrand =(Productbrand) this.getProductBrandService().getProductBrandByName(newProductBrand.getBrandName());
 		
 		if (productBrand != null) {
-			setNewProgressString(newProductBrand.getBrandName()+" 已存在！");
+			setNewProgressString(newProductBrand.getBrandName()+" ");
 		} else {
 			Productbrand creProductBrand = new Productbrand();
 			creProductBrand.setBrandName(newProductBrand.getBrandName());
 			creProductBrand.setSerialNumber(newProductBrand.getSerialNumber());
 			this.getProductBrandService().addProductBrand(creProductBrand);
-			setNewProgressString(newProductBrand.getBrandName()+" 保存成功!");
+			setNewProgressString(newProductBrand.getBrandName()+"");
 		}
     }
 }

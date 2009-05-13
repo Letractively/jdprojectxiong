@@ -108,6 +108,16 @@
 			<ref bean="productBrandDao" />
 		</property>
 	</bean>
+	<bean id="stakeholderDao" class="com.ejd.data.dao.impl.StakeholderDaoImpl" scope="singleton">
+    	<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+    </bean>
+    <bean id="stakeholderService" class="com.ejd.model.service.impl.StakeholderServiceImpl" scope="singleton" depends-on="stakeholderDao">
+		<property name="stakeholderDao">
+			<ref bean="stakeholderDao" />
+		</property>
+	</bean>
 <!-- 
 	<bean id="customerDao" class="com.kuaican.data.dao.impl.CustomerDaoImpl">
 		<property name="sessionFactory">

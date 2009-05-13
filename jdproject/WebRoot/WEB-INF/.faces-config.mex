@@ -5,22 +5,52 @@
   <JSFFlowResource path="/jspLayout/manage/manageMain.jsp" location="180,30" dimension="236,36" />
   <JSFFlowResource path="/jspLayout/manage/productCategoryCreate.jsp" location="480,30" dimension="302,36" />
   <JSFFlowResource path="/jspLayout/manage/productCategoryEdit.jsp" location="30,130" dimension="290,36" />
-  <JSFFlowNavigationCase id="/*,/jspLayout/manage/productCategoryCreate.jsp,productCategoryCreate,&lt;empty&gt;" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="58,48" />
-      <AbsolutePoint location="0,0" />
-    </AutomaticBendpoints>
-  </JSFFlowNavigationCase>
+  <JSFFlowResource path="/jspLayout/manage/productBrandCreate.jsp" location="480,130" dimension="284,36" />
+  <JSFFlowResource path="/jspLayout/manage/productBrandEdit.jsp" location="30,230" dimension="272,36" />
+  <JSFFlowResource path="/jspLayout/manage/stakeholderCreate.jsp" location="480,230" dimension="278,36" />
   <JSFFlowNavigationCase id="/*,/jspLayout/manage/manageMain.jsp,manageLogin,&lt;empty&gt;" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="86,48" />
       <AbsolutePoint location="180,48" />
     </AutomaticBendpoints>
   </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/*,/jspLayout/manage/productCategoryCreate.jsp,productCategoryCreate,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="58,66" />
+      <AbsolutePoint location="58,103" />
+      <AbsolutePoint location="631,103" />
+      <AbsolutePoint location="631,66" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
   <JSFFlowNavigationCase id="/*,/jspLayout/manage/productCategoryEdit.jsp,productCategoryEdit,&lt;empty&gt;" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="58,48" />
-      <AbsolutePoint location="175,148" />
+      <AbsolutePoint location="43,66" />
+      <AbsolutePoint location="43,130" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/*,/jspLayout/manage/productBrandCreate.jsp,productBrandCreate,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="73,66" />
+      <AbsolutePoint location="73,73" />
+      <AbsolutePoint location="616,73" />
+      <AbsolutePoint location="616,130" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/*,/jspLayout/manage/productBrandEdit.jsp,productBrandEdit,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="30,48" />
+      <AbsolutePoint location="-7,48" />
+      <AbsolutePoint location="-7,248" />
+      <AbsolutePoint location="30,248" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/*,/jspLayout/manage/stakeholderCreate.jsp,stakeholdercreate,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="58,30" />
+      <AbsolutePoint location="58,-7" />
+      <AbsolutePoint location="453,-7" />
+      <AbsolutePoint location="453,248" />
+      <AbsolutePoint location="480,248" />
     </AutomaticBendpoints>
   </JSFFlowNavigationCase>
 </JSFFlowViewLayout>

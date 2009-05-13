@@ -22,14 +22,14 @@ public class SaveStakeholder extends HibernateDaoSupport {
 
 	at=(SessionFactory)appctx.getBean("sessionFactory",SessionFactory.class);
 	Session aa = at.openSession();
-	 Stakeholder s = new Stakeholder("abcd", "bcde", "aaaaaaaaa", "sc", "yc", "ym",
+	 Stakeholder s = new Stakeholder("ID3","abcd", "bcde", "aaaaaaaaa", "sc", "yc", "ym",
 				"121212221", "1221212", "www.sohu.com", "woaini", "A", "C", "1342222222");
 	aa.beginTransaction();
 	aa.save(s);
 	aa.flush();
  }
  public static void save() {
-	 Stakeholder s = new Stakeholder("abcd", "bcde", "aaaaaaaaa", "sc", "yc", "ym",
+	 Stakeholder s = new Stakeholder("ID4","abcd", "bcde", "aaaaaaaaa", "sc", "yc", "ym",
 				"121212221", "1221212", "www.sohu.com", "woaini", "A", "C", "1342222222");
 	 
  }

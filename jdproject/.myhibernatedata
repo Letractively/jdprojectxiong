@@ -1,6 +1,6 @@
 #
-#Thu Feb 26 00:48:34 CST 2009
-genBasicCompId=false
+#Sun Apr 12 13:41:41 CST 2009
+genBasicCompId=true
 sessionFactoryName=
 profile=
 daoSFId=
@@ -13,7 +13,7 @@ useJavaTypes=true
 keyGenerator=increment
 libInstallFolder=/WebRoot/WEB-INF/lib
 addLibs2Project=true
-genVersionTag=false
+genVersionTag=true
 sessionFactoryId=
 basePersistenceClass=java.lang.Object
 reSettingsFile=/jdproject/hibernate.reveng.xml

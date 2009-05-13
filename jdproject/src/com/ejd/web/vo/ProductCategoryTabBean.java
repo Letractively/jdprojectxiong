@@ -39,7 +39,7 @@ public class ProductCategoryTabBean extends ProductCategoryBaseBean{
 	private String currentTab = "new";
 	//this is for tabPaenl end
 	//this is for create new productCategory start
-	private String newProgressString="请填写以下信息";
+	private String newProgressString="";
 	private ProductCategory newProductCategory =  new ProductCategory(); 
 	
 	//this is for create new productCategory end

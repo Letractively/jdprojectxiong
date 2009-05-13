@@ -19,19 +19,22 @@ public class Stakeholder extends AbstractStakeholder implements
 	/** default constructor */
 	public Stakeholder() {
 	}
-
-	/** minimal constructor */
-	public Stakeholder(String mnemonicchars, String shortname, String fullname,
+	public Stakeholder(String userId, String fullname,
 			String status, String type) {
-		super(mnemonicchars, shortname, fullname, status, type);
+		super(userId, fullname, status, type);
+	}
+	/** minimal constructor */
+	public Stakeholder(String userId, String mnemonicchars, String shortname, String fullname,
+			String status, String type) {
+		super(userId, mnemonicchars, shortname, fullname, status, type);
 	}
 
 	/** full constructor */
-	public Stakeholder(String mnemonicchars, String shortname, String fullname,
+	public Stakeholder(String userId, String mnemonicchars, String shortname, String fullname,
 			String province, String city, String county, String phone,
 			String tax, String url, String remarks, String status, String type,
 			String taxaccounts) {
-		super(mnemonicchars, shortname, fullname, province, city, county,
+		super(userId, mnemonicchars, shortname, fullname, province, city, county,
 				phone, tax, url, remarks, status, type, taxaccounts);
 	}
 

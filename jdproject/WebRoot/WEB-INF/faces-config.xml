@@ -40,21 +40,58 @@
 	<managed-bean-name>productCategoryCreate</managed-bean-name>
 	<managed-bean-class>com.ejd.web.vo.productcategory.ProductCategoryCreateBean</managed-bean-class>
 	<managed-bean-scope>session</managed-bean-scope>
+	<managed-property>
+	<property-name>productCategoryService</property-name>
+	<property-class>com.ejd.model.service.iface.IProductCategoryService</property-class>
+	<value>#{productCategoryService}</value>
+	</managed-property>
 	</managed-bean>
 	<managed-bean>
 	<managed-bean-name>productCategoryEdit</managed-bean-name>
 	<managed-bean-class>com.ejd.web.vo.productcategory.ProductCategoryEditBean</managed-bean-class>
 	<managed-bean-scope>session</managed-bean-scope>
+	<managed-property>
+	<property-name>productCategoryService</property-name>
+	<property-class>com.ejd.model.service.iface.IProductCategoryService</property-class>
+	<value>#{productCategoryService}</value>
+	</managed-property>
 	</managed-bean>
 	<managed-bean>
 	<managed-bean-name>productBrandCreate</managed-bean-name>
 	<managed-bean-class>com.ejd.web.vo.productbrand.ProductBrandCreateBean</managed-bean-class>
 	<managed-bean-scope>session</managed-bean-scope>
+	<managed-property>
+	<property-name>productBrandService</property-name>
+	<property-class>com.ejd.model.service.iface.IProductBrandService</property-class>
+	<value>#{productBrandService}</value>
+	</managed-property>
 	</managed-bean>
 	<managed-bean>
 	<managed-bean-name>productBrandEdit</managed-bean-name>
 	<managed-bean-class>com.ejd.web.vo.productbrand.ProductBrandEditBean</managed-bean-class>
 	<managed-bean-scope>session</managed-bean-scope>
+	<managed-property>
+	<property-name>productBrandService</property-name>
+	<property-class>com.ejd.model.service.iface.IProductBrandService</property-class>
+	<value>#{productBrandService}</value>
+	</managed-property>
+	</managed-bean>
+	 <managed-bean>
+ 	<managed-bean-name>stakeholderCreate</managed-bean-name>
+ 	<managed-bean-class>com.ejd.web.vo.stakeholder.StakeholderCreateBean</managed-bean-class>
+ 	<managed-bean-scope>session</managed-bean-scope>
+ 	<managed-property>
+	<property-name>stakeholderService</property-name>
+	<property-class>com.ejd.model.service.iface.IStakeholderService</property-class>
+	<value>#{stakeholderService}</value>
+	</managed-property>
+ 	</managed-bean>
+ 	<managed-bean>
+		<managed-bean-name>contantItem</managed-bean-name>
+		<managed-bean-class>
+			com.ejd.web.vo.genl.contantItemBean
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
   <managed-bean>
   <managed-bean-name>extendedTableBean</managed-bean-name>
@@ -70,7 +107,29 @@
   <managed-bean-class>com.test.CapitalsBean</managed-bean-class>
   <managed-bean-scope>session</managed-bean-scope>
  </managed-bean>
+
+	<!-- test -->
+	<managed-bean>
+		<managed-bean-name>demoBean</managed-bean-name>
+		<managed-bean-class>
+			com.test.OrderingListDemoBean
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 	
+	<managed-bean>
+		<managed-bean-name>converter</managed-bean-name>
+		<managed-bean-class>com.test.OptionItemConverter</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>personVoConverter</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.stakeholder.PersonVoConverter</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	
+	
+	<!--  endtest -->
     <navigation-rule>
     	<from-view-id>/*</from-view-id>
   		<navigation-case>
@@ -93,8 +152,59 @@
 			<from-outcome>productBrandEdit</from-outcome>
 			<to-view-id>/jspLayout/manage/productBrandEdit.jsp</to-view-id>
 		</navigation-case>
-
+		<navigation-case>
+			<from-outcome>stakeholdercreate</from-outcome>
+			<to-view-id>/jspLayout/manage/stakeholderCreate.jsp</to-view-id>
+		</navigation-case>
+		
  	</navigation-rule>
-    
+ 	
+ 	<navigation-rule>
+ 		<from-view-id>/jspLayout/manage/stakeholderCreatePersonCreate.jsp</from-view-id>
+ 		<navigation-case>
+		<from-outcome>stakeholderCreatePersonView</from-outcome>
+		<to-view-id>/jspLayout/manage/stakeholderCreatePersonView.jsp</to-view-id>
+		</navigation-case>
+ 	</navigation-rule>
+ 	<navigation-rule>
+ 		<from-view-id>/jspLayout/manage/stakeholderCreatePersonView.jsp</from-view-id>
+ 		<navigation-case>
+		<from-outcome>stakeholderCreatePersonCreate</from-outcome>
+		<to-view-id>/jspLayout/manage/stakeholderCreatePersonCreate.jsp</to-view-id>
+		</navigation-case>
+ 	</navigation-rule>
+    <!-- validators  -->
+ 	<validator>
+  		<validator-id>UserValidator</validator-id>
+  		<validator-class>com.ejd.web.vo.validator.UserValidator</validator-class>
+ 	</validator>
+ 	<validator>
+  		<validator-id>PasswordValidator</validator-id>
+  		<validator-class>com.ejd.web.vo.validator.PasswordValidator</validator-class>
+ 	</validator>
+ 	<validator>
+  		<validator-id>EmailValidator</validator-id>
+  		<validator-class>com.ejd.web.vo.validator.EmailValidator</validator-class>
+ 		</validator>
+ 	<validator>
+  		<validator-id>PhoneValidator</validator-id>
+  		<validator-class>com.ejd.web.vo.validator.PhoneValidator</validator-class>
+ 	</validator>
+ 	<validator>
+  		<validator-id>PhoneExtValidator</validator-id>
+  		<validator-class>com.ejd.web.vo.validator.PhoneExtValidator</validator-class>
+ 	</validator>
+ 	<validator>
+  		<validator-id>PhoneMobileValidator</validator-id>
+  		<validator-class>com.ejd.web.vo.validator.PhoneMobileValidator</validator-class>
+ 	</validator>
+ 	<validator>
+  		<validator-id>NameValidator</validator-id>
+  		<validator-class>com.ejd.web.vo.validator.NameValidator</validator-class>
+ 	</validator>
+ 	<validator>
+  		<validator-id>AddressValidator</validator-id>
+  		<validator-class>com.ejd.web.vo.validator.AddressValidator</validator-class>
+ 	</validator>
 	
 </faces-config>

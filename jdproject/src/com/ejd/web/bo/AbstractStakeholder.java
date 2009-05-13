@@ -13,6 +13,7 @@ public abstract class AbstractStakeholder extends java.lang.Object implements
 	// Fields
 
 	private Integer id;
+	private String userId;
 	private String mnemonicchars;
 	private String shortName;
 	private String fullName;
@@ -32,10 +33,17 @@ public abstract class AbstractStakeholder extends java.lang.Object implements
 	/** default constructor */
 	public AbstractStakeholder() {
 	}
-
-	/** minimal constructor */
-	public AbstractStakeholder(String mnemonicchars, String shortName,
+	public AbstractStakeholder(String userId, 
 			String fullName, String status, String type) {
+		this.userId = userId;
+		this.fullName = fullName;
+		this.status = status;
+		this.type = type;
+	}
+	/** minimal constructor */
+	public AbstractStakeholder(String userId, String mnemonicchars, String shortName,
+			String fullName, String status, String type) {
+		this.userId = userId;
 		this.mnemonicchars = mnemonicchars;
 		this.shortName = shortName;
 		this.fullName = fullName;
@@ -44,10 +52,11 @@ public abstract class AbstractStakeholder extends java.lang.Object implements
 	}
 
 	/** full constructor */
-	public AbstractStakeholder(String mnemonicchars, String shortName,
+	public AbstractStakeholder(String userId, String mnemonicchars, String shortName,
 			String fullName, String province, String city, String county,
 			String phone, String tax, String url, String remarks,
 			String status, String type, String taxaccounts) {
+		this.userId = userId;
 		this.mnemonicchars = mnemonicchars;
 		this.shortName = shortName;
 		this.fullName = fullName;
@@ -71,6 +80,14 @@ public abstract class AbstractStakeholder extends java.lang.Object implements
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 	public String getMnemonicchars() {

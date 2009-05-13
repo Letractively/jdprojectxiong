@@ -693,11 +693,11 @@ div.reviews{margin:5px 0}
 }
 .table-two-column {
   font-size: 10pt;
-  width:15%;
+  width:40%;
 }
 .table-three-column {
   font-size: 10pt;
-  width:75%;
+  width:50%;
 }
 .table-even-column {
   font-size: 10pt;
@@ -709,7 +709,7 @@ div.reviews{margin:5px 0}
 }
 
 .page-header {
-  PADDING-RIGHT: 0.5em; PADDING-LEFT: 0.5em; BACKGROUND: #e1f2fa; PADDING-BOTTOM: 0px; COLOR: #006699; LINE-HEIGHT: 220%; PADDING-TOP: 2px; BORDER-BOTTOM: #a9d5e9 1px solid; TEXT-ALIGN: left
+  PADDING-RIGHT: 0em; PADDING-LEFT: 0.5em; BACKGROUND: #e1f2fa; PADDING-BOTTOM: 0px; COLOR: #006699; LINE-HEIGHT: 200%; PADDING-TOP: 0px; BORDER-BOTTOM: #a9d5e9 1px solid; TEXT-ALIGN: left
 }
 
 .page-background {
@@ -936,3 +936,84 @@ div.reviews{margin:5px 0}
   font-family: Arial;
   font-style: italic;
 }
+.inplaceInputDisplay {
+    width:400px;
+    display:block;
+}
+.rich-mpnl-body {
+	padding-left:0px;
+	padding-right:0px;
+	border: 0px;
+}
+.must-input-text {
+	color: red;
+}
+.simple-toggle-panel-header {
+	PADDING-RIGHT: 0em; PADDING-LEFT: 0.5em; BACKGROUND: #e1f2fa; PADDING-BOTTOM: 0px; COLOR: #006699; LINE-HEIGHT: 200%; PADDING-TOP: 0px; BORDER: #a9d5e9 1px solid; TEXT-ALIGN: left;font-size:10pt;
+}
+
+.simple-toggle-panel-body {
+	padding:0px 0px 0px 0px;
+	margin-top-width:0px;
+	margin-right-width:0px;
+	margin-bottom-width:0px;
+	margin-left-width:0px;
+	font-size:10pt;
+}
+.error-messages {
+	font-size: 10pt;
+	font-weight: bold;
+	color: red;
+	background-image: url(${facesContext.externalContext.requestContextPath}/css/images/icons/create.gif);
+	background-repeat: no-repeat;
+	float: left;
+}
+.bold {
+				font:bold 100%;
+				font-size:12pt;
+				font-family: Arial
+			}
+			
+			.tabClass { 
+				font-size: 10pt; 
+				font-family: fantasy; 
+				color:#006699; 
+			}
+			
+			.rich-tab-active {
+			 	background-color: #E1F2FA;
+    			background-image: url(${facesContext.externalContext.requestContextPath}/css/images/icons/tab_tile_active.gif);
+				background-position : top left;
+				border-width: 0px 0px 0px 0px;
+				
+			}
+			
+			.rich-tab-inactive {
+				background-color: #BBD6EF;
+    			background-image: url(${facesContext.externalContext.requestContextPath}/css/images/icons/tab_tile_inactive.gif);
+    			background-position: top left;
+    			border-width: 0px 0px 0px 0px;
+			}
+			
+			.rich-tab-disabled {
+				font-size: 12px; 
+				font-family: fantasy; 
+				color:gold;
+			}
+			
+			.rich-tabhdr-cell-inactive, .rich-tabhdr-cell-disabled {
+				padding: 0px 0px 0px 0px;
+				margin:0px 0px 0px 0px;
+			}
+			
+			.rich-tabpanel-content-position {
+				top: 0px;
+				left: 0px;
+			}
+			
+			.rich-tabpanel-content {
+				padding:0px 0px 0px 0px;
+				margin:0px 0px 0px 0px;
+				border-width: 0px; 
+				border-color:red;
+			}

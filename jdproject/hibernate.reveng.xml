@@ -2,4 +2,67 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
+
+	<table name="productbrand" catalog="ejd">
+		<column name="brandname" jdbc-type="String" property="brandName"
+			type="String" />
+		<column name="serialnumber" jdbc-type="Integer"
+			property="serialNumber" type="Integer" />
+	</table>
+	<table name="address" catalog="ejd">
+		<column name="address" exclude="true" />
+		<column name="zip" exclude="true" />
+		<column name="desc" exclude="true" />
+		<column name="stakeholderid" exclude="true" />
+	</table>
+	<table name="bank" catalog="ejd">
+		<column name="accountname" exclude="true" />
+		<column name="accountnumber" exclude="true" />
+		<column name="bankname" exclude="true" />
+		<column name="bankaddress" exclude="true" />
+		<column name="stakeholderid" exclude="true" />
+	</table>
+	<table name="contactperson" catalog="ejd">
+		<column name="NAME" exclude="true" />
+		<column name="AGE" exclude="true" />
+		<column name="SEX" exclude="true" />
+		<column name="PHONE" exclude="true" />
+		<column name="TAX" exclude="true" />
+		<column name="MOBILE" exclude="true" />
+		<column name="EMAIL" exclude="true" />
+		<column name="PERSONALADDRESS" exclude="true" />
+		<column name="PRINCIPALSHIP" exclude="true" />
+		<column name="REMARK" exclude="true" />
+		<column name="STAKEHOLDERID" exclude="true" />
+		<column name="SORTORDER" exclude="true" />
+	</table>
+	<table name="person" catalog="ejd">
+		<column name="NAME" exclude="true" />
+		<column name="AGE" exclude="true" />
+		<column name="SEX" exclude="true" />
+		<column name="PHONE" exclude="true" />
+		<column name="TAX" exclude="true" />
+		<column name="MOBILE" exclude="true" />
+		<column name="EMAIL" exclude="true" />
+		<column name="ADDRESS" exclude="true" />
+		<column name="PRINCIPALSHIP" exclude="true" />
+		<column name="REMARK" exclude="true" />
+		<column name="STAKEHOLDERID" exclude="true" />
+		<column name="SORTORDER" exclude="true" />
+	</table>
+	<table name="stakeholder" catalog="ejd">
+		<column name="MNEMONICCHARS" exclude="true" />
+		<column name="SHORTNAME" exclude="true" />
+		<column name="FULLNAME" exclude="true" />
+		<column name="PROVINCE" exclude="true" />
+		<column name="CITY" exclude="true" />
+		<column name="COUNTY" exclude="true" />
+		<column name="PHONE" exclude="true" />
+		<column name="TAX" exclude="true" />
+		<column name="URL" exclude="true" />
+		<column name="REMARKS" exclude="true" />
+		<column name="STATUS" exclude="true" />
+		<column name="TYPE" exclude="true" />
+		<column name="TAXACCOUNTS" exclude="true"/>
+	</table>
 </hibernate-reverse-engineering>

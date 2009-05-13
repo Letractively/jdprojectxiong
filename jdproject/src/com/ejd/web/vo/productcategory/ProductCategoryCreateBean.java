@@ -13,12 +13,12 @@ import com.ejd.web.vo.productcategory.ProductCategory;
 public class ProductCategoryCreateBean extends ProductCategoryBaseBean {
 	
 	//this is for create new productCategory start
-	private String newProgressString="请填写以下信息";
+	private String newProgressString="";
 	private ProductCategory newProductCategory =  new ProductCategory(); 
 	
 	//this is for create new productCategory end
 	public ProductCategoryCreateBean() {
-		init();
+		//init();
 	}
 	protected void init() {
 		ApplicationContext appctx = FacesContextUtils.getWebApplicationContext(FacesContext.getCurrentInstance());

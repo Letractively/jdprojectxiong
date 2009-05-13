@@ -65,9 +65,11 @@ xmlns:rich="http://richfaces.org/rich">
 						<f:param name="ctitle" value="基础数据>>产品品牌>>编辑"></f:param>
                 	</rich:menuItem>
                 </rich:menuGroup>
-                <rich:menuGroup value="Save As...">
-                    <rich:menuItem submitMode="ajax" value="Save" 
-                        action="#{manageHeaderMenu.updateCurrent}" />
+                <rich:menuGroup id="mbthree" value="创建客户">
+                    <rich:menuItem id="misone" submitMode="ajax" value="新建"  action="#{manageHeaderMenu.updateCurrent}" immediate="true">
+						<f:param name="current" value="stakeholdercreate"/>
+						<f:param name="ctitle" value="基础数据>>创建客户>>新建"></f:param>
+					</rich:menuItem>
                     <rich:menuItem submitMode="ajax" value="Save All" action="#{manageHeaderMenu.updateCurrent}">
                         
                     </rich:menuItem>

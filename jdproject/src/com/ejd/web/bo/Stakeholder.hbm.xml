@@ -10,11 +10,14 @@
             <column name="ID" />
             <generator class="increment" />
         </id>
+        <property name="userId" type="java.lang.String">
+            <column name="USERID" length="20" not-null="true" />
+        </property>
         <property name="mnemonicchars" type="java.lang.String">
-            <column name="MNEMONICCHARS" length="50" not-null="true" />
+            <column name="MNEMONICCHARS" length="50" />
         </property>
         <property name="shortName" type="java.lang.String">
-            <column name="SHORTNAME" length="50" not-null="true" />
+            <column name="SHORTNAME" length="50" />
         </property>
         <property name="fullName" type="java.lang.String">
             <column name="FULLNAME" length="100" not-null="true" />

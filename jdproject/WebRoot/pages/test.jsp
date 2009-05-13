@@ -124,6 +124,5 @@ xmlns:rich="http://richfaces.org/rich">
         </rich:panel>   
         </h:panelGrid>
 
-
 </h:form>		
 </jsp:root>	
