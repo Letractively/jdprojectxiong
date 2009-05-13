@@ -40,7 +40,7 @@
   <!-- richfaces start-->
   <context-param>
      <param-name>org.ajax4jsf.COMPRESS_SCRIPT</param-name>
-     <param-value>false</param-value>
+     <param-value>TRUE</param-value>
   </context-param>
   <filter>
      <display-name>Ajax4jsf Filter</display-name>

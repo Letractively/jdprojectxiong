@@ -28,7 +28,7 @@ import com.ejd.web.bo.Productbrand;
 import com.ejd.web.vo.productbrand.ProductBrandItem;
 
 public class ProductBrandEditBean extends ProductBrandBaseBean {
-	private String newProgressString="请填写以下信息";
+	private String newProgressString="";
 	private String searchProductBrandName = "";
 	private String sortMode="single";
 	private String selectionMode="single";
@@ -124,7 +124,7 @@ public class ProductBrandEditBean extends ProductBrandBaseBean {
 	}
 	
 	public ProductBrandEditBean() {
-		init();
+		//init();
 	}
 	protected void init() {
 		ApplicationContext appctx = FacesContextUtils.getWebApplicationContext(FacesContext.getCurrentInstance());
@@ -273,11 +273,11 @@ public class ProductBrandEditBean extends ProductBrandBaseBean {
 		if (productBrand == null) {
 			return null;
 		} else if (!(editProductBrand.getBrandName().equals(productBrand.getBrandName()))) {
-			setNewProgressString("您删除的种类名称：\""+editProductBrand.getBrandName()+"\"与实际的种类名称\""+productBrand.getBrandName()+"\"不符，不能删除!");
+			setNewProgressString(""+editProductBrand.getBrandName()+""+productBrand.getBrandName()+"");
 			return null;
 		} else {
 			this.getProductBrandService().delProductBrandById(productBrand.getId());
-			setNewProgressString("\""+editProductBrand.getBrandName()+"\"删除成功!");
+			setNewProgressString("\""+editProductBrand.getBrandName()+"");
 			productBrands.remove(selectedProductBrand);
 			editProductBrand = new ProductBrand();
 		}

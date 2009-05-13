@@ -28,7 +28,7 @@ import com.ejd.web.bo.Productcategory;
 import com.ejd.web.vo.productcategory.ProductCategoryItem;
 
 public class ProductCategoryEditBean extends ProductCategoryBaseBean {
-	private String newProgressString="请填写以下信息";
+	private String newProgressString="";
 	private String searchProductCategoryName = "";
 	private String sortMode="single";
 	private String selectionMode="single";
@@ -124,7 +124,7 @@ public class ProductCategoryEditBean extends ProductCategoryBaseBean {
 	}
 	
 	public ProductCategoryEditBean() {
-		init();
+		//init();
 	}
 	protected void init() {
 		ApplicationContext appctx = FacesContextUtils.getWebApplicationContext(FacesContext.getCurrentInstance());
@@ -277,11 +277,11 @@ public class ProductCategoryEditBean extends ProductCategoryBaseBean {
 		if (productCategory == null) {
 			return null;
 		} else if (!(editProductCategory.getCategoryName().equals(productCategory.getCategoryName()))) {
-			setNewProgressString("您删除的种类名称：\""+editProductCategory.getCategoryName()+"\"与实际的种类名称\""+productCategory.getCategoryName()+"\"不符，不能删除!");
+			setNewProgressString(""+editProductCategory.getCategoryName()+""+productCategory.getCategoryName()+"");
 			return null;
 		} else {
 			this.getProductCategoryService().delProductCategoryById(productCategory.getId());
-			setNewProgressString("\""+editProductCategory.getCategoryName()+"\"删除成功!");
+			setNewProgressString("\""+editProductCategory.getCategoryName()+"");
 			productCategorys.remove(selectedProductCategory);
 			editProductCategory = new ProductCategory();
 		}
