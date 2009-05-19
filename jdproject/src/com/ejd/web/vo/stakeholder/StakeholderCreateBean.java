@@ -352,13 +352,12 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 		return null;
 	}
 	public void takeSelection() {
-		if (null != personSelections) {
-			for (PersonVo personVo:personSelections) {
-				System.out.println(personVo.isSelected());
-				System.out.println(personVo.getName());
+		if (orderingListPerson.isRowAvailable()) {
+			if (null != personSelections) {
+			
 			}
+			PersonVo changePersonVo =(PersonVo) getOrderingListPerson().getRowData();
 		}
-		PersonVo changePersonVo =(PersonVo) getOrderingListPerson().getRowData();
 	}
 
 }
