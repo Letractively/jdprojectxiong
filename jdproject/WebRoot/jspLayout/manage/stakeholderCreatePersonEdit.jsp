@@ -85,11 +85,10 @@ xmlns:rich="http://richfaces.org/rich">
 						<a4j:support id="ght" event="onclick" ignoreDupResponses="true" requestDelay="500" action="#{stakeholderCreate.takeSelection}"/>
             			<a4j:support id="ki" event="onkeyup" ignoreDupResponses="true" requestDelay="500" action="#{stakeholderCreate.takeSelection}"/>
 		</rich:orderingList>
-		<h:messages id="allerrors" styleClass="error-messages" showSummary="true" showDetail="true"></h:messages>
-		<a4j:status startText="START" startStyle="color: red;"
-					stopText="STOP" stopStyle="color: green;" />
-		<a4j:commandButton id="olpsavebutton" value="save" immediate="true" action="#{stakeholderCreate.applyUpdate}"></a4j:commandButton>
-		
+		<h:panelGrid columns="1">
+			<a4j:commandButton id="olpsavebutton" value="save" immediate="true" action="#{stakeholderCreate.applyUpdate}" limitToList="true" reRender="scpenavegationregionform"></a4j:commandButton>
+			<h:messages id="allerrors" styleClass="error-messages" showSummary="true" showDetail="true"></h:messages>
+		</h:panelGrid>
 	</h:form>
 	</a4j:region>
 </jsp:root>	
