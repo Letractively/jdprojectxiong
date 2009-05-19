@@ -10,8 +10,6 @@ xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
 <a4j:region id="scpcregion" renderRegionOnly="true" selfRendered="true">
 	<h:form id="scpcform">
-		<a4j:outputPanel id="errorop" ajaxRendered="true">
-		</a4j:outputPanel>
 		<h:panelGrid id="addnewpersonpg" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" style="padding-left:0px;padding-right:0px" width="96%">
 			<h:outputLabel value="姓名:" for="newpersonname"></h:outputLabel>
 			<h:panelGroup>
@@ -66,7 +64,7 @@ xmlns:rich="http://richfaces.org/rich">
 			</h:inputTextarea>
 			<rich:message for="newpersonremark" id="remarkmessage" styleClass="error-messages"/>
 			<h:outputLabel value=" "></h:outputLabel>
-			<a4j:commandButton id="newpersonpgsavebutton" type="button" value="保存" action="#{stakeholderCreate.addNewPerson}" reRender="errorop,addnewpersonpg">
+			<a4j:commandButton id="newpersonpgsavebutton" type="button" value="保存" action="#{stakeholderCreate.addNewPerson}" disabled="#{stakeholderCreate.disableAddNewPerson}" reRender="newpersonpgsavebutton,addnewpersonpg,orderingListPersons">
 						<!-- <a4j:support event="onclick" ajaxSingle="true" limitToList="true" reRender="addnewpersonpg"></a4j:support>  -->
 					</a4j:commandButton>
 			
