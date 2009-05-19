@@ -11,7 +11,8 @@ xmlns:rich="http://richfaces.org/rich">
 	<h:form id="scpenavegationregionform">
 		
 		<rich:orderingList id="orderingListPersons" binding="#{stakeholderCreate.orderingListPerson}"
-								value="#{stakeholderCreate.persons}" var="item" 
+								converter="#{personVoConverter}"
+								value="#{stakeholderCreate.persons}" var="item" rowKeyVar="row"
 								selection="#{stakeholderCreate.personSelections}"
 								controlsType="#{stakeholderCreate.controlsType}"
 								controlsHorizontalAlign="#{stakeholderCreate.controlsHorizontalAlign}"
@@ -30,7 +31,12 @@ xmlns:rich="http://richfaces.org/rich">
 								bottomControlLabel="最后"
 								immediate="true"
 								>
-							
+							<h:column>
+                    			<f:facet name="header">
+                        			<h:outputText value="序号"></h:outputText>
+                    			</f:facet>
+                    			<h:outputText value="#{row+1}"></h:outputText>
+                			</h:column>
 							<h:column>
 								<f:facet name="header">
 									<h:outputText value="删除" />
@@ -76,62 +82,14 @@ xmlns:rich="http://richfaces.org/rich">
 								</h:inputText>
 							</h:column>
 							
-						<a4j:support event="onclick" ajaxSingle="true"></a4j:support>
+						<a4j:support id="ght" event="onclick" ignoreDupResponses="true" requestDelay="500" action="#{stakeholderCreate.takeSelection}"/>
+            			<a4j:support id="ki" event="onkeyup" ignoreDupResponses="true" requestDelay="500" action="#{stakeholderCreate.takeSelection}"/>
 		</rich:orderingList>
 		<h:messages id="allerrors" styleClass="error-messages" showSummary="true" showDetail="true"></h:messages>
 		<a4j:status startText="START" startStyle="color: red;"
 					stopText="STOP" stopStyle="color: green;" />
 		<a4j:commandButton id="olpsavebutton" value="save" immediate="true" action="#{stakeholderCreate.applyUpdate}"></a4j:commandButton>
-		<rich:orderingList id="orderingList1" 
-								converter="#{converter}"
-								value="#{demoBean.items}" var="item" 
-								captionLabel="#{demoBean.captionLabel}数据"
-								controlsType="#{demoBean.controlsType}"
-								controlsHorizontalAlign="#{demoBean.controlsHorizontalAlign}"
-								controlsVerticalAlign="#{demoBean.controlsVerticalAlign}"
-								orderControlsVisible="#{demoBean.orderControlsVisible}"
-								fastOrderControlsVisible="#{demoBean.fastOrderControlsVisible}"
-								
-								listWidth="500"
-								ontopclick="#{demoBean.ontopclick}"
-								onbottomclick="#{demoBean.onbottomclick}"
-								columnClasses="columns"
-								>
-							<h:column>
-								<f:facet name="header">
-									<h:outputText value="删除" />
-								</f:facet>
-								<h:selectBooleanCheckbox value="#{item.selected}"></h:selectBooleanCheckbox>
-							</h:column>
-							<h:column>
-								<f:facet name="header">
-									<h:outputText value="Name" />
-								</f:facet>
-								<rich:inplaceInput value="#{item.name}" inputWidth="100" minInputWidth="2" maxInputWidth="10" showControls="true" styleClass="inplaceInputDisplay" layout="block" changedHoverClass="hover" viewHoverClass="hover" viewClass="inplace" changedClass="inplace" editEvent="ondblclick" onblur="if(/\D/.test(this.value)){alert('只能输入数字');this.select();}"/>
-								
-							</h:column>
-							<h:column>
-								<f:facet name="header">
-									<h:outputText value="Price" />
-								</f:facet>
-								<h:outputText value="#{item.price}" />
-							</h:column>
-							<h:column>
-								<f:facet name="header">
-									<h:outputText value="Ajax Action" />
-								</f:facet>
-								<a4j:commandButton value="Ajax Action" reRender="actionResult"
-									action="#{item.action}" />
-							</h:column>
-							<h:column>
-								<f:facet name="header">
-									<h:outputText value="Server Action" />
-								</f:facet>
-								<h:commandLink value="Server Action" action="#{item.action}" />
-							</h:column>
-							
-						</rich:orderingList>
-						<h:commandButton value="clicke" action="#{demoBean.testAction}"></h:commandButton>
+		
 	</h:form>
 	</a4j:region>
 </jsp:root>	
