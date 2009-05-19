@@ -2,6 +2,7 @@ package com.ejd.web.vo.stakeholder;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -40,32 +41,49 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 	private boolean orderControlsVisible = true;
 	private boolean fastOrderControlsVisible = true;
 	//this is for persons tabPersonPanel begin.
-	private UIComponent tabPersonPanel;
+	private UIComponent tabChoiceInfoPanel;
 	
 	private static final String NONE = "none";
 	
-	private String disabledTabPersonName = NONE;
+	private String disabledTabChoiceInfoName = NONE;
 	
-	private String currentTabPerson = "createPerson";
-	public UIComponent getTabPersonPanel() {
-		return tabPersonPanel;
+	private String currentTabChoiceInfo = "createPerson";
+	
+	private boolean disableAddNewPerson = false;
+	
+	public boolean isDisableAddNewPerson() {
+		if (null == persons) {
+			return false;
+		} else {
+			if (persons.size() >=10) {
+				return true;
+			} else {
+				return false;
+			}
+		}
 	}
-	public void setTabPersonPanel(UIComponent tabPanel) {
-		this.tabPersonPanel = tabPanel;
+	public void setDisableAddNewPerson(boolean disableAddNewPerson) {
+		this.disableAddNewPerson = disableAddNewPerson;
+	}
+	public UIComponent getTabChoiceInfoPanel() {
+		return tabChoiceInfoPanel;
+	}
+	public void setTabChoiceInfoPanel(UIComponent tabPanel) {
+		this.tabChoiceInfoPanel = tabPanel;
 	}
 	
-	public String getDisabledTabPersonName() {
-		return disabledTabPersonName;
+	public String getDisabledTabChoiceInfoName() {
+		return disabledTabChoiceInfoName;
 	}
-	public void setDisabledTabPersonName(String disabledTabPersonName) {
-		this.disabledTabPersonName = disabledTabPersonName;
+	public void setDisabledTabChoiceInfoName(String disabledTabChoiceInfoName) {
+		this.disabledTabChoiceInfoName = disabledTabChoiceInfoName;
 	}
 	
-	public String getCurrentTabPerson() {
-		return currentTabPerson;
+	public String getCurrentTabChoiceInfo() {
+		return currentTabChoiceInfo;
 	}
-	public void setCurrentTabPerson(String currentTabPerson) {
-		this.currentTabPerson = currentTabPerson;
+	public void setCurrentTabChoiceInfo(String currentTabChoiceInfo) {
+		this.currentTabChoiceInfo = currentTabChoiceInfo;
 	}
 	//this is for persons tabPersonPanel end.
 	//this is for persons orderingListPerson begin.
@@ -245,11 +263,11 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 		PersonVo tempPerson = new PersonVo();
 		BeanCopier copy = BeanCopier.create(PersonVo.class, PersonVo.class, false);
 		copy.copy(newPerson, tempPerson, null);
-		if (null != persons && persons.size()>0) {
+		/*if (null != persons && persons.size()>0) {
 			for(PersonVo pVo:persons){
 				if (tempPerson.getName().equals(pVo.getName())) {
 					FacesMessage message=new FacesMessage(FacesMessage.SEVERITY_ERROR,"错误提示:","输入的姓名重复！");
-					facesContext.addMessage("manageTemplateView:a4jinclude:scpcform:newpersonname", message);
+					facesContext.addMessage("manageTemplateView:a4jincludenew:scpcform:newpersonname", message);
 					hasExist = true;
 			 		return null;
 			 	}
@@ -258,9 +276,18 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 			persons.add(tempPerson);
 		} else {
 			persons.add(tempPerson);
+		}*/
+		if (null == persons) {
+			persons = new ArrayList<PersonVo>();
+			persons.add(tempPerson);
+		} else {
+			if (persons.size() > 10) {
+				return null;
+			} else {
+			persons.add(tempPerson);
+			}
 		}
-		
-		return "";
+		return null;
 	}
 	public String gotoView() {
 		return "stakeholderCreatePersonView";
@@ -288,10 +315,12 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 	public String valueChangeInputInOrderingListPerson() {
 		HashSet Keys = new HashSet<Integer>();
 		int rowKey = getOrderingListPerson().getRowIndex();
+		PersonVo changePersonVo =(PersonVo) getOrderingListPerson().getRowData();
+		System.out.print(changePersonVo.isSelected()+changePersonVo.getName()+changePersonVo.getAge()+changePersonVo.getPhone());
 		Keys.add(rowKey);
 		setPersonsKeys(Keys);
 		//test
-		for(PersonVo v:persons){
+		/*for(PersonVo v:persons){
 			System.out.println(v.getName());
 		}
 		List<PersonVo> aa=(List<PersonVo>)orderingListPerson.getValue();
@@ -310,11 +339,26 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 			}
 		} else {
 			System.out.println("no selected");
-		}
+		}*/
 		//test
 		inputPerson.processValidators(FacesContext.getCurrentInstance());
 		inputPerson.processUpdates(FacesContext.getCurrentInstance());
-		
+		FacesContext ctx = FacesContext.getCurrentInstance();
+		Iterator co = ctx.getMessages();
+		if (co.hasNext()) {
+			FacesMessage aaa =(FacesMessage) co.next();
+			aaa.getDetail().concat("在第"+rowKey+"行");
+		}
 		return null;
 	}
+	public void takeSelection() {
+		if (null != personSelections) {
+			for (PersonVo personVo:personSelections) {
+				System.out.println(personVo.isSelected());
+				System.out.println(personVo.getName());
+			}
+		}
+		PersonVo changePersonVo =(PersonVo) getOrderingListPerson().getRowData();
+	}
+
 }
