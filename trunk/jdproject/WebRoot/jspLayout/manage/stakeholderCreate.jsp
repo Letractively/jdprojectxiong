@@ -96,25 +96,25 @@ xmlns:rich="http://richfaces.org/rich">
 					<a4j:region id="regionnewperson" renderRegionOnly="true" immediate="true" selfRendered="true">
 					<rich:simpleTogglePanel id="scstp" switchType="ajax" ajaxSingle="true" reRender="newpersonform" width="100%" label="可选数据填写" headerClass="simple-toggle-panel-header" bodyClass="simple-toggle-panel-body">
 						<rich:tabPanel switchType="ajax" headerSpacing="0px" immediate="false" tabClass="tabClass" activeTabClass="bold" inactiveTabClass="bold" width="100%" binding="#{stakeholderCreate.tabChoiceInfoPanel}" selectedTab="#{stakeholderCreate.currentTabChoiceInfo}" id="tab_panel_person" headerAlignment="left">
-        					<rich:tab name="createPerson" switchType="ajax" labelWidth="100%" label="新增联系人">
+        					<rich:tab name="createPerson" switchType="ajax" labelWidth="100%" label="联系人(新增)">
             					<a4j:include id="a4jincludenew" ajaxRendered="true" viewId="/jspLayout/manage/stakeholderCreatePersonCreate.jsp"/>
 							</rich:tab>
-        					<rich:tab name="editPerson" switchType="ajax" labelWidth="100%" label="编辑联系人">
+        					<rich:tab name="editPerson" switchType="ajax" labelWidth="100%" label="联系人(编辑)">
             					<a4j:include id="a4jincludeedit" ajaxRendered="true" viewId="/jspLayout/manage/stakeholderCreatePersonEdit.jsp"/>
 							</rich:tab>
-							<rich:tab name="createAddress" switchType="ajax" labelWidth="100%" label="新增地址">
+							<rich:tab name="createAddress" switchType="ajax" labelWidth="100%" label="地址(新增)">
             					
 								
         					</rich:tab>
-							<rich:tab name="editAddress" switchType="ajax" labelWidth="100%" label="编辑地址">
+							<rich:tab name="editAddress" switchType="ajax" labelWidth="100%" label="地址(编辑)">
             					
 								
         					</rich:tab>
-							<rich:tab name="CreateBank" switchType="ajax" labelWidth="100%" label="新增银行">
+							<rich:tab name="CreateBank" switchType="ajax" labelWidth="100%" label="银行(新增)">
             					
 								
         					</rich:tab>
-							<rich:tab name="editBank" switchType="ajax" labelWidth="100%" label="编辑银行">
+							<rich:tab name="editBank" switchType="ajax" labelWidth="100%" label="银行(编辑)">
             					
 								
         					</rich:tab>
