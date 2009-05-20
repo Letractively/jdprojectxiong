@@ -81,7 +81,59 @@ xmlns:rich="http://richfaces.org/rich">
 									<a4j:support event="onchange" ajaxSingle="true" action="#{stakeholderCreate.valueChangeInputInOrderingListPerson}" limitToList="true" reRender="scpenavegationregionform"/>
 								</h:inputText>
 							</h:column>
-							
+							<h:column>
+								<f:facet name="header">
+									<h:outputText value="传真" />
+								</f:facet>
+								<h:inputText value="#{item.tax}">
+									<f:validator validatorId="PhoneValidator"/>
+									<a4j:support event="onchange" ajaxSingle="true" action="#{stakeholderCreate.valueChangeInputInOrderingListPerson}" limitToList="true" reRender="scpenavegationregionform"/>
+								</h:inputText>
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									<h:outputText value="手机" />
+								</f:facet>
+								<h:inputText value="#{item.mobile}">
+									<f:validator validatorId="PhoneMobileValidator"/>
+									<a4j:support event="onchange" ajaxSingle="true" action="#{stakeholderCreate.valueChangeInputInOrderingListPerson}" limitToList="true" reRender="scpenavegationregionform"/>
+								</h:inputText>
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									<h:outputText value="电邮" />
+								</f:facet>
+								<h:inputText value="#{item.email}">
+									<f:validator validatorId="EmailValidator"/>
+									<a4j:support event="onchange" ajaxSingle="true" action="#{stakeholderCreate.valueChangeInputInOrderingListPerson}" limitToList="true" reRender="scpenavegationregionform"/>
+								</h:inputText>
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									<h:outputText value="地址" />
+								</f:facet>
+								<h:inputText value="#{item.address}">
+									<f:validator validatorId="AddressValidator"/>
+									<a4j:support event="onchange" ajaxSingle="true" action="#{stakeholderCreate.valueChangeInputInOrderingListPerson}" limitToList="true" reRender="scpenavegationregionform"/>
+								</h:inputText>
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									<h:outputText value="职务" />
+								</f:facet>
+								<h:inputText value="#{item.principalship}">
+									<a4j:support event="onchange" ajaxSingle="true" action="#{stakeholderCreate.valueChangeInputInOrderingListPerson}" limitToList="true" reRender="scpenavegationregionform"/>
+								</h:inputText>
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									<h:outputText value="备注" />
+								</f:facet>
+								<h:inputText value="#{item.remark}">
+									<f:validator validatorId="PhoneValidator"/>
+									<a4j:support event="onchange" ajaxSingle="true" action="#{stakeholderCreate.valueChangeInputInOrderingListPerson}" limitToList="true" reRender="scpenavegationregionform"/>
+								</h:inputText>
+							</h:column>
 						<a4j:support id="ght" event="onclick" ignoreDupResponses="true" requestDelay="500" action="#{stakeholderCreate.takeSelection}"/>
             			<a4j:support id="ki" event="onkeyup" ignoreDupResponses="true" requestDelay="500" action="#{stakeholderCreate.takeSelection}"/>
 		</rich:orderingList>
