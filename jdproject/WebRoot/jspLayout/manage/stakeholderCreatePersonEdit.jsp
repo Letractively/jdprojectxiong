@@ -41,7 +41,7 @@ xmlns:rich="http://richfaces.org/rich">
 								<f:facet name="header">
 									<h:outputText value="删除" />
 								</f:facet>
-								<h:selectBooleanCheckbox value="#{item.selected}"><a4j:support event="onclick" ajaxSingle="true"/></h:selectBooleanCheckbox>
+								<h:selectBooleanCheckbox value="#{item.selected}"><a4j:support event="onchange" ajaxSingle="true" action="#{stakeholderCreate.valueChangeInputInOrderingListPerson}" limitToList="true" reRender="scpenavegationregionform"/></h:selectBooleanCheckbox>
 							</h:column>
 							<h:column>
 								<f:facet name="header">
