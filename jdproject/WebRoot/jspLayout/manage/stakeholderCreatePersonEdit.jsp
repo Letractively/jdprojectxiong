@@ -41,7 +41,7 @@ xmlns:rich="http://richfaces.org/rich">
 								<f:facet name="header">
 									<h:outputText value="删除" />
 								</f:facet>
-								<h:selectBooleanCheckbox value="#{item.selected}"><a4j:support event="onchange" ajaxSingle="true" action="#{stakeholderCreate.valueChangeInputInOrderingListPerson}" limitToList="true" reRender="scpenavegationregionform"/></h:selectBooleanCheckbox>
+								<h:selectBooleanCheckbox value="#{item.selected}"><a4j:support event="onclick" ajaxSingle="true" action="#{stakeholderCreate.valueChangeInputInOrderingListPerson}" limitToList="true" reRender="scpenavegationregionform"/></h:selectBooleanCheckbox>
 							</h:column>
 							<h:column>
 								<f:facet name="header">
@@ -138,7 +138,7 @@ xmlns:rich="http://richfaces.org/rich">
             			<a4j:support id="ki" event="onkeyup" ignoreDupResponses="true" requestDelay="500" action="#{stakeholderCreate.takeSelection}"/>
 		</rich:orderingList>
 		<h:panelGrid columns="1">
-			<a4j:commandButton id="olpsavebutton" value="save" immediate="true" action="#{stakeholderCreate.applyUpdate}" limitToList="true" reRender="scpenavegationregionform"></a4j:commandButton>
+			<a4j:commandButton id="olpsavebutton" value="save" ajaxSingle="true" action="#{stakeholderCreate.applyUpdate}" limitToList="true" reRender="scpenavegationregionform"></a4j:commandButton>
 			<h:messages id="allerrors" styleClass="error-messages" showSummary="true" showDetail="true"></h:messages>
 		</h:panelGrid>
 	</h:form>
