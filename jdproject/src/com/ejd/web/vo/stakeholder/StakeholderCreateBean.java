@@ -18,7 +18,10 @@ import javax.faces.validator.ValidatorException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.jsf.FacesContextUtils;
 
+import com.ejd.model.exception.StakeholderException;
 import com.ejd.model.service.iface.IStakeholderService;
+import com.ejd.web.bo.Stakeholder;
+
 import net.sf.cglib.beans.BeanCopier;
 
 
@@ -31,6 +34,7 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 	private AddressVo newAddress;
 	private List<BankVo> banks;
 	private BankVo newBank;
+	private String addOneStakeholderSuccessOrNot ="";
 	private String controlsType = "button";
 	private String controlsHorizontalAlign = "right";
 	private String controlsVerticalAlign = "top";
@@ -163,6 +167,14 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 	}
 	public void setNewBank(BankVo newBank) {
 		this.newBank = newBank;
+	}
+	
+	public String getAddOneStakeholderSuccessOrNot() {
+		return addOneStakeholderSuccessOrNot;
+	}
+	public void setAddOneStakeholderSuccessOrNot(
+			String addOneStakeholderSuccessOrNot) {
+		this.addOneStakeholderSuccessOrNot = addOneStakeholderSuccessOrNot;
 	}
 	public Integer getPersonsQuantity() {
 		if (null == persons) {
@@ -359,5 +371,15 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 			PersonVo changePersonVo =(PersonVo) getOrderingListPerson().getRowData();
 		}
 	}
+	
+	public String addOneStakeholder() throws StakeholderException {
+		Stakeholder stakeholder = stakeholderService.getStakeholderByUserId(this.getStakeholder().getUserId());
+		if (null != stakeholder) {
+			this.setAddOneStakeholderSuccessOrNot("该用户ID号已存在!请用其他ID号注册");
+			return null;
+		}
+		return null;
+	}
+	
 
 }
