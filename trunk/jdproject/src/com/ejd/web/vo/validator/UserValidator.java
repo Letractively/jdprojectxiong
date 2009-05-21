@@ -80,12 +80,12 @@ public class UserValidator implements Validator,Serializable   {
 		errorChar = isCharsInBagEx( s, badChar); 
 		if (schar.length<6 || schar.length==0)
 	 	{
-	 		message=new FacesMessage(FacesMessage.SEVERITY_ERROR,"错误提示:","您输入的用户名长度为\""+schar.length+"\"不满足6-30位的要求");
+	 		message=new FacesMessage(FacesMessage.SEVERITY_ERROR,"错误提示:","您输入的用户名长度为\""+schar.length+"\"不满足6-20位的要求");
 	 		throw new ValidatorException(message);
 	 		
 	 	}
-        if (schar.length>30){
-	 		message=new FacesMessage(FacesMessage.SEVERITY_ERROR,"错误提示:","您输入的用户名长度为\""+schar.length+"\"不满足6-30位的要求");
+        if (schar.length>20){
+	 		message=new FacesMessage(FacesMessage.SEVERITY_ERROR,"错误提示:","您输入的用户名长度为\""+schar.length+"\"不满足6-20位的要求");
 	 		throw new ValidatorException(message);
 	 	}
         if ( isWhitespace(s) )
