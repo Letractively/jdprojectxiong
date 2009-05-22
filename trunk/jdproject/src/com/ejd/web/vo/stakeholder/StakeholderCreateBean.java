@@ -10,6 +10,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.component.UIInput;
 
+import org.hibernate.mapping.Collection;
 import org.richfaces.component.UIOrderingList;
 import org.richfaces.component.UITabPanel;
 import javax.faces.context.FacesContext;
@@ -20,6 +21,9 @@ import org.springframework.web.jsf.FacesContextUtils;
 
 import com.ejd.model.exception.StakeholderException;
 import com.ejd.model.service.iface.IStakeholderService;
+import com.ejd.web.bo.Address;
+import com.ejd.web.bo.Bank;
+import com.ejd.web.bo.Person;
 import com.ejd.web.bo.Stakeholder;
 
 import net.sf.cglib.beans.BeanCopier;
@@ -378,6 +382,45 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 			this.setAddOneStakeholderSuccessOrNot("该用户ID号已存在!请用其他ID号注册");
 			return null;
 		}
+		Stakeholder newStakeholder = new Stakeholder();
+		StakeholderVo tempStakeholder = this.getStakeholder();
+		BeanCopier copy = BeanCopier.create(StakeholderVo.class, Stakeholder.class, false);
+		copy.copy(tempStakeholder, newStakeholder, null);
+		if (null != this.getPersons() && this.getPersons().size() > 0) {
+			List<Person> newPersons = new ArrayList<Person>();
+			BeanCopier copyPersons = BeanCopier.create(PersonVo.class, Person.class, false);
+			for (PersonVo tempPerson:(this.getPersons())) {
+				Person newPerson = new Person();
+				copyPersons.copy(tempPerson, newPerson, null);
+				newPerson.setStakeholder(newStakeholder);
+				newPersons.add(newPerson);
+			}
+			newStakeholder.getConatctMans().addAll(newPersons);
+			
+		}
+		if (null != this.getAddresses() && this.getAddresses().size() > 0) {
+			List<Address> newAddresses = new ArrayList<Address>();
+			BeanCopier copyAddresses = BeanCopier.create(Address.class, AddressVo.class, false);
+			for (AddressVo tempAddress:(this.getAddresses())) {
+				Address newAddress = new Address();
+				copyAddresses.copy(tempAddress, newAddresses, null);
+				newAddress.setStakeholder(newStakeholder);
+				newAddresses.add(newAddress);
+			}
+			newStakeholder.getAddresses().addAll(newAddresses);
+		}
+		if (null != this.getBanks() && this.getBanks().size() > 0) {
+			List<Bank> newBanks = new ArrayList<Bank>();
+			BeanCopier copyBanks = BeanCopier.create(BankVo.class, Bank.class, false);
+			for (BankVo tempBank:(this.getBanks())) {
+				Bank newBank = new Bank();
+				copyBanks.copy(tempBank, newBank, null);
+				newBank.setStakeholder(newStakeholder);
+				newBanks.add(newBank);
+			}
+			newStakeholder.getBanks().addAll(newBanks);
+		}
+		this.getStakeholderService().saveStakeholder(newStakeholder);
 		return null;
 	}
 	
