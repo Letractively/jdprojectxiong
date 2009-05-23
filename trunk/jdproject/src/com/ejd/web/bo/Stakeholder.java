@@ -1,6 +1,8 @@
 package com.ejd.web.bo;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -11,9 +13,9 @@ import java.util.Set;
 public class Stakeholder extends AbstractStakeholder implements
 		java.io.Serializable {
 	
-	Set<Person> conatctMans = new HashSet<Person>();
-	Set<Address> addresses = new HashSet<Address>();
-	Set<Bank> banks = new HashSet<Bank>();
+	List<Person> conatctMans = new ArrayList<Person>();
+	List<Address> addresses = new ArrayList<Address>();
+	List<Bank> banks = new ArrayList<Bank>();
 	// Constructors
 
 	/** default constructor */
@@ -38,27 +40,27 @@ public class Stakeholder extends AbstractStakeholder implements
 				phone, tax, url, remarks, status, type, taxaccounts);
 	}
 
-	public Set<Person> getConatctMans() {
+	public List<Person> getConatctMans() {
 		return conatctMans;
 	}
 
-	public void setConatctMans(Set<Person> conatctMans) {
+	public void setConatctMans(List<Person> conatctMans) {
 		this.conatctMans = conatctMans;
 	}
 
-	public Set<Address> getAddresses() {
+	public List<Address> getAddresses() {
 		return addresses;
 	}
 
-	public void setAddresses(Set<Address> addresses) {
+	public void setAddresses(List<Address> addresses) {
 		this.addresses = addresses;
 	}
 
-	public Set<Bank> getBanks() {
+	public List<Bank> getBanks() {
 		return banks;
 	}
 
-	public void setBanks(Set<Bank> banks) {
+	public void setBanks(List<Bank> banks) {
 		this.banks = banks;
 	}
 

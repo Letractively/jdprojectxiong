@@ -52,41 +52,38 @@
         <property name="taxaccounts" type="java.lang.String">
             <column name="TAXACCOUNTS" length="100" />
         </property>
-        <set 
+        <list 
             name="conatctMans" 
             table="person"
             lazy="false"
             inverse="true"
-            cascade="all-delete-orphan"
-            sort="unsorted"
-            order-by="STAKEHOLDERID asc">
+            cascade="all-delete-orphan">
         <key column="STAKEHOLDERID">
         </key>
+        <index column="SORTORDER"></index>
         <one-to-many class="com.ejd.web.bo.Person"/>
-        </set>
-        <set 
+        </list>
+        <list 
             name="addresses" 
             table="address"
             lazy="false"
             inverse="true"
-            cascade="all-delete-orphan"
-            sort="unsorted"
-            order-by="STAKEHOLDERID asc">
+            cascade="all-delete-orphan">
         <key column="STAKEHOLDERID">
         </key>
+        <index column="SORTORDER"></index>
         <one-to-many class="com.ejd.web.bo.Address"/>
-        </set>
-        <set 
+        </list>
+        <list 
             name="banks" 
             table="bank"
             lazy="false"
             inverse="true"
-            cascade="all-delete-orphan"
-            sort="unsorted"
-            order-by="STAKEHOLDERID asc">
+            cascade="all-delete-orphan">
         <key column="STAKEHOLDERID">
         </key>
+        <index column="SORTORDER"></index>
         <one-to-many class="com.ejd.web.bo.Bank"/>
-        </set>
+        </list>
     </class>
 </hibernate-mapping>
