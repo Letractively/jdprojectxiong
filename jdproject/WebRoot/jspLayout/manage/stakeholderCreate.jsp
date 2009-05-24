@@ -90,6 +90,9 @@ xmlns:rich="http://richfaces.org/rich">
                 		<h:inputText value="#{stakeholderCreate.stakeholder.taxaccounts}" maxlength="100" id="taxaccounts">
                 		</h:inputText>
 						<h:outputText value=""></h:outputText>
+						<f:facet name="footer">
+                			<a4j:commandButton value="保存" action="#{stakeholderCreate.addOneStakeholder}"></a4j:commandButton>
+            			</f:facet>
 					</h:panelGrid>
 					</h:form>
 					</a4j:region>
