@@ -389,8 +389,10 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 		if (null != this.getPersons() && this.getPersons().size() > 0) {
 			List<Person> newPersons = new ArrayList<Person>();
 			BeanCopier copyPersons = BeanCopier.create(PersonVo.class, Person.class, false);
-			for (PersonVo tempPerson:(this.getPersons())) {
+			for (int i = 0; i < this.getPersons().size(); i++) {
+				PersonVo tempPerson = this.getPersons().get(i);
 				Person newPerson = new Person();
+				tempPerson.setSortOrder(i+1);
 				copyPersons.copy(tempPerson, newPerson, null);
 				newPerson.setStakeholder(newStakeholder);
 				newPersons.add(newPerson);
@@ -401,7 +403,9 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 		if (null != this.getAddresses() && this.getAddresses().size() > 0) {
 			List<Address> newAddresses = new ArrayList<Address>();
 			BeanCopier copyAddresses = BeanCopier.create(Address.class, AddressVo.class, false);
-			for (AddressVo tempAddress:(this.getAddresses())) {
+			for (int j = 0; j < this.getAddresses().size(); j++) {
+				AddressVo tempAddress = this.getAddresses().get(j);
+				tempAddress.setSortOrder(j+1);
 				Address newAddress = new Address();
 				copyAddresses.copy(tempAddress, newAddresses, null);
 				newAddress.setStakeholder(newStakeholder);
@@ -412,7 +416,9 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 		if (null != this.getBanks() && this.getBanks().size() > 0) {
 			List<Bank> newBanks = new ArrayList<Bank>();
 			BeanCopier copyBanks = BeanCopier.create(BankVo.class, Bank.class, false);
-			for (BankVo tempBank:(this.getBanks())) {
+			for (int k = 0; k < this.getBanks().size(); k++) {
+				BankVo tempBank = this.getBanks().get(k);
+				tempBank.setSortOrder(k+1);
 				Bank newBank = new Bank();
 				copyBanks.copy(tempBank, newBank, null);
 				newBank.setStakeholder(newStakeholder);
