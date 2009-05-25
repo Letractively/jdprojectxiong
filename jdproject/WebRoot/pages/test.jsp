@@ -50,7 +50,7 @@ xmlns:rich="http://richfaces.org/rich">
     <p>Here is an example of tab panel switched completely on client.</p>
     <rich:tabPanel switchType="client">
         <rich:tab label="First">
-            Here is tab #1
+            Here is tab #1<a4j:commandButton value="AddProduct" action="#{extendedTableBean.addProduct}"></a4j:commandButton>
         </rich:tab>
         <rich:tab label="Second">
             Here is tab #2

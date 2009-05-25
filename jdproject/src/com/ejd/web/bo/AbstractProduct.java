@@ -28,7 +28,7 @@ public abstract class AbstractProduct extends java.lang.Object implements
 	private Double purchasePrice;
 	private Double tradePriceOne;
 	private Double tradePriceTwo;
-	private String retailPrice;
+	private Double retailPrice;
 	private String introduceFileName;
 
 	// Constructors
@@ -54,7 +54,7 @@ public abstract class AbstractProduct extends java.lang.Object implements
 			Stakeholder provider, Productcategory primaryCategory,
 			Productcategory secondCategory, Productbrand brand, String status,
 			Double purchasePrice, Double tradePriceOne, Double tradePriceTwo,
-			String retailPrice, String introduceFileName) {
+			Double retailPrice, String introduceFileName) {
 		this.code = code;
 		this.manufacturerCode = manufacturerCode;
 		this.name = name;
@@ -170,11 +170,11 @@ public abstract class AbstractProduct extends java.lang.Object implements
 		this.tradePriceTwo = tradePriceTwo;
 	}
 
-	public String getRetailPrice() {
+	public Double getRetailPrice() {
 		return retailPrice;
 	}
 
-	public void setRetailPrice(String retailPrice) {
+	public void setRetailPrice(Double retailPrice) {
 		this.retailPrice = retailPrice;
 	}
 

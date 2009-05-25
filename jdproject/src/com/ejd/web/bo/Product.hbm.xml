@@ -13,7 +13,7 @@
         <property name="code" type="java.lang.String">
             <column name="CODE" length="20" not-null="true" />
         </property>
-        <property name="manufacturercode" type="java.lang.String">
+        <property name="manufacturerCode" type="java.lang.String">
             <column name="MANUFACTURERCODE" length="20" />
         </property>
         <property name="name" type="java.lang.String">
@@ -30,19 +30,19 @@
         <property name="status" type="java.lang.String">
             <column name="STATUS" length="1" not-null="true" />
         </property>
-        <property name="purchaseprice" type="java.lang.Double">
+        <property name="purchasePrice" type="java.lang.Double">
             <column name="PURCHASEPRICE" precision="10" />
         </property>
-        <property name="tradepriceone" type="java.lang.Double">
+        <property name="tradePriceOne" type="java.lang.Double">
             <column name="TRADEPRICEONE" precision="10" />
         </property>
-        <property name="tradepricetwo" type="java.lang.Double">
+        <property name="tradePriceTwo" type="java.lang.Double">
             <column name="TRADEPRICETWO" precision="10" />
         </property>
-        <property name="retailprice" type="java.lang.String">
+        <property name="retailPrice" type="java.lang.Double">
             <column name="RETAILPRICE" length="50" />
         </property>
-        <property name="introducefilename" type="java.lang.String">
+        <property name="introduceFileName" type="java.lang.String">
             <column name="INTRODUCEFILENAME" length="50" />
         </property>
     </class>
