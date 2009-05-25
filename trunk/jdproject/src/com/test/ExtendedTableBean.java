@@ -6,7 +6,16 @@ import java.util.List;
 
 import javax.faces.context.FacesContext;
 
+import com.ejd.model.exception.ProductBrandException;
+import com.ejd.model.exception.ProductCategoryException;
+import com.ejd.model.exception.StakeholderException;
+import com.ejd.model.service.iface.IProductBrandService;
+import com.ejd.model.service.iface.IProductCategoryService;
+import com.ejd.model.service.iface.IStakeholderService;
 import com.ejd.web.bo.Person;
+import com.ejd.web.bo.Product;
+import com.ejd.web.bo.Productbrand;
+import com.ejd.web.bo.Productcategory;
 import com.ejd.web.bo.Stakeholder;
 import com.test.Capital;
 
@@ -126,6 +135,41 @@ public class ExtendedTableBean {
 			p2.setStakeholder(s);
 			s.getConatctMans().add(p2);
 			aa.save(s);
+			//aa.save(p2);
+			tx.commit();
+			aa.flush();
+		return null;
+	}
+	public String addProduct() throws ProductBrandException,ProductCategoryException,StakeholderException {
+		
+			ApplicationContext appctx = FacesContextUtils.getWebApplicationContext(FacesContext.getCurrentInstance());
+			Transaction tx = null;
+			SessionFactory at=(SessionFactory)appctx.getBean("sessionFactory",SessionFactory.class);
+			Session aa = at.openSession();
+			Product p = new Product();
+			p.setCode("product1");
+			p.setManufacturerCode("433rer");
+			p.setStatus("A");
+			p.setPurchasePrice(23.40);
+			p.setTradePriceOne(10.00);
+			p.setTradePriceTwo(12.00);
+			p.setRetailPrice(20.00);
+			p.setIntroduceFileName("product1.jsp");
+			IStakeholderService stakeholderService = (IStakeholderService)appctx.getBean("stakeholderService");
+			Stakeholder st = stakeholderService.getStakeholderById(new Integer(3));
+			List ccc = st.getConatctMans();
+			List ddd= st.getAddresses();
+			List eee= st.getBanks();
+			p.setProvider(st);
+			IProductBrandService productBrandService = (IProductBrandService)appctx.getBean("productBrandService");
+			Productbrand pb = productBrandService.getProductBrandById(new Integer(2));
+			p.setBrand(pb);
+			IProductCategoryService  productCategoryService = (IProductCategoryService)appctx.getBean("productCategoryService");
+			Productcategory pt1= productCategoryService.getProductCategoryById(new Integer(1));
+			Productcategory pt2= productCategoryService.getProductCategoryById(new Integer(2));
+			p.setPrimaryCategory(pt1);
+			p.setSecondCategory(pt2);
+			aa.save(p);
 			//aa.save(p2);
 			tx.commit();
 			aa.flush();
