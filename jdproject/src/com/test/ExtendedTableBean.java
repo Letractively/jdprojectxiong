@@ -146,6 +146,7 @@ public class ExtendedTableBean {
 			Transaction tx = null;
 			SessionFactory at=(SessionFactory)appctx.getBean("sessionFactory",SessionFactory.class);
 			Session aa = at.openSession();
+			tx = aa.beginTransaction();
 			Product p = new Product();
 			p.setCode("product1");
 			p.setManufacturerCode("433rer");
