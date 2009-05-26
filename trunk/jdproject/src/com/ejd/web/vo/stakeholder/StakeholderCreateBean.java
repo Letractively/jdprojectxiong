@@ -21,10 +21,12 @@ import org.springframework.web.jsf.FacesContextUtils;
 
 import com.ejd.model.exception.StakeholderException;
 import com.ejd.model.service.iface.IStakeholderService;
+import com.ejd.utils.SpringFacesUtil;
 import com.ejd.web.bo.Address;
 import com.ejd.web.bo.Bank;
 import com.ejd.web.bo.Person;
 import com.ejd.web.bo.Stakeholder;
+import com.ejd.web.vo.genl.ModalPanelMessagesBean;
 
 import net.sf.cglib.beans.BeanCopier;
 
@@ -377,9 +379,15 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 	}
 	
 	public String addOneStakeholder() throws StakeholderException {
+		FacesContext context = FacesContext.getCurrentInstance();
+		ModalPanelMessagesBean modalPanelMessagesBean =(ModalPanelMessagesBean) SpringFacesUtil.lookupBean("modalPanelMessages");
+		IStakeholderService  eee =(IStakeholderService) SpringFacesUtil.findBean("stakeholderService");
+
 		Stakeholder stakeholder = stakeholderService.getStakeholderByUserId(this.getStakeholder().getUserId());
 		if (null != stakeholder) {
-			this.setAddOneStakeholderSuccessOrNot("该用户ID号已存在!请用其他ID号注册");
+			modalPanelMessagesBean.getMessages().clear();
+			modalPanelMessagesBean.getMessages().add("该用户ID号已存在!请用其他ID号注册");
+			//this.setAddOneStakeholderSuccessOrNot("该用户ID号已存在!请用其他ID号注册");
 			return null;
 		}
 		Stakeholder newStakeholder = new Stakeholder();
@@ -427,7 +435,10 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 			newStakeholder.getBanks().addAll(newBanks);
 		}
 		this.getStakeholderService().saveStakeholder(newStakeholder);
-		this.setAddOneStakeholderSuccessOrNot("保存成功!");
+		//this.setAddOneStakeholderSuccessOrNot("保存成功!");
+		modalPanelMessagesBean.getMessages().clear();
+		modalPanelMessagesBean.getMessages().add("保存成功!");
+		
 		return null;
 	}
 	
