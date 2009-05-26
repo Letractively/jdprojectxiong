@@ -427,6 +427,7 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 			newStakeholder.getBanks().addAll(newBanks);
 		}
 		this.getStakeholderService().saveStakeholder(newStakeholder);
+		this.setAddOneStakeholderSuccessOrNot("±£´æ³É¹¦!");
 		return null;
 	}
 	
