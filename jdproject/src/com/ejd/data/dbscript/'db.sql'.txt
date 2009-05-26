@@ -18,8 +18,8 @@ DROP TABLE IF EXISTS `ejd`.`STAKEHOLDER`;
 CREATE TABLE  `ejd`.`STAKEHOLDER` (
   `ID` int(11) NOT NULL,
   `USERID` varchar(20) NOT NULL,
-  `MNEMONICCHARS` varchar(50) NOT NULL,
-  `SHORTNAME` varchar(50) NOT NULL,
+  `MNEMONICCHARS` varchar(50),
+  `SHORTNAME` varchar(50),
   `FULLNAME` varchar(100) NOT NULL,
   `PROVINCE` varchar(50),
   `CITY` varchar(20),
