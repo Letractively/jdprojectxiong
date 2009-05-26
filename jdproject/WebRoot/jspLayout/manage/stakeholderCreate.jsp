@@ -9,6 +9,7 @@ xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
 <f:view id="manageMainView">
 <a4j:loadScript src="resource:///org/richfaces/renderkit/html/scripts/scriptaculous/effects.js" />
+
 <html>
 	<head>
 
@@ -19,10 +20,19 @@ xmlns:rich="http://richfaces.org/rich">
     	<ui:composition template="./manageTemplate.jsp">
 			
     		<ui:define name="content">
-    			
+    			<rich:modalPanel id="addstakeholderresultmp">
+<f:facet name="header">
+<h:outputText id="optheader" value="反馈信息"/>
+</f:facet>
+<f:facet name="controls">
+<h:graphicImage value="/css/images/icons/ico_close.gif" style="cursor:pointer" onclick="Richfaces.hideModalPanel('manageTemplateView:addstakeholderresultmp')" />
+</f:facet>
+<h:outputText id="mpopt" value="关闭"></h:outputText><h:outputText id="optaosson" value="#{stakeholderCreate.addOneStakeholderSuccessOrNot}"/>
+
+</rich:modalPanel>
     			<fieldset class="demo_fieldset">
 				<legend class="demo_legend"><h:outputText value="#{manageHeaderMenu.menuTitle}"/></legend>
-    				<a4j:region renderRegionOnly="true" immediate="true" selfRendered="true">
+    				<a4j:region renderRegionOnly="false" immediate="true" selfRendered="true">
     				<h:form id="cratestakeholderform">
     				<h:panelGrid id="stakeholderpg" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
 						<f:facet name="header">
@@ -91,7 +101,9 @@ xmlns:rich="http://richfaces.org/rich">
                 		</h:inputText>
 						<h:outputText value=""></h:outputText>
 						<f:facet name="footer">
-                			<a4j:commandButton value="保存" action="#{stakeholderCreate.addOneStakeholder}"></a4j:commandButton>
+                			<a4j:commandButton value="保存" action="#{stakeholderCreate.addOneStakeholder}" oncomplete="javascript:Richfaces.showModalPanel('manageTemplateView:addstakeholderresultmp')">
+                				<a4j:actionparam ></a4j:actionparam>
+                			</a4j:commandButton>
             			</f:facet>
 					</h:panelGrid>
 					</h:form>
