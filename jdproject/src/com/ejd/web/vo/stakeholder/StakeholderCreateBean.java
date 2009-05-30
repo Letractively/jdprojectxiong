@@ -27,6 +27,7 @@ import com.ejd.web.bo.Bank;
 import com.ejd.web.bo.Person;
 import com.ejd.web.bo.Stakeholder;
 import com.ejd.web.vo.genl.ModalPanelMessagesBean;
+import com.ejd.web.vo.richfaces.FileUploadBean;
 
 import net.sf.cglib.beans.BeanCopier;
 
@@ -60,7 +61,6 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 	private String currentTabChoiceInfo = "createPerson";
 	
 	private boolean disableAddNewPerson = false;
-	
 	public boolean isDisableAddNewPerson() {
 		if (null == persons) {
 			return false;
@@ -263,6 +263,7 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 	public void setOnbottomclick(String onbottomclick) {
 		this.onbottomclick = onbottomclick;
 	}
+	
 	public StakeholderCreateBean() {
 		super();
 		this.newPerson = new PersonVo();
@@ -379,14 +380,18 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 	}
 	
 	public String addOneStakeholder() throws StakeholderException {
-		FacesContext context = FacesContext.getCurrentInstance();
-		ModalPanelMessagesBean modalPanelMessagesBean =(ModalPanelMessagesBean) SpringFacesUtil.lookupBean("modalPanelMessages");
-		IStakeholderService  eee =(IStakeholderService) SpringFacesUtil.findBean("stakeholderService");
+		ModalPanelMessagesBean modalPanelMessagesBean =(ModalPanelMessagesBean) SpringFacesUtil.getManagedBean("modalPanelMessages");
+		IStakeholderService  eee =(IStakeholderService) SpringFacesUtil.getSpringBean("stakeholderService");
+		
 
 		Stakeholder stakeholder = stakeholderService.getStakeholderByUserId(this.getStakeholder().getUserId());
 		if (null != stakeholder) {
+			if (null != modalPanelMessagesBean.getMessages() && modalPanelMessagesBean.getMessages().size() > 0) {
 			modalPanelMessagesBean.getMessages().clear();
-			modalPanelMessagesBean.getMessages().add("该用户ID号已存在!请用其他ID号注册");
+			}
+			List tempMessages = new ArrayList();
+			tempMessages.add(new String("该用户ID号已存在!请用其他ID号注册!"));
+			modalPanelMessagesBean.setMessages(tempMessages);
 			//this.setAddOneStakeholderSuccessOrNot("该用户ID号已存在!请用其他ID号注册");
 			return null;
 		}
@@ -436,8 +441,12 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 		}
 		this.getStakeholderService().saveStakeholder(newStakeholder);
 		//this.setAddOneStakeholderSuccessOrNot("保存成功!");
-		modalPanelMessagesBean.getMessages().clear();
-		modalPanelMessagesBean.getMessages().add("保存成功!");
+		if ( null != modalPanelMessagesBean.getMessages() && modalPanelMessagesBean.getMessages().size() > 0) {
+			modalPanelMessagesBean.getMessages().clear();
+		}
+		List tempMessages = new ArrayList();
+		tempMessages.add(new String("保存成功!"));
+		modalPanelMessagesBean.setMessages(tempMessages);
 		
 		return null;
 	}

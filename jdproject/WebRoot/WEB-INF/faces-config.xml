@@ -29,9 +29,14 @@
 	<managed-bean-name>manageHeaderMenu</managed-bean-name>
 	<managed-bean-class>com.ejd.web.vo.richfaces.ManageHeaderMenu</managed-bean-class>
 	<managed-bean-scope>session</managed-bean-scope>
-
 	</managed-bean>
-    <managed-bean>
+	<managed-bean>
+	<managed-bean-name>fileUploadBean</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.richfaces.FileUploadBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
 	<managed-bean-name>productCategory</managed-bean-name>
 	<managed-bean-class>com.ejd.web.vo.ProductCategoryTabBean</managed-bean-class>
 	<managed-bean-scope>session</managed-bean-scope>
@@ -76,6 +81,28 @@
 	<value>#{productBrandService}</value>
 	</managed-property>
 	</managed-bean>
+	
+	<managed-bean>
+	<managed-bean-name>productUnitCreate</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.productunit.ProductUnitCreateBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	<managed-property>
+	<property-name>productUnitService</property-name>
+	<property-class>com.ejd.model.service.iface.IProductUnitService</property-class>
+	<value>#{productUnitService}</value>
+	</managed-property>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>productUnitEdit</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.productunit.ProductUnitEditBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	<managed-property>
+	<property-name>productUnitService</property-name>
+	<property-class>com.ejd.model.service.iface.IProductUnitService</property-class>
+	<value>#{productUnitService}</value>
+	</managed-property>
+	</managed-bean>
+	
 	 <managed-bean>
  	<managed-bean-name>stakeholderCreate</managed-bean-name>
  	<managed-bean-class>com.ejd.web.vo.stakeholder.StakeholderCreateBean</managed-bean-class>
@@ -85,7 +112,7 @@
 	<property-class>com.ejd.model.service.iface.IStakeholderService</property-class>
 	<value>#{stakeholderService}</value>
 	</managed-property>
- 	</managed-bean>
+	</managed-bean>
  	<managed-bean>
 		<managed-bean-name>contantItem</managed-bean-name>
 		<managed-bean-class>
@@ -98,7 +125,7 @@
 		<managed-bean-class>
 			com.ejd.web.vo.genl.ModalPanelMessagesBean
 		</managed-bean-class>
-		<managed-bean-scope>session</managed-bean-scope>
+		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
   <managed-bean>
   <managed-bean-name>extendedTableBean</managed-bean-name>
@@ -159,6 +186,17 @@
 			<from-outcome>productBrandEdit</from-outcome>
 			<to-view-id>/jspLayout/manage/productBrandEdit.jsp</to-view-id>
 		</navigation-case>
+		
+		<navigation-case>
+  			<from-outcome>productUnitCreate</from-outcome>
+			<to-view-id>/jspLayout/manage/productunit/productUnitCreate.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>productUnitEdit</from-outcome>
+			<to-view-id>/jspLayout/manage/productunit/productUnitEdit.jsp</to-view-id>
+		</navigation-case>
+		
+		
 		<navigation-case>
 			<from-outcome>stakeholdercreate</from-outcome>
 			<to-view-id>/jspLayout/manage/stakeholderCreate.jsp</to-view-id>

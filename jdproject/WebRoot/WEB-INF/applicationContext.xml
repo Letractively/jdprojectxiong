@@ -28,6 +28,7 @@
 			<list>
 				<value>com/ejd/web/bo/Productcategory.hbm.xml</value>
 				<value>com/ejd/web/bo/Productbrand.hbm.xml</value>
+				<value>com/ejd/web/bo/Productunit.hbm.xml</value>
 				<value>com/ejd/web/bo/Stakeholder.hbm.xml</value>
 				<value>com/ejd/web/bo/Address.hbm.xml</value>
 				<value>com/ejd/web/bo/Bank.hbm.xml</value>
@@ -107,6 +108,16 @@
     <bean id="productBrandService" class="com.ejd.model.service.impl.ProductBrandServiceImpl" scope="singleton" depends-on="productBrandDao">
 		<property name="productBrandDao">
 			<ref bean="productBrandDao" />
+		</property>
+	</bean>
+	<bean id="productUnitDao" class="com.ejd.data.dao.impl.ProductUnitDaoImpl" scope="singleton">
+    	<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+    </bean>
+    <bean id="productUnitService" class="com.ejd.model.service.impl.ProductUnitServiceImpl" scope="singleton" depends-on="productUnitDao">
+		<property name="productUnitDao">
+			<ref bean="productUnitDao" />
 		</property>
 	</bean>
 	<bean id="stakeholderDao" class="com.ejd.data.dao.impl.StakeholderDaoImpl" scope="singleton">

@@ -14,6 +14,15 @@ CREATE TABLE  `ejd`.`PRODUCTCATEGORY` (
   PRIMARY KEY  (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS `ejd`.`PRODUCTUNIT`;
+CREATE TABLE  `ejd`.`PRODUCTUNIT` (
+  `ID` int(11) NOT NULL,
+  `UNITNAME` varchar(20) NOT NULL,
+  `SERIALNUMBER` int(11) DEFAULT 1,
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 DROP TABLE IF EXISTS `ejd`.`STAKEHOLDER`;
 CREATE TABLE  `ejd`.`STAKEHOLDER` (
   `ID` int(11) NOT NULL,
@@ -83,6 +92,12 @@ CREATE TABLE  `ejd`.`product` (
   `ID` int(11) NOT NULL,
   `CODE` varchar(20) NOT NULL,
   `MANUFACTURERCODE` varchar(20) default NULL,
+  `BARCODE` varchar(50) default NULL,
+  `SPEC` varchar(50) default NULL,
+  `UNITID` int(11) NOT NULL,
+  `STOCKLOWERNUMBER` int(11) default 0,
+  `STOCKUPPERNUMBER` int(11) default 0,
+  `IMAGENAME` varchar(50) default NULL,
   `NAME` varchar(50) default NULL,
   `PROVIDERID` int(11) NOT NULL,
   `PRIMARYCATEGORYID` int(11) NOT NULL,
