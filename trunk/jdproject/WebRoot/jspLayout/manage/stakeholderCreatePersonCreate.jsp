@@ -55,7 +55,7 @@ xmlns:rich="http://richfaces.org/rich">
 					<f:validator validatorId="AddressValidator"/>
 			</h:inputText>
 			<h:message for="newpersonaddress" id="addressmessage" styleClass="error-messages"></h:message>
-			<h:outputLabel value="职务:" for="newpersoneprincipalship"></h:outputLabel>
+			<h:outputLabel value="职务:" for="newpersonprincipalship"></h:outputLabel>
 			<h:inputText id="newpersonprincipalship" value="#{stakeholderCreate.newPerson.principalship}" maxlength="20"></h:inputText>
 			<h:outputText value=""></h:outputText>
 			<h:outputLabel value="备注:" for="newpersonremark"></h:outputLabel>

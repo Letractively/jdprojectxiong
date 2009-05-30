@@ -26,9 +26,11 @@ xmlns:rich="http://richfaces.org/rich">
 </f:facet>
 <f:facet name="controls">
 <h:graphicImage value="/css/images/icons/ico_close.gif" style="cursor:pointer" onclick="Richfaces.hideModalPanel('manageTemplateView:addstakeholderresultmp')" />
-</f:facet>
-<h:outputText id="mpopt" value="关闭"></h:outputText><h:outputText id="optaosson" value="#{stakeholderCreate.addOneStakeholderSuccessOrNot}"/>
-
+</f:facet><a4j:outputPanel id="oppdetailmessages">
+<a4j:repeat id="detailmessages" value="#{modalPanelMessages.messages}" var="message">
+<h:outputText value="#{message}"/>
+</a4j:repeat>
+</a4j:outputPanel>
 </rich:modalPanel>
     			<fieldset class="demo_fieldset">
 				<legend class="demo_legend"><h:outputText value="#{manageHeaderMenu.menuTitle}"/></legend>
@@ -41,6 +43,7 @@ xmlns:rich="http://richfaces.org/rich">
 						<h:outputLabel value="用户ID:" for="userid"></h:outputLabel>
 						<h:inputText value="#{stakeholderCreate.stakeholder.userId}" maxlength="20" id="userid">
 							<rich:beanValidator summary="错误，请检查"/>
+							<f:validator validatorId="UserValidator"/>
                 		</h:inputText>
                 		<rich:message for="userid" />
 						<h:outputText value=" "></h:outputText>
@@ -48,12 +51,12 @@ xmlns:rich="http://richfaces.org/rich">
 						<h:outputText value=" "></h:outputText>
 						<h:outputLabel value="简称:" for="shortname"></h:outputLabel>
                 		<h:inputText value="#{stakeholderCreate.stakeholder.shortName}" maxlength="50" id="shortname">
-                			<rich:beanValidator summary="错误,请检查"/>
                 		</h:inputText>
 						<rich:message for="shortname"/>
 						<h:outputLabel value="全称:" for="fullname"></h:outputLabel>
                 		<h:inputText value="#{stakeholderCreate.stakeholder.fullName}" maxlength="100" style="width:300px;" id="fullname">
                 			<rich:beanValidator summary="错误,请检查"/>
+							<f:validator validatorId="NameValidator"/>
                 		</h:inputText>
 						<rich:message for="fullname"/>
 						<h:outputText value="区域:"></h:outputText>
@@ -65,10 +68,12 @@ xmlns:rich="http://richfaces.org/rich">
 						<h:outputText value=""></h:outputText>
 						<h:outputLabel value="电话:" for="phone"></h:outputLabel>
                 		<h:inputText value="#{stakeholderCreate.stakeholder.phone}" maxlength="100" id="phone">
+							<f:validator validatorId="PhoneValidator"/>
                 		</h:inputText>
 						<rich:message for="phone"/>
 						<h:outputLabel value="传真:" for="tax"></h:outputLabel>
                 		<h:inputText value="#{stakeholderCreate.stakeholder.tax}" maxlength="100" id="tax">
+						<f:validator validatorId="PhoneValidator"/>
                 		</h:inputText>
 						<rich:message for="tax"/>
 						<h:outputLabel value="URL:" for="url"></h:outputLabel>
@@ -101,8 +106,7 @@ xmlns:rich="http://richfaces.org/rich">
                 		</h:inputText>
 						<h:outputText value=""></h:outputText>
 						<f:facet name="footer">
-                			<a4j:commandButton value="保存" action="#{stakeholderCreate.addOneStakeholder}" oncomplete="javascript:Richfaces.showModalPanel('manageTemplateView:addstakeholderresultmp')">
-                				<a4j:actionparam ></a4j:actionparam>
+                			<a4j:commandButton value="保存" action="#{stakeholderCreate.addOneStakeholder}" reRender="oppdetailmessages" oncomplete="javascript:Richfaces.showModalPanel('manageTemplateView:addstakeholderresultmp')">
                 			</a4j:commandButton>
             			</f:facet>
 					</h:panelGrid>

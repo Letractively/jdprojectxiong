@@ -16,6 +16,23 @@
         <property name="manufacturerCode" type="java.lang.String">
             <column name="MANUFACTURERCODE" length="20" />
         </property>
+        <property name="barcode" type="java.lang.String">
+            <column name="BARCODE" length="50" />
+        </property>
+        <property name="spec" type="java.lang.String">
+            <column name="SPEC" length="50" />
+        </property>
+        <many-to-one name="unit" column="UNITID" class="com.ejd.web.bo.Productunit" unique="true" fetch="select" lazy="false" cascade="none">
+        </many-to-one>
+        <property name="stockLowerNumber" type="java.lang.Integer">
+            <column name="STOCKLOWERNUMBER" />
+        </property>
+        <property name="stockUpperNumber" type="java.lang.Integer">
+            <column name="STOCKUPPERNUMBER" />
+        </property>
+        <property name="imageName" type="java.lang.String">
+            <column name="IMAGENAME" length="50" />
+        </property>
         <property name="name" type="java.lang.String">
             <column name="NAME" length="50" />
         </property>

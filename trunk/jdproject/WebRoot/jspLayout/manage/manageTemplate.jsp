@@ -65,6 +65,18 @@ xmlns:rich="http://richfaces.org/rich">
 						<f:param name="ctitle" value="基础数据>>产品品牌>>编辑"></f:param>
                 	</rich:menuItem>
                 </rich:menuGroup>
+
+				<rich:menuGroup id="mbunit" value="产品单位">
+                	<rich:menuItem id="miuone" submitMode="ajax" value="新建" action="#{manageHeaderMenu.updateCurrent}" immediate="true">
+                		<f:param name="current" value="productUnitCreate"/>
+						<f:param name="ctitle" value="基础数据>>产品单位>>新建"></f:param>
+                	</rich:menuItem>
+                	<rich:menuItem id="miutwo" submitMode="ajax" value="编辑" action="#{manageHeaderMenu.updateCurrent}" immediate="true">
+                		<f:param name="current" value="productUnitEdit"/>
+						<f:param name="ctitle" value="基础数据>>产品单位>>编辑"></f:param>
+                	</rich:menuItem>
+                </rich:menuGroup>
+
                 <rich:menuGroup id="mbthree" value="创建客户">
                     <rich:menuItem id="misone" submitMode="ajax" value="新建"  action="#{manageHeaderMenu.updateCurrent}" immediate="true">
 						<f:param name="current" value="stakeholdercreate"/>

@@ -8,14 +8,17 @@ import javax.faces.context.FacesContext;
 
 import com.ejd.model.exception.ProductBrandException;
 import com.ejd.model.exception.ProductCategoryException;
+import com.ejd.model.exception.ProductUnitException;
 import com.ejd.model.exception.StakeholderException;
 import com.ejd.model.service.iface.IProductBrandService;
 import com.ejd.model.service.iface.IProductCategoryService;
+import com.ejd.model.service.iface.IProductUnitService;
 import com.ejd.model.service.iface.IStakeholderService;
 import com.ejd.web.bo.Person;
 import com.ejd.web.bo.Product;
 import com.ejd.web.bo.Productbrand;
 import com.ejd.web.bo.Productcategory;
+import com.ejd.web.bo.Productunit;
 import com.ejd.web.bo.Stakeholder;
 import com.test.Capital;
 
@@ -140,7 +143,7 @@ public class ExtendedTableBean {
 			aa.flush();
 		return null;
 	}
-	public String addProduct() throws ProductBrandException,ProductCategoryException,StakeholderException {
+	public String addProduct() throws ProductBrandException,ProductCategoryException,StakeholderException,ProductUnitException {
 		
 			ApplicationContext appctx = FacesContextUtils.getWebApplicationContext(FacesContext.getCurrentInstance());
 			Transaction tx = null;
@@ -151,6 +154,11 @@ public class ExtendedTableBean {
 			p.setCode("product1");
 			p.setManufacturerCode("433rer");
 			p.setStatus("A");
+			p.setBarcode("1234ie0");
+			p.setSpec("1X4cm");
+			p.setImageName("pee.jpg");
+			p.setStockLowerNumber(12);
+			p.setStockUpperNumber(100);
 			p.setPurchasePrice(23.40);
 			p.setTradePriceOne(10.00);
 			p.setTradePriceTwo(12.00);
@@ -170,6 +178,9 @@ public class ExtendedTableBean {
 			Productcategory pt2= productCategoryService.getProductCategoryById(new Integer(2));
 			p.setPrimaryCategory(pt1);
 			p.setSecondCategory(pt2);
+			IProductUnitService  productUnitService = (IProductUnitService)appctx.getBean("productUnitService");
+			Productunit unit = productUnitService.getProductUnitById(new Integer(2));
+			p.setUnit(unit);
 			aa.save(p);
 			//aa.save(p2);
 			tx.commit();

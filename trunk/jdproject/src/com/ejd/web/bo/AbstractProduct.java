@@ -14,7 +14,13 @@ public abstract class AbstractProduct extends java.lang.Object implements
 
 	private Integer id;
 	private String code;
-	private String manufacturerCode;
+	private String manufacturerCode;//厂商型号
+	private String barcode;//条码号
+	private String spec;//规格
+	private Productunit unit;//单位
+	private Integer stockLowerNumber;//库存下限
+	private Integer stockUpperNumber;//库存上限
+	private String imageName;//图片名称
 	private String name;
 	private Stakeholder provider;
 	//private Integer providerId;
@@ -50,13 +56,19 @@ public abstract class AbstractProduct extends java.lang.Object implements
 	}
 
 	/** full constructor */
-	public AbstractProduct(String code, String manufacturerCode, String name,
+	public AbstractProduct(String code, String manufacturerCode,String barcode,String spec,Productunit unit,Integer stockLowerNumber,Integer stockUpperNumber,String imageName, String name,
 			Stakeholder provider, Productcategory primaryCategory,
 			Productcategory secondCategory, Productbrand brand, String status,
 			Double purchasePrice, Double tradePriceOne, Double tradePriceTwo,
 			Double retailPrice, String introduceFileName) {
 		this.code = code;
 		this.manufacturerCode = manufacturerCode;
+		this.barcode = barcode;
+		this.spec = spec;
+		this.unit = unit;
+		this.stockLowerNumber = stockLowerNumber;
+		this.stockUpperNumber = stockUpperNumber;
+		this.imageName = imageName;
 		this.name = name;
 		this.provider = provider;
 		this.primaryCategory = primaryCategory;
@@ -94,6 +106,54 @@ public abstract class AbstractProduct extends java.lang.Object implements
 
 	public void setManufacturerCode(String manufacturerCode) {
 		this.manufacturerCode = manufacturerCode;
+	}
+
+	public String getBarcode() {
+		return barcode;
+	}
+
+	public void setBarcode(String barcode) {
+		this.barcode = barcode;
+	}
+
+	public String getSpec() {
+		return spec;
+	}
+
+	public void setSpec(String spec) {
+		this.spec = spec;
+	}
+
+	public Productunit getUnit() {
+		return unit;
+	}
+
+	public void setUnit(Productunit unit) {
+		this.unit = unit;
+	}
+
+	public Integer getStockLowerNumber() {
+		return stockLowerNumber;
+	}
+
+	public void setStockLowerNumber(Integer stockLowerNumber) {
+		this.stockLowerNumber = stockLowerNumber;
+	}
+
+	public Integer getStockUpperNumber() {
+		return stockUpperNumber;
+	}
+
+	public void setStockUpperNumber(Integer stockUpperNumber) {
+		this.stockUpperNumber = stockUpperNumber;
+	}
+
+	public String getImageName() {
+		return imageName;
+	}
+
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
 	}
 
 	public String getName() {
