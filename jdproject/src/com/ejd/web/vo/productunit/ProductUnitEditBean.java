@@ -246,13 +246,15 @@ public class ProductUnitEditBean extends ProductUnitBaseBean {
 		List<Productunit> productUnitList = new ArrayList<Productunit>();
 		productUnitList = this.getProductUnitService().getAllProductUnit();
 		List<ProductUnitItem> newproductUnits = new ArrayList<ProductUnitItem>();
-		for(Productunit c : productUnitList){
-			ProductUnitItem productUnitItem = new ProductUnitItem();
-			productUnitItem.setId(c.getId());
-			productUnitItem.setUnitName(c.getUnitName());
-			productUnitItem.setSerialNumber(c.getSerialNumber());
-			productUnitItem.setSelected(Boolean.FALSE);
-			newproductUnits.add(productUnitItem);
+		if (null != productUnitList) {
+			for(Productunit c : productUnitList){
+				ProductUnitItem productUnitItem = new ProductUnitItem();
+				productUnitItem.setId(c.getId());
+				productUnitItem.setUnitName(c.getUnitName());
+				productUnitItem.setSerialNumber(c.getSerialNumber());
+				productUnitItem.setSelected(Boolean.FALSE);
+				newproductUnits.add(productUnitItem);
+			}
 		}
 		this.setProductUnits(newproductUnits);
 		return null;
