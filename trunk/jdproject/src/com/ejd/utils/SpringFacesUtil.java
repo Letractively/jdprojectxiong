@@ -10,6 +10,8 @@ import javax.faces.application.FacesMessage;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.jsf.FacesContextUtils;
+
+import javax.faces.component.UIViewRoot;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 public final class SpringFacesUtil {
@@ -75,6 +77,16 @@ public final class SpringFacesUtil {
 	        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put(beanName, managedBean);
 	    }
 	    
+	    public FacesContext getFacesContext(){
+	    	return FacesContext.getCurrentInstance();
+	    }
+	    public UIViewRoot getViewRoot() {
+	    	return getFacesContext().getViewRoot();
+	    }
+	    
+	    public String getViewId(){
+	    	return getViewRoot().getId();
+	    }
 	    /**
 	     * Get parameter value from request scope.
 	     * 
@@ -189,6 +201,14 @@ public final class SpringFacesUtil {
 	    private static String getJsfEl(String value) {
 	        return "#{" + value + "}";
 	    }
+
+	    public static void redirectPage(String szPage) {
+	    	FacesContext context = FacesContext.getCurrentInstance();
+	    	javax.faces.application.Application app = context.getApplication();
+	    	UIViewRoot view = app.getViewHandler().createView(context, szPage);
+	    	context.setViewRoot(view);
+	    	context.renderResponse();
+	    } 
 
 }
 
