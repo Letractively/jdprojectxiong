@@ -389,7 +389,7 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 			if (null != modalPanelMessagesBean.getMessages() && modalPanelMessagesBean.getMessages().size() > 0) {
 			modalPanelMessagesBean.getMessages().clear();
 			}
-			List tempMessages = new ArrayList();
+			List<String> tempMessages = new ArrayList<String>();
 			tempMessages.add(new String("该用户ID号已存在!请用其他ID号注册!"));
 			modalPanelMessagesBean.setMessages(tempMessages);
 			//this.setAddOneStakeholderSuccessOrNot("该用户ID号已存在!请用其他ID号注册");
@@ -444,7 +444,7 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 		if ( null != modalPanelMessagesBean.getMessages() && modalPanelMessagesBean.getMessages().size() > 0) {
 			modalPanelMessagesBean.getMessages().clear();
 		}
-		List tempMessages = new ArrayList();
+		List<String> tempMessages = new ArrayList<String>();
 		tempMessages.add(new String("保存成功!"));
 		modalPanelMessagesBean.setMessages(tempMessages);
 		
