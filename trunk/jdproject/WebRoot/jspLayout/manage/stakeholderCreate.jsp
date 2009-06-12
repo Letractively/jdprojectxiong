@@ -20,18 +20,63 @@ xmlns:rich="http://richfaces.org/rich">
     	<ui:composition template="./manageTemplate.jsp">
 			
     		<ui:define name="content">
+    			<!-- this is insert in to modalPanelMessages.jsp and common used.
     			<rich:modalPanel id="addstakeholderresultmp">
-<f:facet name="header">
-<h:outputText id="optheader" value="反馈信息"/>
-</f:facet>
-<f:facet name="controls">
-<h:graphicImage value="/css/images/icons/ico_close.gif" style="cursor:pointer" onclick="Richfaces.hideModalPanel('manageTemplateView:addstakeholderresultmp')" />
-</f:facet><a4j:outputPanel id="oppdetailmessages">
-<a4j:repeat id="detailmessages" value="#{modalPanelMessages.messages}" var="message">
-<h:outputText value="#{message}"/>
-</a4j:repeat>
-</a4j:outputPanel>
-</rich:modalPanel>
+				<f:facet name="header">
+					<h:outputText id="optheader" value="反馈信息"/>
+				</f:facet>
+				<f:facet name="controls">
+					<h:graphicImage value="/css/images/icons/ico_close.gif" style="cursor:pointer" onclick="Richfaces.hideModalPanel('manageTemplateView:addstakeholderresultmp')" />
+				</f:facet>
+				<a4j:outputPanel id="oppdetailmessages">
+					<a4j:repeat id="detailmessages" value="#{modalPanelMessages.messages}" var="message">
+						<h:outputText value="#{message}"/>
+					</a4j:repeat>
+				</a4j:outputPanel>
+				</rich:modalPanel>
+				 -->
+				<rich:modalPanel id="test" keepVisualState="true" rendered="true" showWhenRendered="false" onmaskdblclick="Richfaces.hideModalPanel('manageTemplateView:test')">
+				
+				<f:facet name="header">
+					<h:outputText id="optheader" value="反馈信息"/>
+				</f:facet>
+				<f:facet name="controls">
+					<h:graphicImage value="/css/images/icons/ico_close.gif" style="cursor:pointer" onclick="Richfaces.hideModalPanel('manageTemplateView:test')" />
+				</f:facet>
+				<a4j:form id="testform" ajaxSingle="true" ajaxSubmit="true" limitToList="testpp" rendered="true">
+				<a4j:outputPanel id="testpp">
+				
+				    <rich:extendedDataTable value="#{productCategoryEdit.productCategorysDataModel}" var="cat" id="tableone" rows="5" frame="below" border="1" 
+            		width="340px" height="300px" sortMode="#{productCategoryEdit.sortMode}">
+						<rich:column id="columnone1" sortable="true" sortBy="#{cat.categoryName}" width="170px" label="种类名称">
+                			<f:facet name="header">
+                    			<h:outputText id="headertextname1" value="种类名称"/>
+                			</f:facet>
+                			<h:outputText value="#{cat.categoryName}"/>
+            			</rich:column> 
+            			<rich:column id="columntwo1" sortable="true" sortBy="#{cat.serialNumber}" width="170px" label="种类序号">
+                			<f:facet name="header">
+                    			<h:outputText id="headertextnumber1" value="种类序号"/>
+                			</f:facet>
+                			<h:outputText value="#{cat.serialNumber}"/>
+            			</rich:column> 
+            		
+						<a4j:support id="supportoneone" event="onclick" ignoreDupResponses="true" requestDelay="1"  action="#{productCategoryEdit.takeSelection}"  reRender="editpanel" ajaxSingle="true"/>
+            			<a4j:support id="supporttwotwo" event="onkeyup" ignoreDupResponses="true" requestDelay="1"  action="#{productCategoryEdit.takeSelection}"  reRender="editpanel" ajaxSingle="true"/>
+        				</rich:extendedDataTable>
+        				<a4j:commandButton value="click" onclick="Richfaces.hideModalPanel('manageTemplateView:test')"></a4j:commandButton>
+        				<h:inputText id="reddd" value="#{productCategoryEdit.newProgressString}"><a4j:support event="onblur" immediate="true" reRender="oupre">
+        				</a4j:support>
+        				</h:inputText>
+        				<h:outputText id="oupre" value="#{productCategoryEdit.newProgressString}"></h:outputText>
+      					<rich:datascroller align="left" for="tableone" maxPages="20" reRender="test" oncomplete="javascript:Richfaces.hideModalPanel('manageTemplateView:test')"
+						page="#{productCategoryEdit.scrollerPage}" id="scedga"/>
+						
+						
+				</a4j:outputPanel>
+				</a4j:form>
+				</rich:modalPanel>
+				<a4j:include id="modalPanelMessagesinclude" ajaxRendered="true" viewId="/jspLayout/manage/modalPanelMessages.jsp"/>
     			<fieldset class="demo_fieldset">
 				<legend class="demo_legend"><h:outputText value="#{manageHeaderMenu.menuTitle}"/></legend>
     				<a4j:region renderRegionOnly="false" immediate="true" selfRendered="true">
@@ -48,7 +93,7 @@ xmlns:rich="http://richfaces.org/rich">
                 		<rich:message for="userid" />
 						<h:outputText value=" "></h:outputText>
                 		<h:outputText value="#{stakeholderCreate.stakeholder.mnemonicchars}" id="mnemonicchar"></h:outputText>
-						<h:outputText value=" "></h:outputText>
+						<!--<h:outputText value=" "></h:outputText> --><a4j:commandButton value="click" immediate="true" reRender="testpp" oncomplete="javascript:Richfaces.showModalPanel('manageTemplateView:test')"></a4j:commandButton>
 						<h:outputLabel value="简称:" for="shortname"></h:outputLabel>
                 		<h:inputText value="#{stakeholderCreate.stakeholder.shortName}" maxlength="50" id="shortname">
                 		</h:inputText>
@@ -106,7 +151,7 @@ xmlns:rich="http://richfaces.org/rich">
                 		</h:inputText>
 						<h:outputText value=""></h:outputText>
 						<f:facet name="footer">
-                			<a4j:commandButton value="保存" action="#{stakeholderCreate.addOneStakeholder}" reRender="oppdetailmessages" oncomplete="javascript:Richfaces.showModalPanel('manageTemplateView:addstakeholderresultmp')">
+                			<a4j:commandButton value="保存" action="#{stakeholderCreate.addOneStakeholder}" reRender="oppdetailmessages" oncomplete="javascript:Richfaces.showModalPanel('manageTemplateView:modalPanelMessagesinclude:addstakeholderresultmp')">
                 			</a4j:commandButton>
             			</f:facet>
 					</h:panelGrid>
