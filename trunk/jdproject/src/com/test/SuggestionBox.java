@@ -64,7 +64,7 @@ public class SuggestionBox implements Serializable {
         Iterator iterator = getAllData().iterator();
         while (iterator.hasNext()) {
             Data elem = (Data) iterator.next();
-            if ((elem != null && elem.getText().toLowerCase().indexOf(pref.toLowerCase()) == 0) || "".equals(pref))
+            if ((elem != null && elem.getText().toLowerCase().indexOf(pref.toLowerCase()) >= 0) || "".equals(pref))
             {
                 result.add(elem);
             }
