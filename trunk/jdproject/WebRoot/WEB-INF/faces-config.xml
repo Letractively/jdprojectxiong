@@ -167,6 +167,12 @@
       <managed-bean-scope>session</managed-bean-scope> 
     </managed-bean>
 	
+	<managed-bean>
+        <managed-bean-name>suggestionBox</managed-bean-name>
+        <managed-bean-class>com.test.SuggestionBox</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+	
 	<!--  endtest -->
     <navigation-rule>
     	<from-view-id>/*</from-view-id>
@@ -223,6 +229,8 @@
          <from-outcome>technique2</from-outcome>
          <to-view-id>/popup/index2.jsp</to-view-id>
       </navigation-case>
+      
+      
 		<!-- end test -->
 		
  	</navigation-rule>
