@@ -35,7 +35,7 @@ public class ProductUnitDaoImpl extends HibernateDaoSupport implements IProductU
 	public boolean delProductUnitByName(String unitName) {
 		// TODO Auto-generated method stub
 		try {
-			String hql="from Productunit b where unitName=?";
+			String hql="from Productunit u where unitName=?";
 			List<Productunit> productUnits = this.getHibernateTemplate().find(hql, unitName);
 			this.getHibernateTemplate().deleteAll(productUnits);
 			return true;
@@ -48,7 +48,7 @@ public class ProductUnitDaoImpl extends HibernateDaoSupport implements IProductU
 	public List<Productunit> getAllProductUnit() {
 		// TODO Auto-generated method stub
 		try {
-			String hql="from Productunit b";
+			String hql="from Productunit u order by u.serialNumber DESC";
 			List<Productunit> productUnits=this.getHibernateTemplate().find(hql);
 			return productUnits;
 		} catch (Exception e) {
@@ -71,7 +71,7 @@ public class ProductUnitDaoImpl extends HibernateDaoSupport implements IProductU
 	public Productunit getProductUnitByName(String unitName) {
 		// TODO Auto-generated method stub
 		try {
-			String hql="from Productunit b where unitName=?";
+			String hql="from Productunit u where unitName=?";
 			List<Productunit> productUnits = this.getHibernateTemplate().find(hql, unitName);
 			if (productUnits.size() >= 1) {
 				return productUnits.get(0);

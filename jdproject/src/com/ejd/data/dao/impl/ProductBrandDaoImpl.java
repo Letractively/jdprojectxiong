@@ -49,7 +49,7 @@ public class ProductBrandDaoImpl extends HibernateDaoSupport implements IProduct
 	public List<Productbrand> getAllProductBrand() {
 		// TODO Auto-generated method stub
 		try {
-			String hql="from Productbrand b";
+			String hql="from Productbrand b order by b.serialNumber DESC";
 			List<Productbrand> productBrands=this.getHibernateTemplate().find(hql);
 			return productBrands;
 		} catch (Exception e) {

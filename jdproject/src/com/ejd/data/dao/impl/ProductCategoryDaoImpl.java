@@ -49,7 +49,7 @@ public class ProductCategoryDaoImpl extends HibernateDaoSupport implements
 	public List<Productcategory> getAllProductCategory() {
 		// TODO Auto-generated method stub
 		try {
-			String hql="from Productcategory p";
+			String hql="from Productcategory p order by p.serialNumber DESC";
 			List<Productcategory> productCategorys=this.getHibernateTemplate().find(hql);
 			return productCategorys;
 		} catch (Exception e) {
