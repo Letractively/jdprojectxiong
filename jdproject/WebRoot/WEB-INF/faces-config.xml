@@ -83,6 +83,39 @@
 	</managed-bean>
 	
 	<managed-bean>
+	<managed-bean-name>existProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	<managed-property>
+	<property-name>productBrandService</property-name>
+	<property-class>com.ejd.model.service.iface.IProductBrandService</property-class>
+	<value>#{productBrandService}</value>
+	</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+	<managed-bean-name>existProductCategory</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistProductCategoryBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	<managed-property>
+	<property-name>productCategoryService</property-name>
+	<property-class>com.ejd.model.service.iface.IProductCategoryService</property-class>
+	<value>#{productCategoryService}</value>
+	</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+	<managed-bean-name>existProductUnit</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistProductUnitBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	<managed-property>
+	<property-name>productUnitService</property-name>
+	<property-class>com.ejd.model.service.iface.IProductUnitService</property-class>
+	<value>#{productUnitService}</value>
+	</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
 	<managed-bean-name>productUnitCreate</managed-bean-name>
 	<managed-bean-class>com.ejd.web.vo.productunit.ProductUnitCreateBean</managed-bean-class>
 	<managed-bean-scope>session</managed-bean-scope>
