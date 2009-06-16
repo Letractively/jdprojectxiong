@@ -34,6 +34,7 @@ xmlns:rich="http://richfaces.org/rich">
 					</a4j:repeat>
 				</a4j:outputPanel>
 				</rich:modalPanel>
+				<a4j:commandButton value="click" immediate="true" reRender="testpp" oncomplete="javascript:Richfaces.showModalPanel('manageTemplateView:test')"></a4j:commandButton>
 				 -->
 				<rich:modalPanel id="test" keepVisualState="true" rendered="true" showWhenRendered="false" onmaskdblclick="Richfaces.hideModalPanel('manageTemplateView:test')">
 				
@@ -93,7 +94,7 @@ xmlns:rich="http://richfaces.org/rich">
                 		<rich:message for="userid" />
 						<h:outputText value=" "></h:outputText>
                 		<h:outputText value="#{stakeholderCreate.stakeholder.mnemonicchars}" id="mnemonicchar"></h:outputText>
-						<!--<h:outputText value=" "></h:outputText> --><a4j:commandButton value="click" immediate="true" reRender="testpp" oncomplete="javascript:Richfaces.showModalPanel('manageTemplateView:test')"></a4j:commandButton>
+						<h:outputText value=" "></h:outputText>
 						<h:outputLabel value="简称:" for="shortname"></h:outputLabel>
                 		<h:inputText value="#{stakeholderCreate.stakeholder.shortName}" maxlength="50" id="shortname">
                 		</h:inputText>
