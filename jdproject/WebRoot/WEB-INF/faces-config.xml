@@ -245,6 +245,11 @@
 			<to-view-id>/jspLayout/manage/stakeholderCreate.jsp</to-view-id>
 		</navigation-case>
 		
+		
+		<navigation-case>
+			<from-outcome>addProductImage</from-outcome>
+			<to-view-id>/jspLayout/manage/product/addProductImage.jsp</to-view-id>
+		</navigation-case>
 		<!-- test -->
 		<navigation-case>
          <from-outcome>next</from-outcome>

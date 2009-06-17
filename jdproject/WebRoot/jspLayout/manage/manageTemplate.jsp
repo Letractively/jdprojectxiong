@@ -94,14 +94,18 @@ xmlns:rich="http://richfaces.org/rich">
 				
 			</rich:dropDownMenu>
 			<rich:dropDownMenu id="dmtwo" value="产品管理" >
-				<rich:menuItem id="dmtwomione" submitMode="ajax" value="新建" action="#{manageHeaderMenu.updateCurrent}" immediate="true">
+				<rich:menuItem id="dmtwomione" submitMode="ajax" value="上传产品图片" action="#{manageHeaderMenu.updateCurrent}" immediate="true">
+                		<f:param name="current" value="addProductImage"/>
+						<f:param name="ctitle" value="产品管理>>上传产品图片"></f:param>
+                </rich:menuItem>
+				<rich:menuItem id="dmtwomitwo" submitMode="ajax" value="新建" action="#{manageHeaderMenu.updateCurrent}" immediate="true">
                 		<f:param name="current" value="productCategoryCreate"/>
 						<f:param name="ctitle" value="基础数据>>产品类型>>新建"></f:param>
-                	</rich:menuItem>
-                	<rich:menuItem id="dmtwomitwo" submitMode="ajax" value="编辑" action="#{manageHeaderMenu.updateCurrent}" immediate="true">
+                </rich:menuItem>
+                <rich:menuItem id="dmtwomithree" submitMode="ajax" value="编辑" action="#{manageHeaderMenu.updateCurrent}" immediate="true">
                 		<f:param name="current" value="productCategoryEdit"/>
 						<f:param name="ctitle" value="基础数据>>产品类型>>编辑"></f:param>
-                	</rich:menuItem>
+                </rich:menuItem>
                 
             </rich:dropDownMenu>
 		</rich:toolBar>
