@@ -14,7 +14,7 @@ import org.richfaces.model.UploadItem;
 public class FileUploadBean{
 	
 	private ArrayList<File> files = new ArrayList<File>();
-	private int uploadsAvailable = 1;
+	private int uploadsAvailable = 5;
 	private boolean autoUpload = false;
 	private boolean useFlash = false;
 	public int getSize() {
@@ -44,7 +44,7 @@ public class FileUploadBean{
 	
 	public String clearUploadData() {
 		files.clear();
-		setUploadsAvailable(1);
+		setUploadsAvailable(5);
 		return null;
 	}
 	
