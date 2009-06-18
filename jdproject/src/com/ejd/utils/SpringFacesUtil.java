@@ -77,14 +77,14 @@ public final class SpringFacesUtil {
 	        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put(beanName, managedBean);
 	    }
 	    
-	    public FacesContext getFacesContext(){
+	    public static FacesContext getFacesContext(){
 	    	return FacesContext.getCurrentInstance();
 	    }
-	    public UIViewRoot getViewRoot() {
+	    public static UIViewRoot getViewRoot() {
 	    	return getFacesContext().getViewRoot();
 	    }
 	    
-	    public String getViewId(){
+	    public static String getViewId(){
 	    	return getViewRoot().getId();
 	    }
 	    /**
