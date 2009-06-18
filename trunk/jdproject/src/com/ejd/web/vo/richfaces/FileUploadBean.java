@@ -4,8 +4,12 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
+import javax.faces.application.Application;
+
 import org.richfaces.event.UploadEvent;
 import org.richfaces.model.UploadItem;
+
+import com.ejd.utils.SpringFacesUtil;
 
 /**
  * @author Ilya Shaikovsky
@@ -44,6 +48,13 @@ public class FileUploadBean{
 	
 	public String clearUploadData() {
 		files.clear();
+		setUploadsAvailable(5);
+		return null;
+	}
+	public String sendUploadData() {
+		String path = SpringFacesUtil.getFacesContext().getExternalContext().getRequestContextPath();
+		files.clear();
+		String dd = path;
 		setUploadsAvailable(5);
 		return null;
 	}
