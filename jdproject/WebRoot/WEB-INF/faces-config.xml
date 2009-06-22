@@ -116,6 +116,24 @@
 	</managed-bean>
 	
 	<managed-bean>
+	<managed-bean-name>existStakeholderStatus</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistStakeholderStatusBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+	<managed-bean-name>existStakeholderType</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistStakeholderTypeBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+	<managed-bean-name>existProductStatus</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistProductStatusBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
 	<managed-bean-name>productUnitCreate</managed-bean-name>
 	<managed-bean-class>com.ejd.web.vo.productunit.ProductUnitCreateBean</managed-bean-class>
 	<managed-bean-scope>session</managed-bean-scope>
@@ -136,7 +154,7 @@
 	</managed-property>
 	</managed-bean>
 	
-	 <managed-bean>
+	<managed-bean>
  	<managed-bean-name>stakeholderCreate</managed-bean-name>
  	<managed-bean-class>com.ejd.web.vo.stakeholder.StakeholderCreateBean</managed-bean-class>
  	<managed-bean-scope>session</managed-bean-scope>
@@ -169,12 +187,49 @@
    	<value>#{capitalsBean.capitals}</value>
   </managed-property>
  </managed-bean>
-	<managed-bean>
+ <managed-bean>
   <managed-bean-name>capitalsBean</managed-bean-name>
   <managed-bean-class>com.test.CapitalsBean</managed-bean-class>
   <managed-bean-scope>session</managed-bean-scope>
  </managed-bean>
 
+
+	<managed-bean>
+ 	<managed-bean-name>productCreate</managed-bean-name>
+ 	<managed-bean-class>com.ejd.web.vo.product.ProductCreateBean</managed-bean-class>
+ 	<managed-bean-scope>session</managed-bean-scope>
+ 	<managed-property>
+	<property-name>productBrandService</property-name>
+	<property-class>com.ejd.model.service.iface.IProductBrandService</property-class>
+	<value>#{productBrandService}</value>
+	</managed-property>
+	<managed-property>
+	<property-name>productCategoryService</property-name>
+	<property-class>com.ejd.model.service.iface.IProductCategoryService</property-class>
+	<value>#{productCategoryService}</value>
+	</managed-property>
+ 	<managed-property>
+	<property-name>stakeholderService</property-name>
+	<property-class>com.ejd.model.service.iface.IStakeholderService</property-class>
+	<value>#{stakeholderService}</value>
+	</managed-property>
+	<managed-property>
+	<property-name>productUnitService</property-name>
+	<property-class>com.ejd.model.service.iface.IProductUnitService</property-class>
+	<value>#{productUnitService}</value>
+	</managed-property>
+	<managed-property>
+	<property-name>productService</property-name>
+	<property-class>com.ejd.model.service.iface.IProductService</property-class>
+	<value>#{productService}</value>
+	</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+        <managed-bean-name>imageSuggestionBox</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.image.ImageSuggestionBox</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
 	<!-- test -->
 	<managed-bean>
 		<managed-bean-name>demoBean</managed-bean-name>
@@ -249,6 +304,11 @@
 		<navigation-case>
 			<from-outcome>addProductImage</from-outcome>
 			<to-view-id>/jspLayout/manage/product/addProductImage.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>productCreate</from-outcome>
+			<to-view-id>/jspLayout/manage/product/productCreate.jsp</to-view-id>
 		</navigation-case>
 		<!-- test -->
 		<navigation-case>

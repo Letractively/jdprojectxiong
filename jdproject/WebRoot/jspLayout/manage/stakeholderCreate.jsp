@@ -133,18 +133,12 @@ xmlns:rich="http://richfaces.org/rich">
 						<rich:message for="remarks"/>
 						<h:outputLabel value="状态:" for="status"></h:outputLabel>
 						<h:selectOneMenu value="#{stakeholderCreate.stakeholder.status}">
-							<f:selectItem itemValue="N" itemLabel="待批"/>
-							<f:selectItem itemValue="L" itemLabel="锁定"/>
-							<f:selectItem itemValue="A" itemLabel="正常"/>
+							<f:selectItems value="#{existStakeholderStatus.statusItems}"/>
 						</h:selectOneMenu>
 						<h:outputText value=""></h:outputText>
 						<h:outputLabel value="类型:" for="type"></h:outputLabel>
 						<h:selectOneMenu value="#{stakeholderCreate.stakeholder.type}">
-							<f:selectItem itemValue="V" itemLabel="游客"/>
-							<f:selectItem itemValue="P" itemLabel="供应商"/>
-							<f:selectItem itemValue="C" itemLabel="客户"/>
-							<f:selectItem itemValue="A" itemLabel="代理商"/>
-							<f:selectItem itemValue="D" itemLabel="经销商"/>
+							<f:selectItems value="#{existStakeholderType.typeItems}"/>
 						</h:selectOneMenu>
 						<h:outputText value=""></h:outputText>
 						<h:outputLabel value="税号:" for="taxaccounts"></h:outputLabel>
