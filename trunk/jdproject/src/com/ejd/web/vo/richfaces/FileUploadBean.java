@@ -1,5 +1,6 @@
 package com.ejd.web.vo.richfaces;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
@@ -8,9 +9,10 @@ import javax.faces.application.Application;
 
 import org.richfaces.event.UploadEvent;
 import org.richfaces.model.UploadItem;
+import org.springframework.aop.ThrowsAdvice;
 
 import com.ejd.utils.SpringFacesUtil;
-
+import com.ejd.web.vo.richfaces.File;
 /**
  * @author Ilya Shaikovsky
  *
@@ -52,7 +54,23 @@ public class FileUploadBean{
 		return null;
 	}
 	public String sendUploadData() {
-		String path = SpringFacesUtil.getFacesContext().getExternalContext().getRequestContextPath();
+		//String path = SpringFacesUtil.getFacesContext().getExternalContext().getRequestServletPath();
+		String path = SpringFacesUtil.getServletContext().getRealPath("/");
+		OutputStream out = null;
+		if (null != this.getFiles()) {
+			for(File tempFile:this.getFiles()) {
+				 try {
+					 path=path+"productimage\\"+tempFile.getName();
+					 path=path.replaceAll("\\\\","/");
+					 out = new FileOutputStream(path);
+					 out.write(tempFile.getData());
+					 out.flush();
+					 out.close();
+				 } catch (Exception e) {
+					 
+				 }
+			}
+		}
 		files.clear();
 		String dd = path;
 		setUploadsAvailable(5);
