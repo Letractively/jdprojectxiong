@@ -12,6 +12,8 @@ import javax.faces.context.FacesContext;
 
 import org.richfaces.renderkit.html.SuggestionBoxRenderer;
 
+import com.ejd.utils.SpringFacesUtil;
+
 public class ImageSuggestionBox implements Serializable {
 
 	private boolean usingSuggestObjects;
@@ -52,12 +54,15 @@ public class ImageSuggestionBox implements Serializable {
         context.addMessage(null, message);
         
         String pref = (String)suggest;
+        if (pref.length() < 2) {
+	    	return null;
+	    }
         ArrayList result = new ArrayList();
 
         Iterator iterator = getAllData().iterator();
         while (iterator.hasNext()) {
             ImageData elem = (ImageData) iterator.next();
-            if ((elem != null && elem.getName().toLowerCase().indexOf(pref.toLowerCase()) == 0) || "".equals(pref))
+            if ((elem != null && elem.getName().toLowerCase().indexOf(pref.toLowerCase()) >= 0) || "".equals(pref))
             {
                 result.add(elem);
             }
@@ -66,17 +71,20 @@ public class ImageSuggestionBox implements Serializable {
     }
 
     public ArrayList getAllData() {
-        ArrayList result = new ArrayList();
+        ArrayList<ImageData> result = new ArrayList<ImageData>();
         /*for (int i = 0; i < cit.length; i++) {
             Data data = new Data(cit[i], String.valueOf(i + 1), prices[i]);
             result.add(data);
         }*/
+        String path = SpringFacesUtil.getServletContext().getRealPath("/");
+        path=path+"productimage";
         String filePath = "F:\\job\\Test_081028\\bin\\com\\txt";
-        LinkedHashMap map = this.ReadAllFilesName(filePath);
+        LinkedHashMap map = this.ReadAllFilesName(path);
         String out = "";
         for(Iterator keyItr = map.keySet().iterator();keyItr.hasNext();){
              Object i  =  keyItr.next();
                 out = (String)map.get(i);
+                result.add(new ImageData(out));
                 System.out.println(out);
         }
 
