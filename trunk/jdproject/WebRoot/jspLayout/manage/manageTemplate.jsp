@@ -99,11 +99,11 @@ xmlns:rich="http://richfaces.org/rich">
 						<f:param name="ctitle" value="产品管理>>上传产品图片"></f:param>
                 </rich:menuItem>
 				<rich:menuItem id="dmtwomitwo" submitMode="ajax" value="新建" action="#{manageHeaderMenu.updateCurrent}" immediate="true">
-                		<f:param name="current" value="productCategoryCreate"/>
-						<f:param name="ctitle" value="基础数据>>产品类型>>新建"></f:param>
+                		<f:param name="current" value="productCreate"/>
+						<f:param name="ctitle" value="基础数据>>产品管理>>新建"></f:param>
                 </rich:menuItem>
                 <rich:menuItem id="dmtwomithree" submitMode="ajax" value="编辑" action="#{manageHeaderMenu.updateCurrent}" immediate="true">
-                		<f:param name="current" value="productCategoryEdit"/>
+                		<f:param name="current" value="productEdit"/>
 						<f:param name="ctitle" value="基础数据>>产品类型>>编辑"></f:param>
                 </rich:menuItem>
                 
