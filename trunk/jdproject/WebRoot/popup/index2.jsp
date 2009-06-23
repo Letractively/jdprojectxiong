@@ -8,15 +8,19 @@ xmlns:h="http://java.sun.com/jsf/html"
 xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
 
-<script language="javascript"><!--
+<html>
+
+   <f:view>
+      <head>                  
+         <script language="JavaScript"><!--
             function doPopup(source) {
-               country = source.form[source.form.id + ":country"];
+               var country = source.form[source.form.id + ":country"];
                for (var i = 0; i < country.length; i++) {
                   if (country[i].checked) {
-                     popup = window.open("",
+                     popup = window.open("popup2.jsf",
                         "popup", 
-                        "height=300,width=200,toolbar=no,menubar=no,"
-                        + "scrollbars=yes");               
+                        "height=300,width=500,toolbar=no,menubar=no,"
+                        + "scrollbars=no");               
                      popup.openerFormId = source.form.id;
                      popup.focus();
                      var hidden = document.forms.hidden;
@@ -26,12 +30,7 @@ xmlns:rich="http://richfaces.org/rich">
                   }
                }
             }               
-         --></script> 
-<html>
-
-   <f:view>
-      <head>                  
-         
+         --></script>
          <title>A Simple Java Server Faces Application</title>
       </head>
       <body>
@@ -62,11 +61,10 @@ xmlns:rich="http://richfaces.org/rich">
             </p>
          </h:form>
 
-         <!-- This hidden form sends a request to a popup window. -->
          <h:form id="hidden" target="popup">
             <h:inputHidden id="country" value="#{bb.country}"/>
-            <h:commandLink id="go" action="showStates" value="next">
-             
+            <h:commandLink id="go" action="showStates" value="">
+               <f:verbatim/>
             </h:commandLink>
          </h:form>
       </body>
