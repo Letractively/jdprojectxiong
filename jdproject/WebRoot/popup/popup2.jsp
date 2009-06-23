@@ -24,10 +24,10 @@ xmlns:rich="http://richfaces.org/rich">
          <h:form>
             <h:dataTable value="#{bb.statesForCountry}" var="state">
                <h:column>
-                  <a4j:commandLink value="#{state}" action="#{bb.popudbclick}"  ondblclick="javascript:setInterval('window.opener.location.href=window.opener.location.href;window.close()',1000); window.close();">
+                  <a4j:commandLink value="#{state}" action="#{bb.popudbclick}"  onclick="doSave('#{state}');">
                   <f:param name="state" value="#{state}"></f:param>
                   <f:param name="viewId" value="#{bb.viewId}"></f:param>
-                  <a4j:support event="ondblclick" ></a4j:support>
+                  <a4j:support event="ondblclick" oncomplete="javascript:window.close();"></a4j:support>
                   
                   </a4j:commandLink>
                </h:column>
