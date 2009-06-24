@@ -60,7 +60,10 @@ public class FileUploadBean{
 		if (null != this.getFiles()) {
 			for(File tempFile:this.getFiles()) {
 				 try {
-					 path=path+"productimage\\"+tempFile.getName();
+					 String fileName = tempFile.getName();
+					 int place = fileName.lastIndexOf("\\");
+					 fileName = fileName.substring(place+1, fileName.length());
+					 path=path+"productimage\\" + fileName;
 					 path=path.replaceAll("\\\\","/");
 					 out = new FileOutputStream(path);
 					 out.write(tempFile.getData());
