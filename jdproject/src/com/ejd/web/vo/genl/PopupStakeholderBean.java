@@ -32,7 +32,7 @@ public class PopupStakeholderBean extends PagedBaseBean {
 			statusList = statusItem.split("|");
 		}
 		if (null != statusList && statusList.length > 0) {
-			for (int i = 0; i < statusList.length; i++) {
+			for (int i = 0; i <= statusList.length; i++) {
 				if (i ==0) {
 					resultSql = resultSql + " and (s.status = :status"+ String.valueOf(i);
 				}  else {
@@ -49,7 +49,7 @@ public class PopupStakeholderBean extends PagedBaseBean {
 			typeList = typeItem.split("|");
 		}
 		if (null != typeList && typeList.length > 0) {
-			for (int i = 0; i < typeList.length; i++) {
+			for (int i = 0; i <= typeList.length; i++) {
 				if (i ==0) {
 					resultSql = resultSql + " and (s.type = :type"+ String.valueOf(i);
 				}  else {
