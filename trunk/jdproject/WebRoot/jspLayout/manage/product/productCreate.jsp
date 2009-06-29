@@ -10,6 +10,35 @@ xmlns:rich="http://richfaces.org/rich">
 <f:view id="manageMainView">
 <html>
 	<head>
+	<script language="JavaScript">
+            function doPopup(source) {
+        	alert("in");
+               var searchName = source.form[source.form.id + ":searchName"];
+               var statusItem = "A";
+               var typeItem = "P";
+               var compomentId = "productform" + ":productProviderFullName";
+               var facesBean = "productCreate";
+               var propertyOfFacesBean = "product.provider";
+               if (searchName.length > 2) {
+                     popup = window.open("../../../popug/popupStakeholder.jsf",
+                        "popup", 
+                        "height=300,width=500,toolbar=no,menubar=no,"
+                        + "scrollbars=no");               
+                     popup.openerFormId = source.form.id;
+                     popup.focus();
+                     var hidden = document.forms.hidden;
+                     hidden["hidden:go"].value = "x"; // any value will do
+                     hidden["hidden:searchName"].value = searchName.value;
+                     hidden["hidden:statusItem"].value = statusItem;
+                     hidden["hidden:typeItem"].value = typeItem;
+                     hidden["hidden:compomentId"].value = compomentId
+                     hidden["hidden:facesBean"].value = facesBean;
+                     hidden["hidden:propertyOfFacesBean"].value = propertyOfFacesBean;
+                     hidden.submit();          
+                }
+               
+            }               
+         </script>
     <title>新增产品</title>
     </head>
     <body>
@@ -30,6 +59,13 @@ xmlns:rich="http://richfaces.org/rich">
                     		<rich:beanValidator summary="序号有误"/>
                     	</h:inputText>
                 		<rich:message for="manufacturerCode" />
+                		<h:outputLabel value="原厂商：" for="productProviderFullName"></h:outputLabel>
+                		<h:panelGroup>
+							<h:inputText value="#{productCreate.product.provider.fullName}" id="productProviderFullName"> 
+                    		</h:inputText>
+                    		<a4j:commandButton value="..."  onclick="doPopup(this); return false;"/>
+                    	</h:panelGroup>
+                		<rich:message for="productProviderFullName" />
 						<h:outputLabel value="条码号：" for="barcode"></h:outputLabel>
 						<h:inputText value="#{productCreate.product.barcode}" id="barcode">
                     		<rich:beanValidator summary="序号有误"/>
@@ -123,6 +159,17 @@ xmlns:rich="http://richfaces.org/rich">
 					</h:panelGrid>
 					</fieldset>
     			</h:form>
+    			<h:form id="hidden" target="popup">
+            	<h:inputHidden id="searchName" value="#{popupStakeholder.searchName}"/>
+            	<h:inputHidden id="statusItem" value="#{popupStakeholder.statusItem}"/>
+            	<h:inputHidden id="typeItem" value="#{popupStakeholder.typeItem}"/>
+            	<h:inputHidden id="compomentId" value="#{popupStakeholder.compomentId}"/>
+            	<h:inputHidden id="facesBean" value="#{popupStakeholder.facesBean}"/>
+            	<h:inputHidden id="propertyOfFacesBean" value="#{popupStakeholder.propertyOfFacesBean}"/>
+            	<h:commandLink id="go" action="showStates" value="">
+               	<f:verbatim/>
+            	</h:commandLink>
+         		</h:form>
     		</ui:define>
     	</ui:composition>
     </body>
