@@ -230,6 +230,11 @@
         <managed-bean-class>com.ejd.web.vo.image.ImageSuggestionBox</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
+    <managed-bean> 
+      <managed-bean-name>popupStakeholder</managed-bean-name>
+      <managed-bean-class>com.ejd.web.vo.genl.PopupStakeholderBean</managed-bean-class> 
+      <managed-bean-scope>session</managed-bean-scope> 
+    </managed-bean>
 	<!-- test -->
 	<managed-bean>
 		<managed-bean-name>demoBean</managed-bean-name>
