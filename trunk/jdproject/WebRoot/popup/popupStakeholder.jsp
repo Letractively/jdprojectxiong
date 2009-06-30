@@ -21,20 +21,25 @@ xmlns:rich="http://richfaces.org/rich">
          <title>Select a state/province</title>
       </head>
       <body>
-      	popupstakeholer.jsp
-         <!--<h:form>
-            <h:dataTable value="#{bb.statesForCountry}" var="state">
-               <h:column>
-                  <a4j:commandLink value="#{state}" action="#{bb.popudbclick}"  onclick="doSave('#{state}');">
-                  <f:param name="state" value="#{state}"></f:param>
-                  <f:param name="viewId" value="#{bb.viewId}"></f:param>
-                  <a4j:support event="ondblclick" oncomplete="javascript:window.close();"></a4j:support>
-                  
-                  </a4j:commandLink>
-               </h:column>
-            </h:dataTable>
-         </h:form>
-      --></body>
+      	<h:form id="liststakeholerform">
+			 <rich:dataTable id="stakeholderList" width="483" rows="10" value="#{popupStakeholder.dataModel}" var="stakeholder">            
+                 <f:facet name="header">
+                     <rich:columnGroup>
+                         <h:column>
+                             <h:outputText value="Name" />
+                         </h:column>
+                                                 
+                     </rich:columnGroup>
+                 </f:facet>
+     
+                 <h:column>
+                     <h:outputText value="#{stakeholder.fullName}" />
+                 </h:column>                
+             </rich:dataTable>
+             <rich:datascroller for="stakeholderList" id="dcStakeholderList" style="width:483px"/>
+         </h:form>    
+			
+      </body>
    </f:view>
 </html>
 </jsp:root>
