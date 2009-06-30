@@ -1,5 +1,7 @@
 package com.ejd.web.vo.product;
 
+import com.ejd.utils.SpringFacesUtil;
+import com.ejd.web.vo.genl.PopupStakeholderBean;
 import com.ejd.web.vo.stakeholder.StakeholderVo;
 
 public class ProductCreateBean extends ProductBaseBean {
@@ -25,5 +27,11 @@ public class ProductCreateBean extends ProductBaseBean {
 	public void setProduct(ProductVo product) {
 		this.product = product;
 	}
-	
+	public String setPopupStakeholderSearchName() {
+		PopupStakeholderBean popupStakeholder = (PopupStakeholderBean)SpringFacesUtil.getManagedBean("popupStakeholder");
+		if (null != popupStakeholder) {
+			popupStakeholder.setSearchName(this.getProduct().getProvider().getFullName());
+		}
+		return null;
+	}
 }
