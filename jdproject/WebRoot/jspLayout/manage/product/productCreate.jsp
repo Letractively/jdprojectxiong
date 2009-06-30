@@ -7,38 +7,9 @@ xmlns:f="http://java.sun.com/jsf/core"
 xmlns:h="http://java.sun.com/jsf/html"
 xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
-<f:view id="manageMainView">
+<f:view>
 <html>
 	<head>
-	<script language="JavaScript">
-            function doPopup(source) {
-        	alert("in");
-               var searchName = source.form[source.form.id + ":searchName"];
-               var statusItem = "A";
-               var typeItem = "P";
-               var compomentId = "productform" + ":productProviderFullName";
-               var facesBean = "productCreate";
-               var propertyOfFacesBean = "product.provider";
-               if (searchName.length > 2) {
-                     popup = window.open("../../../popug/popupStakeholder.jsf",
-                        "popup", 
-                        "height=300,width=500,toolbar=no,menubar=no,"
-                        + "scrollbars=no");               
-                     popup.openerFormId = source.form.id;
-                     popup.focus();
-                     var hidden = document.forms.hidden;
-                     hidden["hidden:go"].value = "x"; // any value will do
-                     hidden["hidden:searchName"].value = searchName.value;
-                     hidden["hidden:statusItem"].value = statusItem;
-                     hidden["hidden:typeItem"].value = typeItem;
-                     hidden["hidden:compomentId"].value = compomentId
-                     hidden["hidden:facesBean"].value = facesBean;
-                     hidden["hidden:propertyOfFacesBean"].value = propertyOfFacesBean;
-                     hidden.submit();          
-                }
-               
-            }               
-         </script>
     <title>新增产品</title>
     </head>
     <body>
@@ -50,7 +21,7 @@ xmlns:rich="http://richfaces.org/rich">
     			
     				<h:panelGrid id="newpanel" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
 						<h:outputLabel value="产品编码：" for="productCode"></h:outputLabel>
-						<h:inputText value="#{productCreate.product.code}" id="cc">
+						<h:inputText value="#{productCreate.product.code}" id="productCode">
 							<rich:beanValidator summary="类型有误"/>
                 		</h:inputText>
                 		<rich:message for="productCode" />
@@ -61,9 +32,22 @@ xmlns:rich="http://richfaces.org/rich">
                 		<rich:message for="manufacturerCode" />
                 		<h:outputLabel value="原厂商：" for="productProviderFullName"></h:outputLabel>
                 		<h:panelGroup>
-							<h:inputText value="#{productCreate.product.provider.fullName}" id="productProviderFullName"> 
+							<h:inputText value="#{productCreate.product.provider.fullName}" id="productProviderFullName">
+							<a4j:support action="#{productCreate.setPopupStakeholderSearchName}" event="onblur" ajaxSingle="true" reRender="productProviderFullName,popupStakeholderSearchName"></a4j:support> 
                     		</h:inputText>
-                    		<a4j:commandButton value="..."  onclick="doPopup(this); return false;"/>
+                    		<a4j:jsFunction oncomplete="changeFinish(data);" name="processSearchStakeholderMethod"
+    						data="#{popupStakeholder.searchName}"
+    						actionListener="#{popupStakeholder.ActionListenerTest}"
+   						 	action="#{popupStakeholder.valueChange}">
+
+    						
+     						<a4j:actionparam name="param2" value="A" assignTo="#{popupStakeholder.statusItem}" />
+     						<a4j:actionparam name="param3" value="P" assignTo="#{popupStakeholder.typeItem}" />
+     						<a4j:actionparam name="param4" value="productProviderFullName" assignTo="#{popupStakeholder.compomentId}" />
+     						<a4j:actionparam name="param5" value="productCreate" assignTo="#{popupStakeholder.facesBean}" />
+     						<a4j:actionparam name="param6" value="product.provider" assignTo="#{popupStakeholder.propertyOfFacesBean}" />
+   							</a4j:jsFunction>
+                    		<a4j:commandButton value="..." immediate="true"  onclick="searchStakehoderBegin(); return false;"/>
                     	</h:panelGroup>
                 		<rich:message for="productProviderFullName" />
 						<h:outputLabel value="条码号：" for="barcode"></h:outputLabel>
@@ -149,7 +133,7 @@ xmlns:rich="http://richfaces.org/rich">
 						<h:outputLabel value="库存下限：" for="stockLowerNumber"></h:outputLabel>
 						<rich:inputNumberSpinner value="#{productCreate.product.stockLowerNumber}" id="stockLowerNumber" minValue="1" maxValue="10000" step="1"/>
 						<h:outputText value=""></h:outputText>
-						<h:outputLabel value="库存上限：" for="stockUpperNumber "></h:outputLabel>
+						<h:outputLabel value="库存上限：" for="stockUpperNumber"></h:outputLabel>
 						<rich:inputNumberSpinner value="#{productCreate.product.stockUpperNumber }" id="stockUpperNumber" minValue="1" maxValue="100000" step="1"/>
 						<h:outputText value=" "></h:outputText>
 						<h:outputLabel value="介绍页面：" for="introduceFileName"></h:outputLabel>
