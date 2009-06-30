@@ -12,7 +12,7 @@ function changeFinish(data){
    } else {
    popup = window.open("./popup/popupStakeholder.jsf",
            "popup", 
-           "height=500,width=500,toolbar=no,menubar=no,"
+           "height=520,width=500,toolbar=no,menubar=no,"
            + "scrollbars=no");               
         popup.openerFormId = source.form.id;
         popup.focus();
