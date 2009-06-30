@@ -3,7 +3,10 @@ package com.popup;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.faces.component.UIComponent;
+import javax.faces.component.UIViewRoot;
 import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
 
 import com.ejd.utils.SpringFacesUtil;
 
@@ -62,12 +65,20 @@ public Map getStates() { return states; }
 	   String preViewId = SpringFacesUtil.getRequestParameter("viewId");
 	   System.out.println(preViewId);
 	   String nowviewId = FacesContext.getCurrentInstance().getViewRoot().getViewId();
-	   System.out.println(nowviewId);
+	   UIViewRoot uivr = FacesContext.getCurrentInstance().getViewRoot();
+	   UIComponent uict = FacesContext.getCurrentInstance().getViewRoot().findComponent("j_id3:state");
 	   //String pareenviewid = FacesContext.getCurrentInstance().getViewRoot().
 	   BackingBean bbb =(BackingBean) SpringFacesUtil.getManagedBean("bb");
-	   bbb.setState(state);
+	   bbb.setState("testvalue");
+	   this.setState("testvalue");
+	   uict.processUpdates(FacesContext.getCurrentInstance());
 	   System.out.println(state+"bean:"+bbb.getState());
 	   //SpringFacesUtil.redirectPage("/popup/index2.jsp");
 	   return null;
    }
+   public void ActionListenerTest(ActionEvent e) {
+	   UIComponent uict = e.getComponent();
+	   UIViewRoot uivr = FacesContext.getCurrentInstance().getViewRoot();
+	   String nowviewId = FacesContext.getCurrentInstance().getViewRoot().getViewId();
+	}
 }
