@@ -22,19 +22,32 @@ xmlns:rich="http://richfaces.org/rich">
       </head>
       <body>
       	<h:form id="liststakeholerform">
-			 <rich:dataTable id="stakeholderList" width="483" rows="10" value="#{popupStakeholder.dataModel}" var="stakeholder">            
+			 <rich:dataTable id="stakeholderList" width="483" rows="20" value="#{popupStakeholder.dataModel}" var="stakeholder">            
                  <f:facet name="header">
                      <rich:columnGroup>
                          <h:column>
-                             <h:outputText value="Name" />
+                             <h:outputText value="名称" />
                          </h:column>
+                         <h:column>
+                             <h:outputText value="省份" />
+                         </h:column>
+                         <h:column>
+                             <h:outputText value="城市" />
+                         </h:column>
+                         province
                                                  
                      </rich:columnGroup>
                  </f:facet>
      
                  <h:column>
                      <h:outputText value="#{stakeholder.fullName}" />
-                 </h:column>                
+                 </h:column>
+                 <h:column>
+                     <h:outputText value="#{stakeholder.province}" />
+                 </h:column> 
+                 <h:column>
+                     <h:outputText value="#{stakeholder.city}" />
+                 </h:column>                 
              </rich:dataTable>
              <rich:datascroller for="stakeholderList" id="dcStakeholderList" style="width:483px"/>
          </h:form>    
