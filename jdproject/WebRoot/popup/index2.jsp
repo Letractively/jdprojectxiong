@@ -52,7 +52,7 @@ xmlns:rich="http://richfaces.org/rich">
                   </td>
                   <td>
                      <h:commandButton value="..."
-                        onclick="doPopup(this); return false;"/>
+                        onclick="doPopup(this); return false;"/><h:commandButton id="testid" action="#{bb.popudbclick}" actionListener="#{bb.ActionListenerTest}"></h:commandButton>
                   </td>
                </tr>
             </table>
