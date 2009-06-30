@@ -1,12 +1,20 @@
 package com.ejd.web.vo.genl;
+import java.util.List;
+
+import javax.faces.event.ActionEvent;
+import javax.faces.model.DataModel;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
 import org.hibernate.SessionFactory;
 
+import bsh.This;
+
 import com.ejd.common.datapage.DataPage;
 import com.ejd.common.datapage.PagedBaseBean;
+import com.ejd.common.datapage.PagedListDataModel;
 import com.ejd.utils.SpringFacesUtil;
 import com.ejd.web.bo.Stakeholder;
 
@@ -17,6 +25,7 @@ public class PopupStakeholderBean extends PagedBaseBean {
 	private String compomentId; //set value in opener page
 	private String facesBean;//update facesbean;
 	private String propertyOfFacesBean;// ;format with *.* or * or *.*.*.*
+	private DataModel dataModel;
 	public PopupStakeholderBean() {
 		super();
 	}
@@ -69,7 +78,7 @@ public class PopupStakeholderBean extends PagedBaseBean {
 		if ( (null == this.getSearchName()) || (this.getSearchName().length() < 2)) {
 			// do nothing;
 		} else {
-			q.setString(0, this.getSearchName());
+			q.setString(0, "%" + this.getSearchName() + "%");
 		}
 		String[] statusList = null;
 		if (null != statusItem && !"".equals(statusItem)) {
@@ -128,6 +137,10 @@ public class PopupStakeholderBean extends PagedBaseBean {
 	public void setPropertyOfFacesBean(String propertyOfFacesBean) {
 		this.propertyOfFacesBean = propertyOfFacesBean;
 	}
+	
+	public void setDataModel(DataModel dataModel) {
+		this.dataModel = dataModel;
+	}
 	public int getTotalCount() {
 		int totalCount = 0;
 		SessionFactory sf =(SessionFactory) SpringFacesUtil.getSpringBean("sessionFactory");
@@ -135,8 +148,11 @@ public class PopupStakeholderBean extends PagedBaseBean {
 		try {
 		Query q = session.createQuery(this.getSearchSql());
 		this.setQueryProperty(q);
-		totalCount = q.list().size();
+		
 		session.beginTransaction();
+		List alist = q.list();
+		totalCount = q.list().size();
+		session.flush();
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			session.getTransaction().rollback();
@@ -164,5 +180,30 @@ public class PopupStakeholderBean extends PagedBaseBean {
 		  }
 		return dataPage;
 	}
-
+	
+	public void ActionListenerTest(ActionEvent e) {
+		System.out.println("action event invoke!");
+	}
+	public void valueChange() {
+		System.out.println(this.getSearchName());
+		System.out.println(this.getFacesBean());
+		System.out.println(this.getStatusItem());
+		System.out.println(this.getTypeItem());
+		System.out.println(this.getFacesBean());
+		System.out.println(this.getPropertyOfFacesBean());
+		System.out.println(this.getTotalCount());
+		System.out.println(this.getSearchSql());
+		   
+		}
+	public DataModel getDataModel(){
+	   if (dataModel == null) {
+	     dataModel = new PagedListDataModel(20) {
+	     public DataPage<Stakeholder> fetchPage(int startRow, int pageSize) {
+	      return getDataPage(startRow, pageSize);
+	     }
+	    };
+	    
+	    }
+	   return dataModel;
+	}
 }
