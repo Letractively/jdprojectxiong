@@ -1,6 +1,8 @@
 package com.ejd.web.vo.genl;
 import java.util.List;
 
+import javax.faces.component.UIComponent;
+import javax.faces.component.UIViewRoot;
 import javax.faces.event.ActionEvent;
 import javax.faces.model.DataModel;
 
@@ -22,6 +24,8 @@ public class PopupStakeholderBean extends PagedBaseBean {
 	private String searchName;//for search;
 	private String statusItem;//for search; 
 	private String typeItem;//for search;
+	private UIViewRoot parentViewRoot;
+	private List<UIComponent> parentComponents;//these component need refresh;
 	private String compomentId; //set value in opener page
 	private String facesBean;//update facesbean;
 	private String propertyOfFacesBean;// ;format with *.* or * or *.*.*.*
@@ -118,6 +122,19 @@ public class PopupStakeholderBean extends PagedBaseBean {
 	}
 	public void setTypeItem(String typeItem) {
 		this.typeItem = typeItem;
+	}
+	
+	public UIViewRoot getParentViewRoot() {
+		return parentViewRoot;
+	}
+	public void setParentViewRoot(UIViewRoot parentViewRoot) {
+		this.parentViewRoot = parentViewRoot;
+	}
+	public List<UIComponent> getParentComponents() {
+		return parentComponents;
+	}
+	public void setParentComponents(List<UIComponent> parentComponents) {
+		this.parentComponents = parentComponents;
 	}
 	public String getCompomentId() {
 		return compomentId;
