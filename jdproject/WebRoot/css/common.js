@@ -1,12 +1,8 @@
 //var contentPath = ${facesContext.externalContext.requestContextPath};
-function searchStakehoderBegin(){
-   alert("good");
-   var _name = "good";
-   processSearchStakeholderMethod();
+function searchStakehoderInCreateProductBegin(){
+   processSearchStakeholderMethodInCreateProduct();
 }
-function changeFinish(data){
-   alert("finish");
-   alert(data);
+function changeFinishInCreateProduct(data){
    if (undefined == data || data.length <2) {
 	   //do nothing
    } else {
@@ -14,7 +10,10 @@ function changeFinish(data){
            "popup", 
            "height=520,width=500,toolbar=no,menubar=no,"
            + "scrollbars=no");               
-        popup.openerFormId = source.form.id;
-        popup.focus();
+        //popup.openerFormId = source.form.id;
+   popup.focus();
    }
+}   
+function reFreshStakeholderInCreateProduct(){
+	processFreshStakeholerInCreateProduct();
 }
