@@ -1,7 +1,11 @@
 package com.ejd.web.vo.genl;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.faces.component.UIComponent;
+import javax.faces.component.UIData;
 import javax.faces.component.UIViewRoot;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
@@ -22,6 +26,7 @@ import com.ejd.common.datapage.PagedListDataModel;
 import com.ejd.model.exception.StakeholderException;
 import com.ejd.model.service.iface.IStakeholderService;
 import com.ejd.utils.SpringFacesUtil;
+import com.ejd.utils.UIComponentUtil;
 import com.ejd.web.bo.Stakeholder;
 import com.ejd.web.vo.product.ProductCreateBean;
 import com.ejd.web.vo.stakeholder.StakeholderVo;
@@ -252,6 +257,31 @@ public class PopupStakeholderBean extends PagedBaseBean {
 				temcomponent.setRendered(true);
 			}
 		}*/
+		return null;
+	}
+	public StakeholderVo getStakeholderRowData() throws StakeholderException{
+		/*IStakeholderService stakeholderService =(IStakeholderService) SpringFacesUtil.getSpringBean("stakeholderService"); */
+		Stakeholder stakeholder = new Stakeholder();
+		StakeholderVo stakeholderVo = new StakeholderVo();
+		Map<String,UIComponent> componentMap = new HashMap<String,UIComponent>();
+		List<UIComponent> te= new ArrayList<UIComponent>();
+		UIViewRoot currentViewRoot = FacesContext.getCurrentInstance().getViewRoot();
+		for(UIComponent component : currentViewRoot.getChildren()){ 
+            te= UIComponentUtil.getComponentChildren(component,componentMap); 
+        }
+		UIData table = (UIData) componentMap.get("stakeholderList");
+		stakeholder = (Stakeholder) table.getRowData();
+		try {
+			PropertyUtils.copyProperties(stakeholderVo, stakeholder);
+		} catch(Exception e)
+		{
+			System.out.println(e.toString());
+		}
+		if ("productCreate".equals(this.getFacesBean())) {
+			ProductCreateBean productCreate =(ProductCreateBean) SpringFacesUtil.getManagedBean("productCreate");
+			productCreate.getProduct().setProvider(stakeholderVo);
+		}
+		
 		return null;
 	}
 }
