@@ -44,17 +44,17 @@ xmlns:rich="http://richfaces.org/rich">
      				
                  <h:column>
                      <h:outputText value="#{stakeholder.fullName}" />
-                     <a4j:jsFunction oncomplete="reFreshParent();" ajaxSingle="true" name="processSelecteStakeholderMethodInPopupStakeholder" action="#{popupStakeholder.getStakeholderFromDb}">
+                     <a4j:jsFunction oncomplete="reFreshParent();" ajaxSingle="true" name="processSelecteStakeholderMethodInPopupStakeholder" action="#{popupStakeholder.getStakeholderRowData}">
    				</a4j:jsFunction>
                  </h:column>
                  <h:column>
                      <h:outputText value="#{stakeholder.province}" />
-                     <a4j:jsFunction oncomplete="reFreshParent();" ajaxSingle="true" name="processSelecteStakeholderMethodInPopupStakeholder" action="#{popupStakeholder.getStakeholderFromDb}">
+                     <a4j:jsFunction oncomplete="reFreshParent();" ajaxSingle="true" name="processSelecteStakeholderMethodInPopupStakeholder" action="#{popupStakeholder.getStakeholderRowData}">
    					</a4j:jsFunction>
                  </h:column> 
                  <h:column>
                      <h:outputText value="#{stakeholder.city}" />
-                     <a4j:jsFunction oncomplete="reFreshParent();" ajaxSingle="true" name="processSelecteStakeholderMethodInPopupStakeholder" action="#{popupStakeholder.getStakeholderFromDb}">
+                     <a4j:jsFunction oncomplete="reFreshParent();" ajaxSingle="true" name="processSelecteStakeholderMethodInPopupStakeholder" action="#{popupStakeholder.getStakeholderRowData}">
    				     </a4j:jsFunction>
                  </h:column>                 
              </rich:dataTable>
