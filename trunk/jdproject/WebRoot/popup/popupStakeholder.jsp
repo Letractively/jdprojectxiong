@@ -12,17 +12,21 @@ xmlns:rich="http://richfaces.org/rich">
    <f:view>
       <head>                  
          <script language="javascript">
-            function doSave(value) {
-               formId = window.openerFormId;
-               opener.document.forms[formId][formId + ":state"].value = value;
+            function reFreshParent() {
+               window.opener.reFreshStakeholderInCreateProduct();
                window.close();
-            }               
+            }          
+            function selectRowData() {
+                processSelecteStakeholderMethodInPopupStakeholder();
+            }     
          </script>
+         <link rel="STYLESHEET" type="text/css" href="${facesContext.externalContext.requestContextPath}/css/common.css"/>
          <title>Select a state/province</title>
       </head>
       <body>
       	<h:form id="liststakeholerform">
-			 <rich:dataTable id="stakeholderList" width="483" rows="20" value="#{popupStakeholder.dataModel}" var="stakeholder">            
+      		<a4j:commandButton value="getdb" action="#{popupStakeholder.getStakeholderFromDb}" oncomplete="reFreshParent();"></a4j:commandButton>
+			 <rich:dataTable id="stakeholderList" rowClasses="table-odd-row;table-even-row" width="483" rows="20" value="#{popupStakeholder.dataModel}" var="stakeholder" onRowDblClick="selectRowData();">            
                  <f:facet name="header">
                      <rich:columnGroup>
                          <h:column>
@@ -34,22 +38,27 @@ xmlns:rich="http://richfaces.org/rich">
                          <h:column>
                              <h:outputText value="城市" />
                          </h:column>
-                         province
                                                  
                      </rich:columnGroup>
                  </f:facet>
-     
+     				
                  <h:column>
                      <h:outputText value="#{stakeholder.fullName}" />
+                     <a4j:jsFunction oncomplete="reFreshParent();" ajaxSingle="true" name="processSelecteStakeholderMethodInPopupStakeholder" action="#{popupStakeholder.getStakeholderFromDb}">
+   				</a4j:jsFunction>
                  </h:column>
                  <h:column>
                      <h:outputText value="#{stakeholder.province}" />
+                     <a4j:jsFunction oncomplete="reFreshParent();" ajaxSingle="true" name="processSelecteStakeholderMethodInPopupStakeholder" action="#{popupStakeholder.getStakeholderFromDb}">
+   					</a4j:jsFunction>
                  </h:column> 
                  <h:column>
                      <h:outputText value="#{stakeholder.city}" />
+                     <a4j:jsFunction oncomplete="reFreshParent();" ajaxSingle="true" name="processSelecteStakeholderMethodInPopupStakeholder" action="#{popupStakeholder.getStakeholderFromDb}">
+   				     </a4j:jsFunction>
                  </h:column>                 
              </rich:dataTable>
-             <rich:datascroller for="stakeholderList" id="dcStakeholderList" style="width:483px"/>
+             <rich:datascroller for="stakeholderList" id="dcStakeholderList" page="#{popupStakeholder.scrollerPage}" style="width:483px"/>
          </h:form>    
 			
       </body>

@@ -35,19 +35,20 @@ xmlns:rich="http://richfaces.org/rich">
 							<h:inputText value="#{productCreate.product.provider.fullName}" id="productProviderFullName">
 							<a4j:support action="#{productCreate.setPopupStakeholderSearchName}" event="onblur" ajaxSingle="true" reRender="productProviderFullName,popupStakeholderSearchName"></a4j:support> 
                     		</h:inputText>
-                    		<a4j:jsFunction oncomplete="changeFinish(data);" name="processSearchStakeholderMethod"
+                    		<a4j:jsFunction oncomplete="changeFinishInCreateProduct(data);" name="processSearchStakeholderMethodInCreateProduct"
     						data="#{popupStakeholder.searchName}"
     						actionListener="#{popupStakeholder.ActionListenerTest}"
    						 	action="#{popupStakeholder.valueChange}">
 
     						
-     						<a4j:actionparam name="param2" value="A" assignTo="#{popupStakeholder.statusItem}" />
-     						<a4j:actionparam name="param3" value="P" assignTo="#{popupStakeholder.typeItem}" />
-     						<a4j:actionparam name="param4" value="productProviderFullName" assignTo="#{popupStakeholder.compomentId}" />
-     						<a4j:actionparam name="param5" value="productCreate" assignTo="#{popupStakeholder.facesBean}" />
-     						<a4j:actionparam name="param6" value="product.provider" assignTo="#{popupStakeholder.propertyOfFacesBean}" />
+     						<a4j:actionparam name="param1" value="A" assignTo="#{popupStakeholder.statusItem}" />
+     						<a4j:actionparam name="param2" value="P" assignTo="#{popupStakeholder.typeItem}" />
+     						<a4j:actionparam name="param3" value="productCreate" assignTo="#{popupStakeholder.facesBean}" />
+     						<a4j:actionparam name="param4" value="product.provider" assignTo="#{popupStakeholder.propertyOfFacesBean}" />
    							</a4j:jsFunction>
-                    		<a4j:commandButton value="..." immediate="true"  onclick="searchStakehoderBegin(); return false;"/>
+   							<a4j:jsFunction name="processFreshStakeholerInCreateProduct" ajaxSingle="true" limitToList="true" reRender="productProviderFullName">
+   						 	</a4j:jsFunction>
+                    		<a4j:commandButton value="..." immediate="true"  onclick="searchStakehoderInCreateProductBegin(); return false;"/>
                     	</h:panelGroup>
                 		<rich:message for="productProviderFullName" />
 						<h:outputLabel value="条码号：" for="barcode"></h:outputLabel>
@@ -143,17 +144,6 @@ xmlns:rich="http://richfaces.org/rich">
 					</h:panelGrid>
 					</fieldset>
     			</h:form>
-    			<h:form id="hidden" target="popup">
-            	<h:inputHidden id="searchName" value="#{popupStakeholder.searchName}"/>
-            	<h:inputHidden id="statusItem" value="#{popupStakeholder.statusItem}"/>
-            	<h:inputHidden id="typeItem" value="#{popupStakeholder.typeItem}"/>
-            	<h:inputHidden id="compomentId" value="#{popupStakeholder.compomentId}"/>
-            	<h:inputHidden id="facesBean" value="#{popupStakeholder.facesBean}"/>
-            	<h:inputHidden id="propertyOfFacesBean" value="#{popupStakeholder.propertyOfFacesBean}"/>
-            	<h:commandLink id="go" action="showStates" value="">
-               	<f:verbatim/>
-            	</h:commandLink>
-         		</h:form>
     		</ui:define>
     	</ui:composition>
     </body>
