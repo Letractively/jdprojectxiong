@@ -42,23 +42,25 @@ public class ProductCreateBean extends ProductBaseBean {
 		if (null != popupStakeholder) {
 			popupStakeholder.setSearchName(this.getProduct().getProvider().getFullName());
 		}
-		Map<String,UIComponent> componentMap = new HashMap<String,UIComponent>();
+		/*Map<String,UIComponent> componentMap = new HashMap<String,UIComponent>();
 		List<UIComponent> te= new ArrayList<UIComponent>();
 		UIViewRoot currentViewRoot = FacesContext.getCurrentInstance().getViewRoot();
 		List<UIComponent> uicts = FacesContext.getCurrentInstance().getViewRoot().getChildren();
 		List<UIComponent> forSunComponent = new ArrayList<UIComponent>();
-		/*for (UIComponent tempComponent:uicts) {
+		for (UIComponent tempComponent:uicts) {
 			if ("productProviderFullName".equals(tempComponent.getId())) {
 				forSunComponent.add(tempComponent);
 			}
-		}*/
+		}
 		for(UIComponent component : currentViewRoot.getChildren()){ 
             te= UIComponentUtil.getComponentChildren(component,componentMap); 
         }
 		forSunComponent.add(componentMap.get("productProviderFullName"));
 		popupStakeholder.setParentViewRoot(currentViewRoot);
-		popupStakeholder.setParentComponents(forSunComponent);
+		popupStakeholder.setParentComponents(forSunComponent);*/
 		return null;
 	}
-
+	public String reRreshStakeholder() {
+		return null;
+	}
 }

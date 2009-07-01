@@ -3,9 +3,11 @@ import java.util.List;
 
 import javax.faces.component.UIComponent;
 import javax.faces.component.UIViewRoot;
+import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 import javax.faces.model.DataModel;
 
+import org.apache.commons.beanutils.PropertyUtils;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -17,19 +19,24 @@ import bsh.This;
 import com.ejd.common.datapage.DataPage;
 import com.ejd.common.datapage.PagedBaseBean;
 import com.ejd.common.datapage.PagedListDataModel;
+import com.ejd.model.exception.StakeholderException;
+import com.ejd.model.service.iface.IStakeholderService;
 import com.ejd.utils.SpringFacesUtil;
 import com.ejd.web.bo.Stakeholder;
+import com.ejd.web.vo.product.ProductCreateBean;
+import com.ejd.web.vo.stakeholder.StakeholderVo;
 
 public class PopupStakeholderBean extends PagedBaseBean {
 	private String searchName;//for search;
 	private String statusItem;//for search; 
 	private String typeItem;//for search;
-	private UIViewRoot parentViewRoot;
+	/*private UIViewRoot parentViewRoot;
 	private List<UIComponent> parentComponents;//these component need refresh;
 	private String compomentId; //set value in opener page
-	private String facesBean;//update facesbean;
+	*/private String facesBean;//update facesbean;
 	private String propertyOfFacesBean;// ;format with *.* or * or *.*.*.*
 	private DataModel dataModel;
+	private int scrollerPage;
 	public PopupStakeholderBean() {
 		super();
 	}
@@ -124,7 +131,7 @@ public class PopupStakeholderBean extends PagedBaseBean {
 		this.typeItem = typeItem;
 	}
 	
-	public UIViewRoot getParentViewRoot() {
+	/*public UIViewRoot getParentViewRoot() {
 		return parentViewRoot;
 	}
 	public void setParentViewRoot(UIViewRoot parentViewRoot) {
@@ -141,7 +148,7 @@ public class PopupStakeholderBean extends PagedBaseBean {
 	}
 	public void setCompomentId(String compomentId) {
 		this.compomentId = compomentId;
-	}
+	}*/
 	public String getFacesBean() {
 		return facesBean;
 	}
@@ -157,6 +164,13 @@ public class PopupStakeholderBean extends PagedBaseBean {
 	
 	public void setDataModel(DataModel dataModel) {
 		this.dataModel = dataModel;
+	}
+	
+	public int getScrollerPage() {
+		return scrollerPage;
+	}
+	public void setScrollerPage(int scrollerPage) {
+		this.scrollerPage = scrollerPage;
 	}
 	public int getTotalCount() {
 		int totalCount = 0;
@@ -202,16 +216,8 @@ public class PopupStakeholderBean extends PagedBaseBean {
 		System.out.println("action event invoke!");
 	}
 	public void valueChange() {
-		System.out.println(this.getSearchName());
-		System.out.println(this.getFacesBean());
-		System.out.println(this.getStatusItem());
-		System.out.println(this.getTypeItem());
-		System.out.println(this.getFacesBean());
-		System.out.println(this.getPropertyOfFacesBean());
-		System.out.println(this.getTotalCount());
-		System.out.println(this.getSearchSql());
 		   
-		}
+	}
 	public DataModel getDataModel(){
 	   if (dataModel == null) {
 	     dataModel = new PagedListDataModel(20) {
@@ -222,5 +228,30 @@ public class PopupStakeholderBean extends PagedBaseBean {
 	    
 	    }
 	   return dataModel;
+	}
+	
+	public StakeholderVo getStakeholderFromDb() throws StakeholderException{
+		IStakeholderService stakeholderService =(IStakeholderService) SpringFacesUtil.getSpringBean("stakeholderService");
+		Stakeholder stakeholder = stakeholderService.getStakeholderById(86);
+		StakeholderVo stakeholderVo = new StakeholderVo();
+		try {
+			PropertyUtils.copyProperties(stakeholderVo, stakeholder);
+		} catch(Exception e)
+		{
+			System.out.println(e.toString());
+		}
+		if ("productCreate".equals(this.getFacesBean())) {
+			ProductCreateBean productCreate =(ProductCreateBean) SpringFacesUtil.getManagedBean("productCreate");
+			productCreate.getProduct().setProvider(stakeholderVo);
+		}
+		/*UIViewRoot uivr = this.getParentViewRoot();
+		UIComponent uict;
+		for (UIComponent temcomponent:this.getParentComponents()) {
+			if ("productProviderFullName".equals(temcomponent.getId())) {
+				temcomponent.processUpdates(FacesContext.getCurrentInstance());
+				temcomponent.setRendered(true);
+			}
+		}*/
+		return null;
 	}
 }
