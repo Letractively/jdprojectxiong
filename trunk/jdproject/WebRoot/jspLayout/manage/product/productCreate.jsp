@@ -22,18 +22,16 @@ xmlns:rich="http://richfaces.org/rich">
     				<h:panelGrid id="newpanel" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
 						<h:outputLabel value="产品编码：" for="productCode"></h:outputLabel>
 						<h:inputText value="#{productCreate.product.code}" id="productCode">
-							<rich:beanValidator summary="类型有误"/>
                 		</h:inputText>
                 		<rich:message for="productCode" />
                 		<h:outputLabel value="原厂商编码：" for="manufacturerCode"></h:outputLabel>
-						<h:inputText value="#{productCreate.product.manufacturerCode}" id="manufacturerCode">
-                    		<rich:beanValidator summary="序号有误"/>
+						<h:inputText value="#{productCreate.product.manufacturerCode}" id="manufacturerCode" maxlength="20">
                     	</h:inputText>
                 		<rich:message for="manufacturerCode" />
                 		<h:outputLabel value="原厂商：" for="productProviderFullName"></h:outputLabel>
                 		<h:panelGroup>
 							<h:inputText value="#{productCreate.product.provider.fullName}" id="productProviderFullName">
-							<a4j:support action="#{productCreate.setPopupStakeholderSearchName}" event="onblur" ajaxSingle="true" reRender="productProviderFullName,popupStakeholderSearchName"></a4j:support> 
+							<a4j:support action="#{productCreate.setPopupStakeholderSearchName}" event="onblur" ajaxSingle="true" limitToList="true" reRender="productProviderFullName,popupStakeholderSearchName"></a4j:support> 
                     		</h:inputText>
                     		<a4j:jsFunction oncomplete="changeFinishInCreateProduct(data);" name="processSearchStakeholderMethodInCreateProduct"
     						data="#{popupStakeholder.searchName}"
@@ -48,21 +46,20 @@ xmlns:rich="http://richfaces.org/rich">
    							</a4j:jsFunction>
    							<a4j:jsFunction name="processFreshStakeholerInCreateProduct" ajaxSingle="true" limitToList="true" reRender="productProviderFullName">
    						 	</a4j:jsFunction>
-                    		<a4j:commandButton value="..." immediate="true"  onclick="searchStakehoderInCreateProductBegin(); return false;"/>
+                    		<a4j:commandButton value="..." immediate="true" ajaxSingle="true" onclick="searchStakehoderInCreateProductBegin(); return false;"/>
                     	</h:panelGroup>
                 		<rich:message for="productProviderFullName" />
 						<h:outputLabel value="条码号：" for="barcode"></h:outputLabel>
-						<h:inputText value="#{productCreate.product.barcode}" id="barcode">
-                    		<rich:beanValidator summary="序号有误"/>
+						<h:inputText value="#{productCreate.product.barcode}" id="barcode" maxlength="50">
                     	</h:inputText>
                 		<rich:message for="barcode" />
 						<h:outputLabel value="名称：" for="name"></h:outputLabel>
-						<h:inputText value="#{productCreate.product.name}" id="name">
+						<h:inputText value="#{productCreate.product.name}" id="name" maxlength="50">
                     	</h:inputText>
                 		<rich:message for="name" />
 						<h:outputLabel value="图片：" for="imageName"></h:outputLabel>
 						<h:panelGroup>
-	    					<h:inputText value="#{productCreate.product.imageName}" id="imageName"/>
+	    					<h:inputText value="#{productCreate.product.imageName}" id="imageName" maxlength="50"/>
 	    					<rich:suggestionbox id="suggestionBoxId" for="imageName" tokens=","
 	                        rules="#{imageSuggestionBox.rules}"
 	                        suggestionAction="#{imageSuggestionBox.autocomplete}" var="result"
@@ -85,7 +82,7 @@ xmlns:rich="http://richfaces.org/rich">
     					</h:panelGroup>
                 		<rich:message for="imageName" />
 						<h:outputLabel value="规格：" for="spec"></h:outputLabel>
-						<h:inputText value="#{productCreate.product.spec}" id="spec">
+						<h:inputText value="#{productCreate.product.spec}" id="spec" maxlength="50">
                     	</h:inputText>
                 		<rich:message for="spec" />
 						<h:outputLabel value="单位：" for="unitId"></h:outputLabel>
@@ -120,15 +117,15 @@ xmlns:rich="http://richfaces.org/rich">
                     	</h:inputText>
                 		<rich:message for="purchasePrice" />
 						<h:outputLabel value="零售价：" for="retailPrice"></h:outputLabel>
-						<h:inputText value="#{productCreate.product.spec}" id="retailPrice">
+						<h:inputText value="#{productCreate.product.retailPrice}" id="retailPrice">
                     	</h:inputText>
-                		<rich:message for="retailPrice" />
+                		<rich:message for="retailPrice" showSummary="false"/>
 						<h:outputLabel value="经销尚价：" for="tradePriceOne"></h:outputLabel>
 						<h:inputText value="#{productCreate.product.tradePriceOne}" id="tradePriceOne">
                     	</h:inputText>
                 		<rich:message for="tradePriceOne" />
 						<h:outputLabel value="代理商价：" for="tradePriceTwo"></h:outputLabel>
-						<h:inputText value="#{productCreate.product.spec}" id="tradePriceTwo">
+						<h:inputText value="#{productCreate.product.tradePriceTwo}" id="tradePriceTwo">
                     	</h:inputText>
                 		<rich:message for="tradePriceTwo" />
 						<h:outputLabel value="库存下限：" for="stockLowerNumber"></h:outputLabel>
@@ -138,9 +135,15 @@ xmlns:rich="http://richfaces.org/rich">
 						<rich:inputNumberSpinner value="#{productCreate.product.stockUpperNumber }" id="stockUpperNumber" minValue="1" maxValue="100000" step="1"/>
 						<h:outputText value=" "></h:outputText>
 						<h:outputLabel value="介绍页面：" for="introduceFileName"></h:outputLabel>
-						<h:inputText value="#{productCreate.product.introduceFileName}" id="introduceFileName">
+						<h:inputText value="#{productCreate.product.introduceFileName}" id="introduceFileName" maxlength="50">
                     	</h:inputText>
                 		<rich:message for="introduceFileName" />
+						<f:facet name="footer">
+							<h:panelGrid columns="2" columnClasses="alight:left">
+								<a4j:commandButton type="image" image="/css/images/blank.gif"></a4j:commandButton>
+								<a4j:commandButton type="image" image="/css/images/createmyaccount.gif" action="#{productCreate.createProduct}"></a4j:commandButton>
+							</h:panelGrid>
+						</f:facet>
 					</h:panelGrid>
 					</fieldset>
     			</h:form>
