@@ -11,9 +11,7 @@
    			<default-locale>zh_CN</default-locale>
    			<supported-locale>en</supported-locale>
   		</locale-config>
-  		<!--
-  		<message-bundle>com.kuaican.web.vo.icefaces.resources.messages</message-bundle>
-  		-->
+  		<message-bundle>com.ejd.resources.messages</message-bundle>
  	</application>
 	<managed-bean>
         <managed-bean-name>bean</managed-bean-name>
