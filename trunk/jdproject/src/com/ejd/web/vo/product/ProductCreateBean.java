@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.component.UIViewRoot;
 import javax.faces.context.FacesContext;
@@ -61,6 +62,20 @@ public class ProductCreateBean extends ProductBaseBean {
 		return null;
 	}
 	public String reRreshStakeholder() {
+		return null;
+	}
+	public String createProduct(){
+		FacesContext facesContext = SpringFacesUtil.getFacesContext();
+		Map<String,UIComponent> componentMap = new HashMap<String,UIComponent>();
+		List<UIComponent> te= new ArrayList<UIComponent>();
+		UIViewRoot currentViewRoot = FacesContext.getCurrentInstance().getViewRoot();
+		for(UIComponent component : currentViewRoot.getChildren()){ 
+            te= UIComponentUtil.getComponentChildren(component,componentMap); 
+        }
+		if (null == this.getProduct().getCode() || "".equals(this.getProduct().getCode())) {
+			FacesMessage message=new FacesMessage(FacesMessage.SEVERITY_ERROR,"错误提示:","产品编码不能为空！");
+			facesContext.addMessage(componentMap.get("productCode").getClientId(facesContext), message);
+		}
 		return null;
 	}
 }

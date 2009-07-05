@@ -1,5 +1,9 @@
 package com.ejd.web.vo.product;
 
+import org.hibernate.validator.Length;
+import org.hibernate.validator.NotEmpty;
+import org.hibernate.validator.Pattern;
+
 import com.ejd.web.bo.Productbrand;
 import com.ejd.web.bo.Productcategory;
 import com.ejd.web.bo.Productunit;
