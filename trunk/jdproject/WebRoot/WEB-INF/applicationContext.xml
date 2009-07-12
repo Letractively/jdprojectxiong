@@ -120,6 +120,16 @@
 			<ref bean="productUnitDao" />
 		</property>
 	</bean>
+	<bean id="productDao" class="com.ejd.data.dao.impl.ProductDaoImpl" scope="singleton">
+    	<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+    </bean>
+    <bean id="productService" class="com.ejd.model.service.impl.ProductServiceImpl" scope="singleton" depends-on="productDao">
+		<property name="productDao">
+			<ref bean="productDao" />
+		</property>
+	</bean>
 	<bean id="stakeholderDao" class="com.ejd.data.dao.impl.StakeholderDaoImpl" scope="singleton">
     	<property name="sessionFactory">
 			<ref local="sessionFactory" />
