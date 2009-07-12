@@ -113,19 +113,19 @@ xmlns:rich="http://richfaces.org/rich">
                 		<h:outputText value=" "></h:outputText>
 						
 						<h:outputLabel value="进货价：" for="purchasePrice"></h:outputLabel>
-						<h:inputText value="#{productCreate.product.purchasePrice}" id="purchasePrice">
+						<h:inputText value="#{productCreate.product.purchasePrice}" id="purchasePrice" onchange="if(!(/^[0-9]+(.[0-9]{1,2})?$/.test(this.value))){alert('只能输入1-2位正实数');this.value='0.0';}">
                     	</h:inputText>
                 		<rich:message for="purchasePrice" />
 						<h:outputLabel value="零售价：" for="retailPrice"></h:outputLabel>
-						<h:inputText value="#{productCreate.product.retailPrice}" id="retailPrice">
+						<h:inputText value="#{productCreate.product.retailPrice}" id="retailPrice" onchange="if(!(/^[0-9]+(.[0-9]{1,2})?$/.test(this.value))){alert('只能输入1-2位正实数');this.value='0.0';}">
                     	</h:inputText>
                 		<rich:message for="retailPrice" showSummary="false"/>
-						<h:outputLabel value="经销尚价：" for="tradePriceOne"></h:outputLabel>
-						<h:inputText value="#{productCreate.product.tradePriceOne}" id="tradePriceOne">
+						<h:outputLabel value="经销商价：" for="tradePriceOne"></h:outputLabel>
+						<h:inputText value="#{productCreate.product.tradePriceOne}" id="tradePriceOne" onchange="if(!(/^[0-9]+(.[0-9]{1,2})?$/.test(this.value))){alert('只能输入1-2位正实数');this.value='0.0';}">
                     	</h:inputText>
                 		<rich:message for="tradePriceOne" />
 						<h:outputLabel value="代理商价：" for="tradePriceTwo"></h:outputLabel>
-						<h:inputText value="#{productCreate.product.tradePriceTwo}" id="tradePriceTwo">
+						<h:inputText value="#{productCreate.product.tradePriceTwo}" id="tradePriceTwo" onchange="if(!(/^[0-9]+(.[0-9]{1,2})?$/.test(this.value))){alert('只能输入1-2位正实数');this.value='0.0';}">
                     	</h:inputText>
                 		<rich:message for="tradePriceTwo" />
 						<h:outputLabel value="库存下限：" for="stockLowerNumber"></h:outputLabel>
