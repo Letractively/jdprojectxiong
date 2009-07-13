@@ -319,6 +319,23 @@
 			<from-outcome>productCreate</from-outcome>
 			<to-view-id>/jspLayout/manage/product/productCreate.jsp</to-view-id>
 		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>productHome</from-outcome>
+			<to-view-id>/jspLayout/product/productMain.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>productPhone</from-outcome>
+			<to-view-id>/jspLayout/product/phone/phone.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>productCamera</from-outcome>
+			<to-view-id>/jspLayout/product/camera/camera.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>productTelevision</from-outcome>
+			<to-view-id>/jspLayout/product/television/television.jsp</to-view-id>
+		</navigation-case>
 		<!-- test -->
 		<navigation-case>
          <from-outcome>next</from-outcome>
