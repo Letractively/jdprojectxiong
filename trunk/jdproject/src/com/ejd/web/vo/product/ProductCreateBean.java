@@ -96,6 +96,11 @@ public class ProductCreateBean extends ProductBaseBean {
 			facesContext.addMessage(componentMap.get("productCode").getClientId(facesContext), message);
 			return null;
 		}
+		if (null == this.getProduct().getProvider() || null == this.getProduct().getProvider().getId()) {
+			FacesMessage message=new FacesMessage(FacesMessage.SEVERITY_ERROR,"错误提示:","请选择原厂商！");
+			facesContext.addMessage(componentMap.get("productProviderFullName").getClientId(facesContext), message);
+			return null;
+		}
 		Product newProduct = new Product();	
 		newProduct.setCode(this.getProduct().getCode());
 		newProduct.setManufacturerCode(this.getProduct().getManufacturerCode());
