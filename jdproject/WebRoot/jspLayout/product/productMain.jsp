@@ -13,7 +13,7 @@ xmlns:rich="http://richfaces.org/rich">
     <title>sdsdsdsdsd</title>
     </head>
     <body>
-    	<ui:composition template="${facesContext.externalContext.requestContextPath}/jspLayout/product/productTemplate.jsp">
+    	<ui:composition template="./productTemplate.jsp">
     	</ui:composition>
     </body>
 </html>	
