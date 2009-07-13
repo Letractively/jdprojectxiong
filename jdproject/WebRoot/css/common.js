@@ -1,4 +1,4 @@
-//var contentPath = ${facesContext.externalContext.requestContextPath};
+var contentPath = "http://localhost:8080/ejdproject";
 function searchStakehoderInCreateProductBegin(){
    processSearchStakeholderMethodInCreateProduct();
 }
@@ -6,7 +6,7 @@ function changeFinishInCreateProduct(data){
    if (undefined == data || data.length <2) {
 	   //do nothing
    } else {
-   popup = window.open("http://localhost:8080/jdproject/popup/popupStakeholder.jsf",
+   popup = window.open(contentPath+"/popup/popupStakeholder.jsf",
            "popup", 
            "height=520,width=500,toolbar=no,menubar=no,"
            + "scrollbars=no");               
