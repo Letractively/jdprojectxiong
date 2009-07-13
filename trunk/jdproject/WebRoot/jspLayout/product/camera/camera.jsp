@@ -15,7 +15,7 @@ xmlns:rich="http://richfaces.org/rich">
     <body>
     	<ui:composition template="../productTemplate.jsp">
     	</ui:composition>
-    	<h:outputText value="手机"></h:outputText>
+    	<h:outputText value="数码相机"></h:outputText>
     </body>
 </html>	
 </f:subview>		

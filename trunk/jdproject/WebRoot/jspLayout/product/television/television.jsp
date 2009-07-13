@@ -10,12 +10,12 @@ xmlns:rich="http://richfaces.org/rich">
 <f:subview id="phoneMainView">
 <html>
 	<head>
-    <title>手机</title>
+    <title>电视</title>
     </head>
     <body>
     	<ui:composition template="../productTemplate.jsp">
     	</ui:composition>
-    	<h:outputText value="手机"></h:outputText>
+    	<h:outputText value="电视"></h:outputText>
     </body>
 </html>	
 </f:subview>		
