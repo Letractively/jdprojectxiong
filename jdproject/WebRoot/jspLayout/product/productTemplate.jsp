@@ -60,7 +60,7 @@ xmlns:rich="http://richfaces.org/rich">
 bbb<br/>
 <table class="skr" border="0" cellpadding="0" cellspacing="0" width="100%">
 <tbody><tr>
-<td align="center" width="100%"><p>ccc</p></td>
+<td align="center" width="100%"><p>footer</p></td>
 </tr>
 </tbody>
 </table>
