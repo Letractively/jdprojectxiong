@@ -22,6 +22,7 @@ xmlns:rich="http://richfaces.org/rich">
     				<h:panelGrid id="newpanel" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
 						<h:outputLabel value="产品编码：" for="productCode"></h:outputLabel>
 						<h:inputText value="#{productCreate.product.code}" id="productCode">
+							<a4j:support event="onblur" action="#{productCreate.setProductIntroduceFileName}" ajaxSingle="ture" limitToList="true" reRender="introduceFileName"></a4j:support>
                 		</h:inputText>
                 		<rich:message for="productCode" />
                 		<h:outputLabel value="原厂商编码：" for="manufacturerCode"></h:outputLabel>
@@ -135,7 +136,7 @@ xmlns:rich="http://richfaces.org/rich">
 						<rich:inputNumberSpinner value="#{productCreate.product.stockUpperNumber }" id="stockUpperNumber" minValue="1" maxValue="100000" step="1"/>
 						<h:outputText value=" "></h:outputText>
 						<h:outputLabel value="介绍页面：" for="introduceFileName"></h:outputLabel>
-						<h:inputText value="#{productCreate.product.introduceFileName}" id="introduceFileName" maxlength="50">
+						<h:inputText value="#{productCreate.product.introduceFileName}" id="introduceFileName" maxlength="50" readonly="true">
                     	</h:inputText>
                 		<rich:message for="introduceFileName" />
 						<f:facet name="footer">
