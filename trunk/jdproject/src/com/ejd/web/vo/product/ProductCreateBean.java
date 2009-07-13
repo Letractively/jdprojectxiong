@@ -76,6 +76,10 @@ public class ProductCreateBean extends ProductBaseBean {
 	public String reRreshStakeholder() {
 		return null;
 	}
+	public String setProductIntroduceFileName() {
+		this.getProduct().setIntroduceFileName(this.getProduct().getCode() + ".jsp");
+		return null;
+	}
 	public String createProduct() throws ProductException,ProductUnitException,StakeholderException,ProductCategoryException,ProductBrandException{
 		FacesContext facesContext = SpringFacesUtil.getFacesContext();
 		Map<String,UIComponent> componentMap = new HashMap<String,UIComponent>();
