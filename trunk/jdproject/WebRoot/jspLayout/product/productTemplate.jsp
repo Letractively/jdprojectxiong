@@ -13,12 +13,12 @@ xmlns:rich="http://richfaces.org/rich">
 <h:panelGrid columns="1" style="width:100%;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px">
 	<ui:insert name="manageOneHeader">
 		<f:subview id="manageHeaderOneView">
-			<ui:include src="${facesContext.externalContext.requestContextPath}/jspLayout/product/productHeaderOne.jsp" />
+			<ui:include src="./productHeaderOne.jsp" />
 		</f:subview>
 	</ui:insert>
 	<ui:insert name="manageTwoHeader">
 		<f:subview id="manageHeaderTwoView">
-			<ui:include src="${facesContext.externalContext.requestContextPath}/jspLayout/product/productHeaderTwo.jsp" />
+			<ui:include src="./productHeaderTwo.jsp" />
 		</f:subview>
 	</ui:insert>
 	<h:panelGrid columns="1" cellpadding="0" cellspacing="0" border="0" style="width:100%;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px">
@@ -30,7 +30,7 @@ xmlns:rich="http://richfaces.org/rich">
 	    </ui:insert>
 		<ui:insert name="manageHeaderMainMiddle">
 			<f:subview id="manageHeaderMainView2">
-				<ui:include src="${facesContext.externalContext.requestContextPath}/jspLayout/product/productHeader.jsp" />
+				<ui:include src="./productHeader.jsp" />
 			</f:subview>
 		</ui:insert>
 		<ui:insert name="manageHeaderMainRight">
