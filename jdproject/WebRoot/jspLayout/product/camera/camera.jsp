@@ -14,6 +14,9 @@ xmlns:rich="http://richfaces.org/rich">
     </head>
     <body>
     	<ui:composition template="../productTemplate.jsp">
+    	<ui:define name="content">
+    			<h:outputText value="#{existProductGroup.cameraProductGroup.primaryCategory.categoryName}"></h:outputText>
+    		</ui:define>
     	</ui:composition>
     	<h:outputText value="数码相机"></h:outputText>
     </body>

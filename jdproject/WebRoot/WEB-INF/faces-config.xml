@@ -103,6 +103,22 @@
 	</managed-bean>
 	
 	<managed-bean>
+	<managed-bean-name>existProductGroup</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistProductGroupBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	<managed-property>
+	<property-name>productCategoryService</property-name>
+	<property-class>com.ejd.model.service.iface.IProductCategoryService</property-class>
+	<value>#{productCategoryService}</value>
+	</managed-property>
+	<managed-property>
+	<property-name>productBrandService</property-name>
+	<property-class>com.ejd.model.service.iface.IProductBrandService</property-class>
+	<value>#{productBrandService}</value>
+	</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
 	<managed-bean-name>existProductUnit</managed-bean-name>
 	<managed-bean-class>com.ejd.web.vo.genl.ExistProductUnitBean</managed-bean-class>
 	<managed-bean-scope>session</managed-bean-scope>

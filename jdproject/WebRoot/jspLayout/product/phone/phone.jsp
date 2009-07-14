@@ -14,8 +14,11 @@ xmlns:rich="http://richfaces.org/rich">
     </head>
     <body>
     	<ui:composition template="../productTemplate.jsp">
+    		<ui:define name="content">
+    			<h:outputText value="#{existProductGroup.phoneProductGroup.primaryCategory.categoryName}"></h:outputText>
+    		</ui:define>
     	</ui:composition>
-    	<h:outputText value="手机"></h:outputText>
+    	
     </body>
 </html>	
 </f:subview>		
