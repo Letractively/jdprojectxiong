@@ -14,6 +14,12 @@ xmlns:rich="http://richfaces.org/rich">
     </head>
     <body>
     	<ui:composition template="../productTemplate.jsp">
+    	<ui:define name="content">
+    			<h:outputText value="#{existProductGroup.televisionProductGroup.primaryCategory.categoryName}"></h:outputText>
+    			<rich:orderingList id="televisionlist" value="#{existProductGroup.televisionProductGroup.brands}" var="list">
+    				<h:column><h:outputText value="#{list.brandName}"/></h:column>
+    			</rich:orderingList>
+    		</ui:define>
     	</ui:composition>
     	<h:outputText value="电视"></h:outputText>
     </body>

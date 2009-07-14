@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.HibernateException;
-import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -19,21 +18,25 @@ import com.ejd.model.service.iface.IProductService;
 import com.ejd.utils.SpringFacesUtil;
 import com.ejd.web.bo.Productbrand;
 import com.ejd.web.bo.Productcategory;
-import com.ejd.web.bo.Stakeholder;
 import com.ejd.web.vo.genl.productnavigation.ProductGroup;
 import com.ejd.web.vo.productbrand.ProductBrand;
 import com.ejd.web.vo.productcategory.ProductCategory;
-import com.ejd.web.vo.stakeholder.StakeholderVo;
 
 public class ExistProductGroupBean {
 	public IProductCategoryService productCategoryService;
 	public IProductBrandService productBrandService;
-	public IProductService productService;
 	private ProductGroup phoneProductGroup;
 	private ProductGroup cameraProductGroup;
 	private ProductGroup televisionProductGroup;
-	public ExistProductGroupBean() {
+	public ExistProductGroupBean() throws ProductCategoryException,ProductBrandException {
 		super();
+		if (null == this.getProductCategoryService()) {
+			this.setProductCategoryService((IProductCategoryService)SpringFacesUtil.getSpringBean("productCategoryService"));
+		}
+		if (null == this.getProductBrandService()) {
+			this.setProductBrandService((IProductBrandService)SpringFacesUtil.getSpringBean("productBrandService"));
+		}
+		init();
 	}
 	public IProductCategoryService getProductCategoryService() {
 		return productCategoryService;
@@ -49,15 +52,18 @@ public class ExistProductGroupBean {
 		this.productBrandService = productBrandService;
 	}
 	
-	public IProductService getProductService() {
-		return productService;
+	public ProductGroup getPhoneProductGroup() {
+		return phoneProductGroup;
 	}
-	public void setProductService(IProductService productService) {
-		this.productService = productService;
-	}
-	public ProductGroup getPhoneProductGroup() throws ProductCategoryException,ProductBrandException{
+	public ProductGroup getPhoneProductGroupBySearch() throws ProductCategoryException,ProductBrandException{
 		if (null == this.getPhoneProductGroup()) {
 			this.setPhoneProductGroup(new ProductGroup());
+		}
+		if (null == this.getCameraProductGroup()) {
+			this.setCameraProductGroup(new ProductGroup());
+		}
+		if (null == this.getTelevisionProductGroup()) {
+			this.setTelevisionProductGroup(new ProductGroup());
 		}
 		Productcategory phoneProductCategory= this.getProductCategoryService().getProductCategoryByName("手机");
 		ProductCategory phonePrimaryCategory = new ProductCategory();
@@ -70,16 +76,16 @@ public class ExistProductGroupBean {
 		ProductCategory cameraPrimaryCategory = new ProductCategory();
 		BeanCopier copyCamera = BeanCopier.create(Productcategory.class, ProductCategory.class, false);
 		copyCamera.copy(cameraProductCategory, cameraPrimaryCategory, null);
-		this.getPhoneProductGroup().setPrimaryCategory(cameraPrimaryCategory);
-		this.getPhoneProductGroup().setSecondCategorys(this.getSecondCategorysList(cameraPrimaryCategory));
-		this.getPhoneProductGroup().setBrands(this.getBrandsList(cameraPrimaryCategory));
-		Productcategory televisionProductCategory= this.getProductCategoryService().getProductCategoryByName("数码相机");
+		this.getCameraProductGroup().setPrimaryCategory(cameraPrimaryCategory);
+		this.getCameraProductGroup().setSecondCategorys(this.getSecondCategorysList(cameraPrimaryCategory));
+		this.getCameraProductGroup().setBrands(this.getBrandsList(cameraPrimaryCategory));
+		Productcategory televisionProductCategory= this.getProductCategoryService().getProductCategoryByName("平板电视");
 		ProductCategory televisionPrimaryCategory = new ProductCategory();
 		BeanCopier copyTelevision = BeanCopier.create(Productcategory.class, ProductCategory.class, false);
 		copyTelevision.copy(televisionProductCategory, televisionPrimaryCategory, null);
-		this.getPhoneProductGroup().setPrimaryCategory(televisionPrimaryCategory);
-		this.getPhoneProductGroup().setSecondCategorys(this.getSecondCategorysList(televisionPrimaryCategory));
-		this.getPhoneProductGroup().setBrands(this.getBrandsList(televisionPrimaryCategory));
+		this.getTelevisionProductGroup().setPrimaryCategory(televisionPrimaryCategory);
+		this.getTelevisionProductGroup().setSecondCategorys(this.getSecondCategorysList(televisionPrimaryCategory));
+		this.getTelevisionProductGroup().setBrands(this.getBrandsList(televisionPrimaryCategory));
 		return phoneProductGroup;
 	}
 	public void setPhoneProductGroup(ProductGroup phoneProductGroup) {
@@ -115,7 +121,7 @@ public class ExistProductGroupBean {
 			} finally {
 				  session.close();
 			}
-		if (null != intResult && intResult.isEmpty()) {
+		if (null != intResult && !intResult.isEmpty()) {
 			for (Integer id:intResult) {
 				Productcategory productCategory = this.getProductCategoryService().getProductCategoryById(id);
 				ProductCategory secondCategory = new ProductCategory();
@@ -145,7 +151,7 @@ public class ExistProductGroupBean {
 			} finally {
 				  session.close();
 			}
-		if (null != intResult && intResult.isEmpty()) {
+		if (null != intResult && !intResult.isEmpty()) {
 			for (Integer id:intResult) {
 				Productbrand productBrand = this.getProductBrandService().getProductBrandById(id);
 				ProductBrand tempCategory = new ProductBrand();
@@ -156,5 +162,8 @@ public class ExistProductGroupBean {
 			
 		}
 		return result;
+	}
+	private void init() throws ProductCategoryException,ProductBrandException{
+		this.getPhoneProductGroupBySearch();
 	}
 }
