@@ -197,7 +197,7 @@ public class PopupStakeholderBean extends PagedBaseBean {
 		  }
 		return totalCount;
 	}
-	public DataPage getDataPage(int startRow, int pageSize) {
+	public DataPage<Stakeholder> getDataPage(int startRow, int pageSize) {
 		DataPage<Stakeholder> dataPage = null;
 		SessionFactory sf =(SessionFactory) SpringFacesUtil.getSpringBean("sessionFactory");
 		Session session = sf.openSession();
@@ -206,7 +206,7 @@ public class PopupStakeholderBean extends PagedBaseBean {
 		this.setQueryProperty(query);
 		query.setFirstResult(startRow);                    
         query.setMaxResults(pageSize);
-        dataPage = new DataPage(getTotalCount(), startRow,query.list());
+        dataPage = new DataPage<Stakeholder>(getTotalCount(), startRow,query.list());
 		session.beginTransaction();
 		} catch (HibernateException e) {
 			e.printStackTrace();
@@ -225,7 +225,7 @@ public class PopupStakeholderBean extends PagedBaseBean {
 	}
 	public DataModel getDataModel(){
 	   if (dataModel == null) {
-	     dataModel = new PagedListDataModel(20) {
+	     dataModel = new PagedListDataModel<Stakeholder>(20) {
 	     public DataPage<Stakeholder> fetchPage(int startRow, int pageSize) {
 	      return getDataPage(startRow, pageSize);
 	     }
