@@ -25,8 +25,7 @@ xmlns:rich="http://richfaces.org/rich">
       </head>
       <body>
       	<h:form id="liststakeholerform">
-      		<a4j:commandButton value="getdb" action="#{popupStakeholder.getStakeholderFromDb}" oncomplete="reFreshParent();"></a4j:commandButton>
-			 <rich:dataTable id="stakeholderList" rowClasses="table-odd-row;table-even-row" width="483" rows="20" value="#{popupStakeholder.dataModel}" var="stakeholder" onRowDblClick="selectRowData();">            
+      		 <rich:dataTable id="stakeholderList" rowClasses="table-odd-row;table-even-row" width="483" rows="20" value="#{popupStakeholder.dataModel}" var="stakeholder" onRowDblClick="selectRowData();">            
                  <f:facet name="header">
                      <rich:columnGroup>
                          <h:column>
@@ -56,9 +55,38 @@ xmlns:rich="http://richfaces.org/rich">
                      <h:outputText value="#{stakeholder.city}" />
                      <a4j:jsFunction oncomplete="reFreshParent();" ajaxSingle="true" name="processSelecteStakeholderMethodInPopupStakeholder" action="#{popupStakeholder.getStakeholderRowData}">
    				     </a4j:jsFunction>
-                 </h:column>                 
+                 </h:column>   
+                 <f:facet name="footer">
+                 	<rich:datascroller for="stakeholderList" id="dcStakeholderList" page="#{popupStakeholder.scrollerPage}" pageIndexVar="currentPage" pagesVar="totalPages" maxPages="10" style="width:483px">
+                 		<f:facet name="controlSeparator">
+                 		</f:facet>
+                 		<f:facet name="first">
+                 		</f:facet>
+                 		<f:facet name="first_disabled">
+                 			<h:graphicImage url="/css/images/cars.gif"></h:graphicImage>
+                 		</f:facet> 
+                 		<f:facet name="last">
+                 		</f:facet>
+                 		<f:facet name="last_disabled">
+                 		</f:facet>
+                 		<f:facet name="fastrewind">
+                 		</f:facet>
+                 		<f:facet name="fastrewind_disabled">
+                 		</f:facet>
+                 		<f:facet name="previous">
+                 		</f:facet>
+                 		<f:facet name="previous_disabled">
+                 		</f:facet>
+                 		<f:facet name="next">
+                 		</f:facet>
+                 		<f:facet name="next_disabled">
+                 		</f:facet>
+                 		<f:facet name="pages">
+                 		</f:facet>
+                 	</rich:datascroller>
+                 </f:facet>              
              </rich:dataTable>
-             <rich:datascroller for="stakeholderList" id="dcStakeholderList" page="#{popupStakeholder.scrollerPage}" style="width:483px"/>
+             
          </h:form>    
 			
       </body>
