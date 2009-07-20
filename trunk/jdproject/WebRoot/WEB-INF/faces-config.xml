@@ -23,6 +23,13 @@
 		<managed-bean-class>com.ejd.web.vo.richfaces.ManagePanelMenu</managed-bean-class>
 	<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>navigationLeft</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.richfaces.NavigationLeftBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
 	<managed-bean>
 	<managed-bean-name>manageHeaderMenu</managed-bean-name>
 	<managed-bean-class>com.ejd.web.vo.richfaces.ManageHeaderMenu</managed-bean-class>
