@@ -7,22 +7,8 @@ xmlns:f="http://java.sun.com/jsf/core"
 xmlns:h="http://java.sun.com/jsf/html"
 xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
-<f:subview id="phoneMainView">
-<html>
-	<head>
-    <title>电视</title>
-    </head>
-    <body>
-    	<ui:composition template="../productTemplate.jsp">
-    	<ui:define name="content">
-    			<h:outputText value="#{existProductGroup.televisionProductGroup.primaryCategory.categoryName}"></h:outputText>
-    			<rich:orderingList id="televisionlist" value="#{existProductGroup.televisionProductGroup.brands}" var="list">
-    				<h:column><h:outputText value="#{list.brandName}"/></h:column>
-    			</rich:orderingList>
-    		</ui:define>
-    	</ui:composition>
-    	<h:outputText value="电视"></h:outputText>
-    </body>
-</html>	
-</f:subview>		
+<ui:composition template="../productTemplate.jsp">
+    	
+</ui:composition>
+		
 </jsp:root>	
