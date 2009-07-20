@@ -1,4 +1,4 @@
-var contentPath = "http://localhost:8080/ejdproject";
+var contentPath = "http://localhost:8080/jdproject";
 function searchStakehoderInCreateProductBegin(){
    processSearchStakeholderMethodInCreateProduct();
 }

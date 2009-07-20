@@ -55,7 +55,7 @@ public class ExistProductGroupBean {
 	public ProductGroup getPhoneProductGroup() {
 		return phoneProductGroup;
 	}
-	public ProductGroup getPhoneProductGroupBySearch() throws ProductCategoryException,ProductBrandException{
+	public void getPhoneProductGroupBySearch() throws ProductCategoryException,ProductBrandException{
 		if (null == this.getPhoneProductGroup()) {
 			this.setPhoneProductGroup(new ProductGroup());
 		}
@@ -86,7 +86,6 @@ public class ExistProductGroupBean {
 		this.getTelevisionProductGroup().setPrimaryCategory(televisionPrimaryCategory);
 		this.getTelevisionProductGroup().setSecondCategorys(this.getSecondCategorysList(televisionPrimaryCategory));
 		this.getTelevisionProductGroup().setBrands(this.getBrandsList(televisionPrimaryCategory));
-		return phoneProductGroup;
 	}
 	public void setPhoneProductGroup(ProductGroup phoneProductGroup) {
 		this.phoneProductGroup = phoneProductGroup;

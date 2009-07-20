@@ -7,19 +7,7 @@ xmlns:f="http://java.sun.com/jsf/core"
 xmlns:h="http://java.sun.com/jsf/html"
 xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
-<f:subview id="phoneMainView">
-<html>
-	<head>
-    <title>手机</title>
-    </head>
-    <body>
     	<ui:composition template="../productTemplate.jsp">
-    		<ui:define name="content">
-    			<h:outputText value="#{existProductGroup.phoneProductGroup.primaryCategory.categoryName}"></h:outputText>
-    		</ui:define>
-    	</ui:composition>
-    	
-    </body>
-</html>	
-</f:subview>		
+    		
+    	</ui:composition>		
 </jsp:root>	

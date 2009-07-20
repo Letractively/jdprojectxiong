@@ -1017,3 +1017,28 @@ div.reviews{margin:5px 0}
 				border-width: 0px; 
 				border-color:red;
 			}
+			
+.template-left {
+  font-size: 10pt;
+  vertical-align: top;
+  background-color: rgb(187,214,239);
+  background-image: url(${facesContext.externalContext.requestContextPath}/css/images/icons/pp_bg.gif);
+  background-position : top left;
+  border-width: 1px 1px 1px 1px;
+  width:18%;
+}
+.template-content {
+  font-size: 10pt;
+  vertical-align:top;
+  width:66%;
+}
+.template-right {
+  font-size: 10pt;
+  vertical-align:top;
+  width:16%;
+}
+.template-column {
+  font-size: 10pt;
+  width:100%;
+}
+
