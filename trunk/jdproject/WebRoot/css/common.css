@@ -1041,4 +1041,9 @@ div.reviews{margin:5px 0}
   font-size: 10pt;
   width:100%;
 }
+.template-left-number {
+  font-size: 10pt;
+  background-image: url(${facesContext.externalContext.requestContextPath}/css/images/icons/number.gif);
+  background-repeat: no-repeat;
+}
 

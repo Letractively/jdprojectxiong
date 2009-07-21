@@ -15,11 +15,11 @@ xmlns:rich="http://richfaces.org/rich">
 			<h:outputLabel value="品牌" style="width:100%;font-size: 10pt;text-align: left;"></h:outputLabel>
 	</f:facet>	
 	
-	<a4j:repeat var="brand" value="#{brands}">
-			<tr>
-				<td width="20%"><div style="width: 16px;height: 16px;"><h:graphicImage width="16" height="16" alt=""/></div></td>
+	<a4j:repeat var="brand" rowKeyVar="index" value="#{brands}">
+			<tr class="active" >
+				<td width="20%"><div style="width: 16px;height: 16px;"><h:outputText value="#{index+1}" styleClass="template-left-number"/></div></td>
 				<td width="80%">
-					<h:commandLink action="#{navigationLeft.clickLink}">
+					<h:commandLink style="display:block;height:20px" action="#{navigationLeft.clickLink}">
 						<span style="display:block;padding-top:3px;text-decoration : none; color : #000000;">
 							#{brand.brandName}
 						</span>
@@ -36,11 +36,11 @@ xmlns:rich="http://richfaces.org/rich">
 		<h:outputText value="类别" style="width:100%;font-size: 10pt;text-align: left;"></h:outputText>
 	</f:facet>
 	
-	<a4j:repeat var="secondCategory" value="#{secondCategorys}">
+	<a4j:repeat var="secondCategory" rowKeyVar="index" value="#{secondCategorys}">
 		<tr>
-			<td width="20%"><div style="width: 16px;height: 16px;"><h:graphicImage width="16" height="16" alt=""/></div></td>
-			<td width="80%">
-				<h:commandLink action="#{navigationLeft.clickLink}">
+			<td width="20%"><div style="width: 16px;height: 16px;"><h:outputText value="#{index+1}" styleClass="template-left-number"/></div></td>
+			<td  width="80%">
+				<h:commandLink style="display:block;height:20px" action="#{navigationLeft.clickLink}">
 					<span style="display:block;padding-top:3px;text-decoration : none; color : #000000;">
 						#{secondCategory.categoryName}
 					</span>
