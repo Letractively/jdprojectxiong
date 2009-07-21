@@ -47,58 +47,7 @@ xmlns:rich="http://richfaces.org/rich">
 	<h:panelGroup id="template-left">
 		<ui:insert name="left">
 			<f:subview id="leftview">
-				<rich:panelBar id="phonepb" style="width: auto;" selectedPanel="#{navigationLeft.currentBar}" height="300px" contentStyle="background:none;">
-					<rich:panelBarItem id="phone">
-						<f:facet name="label">
-							<h:panelGroup layout="block">
-							<ui:include id="phoneinp11" src="./productNavigationPanelHeader.jsp" >
-								<ui:param name="label" value="#{navigationLeft.phonePrimaryCategory}"/>
-								
-							</ui:include>
-							</h:panelGroup>
-							
-						</f:facet>
-						<ui:include id="phoneinp12" src="./productNavigationGroup.jsp" >
- 							<ui:param name="brands" value="#{navigationLeft.phoneBrands}" />
-							<ui:param name="secondCategorys" value="#{navigationLeft.phoneSecondCategorys}" />
-							<ui:param name="currentBar" value="phone"/>
- 						</ui:include>
-					</rich:panelBarItem>
-
-					<rich:panelBarItem id="camera">
-						<f:facet name="label">
-							<h:panelGroup layout="block">
-							<ui:include id="phoneinp23" src="./productNavigationPanelHeader.jsp" >
-								<ui:param name="label" value="#{navigationLeft.cameraPrimaryCategory}"/>
-								
-							</ui:include>
-							
-							</h:panelGroup>
-						</f:facet>
-						<ui:include id="phoneinp24" src="./productNavigationGroup.jsp" >
- 							<ui:param name="brands" value="#{navigationLeft.cameraBrands}" />
-							<ui:param name="secondCategorys" value="#{navigationLeft.cameraSecondCategorys}" />
-							<ui:param name="currentBar" value="camera"/>
- 						</ui:include>
-					</rich:panelBarItem>
-
-					<rich:panelBarItem id="television">
-						<f:facet name="label">
-							<h:panelGroup layout="block">
-							<ui:include id="phoneinp35" src="./productNavigationPanelHeader.jsp" >
-								<ui:param name="label" value="#{navigationLeft.televisionPrimaryCategory}"/>
-								
-							</ui:include>
-							
-							</h:panelGroup>
-						</f:facet>
-						<ui:include id="phoneinp36" src="./productNavigationGroup.jsp" >
- 							<ui:param name="brands" value="#{navigationLeft.televisionBrands}" />
-							<ui:param name="secondCategorys" value="#{navigationLeft.televisionSecondCategorys}" />
-							<ui:param name="currentBar" value="television"/>
- 						</ui:include>
-					</rich:panelBarItem>
-				</rich:panelBar>
+				<h:outputText value="left"></h:outputText>
 			</f:subview>
 		</ui:insert>
 	</h:panelGroup>

@@ -20,10 +20,10 @@ xmlns:rich="http://richfaces.org/rich">
 				<td class="text #{1==1?'bold':''}" width="100%">
 					<h:commandLink style="display:block;height:20px" action="#{navigationLeft.clickLink}">
 						<span style="display:block;padding-top:3px;text-decoration : none; color : #000000;">
-							#{brand.brandName},#{currentBar}
+							#{brand.brandName}
 						</span>
 						<f:param value="#{brand.id}" name="c"/>
-						<a4j:support event="onclick"><a4j:actionparam name="currentBar" value="#{currentBar}" assignTo="#{navigationLeft.currentBar}"></a4j:actionparam></a4j:support>
+						
 					</h:commandLink>
 				</td> 
 			</tr>
@@ -41,10 +41,10 @@ xmlns:rich="http://richfaces.org/rich">
 			<td class="text #{1==1?'bold':''}" width="100%">
 				<h:commandLink style="display:block;height:20px" action="#{navigationLeft.clickLink}">
 					<span style="display:block;padding-top:3px;text-decoration : none; color : #000000;">
-						#{secondCategory.categoryName},#{currentBar}
+						#{secondCategory.categoryName}
 					</span>
 					<f:param value="#{secondCategory.id}" name="c"/>
-					<a4j:support event="onclick"><a4j:actionparam name="currentBar" value="#{currentBar}" assignTo="#{navigationLeft.currentBar}"></a4j:actionparam></a4j:support>
+					
 				</h:commandLink>
 			</td> 
 		</tr>
