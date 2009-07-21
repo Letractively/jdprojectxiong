@@ -17,7 +17,6 @@ xmlns:rich="http://richfaces.org/rich">
 	
 	<a4j:repeat var="brand" rowKeyVar="index" value="#{brands}">
 			<tr class="active" >
-				<td width="20%"><div style="width: 16px;height: 16px;"><h:outputText value="#{index+1}" styleClass="template-left-number"/></div></td>
 				<td width="80%">
 					<h:commandLink style="display:block;height:20px" action="#{navigationLeft.clickLink}">
 						<span style="display:block;padding-top:3px;text-decoration : none; color : #000000;">
@@ -38,8 +37,8 @@ xmlns:rich="http://richfaces.org/rich">
 	
 	<a4j:repeat var="secondCategory" rowKeyVar="index" value="#{secondCategorys}">
 		<tr>
-			<td width="20%"><div style="width: 16px;height: 16px;"><h:outputText value="#{index+1}" styleClass="template-left-number"/></div></td>
-			<td  width="80%">
+			
+			<td  width="100%">
 				<h:commandLink style="display:block;height:20px" action="#{navigationLeft.clickLink}">
 					<span style="display:block;padding-top:3px;text-decoration : none; color : #000000;">
 						#{secondCategory.categoryName}
