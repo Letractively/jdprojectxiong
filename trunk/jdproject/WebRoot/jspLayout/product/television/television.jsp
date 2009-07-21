@@ -7,8 +7,35 @@ xmlns:f="http://java.sun.com/jsf/core"
 xmlns:h="http://java.sun.com/jsf/html"
 xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
-<ui:composition template="../productTemplate.jsp">
-    	
-</ui:composition>
-		
+<f:view>
+<html>
+	<head>
+    <title>sdsdsdsdsd</title>
+    </head>
+    <body>
+		<ui:composition template="../productTemplate.jsp">
+    		<ui:define name="left">
+    			<rich:panelBar id="televisionpb" style="width: auto;" height="300px" contentStyle="background:none;">
+					<rich:panelBarItem id="television">
+						<f:facet name="label">
+							<h:panelGroup layout="block">
+							<ui:include id="phoneinp35" src="../productNavigationPanelHeader.jsp" >
+								<ui:param name="label" value="#{navigationLeft.televisionPrimaryCategory}"/>
+								
+							</ui:include>
+							
+							</h:panelGroup>
+						</f:facet>
+						<ui:include id="phoneinp36" src="../productNavigationGroup.jsp" >
+ 							<ui:param name="brands" value="#{navigationLeft.televisionBrands}" />
+							<ui:param name="secondCategorys" value="#{navigationLeft.televisionSecondCategorys}" />
+							
+ 						</ui:include>
+					</rich:panelBarItem>
+				</rich:panelBar>
+    		</ui:define>
+		</ui:composition>
+	</body>
+</html>	
+</f:view>		
 </jsp:root>	
