@@ -51,6 +51,7 @@ xmlns:rich="http://richfaces.org/rich">
     <rich:tabPanel switchType="client">
         <rich:tab label="First">
             Here is tab #1<a4j:commandButton value="AddProduct" action="#{extendedTableBean.addProduct}"></a4j:commandButton>
+            <a4j:commandButton value="GetProduct" action="#{extendedTableBean.getProductByCriteria}"></a4j:commandButton>
         </rich:tab>
         <rich:tab label="Second">
             Here is tab #2
