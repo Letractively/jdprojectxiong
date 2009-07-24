@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.faces.context.FacesContext;
 
+import com.ejd.data.dao.iface.IProductDao;
 import com.ejd.model.exception.ProductBrandException;
 import com.ejd.model.exception.ProductCategoryException;
 import com.ejd.model.exception.ProductUnitException;
@@ -14,6 +15,7 @@ import com.ejd.model.service.iface.IProductBrandService;
 import com.ejd.model.service.iface.IProductCategoryService;
 import com.ejd.model.service.iface.IProductUnitService;
 import com.ejd.model.service.iface.IStakeholderService;
+import com.ejd.utils.SpringFacesUtil;
 import com.ejd.web.bo.Person;
 import com.ejd.web.bo.Product;
 import com.ejd.web.bo.Productbrand;
@@ -185,6 +187,17 @@ public class ExtendedTableBean {
 			//aa.save(p2);
 			tx.commit();
 			aa.flush();
+		return null;
+	}
+	public String getProductByCriteria() throws ProductBrandException,ProductCategoryException,StakeholderException,ProductUnitException {
+		IProductDao  productDao = (IProductDao) SpringFacesUtil.getManagedBean("productDao");
+		List<Product> products = productDao.getProductByCriteria(new Integer(3), new Integer(3), null, null);
+		if (null != products) {
+		for (Product p:products) {
+			System.out.println(p.getName());
+			System.out.println(p.getPrimaryCategory().getCategoryName());
+		}
+		}
 		return null;
 	}
 	public String saveUpdate() {
