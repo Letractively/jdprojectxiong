@@ -17,7 +17,7 @@ xmlns:rich="http://richfaces.org/rich">
 	<a4j:repeat var="brand" rowKeyVar="index" value="#{brands}">
 			<tr class="active" onmouseover="this.className='active'">
 				<td class="text" width="100%">
-					<a4j:commandLink style="display:block;height:20px;background-color : #f5fcff;" action="#{navigationLeft.clickLink}" ajaxSingle="true" immediate="true">
+					<a4j:commandLink style="display:block;height:20px;background-color : #f5fcff;" action="#{navigationLeft.clickLink}" ajaxSingle="true" immediate="true" limitToList="true" reRender="productList">
 						<span style="display:block;padding-top:3px;text-decoration : none; font-weight:bold; color:#7D7D7D;">
 							#{brand.brandName}
 						</span>
@@ -39,7 +39,7 @@ xmlns:rich="http://richfaces.org/rich">
 		<tr class="active" onmouseover="this.className='active'">
 			
 			<td class="text" width="100%">
-				<a4j:commandLink style="display:block;height:20px;background-color : #f5fcff;" action="#{navigationLeft.clickLink}" ajaxSingle="true" immediate="true">
+				<a4j:commandLink style="display:block;height:20px;background-color : #f5fcff;" action="#{navigationLeft.clickLink}" ajaxSingle="true" immediate="true" limitToList="true">
 					<span style="display:block;padding-top:3px;text-decoration : none; font-weight:bold; color:#7D7D7D;">
 						#{secondCategory.categoryName}
 					</span>
