@@ -61,8 +61,8 @@ public Map getStates() { return states; }
          });
    }
    public String popudbclick() {
-	   String state = SpringFacesUtil.getRequestParameter("state");
-	   String preViewId = SpringFacesUtil.getRequestParameter("viewId");
+	   String state =(String) SpringFacesUtil.getRequestParameter("state");
+	   String preViewId =(String) SpringFacesUtil.getRequestParameter("viewId");
 	   System.out.println(preViewId);
 	   String nowviewId = FacesContext.getCurrentInstance().getViewRoot().getViewId();
 	   UIViewRoot uivr = FacesContext.getCurrentInstance().getViewRoot();
