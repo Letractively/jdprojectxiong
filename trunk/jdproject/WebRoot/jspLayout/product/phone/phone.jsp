@@ -15,7 +15,7 @@ xmlns:rich="http://richfaces.org/rich">
     <body>
     	<ui:composition template="../productTemplate.jsp">
     		<ui:define name="left">
-    			<a4j:region id="phoneregionleft" renderRegionOnly="true">
+    			<a4j:region id="phoneregionleft" renderRegionOnly="false" selfRendered="true">
     			<h:form id="phoneleftform">
     			<rich:panelBar id="phonepb" style="width: auto;" height="300px" contentStyle="background:none;">
     				<rich:panelBarItem id="phone">
@@ -40,7 +40,7 @@ xmlns:rich="http://richfaces.org/rich">
 			</a4j:region>
     		</ui:define>
     		<ui:define id="definecontent" name="content">
-    			<a4j:region id="regioncontent" renderRegionOnly="true">
+    			<a4j:region id="regioncontent" renderRegionOnly="false" selfRendered="true">
     			<h:form id="phonecontentform">
     			<rich:dataTable id="productList" rowClasses="table-odd-row;table-even-row" width="483" rows="20" value="#{listPhoneProduct.dataModel}" var="product">            
                  <f:facet name="header">
