@@ -39,7 +39,7 @@ xmlns:rich="http://richfaces.org/rich">
 				</h:form>
 			</a4j:region>
     		</ui:define>
-    		<ui:define name="content">
+    		<ui:define id="definecontent" name="content">
     			<a4j:region id="regioncontent" renderRegionOnly="true">
     			<h:form id="phonecontentform">
     			<rich:dataTable id="productList" rowClasses="table-odd-row;table-even-row" width="483" rows="20" value="#{listPhoneProduct.dataModel}" var="product">            
