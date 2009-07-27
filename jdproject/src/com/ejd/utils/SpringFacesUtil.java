@@ -93,8 +93,8 @@ public final class SpringFacesUtil {
 	     * @param name the name of the parameter
 	     * @return the parameter value
 	     */
-	    public static String getRequestParameter(String name) {
-	        return (String)FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get(name);
+	    public static Object getRequestParameter(String name) {
+	        return (Object)FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get(name);
 	    }
 	    
 	    // Getters requstMap bean-----------------------------------------------------------------------------------
