@@ -15,12 +15,14 @@ xmlns:rich="http://richfaces.org/rich">
     <body>
 		<ui:composition template="../productTemplate.jsp">
 			<ui:define name="left">
+				<a4j:region id="cameraregionleft" renderRegionOnly="true">
+    			<h:form id="cameraleftform">
 				<rich:panelBar id="camerapb" style="width: auto;" height="300px" contentStyle="background:none;">
 					<rich:panelBarItem id="camera">
 						<f:facet name="label">
 							<h:panelGroup layout="block">
 							<ui:include id="phoneinp23" src="../productNavigationPanelHeader.jsp" >
-								<ui:param name="label" value="#{navigationLeft.cameraPrimaryCategory}"/>
+								<ui:param name="label" value="#{navigationLeft.cameraPrimaryCategoryName}"/>
 								
 							</ui:include>
 							
@@ -29,10 +31,13 @@ xmlns:rich="http://richfaces.org/rich">
 						<ui:include id="phoneinp24" src="../productNavigationGroup.jsp" >
  							<ui:param name="brands" value="#{navigationLeft.cameraBrands}" />
 							<ui:param name="secondCategorys" value="#{navigationLeft.cameraSecondCategorys}" />
-							
+							<ui:param name="primaryCategoryId" value="#{navigationLeft.cameraPrimaryCategory.id}"/>
+							<ui:param name="model" value="camera"/>
  						</ui:include>
 					</rich:panelBarItem>
 				</rich:panelBar>
+				</h:form>
+				</a4j:region>
 			</ui:define>
 		</ui:composition>
 	</body>

@@ -9,6 +9,7 @@ import com.ejd.model.exception.ProductBrandException;
 import com.ejd.model.exception.ProductException;
 import com.ejd.model.service.iface.IProductService;
 import com.ejd.web.bo.Product;
+import com.ejd.web.vo.product.ProductPrice;
 
 public class ProductServiceImpl implements IProductService {
 
@@ -98,6 +99,13 @@ public class ProductServiceImpl implements IProductService {
 		// TODO Auto-generated method stub
 		try {
 			return productDao.updateProduct(product);
+		} catch(HibernateObjectRetrievalFailureException he) {
+			throw new ProductException("error");
+		}
+	}
+	public List<Product> getProductByCriteria(Integer primaryCategoryId, Integer secondCategoryId, Integer brandId, ProductPrice priceRange) throws ProductException {
+		try {
+			return productDao.getProductByCriteria(primaryCategoryId, secondCategoryId, brandId, priceRange);
 		} catch(HibernateObjectRetrievalFailureException he) {
 			throw new ProductException("error");
 		}

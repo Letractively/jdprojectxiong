@@ -38,7 +38,8 @@ public class PopupStakeholderBean extends PagedBaseBean {
 	/*private UIViewRoot parentViewRoot;
 	private List<UIComponent> parentComponents;//these component need refresh;
 	private String compomentId; //set value in opener page
-	*/private String facesBean;//update facesbean;
+	*/
+	private String facesBean;//update facesbean;
 	private String propertyOfFacesBean;// ;format with *.* or * or *.*.*.*
 	private DataModel dataModel;
 	private int scrollerPage;

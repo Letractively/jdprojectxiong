@@ -8,7 +8,6 @@ xmlns:h="http://java.sun.com/jsf/html"
 xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
 <ui:composition>
-<h:form>
 <h:panelGrid columns="1" headerClass="header" style="width:100%">
 	<f:facet name="header">
 		
@@ -18,13 +17,14 @@ xmlns:rich="http://richfaces.org/rich">
 	<a4j:repeat var="brand" rowKeyVar="index" value="#{brands}">
 			<tr class="active" onmouseover="this.className='active'">
 				<td class="text" width="100%">
-					<h:commandLink style="display:block;height:20px;background-color : #f5fcff;" action="#{navigationLeft.clickLink}">
+					<a4j:commandLink style="display:block;height:20px;background-color : #f5fcff;" action="#{navigationLeft.clickLink}" ajaxSingle="true" immediate="true">
 						<span style="display:block;padding-top:3px;text-decoration : none; font-weight:bold; color:#7D7D7D;">
 							#{brand.brandName}
 						</span>
-						<f:param value="#{brand.id}" name="c"/>
-						
-					</h:commandLink>
+						<a4j:actionparam value="#{brand.id}" name="brandId"/>
+						<a4j:actionparam value="#{primaryCategory.id}" name="primaryCategoryId"/>
+						<a4j:actionparam value="#{model}" name="model"/>
+					</a4j:commandLink>
 				</td> 
 			</tr>
 	</a4j:repeat>
@@ -39,19 +39,19 @@ xmlns:rich="http://richfaces.org/rich">
 		<tr class="active" onmouseover="this.className='active'">
 			
 			<td class="text" width="100%">
-				<h:commandLink style="display:block;height:20px;background-color : #f5fcff;" action="#{navigationLeft.clickLink}">
+				<a4j:commandLink style="display:block;height:20px;background-color : #f5fcff;" action="#{navigationLeft.clickLink}" ajaxSingle="true" immediate="true">
 					<span style="display:block;padding-top:3px;text-decoration : none; font-weight:bold; color:#7D7D7D;">
 						#{secondCategory.categoryName}
 					</span>
-					<f:param value="#{secondCategory.id}" name="c"/>
-					
-				</h:commandLink>
+					<a4j:actionparam value="#{secondCategory.id}" name="secondCategoryId"/>
+					<a4j:actionparam value="#{primaryCategoryId}" name="primaryCategoryId"/>
+					<a4j:actionparam value="#{model}" name="model"/>
+				</a4j:commandLink>
 			</td> 
 		</tr>
 	</a4j:repeat>
 	
 </h:panelGrid>
-</h:form>
 </ui:composition>
 </jsp:root>
 
