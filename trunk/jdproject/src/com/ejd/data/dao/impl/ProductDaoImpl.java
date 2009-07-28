@@ -145,11 +145,15 @@ public class ProductDaoImpl extends HibernateDaoSupport implements IProductDao {
 				hql = hql + " and p.brand.id = :brandId ";
 				criteria.put("brandId", brandId);
 			}
-			if (null != priceRange && null != priceRange.getMinPrice() && null != priceRange.getMaxPrice()) {
-				hql = hql + " and p.retailPrice >= :minPrice and p.retailPrice <= :maxPrice ";
+			if (null != priceRange && null != priceRange.getMinPrice()) {
+				hql = hql + " and p.retailPrice >= :minPrice ";
 				criteria.put("minPrice", priceRange.getMinPrice());
+			}
+			if (null != priceRange && null != priceRange.getMaxPrice()) {
+				hql = hql + " and p.retailPrice <= :maxPrice ";
 				criteria.put("maxPrice", priceRange.getMaxPrice());
 			}
+			
 			SessionFactory sf =(SessionFactory) this.getSessionFactory();
 			Session session = sf.openSession();
 			/*List<Product> products=this.getHibernateTemplate().find(hql, criteria);*/
