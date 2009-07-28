@@ -201,7 +201,9 @@ public class ExistProductGroupBean {
 					} else {
 						tempProductPrice = new ProductPrice(doubleMap.get(String.valueOf(i-1)),doubleMap.get(i),String.valueOf(doubleMap.get(String.valueOf(i-1)).intValue())+"--" + String.valueOf(doubleMap.get(String.valueOf(i)).intValue()));
 					}
-					result.add(tempProductPrice);
+					if (null != tempProductPrice) {
+						result.add(tempProductPrice);
+					}
 				}
 			}
 			
