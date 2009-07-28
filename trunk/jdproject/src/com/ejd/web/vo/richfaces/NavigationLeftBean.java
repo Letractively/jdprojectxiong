@@ -7,7 +7,7 @@ import javax.faces.context.FacesContext;
 
 import com.ejd.utils.SpringFacesUtil;
 import com.ejd.web.vo.genl.ExistProductGroupBean;
-import com.ejd.web.vo.product.phone.ListPhoneProductBean;
+import com.ejd.web.vo.product.ListProductBean;
 import com.ejd.web.vo.productbrand.ProductBrand;
 import com.ejd.web.vo.productcategory.ProductCategory;
 
@@ -93,7 +93,7 @@ public class NavigationLeftBean {
 		Object brandId = SpringFacesUtil.getRequestParameter("brandId");
 		Object model = SpringFacesUtil.getRequestParameter("model");
 		if ("phone".equals(model.toString())) {
-			ListPhoneProductBean listPhoneProduct = (ListPhoneProductBean) SpringFacesUtil.getManagedBean("listPhoneProduct");
+			ListProductBean listPhoneProduct = (ListProductBean) SpringFacesUtil.getManagedBean("listPhoneProduct");
 			listPhoneProduct.setBrandId(null);
 			listPhoneProduct.setPrimaryCategoryId(null);
 			listPhoneProduct.setModel(null);
@@ -102,6 +102,28 @@ public class NavigationLeftBean {
 			listPhoneProduct.setPrimaryCategoryId(null == brandId?null:("".equals(primaryCategoryId)?null:new Integer(primaryCategoryId.toString())));
 			listPhoneProduct.setModel(null == model?null:(String)model);
 			listPhoneProduct.setSecondCategoryId(null ==secondCategoryId?null:(new Integer("".equals(secondCategoryId)?null:secondCategoryId.toString())));
+		}
+		if ("camera".equals(model.toString())) {
+			ListProductBean listCameraProduct = (ListProductBean) SpringFacesUtil.getManagedBean("listCameraProduct");
+			listCameraProduct.setBrandId(null);
+			listCameraProduct.setPrimaryCategoryId(null);
+			listCameraProduct.setModel(null);
+			listCameraProduct.setSecondCategoryId(null);
+			listCameraProduct.setBrandId(null==brandId?null:(new Integer(brandId.toString())));
+			listCameraProduct.setPrimaryCategoryId(null == brandId?null:("".equals(primaryCategoryId)?null:new Integer(primaryCategoryId.toString())));
+			listCameraProduct.setModel(null == model?null:(String)model);
+			listCameraProduct.setSecondCategoryId(null ==secondCategoryId?null:(new Integer("".equals(secondCategoryId)?null:secondCategoryId.toString())));
+		}
+		if ("television".equals(model.toString())) {
+			ListProductBean listTelevisionProduct = (ListProductBean) SpringFacesUtil.getManagedBean("listTelevisionProduct");
+			listTelevisionProduct.setBrandId(null);
+			listTelevisionProduct.setPrimaryCategoryId(null);
+			listTelevisionProduct.setModel(null);
+			listTelevisionProduct.setSecondCategoryId(null);
+			listTelevisionProduct.setBrandId(null==brandId?null:(new Integer(brandId.toString())));
+			listTelevisionProduct.setPrimaryCategoryId(null == brandId?null:("".equals(primaryCategoryId)?null:new Integer(primaryCategoryId.toString())));
+			listTelevisionProduct.setModel(null == model?null:(String)model);
+			listTelevisionProduct.setSecondCategoryId(null ==secondCategoryId?null:(new Integer("".equals(secondCategoryId)?null:secondCategoryId.toString())));
 		}
 		//this.setCurrentBar(currentBar);
 		return null;
