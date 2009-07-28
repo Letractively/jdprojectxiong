@@ -31,6 +31,7 @@ xmlns:rich="http://richfaces.org/rich">
 						<ui:include id="phoneinp36" src="../productNavigationGroup.jsp" >
  							<ui:param name="brands" value="#{navigationLeft.televisionBrands}" />
 							<ui:param name="secondCategorys" value="#{navigationLeft.televisionSecondCategorys}" />
+							<ui:param name="prices" value="#{navigationLeft.televisionPrices}"/>
 							<ui:param name="primaryCategoryId" value="#{navigationLeft.televisionPrimaryCategory.id}"/>
 							<ui:param name="model" value="television"/>
  						</ui:include>

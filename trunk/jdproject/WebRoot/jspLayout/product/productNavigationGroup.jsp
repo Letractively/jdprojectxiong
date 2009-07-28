@@ -52,6 +52,29 @@ xmlns:rich="http://richfaces.org/rich">
 	</a4j:repeat>
 	
 </h:panelGrid>
+<h:panelGrid columns="1" headerClass="header" style="width:100%">	
+	<f:facet name="header">
+		<h:outputText value="价格区间" style="width:100%;font-size: 10pt;text-align: left;"></h:outputText>
+	</f:facet>
+	
+	<a4j:repeat var="productPrice" rowKeyVar="index" value="#{prices}">
+		<tr class="active" onmouseover="this.className='active'">
+			
+			<td class="text" width="100%">
+				<a4j:commandLink style="display:block;height:20px;background-color : #f5fcff;" action="#{navigationLeft.clickLink}" ajaxSingle="true" immediate="true" limitToList="true" reRender="productList">
+					<span style="display:block;padding-top:3px;text-decoration : none; font-weight:bold; color:#7D7D7D;">
+						#{productPrice.descPrice}
+					</span>
+					<a4j:actionparam value="#{productPrice.minPrice}" name="minPrice"/>
+					<a4j:actionparam value="#{productPrice.maxPrice}" name="maxPrice"/>
+					<a4j:actionparam value="#{primaryCategoryId}" name="primaryCategoryId"/>
+					<a4j:actionparam value="#{model}" name="model"/>
+				</a4j:commandLink>
+			</td> 
+		</tr>
+	</a4j:repeat>
+	
+</h:panelGrid>
 </ui:composition>
 </jsp:root>
 
