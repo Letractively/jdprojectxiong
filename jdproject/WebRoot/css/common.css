@@ -1025,12 +1025,17 @@ div.reviews{margin:5px 0}
   background-image: url(${facesContext.externalContext.requestContextPath}/css/images/icons/pp_bg.gif);
   background-position : top left;
   border-width: 1px 1px 1px 1px;
-  width:18%;
+  width:15%;
 }
 .template-content {
   font-size: 10pt;
   vertical-align:top;
-  width:66%;
+  padding:0px 13px 0px 13px;
+  margin-top-width:0px;
+  margin-right-width:13px;
+  margin-bottom-width:0px;
+  margin-left-width:13px;
+  width:69%;
 }
 .template-right {
   font-size: 10pt;
