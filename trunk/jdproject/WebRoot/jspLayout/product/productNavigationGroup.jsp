@@ -22,7 +22,7 @@ xmlns:rich="http://richfaces.org/rich">
 							#{brand.brandName}
 						</span>
 						<a4j:actionparam value="#{brand.id}" name="brandId"/>
-						<a4j:actionparam value="#{primaryCategory.id}" name="primaryCategoryId"/>
+						<a4j:actionparam value="#{primaryCategoryId}" name="primaryCategoryId"/>
 						<a4j:actionparam value="#{model}" name="model"/>
 					</a4j:commandLink>
 				</td> 
@@ -67,7 +67,7 @@ xmlns:rich="http://richfaces.org/rich">
 					</span>
 					<a4j:actionparam value="#{productPrice.minPrice}" name="minPrice"/>
 					<a4j:actionparam value="#{productPrice.maxPrice}" name="maxPrice"/>
-					<a4j:actionparam value="#{primaryCategoryId}" name="primaryCategoryId"/>
+					<a4j:actionparam value="#{cc}" name="primaryCategoryId"/>
 					<a4j:actionparam value="#{model}" name="model"/>
 				</a4j:commandLink>
 			</td> 
