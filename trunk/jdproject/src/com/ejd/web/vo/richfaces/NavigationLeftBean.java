@@ -94,6 +94,10 @@ public class NavigationLeftBean {
 		Object model = SpringFacesUtil.getRequestParameter("model");
 		if ("phone".equals(model.toString())) {
 			ListPhoneProductBean listPhoneProduct = (ListPhoneProductBean) SpringFacesUtil.getManagedBean("listPhoneProduct");
+			listPhoneProduct.setBrandId(null);
+			listPhoneProduct.setPrimaryCategoryId(null);
+			listPhoneProduct.setModel(null);
+			listPhoneProduct.setSecondCategoryId(null);
 			listPhoneProduct.setBrandId(null==brandId?null:(new Integer(brandId.toString())));
 			listPhoneProduct.setPrimaryCategoryId(null == brandId?null:("".equals(primaryCategoryId)?null:new Integer(primaryCategoryId.toString())));
 			listPhoneProduct.setModel(null == model?null:(String)model);
