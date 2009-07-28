@@ -248,7 +248,7 @@
 	
 	<managed-bean>
         <managed-bean-name>listPhoneProduct</managed-bean-name>
-        <managed-bean-class>com.ejd.web.vo.product.phone.ListPhoneProductBean</managed-bean-class>
+        <managed-bean-class>com.ejd.web.vo.product.ListProductBean</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
         <managed-property>
 		<property-name>productService</property-name>
@@ -256,6 +256,27 @@
 		<value>#{productService}</value>
 		</managed-property>
     </managed-bean>
+    <managed-bean>
+        <managed-bean-name>listCameraProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.ListProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>listTelevisionProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.ListProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    
 	<managed-bean>
         <managed-bean-name>imageSuggestionBox</managed-bean-name>
         <managed-bean-class>com.ejd.web.vo.image.ImageSuggestionBox</managed-bean-class>

@@ -15,7 +15,7 @@ xmlns:rich="http://richfaces.org/rich">
     <body>
 		<ui:composition template="../productTemplate.jsp">
 			<ui:define name="left">
-				<a4j:region id="cameraregionleft" renderRegionOnly="true">
+				<a4j:region id="cameraregionleft" renderRegionOnly="false" selfRendered="true">
     			<h:form id="cameraleftform">
 				<rich:panelBar id="camerapb" style="width: auto;" height="300px" contentStyle="background:none;">
 					<rich:panelBarItem id="camera">
@@ -39,6 +39,72 @@ xmlns:rich="http://richfaces.org/rich">
 				</h:form>
 				</a4j:region>
 			</ui:define>
+			
+			<ui:define id="definecontent" name="content">
+    			<a4j:region id="regioncontent" renderRegionOnly="false" selfRendered="true">
+    			<h:form id="cameracontentform">
+    			<rich:dataTable id="productList" rowClasses="table-odd-row;table-even-row" width="483" rows="20" value="#{listCameraProduct.dataModel}" var="product">            
+                 <f:facet name="header">
+                     <rich:columnGroup>
+                         <h:column>
+                             <h:outputText value="code" />
+                         </h:column>
+                         <h:column>
+                             <h:outputText value="name" />
+                         </h:column>
+                         <h:column>
+                             <h:outputText value="retailPrice" />
+                         </h:column>
+                                                 
+                     </rich:columnGroup>
+                 </f:facet>
+     				
+                 <h:column>
+                     <h:outputText value="#{product.code}" />
+                     
+   				
+                 </h:column>
+                 <h:column>
+                     <h:outputText value="#{product.name}" />
+                     
+                 </h:column> 
+                 <h:column>
+                     <h:outputText value="#{product.retailPrice}" />
+                    
+                 </h:column>   
+                 <f:facet name="footer">
+                 	<rich:datascroller for="productList" id="dcProductList" page="#{listCameraProduct.scrollerPage}" pageIndexVar="currentPage" pagesVar="totalPages" maxPages="10" style="width:483px">
+                 		<f:facet name="controlSeparator">
+                 		</f:facet>
+                 		<f:facet name="first">
+                 		</f:facet>
+                 		<f:facet name="first_disabled">
+                 			<h:graphicImage url="/css/images/cars.gif"></h:graphicImage>
+                 		</f:facet> 
+                 		<f:facet name="last">
+                 		</f:facet>
+                 		<f:facet name="last_disabled">
+                 		</f:facet>
+                 		<f:facet name="fastrewind">
+                 		</f:facet>
+                 		<f:facet name="fastrewind_disabled">
+                 		</f:facet>
+                 		<f:facet name="previous">
+                 		</f:facet>
+                 		<f:facet name="previous_disabled">
+                 		</f:facet>
+                 		<f:facet name="next">
+                 		</f:facet>
+                 		<f:facet name="next_disabled">
+                 		</f:facet>
+                 		<f:facet name="pages">
+                 		</f:facet>
+                 	</rich:datascroller>
+                 </f:facet>              
+             </rich:dataTable>
+             </h:form>
+             </a4j:region>
+    		</ui:define>
 		</ui:composition>
 	</body>
 </html>	
