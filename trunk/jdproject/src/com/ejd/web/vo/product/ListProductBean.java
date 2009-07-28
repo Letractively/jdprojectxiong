@@ -64,7 +64,7 @@ public class ListProductBean extends PagedBaseBean {
 		     }
 		    };
 		    
-		    }
+		    } 
 		   return dataModel;
 		}
 	public IProductService getProductService() {
