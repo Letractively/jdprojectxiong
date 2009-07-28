@@ -146,7 +146,7 @@ public class ProductDaoImpl extends HibernateDaoSupport implements IProductDao {
 				criteria.put("brandId", brandId);
 			}
 			if (null != priceRange && null != priceRange.getMinPrice()) {
-				hql = hql + " and p.retailPrice >= :minPrice ";
+				hql = hql + " and p.retailPrice > :minPrice ";
 				criteria.put("minPrice", priceRange.getMinPrice());
 			}
 			if (null != priceRange && null != priceRange.getMaxPrice()) {
