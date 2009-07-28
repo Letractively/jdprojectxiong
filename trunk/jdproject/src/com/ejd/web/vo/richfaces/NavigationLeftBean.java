@@ -113,6 +113,7 @@ public class NavigationLeftBean {
 		if ("phone".equals(model.toString())) {
 			ProductPrice priceRange = null;
 			ListProductBean listPhoneProduct = (ListProductBean) SpringFacesUtil.getManagedBean("listPhoneProduct");
+			listPhoneProduct.setDataModel(null);
 			listPhoneProduct.setBrandId(null);
 			listPhoneProduct.setPrimaryCategoryId(null);
 			listPhoneProduct.setModel(null);
@@ -130,6 +131,7 @@ public class NavigationLeftBean {
 		if ("camera".equals(model.toString())) {
 			ProductPrice priceRange = null;
 			ListProductBean listCameraProduct = (ListProductBean) SpringFacesUtil.getManagedBean("listCameraProduct");
+			listCameraProduct.setDataModel(null);
 			listCameraProduct.setBrandId(null);
 			listCameraProduct.setPrimaryCategoryId(null);
 			listCameraProduct.setModel(null);
@@ -147,6 +149,7 @@ public class NavigationLeftBean {
 		if ("television".equals(model.toString())) {
 			ProductPrice priceRange = null;
 			ListProductBean listTelevisionProduct = (ListProductBean) SpringFacesUtil.getManagedBean("listTelevisionProduct");
+			listTelevisionProduct.setDataModel(null);
 			listTelevisionProduct.setBrandId(null);
 			listTelevisionProduct.setPrimaryCategoryId(null);
 			listTelevisionProduct.setModel(null);
