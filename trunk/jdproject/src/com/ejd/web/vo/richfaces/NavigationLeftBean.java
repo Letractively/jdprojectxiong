@@ -123,7 +123,7 @@ public class NavigationLeftBean {
 			priceRange.setMaxPrice(null == maxPrice?null:("".equals(maxPrice)?null:new Double(maxPrice.toString())));
 			listPhoneProduct.setPriceRange(priceRange);
 			listPhoneProduct.setBrandId(null==brandId?null:(new Integer(brandId.toString())));
-			listPhoneProduct.setPrimaryCategoryId(null == brandId?null:("".equals(primaryCategoryId)?null:new Integer(primaryCategoryId.toString())));
+			listPhoneProduct.setPrimaryCategoryId(null == primaryCategoryId?null:("".equals(primaryCategoryId)?null:new Integer(primaryCategoryId.toString())));
 			listPhoneProduct.setModel(null == model?null:(String)model);
 			listPhoneProduct.setSecondCategoryId(null ==secondCategoryId?null:(new Integer("".equals(secondCategoryId)?null:secondCategoryId.toString())));
 		}
@@ -140,7 +140,7 @@ public class NavigationLeftBean {
 			priceRange.setMaxPrice(null == maxPrice?null:("".equals(maxPrice)?null:new Double(maxPrice.toString())));
 			listCameraProduct.setPriceRange(priceRange);
 			listCameraProduct.setBrandId(null==brandId?null:(new Integer(brandId.toString())));
-			listCameraProduct.setPrimaryCategoryId(null == brandId?null:("".equals(primaryCategoryId)?null:new Integer(primaryCategoryId.toString())));
+			listCameraProduct.setPrimaryCategoryId(null == primaryCategoryId?null:("".equals(primaryCategoryId)?null:new Integer(primaryCategoryId.toString())));
 			listCameraProduct.setModel(null == model?null:(String)model);
 			listCameraProduct.setSecondCategoryId(null ==secondCategoryId?null:(new Integer("".equals(secondCategoryId)?null:secondCategoryId.toString())));
 		}
@@ -157,7 +157,7 @@ public class NavigationLeftBean {
 			priceRange.setMaxPrice(null == maxPrice?null:("".equals(maxPrice)?null:new Double(maxPrice.toString())));
 			listTelevisionProduct.setPriceRange(priceRange);
 			listTelevisionProduct.setBrandId(null==brandId?null:(new Integer(brandId.toString())));
-			listTelevisionProduct.setPrimaryCategoryId(null == brandId?null:("".equals(primaryCategoryId)?null:new Integer(primaryCategoryId.toString())));
+			listTelevisionProduct.setPrimaryCategoryId(null == primaryCategoryId?null:("".equals(primaryCategoryId)?null:new Integer(primaryCategoryId.toString())));
 			listTelevisionProduct.setModel(null == model?null:(String)model);
 			listTelevisionProduct.setSecondCategoryId(null ==secondCategoryId?null:(new Integer("".equals(secondCategoryId)?null:secondCategoryId.toString())));
 		}
