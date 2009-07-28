@@ -199,7 +199,7 @@ public class ExistProductGroupBean {
 					} else if (i == doubleResult.size()-1){
 						tempProductPrice = new ProductPrice(doubleMap.get(String.valueOf(i)),new Double(999999999),">="+String.valueOf(doubleMap.get(String.valueOf(i)).intValue()));
 					} else {
-						tempProductPrice = new ProductPrice(doubleMap.get(String.valueOf(i-1)),doubleMap.get(i),String.valueOf(doubleMap.get(String.valueOf(i-1)).intValue())+"--" + String.valueOf(doubleMap.get(String.valueOf(i)).intValue()));
+						tempProductPrice = new ProductPrice(doubleMap.get(String.valueOf(i-1)),doubleMap.get(String.valueOf(i)),String.valueOf(doubleMap.get(String.valueOf(i-1)).intValue())+"--" + String.valueOf(doubleMap.get(String.valueOf(i)).intValue()));
 					}
 					if (null != tempProductPrice) {
 						result.add(tempProductPrice);
