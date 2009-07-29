@@ -67,7 +67,7 @@ xmlns:rich="http://richfaces.org/rich">
 					</span>
 					<a4j:actionparam value="#{productPrice.minPrice}" name="minPrice"/>
 					<a4j:actionparam value="#{productPrice.maxPrice}" name="maxPrice"/>
-					<a4j:actionparam value="#{cc}" name="primaryCategoryId"/>
+					<a4j:actionparam value="#{primaryCategoryId}" name="primaryCategoryId"/>
 					<a4j:actionparam value="#{model}" name="model"/>
 				</a4j:commandLink>
 			</td> 
