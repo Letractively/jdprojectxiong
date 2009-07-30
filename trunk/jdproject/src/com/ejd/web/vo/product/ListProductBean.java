@@ -32,8 +32,17 @@ public class ListProductBean extends PagedBaseBean {
 	private ProductPrice priceRange;
 	private DataModel dataModel;
 	private int scrollerPage;
+	private String styleFont;
+	private boolean styleFontFlag;
+	private String styleImg;
+	private boolean styleImgFla;
+	private String styleImgFont;
+	private boolean styleImgFontFlag;
 	public ListProductBean() {
 		super();
+		this.styleImgFont = "";
+		this.styleFont = "";
+		this.styleImg = "_on";
 	}
 	public int getTotalCount() {
 		int totalCount = 0;
@@ -126,6 +135,50 @@ public class ListProductBean extends PagedBaseBean {
 	public void setScrollerPage(int scrollerPage) {
 		this.scrollerPage = scrollerPage;
 	}
-	
+	public String getStyleFont() {
+		return styleFont;
+	}
+	public void setStyleFont(String font) {
+		styleFont = font;
+	}
+	public boolean getStyleFontFlag() {
+		boolean result = false;
+		if (null == this.getStyleFont() || "".equals(this.getStyleFont()) || !"_on".equals(this.getStyleFont())) {
+			result = false;
+		} else {
+			result = true;
+		}
+		return result;
+	}
+	public String getStyleImg() {
+		return styleImg;
+	}
+	public void setStyleImg(String img) {
+		styleImg = img;
+	}
+	public boolean getStyleImgFlag() {
+		boolean result = false;
+		if (null == this.getStyleImg() || "".equals(this.getStyleImg()) || !"_on".equals(this.getStyleImg())) {
+			result = false;
+		} else {
+			result = true;
+		}
+		return result;
+	}
+	public String getStyleImgFont() {
+		return styleImgFont;
+	}
+	public void setStyleImgFont(String imgFont) {
+		styleImgFont = imgFont;
+	}
+	public boolean getStyleImgFontFlag() {
+		boolean result = false;
+		if (null == this.getStyleImgFont() || "".equals(this.getStyleImgFont()) || !"_on".equals(this.getStyleImgFont())) {
+			result = false;
+		} else {
+			result = true;
+		}
+		return result;
+	}
 
 }
