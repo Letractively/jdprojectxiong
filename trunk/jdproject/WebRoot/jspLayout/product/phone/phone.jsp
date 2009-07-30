@@ -41,45 +41,62 @@ xmlns:rich="http://richfaces.org/rich">
 			</a4j:region>
     		</ui:define>
     		<ui:define id="definecontent" name="content">
+    			<h:panelGrid columns="1" style="width:100%;" styleClass="table-row">
+    			<a4j:region id="regioncontentstyle" renderRegionOnly="false" selfRendered="true">
+    				<h:form id="phonecontentstyleform">
+    					<h:panelGrid style="width:100%">
+    						<rich:panel id="regioncontentstylepanel" style="width:100%;" >
+            					<h:outputText value="显示方式"></h:outputText>
+            					<h:graphicImage value="/css/images/list.gif" style="border:0">
+								</h:graphicImage>
+								<a4j:commandLink id="imgbutton" reRender="regioncontentstylepanel,productList">
+									<h:graphicImage value="/css/images/i_img#{listPhoneProduct.styleImg}.gif" style="border:0;width:18px;height:15px;">
+									</h:graphicImage>
+									<a4j:actionparam name="styleImg" value="_on" assignTo="#{listPhoneProduct.styleImg}"></a4j:actionparam>
+									<a4j:actionparam name="styleImgFont" value="" assignTo="#{listPhoneProduct.styleImgFont}"></a4j:actionparam>
+									<a4j:actionparam name="styleFont" value="" assignTo="#{listPhoneProduct.styleFont}"></a4j:actionparam>
+								</a4j:commandLink>
+								<a4j:commandLink id="imgfontbutton" reRender="regioncontentstylepanel,productList">
+									<h:graphicImage value="/css/images/i_imgfont#{listPhoneProduct.styleImgFont}.gif" style="border:0;width:18px;height:15px;">
+									</h:graphicImage>
+									<a4j:actionparam name="styleImg" value="" assignTo="#{listPhoneProduct.styleImg}"></a4j:actionparam>
+									<a4j:actionparam name="styleImgFont" value="_on" assignTo="#{listPhoneProduct.styleImgFont}"></a4j:actionparam>
+									<a4j:actionparam name="styleFont" value="" assignTo="#{listPhoneProduct.styleFont}"></a4j:actionparam>
+								</a4j:commandLink>
+								<a4j:commandLink id="fontbutton" reRender="regioncontentstylepanel,productList">
+									<h:graphicImage value="/css/images/i_font#{listPhoneProduct.styleFont}.gif" style="border:0;width:18px;height:15px;">
+									</h:graphicImage>
+									<a4j:actionparam name="styleImg" value="" assignTo="#{listPhoneProduct.styleImg}"></a4j:actionparam>
+									<a4j:actionparam name="styleImgFont" value="" assignTo="#{listPhoneProduct.styleImgFont}"></a4j:actionparam>
+									<a4j:actionparam name="styleFont" value="_on" assignTo="#{listPhoneProduct.styleFont}"></a4j:actionparam>
+								</a4j:commandLink>
+        					</rich:panel>
+    					</h:panelGrid>
+    				</h:form>
+    			</a4j:region>
     			<a4j:region id="regioncontent" renderRegionOnly="false" selfRendered="true">
     			<h:form id="phonecontentform">
-    			<rich:dataTable id="productList" rowClasses="table-odd-row;table-even-row" width="483" rows="20" value="#{listPhoneProduct.dataModel}" var="product">            
+    			<h:panelGrid id="productList" columns="1" style="width:100%;" styleClass="table-list-product-panel-grid">
+    			<rich:dataGrid id="productListImg" headerClass="table-list-product-panel-grid_header" footerClass="table-list-product-panel-grid_footer" width="100%" columns="3" elements="18" cellspacing="0" cellpadding="10" first="1" columnClasses="table-list-product-panel-grid_column" value="#{listPhoneProduct.dataModel}" var="product" rendered="#{listPhoneProduct.styleImgFlag}" frame="void" border="0" align="center">            
                  <f:facet name="header">
-                     <rich:columnGroup>
-                         <h:column>
-                             <h:outputText value="code" />
-                         </h:column>
-                         <h:column>
-                             <h:outputText value="name" />
-                         </h:column>
-                         <h:column>
-                             <h:outputText value="retailPrice" />
-                         </h:column>
-                                                 
-                     </rich:columnGroup>
+                     <h:outputText value="产品列表"></h:outputText>
                  </f:facet>
      				
-                 <h:column>
+                 <rich:panel style="border:0px;">
+                 	 <h:graphicImage value="/productimage/#{product.imageName}"></h:graphicImage>
                      <h:outputText value="#{product.code}" />
-                     
-   				
-                 </h:column>
-                 <h:column>
                      <h:outputText value="#{product.name}" />
-                     
-                 </h:column> 
-                 <h:column>
                      <h:outputText value="#{product.retailPrice}" />
-                    
-                 </h:column>   
+                 </rich:panel>
+                   
                  <f:facet name="footer">
-                 	<rich:datascroller for="productList" id="dcProductList" page="#{listPhoneProduct.scrollerPage}" pageIndexVar="currentPage" pagesVar="totalPages" maxPages="10" style="width:483px">
+                 	<rich:datascroller for="productListImg" id="dcProductList" page="#{listPhoneProduct.scrollerPage}" pageIndexVar="currentPage" pagesVar="totalPages" maxPages="10" style="width:483px">
                  		<f:facet name="controlSeparator">
                  		</f:facet>
                  		<f:facet name="first">
                  		</f:facet>
                  		<f:facet name="first_disabled">
-                 			<h:graphicImage url="/css/images/cars.gif"></h:graphicImage>
+                 			
                  		</f:facet> 
                  		<f:facet name="last">
                  		</f:facet>
@@ -101,9 +118,54 @@ xmlns:rich="http://richfaces.org/rich">
                  		</f:facet>
                  	</rich:datascroller>
                  </f:facet>              
-             </rich:dataTable>
+             </rich:dataGrid>
+             
+             
+            
+         
+				<h:panelGroup id="productListImgFont" rendered="#{listPhoneProduct.styleImgFontFlag}">
+				<table>
+                <tbody>
+        		<thread>
+        			<tr>
+        			<td>dd</td>
+        			<td>eee</td>
+        			<td>ff</td>
+        			<td>cc</td>
+        			</tr>
+        		</thread>
+                <a4j:repeat value="#{listPhoneProduct.dataModel}" var="product" rowKeyVar="index">
+                <tr>
+                	<td>
+                    <h:outputText value="#{product.code}" /></td>
+                    <td><h:outputText value="#{product.name}" /></td>
+                    <td><h:outputText value="#{product.brand.brandName}"></h:outputText></td>
+                    <td><h:outputText value="#{product.retailPrice}"></h:outputText>
+                   </td>
+                   </tr>
+                </a4j:repeat>
+           		</tbody>
+           		</table>
+			</h:panelGroup>	
+             
+             
+             <h:panelGroup >
+             <rich:dataList value="#{listPhoneProduct.dataModel}" var="product" rowKeyVar="index" rows="20" rendered="#{listPhoneProduct.styleFontFlag}">
+             	<h:panelGrid columns="5" style="width:100%;font:10px;" columnClasses="table-list-product-column,table-list-product-column,table-list-product-column,table-list-product-column,table-list-product-column">
+             	<h:outputText value="#{product.code}" />
+                <h:outputText value="#{product.name}" />
+                <h:outputText value="#{product.brand.brandName}"></h:outputText>
+                <h:outputText value="#{product.retailPrice}"></h:outputText>
+                <a4j:commandButton value="button"></a4j:commandButton>
+                </h:panelGrid>
+                <rich:separator/>
+             </rich:dataList>
+          	 </h:panelGroup>
+             
+             </h:panelGrid>
              </h:form>
              </a4j:region>
+             </h:panelGrid>
     		</ui:define>
     	</ui:composition>
     </body>
