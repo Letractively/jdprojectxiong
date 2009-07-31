@@ -77,7 +77,7 @@ xmlns:rich="http://richfaces.org/rich">
     			<a4j:region id="regioncontent" renderRegionOnly="false" selfRendered="true">
     			<h:form id="phonecontentform">
     			<h:panelGrid id="productList" columns="1" style="width:100%;" styleClass="table-list-product-panel-grid">
-    			<rich:dataGrid id="productListImg" headerClass="table-list-product-panel-grid_header" footerClass="table-list-product-panel-grid_footer" width="100%" columns="3" elements="18" cellspacing="0" cellpadding="10" first="1" columnClasses="table-list-product-panel-grid_column" value="#{listPhoneProduct.dataModel}" var="product" rendered="#{listPhoneProduct.styleImgFlag}" frame="void" border="0" align="center">            
+    			<rich:dataGrid id="productListImg" headerClass="table-list-product-panel-grid_header" footerClass="table-list-product-panel-grid_footer" width="100%" columns="2" elements="10" cellspacing="0" cellpadding="10" first="1" columnClasses="table-list-product-panel-grid_column" value="#{listPhoneProduct.dataModel}" var="product" rendered="#{listPhoneProduct.styleImgFlag}" frame="void" border="0" align="center">            
                  <f:facet name="header">
                      <h:outputText value="产品列表"></h:outputText>
                  </f:facet>
