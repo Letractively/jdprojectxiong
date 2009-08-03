@@ -715,17 +715,35 @@ div.reviews{margin:5px 0}
   border:0px solid #CCC;font-size: 10pt;BORDER-RIGHT: #ccc 0px solid; BORDER-TOP: #ccc 0px solid; BORDER-LEFT: #ccc 0px solid; BORDER-BOTTOM: #ccc 0px solid; BACKGROUND: #f5fcff;
   
 }
-.table-list-product-panel-grid_column {
+.table-list-product-panel-grid-column {
   font-size: 12pt;
   align: left;
   width:25%;
 }
 
-.table-list-product-panel-grid_header {
-	BORDER-RIGHT: #e3e3e3 1px solid; BORDER-TOP: #e3e3e3 1px solid; Z-INDEX: 100; BACKGROUND: url(http://img.woye.com/v2k9feb/woye_img_x.gif) repeat-x left -284px; BORDER-LEFT: #e3e3e3 1px solid; BORDER-BOTTOM: #e3e3e3 1px solid; POSITION: relative; HEIGHT: 29px
+.table-list-product-panel-grid-header {
+	BORDER-RIGHT: #e3e3e3 1px solid; BORDER-TOP: #e3e3e3 1px solid; Z-INDEX: 100; background-image: url(../css/images/play_3.jpg); BORDER-LEFT: #e3e3e3 1px solid; BORDER-BOTTOM: #e3e3e3 1px solid; POSITION: relative; HEIGHT: 29px;
 }
-
-.table-list-product-panel-grid_footer {
+.table-list-product-panel-grid-header-column-one {
+	vAlign: top;
+	align: left;
+	width: 10%;
+	height: 32;
+	text-align: left;
+	font-size: 20pt;
+}
+.table-list-product-panel-grid-header-column-two {
+	vAlign: top; 
+	align: left;
+	width: 80%;
+	text-align: left;
+}
+.table-list-product-panel-grid-header-column-three {
+	width: 10%;
+	align: right;
+	font-size: 20pt;
+}
+.table-list-product-panel-grid-footer {
 	BORDER-TOP: #e27a00 1px solid; MARGIN: 10px 0px; OVERFLOW: hidden; ZOOM: 1
 }
 
