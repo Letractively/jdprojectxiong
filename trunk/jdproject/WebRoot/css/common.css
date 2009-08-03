@@ -1103,3 +1103,21 @@ div.reviews{margin:5px 0}
   background-repeat: no-repeat;
 }
 
+.navigation-panel-bar-item-left-header {
+  top: 0px;
+  left: 0px;
+  height:30px;
+  padding:0px 0px 0px 0px;
+  margin:0px 0px 0px 0px;
+  font-size: 18pt;
+  background-image: url(../css/images/menu_row.gif);
+  background-repeat: no-repeat;
+  background-position : top left;
+}
+.navigation-panel-bar-left-header {
+  top: 20px;
+  left: 20px;
+  padding:0px 0px 0px 0px;
+  margin:0px 0px 0px 0px;
+}
+
