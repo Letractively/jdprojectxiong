@@ -12,7 +12,7 @@ xmlns:rich="http://richfaces.org/rich">
 	<table cellpadding="0" cellspacing="0" width="100%">
 		<tbody>
 			<tr valign="middle">
-				<td width="100%" valign="middle">
+				<td width="100%" align="left" valign="middle">
 					<h:outputText value="#{label}" style="font-family:Arial,Verdana,sans-serif; font-size:11px;"/>
 				</td>
 			</tr>
