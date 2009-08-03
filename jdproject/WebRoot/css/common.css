@@ -239,6 +239,9 @@ input, select, textarea, button, keygen, isindex, legend, a {
 	cursor : pointer;
 	padding:0px 0px 0px 10px;
 }
+.selected_new {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #0083b3; TEXT-INDENT: 18px
+}
  .ico{
 	cursor : pointer;
 	padding-top:1px;
@@ -759,10 +762,20 @@ div.reviews{margin:5px 0}
 }
 
 .header {
-  background-color : #e1f2fa;
+  /*background-color : #e1f2fa;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
+  text-align: left; */
+  FONT-WEIGHT: bold; 
+  FONT-SIZE: 14px; 
+  COLOR: #0083b3; 
+  TEXT-INDENT: 18px;
+  vAlign: center;
+  align: left;
+  width: 189;
+  height: 35;
   text-align: left;
+  background-image: url(../css/images/sidebar.png);
 /*  margin-bottom: 10px;*/
 }
 
