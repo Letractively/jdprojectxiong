@@ -8,17 +8,20 @@ xmlns:h="http://java.sun.com/jsf/html"
 xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
 <ui:composition>
-<h:panelGrid columns="1" headerClass="header" style="width:100%">
+<h:panelGrid columns="1" headerClass="navigation-left-header" style="width:100%">
 	<f:facet name="header">
 		
 			<h:outputLabel value="品牌"></h:outputLabel>
 	</f:facet>	
-	
+	<tr>
+    	<td valign="middle" align="left" width="100%" bgcolor="#dbdddf" height="1">
+    	</td>
+    </tr>
 	<a4j:repeat var="brand" rowKeyVar="index" value="#{brands}">
 			<tr>
-				<td class="selected_new" width="100%">
+				<td class="selected-new" width="100%">
 					<a4j:commandLink action="#{navigationLeft.clickLink}" ajaxSingle="true" immediate="true" limitToList="true" reRender="productList">
-						<span>
+						<span class="selected-new-span">
 							#{brand.brandName}
 						</span>
 						<a4j:actionparam value="#{brand.id}" name="brandId"/>
@@ -28,23 +31,26 @@ xmlns:rich="http://richfaces.org/rich">
 				</td> 
 			</tr>
 			<tr>
-          <td valign="middle" align="left" width="100%" bgcolor="#dbdddf" height="1">
-          </td>
-        </tr>
+          		<td valign="middle" align="left" width="100%" bgcolor="#dbdddf" height="1">
+          		</td>
+        	</tr>
 	</a4j:repeat>
 	
 </h:panelGrid>
-<h:panelGrid columns="1" headerClass="header" style="width:100%">	
+<h:panelGrid columns="1" headerClass="navigation-left-header" style="width:100%">	
 	<f:facet name="header">
 		<h:outputText value="类别"></h:outputText>
 	</f:facet>
-	
+	<tr>
+    	<td valign="middle" align="left" width="100%" bgcolor="#dbdddf" height="1">
+    	</td>
+    </tr>
 	<a4j:repeat var="secondCategory" rowKeyVar="index" value="#{secondCategorys}">
-		<tr class="active" onmouseover="this.className='active'">
+		<tr>
 			
-			<td class="selected_new" width="100%">
+			<td class="selected-new" width="100%">
 				<a4j:commandLink action="#{navigationLeft.clickLink}" ajaxSingle="true" immediate="true" limitToList="true" reRender="productList">
-					<span>
+					<span class="selected-new-span">
 						#{secondCategory.categoryName}
 					</span>
 					<a4j:actionparam value="#{secondCategory.id}" name="secondCategoryId"/>
@@ -60,17 +66,20 @@ xmlns:rich="http://richfaces.org/rich">
 	</a4j:repeat>
 	
 </h:panelGrid>
-<h:panelGrid columns="1" headerClass="header" style="width:100%">	
+<h:panelGrid columns="1" headerClass="navigation-left-header" styleClass="navigation-left-row" style="width:100%">	
 	<f:facet name="header">
 		<h:outputText value="价格区间"></h:outputText>
 	</f:facet>
-	
+	<tr>
+    	<td valign="middle" align="left" width="100%" bgcolor="#dbdddf" height="1">
+    	</td>
+    </tr>
 	<a4j:repeat var="productPrice" rowKeyVar="index" value="#{prices}">
-		<tr class="active" onmouseover="this.className='active'">
+		<tr>
 			
-			<td class="selected_new" width="100%">
-				<a4j:commandLink action="#{navigationLeft.clickLink}" ajaxSingle="true" immediate="true" limitToList="true" reRender="productList">
-					<span>
+			<td class="selected-new" width="100%">
+				<a4j:commandLink action="#{navigationLeft.clickLink}" style="selected_new" ajaxSingle="true" immediate="true" limitToList="true" reRender="productList">
+					<span class="selected-new-span">
 						#{productPrice.descPrice}
 					</span>
 					<a4j:actionparam value="#{productPrice.minPrice}" name="minPrice"/>

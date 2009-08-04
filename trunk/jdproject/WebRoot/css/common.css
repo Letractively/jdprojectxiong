@@ -239,8 +239,24 @@ input, select, textarea, button, keygen, isindex, legend, a {
 	cursor : pointer;
 	padding:0px 0px 0px 10px;
 }
-.selected_new {
-	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #0083b3; TEXT-INDENT: 18px
+
+ .selected-new {
+	
+	/*background-image: url(../css/images/sidebar.png);*/
+	vAlign: center; 
+	align:left; 
+	height:35;
+}
+
+ .selected-new-span {
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: 14px; 
+	COLOR: #0083b3; 
+	TEXT-DECORATION: none;
+	margin-left: 26px;
+	TEXT-INDENT: 18px;
+	vAlign: center; 
+	align:left; 
 }
  .ico{
 	cursor : pointer;
@@ -761,7 +777,7 @@ div.reviews{margin:5px 0}
   text-align: left;
 }
 
-.header {
+.navigation-left-header {
   /*background-color : #e1f2fa;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
@@ -775,8 +791,15 @@ div.reviews{margin:5px 0}
   width: 189;
   height: 35;
   text-align: left;
-  background-image: url(../css/images/sidebar.png);
+  /*background-image: url(../css/images/sidebar.png);*/
+  padding:0px 0px 0px 0px;
+  margin:0px 0px 0px 0px;
 /*  margin-bottom: 10px;*/
+}
+.navigation-left-row {
+	padding:0px 0px 0px 0px;
+  	margin:0px 0px 0px 0px;
+  	background-image: url(../css/images/sidebar.png);
 }
 
 .toolbar-header {

@@ -17,7 +17,7 @@ xmlns:rich="http://richfaces.org/rich">
     		<ui:define name="left">
     			<a4j:region id="phoneregionleft" renderRegionOnly="false" selfRendered="true">
     			<h:form id="phoneleftform">
-    			<rich:panelBar id="phonepb" style="width: auto;" height="300px" contentStyle="background:none;">
+    			<rich:panelBar id="phonepb" style="width: auto;height: auto;padding:0px 0px 0px 0px;margin:0px 0px 0px 0px;" contentStyle="background:none;">
     				<rich:panelBarItem id="phone" headerClass="navigation-panel-bar-item-left-header">
 						<f:facet name="label">
 							<h:panelGroup layout="block">
