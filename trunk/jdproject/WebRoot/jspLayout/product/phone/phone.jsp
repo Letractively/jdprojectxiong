@@ -77,10 +77,8 @@ xmlns:rich="http://richfaces.org/rich">
     			<a4j:region id="regioncontent" renderRegionOnly="false" selfRendered="true">
     			<h:form id="phonecontentform">
     			<h:panelGrid id="productList" columns="1" style="width:100%;" styleClass="table-list-product-panel-grid">
-    			<rich:dataGrid id="productListImg" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="2" elements="10" cellspacing="0" cellpadding="10" first="1" columnClasses="table-list-product-panel-grid-column" value="#{listPhoneProduct.dataModel}" var="product" rendered="#{listPhoneProduct.styleImgFlag}" frame="void" border="0" align="center">            
-                 <f:facet name="header">
-                 	<h:outputText value=""></h:outputText>
-                 </f:facet>
+    			<rich:dataGrid id="productListImg" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="2" elements="10" cellspacing="0" cellpadding="10" first="1" columnClasses="table-list-product-panel-grid-column" value="#{listPhoneProduct.dataModel}" var="product" rendered="#{listPhoneProduct.styleImgFlag}" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
+                 
      				
                  <rich:panel style="border:0px;">
                  	 <h:graphicImage value="/productimage/#{product.imageName}"></h:graphicImage>
@@ -117,6 +115,7 @@ xmlns:rich="http://richfaces.org/rich">
                  		</f:facet>
                  		<f:facet name="pages">
                  		</f:facet>
+                 		
                  	</rich:datascroller>
                  	</h:panelGroup>
                  </f:facet>              
