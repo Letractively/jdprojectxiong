@@ -616,6 +616,7 @@ div.reviews{margin:5px 0}
 
 /* define self */
 .headerStyle  {align:center; border:3; cellpadding:0; cellspacing:0; width:100%}
+.contentStyle  {align:left; border:3; cellpadding:0; cellspacing:0; width:100%}
 .headerLeftRightStyle  {border-bottom: 0px solid black; width:50%}
 .headerMiddleStyle  {nowrap:nowrap}
 .allStyle {width:90%;align:center}
@@ -1119,26 +1120,23 @@ div.reviews{margin:5px 0}
 .template-left {
   font-size: 10pt;
   vertical-align: top;
-  background-color: rgb(187,214,239);
-  background-image: url(${facesContext.externalContext.requestContextPath}/css/images/icons/pp_bg.gif);
-  background-position : top left;
-  border-width: 1px 1px 1px 1px;
-  width:15%;
+  border-width: 0px 0px 0px 0px;
+  
 }
 .template-content {
   font-size: 10pt;
   vertical-align:top;
-  padding:0px 13px 0px 13px;
+  padding:0px 0px 0px 0px;
   margin-top-width:0px;
-  margin-right-width:13px;
+  margin-right-width:0px;
   margin-bottom-width:0px;
-  margin-left-width:13px;
-  width:69%;
+  margin-left-width:0px;
+  width:75%;
 }
 .template-right {
   font-size: 10pt;
   vertical-align:top;
-  width:16%;
+  width:25%;
 }
 .template-column {
   font-size: 10pt;
@@ -1153,12 +1151,12 @@ div.reviews{margin:5px 0}
 .navigation-panel-bar-item-left-header {
   top: 0px;
   left: 0px;
-  height:61px;
+  height:25px;
   padding:0px 0px 0px 0px;
   margin:0px 0px 0px 0px;
   font-size: 18pt;
-  background-image: url(../css/images/productcenter.gif);
-  background-repeat: no-repeat;
+  background-image: url(../css/images/icons/pp_bg.gif);
+  background-repeat: repeat;
   background-position : top left;
 }
 .navigation-panel-bar-left-header {
@@ -1173,4 +1171,4 @@ div.reviews{margin:5px 0}
 	margin:0px 0px 0px 0px;
 	border-width:1px;
 	}
-
+.operate_title{position:relative;height:29px;background:url(${facesContext.externalContext.requestContextPath}/css/images/icons/woye_img_x.gif) left -284px repeat-x;border:1px #e3e3e3 solid;z-index:100;}
