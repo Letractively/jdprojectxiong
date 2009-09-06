@@ -11,9 +11,9 @@ xmlns:rich="http://richfaces.org/rich">
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 	<table cellpadding="0" cellspacing="0" width="100%">
 		<tbody>
-			<tr valign="middle">
-				<td width="100%" align="left" valign="middle">
-					<h:outputText value="#{label}" style="font-family:Arial,Verdana,sans-serif; font-size:11px;"/>
+			<tr>
+				<td width="100%" style="text-align:left;text-valign:bottom;">
+					<h:outputText value="当前位置：首页>#{label}" style="font-family:Arial,Verdana,sans-serif; font-size:11px;"/>
 				</td>
 			</tr>
 		</tbody>

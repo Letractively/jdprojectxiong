@@ -14,8 +14,8 @@ xmlns:rich="http://richfaces.org/rich">
     </head>
     <body>
     	<ui:composition template="../productTemplate.jsp">
-    		<ui:define name="left">
-    			<a4j:region id="phoneregionleft" renderRegionOnly="false" selfRendered="true">
+    		<ui:define id="definecontent" name="content">
+				<a4j:region id="phoneregionleft" renderRegionOnly="false" selfRendered="true">
     			<h:form id="phoneleftform">
     			<rich:panelBar id="phonepb" styleClass="panel-bar-product-left" contentStyle="background:none;">
     				<rich:panelBarItem id="phone" headerClass="navigation-panel-bar-item-left-header">
@@ -39,13 +39,11 @@ xmlns:rich="http://richfaces.org/rich">
 				</rich:panelBar>
 				</h:form>
 			</a4j:region>
-    		</ui:define>
-    		<ui:define id="definecontent" name="content">
     			<h:panelGrid columns="1" style="width:100%;" styleClass="table-row">
     			<a4j:region id="regioncontentstyle" renderRegionOnly="false" selfRendered="true">
     				<h:form id="phonecontentstyleform">
-    					<h:panelGrid style="width:100%">
-    						<rich:panel id="regioncontentstylepanel" style="width:100%;" >
+    					<h:panelGrid style="width:100%" styleClass="operate_title">
+    						<rich:panel id="regioncontentstylepanel" style="width:100%;" styleClass="table-list-product-panel-grid-data-grid">
             					<h:outputText value="显示方式"></h:outputText>
             					<h:graphicImage value="/css/images/list.gif" style="border:0">
 								</h:graphicImage>
