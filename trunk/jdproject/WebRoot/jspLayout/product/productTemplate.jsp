@@ -43,18 +43,17 @@ xmlns:rich="http://richfaces.org/rich">
 	</h:panelGrid>
 </h:panelGrid>
 
-<h:panelGrid columns="3" style="width:100%" columnClasses="template-left,template-content,template-right">
-	<h:panelGroup id="template-left">
-		<ui:insert name="left">
-			<f:subview id="leftview">
-				<h:outputText value="left"></h:outputText>
-			</f:subview>
-		</ui:insert>
-	</h:panelGroup>
+<h:panelGrid columns="2" styleClass="contentStyle" columnClasses="template-content,template-right">
+	
 	<h:panelGroup id="template-content">
 		<ui:insert name="content">
 			<f:subview id="contentview">
-				<h:outputText value="contenttext"></h:outputText>
+				<h:panelGrid columns="2">
+					
+					<h:outputText value="ddd"></h:outputText>
+					<h:outputText value="cccc"></h:outputText>
+
+				</h:panelGrid>
 			</f:subview>
 		</ui:insert>
 	</h:panelGroup>
