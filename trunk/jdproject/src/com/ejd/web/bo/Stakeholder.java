@@ -32,11 +32,11 @@ public class Stakeholder extends AbstractStakeholder implements
 	}
 
 	/** full constructor */
-	public Stakeholder(String userId, String mnemonicchars, String shortname, String fullname,
+	public Stakeholder(String userId, String userPassword, String mnemonicchars, String shortname, String fullname,
 			String province, String city, String county, String phone,
 			String tax, String url, String remarks, String status, String type,
 			String taxaccounts) {
-		super(userId, mnemonicchars, shortname, fullname, province, city, county,
+		super(userId, userPassword, mnemonicchars, shortname, fullname, province, city, county,
 				phone, tax, url, remarks, status, type, taxaccounts);
 	}
 

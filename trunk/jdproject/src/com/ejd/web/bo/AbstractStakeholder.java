@@ -14,6 +14,7 @@ public abstract class AbstractStakeholder extends java.lang.Object implements
 
 	private Integer id;
 	private String userId;
+	private String userPassword;
 	private String mnemonicchars;
 	private String shortName;
 	private String fullName;
@@ -52,11 +53,12 @@ public abstract class AbstractStakeholder extends java.lang.Object implements
 	}
 
 	/** full constructor */
-	public AbstractStakeholder(String userId, String mnemonicchars, String shortName,
+	public AbstractStakeholder(String userId,String userPassword, String mnemonicchars, String shortName,
 			String fullName, String province, String city, String county,
 			String phone, String tax, String url, String remarks,
 			String status, String type, String taxaccounts) {
 		this.userId = userId;
+		this.userPassword = userPassword;
 		this.mnemonicchars = mnemonicchars;
 		this.shortName = shortName;
 		this.fullName = fullName;
@@ -90,6 +92,12 @@ public abstract class AbstractStakeholder extends java.lang.Object implements
 		this.userId = userId;
 	}
 
+	public String getUserPassword() {
+		return userPassword;
+	}
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
+	}
 	public String getMnemonicchars() {
 		return this.mnemonicchars;
 	}
