@@ -69,7 +69,7 @@ public class ExtendedTableBean {
 
 		SessionFactory at=(SessionFactory)appctx.getBean("sessionFactory",SessionFactory.class);
 		Session aa = at.openSession();
-		 Stakeholder s = new Stakeholder("ID1","abcd", "bcde", "aaaaaaaaa", "sc", "yc", "ym",
+		 Stakeholder s = new Stakeholder("ID1","1234567","abcd", "bcde", "aaaaaaaaa", "sc", "yc", "ym",
 					"121212221", "1221212", "www.sohu.com", "woaini", "A", "C", "1342222222");
 		aa.beginTransaction();
 		aa.save(s);
@@ -121,7 +121,7 @@ public class ExtendedTableBean {
 			Transaction tx = null;
 			SessionFactory at=(SessionFactory)appctx.getBean("sessionFactory",SessionFactory.class);
 			Session aa = at.openSession();
-			 Stakeholder s = new Stakeholder("ID2","abcd", "bcde", "aaaaaaaaa", "sc", "yc", "ym",
+			 Stakeholder s = new Stakeholder("ID2","12345678","abcd", "bcde", "aaaaaaaaa", "sc", "yc", "ym",
 						"121212221", "1221212", "www.sohu.com", "woaini", "A", "C", "1342222222");
 			tx = aa.beginTransaction();
 			Person p1 = new Person("name", 19, "sex", "phone", "tax", "mobile", "email", "address",

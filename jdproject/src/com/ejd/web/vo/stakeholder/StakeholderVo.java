@@ -9,6 +9,7 @@ public class StakeholderVo {
 	@NotEmpty
 	@Length(min=2,max=20)
 	private String userId;
+	private String userPassword;
 	private String mnemonicchars;
 	private String shortName;
 	@NotEmpty
@@ -40,6 +41,13 @@ public class StakeholderVo {
 	}
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+	
+	public String getUserPassword() {
+		return userPassword;
+	}
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
 	}
 	public String getMnemonicchars() {
 		return mnemonicchars;
@@ -136,10 +144,11 @@ public class StakeholderVo {
 		this.type = type;
 		this.status = "A";
 	}
-	public StakeholderVo(String userId, String mnemonicchars, String shortName, String fullName, String province, String city, String county,
+	public StakeholderVo(String userId, String userPassword, String mnemonicchars, String shortName, String fullName, String province, String city, String county,
 			 String phone, String tax, String url, String remarks,  String status, String type, String taxaccounts) {
 		super();
 		this.userId = userId;
+		this.userPassword = userPassword;
 		this.mnemonicchars = mnemonicchars;
 		this.shortName = shortName;
 		this.fullName = fullName;
