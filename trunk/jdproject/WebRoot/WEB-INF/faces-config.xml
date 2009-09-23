@@ -287,6 +287,16 @@
       <managed-bean-class>com.ejd.web.vo.genl.PopupStakeholderBean</managed-bean-class> 
       <managed-bean-scope>session</managed-bean-scope> 
     </managed-bean>
+    <managed-bean> 
+      <managed-bean-name>currentUser</managed-bean-name>
+      <managed-bean-class>com.ejd.web.vo.user.UserBean</managed-bean-class> 
+      <managed-bean-scope>session</managed-bean-scope> 
+      <managed-property>
+		<property-name>loginService</property-name>
+		<property-class>com.ejd.model.service.iface.ILoginService</property-class>
+		<value>#{loginService}</value>
+	  </managed-property>
+    </managed-bean>
 	<!-- test -->
 	<managed-bean>
 		<managed-bean-name>demoBean</managed-bean-name>
