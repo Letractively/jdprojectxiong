@@ -82,7 +82,10 @@ xmlns:rich="http://richfaces.org/rich">
                  	 <h:graphicImage value="/productimage/#{product.imageName}"></h:graphicImage>
                      <h:outputText value="#{product.code}" />
                      <h:outputText value="#{product.name}" />
-                     <h:outputText value="#{product.retailPrice}" />
+                     <h:outputText value="#{product.purchasePrice}" rendered="#{currentUser.showPurchasePrice}"/>
+                     <h:outputText value="#{product.tradePriceOne}" rendered="#{currentUser.showTradePriceOne}"/>
+                     <h:outputText value="#{product.tradePriceTwo}" rendered="#{currentUser.showTradePriceTwo}"/>
+                     <h:outputText value="#{product.retailPrice}" rendered="#{currentUser.showRetailPrice}"/>
                  </rich:panel>
                    
                  <f:facet name="footer">
@@ -139,7 +142,10 @@ xmlns:rich="http://richfaces.org/rich">
                     <h:outputText value="#{product.code}" /></td>
                     <td><h:outputText value="#{product.name}" /></td>
                     <td><h:outputText value="#{product.brand.brandName}"></h:outputText></td>
-                    <td><h:outputText value="#{product.retailPrice}"></h:outputText>
+                    <td><h:outputText value="#{product.purchasePrice}" rendered="#{currentUser.showPurchasePrice}"/>
+                     <h:outputText value="#{product.tradePriceOne}" rendered="#{currentUser.showTradePriceOne}"/>
+                     <h:outputText value="#{product.tradePriceTwo}" rendered="#{currentUser.showTradePriceTwo}"/>
+                     <h:outputText value="#{product.retailPrice}" rendered="#{currentUser.showRetailPrice}"/>
                    </td>
                    </tr>
                 </a4j:repeat>
@@ -154,7 +160,10 @@ xmlns:rich="http://richfaces.org/rich">
              	<h:outputText value="#{product.code}" />
                 <h:outputText value="#{product.name}" />
                 <h:outputText value="#{product.brand.brandName}"></h:outputText>
-                <h:outputText value="#{product.retailPrice}"></h:outputText>
+                <h:outputText value="#{product.purchasePrice}" rendered="#{currentUser.showPurchasePrice}"/>
+                     <h:outputText value="#{product.tradePriceOne}" rendered="#{currentUser.showTradePriceOne}"/>
+                     <h:outputText value="#{product.tradePriceTwo}" rendered="#{currentUser.showTradePriceTwo}"/>
+                     <h:outputText value="#{product.retailPrice}" rendered="#{currentUser.showRetailPrice}"/>
                 <a4j:commandButton value="button"></a4j:commandButton>
                 </h:panelGrid>
                 <rich:separator/>
