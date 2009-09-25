@@ -321,7 +321,11 @@
       <managed-bean-class>com.popup.BackingBean</managed-bean-class> 
       <managed-bean-scope>session</managed-bean-scope> 
     </managed-bean>
-	
+	<managed-bean> 
+      <managed-bean-name>webData</managed-bean-name>
+      <managed-bean-class>com.test.WebData</managed-bean-class> 
+      <managed-bean-scope>session</managed-bean-scope> 
+    </managed-bean>
 	<managed-bean>
         <managed-bean-name>suggestionBox</managed-bean-name>
         <managed-bean-class>com.test.SuggestionBox</managed-bean-class>
