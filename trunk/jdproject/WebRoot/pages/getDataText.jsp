@@ -40,15 +40,10 @@ xmlns:rich="http://richfaces.org/rich">
 
     <f:verbatim>&#160;</f:verbatim>
     <h:panelGroup style="width:100%">
-	    <h:inputText value="#{webData.sendUrl}" id="text"/>
-	    <h:commandButton value="获得文本" action="#{webData.getWebPageText}"><a4j:support event="onclick" reRender="receivedTextId"/></h:commandButton>
+	    <h:inputTextarea value="#{webData.sendUrl}" id="text" style="width:800px;height:800px;"/>
+	    <h:commandButton value="获得详细数据" action="#{webData.getWebDataText}"><a4j:support event="onclick" reRender="receivedTextId"/></h:commandButton>
     </h:panelGroup>
-    <h:panelGroup>
-    	<h:panelGrid columns="2">
-    	<h:outputText value="省(直辖市)"></h:outputText><h:inputText value="#{webData.province}"></h:inputText>
-    	<h:outputText value="城市"></h:outputText><h:inputTextarea value="#{webData.cities}" style="width:100px;height:300px;"></h:inputTextarea>
-    	</h:panelGrid>
-    </h:panelGroup>
+    
     <h:panelGroup>
     <a4j:region id="setRegin">
     <h:panelGrid columns="2" headerClass="" style="width:100%">
@@ -63,8 +58,9 @@ xmlns:rich="http://richfaces.org/rich">
 	<h:panelGroup>
 	<h:inputTextarea style="width:100%;height:150px;" id="receivedTextId" value="#{webData.receivedText}"></h:inputTextarea>
 	</h:panelGroup>
-    <h:panelGroup>
-    	<h:commandButton value="获得详细数据" action="nextPage"></h:commandButton>
+    <h:panelGroup style="width:100%">
+	    <h:inputTextarea value="#{webData.errorSendUrl}" id="text1" style="width:800px;height:800px;"/>
+	    <h:commandButton value="获得详细数据" action="#{webData.getErrorWebDataText}"><a4j:support event="onclick" reRender="receivedTextId"/></h:commandButton>
     </h:panelGroup>
 
 </h:panelGrid>
