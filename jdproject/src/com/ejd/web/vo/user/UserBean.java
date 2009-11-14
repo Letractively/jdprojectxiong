@@ -7,10 +7,10 @@ import com.ejd.web.bo.Stakeholder;
 public class UserBean extends UserBaseBean{
 	private LoginInfo loginInfo = new LoginInfo();
 	private boolean userLoginFlag = false;
-	private boolean showPurchasePrice = false;//是否显示进货价
-	private boolean showTradePriceOne = false;//是否显示经销商价
-	private boolean showTradePriceTwo = false;//是否显示代理商价
-	private boolean showRetailPrice = false;//是否显示零售价
+	private boolean showPurchasePrice = false;//
+	private boolean showTradePriceOne = false;//
+	private boolean showTradePriceTwo = false;//
+	private boolean showRetailPrice = false;//
 	private Stakeholder userInfo;
 	public LoginInfo getLoginInfo() {
 		return loginInfo;
