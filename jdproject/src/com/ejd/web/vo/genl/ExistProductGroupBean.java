@@ -68,7 +68,7 @@ public class ExistProductGroupBean {
 		if (null == this.getTelevisionProductGroup()) {
 			this.setTelevisionProductGroup(new ProductGroup());
 		}
-		Productcategory phoneProductCategory= this.getProductCategoryService().getProductCategoryByName("手机");
+		Productcategory phoneProductCategory= this.getProductCategoryService().getProductCategoryByName("phone");
 		ProductCategory phonePrimaryCategory = new ProductCategory();
 		BeanCopier copyPhone = BeanCopier.create(Productcategory.class, ProductCategory.class, false);
 		copyPhone.copy(phoneProductCategory, phonePrimaryCategory, null);
@@ -76,7 +76,7 @@ public class ExistProductGroupBean {
 		this.getPhoneProductGroup().setSecondCategorys(this.getSecondCategorysList(phonePrimaryCategory));
 		this.getPhoneProductGroup().setBrands(this.getBrandsList(phonePrimaryCategory));
 		this.getPhoneProductGroup().setPrices(this.getProductPriceList(phonePrimaryCategory));
-		Productcategory cameraProductCategory= this.getProductCategoryService().getProductCategoryByName("数码相机");
+		Productcategory cameraProductCategory= this.getProductCategoryService().getProductCategoryByName("camera");
 		ProductCategory cameraPrimaryCategory = new ProductCategory();
 		BeanCopier copyCamera = BeanCopier.create(Productcategory.class, ProductCategory.class, false);
 		copyCamera.copy(cameraProductCategory, cameraPrimaryCategory, null);
@@ -84,7 +84,7 @@ public class ExistProductGroupBean {
 		this.getCameraProductGroup().setSecondCategorys(this.getSecondCategorysList(cameraPrimaryCategory));
 		this.getCameraProductGroup().setBrands(this.getBrandsList(cameraPrimaryCategory));
 		this.getCameraProductGroup().setPrices(this.getProductPriceList(cameraPrimaryCategory));
-		Productcategory televisionProductCategory= this.getProductCategoryService().getProductCategoryByName("平板电视");
+		Productcategory televisionProductCategory= this.getProductCategoryService().getProductCategoryByName("televison");
 		ProductCategory televisionPrimaryCategory = new ProductCategory();
 		BeanCopier copyTelevision = BeanCopier.create(Productcategory.class, ProductCategory.class, false);
 		copyTelevision.copy(televisionProductCategory, televisionPrimaryCategory, null);
