@@ -19,6 +19,16 @@
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
     <managed-bean>
+        <managed-bean-name>tabPanelBean</managed-bean-name>
+        <managed-bean-class>com.test.TabPanelBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>headerTabPanelBean</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.richfaces.header.HeaderTabPanelBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
 		<managed-bean-name>managePanelMenu</managed-bean-name>
 		<managed-bean-class>com.ejd.web.vo.richfaces.ManagePanelMenu</managed-bean-class>
 	<managed-bean-scope>session</managed-bean-scope>
