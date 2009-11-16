@@ -22,7 +22,7 @@ xmlns:rich="http://richfaces.org/rich">
 		</f:subview>
 	</ui:insert>
 	<h:panelGrid columns="1" cellpadding="0" cellspacing="0" border="0" style="width:100%;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px">
-	<h:panelGrid columns="3" cellpadding="0" cellspacing="0" border="0" styleClass="headerStyle" columnClasses="headerLeftRightStyle,headerMiddleStyle,headerLeftRightStyle">
+	<h:panelGrid columns="1" cellpadding="0" cellspacing="0" border="0" styleClass="headerStyle" columnClasses="headerLeftRightStyle,headerMiddleStyle,headerLeftRightStyle">
 	    <ui:insert name="manageHeaderMainLeft">
 	    	<f:subview id="manageHeaderMainView1">
 	    		<h:graphicImage url="/css/images/spacer.gif" style="width:100%; height:1"></h:graphicImage>

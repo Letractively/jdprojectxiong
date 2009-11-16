@@ -9,13 +9,90 @@ xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
 <f:subview id="headerMainView">
 <h:form id="headerMainform"> 
-	<td nowrap="nowrap"><h:graphicImage url="/css/images/spacer.gif" style="width:734; height:0"></h:graphicImage><br/>
-	<h:commandLink action="productHome"><h:graphicImage url="/css/images/cars_on.gif" style="width:98; height:27; border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px"></h:graphicImage></h:commandLink>
-	<h:commandLink action="productPhone"><h:graphicImage url="/css/images/phone.gif" style="width:132; height:27; border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px"></h:graphicImage></h:commandLink>
-	<h:commandLink action="productCamera"><h:graphicImage url="/css/images/camera.gif" style="width:132; height:27; border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px"></h:graphicImage></h:commandLink>
-	<h:commandLink action="productTelevision"><h:graphicImage url="/css/images/television.gif" style="width:132; height:27; border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px"></h:graphicImage></h:commandLink>
-	
-	</td>
+				<rich:tabPanel valueChangeListener="#{headerTabPanelBean.valueChanged}" headerSpacing="0px" immediate="false" tabClass="tabClass" activeTabClass="italic" width="100%" switchType="ajax" binding="#{headerTabPanelBean.tabPanel}" selectedTab="#{headerTabPanelBean.currentTab}" id="tab_panel" headerAlignment="left" height="50px;">
+					<f:valueChangeListener type="com.ejd.web.vo.richfaces.header.HeaderTabChangeListener"/>
+					
+					<rich:tab onclick="alert('\\'Canon\\' tab clicked');" disabled="#{headerTabPanelBean.disabledTabName == 'kitchenAppliance'}" name="#{headerTabPanelBean.kitchenAppliance.mainMenu.name}" label="#{headerTabPanelBean.kitchenAppliance.mainMenu.description}" reRender="s1,s2" switchType="server" labelWidth="88px">
+						<a4j:repeat id="kitchenApplianceRep" value="#{headerTabPanelBean.kitchenAppliance.subMenu}" var="kitchenApplianceSubMenu">
+							<SPAN>
+							<h:commandLink action="#{headerTabPanelBean.gotoProduct}" value="#{kitchenApplianceSubMenu.description}" immediate="true">
+								
+								<f:param name="idFirst" value="#{kitchenApplianceSubMenu.idFirst}"></f:param>
+									<f:param name="idSecond" value="#{kitchenApplianceSubMenu.idSecond}"></f:param>
+									<f:param name="productType" value="#{kitchenApplianceSubMenu.name}"></f:param>
+								
+							</h:commandLink></SPAN>
+								
+						</a4j:repeat>
+						
+					</rich:tab>
+					<rich:tab disabled="#{headerTabPanelBean.disabledTabName == 'householdAppliance'}" name="#{headerTabPanelBean.householdAppliance.mainMenu.name}" label="#{headerTabPanelBean.householdAppliance.mainMenu.description}" reRender="s1,s2" labelWidth="88px">
+						<f:verbatim>
+									2
+						</f:verbatim>
+					</rich:tab>
+					<rich:tab disabled="#{headerTabPanelBean.disabledTabName == 'personalCare'}" name="#{headerTabPanelBean.personalCare.mainMenu.name}" label="#{headerTabPanelBean.personalCare.mainMenu.description}" reRender="s1,s2" labelWidth="88px">
+						<h:panelGrid columns="2" width="100%">
+							
+							<h:panelGroup>
+								<h:outputText value="Olympus EVOLT E-500" />
+								
+								<f:verbatim>
+									3
+								</f:verbatim>
+							</h:panelGroup>
+						</h:panelGrid>	
+					</rich:tab>
+					<rich:tab disabled="#{headerTabPanelBean.disabledTabName == 'healthDevice'}" name="#{headerTabPanelBean.healthDevice.mainMenu.name}" label="#{headerTabPanelBean.healthDevice.mainMenu.description}" reRender="s1,s2" labelWidth="88px">
+						<h:panelGrid columns="2" width="100%">
+							
+							<h:panelGroup>
+								<h:outputText value="Olympus EVOLT E-500" />
+								
+								<f:verbatim>
+									di 4
+								</f:verbatim>
+							</h:panelGroup>
+						</h:panelGrid>	
+					</rich:tab>
+					<rich:tab disabled="#{headerTabPanelBean.disabledTabName == 'majorAppliance'}" name="#{headerTabPanelBean.majorAppliance.mainMenu.name}" label="#{headerTabPanelBean.majorAppliance.mainMenu.description}" reRender="s1,s2" labelWidth="88px">
+						<h:panelGrid columns="2" width="100%">
+							
+							<h:panelGroup>
+								<h:outputText value="Olympus EVOLT E-500" />
+								
+								<f:verbatim>
+									di 5
+								</f:verbatim>
+							</h:panelGroup>
+						</h:panelGrid>	
+					</rich:tab>
+					<rich:tab disabled="#{headerTabPanelBean.disabledTabName == 'phoneDigital'}" name="#{headerTabPanelBean.phoneDigital.mainMenu.name}" label="#{headerTabPanelBean.phoneDigital.mainMenu.description}" reRender="s1,s2" labelWidth="88px">
+						<h:panelGrid columns="2" width="100%">
+							
+							<h:panelGroup>
+								<h:outputText value="Olympus EVOLT E-500" />
+								
+								<f:verbatim>
+									di 6
+								</f:verbatim>
+							</h:panelGroup>
+						</h:panelGrid>	
+					</rich:tab>
+					<rich:tab disabled="#{headerTabPanelBean.disabledTabName == 'computerNetwork'}" name="#{headerTabPanelBean.computerNetwork.mainMenu.name}" label="#{headerTabPanelBean.computerNetwork.mainMenu.description}" reRender="s1,s2" labelWidth="88px">
+						<h:panelGrid columns="2" width="100%">
+							
+							<h:panelGroup>
+								<h:outputText value="Olympus EVOLT E-500" />
+								
+								<f:verbatim>
+									di 6
+								</f:verbatim>
+							</h:panelGroup>
+						</h:panelGrid>	
+					</rich:tab>
+					
+				</rich:tabPanel>	
 </h:form>
 </f:subview>		
 </jsp:root>	
