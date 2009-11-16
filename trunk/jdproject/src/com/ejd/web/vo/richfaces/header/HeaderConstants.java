@@ -1,7 +1,7 @@
 package com.ejd.web.vo.richfaces.header;
 
 public class HeaderConstants {
-	public static final  String KITCHEN_APPLIANCE = "kitchenAppliance";
+	public static final String KITCHEN_APPLIANCE = "kitchenAppliance";
 	public static final String HOUSEHOLD_APPLIANCE = "householdAppliance";
 	public static final String PERSONAL_CARE = "personalCare";
 	public static final String HEALTH_DEVICE = "healthDevice";
