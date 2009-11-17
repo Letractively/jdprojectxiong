@@ -48,10 +48,22 @@ xmlns:rich="http://richfaces.org/rich">
 	</h:panelGrid>
 	</h:panelGrid>
 </h:panelGrid>
+<h:panelGrid columns="1" style="width:100%;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px">
+	<ui:insert name="productStepDisplay">
+		<f:subview id="productStepDisplayView">
+			<h:outputText value="productStepDisplayView"></h:outputText>
+		</f:subview>
+	</ui:insert>
+</h:panelGrid>
 
 <h:panelGrid columns="2" styleClass="contentStyle" columnClasses="template-content,template-right">
 	
 	<h:panelGroup id="template-content">
+		<ui:insert name="productSearchNavigation">
+			<f:subview id="productSearchNavigationView">
+				<h:outputText value="productSearchNavigation"></h:outputText>
+			</f:subview>
+		</ui:insert>
 		<ui:insert name="content">
 			<f:subview id="contentview">
 				<h:panelGrid columns="2">
