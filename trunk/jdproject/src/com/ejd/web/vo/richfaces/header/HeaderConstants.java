@@ -1,13 +1,13 @@
 package com.ejd.web.vo.richfaces.header;
 
 public class HeaderConstants {
-	public static final String KITCHEN_APPLIANCE = "kitchenAppliance";
-	public static final String HOUSEHOLD_APPLIANCE = "householdAppliance";
-	public static final String PERSONAL_CARE = "personalCare";
-	public static final String HEALTH_DEVICE = "healthDevice";
-	public static final String MAJOR_APPLIANCE = "majorAppliance";
-	public static final String PHONE_DIGITAL = "phoneDigital";
-	public static final String COMPUTER_NETWORK = "computerNetwork";
+	public static final String KITCHEN_APPLIANCE_NAME = "kitchenAppliance";
+	public static final String HOUSEHOLD_APPLIANCE_NAME = "householdAppliance";
+	public static final String PERSONAL_CARE_NAME = "personalCare";
+	public static final String HEALTH_DEVICE_NAME = "healthDevice";
+	public static final String MAJOR_APPLIANCE_NAME = "majorAppliance";
+	public static final String PHONE_DIGITAL_NAME = "phoneDigital";
+	public static final String COMPUTER_NETWORK_NAME = "computerNetwork";
 	public static final String KITCHEN_APPLIANCE_ID = "01";
 	public static final String HOUSEHOLD_APPLIANCE_ID = "02";
 	public static final String PERSONAL_CARE_ID = "03";
@@ -15,8 +15,9 @@ public class HeaderConstants {
 	public static final String MAJOR_APPLIANCE_ID = "05";
 	public static final String PHONE_DIGITAL_ID = "06";
 	public static final String COMPUTER_NETWORK_ID = "07";
+	public static final String PRODUCT_ALL_DESCRIPTION = "全部";
 	public static final String KITCHEN_APPLIANCE_DESCRIPTION = "厨房电器";
-	//submenu
+	//submenu kitchen_appliance
 	public static final String KITCHEN_APPLIANCE_RICE_COOKER_NAME = "riceCooker";
 	public static final String KITCHEN_APPLIANCE_RICE_COOKER_DESCRIPTION = "电饭煲";
 	public static final String KITCHEN_APPLIANCE_INDUCTION_COOKER_NAME = "inductionCooker";
@@ -45,13 +46,190 @@ public class HeaderConstants {
 	public static final String KITCHEN_APPLIANCE_TOASTER_DESCRIPTION = "烤面包机";
 	public static final String KITCHEN_APPLIANCE_MICROWAVE_OVEN_NAME = "microwaveOven";
 	public static final String KITCHEN_APPLIANCE_MICROWAVE_OVEN_DESCRIPTION = "微波炉";
-	//end submenu
+	public static final String KITCHEN_APPLIANCE_DISINFECTION_CABINET_NAME = "disinfectionCabinet";
+	public static final String KITCHEN_APPLIANCE_DISINFECTION_CABINET_DESCRIPTION = "消毒柜";
+	public static final String KITCHEN_APPLIANCE_SAUCEPAN_NAME = "saucepan";
+	public static final String KITCHEN_APPLIANCE_SAUCEPAN_DESCRIPTION = "紫砂煲";
+	public static final String KITCHEN_APPLIANCE_CUISINE_MACHINE_NAME = "cuisineMachine";
+	public static final String KITCHEN_APPLIANCE_CUISINE_MACHINE_DESCRIPTION = "料理机";
+	public static final String KITCHEN_APPLIANCE_MEATCHOPPER_NAME = "meatchopper";
+	public static final String KITCHEN_APPLIANCE_MEATCHOPPER_DESCRIPTION = "绞肉机";
+	public static final String KITCHEN_APPLIANCE_COFFEE_MACHINE_NAME ="coffeeMachine";
+	public static final String KITCHEN_APPLIANCE_COFFEE_MACHINE_DESCRIPTION = "咖啡机/壶";
+	public static final String KITCHEN_APPLIANCE_BAKINGBOWL_MACHINE_NAME = "bakingbowlMachine";
+	public static final String KITCHEN_APPLIANCE_BAKINGBOWL_MACHINE_DESCRIPTION = "烘碗机";
+	public static final String KITCHEN_APPLIANCE_GASSTOVE_NAME = "gasStove";
+	public static final String KITCHEN_APPLIANCE_GASSTOVE_DESCRIPTION = "燃气灶";
+	public static final String KITCHEN_APPLIANCE_FRUITSPARSECLEARING_MACHINE_NAME = "fruitsparseclearingMachine";
+	public static final String KITCHEN_APPLIANCE_FRUITSPARSECLEARING_MACHINE_DESCRIPTION = "果疏净化机";
+	public static final String KITCHEN_APPLIANCE_FOODPROCESSING_MACHINE_NAME = "foodprocessingMachine";
+	public static final String KITCHEN_APPLIANCE_FOODPROCESSING_MACHINE_DESCRIPTION = "食品加工机";
+	public static final String KITCHEN_APPLIANCE_JUICER_NAME = "juicer";
+	public static final String KITCHEN_APPLIANCE_JUICER_DESCRIPTION = "榨汁/搅拌机";
+	public static final String KITCHEN_APPLIANCE_GASWATERHEATER_NAME ="gasWaterHeater";
+	public static final String KITCHEN_APPLIANCE_GASWATERHEATER_DESCRIPTION = "燃气热水器";
+	public static final String KITCHEN_APPLIANCE_ELECTRICWATERHEATER_NAME = "electricWaterHeater";
+	public static final String KITCHEN_APPLIANCE_ELECTRICWATERHEATER_DESCRIPTION = "电热水器";
+	public static final String KITCHEN_APPLIANCE_VENTILATOR_NAME = "ventilator";
+	public static final String KITCHEN_APPLIANCE_VENTILATOR_DESCRIPTION = "吸油烟机";
+	//end submenu kitchen_appliance
 	public static final String HOUSEHOLD_APPLIANCE_DESCRIPTION = "生活电器";
+	//start submenu household_appliance
+	public static final String HOUSEHOLD_APPLIANCE_ELECTRIC_KETTLE_NAME = "electricKettle";
+	public static final String HOUSEHOLD_APPLIANCE_ELECTRIC_KETTLE_DESCRIPTION = "电水壶";
+	public static final String HOUSEHOLD_APPLIANCE_ELECTRIC_FAN_NAME = "electricFan";
+	public static final String HOUSEHOLD_APPLIANCE_ELECTRIC_FAN_DESCRIPTION = "电风扇";
+	public static final String HOUSEHOLD_APPLIANCE_ELECTRIC_IRON_NAME = "electricIron";
+	public static final String HOUSEHOLD_APPLIANCE_ELECTRIC_IRON_DESCRIPTION = "电熨斗";
+	public static final String HOUSEHOLD_APPLIANCE_VACUUM_CLEANER_NAME = "vacuumCleaner";
+	public static final String HOUSEHOLD_APPLIANCE_VACUUM_CLEANER_DESCRIPTION = "吸尘器";
+	public static final String HOUSEHOLD_APPLIANCE_HUMIDIFIER_NAME = "humidifier";
+	public static final String HOUSEHOLD_APPLIANCE_HUMIDIFIER_DESCRIPTION = "加湿器";
+	public static final String HOUSEHOLD_APPLIANCE_ELECTRIC_HEATER_NAME = "electricHeater";
+	public static final String HOUSEHOLD_APPLIANCE_ELECTRIC_HEATER_DESCRIPTION = "电暖器";
+	public static final String HOUSEHOLD_APPLIANCE_SOYMILKMAKER_NAME = "soymilkMaker";
+	public static final String HOUSEHOLD_APPLIANCE_SOYMILKMAKER_DESCRIPTION = "豆浆机";
+	public static final String HOUSEHOLD_APPLIANCE_PEELING_MACHINE_NAME = "peelingMachine";
+	public static final String HOUSEHOLD_APPLIANCE_PEELING_MACHINE_DESCRIPTION = "剥皮机";
+	public static final String HOUSEHOLD_APPLIANCE_WATER_DISPENSER_NAME = "waterDispenser";
+	public static final String HOUSEHOLD_APPLIANCE_WATER_DISPENSER_DESCRIPTION = "饮水机";
+	public static final String HOUSEHOLD_APPLIANCE_HOTBOTTLE_NAME = "hotBottle";
+	public static final String HOUSEHOLD_APPLIANCE_HOTBOTTLE_DESCRIPTION = "热水瓶";
+	public static final String HOUSEHOLD_APPLIANCE_VACUUM_CUP_NAME = "vacuumCup";
+	public static final String HOUSEHOLD_APPLIANCE_VACUUM_CUP_DESCRIPTION = "保温杯";
+	public static final String HOUSEHOLD_APPLIANCE_TELEPHONE_NAME = "telephone";
+	public static final String HOUSEHOLD_APPLIANCE_TELEPHONE_DESCRIPTION = "电话机";
+	public static final String HOUSEHOLD_APPLIANCE_OXYGEN_MACHINE_NAME = "oxygenMachine";
+	public static final String HOUSEHOLD_APPLIANCE_OXYGEN_MACHINE_DESCRIPTION = "活氧机";
+	public static final String HOUSEHOLD_APPLIANCE_MOSQUITOSMOKE_MACHINE_NAME = "mosquitosmokeMachine";
+	public static final String HOUSEHOLD_APPLIANCE_MOSQUITOSMOKE_MACHINE_DESCRIPTION = "吸蚊器";
+	public static final String HOUSEHOLD_APPLIANCE_ADMISSIONBAG_NAME = "admissionbag";
+	public static final String HOUSEHOLD_APPLIANCE_ADMISSIONBAG_DESCRIPTION = "收纳袋";
+	public static final String HOUSEHOLD_APPLIANCE_SEWINGMACHINE_NAME = "sewingMachine";
+	public static final String HOUSEHOLD_APPLIANCE_SEWINGMACHINE_DESCRIPTION = "缝纫机";
+	public static final String HOUSEHOLD_APPLIANCE_INSULATIONBOXES_NAME = "insulationBoxes";
+	public static final String HOUSEHOLD_APPLIANCE_INSULATIONBOXES_DESCRIPTION = "保温饭盒";
+	public static final String HOUSEHOLD_APPLIANCE_PURIFIEDWATER_NAME = "purifiedwater";
+	public static final String HOUSEHOLD_APPLIANCE_PURIFIEDWATER_DESCRIPTION = "净水设备";
+	public static final String HOUSEHOLD_APPLIANCE_POWERTOOLS_NAME = "powerTools";
+	public static final String HOUSEHOLD_APPLIANCE_POWERTOOLS_DESCRIPTION = "电动工具";
+	public static final String HOUSEHOLD_APPLIANCE_ELECTRIC_TOOTHBRUSH_NAME = "electricToothbrush";
+	public static final String HOUSEHOLD_APPLIANCE_ELECTRIC_TOOTHBRUSH_DESCRIPTION = "电动牙刷";
+	public static final String HOUSEHOLD_APPLIANCE_SPINBRUSH_NAME = "spinBrush";
+	public static final String HOUSEHOLD_APPLIANCE_SPINBRUSH_DESCRIPTION = "牙刷配件";
+	public static final String HOUSEHOLD_APPLIANCE_STEAMMOP_NAME = "steammop";
+	public static final String HOUSEHOLD_APPLIANCE_STEAMMOP_DESCRIPTION = "蒸汽地拖";
+	public static final String HOUSEHOLD_APPLIANCE_STEAM_CLEANING_MACHINE_NAME = "steamCleaningMachine";
+	public static final String HOUSEHOLD_APPLIANCE_STEAM_CLEANING_MACHINE_DESCRIPTION = "蒸汽清洁机";
+	public static final String HOUSEHOLD_APPLIANCE_LINKED_TOHOT_STEAM_MACHINE_NAME = "linkedTohotSteamMachine";
+	public static final String HOUSEHOLD_APPLIANCE_LINKED_TOHOT_STEAM_MACHINE_DESCRIPTION = "蒸汽挂烫机";
+	public static final String HOUSEHOLD_APPLIANCE_AIR_PURIFIER_NAME = "airPurifier";
+	public static final String HOUSEHOLD_APPLIANCE_AIR_PURIFIER_DESCRIPTION = "空气净化器";
+	public static final String HOUSEHOLD_APPLIANCE_VACUUMCLEANERACCESSORIES_NAME = "vacuumCleanerAccessories";
+	public static final String HOUSEHOLD_APPLIANCE_VACUUMCLEANERACCESSORIES_DESCRIPTION = "吸尘器配件";
+	public static final String HOUSEHOLD_APPLIANCE_SOCKETPOWER_NAME = "socketPower";
+	public static final String HOUSEHOLD_APPLIANCE_SOCKETPOWER_DESCRIPTION = "电源、插座";
+	//end sub household_appliance
 	public static final String PERSONAL_CARE_DESCRIPTION = "护理电器";
+	//start submenu personal_care
+	public static final String PERSONAL_CARE_HAIR_DRYER_NAME = "hairDryer";
+	public static final String PERSONAL_CARE_HAIR_DRYER_DESCRIPTION = "电吹风";
+	public static final String PERSONAL_CARE_SHAVER_NAME = "shaver";
+	public static final String PERSONAL_CARE_SHAVER_DESCRIPTION = "剃须刀";
+	public static final String PERSONAL_CARE_FITTINGS_NAME = "fittings";
+	public static final String PERSONAL_CARE_FITTINGS_DESCRIPTION = "剃须刀配件";
+	public static final String PERSONAL_CARE_HAIRCUT_NAME = "haircut";
+	public static final String PERSONAL_CARE_HAIRCUT_DESCRIPTION ="理发器";
+	public static final String PERSONAL_CARE_DEPILATOR_NAME = "depilator";
+	public static final String PERSONAL_CARE_DEPILATOR_DESCRIPTION = "脱毛器";
+	public static final String PERSONAL_CARE_MARCELWAVER_NAME = "marcelwaver";
+	public static final String PERSONAL_CARE_MARCELWAVER_DESCRIPTION = "美发造型器";
+	public static final String PERSONAL_CARE_SHOWER_LAMP_NAME = "showerLamp";
+	public static final String PERSONAL_CARE_SHOWER_LAMP_DESCRIPTION = "浴霸";
+	public static final String PERSONAL_CARE_PRUNINGDEVICE_NAME = "pruningDevice";
+	public static final String PERSONAL_CARE_PRUNINGDEVICE_DESCRIPTION = "修剪器";
+	public static final String PERSONAL_CARE_FITNESSEQUIPMENT_NAME = "fitnessequipment";
+	public static final String PERSONAL_CARE_FITNESSEQUIPMENT_DESCRIPTION = "健身器材";
+	public static final String PERSONAL_CARE_OXYGEN_BAR_NAME = "oxygenBar";
+	public static final String PERSONAL_CARE_OXYGEN_BAR_DESCRIPTION = "时尚氧吧";
+	public static final String PERSONAL_CARE_CURLEYELASHESBROWSER_NAME = "curlEyeLashesBrowser";
+	public static final String PERSONAL_CARE_CURLEYELASHESBROWSER_DESCRIPTION = "睫毛卷翘器";
+	public static final String PERSONAL_CARE_SKINCARE_NAME = "skinCare";
+	public static final String PERSONAL_CARE_SKINCARE_DESCRIPTION = "皮肤美容护理";
+	//end submenu personal_care
 	public static final String HEALTH_DEVICE_DESCRIPTION = "健康电器";
+	//start submenu health_device
+	public static final String HEALTH_DEVICE_SNORING_DEVICE_NAME = "snoringDevice";
+	public static final String HEALTH_DEVICE_SNORING_DEVICE_DESCRIPTION ="止鼾器";
+	public static final String HEALTH_DEVICE_SLEEPING_SPECS_NAME = "sleepingSpecs";
+	public static final String HEALTH_DEVICE_SLEEPING_SPECS_DESCRIPTION = "助眠器";
+	public static final String HEALTH_DEVICE_ELECTRONIC_WEIGHER_NAME = "electronicWeigher";
+	public static final String HEALTH_DEVICE_ELECTRONIC_WEIGHER_DESCRIPTION = "电子秤";
+	public static final String HEALTH_DEVICE_TABLE_LAMP_NAME = "tableLamp";
+	public static final String HEALTH_DEVICE_TABLE_LAMP_DESCRIPTION = "台灯";
+	public static final String HEALTH_DEVICE_MASSAGER_NAME = "massager";
+	public static final String HEALTH_DEVICE_MASSAGER_DESCRIPTION = "按摩器";
+	public static final String HEALTH_DEVICE_ELECTRONIC_SPHYGMOMANOMETER_NAME = "electronicSphygmomanometer"; 
+	public static final String HEALTH_DEVICE_ELECTRONIC_SPHYGMOMANOMETER_DESCRIPTION = "电子血压计";
+	//end submenu health_device
 	public static final String MAJOR_APPLIANCE_DESCRIPTION = "大家电";
+	//start submenu major_appliance
+	public static final String MAJOR_APPLIANCE_TV_NAME = "tv";
+	public static final String MAJOR_APPLIANCE_TV_DESCRIPTION = "电视音响";
+	public static final String MAJOR_APPLIANCE_REFRIGERATOR_NAME = "refrigerator";
+	public static final String MAJOR_APPLIANCE_REFRIGERATOR_DESCRIPTION = "冰箱";
+	public static final String MAJOR_APPLIANCE_AIR_CONDITIONER_NAME = "airConditioner";
+	public static final String MAJOR_APPLIANCE_AIR_CONDITIONER_DESCRIPTION = "空调";
+	public static final String MAJOR_APPLIANCE_WASHING_MACHINE_NAME = "washingMachine";
+	public static final String MAJOR_APPLIANCE_WASHING_MACHINE_DESCRIPTION = "洗衣机";
+	//end submenu major_appliance
+	
 	public static final String PHONE_DIGITAL_DESCRIPTION = "手机数码";
+	//start submenu phone_digital
+	public static final String PHONE_DIGITAL_DIGITALFITTING_NAME = "digitalfitting";
+	public static final String PHONE_DIGITAL_DIGITALFITTING_DESCRIPTION = "数码配件";
+	public static final String PHONE_DIGITAL_MOBILE_PHONE_NAME = "mobilePhone";
+	public static final String PHONE_DIGITAL_MOBILE_PHONE_DESCRIPTION = "手机";
+	public static final String PHONE_DIGITAL_MOBILE_PHONE_ACCESSORIES_NAME = "mobilePhoneAccessories";
+	public static final String PHONE_DIGITAL_MOBILE_PHONE_ACCESSORIES_DESCRIPTION = "手机配件";
+	public static final String PHONE_DIGITAL_RECORDER_PEN_NAME = "recorderPen";
+	public static final String PHONE_DIGITAL_RECORDER_PEN_DESCRIPTION = "录音笔";
+	public static final String PHONE_DIGITAL_MPEG_AUDIO_LAYER_NAME = "mpegAudioLayer";
+	public static final String PHONE_DIGITAL_MPEG_AUDIO_LAYER_DESCRIPTION = "数码播放机";
+	public static final String PHONE_DIGITAL_GLOBAL_POSITIONING_SYSTEM_NAME = "globalPositioningSystem";
+	public static final String PHONE_DIGITAL_GLOBAL_POSITIONING_SYSTEM_DESCRIPTION = "GPS导航";
+	public static final String PHONE_DIGITAL_DIGITAL_PHOTO_FRAME_NAME = "digitalPhotoFrame "; 
+	public static final String PHONE_DIGITAL_DIGITAL_PHOTO_FRAME_DESCRIPTION = "数码相框";
+	
+	//end submenu phone_digital
 	public static final String COMPUTER_NETWORK_DESCRIPTION = "电脑网络";
+	//start submenu computer_network
+	public static final String COMPUTER_NETWORK_USB_STICK_NAME = "usbStick";
+	public static final String COMPUTER_NETWORK_USB_STICK_DESCRIPTION = "U盘";
+	public static final String COMPUTER_NETWORK_MOUSE_NAME = "mouse";
+	public static final String COMPUTER_NETWORK_MOUSE_DESCRIPTION = "鼠标";
+	public static final String COMPUTER_NETWORK_KEYBOARD_NAME = "keyboard";
+	public static final String COMPUTER_NETWORK_KEYBOARD_DESCRIPTION = "键盘";
+	public static final String COMPUTER_NETWORK_AUDIO_DEVICE_NAME = "audioDevice";
+	public static final String COMPUTER_NETWORK_AUDIO_DEVICE_DESCRIPTION = "音响";
+	public static final String COMPUTER_NETWORK_CHASSIS_NAME = "chassis";
+	public static final String COMPUTER_NETWORK_CHASSIS_DESCRIPTION = "机箱";
+	public static final String COMPUTER_NETWORK_WEBCAM_NAME = "webcam";
+	public static final String COMPUTER_NETWORK_WEBCAM_DESCRIPTION = "摄像头";
+	public static final String COMPUTER_NETWORK_DISPLAY_NAME = "display";
+	public static final String COMPUTER_NETWORK_DISPLAY_DESCRIPTION = "显示器";
+	public static final String COMPUTER_NETWORK_KEYBOARDANDMOUSEPACKAGE_NAME = "keyboardAndMousePackage";
+	public static final String COMPUTER_NETWORK_KEYBOARDANDMOUSEPACKAGE_DESCRIPTION = "键鼠套装";
+	public static final String COMPUTER_NETWORK_POWERSOURCE_NAME = "powersource";
+	public static final String COMPUTER_NETWORK_POWERSOURCE_DESCRIPTION = "机箱电源";
+	public static final String COMPUTER_NETWORK_PCCOOLER_NAME = "pcCooler";
+	public static final String COMPUTER_NETWORK_PCCOOLER_DESCRIPTION = "散热底座";
+	public static final String COMPUTER_NETWORK_HEADSET_NAME = "headset";
+	public static final String COMPUTER_NETWORK_HEADSET_DESCRIPTION = "耳机/耳麦";
+	public static final String COMPUTER_NETWORK_PC_SHARING_DEVICE_NAME = "pcSharingDevice"; 
+    public static final String COMPUTER_NETWORK_PC_SHARING_DEVICE_DESCRIPTION = "PC共享器";
+	//end submenu computer_network
+	public static final String subMenu00 = "00";
 	public static final String subMenu01 = "01";
 	public static final String subMenu02 = "02";
 	public static final String subMenu03 = "03";
