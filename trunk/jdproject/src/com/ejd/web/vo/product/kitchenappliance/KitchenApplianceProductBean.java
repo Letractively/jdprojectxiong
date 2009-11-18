@@ -1,4 +1,4 @@
-package com.ejd.web.vo.product;
+package com.ejd.web.vo.product.kitchenappliance;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,18 +20,21 @@ import com.ejd.web.bo.Product;
 import com.ejd.web.bo.Stakeholder;
 import com.ejd.web.vo.product.ProductPrice;
 import com.ejd.web.vo.product.base.RangeParam;
+import com.ejd.web.vo.richfaces.header.HeaderConstants;
 
-public class ListProductBean extends PagedBaseBean {
+public class KitchenApplianceProductBean extends PagedBaseBean {
 	public IProductService productService;
 	public String currentTitleOne;
 	public String currentTitleTwo;
 	public String model;
-	// these is for search property
+	//start for search property
 	private String primaryCategoryCode;
 	private String secondCategoryCode;
 	private String brandCode;
 	private RangeParam priceRange;
+	//end for search property
 	private DataModel dataModel;
+	
 	private int scrollerPage;
 	private String styleFont;
 	private boolean styleFontFlag;
@@ -39,11 +42,12 @@ public class ListProductBean extends PagedBaseBean {
 	private boolean styleImgFla;
 	private String styleImgFont;
 	private boolean styleImgFontFlag;
-	public ListProductBean() {
+	public KitchenApplianceProductBean() {
 		super();
 		this.styleImgFont = "";
 		this.styleFont = "";
 		this.styleImg = "_on";
+		this.primaryCategoryCode = HeaderConstants.KITCHEN_APPLIANCE_ID;
 	}
 	public int getTotalCount() {
 		int totalCount = 0;
@@ -102,7 +106,6 @@ public class ListProductBean extends PagedBaseBean {
 	public void setModel(String model) {
 		this.model = model;
 	}
-	
 	
 	public String getPrimaryCategoryCode() {
 		return primaryCategoryCode;

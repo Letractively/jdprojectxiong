@@ -24,6 +24,7 @@ import com.ejd.web.bo.Person;
 import com.ejd.web.bo.Product;
 import com.ejd.web.bo.Productunit;
 import com.ejd.web.vo.genl.PopupStakeholderBean;
+import com.ejd.web.vo.product.base.ProductBaseBean;
 import com.ejd.web.vo.stakeholder.PersonVo;
 import com.ejd.web.vo.stakeholder.StakeholderVo;
 
@@ -116,9 +117,9 @@ public class ProductCreateBean extends ProductBaseBean {
 		newProduct.setImageName(this.getProduct().getImageName());
 		newProduct.setName(this.getProduct().getName());
 		newProduct.setProvider(this.getStakeholderService().getStakeholderById(this.getProduct().getProvider().getId()));
-		newProduct.setPrimaryCategory(this.getProductCategoryService().getProductCategoryById(this.getProduct().getPrimaryCategoryId()));
-		newProduct.setSecondCategory(this.getProductCategoryService().getProductCategoryById(this.getProduct().getSecondCategoryId()));
-		newProduct.setBrand(this.getProductBrandService().getProductBrandById(this.getProduct().getBrandId()));
+		//newProduct.setPrimaryCategory(this.getProductCategoryService().getProductCategoryById(this.getProduct().getPrimaryCategoryId()));
+		//newProduct.setSecondCategory(this.getProductCategoryService().getProductCategoryById(this.getProduct().getSecondCategoryId()));
+		//newProduct.setBrand(this.getProductBrandService().getProductBrandById(this.getProduct().getBrandId()));
 		newProduct.setStatus(this.getProduct().getStatus());
 		newProduct.setPurchasePrice(this.getProduct().getPurchasePrice());
 		newProduct.setTradePriceOne(this.getProduct().getTradePriceOne());
