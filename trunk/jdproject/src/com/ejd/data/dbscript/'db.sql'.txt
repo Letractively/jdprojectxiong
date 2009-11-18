@@ -110,5 +110,15 @@ CREATE TABLE  `ejd`.`product` (
   `TRADEPRICETWO` double(10,2) default 0,
   `RETAILPRICE` double(10,2) default 0,
   `INTRODUCEFILENAME` varchar(50) default NULL,
+  `FIELD1` double(10,2),
+  `FIELD2` double(10,2),
+  `FIELD3` double(10,2),
+  `FIELD4` double(10,2),
+  `FIELD5` double(10,2),
+  `FIELD6` varchar(1),
+  `FIELD7` varchar(1),
+  `FIELD8` varchar(1),
+  `FIELD9` varchar(1),
+  `FIELD10` varchar(1),
   PRIMARY KEY  (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
