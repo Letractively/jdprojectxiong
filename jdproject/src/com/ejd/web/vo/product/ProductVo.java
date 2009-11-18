@@ -4,12 +4,8 @@ import org.hibernate.validator.Length;
 import org.hibernate.validator.NotEmpty;
 import org.hibernate.validator.Pattern;
 
-import com.ejd.web.bo.Productbrand;
-import com.ejd.web.bo.Productcategory;
 import com.ejd.web.bo.Productunit;
 import com.ejd.web.bo.Stakeholder;
-import com.ejd.web.vo.productbrand.ProductBrand;
-import com.ejd.web.vo.productcategory.ProductCategory;
 import com.ejd.web.vo.productunit.ProductUnit;
 import com.ejd.web.vo.stakeholder.StakeholderVo;
 
@@ -29,11 +25,11 @@ public class ProductVo {
 	private StakeholderVo provider;//only use StakeholderVo
 	//private Integer providerId;
 	private Integer primaryCategoryId;
-	private ProductCategory primaryCategory;
+	//private ProductCategory primaryCategory;
 	private Integer secondCategoryId;
-	private ProductCategory secondCategory;
+	//private ProductCategory secondCategory;
 	private Integer brandId;
-	private ProductBrand brand;
+	//private ProductBrand brand;
 	private String status;
 	private Double purchasePrice;
 	private Double tradePriceOne;
@@ -121,36 +117,21 @@ public class ProductVo {
 	public void setPrimaryCategoryId(Integer primaryCategoryId) {
 		this.primaryCategoryId = primaryCategoryId;
 	}
-	public ProductCategory getPrimaryCategory() {
-		return primaryCategory;
-	}
-	public void setPrimaryCategory(ProductCategory primaryCategory) {
-		this.primaryCategory = primaryCategory;
-	}
+	
 	public Integer getSecondCategoryId() {
 		return secondCategoryId;
 	}
 	public void setSecondCategoryId(Integer secondCategoryId) {
 		this.secondCategoryId = secondCategoryId;
 	}
-	public ProductCategory getSecondCategory() {
-		return secondCategory;
-	}
-	public void setSecondCategory(ProductCategory secondCategory) {
-		this.secondCategory = secondCategory;
-	}
+	
 	public Integer getBrandId() {
 		return brandId;
 	}
 	public void setBrandId(Integer brandId) {
 		this.brandId = brandId;
 	}
-	public ProductBrand getBrand() {
-		return brand;
-	}
-	public void setBrand(ProductBrand brand) {
-		this.brand = brand;
-	}
+	
 	public String getStatus() {
 		return status;
 	}
