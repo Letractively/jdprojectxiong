@@ -10,6 +10,7 @@ import com.ejd.model.exception.ProductException;
 import com.ejd.model.service.iface.IProductService;
 import com.ejd.web.bo.Product;
 import com.ejd.web.vo.product.ProductPrice;
+import com.ejd.web.vo.product.base.RangeParam;
 
 public class ProductServiceImpl implements IProductService {
 
@@ -103,9 +104,9 @@ public class ProductServiceImpl implements IProductService {
 			throw new ProductException("error");
 		}
 	}
-	public List<Product> getProductByCriteria(Integer primaryCategoryId, Integer secondCategoryId, Integer brandId, ProductPrice priceRange) throws ProductException {
+	public List<Product> getKitchenApplianceProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange) throws ProductException {
 		try {
-			return productDao.getProductByCriteria(primaryCategoryId, secondCategoryId, brandId, priceRange);
+			return productDao.getKitchenApplianceProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange);
 		} catch(HibernateObjectRetrievalFailureException he) {
 			throw new ProductException("error");
 		}
