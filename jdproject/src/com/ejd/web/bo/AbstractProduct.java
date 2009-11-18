@@ -24,11 +24,11 @@ public abstract class AbstractProduct extends java.lang.Object implements
 	private String name;
 	private Stakeholder provider;
 	//private Integer providerId;
-	private Productcategory primaryCategory;
+	private String primaryCategoryCode;
 	//private Integer primaryCategoryId;
-	private Productcategory secondCategory;
+	private String secondCategoryCode;
 	//private Integer secondCategoryId;
-	private Productbrand brand;
+	private String brandCode;
 	//private Integer brandId;
 	private String status;
 	private Double purchasePrice;
@@ -45,20 +45,20 @@ public abstract class AbstractProduct extends java.lang.Object implements
 
 	/** minimal constructor */
 	public AbstractProduct(String code, Stakeholder provider,
-			Productcategory primaryCategory, Productcategory secondCategory,
-			Productbrand brand, String status) {
+			String primaryCategoryCode, String secondCategoryCode,
+			String brandCode, String status) {
 		this.code = code;
 		this.provider = provider;
-		this.primaryCategory = primaryCategory;
-		this.secondCategory = secondCategory;
-		this.brand = brand;
+		this.primaryCategoryCode = primaryCategoryCode;
+		this.secondCategoryCode = secondCategoryCode;
+		this.brandCode = brandCode;
 		this.status = status;
 	}
 
 	/** full constructor */
 	public AbstractProduct(String code, String manufacturerCode,String barcode,String spec,Productunit unit,Integer stockLowerNumber,Integer stockUpperNumber,String imageName, String name,
-			Stakeholder provider, Productcategory primaryCategory,
-			Productcategory secondCategory, Productbrand brand, String status,
+			Stakeholder provider, String primaryCategoryCode,
+			String secondCategoryCode, String brandCode, String status,
 			Double purchasePrice, Double tradePriceOne, Double tradePriceTwo,
 			Double retailPrice, String introduceFileName) {
 		this.code = code;
@@ -71,9 +71,9 @@ public abstract class AbstractProduct extends java.lang.Object implements
 		this.imageName = imageName;
 		this.name = name;
 		this.provider = provider;
-		this.primaryCategory = primaryCategory;
-		this.secondCategory = secondCategory;
-		this.brand = brand;
+		this.primaryCategoryCode = primaryCategoryCode;
+		this.secondCategoryCode = secondCategoryCode;
+		this.brandCode = brandCode;
 		this.status = status;
 		this.purchasePrice = purchasePrice;
 		this.tradePriceOne = tradePriceOne;
@@ -174,28 +174,28 @@ public abstract class AbstractProduct extends java.lang.Object implements
 		this.provider = provider;
 	}
 
-	public Productcategory getPrimaryCategory() {
-		return primaryCategory;
+	public String getPrimaryCategoryCode() {
+		return primaryCategoryCode;
 	}
 
-	public void setPrimaryCategory(Productcategory primaryCategory) {
-		this.primaryCategory = primaryCategory;
+	public void setPrimaryCategoryCode(String primaryCategoryCode) {
+		this.primaryCategoryCode = primaryCategoryCode;
 	}
 
-	public Productcategory getSecondCategory() {
-		return secondCategory;
+	public String getSecondCategoryCode() {
+		return secondCategoryCode;
 	}
 
-	public void setSecondCategory(Productcategory secondCategory) {
-		this.secondCategory = secondCategory;
+	public void setSecondCategoryCode(String secondCategoryCode) {
+		this.secondCategoryCode = secondCategoryCode;
 	}
 
-	public Productbrand getBrand() {
-		return brand;
+	public String getBrandCode() {
+		return brandCode;
 	}
 
-	public void setBrand(Productbrand brand) {
-		this.brand = brand;
+	public void setBrandCode(String brandCode) {
+		this.brandCode = brandCode;
 	}
 
 	public String getStatus() {
