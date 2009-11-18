@@ -11,15 +11,11 @@ import com.ejd.model.exception.ProductBrandException;
 import com.ejd.model.exception.ProductCategoryException;
 import com.ejd.model.exception.ProductUnitException;
 import com.ejd.model.exception.StakeholderException;
-import com.ejd.model.service.iface.IProductBrandService;
-import com.ejd.model.service.iface.IProductCategoryService;
 import com.ejd.model.service.iface.IProductUnitService;
 import com.ejd.model.service.iface.IStakeholderService;
 import com.ejd.utils.SpringFacesUtil;
 import com.ejd.web.bo.Person;
 import com.ejd.web.bo.Product;
-import com.ejd.web.bo.Productbrand;
-import com.ejd.web.bo.Productcategory;
 import com.ejd.web.bo.Productunit;
 import com.ejd.web.bo.Stakeholder;
 import com.test.Capital;
@@ -172,14 +168,14 @@ public class ExtendedTableBean {
 			List ddd= st.getAddresses();
 			List eee= st.getBanks();
 			p.setProvider(st);
-			IProductBrandService productBrandService = (IProductBrandService)appctx.getBean("productBrandService");
-			Productbrand pb = productBrandService.getProductBrandById(new Integer(2));
-			p.setBrand(pb);
-			IProductCategoryService  productCategoryService = (IProductCategoryService)appctx.getBean("productCategoryService");
-			Productcategory pt1= productCategoryService.getProductCategoryById(new Integer(1));
-			Productcategory pt2= productCategoryService.getProductCategoryById(new Integer(2));
-			p.setPrimaryCategory(pt1);
-			p.setSecondCategory(pt2);
+			//IProductBrandService productBrandService = (IProductBrandService)appctx.getBean("productBrandService");
+			//Productbrand pb = productBrandService.getProductBrandById(new Integer(2));
+			//p.setBrand(pb);
+			//IProductCategoryService  productCategoryService = (IProductCategoryService)appctx.getBean("productCategoryService");
+			//Productcategory pt1= productCategoryService.getProductCategoryById(new Integer(1));
+			//Productcategory pt2= productCategoryService.getProductCategoryById(new Integer(2));
+			//p.setPrimaryCategory(pt1);
+			//p.setSecondCategory(pt2);
 			IProductUnitService  productUnitService = (IProductUnitService)appctx.getBean("productUnitService");
 			Productunit unit = productUnitService.getProductUnitById(new Integer(2));
 			p.setUnit(unit);
@@ -191,13 +187,13 @@ public class ExtendedTableBean {
 	}
 	public String getProductByCriteria() throws ProductBrandException,ProductCategoryException,StakeholderException,ProductUnitException {
 		IProductDao  productDao = (IProductDao) SpringFacesUtil.getManagedBean("productDao");
-		List<Product> products = productDao.getProductByCriteria(new Integer(3), new Integer(3), null, null);
-		if (null != products) {
-		for (Product p:products) {
+		//List<Product> products = productDao.getProductByCriteria(new Integer(3), new Integer(3), null, null);
+		//if (null != products) {
+		/*for (Product p:products) {
 			System.out.println(p.getName());
-			System.out.println(p.getPrimaryCategory().getCategoryName());
+			//System.out.println(p.getPrimaryCategory().getCategoryName());
 		}
-		}
+		}*/
 		return null;
 	}
 	public String saveUpdate() {
