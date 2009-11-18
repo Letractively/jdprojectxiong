@@ -38,12 +38,15 @@
         </property>
         <many-to-one name="provider" column="PROVIDERID" class="com.ejd.web.bo.Stakeholder" unique="true" fetch="select" lazy="false" cascade="none">
         </many-to-one>
-        <many-to-one name="primaryCategory" column="PRIMARYCATEGORYID" class="com.ejd.web.bo.Productcategory" unique="true" fetch="select" lazy="false" cascade="none">
-        </many-to-one>
-        <many-to-one name="secondCategory" column="SECONDCATEGORYID" class="com.ejd.web.bo.Productcategory" unique="true" fetch="select" lazy="false" cascade="none">
-        </many-to-one>
-        <many-to-one name="brand" column="BRANDID" class="com.ejd.web.bo.Productbrand" unique="true" fetch="select" lazy="false" cascade="none">
-        </many-to-one>
+        <property name="primaryCategoryCode" type="java.lang.String">
+        	<column name="PRIMARYCATEGORYCODE" length="2" />
+        </property>
+        <property name="secondCategoryCode" type="java.lang.String">
+        	<column name="SECONDCATEGORYCODE" length="2" />
+        </property>
+        <property name="brandCode" type="java.lang.String">
+        	<column name="BRANDCODE" length="50" />
+        </property>
         <property name="status" type="java.lang.String">
             <column name="STATUS" length="1" not-null="true" />
         </property>
