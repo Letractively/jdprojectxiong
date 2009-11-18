@@ -14,8 +14,8 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import com.ejd.data.dao.iface.IProductDao;
 import com.ejd.utils.SpringFacesUtil;
 import com.ejd.web.bo.Product;
-import com.ejd.web.bo.Productbrand;
 import com.ejd.web.vo.product.ProductPrice;
+import com.ejd.web.vo.product.base.RangeParam;
 
 public class ProductDaoImpl extends HibernateDaoSupport implements IProductDao {
 
@@ -127,31 +127,31 @@ public class ProductDaoImpl extends HibernateDaoSupport implements IProductDao {
 		}
 	}
 
-	public List<Product> getProductByCriteria(Integer primaryCategoryId, Integer secondCategoryId, Integer brandId, ProductPrice priceRange) {
+	public List<Product> getKitchenApplianceProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange) {
 		try {
 			Map criteria = new HashMap();
 			List<Product> result = new ArrayList();
 			String hql="from Product as p where 1=1 ";
-			if (null != primaryCategoryId) {
-				hql = hql + " and p.primaryCategory.id = :primaryCategoryId ";
-				criteria.put("primaryCategoryId", primaryCategoryId);
+			if (null != primaryCategoryCode) {
+				hql = hql + " and p.primaryCategoryCode = :primaryCategoryCode ";
+				criteria.put("primaryCategoryCode", primaryCategoryCode);
 			}
 			
-			if (null != secondCategoryId) {
-				hql = hql + " and p.secondCategory.id = :secondCategoryId ";
-				criteria.put("secondCategoryId", secondCategoryId);
+			if (null != secondCategoryCode && !"".equals(secondCategoryCode)) {
+				hql = hql + " and p.secondCategoryCode = :secondCategoryCode ";
+				criteria.put("secondCategoryCode", secondCategoryCode);
 			}
-			if (null != brandId) {
-				hql = hql + " and p.brand.id = :brandId ";
-				criteria.put("brandId", brandId);
+			if (null != brandCode && !"".equals(brandCode)) {
+				hql = hql + " and p.brandCode = :brandCode ";
+				criteria.put("brandCode", brandCode);
 			}
-			if (null != priceRange && null != priceRange.getMinPrice()) {
-				hql = hql + " and p.retailPrice >= :minPrice ";
-				criteria.put("minPrice", priceRange.getMinPrice());
+			if (null != priceRange && null != priceRange.getMin()) {
+				hql = hql + " and p.retailPrice >= :min ";
+				criteria.put("min", priceRange.getMin());
 			}
-			if (null != priceRange && null != priceRange.getMaxPrice()) {
-				hql = hql + " and p.retailPrice <= :maxPrice ";
-				criteria.put("maxPrice", priceRange.getMaxPrice());
+			if (null != priceRange && null != priceRange.getMax()) {
+				hql = hql + " and p.retailPrice <= :max ";
+				criteria.put("max", priceRange.getMax());
 			}
 			
 			SessionFactory sf =(SessionFactory) this.getSessionFactory();
