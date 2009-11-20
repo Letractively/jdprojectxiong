@@ -9,11 +9,13 @@ import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.component.UIViewRoot;
 import javax.faces.context.FacesContext;
+import javax.faces.model.SelectItem;
 
 import org.apache.commons.beanutils.BeanUtils;
 
 import net.sf.cglib.beans.BeanCopier;
 
+import com.ejd.common.constant.ManageBeanConstants;
 import com.ejd.model.exception.ProductBrandException;
 import com.ejd.model.exception.ProductCategoryException;
 import com.ejd.model.exception.ProductException;
@@ -25,6 +27,7 @@ import com.ejd.utils.UIComponentUtil;
 import com.ejd.web.bo.Person;
 import com.ejd.web.bo.Product;
 import com.ejd.web.bo.Productunit;
+import com.ejd.web.vo.genl.ExistProductPrimaryCategoryBean;
 import com.ejd.web.vo.genl.PopupStakeholderBean;
 import com.ejd.web.vo.product.base.ProductBaseBean;
 import com.ejd.web.vo.stakeholder.PersonVo;
@@ -33,6 +36,10 @@ import com.ejd.web.vo.stakeholder.StakeholderVo;
 public class ProductCreateBean extends ProductBaseBean {
 	
 	private ProductVo product;
+	
+	private SelectItem[] primaryCategoryCodeItems = null;
+	
+	private SelectItem[] secondCategoryCodeItems = null;
 
 	public ProductCreateBean() {
 		super();
@@ -40,12 +47,27 @@ public class ProductCreateBean extends ProductBaseBean {
 		product.setStockLowerNumber(1);
 		product.setStockUpperNumber(1);
 		product.setProvider(new StakeholderVo());
+		ExistProductPrimaryCategoryBean existProductPrimaryCategory = (ExistProductPrimaryCategoryBean) SpringFacesUtil.getManagedBean(ManageBeanConstants.EXIST_PRODUCT_PRIMARY_CATEGORY_BEAN_NAME);
+		this.setPrimaryCategoryCodeItems(existProductPrimaryCategory.getPrimaryCategoryCodeItems());
 	}
 	public ProductCreateBean(ProductVo product) {
 		super();
 		this.product = product;
 	}
 
+	
+	public SelectItem[] getPrimaryCategoryCodeItems() {
+		return primaryCategoryCodeItems;
+	}
+	public void setPrimaryCategoryCodeItems(SelectItem[] primaryCategoryCodeItems) {
+		this.primaryCategoryCodeItems = primaryCategoryCodeItems;
+	}
+	public SelectItem[] getSecondCategoryCodeItems() {
+		return secondCategoryCodeItems;
+	}
+	public void setSecondCategoryCodeItems(SelectItem[] secondCategoryCodeItems) {
+		this.secondCategoryCodeItems = secondCategoryCodeItems;
+	}
 	public ProductVo getProduct() {
 		return product;
 	}
@@ -54,7 +76,7 @@ public class ProductCreateBean extends ProductBaseBean {
 		this.product = product;
 	}
 	public String setPopupStakeholderSearchName() {
-		PopupStakeholderBean popupStakeholder = (PopupStakeholderBean)SpringFacesUtil.getManagedBean("popupStakeholder");
+		PopupStakeholderBean popupStakeholder = (PopupStakeholderBean)SpringFacesUtil.getManagedBean(ManageBeanConstants.POPUP_STAKEHOLDER_BEAN_NAME);
 		if (null != popupStakeholder) {
 			popupStakeholder.setSearchName(this.getProduct().getProvider().getFullName());
 		}
