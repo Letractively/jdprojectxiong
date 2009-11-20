@@ -2,7 +2,9 @@ package com.ejd.common.constant;
 
 public class ManageBeanConstants {
 	
+	public static final String POPUP_STAKEHOLDER_BEAN_NAME = "popupStakeholder";
 	public static final String HEADER_TABPANEL_BEAN_NAME = "headerTabPanel";
+	public static final String EXIST_PRODUCT_PRIMARY_CATEGORY_BEAN_NAME = "existProductPrimaryCategory";
 	public static final String LIST_KITCHEN_APPLIANCE_PRODUCT_BEAN_NAME = "listKitchenApplianceProduct";
 	public static final String EXIST_KITCHEN_APPLIANCE_PRODUCT_BRAND_BEAN_NAME = "existKitchenApplianceProductBrand";
 	public static final String EXIST_KITCHEN_APPLIANCE_RICE_COOKER_PRODUCT_BRAND_BEAN_NAME = "existKitchenApplianceRiceCookerProductBrand";
