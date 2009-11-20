@@ -26,8 +26,6 @@
 		</property> -->
 	    <property name="mappingResources">
 			<list>
-				<value>com/ejd/web/bo/Productcategory.hbm.xml</value>
-				<value>com/ejd/web/bo/Productbrand.hbm.xml</value>
 				<value>com/ejd/web/bo/Productunit.hbm.xml</value>
 				<value>com/ejd/web/bo/Stakeholder.hbm.xml</value>
 				<value>com/ejd/web/bo/Address.hbm.xml</value>
@@ -90,26 +88,7 @@
             </list>
         </property>
     </bean>
-    <bean id="productCategoryDao" class="com.ejd.data.dao.impl.ProductCategoryDaoImpl" scope="singleton">
-    	<property name="sessionFactory">
-			<ref local="sessionFactory" />
-		</property>
-    </bean>
-    <bean id="productCategoryService" class="com.ejd.model.service.impl.ProductCategoryServiceImpl" scope="singleton" depends-on="productCategoryDao">
-		<property name="productCategoryDao">
-			<ref bean="productCategoryDao" />
-		</property>
-	</bean>
-	<bean id="productBrandDao" class="com.ejd.data.dao.impl.ProductBrandDaoImpl" scope="singleton">
-    	<property name="sessionFactory">
-			<ref local="sessionFactory" />
-		</property>
-    </bean>
-    <bean id="productBrandService" class="com.ejd.model.service.impl.ProductBrandServiceImpl" scope="singleton" depends-on="productBrandDao">
-		<property name="productBrandDao">
-			<ref bean="productBrandDao" />
-		</property>
-	</bean>
+    
 	<bean id="productUnitDao" class="com.ejd.data.dao.impl.ProductUnitDaoImpl" scope="singleton">
     	<property name="sessionFactory">
 			<ref local="sessionFactory" />
