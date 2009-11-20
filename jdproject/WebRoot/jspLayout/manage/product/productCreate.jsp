@@ -93,18 +93,18 @@ xmlns:rich="http://richfaces.org/rich">
                 		<h:outputText value=" "></h:outputText>
 						
 						<h:outputLabel value="品牌：" for="brandId"></h:outputLabel>
-						<h:selectOneMenu value="#{productCreate.product.brandId}" id="brandId">
-							<f:selectItems value="#{existProductBrand.brandItems}"/>
+						<h:selectOneMenu value="#{productCreate.product.brandCode}" id="brandId">
+							<f:selectItem itemValue="Phile" itemLabel="PHI"/>
 						</h:selectOneMenu>
                 		<h:outputText value=" "></h:outputText>
-						<h:outputLabel value="大类：" for="primaryCategoryId"></h:outputLabel>
-						<h:selectOneMenu value="#{productCreate.product.primaryCategoryId}" id="primaryCategoryId">
-							<f:selectItems value="#{existProductCategory.categoryItems}"/>
+						<h:outputLabel value="大类：" for="primaryCategoryCode"></h:outputLabel>
+						<h:selectOneMenu value="#{productCreate.product.primaryCategoryCode}" id="primaryCategoryCode">
+							<f:selectItems value="#{existProductPrimaryCategory.primaryCategoryCodeItems}"/>
 						</h:selectOneMenu>
                 		<h:outputText value=" "></h:outputText>
-						<h:outputLabel value="小类：" for="secondCategoryId"></h:outputLabel>
-						<h:selectOneMenu value="#{productCreate.product.secondCategoryId}" id="secondCategoryId">
-							<f:selectItems value="#{existProductCategory.categoryItems}"/>
+						<h:outputLabel value="小类：" for="secondCategoryCode"></h:outputLabel>
+						<h:selectOneMenu value="#{productCreate.product.secondCategoryCode}" id="secondCategoryCode">
+							<f:selectItems value="#{existComputerNetworkProductSecondCategory.secondCategoryCodeItems}" />
 						</h:selectOneMenu>
                 		<h:outputText value=" "></h:outputText>
 						<h:outputLabel value="状态：" for="status"></h:outputLabel>
