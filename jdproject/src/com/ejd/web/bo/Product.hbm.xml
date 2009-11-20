@@ -65,5 +65,35 @@
         <property name="introduceFileName" type="java.lang.String">
             <column name="INTRODUCEFILENAME" length="50" />
         </property>
+        <property name="field1" type="java.lang.Double">
+            <column name="FIELD1" />
+        </property>
+        <property name="field2" type="java.lang.Double">
+            <column name="FIELD2" />
+        </property>
+        <property name="field3" type="java.lang.Double">
+            <column name="FIELD3" />
+        </property>
+        <property name="field4" type="java.lang.Double">
+            <column name="FIELD4" />
+        </property>
+        <property name="field5" type="java.lang.Double">
+            <column name="FIELD5" />
+        </property>
+        <property name="field6" type="java.lang.String">
+        	<column name="FIELD6" length="1" />
+        </property>
+        <property name="field7" type="java.lang.String">
+        	<column name="FIELD7" length="1" />
+        </property>
+        <property name="field8" type="java.lang.String">
+        	<column name="FIELD8" length="1" />
+        </property>
+        <property name="field9" type="java.lang.String">
+        	<column name="FIELD9" length="1" />
+        </property>
+        <property name="field10" type="java.lang.String">
+        	<column name="FIELD10" length="1" />
+        </property>
     </class>
 </hibernate-mapping>
