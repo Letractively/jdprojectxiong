@@ -99,7 +99,7 @@ xmlns:rich="http://richfaces.org/rich">
                 		<h:outputText value=" "></h:outputText>
 						<h:outputLabel value="大类：" for="primaryCategoryCode"></h:outputLabel>
 						<h:selectOneMenu value="#{productCreate.product.primaryCategoryCode}" id="primaryCategoryCode">
-							<f:selectItems value="#{existProductPrimaryCategory.primaryCategoryCodeItems}"/>
+							<f:selectItems value="#{primaryCategoryCodeItems.primaryCategoryCodeItems}"/>
 						</h:selectOneMenu>
                 		<h:outputText value=" "></h:outputText>
 						<h:outputLabel value="小类：" for="secondCategoryCode"></h:outputLabel>
