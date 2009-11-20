@@ -24,11 +24,11 @@ public class ProductVo {
 	private String name;
 	private StakeholderVo provider;//only use StakeholderVo
 	//private Integer providerId;
-	private Integer primaryCategoryId;
+	private String primaryCategoryCode;
 	//private ProductCategory primaryCategory;
-	private Integer secondCategoryId;
+	private String secondCategoryCode;
 	//private ProductCategory secondCategory;
-	private Integer brandId;
+	private String brandCode;
 	//private ProductBrand brand;
 	private String status;
 	private Double purchasePrice;
@@ -36,6 +36,16 @@ public class ProductVo {
 	private Double tradePriceTwo;
 	private Double retailPrice;
 	private String introduceFileName;
+	private Double field1;
+    private Double field2;
+    private Double field3;
+    private Double field4;
+    private Double field5;
+    private String field6;
+    private String field7;
+    private String field8;
+    private String field9;
+    private String field10;
 	public ProductVo(){
 		
 	}
@@ -111,27 +121,25 @@ public class ProductVo {
 	public void setProvider(StakeholderVo provider) {
 		this.provider = provider;
 	}
-	public Integer getPrimaryCategoryId() {
-		return primaryCategoryId;
-	}
-	public void setPrimaryCategoryId(Integer primaryCategoryId) {
-		this.primaryCategoryId = primaryCategoryId;
-	}
 	
-	public Integer getSecondCategoryId() {
-		return secondCategoryId;
+	public String getPrimaryCategoryCode() {
+		return primaryCategoryCode;
 	}
-	public void setSecondCategoryId(Integer secondCategoryId) {
-		this.secondCategoryId = secondCategoryId;
+	public void setPrimaryCategoryCode(String primaryCategoryCode) {
+		this.primaryCategoryCode = primaryCategoryCode;
 	}
-	
-	public Integer getBrandId() {
-		return brandId;
+	public String getSecondCategoryCode() {
+		return secondCategoryCode;
 	}
-	public void setBrandId(Integer brandId) {
-		this.brandId = brandId;
+	public void setSecondCategoryCode(String secondCategoryCode) {
+		this.secondCategoryCode = secondCategoryCode;
 	}
-	
+	public String getBrandCode() {
+		return brandCode;
+	}
+	public void setBrandCode(String brandCode) {
+		this.brandCode = brandCode;
+	}
 	public String getStatus() {
 		return status;
 	}
@@ -167,6 +175,66 @@ public class ProductVo {
 	}
 	public void setIntroduceFileName(String introduceFileName) {
 		this.introduceFileName = introduceFileName;
+	}
+	public Double getField1() {
+		return field1;
+	}
+	public void setField1(Double field1) {
+		this.field1 = field1;
+	}
+	public Double getField2() {
+		return field2;
+	}
+	public void setField2(Double field2) {
+		this.field2 = field2;
+	}
+	public Double getField3() {
+		return field3;
+	}
+	public void setField3(Double field3) {
+		this.field3 = field3;
+	}
+	public Double getField4() {
+		return field4;
+	}
+	public void setField4(Double field4) {
+		this.field4 = field4;
+	}
+	public Double getField5() {
+		return field5;
+	}
+	public void setField5(Double field5) {
+		this.field5 = field5;
+	}
+	public String getField6() {
+		return field6;
+	}
+	public void setField6(String field6) {
+		this.field6 = field6;
+	}
+	public String getField7() {
+		return field7;
+	}
+	public void setField7(String field7) {
+		this.field7 = field7;
+	}
+	public String getField8() {
+		return field8;
+	}
+	public void setField8(String field8) {
+		this.field8 = field8;
+	}
+	public String getField9() {
+		return field9;
+	}
+	public void setField9(String field9) {
+		this.field9 = field9;
+	}
+	public String getField10() {
+		return field10;
+	}
+	public void setField10(String field10) {
+		this.field10 = field10;
 	}
 	
 	

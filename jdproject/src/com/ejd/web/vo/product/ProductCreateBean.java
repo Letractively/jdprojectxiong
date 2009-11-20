@@ -10,6 +10,8 @@ import javax.faces.component.UIComponent;
 import javax.faces.component.UIViewRoot;
 import javax.faces.context.FacesContext;
 
+import org.apache.commons.beanutils.BeanUtils;
+
 import net.sf.cglib.beans.BeanCopier;
 
 import com.ejd.model.exception.ProductBrandException;
@@ -29,7 +31,7 @@ import com.ejd.web.vo.stakeholder.PersonVo;
 import com.ejd.web.vo.stakeholder.StakeholderVo;
 
 public class ProductCreateBean extends ProductBaseBean {
-
+	
 	private ProductVo product;
 
 	public ProductCreateBean() {
