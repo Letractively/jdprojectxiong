@@ -19,22 +19,13 @@ xmlns:rich="http://richfaces.org/rich">
     			<h:form id="kitchenApplianceSearchNavigationRegionForm">
     			<rich:panelBar id="kitchenAppliancepb" styleClass="panel-bar-product-left" contentStyle="background:none;">
     				<rich:panelBarItem id="kitchenAppliancePbi" headerClass="navigation-panel-bar-item-left-header">
-						<f:facet name="label">
-							<h:panelGroup layout="block">
-							<ui:include id="phoneinp11" src="../productNavigationPanelHeader.jsp" >
-								<ui:param name="label" value="#{navigationLeft.phonePrimaryCategoryName}"/>
-								
-							</ui:include>
-							</h:panelGroup>
-							
-						</f:facet>
-						<ui:include id="phoneinp12" src="../productNavigationGroup.jsp" >
- 							<ui:param name="brands" value="#{navigationLeft.phoneBrands}" />
-							<ui:param name="secondCategorys" value="#{navigationLeft.phoneSecondCategorys}" />
-							<ui:param name="prices" value="#{navigationLeft.phonePrices}"/>
-							<ui:param name="primaryCategoryId" value="#{navigationLeft.phonePrimaryCategory.id}"/>
-							<ui:param name="model" value="phone"/>
- 						</ui:include>
+    				<f:facet name="label">
+    					<h:outputText value=""></h:outputText>
+    				</f:facet>
+						<ui:include id="phoneinp12" src="./navigationKitchenAppliance.jsp">
+							<ui:param name="brands" value="#{navigationKitchenAppliance.brandCodeItems}" />
+							<ui:param name="secondCategorys" value="#{navigationKitchenAppliance.secondCategoryCodeList}" />
+						</ui:include>
 					</rich:panelBarItem>
 				</rich:panelBar>
 				</h:form>
@@ -49,21 +40,21 @@ xmlns:rich="http://richfaces.org/rich">
             					<h:outputText value="显示方式"></h:outputText>
             					<h:graphicImage value="/css/images/list.gif" style="border:0">
 								</h:graphicImage>
-								<a4j:commandLink id="imgbutton" reRender="regioncontentstylepanel,productList">
+								<a4j:commandLink id="imgbutton" reRender="kitchenApplianceContentRegionStyleFormPanel,productList">
 									<h:graphicImage value="/css/images/i_img#{listKitchenApplianceProduct.styleImg}.gif" style="border:0;width:18px;height:15px;">
 									</h:graphicImage>
 									<a4j:actionparam name="styleImg" value="_on" assignTo="#{listKitchenApplianceProduct.styleImg}"></a4j:actionparam>
 									<a4j:actionparam name="styleImgFont" value="" assignTo="#{listKitchenApplianceProduct.styleImgFont}"></a4j:actionparam>
 									<a4j:actionparam name="styleFont" value="" assignTo="#{listKitchenApplianceProduct.styleFont}"></a4j:actionparam>
 								</a4j:commandLink>
-								<a4j:commandLink id="imgfontbutton" reRender="regioncontentstylepanel,productList">
+								<a4j:commandLink id="imgfontbutton" reRender="kitchenApplianceContentRegionStyleFormPanel,productList">
 									<h:graphicImage value="/css/images/i_imgfont#{listKitchenApplianceProduct.styleImgFont}.gif" style="border:0;width:18px;height:15px;">
 									</h:graphicImage>
 									<a4j:actionparam name="styleImg" value="" assignTo="#{listKitchenApplianceProduct.styleImg}"></a4j:actionparam>
 									<a4j:actionparam name="styleImgFont" value="_on" assignTo="#{listKitchenApplianceProduct.styleImgFont}"></a4j:actionparam>
 									<a4j:actionparam name="styleFont" value="" assignTo="#{listKitchenApplianceProduct.styleFont}"></a4j:actionparam>
 								</a4j:commandLink>
-								<a4j:commandLink id="fontbutton" reRender="regioncontentstylepanel,productList">
+								<a4j:commandLink id="fontbutton" reRender="kitchenApplianceContentRegionStyleFormPanel,productList">
 									<h:graphicImage value="/css/images/i_font#{listKitchenApplianceProduct.styleFont}.gif" style="border:0;width:18px;height:15px;">
 									</h:graphicImage>
 									<a4j:actionparam name="styleImg" value="" assignTo="#{listKitchenApplianceProduct.styleImg}"></a4j:actionparam>
