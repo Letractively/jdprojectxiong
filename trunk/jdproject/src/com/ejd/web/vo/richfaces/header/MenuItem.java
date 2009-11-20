@@ -4,7 +4,7 @@ public class MenuItem {
 	private String idFirst;
 	private String idSecond;
 	private String name;
-	private String description;
+	private String label;
 	
 	public String getIdFirst() {
 		return idFirst;
@@ -24,22 +24,23 @@ public class MenuItem {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDescription() {
-		return description;
+	
+	public String getLabel() {
+		return label;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setLabel(String label) {
+		this.label = label;
 	}
 	public MenuItem() {
 		super();
 	}
 	public MenuItem(String idFirst, String idSecond, String name,
-			String description) {
+			String label) {
 		super();
 		this.idFirst = idFirst;
 		this.idSecond = idSecond;
 		this.name = name;
-		this.description = description;
+		this.label = label;
 	}
 	
 }
