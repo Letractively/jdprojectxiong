@@ -23,20 +23,16 @@
         <managed-bean-class>com.test.TabPanelBean</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
+    <!-- start: this manage bean must be create first, so primary and second product category can be create  -->
     <managed-bean>
-        <managed-bean-name>headerTabPanelBean</managed-bean-name>
+        <managed-bean-name>headerTabPanel</managed-bean-name>
         <managed-bean-class>com.ejd.web.vo.richfaces.header.HeaderTabPanelBean</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
+     <!-- end: this manage bean must be create first, so primary and second product category can be create  -->
     <managed-bean>
 		<managed-bean-name>managePanelMenu</managed-bean-name>
 		<managed-bean-class>com.ejd.web.vo.richfaces.ManagePanelMenu</managed-bean-class>
-	<managed-bean-scope>session</managed-bean-scope>
-	</managed-bean>
-	
-	<managed-bean>
-		<managed-bean-name>navigationLeft</managed-bean-name>
-		<managed-bean-class>com.ejd.web.vo.richfaces.NavigationLeftBean</managed-bean-class>
 	<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	
@@ -49,37 +45,6 @@
 	<managed-bean-name>fileUploadBean</managed-bean-name>
 	<managed-bean-class>com.ejd.web.vo.richfaces.FileUploadBean</managed-bean-class>
 	<managed-bean-scope>session</managed-bean-scope>
-	</managed-bean>
-	<managed-bean>
-	<managed-bean-name>productBrandCreate</managed-bean-name>
-	<managed-bean-class>com.ejd.web.vo.productbrand.ProductBrandCreateBean</managed-bean-class>
-	<managed-bean-scope>session</managed-bean-scope>
-	<managed-property>
-	<property-name>productBrandService</property-name>
-	<property-class>com.ejd.model.service.iface.IProductBrandService</property-class>
-	<value>#{productBrandService}</value>
-	</managed-property>
-	</managed-bean>
-	<managed-bean>
-	<managed-bean-name>productBrandEdit</managed-bean-name>
-	<managed-bean-class>com.ejd.web.vo.productbrand.ProductBrandEditBean</managed-bean-class>
-	<managed-bean-scope>session</managed-bean-scope>
-	<managed-property>
-	<property-name>productBrandService</property-name>
-	<property-class>com.ejd.model.service.iface.IProductBrandService</property-class>
-	<value>#{productBrandService}</value>
-	</managed-property>
-	</managed-bean>
-	
-	<managed-bean>
-	<managed-bean-name>existProductBrand</managed-bean-name>
-	<managed-bean-class>com.ejd.web.vo.genl.ExistProductBrandBean</managed-bean-class>
-	<managed-bean-scope>session</managed-bean-scope>
-	<managed-property>
-	<property-name>productBrandService</property-name>
-	<property-class>com.ejd.model.service.iface.IProductBrandService</property-class>
-	<value>#{productBrandService}</value>
-	</managed-property>
 	</managed-bean>
 	
 	<managed-bean>
@@ -110,7 +75,225 @@
 	<managed-bean-class>com.ejd.web.vo.genl.ExistProductStatusBean</managed-bean-class>
 	<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<!-- start primary product category -->
+	<managed-bean>
+	<managed-bean-name>existProductPrimaryCategory</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistProductPrimaryCategoryBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<!-- end primary product category -->
+	<!-- start second product category  -->
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceProductSecondCategory</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceProductSecondCategoryBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	<managed-property>
+		<property-name>beanName</property-name>
+		<value>kitchenAppliance</value>
+	</managed-property>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existHouseholdApplianceProductSecondCategory</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistHouseholdApplianceProductSecondCategoryBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	<managed-property>
+		<property-name>beanName</property-name>
+		<value>householdAppliance</value>
+	</managed-property>
+	</managed-bean>
 	
+	<managed-bean>
+	<managed-bean-name>existPersonalCareProductSecondCategory</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistPersonalCareProductSecondCategoryBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	<managed-property>
+		<property-name>beanName</property-name>
+		<value>personalCare</value>
+	</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+	<managed-bean-name>existHealthDeviceProductSecondCategory</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistHealthDeviceProductSecondCategoryBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	<managed-property>
+		<property-name>beanName</property-name>
+		<value>healthDevice</value>
+	</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+	<managed-bean-name>existMajorApplianceProductSecondCategory</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistMajorApplianceProductSecondCategoryBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	<managed-property>
+		<property-name>beanName</property-name>
+		<value>majorAppliance</value>
+	</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+	<managed-bean-name>existPhoneDigitalProductSecondCategory</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistPhoneDigitalProductSecondCategoryBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	<managed-property>
+		<property-name>beanName</property-name>
+		<value>phoneDigital</value>
+	</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+	<managed-bean-name>existComputerNetworkProductSecondCategory</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistComputerNetworkProductSecondCategoryBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	<managed-property>
+		<property-name>beanName</property-name>
+		<value>computerNetwork</value>
+	</managed-property>
+	</managed-bean>
+	<!-- end second product category  -->
+	<!-- start product brand -->
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceRiceCookerProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceRiceCookerProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceInductionCookerProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceInductionCookerProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceElectricStewPanProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceElectricStewPanProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceElectronicOvenProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceElectronicOvenProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceFryerProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceFryerProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceBurntStewpotProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceBurntStewpotProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceElectricSteamerProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceElectricSteamerProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceElectricPressureCookerProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceElectricPressureCookerProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceYogurtMachineProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceYogurtMachineProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceEggCookerProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceEggCookerProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceWhiskProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceWhiskProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceBreadKnifeProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceBreadKnifeProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceToasterProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceToasterProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceMicrowaveOvenProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceMicrowaveOvenProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceDisinfectionCabinetProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceDisinfectionCabinetProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceSaucepanProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceSaucepanProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceCuisineMachineProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceCuisineMachineProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceMeatChopperProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceMeatChopperProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceCoffeeMachineProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceCoffeeMachineProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceBakingbowlMachineProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceBakingbowlMachineProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceGasStoveProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceGasStoveProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceFruitSparseClearingMachineProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceFruitSparseClearingMachineProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceFoodProcessingMachineProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceFoodProcessingMachineProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceJuicerProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceJuicerProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceGasWaterHeaterProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceGasWaterHeaterProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceElectricWaterHeaterProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceElectricWaterHeaterProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existKitchenApplianceVentilatorProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistKitchenApplianceVentilatorProductBrandBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<!-- end product brand -->
 	<managed-bean>
 	<managed-bean-name>productUnitCreate</managed-bean-name>
 	<managed-bean-class>com.ejd.web.vo.productunit.ProductUnitCreateBean</managed-bean-class>
@@ -223,6 +406,7 @@
 		<value>#{productService}</value>
 		</managed-property>
     </managed-bean>
+    <!-- start about kitchenappliance -->
     <managed-bean>
         <managed-bean-name>listKitchenApplianceProduct</managed-bean-name>
         <managed-bean-class>com.ejd.web.vo.product.kitchenappliance.KitchenApplianceProductBean</managed-bean-class>
@@ -233,7 +417,12 @@
 		<value>#{productService}</value>
 		</managed-property>
     </managed-bean>
-    
+    <managed-bean>
+		<managed-bean-name>navigationKitchenAppliance</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.kitchenappliance.NavigationKitchenApplianceBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about kitchenappliance -->
     <!-- List Porduct end -->
     
 	<managed-bean>
