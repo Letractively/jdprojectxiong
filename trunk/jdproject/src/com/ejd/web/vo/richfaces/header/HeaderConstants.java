@@ -101,7 +101,7 @@ public class HeaderConstants {
 	public static final String HOUSEHOLD_APPLIANCE_TELEPHONE_LABEL = "电话机";
 	public static final String HOUSEHOLD_APPLIANCE_OXYGEN_MACHINE_NAME = "oxygenMachine";
 	public static final String HOUSEHOLD_APPLIANCE_OXYGEN_MACHINE_LABEL = "活氧机";
-	public static final String HOUSEHOLD_APPLIANCE_MOSQUITOSMOKE_MACHINE_NAME = "mosquitosmokeMachine";
+	public static final String HOUSEHOLD_APPLIANCE_MOSQUITOSMOKE_MACHINE_NAME = "mosquitoSmokeMachine";
 	public static final String HOUSEHOLD_APPLIANCE_MOSQUITOSMOKE_MACHINE_LABEL = "灭蚊器";
 	public static final String HOUSEHOLD_APPLIANCE_ADMISSIONBAG_NAME = "admissionBag";
 	public static final String HOUSEHOLD_APPLIANCE_ADMISSIONBAG_LABEL = "收纳袋";
@@ -117,7 +117,7 @@ public class HeaderConstants {
 	public static final String HOUSEHOLD_APPLIANCE_ELECTRIC_TOOTHBRUSH_LABEL = "电动牙刷";
 	public static final String HOUSEHOLD_APPLIANCE_SPINBRUSH_NAME = "spinBrush";
 	public static final String HOUSEHOLD_APPLIANCE_SPINBRUSH_LABEL = "牙刷配件";
-	public static final String HOUSEHOLD_APPLIANCE_STEAMMOP_NAME = "steammop";
+	public static final String HOUSEHOLD_APPLIANCE_STEAMMOP_NAME = "steamMop";
 	public static final String HOUSEHOLD_APPLIANCE_STEAMMOP_LABEL = "蒸汽地拖";
 	public static final String HOUSEHOLD_APPLIANCE_STEAM_CLEANING_MACHINE_NAME = "steamCleaningMachine";
 	public static final String HOUSEHOLD_APPLIANCE_STEAM_CLEANING_MACHINE_LABEL = "蒸汽清洁机";
