@@ -86,25 +86,31 @@ xmlns:rich="http://richfaces.org/rich">
 						<h:inputText value="#{productCreate.product.spec}" id="spec" maxlength="50">
                     	</h:inputText>
                 		<rich:message for="spec" />
-						<h:outputLabel value="单位：" for="unitId"></h:outputLabel>
-						<h:selectOneMenu value="#{productCreate.product.unitId}" id="unitId">
-							<f:selectItems value="#{existProductUnit.unitItems}"/>
-						</h:selectOneMenu>
-                		<h:outputText value=" "></h:outputText>
-						
-						<h:outputLabel value="品牌：" for="brandId"></h:outputLabel>
-						<h:selectOneMenu value="#{productCreate.product.brandCode}" id="brandId">
-							<f:selectItem itemValue="Phile" itemLabel="PHI"/>
-						</h:selectOneMenu>
-                		<h:outputText value=" "></h:outputText>
 						<h:outputLabel value="大类：" for="primaryCategoryCode"></h:outputLabel>
-						<h:selectOneMenu value="#{productCreate.product.primaryCategoryCode}" id="primaryCategoryCode">
+						<h:selectOneMenu value="#{productCreate.product.primaryCategoryCode}" id="primaryCategoryCode" immediate="true" valueChangeListener="#{productCreate.changePrimaryCategory}">
 							<f:selectItems value="#{productCreate.primaryCategoryCodeItems}"/>
+							<a4j:support event="onchange" action="#{productCreate.changeSecondCategoryAndBrand}" reRender="secondCategoryCode" ajaxSingle="true" immediate="true"></a4j:support>
 						</h:selectOneMenu>
                 		<h:outputText value=" "></h:outputText>
 						<h:outputLabel value="小类：" for="secondCategoryCode"></h:outputLabel>
 						<h:selectOneMenu value="#{productCreate.product.secondCategoryCode}" id="secondCategoryCode">
-							<f:selectItems value="#{existComputerNetworkProductSecondCategory.secondCategoryCodeItems}" />
+							<f:selectItems value="#{productCreate.secondCategoryCodeItems}" />
+						</h:selectOneMenu>
+                		<h:outputText value=" "></h:outputText>
+<<<<<<< .mine
+                		<h:outputLabel value="品牌：" for="brandId"></h:outputLabel>
+						<h:selectOneMenu value="#{productCreate.product.brandCode}" id="brandId">
+							<f:selectItems value="#{productCreate.brandCodeItems}"/>
+=======
+						<h:outputLabel value="大类：" for="primaryCategoryCode"></h:outputLabel>
+						<h:selectOneMenu value="#{productCreate.product.primaryCategoryCode}" id="primaryCategoryCode">
+							<f:selectItems value="#{productCreate.primaryCategoryCodeItems}"/>
+>>>>>>> .r275
+						</h:selectOneMenu>
+                		<h:outputText value=" "></h:outputText>
+                		<h:outputLabel value="单位：" for="unitId"></h:outputLabel>
+						<h:selectOneMenu value="#{productCreate.product.unitId}" id="unitId">
+							<f:selectItems value="#{existProductUnit.unitItems}"/>
 						</h:selectOneMenu>
                 		<h:outputText value=" "></h:outputText>
 						<h:outputLabel value="状态：" for="status"></h:outputLabel>
