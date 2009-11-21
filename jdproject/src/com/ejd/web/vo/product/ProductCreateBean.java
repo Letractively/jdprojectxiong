@@ -9,6 +9,8 @@ import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.component.UIViewRoot;
 import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
+import javax.faces.event.ValueChangeEvent;
 import javax.faces.model.SelectItem;
 
 import org.apache.commons.beanutils.BeanUtils;
@@ -22,6 +24,7 @@ import com.ejd.model.exception.ProductException;
 import com.ejd.model.exception.ProductUnitException;
 import com.ejd.model.exception.StakeholderException;
 import com.ejd.model.service.iface.IProductService;
+import com.ejd.utils.ProductCategoryUtil;
 import com.ejd.utils.SpringFacesUtil;
 import com.ejd.utils.UIComponentUtil;
 import com.ejd.web.bo.Person;
@@ -40,6 +43,8 @@ public class ProductCreateBean extends ProductBaseBean {
 	private SelectItem[] primaryCategoryCodeItems = null;
 	
 	private SelectItem[] secondCategoryCodeItems = null;
+	
+	private SelectItem[] brandCodeItems = null;
 
 	public ProductCreateBean() {
 		super();
@@ -49,6 +54,13 @@ public class ProductCreateBean extends ProductBaseBean {
 		product.setProvider(new StakeholderVo());
 		ExistProductPrimaryCategoryBean existProductPrimaryCategory = (ExistProductPrimaryCategoryBean) SpringFacesUtil.getManagedBean(ManageBeanConstants.EXIST_PRODUCT_PRIMARY_CATEGORY_BEAN_NAME);
 		this.setPrimaryCategoryCodeItems(existProductPrimaryCategory.getPrimaryCategoryCodeItems());
+		String primaryCategoryName = existProductPrimaryCategory.getPrimaryCategoryCodeItems()[0].getDescription();
+		this.setSecondCategoryCodeItems(ProductCategoryUtil.selectProductSecondCategoryByPrimaryCategory(primaryCategoryName));
+		String secondCategoryName = this.getSecondCategoryCodeItems()[0].getDescription();
+		// set brandcodeitem by primary and second category
+		SelectItem[] tempBrandCodeItem = new SelectItem[1];
+		tempBrandCodeItem[0] = new SelectItem("","------");
+		this.setBrandCodeItems(tempBrandCodeItem);
 	}
 	public ProductCreateBean(ProductVo product) {
 		super();
@@ -67,6 +79,13 @@ public class ProductCreateBean extends ProductBaseBean {
 	}
 	public void setSecondCategoryCodeItems(SelectItem[] secondCategoryCodeItems) {
 		this.secondCategoryCodeItems = secondCategoryCodeItems;
+	}
+	
+	public SelectItem[] getBrandCodeItems() {
+		return brandCodeItems;
+	}
+	public void setBrandCodeItems(SelectItem[] brandCodeItems) {
+		this.brandCodeItems = brandCodeItems;
 	}
 	public ProductVo getProduct() {
 		return product;
@@ -141,9 +160,9 @@ public class ProductCreateBean extends ProductBaseBean {
 		newProduct.setImageName(this.getProduct().getImageName());
 		newProduct.setName(this.getProduct().getName());
 		newProduct.setProvider(this.getStakeholderService().getStakeholderById(this.getProduct().getProvider().getId()));
-		//newProduct.setPrimaryCategory(this.getProductCategoryService().getProductCategoryById(this.getProduct().getPrimaryCategoryId()));
-		//newProduct.setSecondCategory(this.getProductCategoryService().getProductCategoryById(this.getProduct().getSecondCategoryId()));
-		//newProduct.setBrand(this.getProductBrandService().getProductBrandById(this.getProduct().getBrandId()));
+		newProduct.setPrimaryCategoryCode(this.getProduct().getPrimaryCategoryCode());
+		newProduct.setSecondCategoryCode(this.getProduct().getSecondCategoryCode());
+		newProduct.setBrandCode(this.getProduct().getBrandCode());
 		newProduct.setStatus(this.getProduct().getStatus());
 		newProduct.setPurchasePrice(this.getProduct().getPurchasePrice());
 		newProduct.setTradePriceOne(this.getProduct().getTradePriceOne());
@@ -151,6 +170,21 @@ public class ProductCreateBean extends ProductBaseBean {
 		newProduct.setRetailPrice(this.getProduct().getRetailPrice());
 		newProduct.setIntroduceFileName(this.getProduct().getIntroduceFileName());
 		this.getProductService().saveProduct(newProduct);
+		return null;
+	}
+	public void changePrimaryCategory(ValueChangeEvent e) {
+		String value =(String)e.getNewValue();
+		this.getProduct().setPrimaryCategoryCode(value);
+	}
+	public String changeSecondCategoryAndBrand() {
+		String value= this.getProduct().getPrimaryCategoryCode();
+		ExistProductPrimaryCategoryBean existProductPrimaryCategory = (ExistProductPrimaryCategoryBean)SpringFacesUtil.getManagedBean(ManageBeanConstants.EXIST_PRODUCT_PRIMARY_CATEGORY_BEAN_NAME);
+		SelectItem [] tempPrimaryCategoryCodeItems = existProductPrimaryCategory.getPrimaryCategoryCodeItems();
+		String currentCategoryName = ProductCategoryUtil.getCurrentSelectItemName(value, tempPrimaryCategoryCodeItems);
+		this.setSecondCategoryCodeItems(ProductCategoryUtil.selectProductSecondCategoryByPrimaryCategory(currentCategoryName));
+		SelectItem[] tempBrandCodeItem = new SelectItem[1];
+		tempBrandCodeItem[0] = new SelectItem("","------");
+		this.setBrandCodeItems(tempBrandCodeItem);
 		return null;
 	}
 }
