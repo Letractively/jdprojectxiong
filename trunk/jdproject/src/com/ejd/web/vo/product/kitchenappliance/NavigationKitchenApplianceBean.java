@@ -8,7 +8,7 @@ import javax.faces.model.SelectItem;
 import com.ejd.common.constant.EjdConstants;
 import com.ejd.common.constant.ManageBeanConstants;
 import com.ejd.utils.SpringFacesUtil;
-import com.ejd.web.vo.genl.ExistKitchenApplianceProductBrandBean;
+import com.ejd.web.vo.genl.kitchenapplicance.ExistKitchenApplianceProductBrandBean;
 import com.ejd.web.vo.richfaces.header.HeaderConstants;
 import com.ejd.web.vo.richfaces.header.HeaderTabPanelBean;
 import com.ejd.web.vo.richfaces.header.MenuItem;
