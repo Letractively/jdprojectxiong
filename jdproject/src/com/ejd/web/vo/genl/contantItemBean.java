@@ -4,8 +4,8 @@ import javax.faces.model.SelectItem;
 
 public class contantItemBean {
 	private static SelectItem[] sexItems = {
-		new SelectItem(new String("M"),"ÄÐ"),
-		new SelectItem(new String("F"),"Å®"),
+		new SelectItem(new String("M"),"ç”·"),
+		new SelectItem(new String("F"),"å¥³"),
 	};
 
 	public SelectItem[] getSexItems() {

@@ -5,9 +5,9 @@ import javax.faces.model.SelectItem;
 public class ExistStakeholderStatusBean {
 
 	private static SelectItem[] statusItems = {
-		new SelectItem(new String("N"),"待批"),
-		new SelectItem(new String("L"),"锁定"),
-		new SelectItem(new String("A"),"正常"),
+		new SelectItem(new String("N"),"寰呮壒"),
+		new SelectItem(new String("L"),"閿佸畾"),
+		new SelectItem(new String("A"),"姝ｅ父"),
 	};
 
 	public SelectItem[] getStatusItems() {
