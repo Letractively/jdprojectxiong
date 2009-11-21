@@ -5,10 +5,10 @@ import javax.faces.model.SelectItem;
 public class ExistProductStatusBean {
 
 	private static SelectItem[] statusItems = {
-		new SelectItem(new String("F"),"即将上市"),
-		new SelectItem(new String("N"),"新品"),
-		new SelectItem(new String("H"),"热销"),
-		new SelectItem(new String("S"),"停产"),
+		new SelectItem(new String("F"),"鍗冲皢涓婂競"),
+		new SelectItem(new String("N"),"鏂板搧"),
+		new SelectItem(new String("H"),"鐑攢"),
+		new SelectItem(new String("S"),"鍋滀骇"),
 	};
 
 	public SelectItem[] getStatusItems() {

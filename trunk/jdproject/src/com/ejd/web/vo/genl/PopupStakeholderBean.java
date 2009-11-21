@@ -222,9 +222,11 @@ public class PopupStakeholderBean extends PagedBaseBean {
 		System.out.println("action event invoke!");
 	}
 	public void valueChange() {
-		   
+		System.out.println("set null");
+		   this.setDataModel(null);
 	}
 	public DataModel getDataModel(){
+		System.out.println("start");
 	   if (dataModel == null) {
 	     dataModel = new PagedListDataModel<Stakeholder>(20) {
 	     public DataPage<Stakeholder> fetchPage(int startRow, int pageSize) {

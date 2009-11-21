@@ -5,11 +5,11 @@ import javax.faces.model.SelectItem;
 public class ExistStakeholderTypeBean {
 
 	private static SelectItem[] typeItems = {
-		new SelectItem(new String("V"),"ÓÎ¿Í"),//visitor
-		new SelectItem(new String("P"),"¹©Ó¦ÉÌ"),//provider
-		new SelectItem(new String("S"),"¿Í»§"), //customer
-		new SelectItem(new String("A"),"´úÀíÉÌ"),//agent
-		new SelectItem(new String("D"),"¾­ÏúÉÌ"),//dealer
+		new SelectItem(new String("V"),"æ¸¸å®¢"),//visitor
+		new SelectItem(new String("P"),"ä¾›åº”å•†"),//provider
+		new SelectItem(new String("S"),"å®¢æˆ·"), //customer
+		new SelectItem(new String("A"),"ä»£ç†å•†"),//agent
+		new SelectItem(new String("D"),"ç»é”€å•†"),//dealer
 	};
 
 	public SelectItem[] getTypeItems() {

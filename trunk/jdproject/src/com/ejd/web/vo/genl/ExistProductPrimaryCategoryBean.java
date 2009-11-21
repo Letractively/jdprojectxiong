@@ -70,7 +70,7 @@ public class ExistProductPrimaryCategoryBean {
 				SelectItem[] tempCategoryCodeItems = new SelectItem[tempMenuItemList.size()];
 				for (int i = 0; i< tempMenuItemList.size() ; i++) {
 					MenuItem tempMenuItem = tempMenuItemList.get(i);
-					tempCategoryCodeItems[i] = new SelectItem(tempMenuItem.getIdSecond(),tempMenuItem.getLabel(),tempMenuItem.getName());
+					tempCategoryCodeItems[i] = new SelectItem(tempMenuItem.getIdFirst(),tempMenuItem.getLabel(),tempMenuItem.getName());
 				}
 				this.setPrimaryCategoryCodeItems(tempCategoryCodeItems);
 			}

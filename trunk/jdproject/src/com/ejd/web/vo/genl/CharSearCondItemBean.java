@@ -5,12 +5,12 @@ import javax.faces.model.SelectItem;
 public class CharSearCondItemBean {
 	private static SelectItem[] conditionItems = {
 		new SelectItem(new String(""),""),
-		new SelectItem(new String("="),"等于"),
-		new SelectItem(new String("%"),"类似"),
-		new SelectItem(new String("<"),"小于"),
-		new SelectItem(new String("<="),"小于等于"),
-		new SelectItem(new String(">"),"大于"),
-		new SelectItem(new String(">="),"大于等于"),
+		new SelectItem(new String("="),"绛変簬"),
+		new SelectItem(new String("%"),"绫讳技"),
+		new SelectItem(new String("<"),"灏忎簬"),
+		new SelectItem(new String("<="),"灏忎簬绛変簬"),
+		new SelectItem(new String(">"),"澶т簬"),
+		new SelectItem(new String(">="),"澶т簬绛変簬"),
 	};
 
 	public SelectItem[] getSexItems() {
