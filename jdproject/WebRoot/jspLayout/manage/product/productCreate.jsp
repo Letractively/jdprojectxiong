@@ -97,15 +97,9 @@ xmlns:rich="http://richfaces.org/rich">
 							<f:selectItems value="#{productCreate.secondCategoryCodeItems}" />
 						</h:selectOneMenu>
                 		<h:outputText value=" "></h:outputText>
-<<<<<<< .mine
                 		<h:outputLabel value="品牌：" for="brandId"></h:outputLabel>
 						<h:selectOneMenu value="#{productCreate.product.brandCode}" id="brandId">
 							<f:selectItems value="#{productCreate.brandCodeItems}"/>
-=======
-						<h:outputLabel value="大类：" for="primaryCategoryCode"></h:outputLabel>
-						<h:selectOneMenu value="#{productCreate.product.primaryCategoryCode}" id="primaryCategoryCode">
-							<f:selectItems value="#{productCreate.primaryCategoryCodeItems}"/>
->>>>>>> .r275
 						</h:selectOneMenu>
                 		<h:outputText value=" "></h:outputText>
                 		<h:outputLabel value="单位：" for="unitId"></h:outputLabel>
