@@ -75,4 +75,59 @@ public class ManageBeanConstants {
     public static final String EXIST_HOUSEHOLD_APPLIANCE_VACUUM_CLEANER_ACCESSORIES_PRODUCT_BRAND_BEAN_NAME = "existHouseholdApplianceVacuumCleanerAccessoriesProductBrand";
     public static final String EXIST_HOUSEHOLD_APPLIANCE_SOCKET_POWER_PRODUCT_BRAND_BEAN_NAME = "existHouseholdApplianceSocketPowerProductBrand";
     //end exist household appliance product brand
+    //start exist personal care product brand
+    public static final String EXIST_PERSONAL_CARE_PRODUCT_BRAND_BEAN_NAME = "existPersonalCareProductBrand";
+    public static final String EXIST_PERSONAL_CARE_HAIR_DRYER_PRODUCT_BRAND_BEAN_NAME = "existPersonalCareHairDryerProductBrand";
+    public static final String EXIST_PERSONAL_CARE_SHAVER_PRODUCT_BRAND_BEAN_NAME = "existPersonalCareShaverProductBrand";
+    public static final String EXIST_PERSONAL_CARE_FITTINGS_PRODUCT_BRAND_BEAN_NAME = "existPersonalCareFittingsProductBrand";
+    public static final String EXIST_PERSONAL_CARE_HAIRCUT_PRODUCT_BRAND_BEAN_NAME = "existPersonalCareHaircutProductBrand";
+    public static final String EXIST_PERSONAL_CARE_DEPILATOR_PRODUCT_BRAND_BEAN_NAME = "existPersonalCareDepilatorProductBrand";
+    public static final String EXIST_PERSONAL_CARE_MARCELWAVER_PRODUCT_BRAND_BEAN_NAME = "existPersonalCareMarcelwaverProductBrand";
+    public static final String EXIST_PERSONAL_CARE_SHOWERLAMP_PRODUCT_BRAND_BEAN_NAME = "existPersonalCareShowerLampProductBrand";
+    public static final String EXIST_PERSONAL_CARE_PRUNING_DEVICE_PRODUCT_BRAND_BEAN_NAME = "existPersonalCarePruningDeviceProductBrand";
+    public static final String EXIST_PERSONAL_CARE_FITNESS_EQUIPMENT_PRODUCT_BRAND_BEAN_NAME = "existPersonalCareFitnessEquipmentProductBrand";
+    public static final String EXIST_PERSONAL_CARE_OXYGEN_BAR_PRODUCT_BRAND_BEAN_NAME = "existPersonalCareOxygenBarProductBrand";
+    public static final String EXIST_PERSONAL_CARE_CURL_EYE_LASHES_BROWSER_PRODUCT_BRAND_BEAN_NAME = "existPersonalCareCurlEyeLashesBrowserProductBrand";
+    //end exist personal care product brand
+    //start exist health device product brand
+    public static final String EXIST_HEALTH_DEVICE_PRODUCT_BRAND_BEAN_NAME = "existHealthDeviceProductBrand";
+    public static final String EXIST_HEALTH_DEVICE_SNORING_DEVICE_PRODUCT_BRAND_BEAN_NAME = "existHealthDeviceSnoringDeviceProductBrand";
+    public static final String EXIST_HEALTH_DEVICE_SLEEPING_SPECS_PRODUCT_BRAND_BEAN_NAME = "existHealthDeviceSleepingSpecsProductBrand";
+    public static final String EXIST_HEALTH_DEVICE_ELECTRONIC_WEIGHER_PRODUCT_BRAND_BEAN_NAME = "existHealthDeviceElectronicWeigherProductBrand";
+    public static final String EXIST_HEALTH_DEVICE_TABLE_LAMP_PRODUCT_BRAND_BEAN_NAME = "existHealthDeviceTableLampProductBrand";
+    public static final String EXIST_HEALTH_DEVICE_MASSAGER_PRODUCT_BRAND_BEAN_NAME = "existHealthDeviceMassagerProductBrand";
+    public static final String EXIST_HEALTH_DEVICE_ELECTRONIC_SPHYGMOMANOMETER_PRODUCT_BRAND_BEAN_NAME = "existHealthDeviceElectronicSphygmomanometerProductBrand";
+    //end exist health deviceproduct brand
+    //start exist major appliance product brand
+    public static final String EXIST_MAJOR_APPLIANCE_PRODUCT_BRAND_BEAN_NAME = "existMajorApplianceProductBrand";
+    public static final String EXIST_MAJOR_APPLIANCE_TV_PRODUCT_BRAND_BEAN_NAME = "existMajorApplianceTvProductBrand";
+    public static final String EXIST_MAJOR_APPLIANCE_REFRIGERATOR_PRODUCT_BRAND_BEAN_NAME = "existMajorApplianceRefrigeratorProductBrand";
+    public static final String EXIST_MAJOR_APPLIANCE_AIRCONDITIONER_PRODUCT_BRAND_BEAN_NAME = "existMajorApplianceAirConditionerProductBrand";
+    public static final String EXIST_MAJOR_APPLIANCE_WASHING_MACHINE_PRODUCT_BRAND_BEAN_NAME = "existMajorApplianceWashingMachineProductBrand";
+    //end exist major appliance product brand
+    //start exist phone digital product brand
+    public static final String EXIST_PHONE_DIGITAL_PRODUCT_BRAND_BEAN_NAME = "existPhoneDigitalProductBrand";
+    public static final String EXIST_PHONE_DIGITAL_FITTING_PRODUCT_BRAND_BEAN_NAME = "existPhoneDigitalFittingProductBrand";
+    public static final String EXIST_PHONE_DIGITAL_MOBILE_PHONE_PRODUCT_BRAND_BEAN_NAME = "existPhoneDigitalMobilePhoneProductBrand";
+    public static final String EXIST_PHONE_DIGITAL_MOBILE_PHONE_ACCESSORIES_PRODUCT_BRAND_BEAN_NAME = "existPhoneDigitalMobilePhoneAccessoriesProductBrand";
+    public static final String EXIST_PHONE_DIGITAL_RECORDER_PEN_PRODUCT_BRAND_BEAN_NAME = "existPhoneDigitalRecorderPenProductBrand";
+    public static final String EXIST_PHONE_DIGITAL_MPEG_AUDIO_LAYER_PRODUCT_BRAND_BEAN_NAME = "existPhoneDigitalMpegAudioLayerProductBrand";
+    public static final String EXIST_PHONE_DIGITAL_GLOBAL_POSITIONING_SYSTEM_PRODUCT_BRAND_BEAN_NAME = "existPhoneDigitalGlobalPositioningSystemProductBrand";
+    public static final String EXIST_PHONE_DIGITAL_PHOTO_FRAME_PRODUCT_BRAND_BEAN_NAME = "existPhoneDigitalPhotoFrameProductBrand";
+    //end exist phone digital product brand
+    //start exist computer network product brand
+    public static final String EXIST_COMPUTER_NETWORK_PRODUCT_BRAND_BEAN_NAME = "existComputerNetworkProductBrand";
+    public static final String EXIST_COMPUTER_NETWORK_USB_STICK_PRODUCT_BRAND_BEAN_NAME = "existComputerNetworkUsbStickProductBrand";
+    public static final String EXIST_COMPUTER_NETWORK_MOUSE_PRODUCT_BRAND_BEAN_NAME = "existComputerNetworkMouseProductBrand";
+    public static final String EXIST_COMPUTER_NETWORK_KEYBOARD_PRODUCT_BRAND_BEAN_NAME = "existComputerNetworkKeyboardProductBrand";
+    public static final String EXIST_COMPUTER_NETWORK_AUDIO_DEVICE_PRODUCT_BRAND_BEAN_NAME = "existComputerNetworkAudioDeviceProductBrand";
+    public static final String EXIST_COMPUTER_NETWORK_CHASSIS_PRODUCT_BRAND_BEAN_NAME = "existComputerNetworkChassisProductBrand";
+    public static final String EXIST_COMPUTER_NETWORK_WEBCAM_PRODUCT_BRAND_BEAN_NAME = "existComputerNetworkWebcamProductBrand";
+    public static final String EXIST_COMPUTER_NETWORK_DISPLAY_PRODUCT_BRAND_BEAN_NAME = "existComputerNetworkDisplayProductBrand";
+    public static final String EXIST_COMPUTER_NETWORK_KEYBOARD_AND_MOUSE_PACKAGE_PRODUCT_BRAND_BEAN_NAME = "existComputerNetworkKeyboardAndMousePackageProductBrand";
+    public static final String EXIST_COMPUTER_NETWORK_POWER_SOURCE_PRODUCT_BRAND_BEAN_NAME = "existComputerNetworkPowerSourceProductBrand";
+    public static final String EXIST_COMPUTER_NETWORK_PC_COOLER_PRODUCT_BRAND_BEAN_NAME = "existComputerNetworkPcCoolerProductBrand";
+    public static final String EXIST_COMPUTER_NETWORK_HEADSET_PRODUCT_BRAND_BEAN_NAME = "existComputerNetworkHeadsetProductBrand";
+    public static final String EXIST_COMPUTER_NETWORK_PC_SHARING_DEVICE_PRODUCT_BRAND_BEAN_NAME = "existComputerNetworkPcSharingDeviceProductBrand";
+    //end exist computer network product brand
 }
