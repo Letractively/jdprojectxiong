@@ -7,7 +7,7 @@ public class EjdConstants {
 	public static final String BRAND_GREE_NAME = "Gree";
 	public static final String BRAND_GREE_LABEL = "格力";
 	public static final String BRAND_PANASONIC_NAME = "Panasonic";
-	public static final String BRAND_GPANASONIC_LABEL = "松下";
+	public static final String BRAND_PANASONIC_LABEL = "松下";
 	public static final String BRAND_PHILIPS_NAME = "Philips";
 	public static final String BRAND_PHILIPS_LABEL = "飞利浦";
 	public static final String BRAND_GALANZ_NAME = "Galanz";
