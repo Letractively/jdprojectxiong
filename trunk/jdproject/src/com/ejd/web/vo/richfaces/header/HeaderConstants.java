@@ -186,7 +186,7 @@ public class HeaderConstants {
 	
 	public static final String PHONE_DIGITAL_LABEL = "手机数码";
 	//start submenu phone_digital
-	public static final String PHONE_DIGITAL_DIGITALFITTING_NAME = "digitalFitting";
+	public static final String PHONE_DIGITAL_DIGITALFITTING_NAME = "fitting";
 	public static final String PHONE_DIGITAL_DIGITALFITTING_LABEL = "数码配件";
 	public static final String PHONE_DIGITAL_MOBILE_PHONE_NAME = "mobilePhone";
 	public static final String PHONE_DIGITAL_MOBILE_PHONE_LABEL = "手机";
@@ -198,7 +198,7 @@ public class HeaderConstants {
 	public static final String PHONE_DIGITAL_MPEG_AUDIO_LAYER_LABEL = "多媒体机";
 	public static final String PHONE_DIGITAL_GLOBAL_POSITIONING_SYSTEM_NAME = "globalPositioningSystem";
 	public static final String PHONE_DIGITAL_GLOBAL_POSITIONING_SYSTEM_LABEL = "GPS导航";
-	public static final String PHONE_DIGITAL_DIGITAL_PHOTO_FRAME_NAME = "digitalPhotoFrame "; 
+	public static final String PHONE_DIGITAL_DIGITAL_PHOTO_FRAME_NAME = "photoFrame "; 
 	public static final String PHONE_DIGITAL_DIGITAL_PHOTO_FRAME_LABEL = "数码相框";
 	
 	//end submenu phone_digital
@@ -220,7 +220,7 @@ public class HeaderConstants {
 	public static final String COMPUTER_NETWORK_DISPLAY_LABEL = "显示器";
 	public static final String COMPUTER_NETWORK_KEYBOARDANDMOUSEPACKAGE_NAME = "keyboardAndMousePackage";
 	public static final String COMPUTER_NETWORK_KEYBOARDANDMOUSEPACKAGE_LABEL = "键鼠套装";
-	public static final String COMPUTER_NETWORK_POWERSOURCE_NAME = "powersource";
+	public static final String COMPUTER_NETWORK_POWERSOURCE_NAME = "powerSource";
 	public static final String COMPUTER_NETWORK_POWERSOURCE_LABEL = "机箱电源";
 	public static final String COMPUTER_NETWORK_PCCOOLER_NAME = "pcCooler";
 	public static final String COMPUTER_NETWORK_PCCOOLER_LABEL = "散热底座";
