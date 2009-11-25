@@ -30,6 +30,7 @@ import com.ejd.utils.UIComponentUtil;
 import com.ejd.web.bo.Person;
 import com.ejd.web.bo.Product;
 import com.ejd.web.bo.Productunit;
+import com.ejd.web.vo.genl.ExistProductBrandBean;
 import com.ejd.web.vo.genl.ExistProductPrimaryCategoryBean;
 import com.ejd.web.vo.genl.PopupStakeholderBean;
 import com.ejd.web.vo.product.base.ProductBaseBean;
@@ -58,9 +59,8 @@ public class ProductCreateBean extends ProductBaseBean {
 		this.setSecondCategoryCodeItems(ProductCategoryUtil.selectProductSecondCategoryByPrimaryCategory(primaryCategoryName));
 		String secondCategoryName = this.getSecondCategoryCodeItems()[0].getDescription();
 		// set brandcodeitem by primary and second category
-		SelectItem[] tempBrandCodeItem = new SelectItem[1];
-		tempBrandCodeItem[0] = new SelectItem("","------");
-		this.setBrandCodeItems(tempBrandCodeItem);
+		ExistProductBrandBean existProductBrand = (ExistProductBrandBean) SpringFacesUtil.getManagedBean(ManageBeanConstants.EXIST_PRODUCT_BRAND_BEAN_NAME);
+		this.setBrandCodeItems(existProductBrand.getBrandCodeItems());
 	}
 	public ProductCreateBean(ProductVo product) {
 		super();
@@ -181,10 +181,11 @@ public class ProductCreateBean extends ProductBaseBean {
 		ExistProductPrimaryCategoryBean existProductPrimaryCategory = (ExistProductPrimaryCategoryBean)SpringFacesUtil.getManagedBean(ManageBeanConstants.EXIST_PRODUCT_PRIMARY_CATEGORY_BEAN_NAME);
 		SelectItem [] tempPrimaryCategoryCodeItems = existProductPrimaryCategory.getPrimaryCategoryCodeItems();
 		String currentCategoryName = ProductCategoryUtil.getCurrentSelectItemName(value, tempPrimaryCategoryCodeItems);
+		if ((null != this.getProduct().getSecondCategoryCode()) && (!"".equals(this.getProduct().getSecondCategoryCode()))) {
+			this.getProduct().setSecondCategoryCode("");
+		}
 		this.setSecondCategoryCodeItems(ProductCategoryUtil.selectProductSecondCategoryByPrimaryCategory(currentCategoryName));
-		SelectItem[] tempBrandCodeItem = new SelectItem[1];
-		tempBrandCodeItem[0] = new SelectItem("","------");
-		this.setBrandCodeItems(tempBrandCodeItem);
+		
 		return null;
 	}
 }
