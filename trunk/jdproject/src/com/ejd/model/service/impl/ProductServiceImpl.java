@@ -111,5 +111,16 @@ public class ProductServiceImpl implements IProductService {
 			throw new ProductException("error");
 		}
 	}
+	public List<String> getBrandCodeListByCategory(String primaryCategoryCode, String secondCategoryCode) throws ProductException {
+		if (null == primaryCategoryCode || "".equals(primaryCategoryCode)) {
+			return null;
+		}
+		try {
+			return productDao.getBrandCodeListByCategory(primaryCategoryCode, secondCategoryCode);
+			
+		} catch(HibernateObjectRetrievalFailureException he) {
+			throw new ProductException("error");
+		}
+	}
 
 }
