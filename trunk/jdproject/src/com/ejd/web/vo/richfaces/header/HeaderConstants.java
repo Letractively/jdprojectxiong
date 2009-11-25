@@ -16,6 +16,7 @@ public class HeaderConstants {
 	public static final String PHONE_DIGITAL_ID = "06";
 	public static final String COMPUTER_NETWORK_ID = "07";
 	public static final String PRODUCT_ALL_LABEL = "全部";
+	public static final String NONE_LAEBL = "------";
 	public static final String KITCHEN_APPLIANCE_LABEL = "厨房电器";
 	//submenu kitchen_appliance
 	public static final String KITCHEN_APPLIANCE_RICE_COOKER_NAME = "riceCooker";
@@ -229,7 +230,7 @@ public class HeaderConstants {
 	public static final String COMPUTER_NETWORK_PC_SHARING_DEVICE_NAME = "pcSharingDevice"; 
     public static final String COMPUTER_NETWORK_PC_SHARING_DEVICE_LABEL = "PC共享器";
 	//end submenu computer_network
-	public static final String subMenu00 = "00";
+	public static final String subMenu00 = "";
 	public static final String subMenu01 = "01";
 	public static final String subMenu02 = "02";
 	public static final String subMenu03 = "03";
