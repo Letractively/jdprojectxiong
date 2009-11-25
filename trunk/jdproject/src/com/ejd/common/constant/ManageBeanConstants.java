@@ -14,6 +14,7 @@ public class ManageBeanConstants {
 	public static final String EXIST_PHONE_DIGITAL_PRODUCT_SECOND_CATEGORY_BEAN_NAME = "existPhoneDigitalProductSecondCategory";
 	public static final String EXIST_COMPUTER_NETWORK_PRODUCT_SECOND_CATEGORY_BEAN_NAME = "existComputerNetworkProductSecondCategory";
 	//end exist product second category
+	public static final String EXIST_PRODUCT_BRAND_BEAN_NAME = "existProductBrand";
 	//start exist kitchen appliance product brand
 	public static final String LIST_KITCHEN_APPLIANCE_PRODUCT_BEAN_NAME = "listKitchenApplianceProduct";
 	public static final String EXIST_KITCHEN_APPLIANCE_PRODUCT_BRAND_BEAN_NAME = "existKitchenApplianceProductBrand";
@@ -130,4 +131,6 @@ public class ManageBeanConstants {
     public static final String EXIST_COMPUTER_NETWORK_HEADSET_PRODUCT_BRAND_BEAN_NAME = "existComputerNetworkHeadsetProductBrand";
     public static final String EXIST_COMPUTER_NETWORK_PC_SHARING_DEVICE_PRODUCT_BRAND_BEAN_NAME = "existComputerNetworkPcSharingDeviceProductBrand";
     //end exist computer network product brand
+    
+    public static final String PRODUCT_BRAND_UTIL_BEAN_NAME = "productBrandUtil";
 }
