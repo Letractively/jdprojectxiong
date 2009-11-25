@@ -1,57 +1,49 @@
 package com.ejd.web.vo.genl.kitchenapplicance;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 import javax.faces.model.SelectItem;
 
 import com.ejd.common.constant.EjdConstants;
+import com.ejd.common.constant.ManageBeanConstants;
+import com.ejd.model.exception.ProductException;
+import com.ejd.model.service.iface.IProductService;
+import com.ejd.utils.HeaderMenuUtil;
+import com.ejd.utils.ProductBrandUtil;
+import com.ejd.utils.SpringFacesUtil;
 import com.ejd.web.vo.richfaces.header.HeaderConstants;
+import com.ejd.web.vo.richfaces.header.HeaderTabPanelBean;
+import com.ejd.web.vo.richfaces.header.MenuItem;
 
 public class ExistKitchenApplianceProductBrandBean {
-	private static SelectItem[] brandCodeItems = {
-		new SelectItem(new String(""),HeaderConstants.PRODUCT_ALL_LABEL),
-		new SelectItem(EjdConstants.BRAND_MIDEA_LABEL.toString(),EjdConstants.BRAND_MIDEA_LABEL),
-		new SelectItem(EjdConstants.BRAND_GREE_NAME.toString(),EjdConstants.BRAND_GREE_LABEL),
-		new SelectItem(EjdConstants.BRAND_PANASONIC_NAME.toString(),EjdConstants.BRAND_PANASONIC_LABEL),
-		new SelectItem(EjdConstants.BRAND_PHILIPS_NAME.toString(),EjdConstants.BRAND_PHILIPS_LABEL),
-		new SelectItem(EjdConstants.BRAND_GALANZ_NAME.toString(),EjdConstants.BRAND_GALANZ_LABEL),
-		new SelectItem(EjdConstants.BRAND_AIRMATE_NAME.toString(),EjdConstants.BRAND_AIRMATE_LABEL),
-		new SelectItem(EjdConstants.BRAND_POVOS_NAME.toString(),EjdConstants.BRAND_POVOS_LABEL),
-		new SelectItem(EjdConstants.BRAND_SUPOR_NAME.toString(),EjdConstants.BRAND_SUPOR_LABEL),
-		new SelectItem(EjdConstants.BRAND_ACA_NAME.toString(),EjdConstants.BRAND_ACA_LABEL),
-		new SelectItem(EjdConstants.BRAND_WEKING_NAME.toString(),EjdConstants.BRAND_WEKING_LABEL),
-		new SelectItem(EjdConstants.BRAND_JOYOUNG_NAME.toString(),EjdConstants.BRAND_JOYOUNG_LABEL),
-		new SelectItem(EjdConstants.BRAND_TIGER_NAME.toString(),EjdConstants.BRAND_TIGER_LABEL),
-		new SelectItem(EjdConstants.BRAND_DEERDQ_NAME.toString(),EjdConstants.BRAND_DEERDQ_LABEL),
-		new SelectItem(EjdConstants.BRAND_SANSUI_NAME.toString(),EjdConstants.BRAND_SANSUI_LABEL),
-		new SelectItem(EjdConstants.BRAND_FUSHIBAO_NAME.toString(),EjdConstants.BRAND_FUSHIBAO_LABEL),
-		new SelectItem(EjdConstants.BRAND_BEAR_NAME.toString(),EjdConstants.BRAND_BEAR_LABEL),
-		new SelectItem(EjdConstants.BRAND_DONLIM_NAME.toString(),EjdConstants.BRAND_DONLIM_LABEL),
-		new SelectItem(EjdConstants.BRAND_DELONGHI_NAME.toString(),EjdConstants.BRAND_DELONGHI_LABEL),
-		new SelectItem(EjdConstants.BRAND_ELECTROLUX_NAME.toString(),EjdConstants.BRAND_ELECTROLUX_LABEL),
-		new SelectItem(EjdConstants.BRAND_WIK_NAME.toString(),EjdConstants.BRAND_WIK_LABEL),
-		new SelectItem(EjdConstants.BRAND_LG_NAME.toString(),EjdConstants.BRAND_LG_LABEL),
-		new SelectItem(EjdConstants.BRAND_ROBAM_NAME.toString(),EjdConstants.BRAND_ROBAM_LABEL),
-		new SelectItem(EjdConstants.BRAND_FOTILE_NAME.toString(),EjdConstants.BRAND_FOTILE_LABEL),
-		new SelectItem(EjdConstants.BRAND_SACON_NAME.toString(),EjdConstants.BRAND_SACON_LABEL),
-		new SelectItem(EjdConstants.BRAND_VANWARD_NAME.toString(),EjdConstants.BRAND_VANWARD_LABEL),
-		new SelectItem(EjdConstants.BRAND_CANBO_NAME.toString(),EjdConstants.BRAND_CANBO_LABEL),
-		new SelectItem(EjdConstants.BRAND_VATTI_NAME.toString(),EjdConstants.BRAND_VATTI_LABEL),
-		new SelectItem(EjdConstants.BRAND_YILI_NAME.toString(),EjdConstants.BRAND_YILI_LABEL),
-		new SelectItem(EjdConstants.BRAND_TEFAL_NAME.toString(),EjdConstants.BRAND_TEFAL_LABEL),
-		new SelectItem(EjdConstants.BRAND_ARISTON_NAME.toString(),EjdConstants.BRAND_ARISTON_LABEL),
-		new SelectItem(EjdConstants.BRAND_AOSMICH_NAME.toString(),EjdConstants.BRAND_AOSMICH_LABEL),
-		new SelectItem(EjdConstants.BRAND_HAIER_NAME.toString(),EjdConstants.BRAND_HAIER_LABEL),
-	};
+	
+	private SelectItem[] brandCodeItems = null;
 
 	public SelectItem[] getBrandCodeItems() {
 		return brandCodeItems;
 	}
 
-	public static void setBrandCodeItems(SelectItem[] brandCodeItems) {
-		ExistKitchenApplianceProductBrandBean.brandCodeItems = brandCodeItems;
+	public void setBrandCodeItems(SelectItem[] brandCodeItems) {
+		this.brandCodeItems = brandCodeItems;
 	}
 	
 	public ExistKitchenApplianceProductBrandBean() {
-		
+		IProductService productService = (IProductService) SpringFacesUtil.getSpringBean("productService");
+		List<String> brandList =  new ArrayList<String>();
+		HeaderTabPanelBean headerTabPanel = (HeaderTabPanelBean) SpringFacesUtil.getManagedBean(ManageBeanConstants.HEADER_TABPANEL_BEAN_NAME);
+		List<MenuItem> subMenu = headerTabPanel.getKitchenAppliance().getSubMenu();
+		MenuItem paraItem = HeaderMenuUtil.getMenuItemByName(HeaderConstants.KITCHEN_APPLIANCE_NAME, subMenu);
+		try {
+			brandList = productService.getBrandCodeListByCategory(paraItem.getIdFirst(), paraItem.getIdSecond());
+		} catch (ProductException e) {
+			
+		}
+		ProductBrandUtil productBrandUtil = (ProductBrandUtil) SpringFacesUtil.getSpringBean("productBrandUtil");
+		SelectItem[] result = null;
+		result = productBrandUtil.getBrandCodeItem(brandList);
+		this.setBrandCodeItems(result);
 	}
 
 }
