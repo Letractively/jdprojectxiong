@@ -130,6 +130,8 @@
 			<ref bean="loginDao" />
 		</property>
 	</bean>
+	<bean id="productBrandUtil" class="com.ejd.utils.ProductBrandUtil" scope="singleton">
+	</bean>
 <!-- 
 	<bean id="customerDao" class="com.kuaican.data.dao.impl.CustomerDaoImpl">
 		<property name="sessionFactory">

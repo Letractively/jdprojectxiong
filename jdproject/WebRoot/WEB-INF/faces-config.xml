@@ -153,6 +153,14 @@
 	</managed-bean>
 	<!-- end second product category  -->
 	<!-- start product brand -->
+		<!-- start all product brand -->
+	<managed-bean>
+	<managed-bean-name>existProductBrand</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistProductBrandBean</managed-bean-class>
+	<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	
+		<!-- end all product brand -->
 		<!-- start kitchenappliance -->
 	<managed-bean>
 	<managed-bean-name>existKitchenApplianceProductBrand</managed-bean-name>
