@@ -20,6 +20,7 @@ public class ProductVo {
 	private ProductUnit unit;//单位
 	private Integer stockLowerNumber;//库存下限
 	private Integer stockUpperNumber;//库存上限
+	private Integer currentNumber;
 	private String imageName;//图片名称
 	private String name;
 	private StakeholderVo provider;//only use StakeholderVo
@@ -102,6 +103,13 @@ public class ProductVo {
 	}
 	public void setStockUpperNumber(Integer stockUpperNumber) {
 		this.stockUpperNumber = stockUpperNumber;
+	}
+	
+	public Integer getCurrentNumber() {
+		return currentNumber;
+	}
+	public void setCurrentNumber(Integer currentNumber) {
+		this.currentNumber = currentNumber;
 	}
 	public String getImageName() {
 		return imageName;
