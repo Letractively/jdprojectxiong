@@ -303,6 +303,8 @@ input, select, textarea, button, keygen, isindex, legend, a {
 
 .rich-tab-header {
 	font-family: Verdana, Arial;
+	font-size:15pt;
+	height:25px;
 }
 
 .active_tab {
@@ -1080,18 +1082,33 @@ div.reviews{margin:5px 0}
 			}
 			
 			.rich-tab-active {
-			 	background-color: #E1F2FA;
-    			background-image: url(${facesContext.externalContext.requestContextPath}/css/images/icons/tab_tile_active.gif);
-				background-position : top left;
+			 	background-color: #FFFFFF;
+    			background-image: url(./images/icons/tab_tile_active.jpg);
+				background-position : left top;
+				background-width:auto;
+				background-height:auto;
 				border-width: 0px 0px 0px 0px;
-				
+				border-style:outset;
+				background-repeat: repeat-y;
+				background-attachment:fixed;
+				font-size:14px;
+				font-weight:bold;
+				font-color:#FFFFFF;
 			}
 			
 			.rich-tab-inactive {
-				background-color: #BBD6EF;
-    			background-image: url(${facesContext.externalContext.requestContextPath}/css/images/icons/tab_tile_inactive.gif);
+				background-color: #FFFFFF;
+    			background-image: url(./images/icons/tab_tile_inactive.jpg);
     			background-position: top left;
     			border-width: 0px 0px 0px 0px;
+    			border-style:groove;
+				background-repeat: repeat-y;
+				background-attachment:fixed;
+				font-size:13px;
+				font-weight:bold;
+			}
+			.rich-tab-label{
+			
 			}
 			
 			.rich-tab-disabled {
@@ -1113,9 +1130,19 @@ div.reviews{margin:5px 0}
 			.rich-tabpanel-content {
 				padding:0px 0px 0px 0px;
 				margin:0px 0px 0px 0px;
-				border-width: 0px; 
-				border-color:red;
+				border-width: 2px; 
+				border-color:#66BFEC;
+				background-image: url(./images/icons/tab_comtent.jpg);
+				height:45px;
+			}.header-menu-btn {
+				padding:0px 0px 0px 0px;
+				margin:0px 0px 0px 0px;
+				border-width: 1px;
+				border-color:#66BFEC;
+				background-image: url(./images/icons/headermenubtn.gif);
+				background-repeat: repeat-x;
 			}
+			
 			
 .template-left {
   font-size: 10pt;
@@ -1144,7 +1171,7 @@ div.reviews{margin:5px 0}
 }
 .template-left-number {
   font-size: 10pt;
-  background-image: url(${facesContext.externalContext.requestContextPath}/css/images/icons/number.gif);
+  background-image: url(./images/icons/number.gif);
   background-repeat: no-repeat;
 }
 
@@ -1171,4 +1198,5 @@ div.reviews{margin:5px 0}
 	margin:0px 0px 0px 0px;
 	border-width:1px;
 	}
-.operate_title{position:relative;height:29px;background:url(${facesContext.externalContext.requestContextPath}/css/images/icons/woye_img_x.gif) left -284px repeat-x;border:1px #e3e3e3 solid;z-index:100;}
+.operate_title{position:relative;height:29px;background:url(./images/icons/woye_img_x.gif) left -284px repeat-x;border:1px #e3e3e3 solid;z-index:100;}
+
