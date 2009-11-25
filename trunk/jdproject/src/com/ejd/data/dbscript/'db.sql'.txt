@@ -98,6 +98,7 @@ CREATE TABLE  `ejd`.`product` (
   `UNITID` int(11) NOT NULL,
   `STOCKLOWERNUMBER` int(11) default 0,
   `STOCKUPPERNUMBER` int(11) default 0,
+  `CURRENTNUMBER` int(11) default 0,
   `IMAGENAME` varchar(50) default NULL,
   `NAME` varchar(50) default NULL,
   `PROVIDERID` int(11) NOT NULL,
