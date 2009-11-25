@@ -17,4 +17,5 @@ public interface IProductDao {
 	public Product saveProduct(Product product);
 	public Product saveOrUpdateProduct(Product product);
 	public List<Product> getKitchenApplianceProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange);
+	public List<String> getBrandCodeListByCategory(String primaryCategory, String secondCategory);
 }
