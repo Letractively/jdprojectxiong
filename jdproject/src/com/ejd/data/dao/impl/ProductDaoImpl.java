@@ -175,4 +175,40 @@ public class ProductDaoImpl extends HibernateDaoSupport implements IProductDao {
 			return null;
 		}
 	}
+	public List<String> getBrandCodeListByCategory(String primaryCategoryCode, String secondCategoryCode) {
+		try {
+			Map criteria = new HashMap();
+			List<String> result = new ArrayList();
+			String hql="select distinct p.brandCode from Product as p where 1=1 ";
+			if (null != primaryCategoryCode) {
+				hql = hql + " and p.primaryCategoryCode = :primaryCategoryCode ";
+				criteria.put("primaryCategoryCode", primaryCategoryCode);
+			}
+			
+			if (null != secondCategoryCode && !"".equals(secondCategoryCode)) {
+				hql = hql + " and p.secondCategoryCode = :secondCategoryCode ";
+				criteria.put("secondCategoryCode", secondCategoryCode);
+			}
+			
+			SessionFactory sf =(SessionFactory) this.getSessionFactory();
+			Session session = sf.openSession();
+			/*List<Product> products=this.getHibernateTemplate().find(hql, criteria);*/
+			try {
+				Query q = session.createQuery(hql);
+				q.setProperties(criteria);
+				session.beginTransaction();
+				result = q.list();
+				session.flush();
+				} catch (HibernateException e) {
+					e.printStackTrace();
+					session.getTransaction().rollback();
+				} finally {
+					  session.close();
+				  }
+				return result;
+		} catch (Exception e) {
+			logger.error(e);
+			return null;
+		}
+	}
 }
