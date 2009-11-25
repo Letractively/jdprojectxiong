@@ -9,29 +9,37 @@ public class ExistHouseholdApplianceVacuumCleanerProductBrandBean {
 	private static SelectItem[] brandCodeItems = {
 		new SelectItem(new String(""),HeaderConstants.PRODUCT_ALL_LABEL),
 		new SelectItem(EjdConstants.BRAND_MIDEA_LABEL.toString(),EjdConstants.BRAND_MIDEA_LABEL),
-		new SelectItem(EjdConstants.BRAND_GREE_NAME.toString(),EjdConstants.BRAND_GREE_LABEL),
+		new SelectItem(EjdConstants.BRAND_PANASONIC_NAME.toString(),EjdConstants.BRAND_PANASONIC_LABEL),
+		new SelectItem(EjdConstants.BRAND_TOSHIBA_NAME.toString(),EjdConstants.BRAND_TOSHIBA_LABEL),
 		new SelectItem(EjdConstants.BRAND_PHILIPS_NAME.toString(),EjdConstants.BRAND_PHILIPS_LABEL),
+		new SelectItem(EjdConstants.BRAND_ROWENTA_NAME.toString(),EjdConstants.BRAND_ROWENTA_LABEL),
+		new SelectItem(EjdConstants.BRAND_SINCERE_NAME.toString(),EjdConstants.BRAND_SINCERE_LABEL),
+		new SelectItem(EjdConstants.BRAND_DELONGHI_NAME.toString(),EjdConstants.BRAND_DELONGHI_LABEL),
+		new SelectItem(EjdConstants.BRAND_MAXCARE_NAME.toString(),EjdConstants.BRAND_MAXCARE_LABEL),
+		new SelectItem(EjdConstants.BRAND_BLACKDECKER_NAME.toString(),EjdConstants.BRAND_BLACKDECKER_LABEL),
+		
+		
 		new SelectItem(EjdConstants.BRAND_GALANZ_NAME.toString(),EjdConstants.BRAND_GALANZ_LABEL),
 		new SelectItem(EjdConstants.BRAND_DONLIM_NAME.toString(),EjdConstants.BRAND_DONLIM_LABEL),
 		new SelectItem(EjdConstants.BRAND_ACA_NAME.toString(),EjdConstants.BRAND_ACA_LABEL),
 		new SelectItem(EjdConstants.BRAND_TEFAL_NAME.toString(),EjdConstants.BRAND_TEFAL_LABEL),
 		new SelectItem(EjdConstants.BRAND_JOYOUNG_NAME.toString(),EjdConstants.BRAND_JOYOUNG_LABEL),
 		new SelectItem(EjdConstants.BRAND_TIGER_NAME.toString(),EjdConstants.BRAND_TIGER_LABEL),
-		new SelectItem(EjdConstants.BRAND_DELONGHI_NAME.toString(),EjdConstants.BRAND_DELONGHI_LABEL),
+		
 		new SelectItem(EjdConstants.BRAND_WIK_NAME.toString(),EjdConstants.BRAND_WIK_LABEL),
 		new SelectItem(EjdConstants.BRAND_ELECTROLUX_NAME.toString(),EjdConstants.BRAND_ELECTROLUX_LABEL),
 		new SelectItem(EjdConstants.BRAND_DEERDQ_NAME.toString(),EjdConstants.BRAND_DEERDQ_LABEL),
 		new SelectItem(EjdConstants.BRAND_5E_NAME.toString(),EjdConstants.BRAND_5E_LABEL),
 		new SelectItem(EjdConstants.BRAND_AIRMATE_NAME.toString(),EjdConstants.BRAND_AIRMATE_LABEL),
-		new SelectItem(EjdConstants.BRAND_PANASONIC_NAME.toString(),EjdConstants.BRAND_PANASONIC_LABEL),
+		
 		new SelectItem(EjdConstants.BRAND_FLYCO_NAME.toString(),EjdConstants.BRAND_FLYCO_LABEL),
 		new SelectItem(EjdConstants.BRAND_SID_NAME.toString(),EjdConstants.BRAND_SID_LABEL),
 		new SelectItem(EjdConstants.BRAND_TSANNKUEN_NAME.toString(),EjdConstants.BRAND_TSANNKUEN_LABEL),
-		new SelectItem(EjdConstants.BRAND_TOSHIBA_NAME.toString(),EjdConstants.BRAND_TOSHIBA_LABEL),
-		new SelectItem(EjdConstants.BRAND_ROWENTA_NAME.toString(),EjdConstants.BRAND_ROWENTA_LABEL),
-		new SelectItem(EjdConstants.BRAND_SINCERE_NAME.toString(),EjdConstants.BRAND_SINCERE_LABEL),
-		new SelectItem(EjdConstants.BRAND_MAXCARE_NAME.toString(),EjdConstants.BRAND_MAXCARE_LABEL),
-		new SelectItem(EjdConstants.BRAND_BLACKDECKER_NAME.toString(),EjdConstants.BRAND_BLACKDECKER_LABEL),
+		
+		
+		
+		
+		
 		new SelectItem(EjdConstants.BRAND_SHARPCROWN_NAME.toString(),EjdConstants.BRAND_SHARPCROWN_LABEL),
 		new SelectItem(EjdConstants.BRAND_YADU_NAME.toString(),EjdConstants.BRAND_YADU_LABEL),
 		new SelectItem(EjdConstants.BRAND_SANSUI_NAME.toString(),EjdConstants.BRAND_SANSUI_LABEL),
