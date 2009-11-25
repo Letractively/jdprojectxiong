@@ -254,7 +254,7 @@ public class EjdConstants {
 	public static final String BRAND_TOMADO_LABEL = "霹雳风";
 	public static final String BRAND_IBM_NAME = "IBM";
 	public static final String BRAND_IBM_LABEL = "ThinkPad";
-	public static final String BRAND_Aixuebao_NAME = "Aixuebao";
+	public static final String BRAND_AIXUEBAO_NAME = "Aixuebao";
 	public static final String BRAND_AIXUEBAO_LABEL = "爱学宝";
 	public static final String BRAND_ASUS_NAME = "asus";
 	public static final String BRAND_ASUS_LABEL = "华硕";
