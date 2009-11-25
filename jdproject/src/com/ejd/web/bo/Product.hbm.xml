@@ -30,6 +30,9 @@
         <property name="stockUpperNumber" type="java.lang.Integer">
             <column name="STOCKUPPERNUMBER" />
         </property>
+        <property name="currentNumber" type="java.lang.Integer">
+            <column name="CURRENTNUMBER" />
+        </property>
         <property name="imageName" type="java.lang.String">
             <column name="IMAGENAME" length="50" />
         </property>
