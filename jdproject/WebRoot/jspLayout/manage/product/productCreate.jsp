@@ -129,6 +129,9 @@ xmlns:rich="http://richfaces.org/rich">
 						<h:inputText value="#{productCreate.product.tradePriceTwo}" id="tradePriceTwo" onchange="if(!(/^[0-9]+(.[0-9]{1,2})?$/.test(this.value))){alert('只能输入1-2位正实数');this.value='0.0';}">
                     	</h:inputText>
                 		<rich:message for="tradePriceTwo" />
+                		<h:outputLabel value="库存数量：" for="stockLowerNumber"></h:outputLabel>
+						<rich:inputNumberSpinner value="#{productCreate.product.currentNumber}" id="currentNumber" minValue="1" maxValue="10000" step="1"/>
+						<h:outputText value=""></h:outputText>
 						<h:outputLabel value="库存下限：" for="stockLowerNumber"></h:outputLabel>
 						<rich:inputNumberSpinner value="#{productCreate.product.stockLowerNumber}" id="stockLowerNumber" minValue="1" maxValue="10000" step="1"/>
 						<h:outputText value=""></h:outputText>
