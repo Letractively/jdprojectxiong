@@ -21,12 +21,12 @@ public class Product extends AbstractProduct implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Product(String code, String manufacturerCode,String barcode,String spec,Productunit unit,Integer stockLowerNumber,Integer stockUpperNumber,String imageName, String name,
+	public Product(String code, String manufacturerCode,String barcode,String spec,Productunit unit,Integer stockLowerNumber,Integer stockUpperNumber,Integer currentNumber,String imageName, String name,
 			Stakeholder provider, String primaryCategoryCode,
 			String secondCategoryCode, String brandCode, String status,
 			Double purchaseprice, Double tradePriceOne, Double tradePriceTwo,
 			Double retailPrice, String introduceFileName) {
-		super(code, manufacturerCode, barcode, spec, unit, stockLowerNumber, stockUpperNumber, imageName,name, provider, primaryCategoryCode,
+		super(code, manufacturerCode, barcode, spec, unit, stockLowerNumber, stockUpperNumber, currentNumber, imageName,name, provider, primaryCategoryCode,
 				secondCategoryCode, brandCode, status, purchaseprice,
 				tradePriceOne, tradePriceTwo, retailPrice, introduceFileName);
 	}

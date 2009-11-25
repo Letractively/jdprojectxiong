@@ -20,6 +20,7 @@ public abstract class AbstractProduct extends java.lang.Object implements
 	private Productunit unit;//单位
 	private Integer stockLowerNumber;//库存下限
 	private Integer stockUpperNumber;//库存上限
+	private Integer currentNumber;
 	private String imageName;//图片名称
 	private String name;
 	private Stakeholder provider;
@@ -65,7 +66,7 @@ public abstract class AbstractProduct extends java.lang.Object implements
 	}
 
 	/** full constructor */
-	public AbstractProduct(String code, String manufacturerCode,String barcode,String spec,Productunit unit,Integer stockLowerNumber,Integer stockUpperNumber,String imageName, String name,
+	public AbstractProduct(String code, String manufacturerCode,String barcode,String spec,Productunit unit,Integer stockLowerNumber,Integer stockUpperNumber,Integer currentNumber,String imageName, String name,
 			Stakeholder provider, String primaryCategoryCode,
 			String secondCategoryCode, String brandCode, String status,
 			Double purchasePrice, Double tradePriceOne, Double tradePriceTwo,
@@ -77,6 +78,7 @@ public abstract class AbstractProduct extends java.lang.Object implements
 		this.unit = unit;
 		this.stockLowerNumber = stockLowerNumber;
 		this.stockUpperNumber = stockUpperNumber;
+		this.currentNumber = currentNumber;
 		this.imageName = imageName;
 		this.name = name;
 		this.provider = provider;
@@ -155,6 +157,14 @@ public abstract class AbstractProduct extends java.lang.Object implements
 
 	public void setStockUpperNumber(Integer stockUpperNumber) {
 		this.stockUpperNumber = stockUpperNumber;
+	}
+
+	public Integer getCurrentNumber() {
+		return currentNumber;
+	}
+
+	public void setCurrentNumber(Integer currentNumber) {
+		this.currentNumber = currentNumber;
 	}
 
 	public String getImageName() {
