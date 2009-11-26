@@ -312,9 +312,11 @@ input, select, textarea, button, keygen, isindex, legend, a {
 	border-width: 1px 1px 0px 1px;
 	font-weight: bold;
 	font-size: 14px;
+	border-color: #D62F33;
 }
 .inactive_tab {
 	background-position : top left;
+	border-color: #FFFFFF;
 }
 
 .top_tab .rich-tabhdr-side-border {
@@ -1082,13 +1084,13 @@ div.reviews{margin:5px 0}
 			}
 			
 			.rich-tab-active {
-			 	background-color: #FFFFFF;
-    			background-image: url(./images/icons/tab_tile_active.jpg);
+    			background-image: url(./images/icons/tab_panel_active.gif);
 				background-position : left top;
 				background-width:auto;
 				background-height:auto;
 				border-width: 0px 0px 0px 0px;
 				border-style:outset;
+				border-color: #D62F33;
 				background-repeat: repeat-y;
 				background-attachment:fixed;
 				font-size:14px;
@@ -1097,11 +1099,11 @@ div.reviews{margin:5px 0}
 			}
 			
 			.rich-tab-inactive {
-				background-color: #FFFFFF;
-    			background-image: url(./images/icons/header_menu.gif);
+    			background-image: url(./images/icons/tab_panel_inactive.gif);
     			background-position: top left;
     			border-width: 0px 0px 0px 0px;
     			border-style:groove;
+    			border-color: #FFFFFF;
 				background-repeat: repeat-y;
 				background-attachment:fixed;
 				font-size:13px;
