@@ -1,34 +1,47 @@
 package com.ejd.web.vo.genl.computernetwork;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.faces.model.SelectItem;
 
 import com.ejd.common.constant.EjdConstants;
+import com.ejd.common.constant.ManageBeanConstants;
+import com.ejd.model.exception.ProductException;
+import com.ejd.model.service.iface.IProductService;
+import com.ejd.utils.HeaderMenuUtil;
+import com.ejd.utils.ProductBrandUtil;
+import com.ejd.utils.SpringFacesUtil;
 import com.ejd.web.vo.richfaces.header.HeaderConstants;
+import com.ejd.web.vo.richfaces.header.HeaderTabPanelBean;
+import com.ejd.web.vo.richfaces.header.MenuItem;
 
 public class ExistComputerNetworkMouseProductBrandBean {
-	private static SelectItem[] brandCodeItems = {
-		new SelectItem(new String(""),HeaderConstants.PRODUCT_ALL_LABEL),
-		new SelectItem(EjdConstants.BRAND_PANASONIC_NAME.toString(),EjdConstants.BRAND_PANASONIC_LABEL),
-		new SelectItem(EjdConstants.BRAND_PHILIPS_NAME.toString(),EjdConstants.BRAND_PHILIPS_LABEL),
-		new SelectItem(EjdConstants.BRAND_FLYCO_NAME.toString(),EjdConstants.BRAND_FLYCO_LABEL),
-		new SelectItem(EjdConstants.BRAND_SID_NAME.toString(),EjdConstants.BRAND_SID_LABEL),
-		new SelectItem(EjdConstants.BRAND_POVOS_NAME.toString(),EjdConstants.BRAND_POVOS_LABEL),
-		new SelectItem(EjdConstants.BRAND_WIK_NAME.toString(),EjdConstants.BRAND_WIK_LABEL),
-		new SelectItem(EjdConstants.BRAND_AUPU_NAME.toString(),EjdConstants.BRAND_AUPU_LABEL),
-		new SelectItem(EjdConstants.BRAND_MAXCARE_NAME.toString(),EjdConstants.BRAND_MAXCARE_LABEL),
-		new SelectItem(EjdConstants.BRAND_DLG_NAME.toString(),EjdConstants.BRAND_DLG_LABEL),
-	};
+	private SelectItem[] brandCodeItems;
 
 	public SelectItem[] getBrandCodeItems() {
 		return brandCodeItems;
 	}
 
-	public static void setBrandCodeItems(SelectItem[] brandCodeItems) {
-		ExistComputerNetworkMouseProductBrandBean.brandCodeItems = brandCodeItems;
+	public void setBrandCodeItems(SelectItem[] brandCodeItems) {
+		this.brandCodeItems = brandCodeItems;
 	}
 	
 	public ExistComputerNetworkMouseProductBrandBean() {
-		
+		IProductService productService = (IProductService) SpringFacesUtil.getSpringBean("productService");
+		List<String> brandList =  new ArrayList<String>();
+		HeaderTabPanelBean headerTabPanel = (HeaderTabPanelBean) SpringFacesUtil.getManagedBean(ManageBeanConstants.HEADER_TABPANEL_BEAN_NAME);
+		List<MenuItem> subMenu = headerTabPanel.getComputerNetwork().getSubMenu();
+		MenuItem paraItem = HeaderMenuUtil.getMenuItemByName(HeaderConstants.COMPUTER_NETWORK_MOUSE_NAME, subMenu);
+		try {
+			brandList = productService.getBrandCodeListByCategory(paraItem.getIdFirst(), paraItem.getIdSecond());
+		} catch (ProductException e) {
+			
+		}
+		ProductBrandUtil productBrandUtil = (ProductBrandUtil) SpringFacesUtil.getSpringBean("productBrandUtil");
+		SelectItem[] result = null;
+		result = productBrandUtil.getBrandCodeItem(brandList);
+		this.setBrandCodeItems(result);
 	}
 
 }
