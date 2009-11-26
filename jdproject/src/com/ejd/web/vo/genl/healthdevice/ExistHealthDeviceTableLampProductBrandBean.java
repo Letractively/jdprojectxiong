@@ -1,32 +1,47 @@
 package com.ejd.web.vo.genl.healthdevice;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.faces.model.SelectItem;
 
 import com.ejd.common.constant.EjdConstants;
+import com.ejd.common.constant.ManageBeanConstants;
+import com.ejd.model.exception.ProductException;
+import com.ejd.model.service.iface.IProductService;
+import com.ejd.utils.HeaderMenuUtil;
+import com.ejd.utils.ProductBrandUtil;
+import com.ejd.utils.SpringFacesUtil;
 import com.ejd.web.vo.richfaces.header.HeaderConstants;
+import com.ejd.web.vo.richfaces.header.HeaderTabPanelBean;
+import com.ejd.web.vo.richfaces.header.MenuItem;
 
 public class ExistHealthDeviceTableLampProductBrandBean {
-	private static SelectItem[] brandCodeItems = {
-		new SelectItem(new String(""),HeaderConstants.PRODUCT_ALL_LABEL),
-		new SelectItem(EjdConstants.BRAND_HIVOX_NAME.toString(),EjdConstants.BRAND_HIVOX_LABEL),
-		new SelectItem(EjdConstants.BRAND_PHILIPS_NAME.toString(),EjdConstants.BRAND_PHILIPS_LABEL),
-		new SelectItem(EjdConstants.BRAND_OSRAM_NAME.toString(),EjdConstants.BRAND_OSRAM_LABEL),
-		new SelectItem(EjdConstants.BRAND_MKD_NAME.toString(),EjdConstants.BRAND_MKD_LABEL),
-		new SelectItem(EjdConstants.BRAND_PANASONIC_NAME.toString(),EjdConstants.BRAND_PANASONIC_LABEL),
-		new SelectItem(EjdConstants.BRAND_WIK_NAME.toString(),EjdConstants.BRAND_WIK_LABEL),
-		new SelectItem(EjdConstants.BRAND_ZOFU_NAME.toString(),EjdConstants.BRAND_ZOFU_LABEL),
-	};
+	private SelectItem[] brandCodeItems;
 
 	public SelectItem[] getBrandCodeItems() {
 		return brandCodeItems;
 	}
 
-	public static void setBrandCodeItems(SelectItem[] brandCodeItems) {
-		ExistHealthDeviceTableLampProductBrandBean.brandCodeItems = brandCodeItems;
+	public void setBrandCodeItems(SelectItem[] brandCodeItems) {
+		this.brandCodeItems = brandCodeItems;
 	}
 	
 	public ExistHealthDeviceTableLampProductBrandBean() {
-		
+		IProductService productService = (IProductService) SpringFacesUtil.getSpringBean("productService");
+		List<String> brandList =  new ArrayList<String>();
+		HeaderTabPanelBean headerTabPanel = (HeaderTabPanelBean) SpringFacesUtil.getManagedBean(ManageBeanConstants.HEADER_TABPANEL_BEAN_NAME);
+		List<MenuItem> subMenu = headerTabPanel.getHealthDevice().getSubMenu();
+		MenuItem paraItem = HeaderMenuUtil.getMenuItemByName(HeaderConstants.HEALTH_DEVICE_TABLE_LAMP_NAME, subMenu);
+		try {
+			brandList = productService.getBrandCodeListByCategory(paraItem.getIdFirst(), paraItem.getIdSecond());
+		} catch (ProductException e) {
+			
+		}
+		ProductBrandUtil productBrandUtil = (ProductBrandUtil) SpringFacesUtil.getSpringBean("productBrandUtil");
+		SelectItem[] result = null;
+		result = productBrandUtil.getBrandCodeItem(brandList);
+		this.setBrandCodeItems(result);
 	}
 
 }
