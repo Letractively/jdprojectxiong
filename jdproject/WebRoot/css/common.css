@@ -1098,7 +1098,7 @@ div.reviews{margin:5px 0}
 			
 			.rich-tab-inactive {
 				background-color: #FFFFFF;
-    			background-image: url(./images/icons/tab_tile_inactive.jpg);
+    			background-image: url(./images/icons/header_menu.gif);
     			background-position: top left;
     			border-width: 0px 0px 0px 0px;
     			border-style:groove;
@@ -1135,11 +1135,11 @@ div.reviews{margin:5px 0}
 				background-image: url(./images/icons/tab_comtent.jpg);
 				height:45px;
 			}.header-menu-btn {
-				padding:0px 0px 0px 0px;
-				margin:0px 0px 0px 0px;
-				border-width: 1px;
-				border-color:#66BFEC;
-				background-image: url(./images/icons/headermenubtn.gif);
+				padding:3px 8px 3px 8px;
+				margin:1px 1px 1px 1px;
+				border-width: 0px 0px 0px 0px;
+				border-style:outset;
+				background-image: url(./images/icons/tab_comtent.jpg);
 				background-repeat: repeat-x;
 			}
 			
