@@ -1,26 +1,47 @@
 package com.ejd.web.vo.genl.kitchenapplicance;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.faces.model.SelectItem;
 
 import com.ejd.common.constant.EjdConstants;
+import com.ejd.common.constant.ManageBeanConstants;
+import com.ejd.model.exception.ProductException;
+import com.ejd.model.service.iface.IProductService;
+import com.ejd.utils.HeaderMenuUtil;
+import com.ejd.utils.ProductBrandUtil;
+import com.ejd.utils.SpringFacesUtil;
 import com.ejd.web.vo.richfaces.header.HeaderConstants;
+import com.ejd.web.vo.richfaces.header.HeaderTabPanelBean;
+import com.ejd.web.vo.richfaces.header.MenuItem;
 
 public class ExistKitchenApplianceBakingbowlMachineProductBrandBean {
-	private static SelectItem[] brandCodeItems = {
-		new SelectItem(new String(""),HeaderConstants.PRODUCT_ALL_LABEL),
-		new SelectItem(EjdConstants.BRAND_TIGER_NAME.toString(),EjdConstants.BRAND_TIGER_LABEL),
-	};
+	private SelectItem[] brandCodeItems;
 
 	public SelectItem[] getBrandCodeItems() {
 		return brandCodeItems;
 	}
 
-	public static void setBrandCodeItems(SelectItem[] brandCodeItems) {
-		ExistKitchenApplianceBakingbowlMachineProductBrandBean.brandCodeItems = brandCodeItems;
+	public void setBrandCodeItems(SelectItem[] brandCodeItems) {
+		this.brandCodeItems = brandCodeItems;
 	}
 	
 	public ExistKitchenApplianceBakingbowlMachineProductBrandBean() {
-		
+		IProductService productService = (IProductService) SpringFacesUtil.getSpringBean("productService");
+		List<String> brandList =  new ArrayList<String>();
+		HeaderTabPanelBean headerTabPanel = (HeaderTabPanelBean) SpringFacesUtil.getManagedBean(ManageBeanConstants.HEADER_TABPANEL_BEAN_NAME);
+		List<MenuItem> subMenu = headerTabPanel.getKitchenAppliance().getSubMenu();
+		MenuItem paraItem = HeaderMenuUtil.getMenuItemByName(HeaderConstants.KITCHEN_APPLIANCE_BAKINGBOWL_MACHINE_NAME, subMenu);
+		try {
+			brandList = productService.getBrandCodeListByCategory(paraItem.getIdFirst(), paraItem.getIdSecond());
+		} catch (ProductException e) {
+			
+		}
+		ProductBrandUtil productBrandUtil = (ProductBrandUtil) SpringFacesUtil.getSpringBean("productBrandUtil");
+		SelectItem[] result = null;
+		result = productBrandUtil.getBrandCodeItem(brandList);
+		this.setBrandCodeItems(result);
 	}
 
 }
