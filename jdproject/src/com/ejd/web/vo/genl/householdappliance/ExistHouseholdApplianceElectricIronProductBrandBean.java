@@ -1,33 +1,47 @@
 package com.ejd.web.vo.genl.householdappliance;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.faces.model.SelectItem;
 
 import com.ejd.common.constant.EjdConstants;
+import com.ejd.common.constant.ManageBeanConstants;
+import com.ejd.model.exception.ProductException;
+import com.ejd.model.service.iface.IProductService;
+import com.ejd.utils.HeaderMenuUtil;
+import com.ejd.utils.ProductBrandUtil;
+import com.ejd.utils.SpringFacesUtil;
 import com.ejd.web.vo.richfaces.header.HeaderConstants;
+import com.ejd.web.vo.richfaces.header.HeaderTabPanelBean;
+import com.ejd.web.vo.richfaces.header.MenuItem;
 
 public class ExistHouseholdApplianceElectricIronProductBrandBean {
-	private static SelectItem[] brandCodeItems = {
-		new SelectItem(new String(""),HeaderConstants.PRODUCT_ALL_LABEL),
-		new SelectItem(EjdConstants.BRAND_PANASONIC_NAME.toString(),EjdConstants.BRAND_PANASONIC_LABEL),
-		new SelectItem(EjdConstants.BRAND_PHILIPS_NAME.toString(),EjdConstants.BRAND_PHILIPS_LABEL),
-		new SelectItem(EjdConstants.BRAND_DONLIM_NAME.toString(),EjdConstants.BRAND_DONLIM_LABEL),
-		new SelectItem(EjdConstants.BRAND_FLYCO_NAME.toString(),EjdConstants.BRAND_FLYCO_LABEL),
-		new SelectItem(EjdConstants.BRAND_SID_NAME.toString(),EjdConstants.BRAND_SID_LABEL),
-		new SelectItem(EjdConstants.BRAND_TEFAL_NAME.toString(),EjdConstants.BRAND_TEFAL_LABEL),
-		new SelectItem(EjdConstants.BRAND_TSANNKUEN_NAME.toString(),EjdConstants.BRAND_TSANNKUEN_LABEL),
-		new SelectItem(EjdConstants.BRAND_DELONGHI_NAME.toString(),EjdConstants.BRAND_DELONGHI_LABEL),
-	};
+	private SelectItem[] brandCodeItems;
 
 	public SelectItem[] getBrandCodeItems() {
 		return brandCodeItems;
 	}
 
-	public static void setBrandCodeItems(SelectItem[] brandCodeItems) {
-		ExistHouseholdApplianceElectricIronProductBrandBean.brandCodeItems = brandCodeItems;
+	public void setBrandCodeItems(SelectItem[] brandCodeItems) {
+		this.brandCodeItems = brandCodeItems;
 	}
 	
 	public ExistHouseholdApplianceElectricIronProductBrandBean() {
-		
+		IProductService productService = (IProductService) SpringFacesUtil.getSpringBean("productService");
+		List<String> brandList =  new ArrayList<String>();
+		HeaderTabPanelBean headerTabPanel = (HeaderTabPanelBean) SpringFacesUtil.getManagedBean(ManageBeanConstants.HEADER_TABPANEL_BEAN_NAME);
+		List<MenuItem> subMenu = headerTabPanel.getHouseholdAppliance().getSubMenu();
+		MenuItem paraItem = HeaderMenuUtil.getMenuItemByName(HeaderConstants.HOUSEHOLD_APPLIANCE_ELECTRIC_IRON_NAME, subMenu);
+		try {
+			brandList = productService.getBrandCodeListByCategory(paraItem.getIdFirst(), paraItem.getIdSecond());
+		} catch (ProductException e) {
+			
+		}
+		ProductBrandUtil productBrandUtil = (ProductBrandUtil) SpringFacesUtil.getSpringBean("productBrandUtil");
+		SelectItem[] result = null;
+		result = productBrandUtil.getBrandCodeItem(brandList);
+		this.setBrandCodeItems(result);
 	}
 
 }
