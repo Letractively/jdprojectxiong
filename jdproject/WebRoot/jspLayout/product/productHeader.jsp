@@ -14,20 +14,22 @@ xmlns:rich="http://richfaces.org/rich">
 					
 					<rich:tab onclick="alert('\\'Canon\\' tab clicked');" disabled="#{headerTabPanel.disabledTabName == 'kitchenAppliance'}" name="#{headerTabPanel.kitchenAppliance.mainMenu.name}" label="#{headerTabPanel.kitchenAppliance.mainMenu.label}" reRender="s1,s2" labelWidth="88px">
 						<a4j:region id="kitchenApplianceHeaderRegion" renderRegionOnly="false" selfRendered="true">
-							<rich:panel id="kitchenApplianceHeaderRegionPanel" style="width:100%;" styleClass="rich-tabpanel-panel-grid">
+							<rich:panel id="kitchenApplianceHeaderRegionPanel" style="width:100%;" styleClass="rich-tabpanel-panel-grid" bodyClass="rich-tabpanel-content-text">
 								<a4j:repeat id="kitchenApplianceRep" value="#{headerTabPanel.kitchenAppliance.subMenu}" var="kitchenApplianceSubMenu">
-									<span>
-									<h:commandLink action="#{headerTabPanel.gotoProduct}" value="#{kitchenApplianceSubMenu.label}" immediate="true">
+									<span style="rich-tabpanel-content-text">
+									<a4j:commandLink action="#{headerTabPanel.gotoProduct}" value="#{kitchenApplianceSubMenu.label}" immediate="true" style="color:black;font-family:Courier;font-size:14px;width:90">
 								
 										<f:param name="idFirst" value="#{kitchenApplianceSubMenu.idFirst}"></f:param>
 										<f:param name="idSecond" value="#{kitchenApplianceSubMenu.idSecond}"></f:param>
 										<f:param name="productType" value="#{kitchenApplianceSubMenu.name}"></f:param>
 								
-									</h:commandLink>
+									</a4j:commandLink>
 									</span>
 								</a4j:repeat>
+								
 							</rich:panel>
 						</a4j:region>
+						
 					</rich:tab>
 					<rich:tab disabled="#{headerTabPanel.disabledTabName == 'householdAppliance'}" name="#{headerTabPanel.householdAppliance.mainMenu.name}" label="#{headerTabPanel.householdAppliance.mainMenu.label}" reRender="s1,s2" labelWidth="88px">
 						<a4j:repeat id="householdApplianceRep" value="#{headerTabPanel.householdAppliance.subMenu}" var="householdApplianceSubMenu">
