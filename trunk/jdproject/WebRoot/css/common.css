@@ -305,14 +305,19 @@ input, select, textarea, button, keygen, isindex, legend, a {
 	font-family: Verdana, Arial;
 	font-size:15pt;
 	height:25px;
+	border-left: 300px solid #FFFFFF;
+	border-top: 0px solid #FFFFFF;
+   	border-right: 0px solid #FFFFFF;
+   	border-bottom: 0px  solid #FFFFFF;
+   	border-color: #FFFFFF;
+   	border-style: double;
 }
 
 .active_tab {
 	background-position : top left;
-	border-width: 1px 1px 0px 1px;
+	border-width: 0px 0px 0px 0px;
 	font-weight: bold;
 	font-size: 14px;
-	border-color: #D62F33;
 }
 .inactive_tab {
 	background-position : top left;
@@ -1073,46 +1078,52 @@ div.reviews{margin:5px 0}
 }
 .bold {
 				font:bold 100%;
-				font-size:12pt;
+				font-size:12px;
 				font-family: Arial
 			}
 			
 			.tabClass { 
-				font-size: 10pt; 
-				font-family: fantasy; 
-				color:#006699; 
+				font-size: 12px; 
+				font-family: Arial, sans-serif; 
+				
+				border: 0px solid #FFFFFF;
+				
 			}
 			
 			.rich-tab-active {
-    			background-image: url(./images/icons/tab_panel_active.gif);
+    			background-image: url(./images/icons/tab_tile_active.jpg);
 				background-position : left top;
 				background-width:auto;
 				background-height:auto;
 				border-width: 0px 0px 0px 0px;
-				border-style:outset;
-				border-color: #D62F33;
+				border-style: none;
+				border-color: #66BFEC;
 				background-repeat: repeat-y;
 				background-attachment:fixed;
 				font-size:14px;
 				font-weight:bold;
-				font-color:#FFFFFF;
+				color: #006699;
 			}
 			
 			.rich-tab-inactive {
-    			background-image: url(./images/icons/tab_panel_inactive.gif);
+    			background-image: url(./images/icons/header_menu.gif);
     			background-position: top left;
+    			border-style: none;
     			border-width: 0px 0px 0px 0px;
-    			border-style:groove;
-    			border-color: #FFFFFF;
-				background-repeat: repeat-y;
+    			border-color:#FFFFFF;
+    			background-repeat: repeat-y;
 				background-attachment:fixed;
 				font-size:13px;
 				font-weight:bold;
+				color: #666;
 			}
 			.rich-tab-label{
 			
 			}
-			
+			.rich-tabhdr-side-border {
+				border-width:10px;
+				border-color:#FFFFFF;
+			}
 			.rich-tab-disabled {
 				font-size: 12px; 
 				font-family: fantasy; 
@@ -1123,6 +1134,11 @@ div.reviews{margin:5px 0}
 				padding: 0px 0px 0px 0px;
 				margin:0px 0px 0px 0px;
 			}
+			.rich-tabpanel {
+				padding:0px 0px 0px 0px;
+				margin:0px 0px 0px 0px;
+				border: 0px solid #66BFEC;
+			}
 			
 			.rich-tabpanel-content-position {
 				top: 0px;
@@ -1132,15 +1148,22 @@ div.reviews{margin:5px 0}
 			.rich-tabpanel-content {
 				padding:0px 0px 0px 0px;
 				margin:0px 0px 0px 0px;
-				border-width: 2px; 
+				border-width: 0px; 
 				border-color:#66BFEC;
 				background-image: url(./images/icons/tab_comtent.jpg);
+				background-color:#66BFEC;
 				height:45px;
 			}.header-menu-btn {
-				padding:3px 8px 3px 8px;
-				margin:1px 1px 1px 1px;
+				padding:0px 0px 0px 0px;
+				margin:0px 0px 0px 0px;
 				border-width: 0px 0px 0px 0px;
 				border-style:outset;
+				background-image: url(./images/icons/tab_comtent.jpg);
+				background-repeat: repeat-x;
+			}
+			.rich-tabpanel-panel-grid {
+				padding:0px 0px 0px 0px;
+				margin:0px 0px 0px 0px;
 				background-image: url(./images/icons/tab_comtent.jpg);
 				background-repeat: repeat-x;
 			}
