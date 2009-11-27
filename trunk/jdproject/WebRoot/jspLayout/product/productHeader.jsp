@@ -9,22 +9,25 @@ xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
 <f:subview id="headerMainView">
 <h:form id="headerMainform"> 
-				<rich:tabPanel valueChangeListener="#{headerTabPanel.valueChanged}" headerSpacing="0px" immediate="false" headerClass="rich-tab-header" tabClass="tabClass" activeTabClass="italic" width="100%" switchType="ajax" binding="#{headerTabPanel.tabPanel}" selectedTab="#{headerTabPanel.currentTab}" id="tab_panel" headerAlignment="left" height="50px;">
+				<rich:tabPanel valueChangeListener="#{headerTabPanel.valueChanged}" headerSpacing="2px" immediate="false" headerClass="rich-tab-header" tabClass="tabClass" activeTabClass="rich-tab-active" width="100%" switchType="ajax" binding="#{headerTabPanel.tabPanel}" selectedTab="#{headerTabPanel.currentTab}" id="tab_panel" headerAlignment="left" height="50px;">
 					<f:valueChangeListener type="com.ejd.web.vo.richfaces.header.HeaderTabChangeListener"/>
 					
 					<rich:tab onclick="alert('\\'Canon\\' tab clicked');" disabled="#{headerTabPanel.disabledTabName == 'kitchenAppliance'}" name="#{headerTabPanel.kitchenAppliance.mainMenu.name}" label="#{headerTabPanel.kitchenAppliance.mainMenu.label}" reRender="s1,s2" labelWidth="88px">
-						<a4j:repeat id="kitchenApplianceRep" value="#{headerTabPanel.kitchenAppliance.subMenu}" var="kitchenApplianceSubMenu">
-							<span class="header-menu-btn">
-							<h:commandLink action="#{headerTabPanel.gotoProduct}" value="#{kitchenApplianceSubMenu.label}" immediate="true">
+						<a4j:region id="kitchenApplianceHeaderRegion" renderRegionOnly="false" selfRendered="true">
+							<rich:panel id="kitchenApplianceHeaderRegionPanel" style="width:100%;" styleClass="rich-tabpanel-panel-grid">
+								<a4j:repeat id="kitchenApplianceRep" value="#{headerTabPanel.kitchenAppliance.subMenu}" var="kitchenApplianceSubMenu">
+									<span>
+									<h:commandLink action="#{headerTabPanel.gotoProduct}" value="#{kitchenApplianceSubMenu.label}" immediate="true">
 								
-								<f:param name="idFirst" value="#{kitchenApplianceSubMenu.idFirst}"></f:param>
-									<f:param name="idSecond" value="#{kitchenApplianceSubMenu.idSecond}"></f:param>
-									<f:param name="productType" value="#{kitchenApplianceSubMenu.name}"></f:param>
+										<f:param name="idFirst" value="#{kitchenApplianceSubMenu.idFirst}"></f:param>
+										<f:param name="idSecond" value="#{kitchenApplianceSubMenu.idSecond}"></f:param>
+										<f:param name="productType" value="#{kitchenApplianceSubMenu.name}"></f:param>
 								
-							</h:commandLink>
-							</span>
-						</a4j:repeat>
-						
+									</h:commandLink>
+									</span>
+								</a4j:repeat>
+							</rich:panel>
+						</a4j:region>
 					</rich:tab>
 					<rich:tab disabled="#{headerTabPanel.disabledTabName == 'householdAppliance'}" name="#{headerTabPanel.householdAppliance.mainMenu.name}" label="#{headerTabPanel.householdAppliance.mainMenu.label}" reRender="s1,s2" labelWidth="88px">
 						<a4j:repeat id="householdApplianceRep" value="#{headerTabPanel.householdAppliance.subMenu}" var="householdApplianceSubMenu">
