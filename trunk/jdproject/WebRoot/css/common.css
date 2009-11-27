@@ -1083,10 +1083,9 @@ div.reviews{margin:5px 0}
 			}
 			
 			.tabClass { 
-				font-size: 12px; 
+				font-size: 16px; 
 				font-family: Arial, sans-serif; 
-				
-				border: 0px solid #FFFFFF;
+				border: 10px solid #FFFFFF;
 				
 			}
 			
@@ -1100,7 +1099,7 @@ div.reviews{margin:5px 0}
 				border-color: #66BFEC;
 				background-repeat: repeat-y;
 				background-attachment:fixed;
-				font-size:14px;
+				font-size:15px;
 				font-weight:bold;
 				color: #006699;
 			}
@@ -1113,7 +1112,7 @@ div.reviews{margin:5px 0}
     			border-color:#FFFFFF;
     			background-repeat: repeat-y;
 				background-attachment:fixed;
-				font-size:13px;
+				font-size:14px;
 				font-weight:bold;
 				color: #666;
 			}
@@ -1165,7 +1164,14 @@ div.reviews{margin:5px 0}
 				padding:0px 0px 0px 0px;
 				margin:0px 0px 0px 0px;
 				background-image: url(./images/icons/tab_comtent.jpg);
-				background-repeat: repeat-x;
+				background-repeat: repeat;
+			}
+			.rich-tabpanel-content-text {
+				font-family: Arial, sans-serif;
+				font-color: #FFFFFF;
+				font-size:14px;
+  				font-weight: bold;
+  				text-align: left; 
 			}
 			
 			
