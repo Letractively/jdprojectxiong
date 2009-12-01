@@ -1,0 +1,9 @@
+.mouseOut {
+	BACKGROUND: #003399; COLOR: #ffffff
+}
+.mouseOverKey {
+	BACKGROUND: #ffffff; COLOR: #000000
+}
+.mouseOverValue {
+	BACKGROUND: #ffffff; COLOR: green
+}
