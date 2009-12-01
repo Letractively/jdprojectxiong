@@ -75,7 +75,7 @@ xmlns:rich="http://richfaces.org/rich">
 		      align="center" border="0">
 		        <tbody>
 		        <tr>
-		          <td width="74"><span class="fontb_1">商品搜索:</span></td>
+		          <td width="74"><span class="fontb_1">商品搜索:</span></td> 
 		          <td width="160"><h:inputText id="productSearchId" value=""></h:inputText>
 		          </td>
 		          <td width="100">
