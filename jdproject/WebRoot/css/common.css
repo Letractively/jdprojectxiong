@@ -625,7 +625,7 @@ div.reviews{margin:5px 0}
 
 /* define self */
 .headerStyle  {align:center; border:3; cellpadding:0; cellspacing:0; width:100%}
-.contentStyle  {align:left; border:3; cellpadding:0; cellspacing:0; width:100%}
+.contentStyle  {align:center; border:3; cellpadding:0; cellspacing:0; width:100%;}
 .headerLeftRightStyle  {border-bottom: 0px solid black; width:50%}
 .headerMiddleStyle  {nowrap:nowrap}
 .allStyle {width:90%;align:center}
@@ -1181,6 +1181,11 @@ div.reviews{margin:5px 0}
   border-width: 0px 0px 0px 0px;
   
 }
+.template-left {
+  font-size: 10pt;
+  vertical-align:top;
+  width:16%;
+}
 .template-content {
   font-size: 10pt;
   vertical-align:top;
@@ -1189,12 +1194,12 @@ div.reviews{margin:5px 0}
   margin-right-width:0px;
   margin-bottom-width:0px;
   margin-left-width:0px;
-  width:75%;
+  width:68%;
 }
 .template-right {
   font-size: 10pt;
   vertical-align:top;
-  width:25%;
+  width:16%;
 }
 .template-column {
   font-size: 10pt;
