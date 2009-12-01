@@ -10,19 +10,13 @@ xmlns:rich="http://richfaces.org/rich">
 <f:subview id="manageTemplateView">
 <script src="${facesContext.externalContext.requestContextPath}/css/common.js" type="text/javascript"></script>
 <link rel="STYLESHEET" type="text/css" href="${facesContext.externalContext.requestContextPath}/css/common.css"/>
-<h:panelGrid columns="1" style="width:100%;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px">
-	<ui:insert name="manageOneHeader">
-		<f:subview id="manageHeaderOneView">
-			<ui:include src="./productHeaderOne.jsp" />
-		</f:subview>
-	</ui:insert>
-	<ui:insert name="manageTwoHeader">
-		<f:subview id="manageHeaderTwoView">
-			<ui:include src="./productHeaderTwo.jsp" />
-		</f:subview>
-	</ui:insert>
+<link rel="STYLESHEET" type="text/css" href="${facesContext.externalContext.requestContextPath}/css/top.css"/>
+<link rel="STYLESHEET" type="text/css" href="${facesContext.externalContext.requestContextPath}/css/style.css"/>
+<link rel="STYLESHEET" type="text/css" href="${facesContext.externalContext.requestContextPath}/css/index.css"/>
+<link rel="STYLESHEET" type="text/css" href="${facesContext.externalContext.requestContextPath}/css/css.css"/>
+<h:panelGrid columns="1" style="width:100%;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px;">
 	<h:panelGrid columns="1" cellpadding="0" cellspacing="0" border="0" style="width:100%;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px">
-	<h:panelGrid columns="1" cellpadding="0" cellspacing="0" border="0" styleClass="headerStyle" columnClasses="headerLeftRightStyle,headerMiddleStyle,headerLeftRightStyle">
+	<h:panelGrid columns="1" cellpadding="0" cellspacing="0" border="0" style="width:100%;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px" styleClass="headerStyle" columnClasses="headerLeftRightStyle,headerMiddleStyle,headerLeftRightStyle">
 	    <ui:insert name="manageHeaderMainLeft">
 	    	<f:subview id="manageHeaderMainView1">
 	    		<h:graphicImage url="/css/images/spacer.gif" style="width:100%; height:1"></h:graphicImage>
@@ -56,8 +50,14 @@ xmlns:rich="http://richfaces.org/rich">
 	</ui:insert>
 </h:panelGrid>
 
-<h:panelGrid columns="2" styleClass="contentStyle" columnClasses="template-content,template-right">
-	
+<h:panelGrid columns="3" styleClass="contentStyle" columnClasses="template-left,template-content,template-right">
+	<h:panelGroup id="template-left">
+		<ui:insert name="left">
+			<f:subview id="leftview">
+				<h:outputText value="lefttext"></h:outputText>
+			</f:subview>
+		</ui:insert>
+	</h:panelGroup>
 	<h:panelGroup id="template-content">
 		<ui:insert name="productSearchNavigation">
 			<f:subview id="productSearchNavigationView">
