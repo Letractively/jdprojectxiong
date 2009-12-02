@@ -14,19 +14,18 @@ xmlns:rich="http://richfaces.org/rich">
 		<tbody>
 		  <tr>
 		    <td vAlign="top" align="left">
-		      <table class="logo" height="59" cellSpacing="0" cellPadding="0" width="100%" 
-		      align="center" border="0">
+		      <table class="logo" height="59" cellSpacing="0" cellPadding="0" width="100%" align="center" border="0">
 		        <tbody>
 		        <tr>
 		          <td vAlign="bottom" align="left">
-		            <table height="30" cellSpacing="0" cellPadding="0" width="1000" border="0">
+		            <table height="30" cellSpacing="0" cellPadding="0" align="center" width="80%" border="0">
 		              <tbody>
 		              <tr>
-		                <td class="font1" align="right" width="423"></td>
-		                <td class="font1" align="left" width="280"><span class="font2_1" 
+		                <td class="font1" align="right" width="42%"></td>
+		                <td class="font1" align="left" width="28%"><span class="font2_1" 
 		                  id="loginDiv"></span>
 		                </td>
-		                <td class="font1" align="right" width="271"><a class="font1" 
+		                <td class="font1" align="right" width="27%"><a class="font1" 
 		                  href="http://www.xinhuabookstore.com/customer/">我的帐户</a> - <a 
 		                  class="font1" 
 		                  href="http://www.xinhuabookstore.com/customer/register/register.jsp">新用户注册</a> 
@@ -34,11 +33,14 @@ xmlns:rich="http://richfaces.org/rich">
 		                  href="http://www.xinhuabookstore.com/help/">新手上路</a> - <a 
 		                  class="font1" 
 		                  href="http://www.xinhuabookstore.com/help/shoppingdemo/">购物演示</a></td>
-		                <td width="26"></td></tr></tbody></table>
-		            <table height="26" cellSpacing="0" cellPadding="0" width="1000" border="0">
+		                <td width="3%"></td>
+		              </tr>
+		              </tbody>
+		            </table>
+		            <table height="26" cellSpacing="0" cellPadding="0" align="center" width="80%" border="0">
 		              <tbody>
 		              <tr>
-		                <td width="400"></td>
+		                <td width="40%"></td>
 		                <td vAlign="bottom" width="21"><img height="26" 
 		                  src="${facesContext.externalContext.requestContextPath}/css/images/icons/top_01.gif" width="21"/></td>
 		                <td vAlign="bottom" background="${facesContext.externalContext.requestContextPath}/css/images/icons/top_bg3.jpg">
@@ -68,10 +70,21 @@ xmlns:rich="http://richfaces.org/rich">
 		                      <td class="top_line" vAlign="bottom" align="middle"></td>
 		                      <td id="tbottom6" onmouseover="changeTopCss(this)" 
 		                      vAlign="bottom" align="middle"><a class="font_top" 
-		                        href="http://www.xinhuabookstore.com/help/"><strong>帮助中心</strong></a></td></tr></tbody></table></td>
+		                        href="http://www.xinhuabookstore.com/help/"><strong>帮助中心</strong></a></td>
+		                     </tr>
+		                     </tbody>
+		                   </table>
+		                 </td>
 		                <td width="21"><img height="26" src="${facesContext.externalContext.requestContextPath}/css/images/icons/top_02.jpg" 
-		                  width="21"/></td></tr></tbody></table></td></tr></tbody></table>
-		      <table class="top_bg2" height="42" cellSpacing="0" cellPadding="0" width="980" 
+		                  width="21"/></td>
+		                </tr>
+		                </tbody>
+		               </table>
+		             </td>
+		           </tr>
+		           </tbody>
+		      </table>
+		      <table class="top_bg2" height="42" cellSpacing="0" cellPadding="0" width="100%" 
 		      align="center" border="0">
 		        <tbody>
 		        <tr>
