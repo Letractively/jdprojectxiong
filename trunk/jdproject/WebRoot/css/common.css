@@ -764,6 +764,15 @@ div.reviews{margin:5px 0}
 	BORDER-LEFT: 0px none #FFFFFF; 
 	BORDER-BOTTOM: 0px none #FFFFFF;
 }
+.table-list-product-left-panel-grid-column {
+  	font-size: 12pt;
+  	align: left;
+  	width:25%;
+  	BORDER-RIGHT: 0px none #FFFFFF ; 
+  	BORDER-TOP: 0px none #FFFFFF; 
+	BORDER-LEFT: 0px none #FFFFFF; 
+	BORDER-BOTTOM: 0px none #FFFFFF;
+}
 
 .table-list-product-panel-grid-header {
 	background-image: url(../css/images/icons/pp_bg.gif); 
@@ -805,6 +814,13 @@ div.reviews{margin:5px 0}
 	BORDER-TOP: 0px none #FFFFFF; 
 	BORDER-LEFT: 0px none #FFFFFF; 
 	BORDER-BOTTOM: 0px none #FFFFFF;
+	}
+.navigation-left-kitchen_appliance-product-panel-grid-data-grid {
+	BORDER-RIGHT: 0px none #FFFFFF ; 
+	BORDER-TOP: 0px none #FFFFFF; 
+	BORDER-LEFT: 0px none #FFFFFF; 
+	BORDER-BOTTOM: 0px none #FFFFFF;
+	background-color: #ffffe8;
 	}
 
 .page-header {
@@ -1222,6 +1238,19 @@ div.reviews{margin:5px 0}
   background-repeat: repeat;
   background-position : top left;
 }
+.kitchen-appliance-left-navigation-panel-bar-item-header {
+  padding:0px 0px 0px 0px;
+  margin:0px 0px 0px 0px;
+  height:25px;
+  font-size: 14px; 
+  color: #ffffff;
+  line-height: 24px; 
+  text-indent: 1mm;
+  font-family: "宋体";
+  background-image: url(../css/images/icons/l_t03.jpg);
+  background-repeat: repeat;
+  background-position : top left;
+}
 .navigation-panel-bar-left-header {
   top: 20px;
   left: 20px;
@@ -1233,6 +1262,14 @@ div.reviews{margin:5px 0}
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
 	border-width:1px;
+	border-color:#ff9900;
+	}
+.panel-bar-product-top {
+	width: auto;height: auto;
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	border-width:1px;
+	border-color:#a1d04e;
 	}
 .operate_title{position:relative;height:29px;background:url(./images/icons/woye_img_x.gif) left -284px repeat-x;border:1px #e3e3e3 solid;z-index:100;}
 
