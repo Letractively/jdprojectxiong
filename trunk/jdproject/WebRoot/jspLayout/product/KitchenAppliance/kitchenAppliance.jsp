@@ -14,15 +14,19 @@ xmlns:rich="http://richfaces.org/rich">
     </head>
     <body>
     	<ui:composition template="../productTemplate.jsp">
+    		<ui:define id="kitchenApplianceLeft" name="left">
+    			<ui:include id="kitchenApplianceLeftInclude" src="./navigationLeftKitchenAppliance.jsp">
+    			</ui:include>
+    		</ui:define>
     		<ui:define id="kitchenApplianceSearchNavigation" name="productSearchNavigation">
 				<a4j:region id="kitchenApplianceSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="kitchenApplianceSearchNavigationRegionForm">
-    			<rich:panelBar id="kitchenAppliancepb" styleClass="panel-bar-product-left" contentStyle="background:none;">
+    			<rich:panelBar id="kitchenAppliancepb" styleClass="panel-bar-product-top" contentStyle="background:none;">
     				<rich:panelBarItem id="kitchenAppliancePbi" headerClass="navigation-panel-bar-item-left-header">
     				<f:facet name="label">
     					<h:outputText value=""></h:outputText>
     				</f:facet>
-						<ui:include id="phoneinp12" src="./navigationKitchenAppliance.jsp">
+						<ui:include id="phoneinp12" src="./navigationTopKitchenAppliance.jsp">
 							<ui:param name="brands" value="#{navigationKitchenAppliance.brandCodeItems}" />
 							<ui:param name="secondCategorys" value="#{navigationKitchenAppliance.secondCategoryCodeList}" />
 						</ui:include>
