@@ -13,7 +13,7 @@ xmlns:rich="http://richfaces.org/rich">
 			<rich:panelBar id="kitchenApplianceLeftPb" styleClass="panel-bar-product-left" contentStyle="BACKGROUND-COLOR: #ffffe8">
     				<rich:panelBarItem id="kitchenApplianceLeftPbi" headerClass="kitchen-appliance-left-navigation-panel-bar-item-header">
     				<f:facet name="label">
-    					<h:outputText value="当前分类:#{headerTabPanel.kitchenAppliance.mainMenu.label}"></h:outputText>
+    					<h:outputText value="#{headerTabPanel.kitchenAppliance.mainMenu.label}"></h:outputText>
     				</f:facet>
     				<rich:dataGrid columns="2" value="#{headerTabPanel.kitchenAppliance.subMenu}" var="kitchenApplianceSubMenu" columnClasses="table-list-product-left-panel-grid-column" styleClass="navigation-left-kitchen_appliance-product-panel-grid-data-grid">
     					<a4j:commandLink action="#{headerTabPanel.gotoProduct}" styleClass="font3b" value="#{kitchenApplianceSubMenu.label}" immediate="true">
