@@ -27,6 +27,7 @@ public class KitchenApplianceProductBean extends PagedBaseBean {
 	public String currentTitleOne;
 	public String currentTitleTwo;
 	public String model;
+	public String productType;
 	//start for search property
 	private String primaryCategoryCode;
 	private String secondCategoryCode;
@@ -48,12 +49,16 @@ public class KitchenApplianceProductBean extends PagedBaseBean {
 		this.styleFont = "";
 		this.styleImg = "_on";
 		this.primaryCategoryCode = HeaderConstants.KITCHEN_APPLIANCE_ID;
+		this.setBrandCode("");
+		this.setProductType(HeaderConstants.KITCHEN_APPLIANCE_NAME);
 	}
 	public int getTotalCount() {
 		int totalCount = 0;
 		List alist= new ArrayList();
 		try {
-		alist = this.getProductService().getKitchenApplianceProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange);
+			if (HeaderConstants.KITCHEN_APPLIANCE_NAME.equals(productType)) {
+				alist = this.getProductService().getKitchenApplianceProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange);
+			}
 		} catch (ProductException e) {
 			e.printStackTrace();
 		}
@@ -64,7 +69,9 @@ public class KitchenApplianceProductBean extends PagedBaseBean {
 	public DataPage<Product> getDataPage(int startRow, int pageSize) {
 		DataPage<Product> dataPage = null;
 		try {
-		dataPage = new DataPage<Product>(getTotalCount(), startRow,this.getProductService().getKitchenApplianceProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange));
+			if (HeaderConstants.KITCHEN_APPLIANCE_NAME.equals(productType)) {
+				dataPage = new DataPage<Product>(getTotalCount(), startRow,this.getProductService().getKitchenApplianceProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange));
+			}
 		} catch (ProductException e) {
 			e.printStackTrace();
 		}
@@ -107,6 +114,12 @@ public class KitchenApplianceProductBean extends PagedBaseBean {
 		this.model = model;
 	}
 	
+	public String getProductType() {
+		return productType;
+	}
+	public void setProductType(String productType) {
+		this.productType = productType;
+	}
 	public String getPrimaryCategoryCode() {
 		return primaryCategoryCode;
 	}
