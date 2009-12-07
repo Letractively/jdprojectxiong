@@ -257,6 +257,15 @@ input, select, textarea, button, keygen, isindex, legend, a {
 	vAlign: center; 
 	align:left; 
 }
+selected-new-span A:link {
+	PADDING-RIGHT: 3px; DISPLAY: block; PADDING-LEFT: 3px; BACKGROUND: #6aa619; PADDING-BOTTOM: 0px; COLOR: #fff; PADDING-TOP: 0px;font-size:16px;
+}
+selected-new-span A:visited {
+	PADDING-RIGHT: 3px; DISPLAY: block; PADDING-LEFT: 3px; BACKGROUND: #6aa619; PADDING-BOTTOM: 0px; COLOR: #fff; PADDING-TOP: 0px;font-size:16px;
+}
+selected-new-span A:hover {
+	TEXT-DECORATION: none
+}
  .ico{
 	cursor : pointer;
 	padding-top:1px;
