@@ -75,6 +75,26 @@
 	<managed-bean-class>com.ejd.web.vo.genl.ExistProductStatusBean</managed-bean-class>
 	<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existInductionCookerPanelType</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistInductionCookerPanelTypeBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existInductionCookerFitting</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistInductionCookerFittingBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existElectronicOvenHotType</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistElectronicOvenHotTypeBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existElectricPressureCookerControlType</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistElectricPressureCookerControlTypeBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 	<!-- start primary product category -->
 	<managed-bean>
 	<managed-bean-name>existProductPrimaryCategory</managed-bean-name>
