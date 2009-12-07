@@ -7,7 +7,9 @@ import javax.faces.event.ValueChangeEvent;
 
 import org.richfaces.component.UITabPanel;
 
+import com.ejd.common.constant.ManageBeanConstants;
 import com.ejd.utils.SpringFacesUtil;
+import com.ejd.web.vo.product.kitchenappliance.KitchenApplianceProductBean;
 import com.ejd.web.vo.richfaces.header.HeaderConstants;
 
 public class HeaderTabPanelBean {
@@ -309,13 +311,20 @@ public class HeaderTabPanelBean {
 	
 	//redirt
 	public String gotoProduct(){
-		String aa = (String) SpringFacesUtil.getRequestParameter("idFirst");
-		String bb = (String) SpringFacesUtil.getRequestParameter("idSecond");
-		String dd = (String) SpringFacesUtil.getRequestParameter("productType");
-		System.out.println(aa);
-		System.out.println(bb);
-		System.out.println(dd);
-		return dd;
+		String idFirst = (String) SpringFacesUtil.getRequestParameter("idFirst");
+		String idSecond = (String) SpringFacesUtil.getRequestParameter("idSecond");
+		String productType = (String) SpringFacesUtil.getRequestParameter("productType");
+		System.out.println(idFirst);
+		System.out.println(idSecond);
+		System.out.println(productType);
+		if (HeaderConstants.KITCHEN_APPLIANCE_ID.equals(idFirst)) {
+			KitchenApplianceProductBean kitchenApplianceProduct = (KitchenApplianceProductBean)SpringFacesUtil.getManagedBean(ManageBeanConstants.LIST_KITCHEN_APPLIANCE_PRODUCT_BEAN_NAME);
+			kitchenApplianceProduct.setPrimaryCategoryCode(idFirst);
+			kitchenApplianceProduct.setSecondCategoryCode(idSecond);
+			kitchenApplianceProduct.setProductType(productType);
+			kitchenApplianceProduct.setBrandCode("");
+		}
+		return null;
 	}
 	
 
