@@ -17,31 +17,31 @@ public class ProductCategoryUtil {
 	public static SelectItem[] selectProductSecondCategoryByPrimaryCategory(String primaryCategoryName) {
 		SelectItem[] result = new SelectItem[1];
 		result[0] = new SelectItem("","kitchenAppliance","kitchenAppliance");
-		if (HeaderConstants.KITCHEN_APPLIANCE_NAME.equals(primaryCategoryName)) {
+		if (HeaderConstants.KITCHEN_APPLIANCE_NAME.equals(primaryCategoryName) || (HeaderConstants.KITCHEN_APPLIANCE_ID.equals(primaryCategoryName))) {
 			ExistKitchenApplianceProductSecondCategoryBean existKitchenApplianceProductSecondCategory = (ExistKitchenApplianceProductSecondCategoryBean)SpringFacesUtil.getManagedBean(ManageBeanConstants.EXIST_KITCHEN_APPLIANCE_PRODUCT_SECOND_CATEGORY_BEAN_NAME);
 			return existKitchenApplianceProductSecondCategory.getSecondCategoryCodeItems();
 		}
-		if (HeaderConstants.HOUSEHOLD_APPLIANCE_NAME.equals(primaryCategoryName)) {
+		if (HeaderConstants.HOUSEHOLD_APPLIANCE_NAME.equals(primaryCategoryName) || (HeaderConstants.HOUSEHOLD_APPLIANCE_ID.equals(primaryCategoryName))) {
 			ExistHouseholdApplianceProductSecondCategoryBean existHouseholdApplianceProductSecondCategory = (ExistHouseholdApplianceProductSecondCategoryBean)SpringFacesUtil.getManagedBean(ManageBeanConstants.EXIST_HOUSEHOLD_APPLIANCE_PRODUCT_SECOND_CATEGORY_BEAN_NAME);
 			return existHouseholdApplianceProductSecondCategory.getSecondCategoryCodeItems();
 		}
-		if (HeaderConstants.PERSONAL_CARE_NAME.equals(primaryCategoryName)) {
+		if (HeaderConstants.PERSONAL_CARE_NAME.equals(primaryCategoryName) || (HeaderConstants.PERSONAL_CARE_ID.equals(primaryCategoryName))) {
 			ExistPersonalCareProductSecondCategoryBean existPersonalCareProductSecondCategory = (ExistPersonalCareProductSecondCategoryBean)SpringFacesUtil.getManagedBean(ManageBeanConstants.EXIST_PERSONAL_CARE_PRODUCT_SECOND_CATEGORY_BEAN_NAME);
 			return existPersonalCareProductSecondCategory.getSecondCategoryCodeItems();
 		}
-		if (HeaderConstants.HEALTH_DEVICE_NAME.equals(primaryCategoryName)) {
+		if (HeaderConstants.HEALTH_DEVICE_NAME.equals(primaryCategoryName) || (HeaderConstants.HEALTH_DEVICE_ID.equals(primaryCategoryName))) {
 			ExistHealthDeviceProductSecondCategoryBean existHealthDeviceProductSecondCategory = (ExistHealthDeviceProductSecondCategoryBean)SpringFacesUtil.getManagedBean(ManageBeanConstants.EXIST_HEALTH_DEVICE_PRODUCT_SECOND_CATEGORY_BEAN_NAME);
 			return existHealthDeviceProductSecondCategory.getSecondCategoryCodeItems();
 		}
-		if (HeaderConstants.MAJOR_APPLIANCE_NAME.equals(primaryCategoryName)) {
+		if (HeaderConstants.MAJOR_APPLIANCE_NAME.equals(primaryCategoryName) || (HeaderConstants.MAJOR_APPLIANCE_ID.equals(primaryCategoryName))) {
 			ExistMajorApplianceProductSecondCategoryBean existMajorApplianceProductSecondCategory = (ExistMajorApplianceProductSecondCategoryBean)SpringFacesUtil.getManagedBean(ManageBeanConstants.EXIST_MAJOR_APPLIANCE_PRODUCT_SECOND_CATEGORY_BEAN_NAME);
 			return existMajorApplianceProductSecondCategory.getSecondCategoryCodeItems();
 		}
-		if (HeaderConstants.PHONE_DIGITAL_NAME.equals(primaryCategoryName)) {
+		if (HeaderConstants.PHONE_DIGITAL_NAME.equals(primaryCategoryName) || (HeaderConstants.PHONE_DIGITAL_ID.equals(primaryCategoryName))) {
 			ExistPhoneDigitalProductSecondCategoryBean existPhoneDigitalProductSecondCategory = (ExistPhoneDigitalProductSecondCategoryBean)SpringFacesUtil.getManagedBean(ManageBeanConstants.EXIST_PHONE_DIGITAL_PRODUCT_SECOND_CATEGORY_BEAN_NAME);
 			return existPhoneDigitalProductSecondCategory.getSecondCategoryCodeItems();
 		}
-		if (HeaderConstants.COMPUTER_NETWORK_NAME.equals(primaryCategoryName)) {
+		if (HeaderConstants.COMPUTER_NETWORK_NAME.equals(primaryCategoryName) || (HeaderConstants.COMPUTER_NETWORK_ID.equals(primaryCategoryName))) {
 			ExistComputerNetworkProductSecondCategoryBean existComputerNetworkProductSecondCategory = (ExistComputerNetworkProductSecondCategoryBean)SpringFacesUtil.getManagedBean(ManageBeanConstants.EXIST_COMPUTER_NETWORK_PRODUCT_SECOND_CATEGORY_BEAN_NAME);
 			return existComputerNetworkProductSecondCategory.getSecondCategoryCodeItems();
 		}
