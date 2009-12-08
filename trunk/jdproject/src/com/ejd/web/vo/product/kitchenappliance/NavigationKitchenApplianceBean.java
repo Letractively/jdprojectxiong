@@ -35,6 +35,8 @@ public String clickLink() {
 		
 		Object secondCategoryCode = SpringFacesUtil.getRequestParameter("secondCategoryCode");
 		Object brandCode = SpringFacesUtil.getRequestParameter("brandCode");
+		Object secondCategoryLabel = SpringFacesUtil.getRequestParameter("secondCategoryLabel");
+		Object brandLabel = SpringFacesUtil.getRequestParameter("brandLabel");
 		//Object model = SpringFacesUtil.getRequestParameter("model");
 		//Object minPrice = SpringFacesUtil.getRequestParameter("minPrice");
 		//Object maxPrice = SpringFacesUtil.getRequestParameter("maxPrice");
@@ -54,6 +56,12 @@ public String clickLink() {
 		}
 		if (null != secondCategoryCode) {
 			listKitchenApplianceProduct.setSecondCategoryCode((String)secondCategoryCode);
+		}
+		if (null != brandLabel) {
+			listKitchenApplianceProduct.setBrandLabel((String)brandLabel);
+		}
+		if (null != secondCategoryLabel) {
+			listKitchenApplianceProduct.setSecondCategoryLabel((String)secondCategoryLabel);
 		}
 		return null;
 	}
