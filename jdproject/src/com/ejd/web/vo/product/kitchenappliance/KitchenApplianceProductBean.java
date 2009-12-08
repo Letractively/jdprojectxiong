@@ -31,7 +31,9 @@ public class KitchenApplianceProductBean extends PagedBaseBean {
 	//start for search property
 	private String primaryCategoryCode;
 	private String secondCategoryCode;
+	private String secondCategoryLabel;
 	private String brandCode;
+	private String brandLabel;
 	private RangeParam priceRange;
 	//end for search property
 	private DataModel dataModel;
@@ -132,11 +134,25 @@ public class KitchenApplianceProductBean extends PagedBaseBean {
 	public void setSecondCategoryCode(String secondCategoryCode) {
 		this.secondCategoryCode = secondCategoryCode;
 	}
+	
+	public String getSecondCategoryLabel() {
+		return secondCategoryLabel;
+	}
+	public void setSecondCategoryLabel(String secondCategoryLabel) {
+		this.secondCategoryLabel = secondCategoryLabel;
+	}
 	public String getBrandCode() {
 		return brandCode;
 	}
 	public void setBrandCode(String brandCode) {
 		this.brandCode = brandCode;
+	}
+	
+	public String getBrandLabel() {
+		return brandLabel;
+	}
+	public void setBrandLabel(String brandLabel) {
+		this.brandLabel = brandLabel;
 	}
 	public RangeParam getPriceRange() {
 		return priceRange;
