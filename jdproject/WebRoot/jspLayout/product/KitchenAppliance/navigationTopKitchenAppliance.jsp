@@ -9,14 +9,14 @@ xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
 <ui:composition>
 <tr>
-		<td style="width:15%;text-align:left;">
-			<h:outputLabel id="brandLabel" value="品牌(#{listKitchenApplianceProduct.brandLabel}):"></h:outputLabel>
+		<td style="PADDING-LEFT: 8px;width:15%;text-align:left;">
+			<h:outputLabel value="品牌:"></h:outputLabel><h:outputLabel id="brandLabel" styleClass="current-selected" value="#{listKitchenApplianceProduct.brandLabel}"></h:outputLabel>
 		</td>
 			
 				<td class="selected-new" width="90%">
 					<a4j:repeat var="brand" rowKeyVar="index" value="#{brands}">
 					<a4j:commandLink action="#{navigationKitchenAppliance.clickLink}" ajaxSingle="true" immediate="true" limitToList="true" reRender="productList,brandLabel,secondCategoryLabel">
-						<span class="selected-new-span">
+						<span class="top-product-navigation-option">
 							#{brand.label}
 						</span>
 						<a4j:actionparam value="#{brand.value}" name="brandCode"/>
@@ -28,13 +28,13 @@ xmlns:rich="http://richfaces.org/rich">
 	</tr>
 
 <tr>
-			<td style="width:15%;text-align:left;">
-				<h:outputText id="secondCategoryLabel" value="类别(#{listKitchenApplianceProduct.secondCategoryLabel}):"></h:outputText>
+			<td style="PADDING-LEFT: 8px;width:15%;text-align:left;">
+				<h:outputLabel value="类别:"></h:outputLabel><h:outputText id="secondCategoryLabel" styleClass="current-selected" value="#{listKitchenApplianceProduct.secondCategoryLabel}"></h:outputText>
 			</td>
 			<td class="selected-new" width="90%">
 				<a4j:repeat var="secondCategory" rowKeyVar="index" value="#{secondCategorys}">
 				<a4j:commandLink action="#{navigationKitchenAppliance.clickLink}" ajaxSingle="true" immediate="true" limitToList="true" reRender="productList,brandLabel,secondCategoryLabel">
-					<span class="selected-new-span">
+					<span class="top-product-navigation-option">
 						#{secondCategory.label}
 					</span>
 					<a4j:actionparam value="#{secondCategory.idSecond}" name="secondCategoryCode"/>
