@@ -35,12 +35,17 @@ import com.ejd.web.vo.genl.ExistProductPrimaryCategoryBean;
 import com.ejd.web.vo.genl.PopupStakeholderBean;
 import com.ejd.web.vo.product.base.ProductBaseBean;
 import com.ejd.web.vo.productsub.BurntStewpot;
+import com.ejd.web.vo.productsub.DisinfectionCabinet;
 import com.ejd.web.vo.productsub.ElectricPressureCooker;
 import com.ejd.web.vo.productsub.ElectricStewPan;
+import com.ejd.web.vo.productsub.ElectricWaterHeater;
 import com.ejd.web.vo.productsub.ElectronicOven;
+import com.ejd.web.vo.productsub.GasStove;
+import com.ejd.web.vo.productsub.GasWaterHeater;
 import com.ejd.web.vo.productsub.InductionCooker;
 import com.ejd.web.vo.productsub.MicrowaveOven;
 import com.ejd.web.vo.productsub.RiceCooker;
+import com.ejd.web.vo.productsub.Ventilator;
 import com.ejd.web.vo.richfaces.header.HeaderConstants;
 import com.ejd.web.vo.stakeholder.PersonVo;
 import com.ejd.web.vo.stakeholder.StakeholderVo;
@@ -119,6 +124,53 @@ public class ProductCreateBean extends ProductBaseBean {
 		return false;
 	}
 	//end microwave oven
+	
+	//start dis infection cabinet
+	DisinfectionCabinet disinfectionCabinet = new DisinfectionCabinet();
+	public boolean getIsDisinfectionCabinet() {
+		if ((HeaderConstants.KITCHEN_APPLIANCE_ID.equals(this.getProduct().getPrimaryCategoryCode())) && (HeaderConstants.subMenu15.equals(this.getProduct().getSecondCategoryCode()))) {
+			return true;
+		}
+		return false;
+	}
+	//end dis infection cabinet
+	
+	//start gas stove
+	GasStove gasStove = new GasStove();
+	public boolean getIsGasStove() {
+		if ((HeaderConstants.KITCHEN_APPLIANCE_ID.equals(this.getProduct().getPrimaryCategoryCode())) && (HeaderConstants.subMenu21.equals(this.getProduct().getSecondCategoryCode()))) {
+			return true;
+		}
+		return false;
+	}
+	//end gas stove
+	//start gas water heater
+	GasWaterHeater gasWaterHeater = new GasWaterHeater();
+	public boolean getIsGasWaterHeater() {
+		if ((HeaderConstants.KITCHEN_APPLIANCE_ID.equals(this.getProduct().getPrimaryCategoryCode())) && (HeaderConstants.subMenu25.equals(this.getProduct().getSecondCategoryCode()))) {
+			return true;
+		}
+		return false;
+	}
+	//end gas water heater
+	//start electric water heater
+	ElectricWaterHeater electricWaterHeater = new ElectricWaterHeater();
+	public boolean getIsElectricWaterHeater() {
+		if ((HeaderConstants.KITCHEN_APPLIANCE_ID.equals(this.getProduct().getPrimaryCategoryCode())) && (HeaderConstants.subMenu26.equals(this.getProduct().getSecondCategoryCode()))) {
+			return true;
+		}
+		return false;
+	}
+	//end electric water heater
+	//ventilator
+	Ventilator ventilator = new Ventilator();
+	public boolean getIsVentilator() {
+		if ((HeaderConstants.KITCHEN_APPLIANCE_ID.equals(this.getProduct().getPrimaryCategoryCode())) && (HeaderConstants.subMenu27.equals(this.getProduct().getSecondCategoryCode()))) {
+			return true;
+		}
+		return false;
+	}
+	//ventilator
 	public ProductCreateBean() {
 		super();
 		product = new ProductVo();
@@ -219,6 +271,41 @@ public class ProductCreateBean extends ProductBaseBean {
 	public void setMicrowaveOven(MicrowaveOven microwaveOven) {
 		this.microwaveOven = microwaveOven;
 	}
+	
+	public DisinfectionCabinet getDisinfectionCabinet() {
+		return disinfectionCabinet;
+	}
+	public void setDisinfectionCabinet(DisinfectionCabinet disinfectionCabinet) {
+		this.disinfectionCabinet = disinfectionCabinet;
+	}
+	
+	public GasStove getGasStove() {
+		return gasStove;
+	}
+	public void setGasStove(GasStove gasStove) {
+		this.gasStove = gasStove;
+	}
+	
+	public GasWaterHeater getGasWaterHeater() {
+		return gasWaterHeater;
+	}
+	public void setGasWaterHeater(GasWaterHeater gasWaterHeater) {
+		this.gasWaterHeater = gasWaterHeater;
+	}
+	
+	public ElectricWaterHeater getElectricWaterHeater() {
+		return electricWaterHeater;
+	}
+	public void setElectricWaterHeater(ElectricWaterHeater electricWaterHeater) {
+		this.electricWaterHeater = electricWaterHeater;
+	}
+	
+	public Ventilator getVentilator() {
+		return ventilator;
+	}
+	public void setVentilator(Ventilator ventilator) {
+		this.ventilator = ventilator;
+	}
 	public void setProduct(ProductVo product) {
 		this.product = product;
 	}
@@ -297,6 +384,89 @@ public class ProductCreateBean extends ProductBaseBean {
 		newProduct.setTradePriceTwo(this.getProduct().getTradePriceTwo());
 		newProduct.setRetailPrice(this.getProduct().getRetailPrice());
 		newProduct.setIntroduceFileName(this.getProduct().getIntroduceFileName());
+		//start copy fields value to new product
+		newProduct.setField1(null);
+		newProduct.setField2(null);
+		newProduct.setField3(null);
+		newProduct.setField4(null);
+		newProduct.setField5(null);
+		newProduct.setField6(null);
+		newProduct.setField7(null);
+		newProduct.setField8(null);
+		newProduct.setField9(null);
+		newProduct.setField10(null);
+		if ((HeaderConstants.KITCHEN_APPLIANCE_ID.equals(this.getProduct().getPrimaryCategoryCode())) && (HeaderConstants.subMenu01.equals(this.getProduct().getSecondCategoryCode()))) {
+			BeanCopier copyBean = BeanCopier.create(RiceCooker.class, Product.class, false);
+			copyBean.copy(this.getRiceCooker(), newProduct, null);
+		}
+		if ((HeaderConstants.KITCHEN_APPLIANCE_ID.equals(this.getProduct().getPrimaryCategoryCode())) && (HeaderConstants.subMenu02.equals(this.getProduct().getSecondCategoryCode()))) {
+			BeanCopier copyBean = BeanCopier.create(InductionCooker.class, Product.class, false);
+			copyBean.copy(this.getInductionCooker(), newProduct, null);
+		}
+		//end induction cooker
+		//start electric stew pan
+		if ((HeaderConstants.KITCHEN_APPLIANCE_ID.equals(this.getProduct().getPrimaryCategoryCode())) && (HeaderConstants.subMenu03.equals(this.getProduct().getSecondCategoryCode()))) {
+			BeanCopier copyBean = BeanCopier.create(ElectricStewPan.class, Product.class, false);
+			copyBean.copy(this.getElectricStewPan(), newProduct, null);
+		}
+		//end electric stew pan
+		//start electronic oven
+		if ((HeaderConstants.KITCHEN_APPLIANCE_ID.equals(this.getProduct().getPrimaryCategoryCode())) && (HeaderConstants.subMenu04.equals(this.getProduct().getSecondCategoryCode()))) {
+			BeanCopier copyBean = BeanCopier.create(ElectronicOven.class, Product.class, false);
+			copyBean.copy(this.getElectronicOven(), newProduct, null);
+		}
+		//end electronic oven
+		//burnt stew pot
+		if ((HeaderConstants.KITCHEN_APPLIANCE_ID.equals(this.getProduct().getPrimaryCategoryCode())) && (HeaderConstants.subMenu06.equals(this.getProduct().getSecondCategoryCode()))) {
+			BeanCopier copyBean = BeanCopier.create(BurntStewpot.class, Product.class, false);
+			copyBean.copy(this.getBurntStewpot(), newProduct, null);
+		}
+		//burnt stew pot
+		//start electric pressure cooker
+		if ((HeaderConstants.KITCHEN_APPLIANCE_ID.equals(this.getProduct().getPrimaryCategoryCode())) && (HeaderConstants.subMenu08.equals(this.getProduct().getSecondCategoryCode()))) {
+			BeanCopier copyBean = BeanCopier.create(ElectricPressureCooker.class, Product.class, false);
+			copyBean.copy(this.getElectricPressureCooker(), newProduct, null);
+		}
+		//end electric pressure cooker
+		//start microwave oven
+		if ((HeaderConstants.KITCHEN_APPLIANCE_ID.equals(this.getProduct().getPrimaryCategoryCode())) && (HeaderConstants.subMenu14.equals(this.getProduct().getSecondCategoryCode()))) {
+			BeanCopier copyBean = BeanCopier.create(MicrowaveOven.class, Product.class, false);
+			copyBean.copy(this.getMicrowaveOven(), newProduct, null);
+		}
+		//end microwave oven
+		
+		//start dis infection cabinet
+		if ((HeaderConstants.KITCHEN_APPLIANCE_ID.equals(this.getProduct().getPrimaryCategoryCode())) && (HeaderConstants.subMenu15.equals(this.getProduct().getSecondCategoryCode()))) {
+			BeanCopier copyBean = BeanCopier.create(DisinfectionCabinet.class, Product.class, false);
+			copyBean.copy(this.getDisinfectionCabinet(), newProduct, null);
+		}
+		//end dis infection cabinet
+		
+		//start gas stove
+		if ((HeaderConstants.KITCHEN_APPLIANCE_ID.equals(this.getProduct().getPrimaryCategoryCode())) && (HeaderConstants.subMenu21.equals(this.getProduct().getSecondCategoryCode()))) {
+			BeanCopier copyBean = BeanCopier.create(GasStove.class, Product.class, false);
+			copyBean.copy(this.getGasStove(), newProduct, null);
+		}
+		//end gas stove
+		//start gas water heater
+		if ((HeaderConstants.KITCHEN_APPLIANCE_ID.equals(this.getProduct().getPrimaryCategoryCode())) && (HeaderConstants.subMenu25.equals(this.getProduct().getSecondCategoryCode()))) {
+			BeanCopier copyBean = BeanCopier.create(GasWaterHeater.class, Product.class, false);
+			copyBean.copy(this.getGasWaterHeater(), newProduct, null);
+		}
+		//end gas water heater
+		//start electric water heater
+		if ((HeaderConstants.KITCHEN_APPLIANCE_ID.equals(this.getProduct().getPrimaryCategoryCode())) && (HeaderConstants.subMenu26.equals(this.getProduct().getSecondCategoryCode()))) {
+			BeanCopier copyBean = BeanCopier.create(ElectricWaterHeater.class, Product.class, false);
+			copyBean.copy(this.getElectricWaterHeater(), newProduct, null);
+		}
+		//end electric water heater
+		//ventilator
+		if ((HeaderConstants.KITCHEN_APPLIANCE_ID.equals(this.getProduct().getPrimaryCategoryCode())) && (HeaderConstants.subMenu27.equals(this.getProduct().getSecondCategoryCode()))) {
+				BeanCopier copyBean = BeanCopier.create(Ventilator.class, Product.class, false);
+				copyBean.copy(this.getVentilator(), newProduct, null);
+		}
+		//ventilator
+		//end   copy fields value to new product
 		this.getProductService().saveProduct(newProduct);
 		return null;
 	}
