@@ -257,15 +257,14 @@ input, select, textarea, button, keygen, isindex, legend, a {
 	vAlign: center; 
 	align:left; 
 }
-selected-new-span A:link {
-	PADDING-RIGHT: 3px; DISPLAY: block; PADDING-LEFT: 3px; BACKGROUND: #6aa619; PADDING-BOTTOM: 0px; COLOR: #fff; PADDING-TOP: 0px;font-size:16px;
+
+.current-selected {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 0px; PADDING-TOP: 3px; DISPLAY: inline-table; BACKGROUND: #6aa619; COLOR: #ffffff; font-size:12px;
 }
-selected-new-span A:visited {
-	PADDING-RIGHT: 3px; DISPLAY: block; PADDING-LEFT: 3px; BACKGROUND: #6aa619; PADDING-BOTTOM: 0px; COLOR: #fff; PADDING-TOP: 0px;font-size:16px;
+.top-product-navigation-option {
+	DISPLAY: table-column; FLOAT: left; MARGIN: 0px 5px; LINE-HEIGHT: 150%; WHITE-SPACE: nowrap; COLOR:gray;font-size:12px;
 }
-selected-new-span A:hover {
-	TEXT-DECORATION: none
-}
+
  .ico{
 	cursor : pointer;
 	padding-top:1px;
@@ -705,14 +704,10 @@ div.reviews{margin:5px 0}
   color: blue;
 }
 .table-row {
-  font-size: 10pt;
-  border-right: 1px solid #FFFFFF; 
-  border-top: 1px solid #FFFFFF; 
-  border-left: 1px solid #FFFFFF; 
-  border-bottom: 1px solid #FFFFFF; 
-  background: #FFFFFF;
-  
-  
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+  	font-size: 10pt;
+  	background: #FFFFFF;
 }
 .table-odd-row {
   font-size: 10pt;border:0px solid;
@@ -1277,7 +1272,7 @@ div.reviews{margin:5px 0}
 	width: auto;height: auto;
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
-	border-width:1px;
+	border-width:0px;
 	border-color:#a1d04e;
 	}
 .operate_title{position:relative;height:29px;background:url(./images/icons/woye_img_x.gif) left -284px repeat-x;border:1px #e3e3e3 solid;z-index:100;}
