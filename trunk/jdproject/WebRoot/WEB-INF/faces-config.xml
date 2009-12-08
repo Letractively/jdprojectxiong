@@ -95,6 +95,31 @@
 	<managed-bean-class>com.ejd.web.vo.genl.ExistElectricPressureCookerControlTypeBean</managed-bean-class>
 	<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existDisinfectionCabinetType</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistDisinfectionCabinetTypeBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existGasStoveGasType</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistGasStoveGasTypeBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existGasStoveFitType</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistGasStoveFitTypeBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existGasWaterHeaterSmokeType</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistGasWaterHeaterSmokeTypeBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existElectricWaterHeaterSetType</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistElectricWaterHeaterSetTypeBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 	<!-- start primary product category -->
 	<managed-bean>
 	<managed-bean-name>existProductPrimaryCategory</managed-bean-name>
