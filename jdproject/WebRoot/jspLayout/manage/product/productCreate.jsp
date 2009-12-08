@@ -207,6 +207,79 @@ xmlns:rich="http://richfaces.org/rich">
 								<rich:message for="microwaveOvenFeild6" />
 							</h:panelGrid>
 							
+							<h:panelGrid id="disinfectionCabinet" rendered="#{productCreate.isDisinfectionCabinet}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="#{productCreate.disinfectionCabinet.field1Label}:" for="disinfectionCabinetFeild1"></h:outputLabel>
+								<h:inputText value="#{productCreate.disinfectionCabinet.field1}" id="disinfectionCabinetFeild1"></h:inputText>
+								<rich:message for="disinfectionCabinetFeild1" />
+								<h:outputLabel value="#{productCreate.disinfectionCabinet.field2Label}:" for="disinfectionCabinetFeild2"></h:outputLabel>
+								<h:inputText value="#{productCreate.disinfectionCabinet.field2}" id="disinfectionCabinetFeild2"></h:inputText>
+								<rich:message for="disinfectionCabinetFeild2" />
+								<h:outputLabel value="#{productCreate.disinfectionCabinet.field6Label}:" for="disinfectionCabinetFeild6"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.disinfectionCabinet.field6}" id="disinfectionCabinetFeild6">
+									<f:selectItems value="#{existDisinfectionCabinetType.typeItems}"/>
+								</h:selectOneMenu>
+								<rich:message for="disinfectionCabinetFeild6" />
+							</h:panelGrid>
+							
+							<h:panelGrid id="gasStove" rendered="#{productCreate.isGasStove}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="#{productCreate.gasStove.field1Label}:" for="gasStovetFeild1"></h:outputLabel>
+								<h:inputText value="#{productCreate.gasStove.field1}" id="gasStoveFeild1"></h:inputText>
+								<rich:message for="gasStoveFeild1" />
+								<h:outputLabel value="#{productCreate.gasStove.field6Label}:" for="gasStoveFeild6"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.gasStove.field6}" id="gasStoveFeild6">
+									<f:selectItems value="#{existGasStoveGasType.gasTypeItems}"/>
+								</h:selectOneMenu>
+								<rich:message for="gasStoveFeild6" />
+								<h:outputLabel value="#{productCreate.gasStove.field7Label}:" for="gasStoveFeild7"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.gasStove.field7}" id="gasStoveFeild7">
+									<f:selectItems value="#{existGasStoveFitType.fitTypeItems}"/>
+								</h:selectOneMenu>
+								<rich:message for="gasStoveFeild7" />
+							</h:panelGrid>
+							
+							<h:panelGrid id="gasWaterHeater" rendered="#{productCreate.isGasWaterHeater}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="#{productCreate.gasWaterHeater.field1Label}:" for="gasWaterHeaterFeild1"></h:outputLabel>
+								<h:inputText value="#{productCreate.gasWaterHeater.field1}" id="gasWaterHeaterFeild1"></h:inputText>
+								<rich:message for="gasWaterHeaterFeild1" />
+								<h:outputLabel value="#{productCreate.gasWaterHeater.field2Label}:" for="gasWaterHeaterFeild2"></h:outputLabel>
+								<h:inputText value="#{productCreate.gasWaterHeater.field2}" id="gasWaterHeaterFeild2"></h:inputText>
+								<rich:message for="gasWaterHeaterFeild2" />
+								<h:outputLabel value="#{productCreate.gasWaterHeater.field6Label}:" for="gasWaterHeaterFeild6"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.gasWaterHeater.field6}" id="gasWaterHeaterFeild6">
+									<f:selectItems value="#{existGasStoveGasType.gasTypeItems}"/>
+								</h:selectOneMenu>
+								<rich:message for="gasWaterHeaterFeild6" />
+								<h:outputLabel value="#{productCreate.gasWaterHeater.field7Label}:" for="gasWaterHeaterFeild7"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.gasWaterHeater.field7}" id="gasWaterHeaterFeild7">
+									<f:selectItems value="#{existGasWaterHeaterSmokeType.smokeTypeItems}"/>
+								</h:selectOneMenu>
+								<rich:message for="gasWaterHeaterFeild7" />
+							</h:panelGrid>
+							
+							<h:panelGrid id="electricWaterHeater" rendered="#{productCreate.isElectricWaterHeater}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="#{productCreate.electricWaterHeater.field1Label}:" for="electricWaterHeaterFeild1"></h:outputLabel>
+								<h:inputText value="#{productCreate.electricWaterHeater.field1}" id="electricWaterHeaterFeild1"></h:inputText>
+								<rich:message for="electricWaterHeaterFeild1" />
+								<h:outputLabel value="#{productCreate.electricWaterHeater.field2Label}:" for="electricWaterHeaterFeild2"></h:outputLabel>
+								<h:inputText value="#{productCreate.electricWaterHeater.field2}" id="electricWaterHeaterFeild2"></h:inputText>
+								<rich:message for="electricWaterHeaterFeild2" />
+								<h:outputLabel value="#{productCreate.electricWaterHeater.field3Label}:" for="electricWaterHeaterFeild3"></h:outputLabel>
+								<h:inputText value="#{productCreate.electricWaterHeater.field3}" id="electricWaterHeaterFeild3"></h:inputText>
+								<rich:message for="electricWaterHeaterFeild3" />
+								<h:outputLabel value="#{productCreate.electricWaterHeater.field6Label}:" for="electricWaterHeaterFeild6"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.electricWaterHeater.field6}" id="electricWaterHeaterFeild6">
+									<f:selectItems value="#{existElectricWaterHeaterSetType.setTypeItems}"/>
+								</h:selectOneMenu>
+								<rich:message for="electricWaterHeaterFeild6" />
+							</h:panelGrid>
+							<h:panelGrid id="ventilator" rendered="#{productCreate.isVentilator}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="#{productCreate.ventilator.field1Label}:" for="ventilatorFeild1"></h:outputLabel>
+								<h:inputText value="#{productCreate.ventilator.field1}" id="ventilatorFeild1"></h:inputText>
+								<rich:message for="ventilatorFeild1" />
+								<h:outputLabel value="#{productCreate.ventilator.field2Label}:" for="ventilatorFeild2"></h:outputLabel>
+								<h:inputText value="#{productCreate.ventilator.field2}" id="ventilatorFeild2"></h:inputText>
+								<rich:message for="ventilatorFeild2" />
+							</h:panelGrid>
 							<h:panelGrid columns="2" columnClasses="alight:left">
 								<a4j:commandButton type="image" image="/css/images/blank.gif"></a4j:commandButton>
 								<a4j:commandButton type="image" image="/css/images/createmyaccount.gif" action="#{productCreate.createProduct}"></a4j:commandButton>

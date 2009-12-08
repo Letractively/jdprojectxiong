@@ -9,17 +9,18 @@ xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
 <ui:composition>
 <tr>
-		<td style="width:10%;text-align:right;">
-			<h:outputLabel value="品牌:"></h:outputLabel>
+		<td style="width:15%;text-align:left;">
+			<h:outputLabel id="brandLabel" value="品牌(#{listKitchenApplianceProduct.brandLabel}):"></h:outputLabel>
 		</td>
 			
 				<td class="selected-new" width="90%">
 					<a4j:repeat var="brand" rowKeyVar="index" value="#{brands}">
-					<a4j:commandLink action="#{navigationKitchenAppliance.clickLink}" ajaxSingle="true" immediate="true" limitToList="true" reRender="productList">
+					<a4j:commandLink action="#{navigationKitchenAppliance.clickLink}" ajaxSingle="true" immediate="true" limitToList="true" reRender="productList,brandLabel,secondCategoryLabel">
 						<span class="selected-new-span">
 							#{brand.label}
 						</span>
 						<a4j:actionparam value="#{brand.value}" name="brandCode"/>
+						<a4j:actionparam value="#{brand.label}" name="brandLabel"/>
 					</a4j:commandLink>
 					</a4j:repeat>
 				</td> 
@@ -27,17 +28,18 @@ xmlns:rich="http://richfaces.org/rich">
 	</tr>
 
 <tr>
-			<td style="width:10%;text-align:right;">
-				<h:outputText value="类别:"></h:outputText>
+			<td style="width:15%;text-align:left;">
+				<h:outputText id="secondCategoryLabel" value="类别(#{listKitchenApplianceProduct.secondCategoryLabel}):"></h:outputText>
 			</td>
 			<td class="selected-new" width="90%">
 				<a4j:repeat var="secondCategory" rowKeyVar="index" value="#{secondCategorys}">
-				<a4j:commandLink action="#{navigationKitchenAppliance.clickLink}" ajaxSingle="true" immediate="true" limitToList="true" reRender="productList">
+				<a4j:commandLink action="#{navigationKitchenAppliance.clickLink}" ajaxSingle="true" immediate="true" limitToList="true" reRender="productList,brandLabel,secondCategoryLabel">
 					<span class="selected-new-span">
 						#{secondCategory.label}
 					</span>
 					<a4j:actionparam value="#{secondCategory.idSecond}" name="secondCategoryCode"/>
 					<a4j:actionparam value="#{secondCategory.name}" name="model"/>
+					<a4j:actionparam value="#{secondCategory.label}" name="secondCategoryLabel"/>
 				</a4j:commandLink>
 				</a4j:repeat>
 			</td> 
