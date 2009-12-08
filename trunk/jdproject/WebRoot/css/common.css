@@ -1194,17 +1194,11 @@ div.reviews{margin:5px 0}
   				text-align: left; 
 			}
 			
-			
-.template-left {
-  font-size: 10pt;
-  vertical-align: top;
-  border-width: 0px 0px 0px 0px;
-  
-}
 .template-left {
   font-size: 10pt;
   vertical-align:top;
-  width:16%;
+  border-width: 0px 0px 0px 0px;
+  width:18%;
 }
 .template-content {
   font-size: 10pt;
@@ -1214,12 +1208,27 @@ div.reviews{margin:5px 0}
   margin-right-width:0px;
   margin-bottom-width:0px;
   margin-left-width:0px;
-  width:68%;
+  width:64%;
 }
 .template-right {
   font-size: 10pt;
   vertical-align:top;
-  width:16%;
+  width:18%;
+}
+.product-template-content {
+  font-size: 10pt;
+  vertical-align:top;
+  padding:0px 0px 0px 0px;
+  margin-top-width:0px;
+  margin-right-width:0px;
+  margin-bottom-width:0px;
+  margin-left-width:0px;
+  width:82%;
+}
+.product-template-right {
+  font-size: 10pt;
+  vertical-align:top;
+  width:18%;
 }
 .template-column {
   font-size: 10pt;
@@ -1244,13 +1253,13 @@ div.reviews{margin:5px 0}
 }
 .kitchen-appliance-left-navigation-panel-bar-item-header {
   padding:0px 0px 0px 0px;
-  margin:0px 0px 0px 0px;
+  margin:1px 1px 1px 1px;
   height:25px;
   font-size: 14px; 
   color: #ffffff;
   line-height: 24px; 
   text-indent: 1mm;
-  font-family: "宋体";
+  font-family: sans-serif;
   background-image: url(../css/images/icons/l_t03.jpg);
   background-repeat: repeat;
   background-position : top left;
@@ -1265,8 +1274,10 @@ div.reviews{margin:5px 0}
 	width: auto;height: auto;
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
-	border-width:1px;
-	border-color:#ff9900;
+	BORDER-RIGHT: #cccccc 1px solid; 
+	BORDER-TOP: #cccccc 1px solid; 
+	BORDER-LEFT: #cccccc 1px solid; 
+	BORDER-BOTTOM: #cccccc 1px solid;
 	}
 .panel-bar-product-top {
 	width: auto;height: auto;
