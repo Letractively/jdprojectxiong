@@ -12,7 +12,7 @@ import com.ejd.web.vo.richfaces.header.HeaderConstants;
 public class ExistProductBrandBean {
 	private static SelectItem[] brandCodeItems = {
 		new SelectItem(new String(""),HeaderConstants.NONE_LAEBL),
-		new SelectItem(EjdConstants.BRAND_MIDEA_LABEL.toString(),EjdConstants.BRAND_MIDEA_LABEL),
+		new SelectItem(EjdConstants.BRAND_MIDEA_NAME.toString(),EjdConstants.BRAND_MIDEA_LABEL),
 		new SelectItem(EjdConstants.BRAND_GREE_NAME.toString(),EjdConstants.BRAND_GREE_LABEL),
 		new SelectItem(EjdConstants.BRAND_PANASONIC_NAME.toString(),EjdConstants.BRAND_PANASONIC_LABEL),
 		new SelectItem(EjdConstants.BRAND_PHILIPS_NAME.toString(),EjdConstants.BRAND_PHILIPS_LABEL),
