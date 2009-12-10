@@ -29,6 +29,11 @@
         <managed-bean-class>com.ejd.web.vo.richfaces.header.HeaderTabPanelBean</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
+    <managed-bean>
+        <managed-bean-name>productPanelBar</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.richfaces.header.ProductPanelBarBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
      <!-- end: this manage bean must be create first, so primary and second product category can be create  -->
     <managed-bean>
 		<managed-bean-name>managePanelMenu</managed-bean-name>
