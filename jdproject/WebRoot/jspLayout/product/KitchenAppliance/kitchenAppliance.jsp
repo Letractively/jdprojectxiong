@@ -14,8 +14,8 @@ xmlns:rich="http://richfaces.org/rich">
     </head>
     <body>
     	<ui:composition template="../productTemplate.jsp">
-    		<ui:define id="kitchenApplianceLeft" name="right">
-    			<ui:include id="kitchenApplianceLeftInclude" src="./navigationRightKitchenAppliance.jsp">
+    		<ui:define id="kitchenApplianceLeft" name="left">
+    			<ui:include id="kitchenApplianceLeftInclude" src="../navigationProductRight.jsp">
     			</ui:include>
     		</ui:define>
     		<ui:define id="kitchenApplianceSearchNavigation" name="productSearchNavigation">
