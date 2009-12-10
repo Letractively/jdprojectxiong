@@ -50,7 +50,14 @@ xmlns:rich="http://richfaces.org/rich">
 	</ui:insert>
 </h:panelGrid>
 
-<h:panelGrid columns="3" styleClass="contentStyle" columnClasses="product-template-content,product-template-right">
+<h:panelGrid columns="3" styleClass="contentStyle" columnClasses="template-left,template-content,template-right">
+	<h:panelGroup id="template-left">
+		<ui:insert name="left">
+			<f:subview id="leftview">
+				<h:outputText value="lefttext"></h:outputText>
+			</f:subview>
+		</ui:insert>
+	</h:panelGroup>
 	<h:panelGroup id="template-content">
 		<ui:insert name="productSearchNavigation">
 			<f:subview id="productSearchNavigationView">
