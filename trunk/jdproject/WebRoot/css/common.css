@@ -1251,6 +1251,17 @@ div.reviews{margin:5px 0}
   background-repeat: repeat;
   background-position : top left;
 }
+.navigation-product-panel-bar-item {
+  top: 0px;
+  left: 0px;
+  height:25px;
+  padding:6px 0px 0px 6px;
+  margin:0px 0px 0px 0px;
+  font-size: 14px;
+  background-image: url(../css/images/icons/pp_bg.gif);
+  background-repeat: repeat;
+  background-position : top left;
+}
 .kitchen-appliance-left-navigation-panel-bar-item-header {
   padding:0px 0px 0px 0px;
   margin:1px 1px 1px 1px;
