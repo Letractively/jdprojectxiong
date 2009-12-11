@@ -39,34 +39,45 @@ xmlns:rich="http://richfaces.org/rich">
     			<h:panelGrid columns="1" style="width:100%;" styleClass="table-row">
     			<a4j:region id="kitchenApplianceContentRegionStyle" renderRegionOnly="false" selfRendered="true">
     				<h:form id="kitchenApplianceContentRegionStyleForm">
-    					<h:panelGrid style="width:100%" styleClass="operate_title">
-    						<rich:panel id="kitchenApplianceContentRegionStyleFormPanel" style="width:100%;" styleClass="table-list-product-panel-grid-data-grid">
+    					<rich:panel id="kitchenApplianceContentRegionStyleFormPanel" styleClass="operate_title">
+    						<h:panelGrid columns="2" style="width:80%;">
+    							<h:panelGroup>
             					<h:outputText value="显示方式"></h:outputText>
-            					<h:graphicImage value="/css/images/list.gif" style="border:0">
-								</h:graphicImage>
+            					<h:graphicImage value="/css/images/icons/list.gif" style="border:0;vertical-align: middle;"></h:graphicImage>
+								<h:outputText value="        "></h:outputText>
 								<a4j:commandLink id="imgbutton" reRender="kitchenApplianceContentRegionStyleFormPanel,productList">
-									<h:graphicImage value="/css/images/i_img#{listKitchenApplianceProduct.styleImg}.gif" style="border:0;width:18px;height:15px;">
+									<h:graphicImage value="/css/images/i_img#{listKitchenApplianceProduct.styleImg}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
 									</h:graphicImage>
 									<a4j:actionparam name="styleImg" value="_on" assignTo="#{listKitchenApplianceProduct.styleImg}"></a4j:actionparam>
 									<a4j:actionparam name="styleImgFont" value="" assignTo="#{listKitchenApplianceProduct.styleImgFont}"></a4j:actionparam>
 									<a4j:actionparam name="styleFont" value="" assignTo="#{listKitchenApplianceProduct.styleFont}"></a4j:actionparam>
 								</a4j:commandLink>
 								<a4j:commandLink id="imgfontbutton" reRender="kitchenApplianceContentRegionStyleFormPanel,productList">
-									<h:graphicImage value="/css/images/i_imgfont#{listKitchenApplianceProduct.styleImgFont}.gif" style="border:0;width:18px;height:15px;">
+									<h:graphicImage value="/css/images/i_imgfont#{listKitchenApplianceProduct.styleImgFont}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
 									</h:graphicImage>
 									<a4j:actionparam name="styleImg" value="" assignTo="#{listKitchenApplianceProduct.styleImg}"></a4j:actionparam>
 									<a4j:actionparam name="styleImgFont" value="_on" assignTo="#{listKitchenApplianceProduct.styleImgFont}"></a4j:actionparam>
 									<a4j:actionparam name="styleFont" value="" assignTo="#{listKitchenApplianceProduct.styleFont}"></a4j:actionparam>
 								</a4j:commandLink>
 								<a4j:commandLink id="fontbutton" reRender="kitchenApplianceContentRegionStyleFormPanel,productList">
-									<h:graphicImage value="/css/images/i_font#{listKitchenApplianceProduct.styleFont}.gif" style="border:0;width:18px;height:15px;">
+									<h:graphicImage value="/css/images/i_font#{listKitchenApplianceProduct.styleFont}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
 									</h:graphicImage>
 									<a4j:actionparam name="styleImg" value="" assignTo="#{listKitchenApplianceProduct.styleImg}"></a4j:actionparam>
 									<a4j:actionparam name="styleImgFont" value="" assignTo="#{listKitchenApplianceProduct.styleImgFont}"></a4j:actionparam>
 									<a4j:actionparam name="styleFont" value="_on" assignTo="#{listKitchenApplianceProduct.styleFont}"></a4j:actionparam>
 								</a4j:commandLink>
-        					</rich:panel>
-    					</h:panelGrid>
+							</h:panelGroup>
+							<h:panelGroup>
+									<h:outputText value="每页显示数量" style="vertical-align: middle;"></h:outputText>
+									<h:graphicImage value="/css/images/icons/list.gif" style="border:0;vertical-align: middle;"></h:graphicImage>
+									<h:outputText value="        "></h:outputText>
+									<a4j:commandLink value="15" styleClass="qnty_button_visited"></a4j:commandLink>
+									<a4j:commandLink value="30" styleClass="qnty_button_visited"></a4j:commandLink>
+									<a4j:commandLink value="60" styleClass="qnty_button_visited"></a4j:commandLink>
+									<a4j:commandLink value="90" styleClass="qnty_button_visited"></a4j:commandLink>
+							</h:panelGroup>
+							</h:panelGrid>
+        				</rich:panel>
     				</h:form>
     			</a4j:region>
     			<a4j:region id="kitchenApplianceContentRegionContent" renderRegionOnly="false" selfRendered="true">
