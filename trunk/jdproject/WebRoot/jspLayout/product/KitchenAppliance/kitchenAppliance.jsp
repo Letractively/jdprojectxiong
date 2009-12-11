@@ -71,10 +71,14 @@ xmlns:rich="http://richfaces.org/rich">
 									<h:outputText value="每页显示数量" style="vertical-align: middle;"></h:outputText>
 									<h:graphicImage value="/css/images/icons/list.gif" style="border:0;vertical-align: middle;"></h:graphicImage>
 									<h:outputText value="        "></h:outputText>
-									<a4j:commandLink value="15" styleClass="qnty_button_visited"></a4j:commandLink>
-									<a4j:commandLink value="30" styleClass="qnty_button_visited"></a4j:commandLink>
-									<a4j:commandLink value="60" styleClass="qnty_button_visited"></a4j:commandLink>
-									<a4j:commandLink value="90" styleClass="qnty_button_visited"></a4j:commandLink>
+									<a4j:commandLink id="number15button" reRender="kitchenApplianceContentRegionStyleFormPanel,productList">
+									<h:graphicImage value="/css/images/i_font#{listKitchenApplianceProduct.styleFont}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
+									</h:graphicImage>
+									<a4j:actionparam name="styleImg" value="" assignTo="#{listKitchenApplianceProduct.styleImg}"></a4j:actionparam>
+									<a4j:actionparam name="styleImgFont" value="" assignTo="#{listKitchenApplianceProduct.styleImgFont}"></a4j:actionparam>
+									<a4j:actionparam name="styleFont" value="_on" assignTo="#{listKitchenApplianceProduct.styleFont}"></a4j:actionparam>
+								</a4j:commandLink>
+									
 							</h:panelGroup>
 							</h:panelGrid>
         				</rich:panel>
