@@ -10,7 +10,7 @@ xmlns:rich="http://richfaces.org/rich">
 <f:subview id="kitchenApplianceProductLeftView">
 	<h:form id="kitchenApplianceProductLeftViewForm">
 		<a4j:region id="kitchenApplianceProductLeftViewFormRegion" renderRegionOnly="false" selfRendered="true">
-			<rich:panelBar id="kitchenApplianceLeftPb" binding="#{productPanelBar.panelBar}" selectedPanel="#{productPanelBar.currentBar}" styleClass="panel-bar-product-left" contentStyle="BACKGROUND-COLOR: #ffffe8">
+			<rich:panelBar id="kitchenApplianceLeftPb" binding="#{productPanelBar.panelBar}" selectedPanel="#{productPanelBar.currentBar}" styleClass="panel-bar-product-left" contentStyle="BACKGROUND-COLOR: #FFFFFF">
     				<rich:panelBarItem id="#{headerTabPanel.kitchenAppliance.mainMenu.name}" name="#{headerTabPanel.kitchenAppliance.mainMenu.name}" headerClass="navigation-product-panel-bar-item">
     				<f:facet name="label">
     					<h:outputText styleClass="fontb_1" value="#{headerTabPanel.kitchenAppliance.mainMenu.label}"></h:outputText>
