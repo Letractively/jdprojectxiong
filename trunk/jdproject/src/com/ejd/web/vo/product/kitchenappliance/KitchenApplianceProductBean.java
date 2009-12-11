@@ -45,11 +45,21 @@ public class KitchenApplianceProductBean extends PagedBaseBean {
 	private boolean styleImgFla;
 	private String styleImgFont;
 	private boolean styleImgFontFlag;
+	private String number15;
+	private String number30;
+	private String number60;
+	private String number90;
+	private int numberOnePage;
 	public KitchenApplianceProductBean() {
 		super();
 		this.styleImgFont = "";
 		this.styleFont = "";
 		this.styleImg = "_on";
+		this.number15 = "_on";
+		this.number30 = "";
+		this.number60 = "";
+		this.number90 = "";
+		this.numberOnePage = 15;
 		this.primaryCategoryCode = HeaderConstants.KITCHEN_APPLIANCE_ID;
 		this.setBrandCode("");
 		this.setProductType(HeaderConstants.KITCHEN_APPLIANCE_NAME);
@@ -81,7 +91,7 @@ public class KitchenApplianceProductBean extends PagedBaseBean {
 	}
 	public DataModel getDataModel(){
 		   if (dataModel == null) {
-		     dataModel = new PagedListDataModel<Product>(18) {
+		     dataModel = new PagedListDataModel<Product>(this.getNumberOnePage()) {
 		     public DataPage<Product> fetchPage(int startRow, int pageSize) {
 		      return getDataPage(startRow, pageSize);
 		     }
@@ -204,6 +214,37 @@ public class KitchenApplianceProductBean extends PagedBaseBean {
 	}
 	public void setStyleImgFont(String imgFont) {
 		styleImgFont = imgFont;
+	}
+	
+	public String getNumber15() {
+		return number15;
+	}
+	public void setNumber15(String number15) {
+		this.number15 = number15;
+	}
+	public String getNumber30() {
+		return number30;
+	}
+	public void setNumber30(String number30) {
+		this.number30 = number30;
+	}
+	public String getNumber60() {
+		return number60;
+	}
+	public void setNumber60(String number60) {
+		this.number60 = number60;
+	}
+	public String getNumber90() {
+		return number90;
+	}
+	public void setNumber90(String number90) {
+		this.number90 = number90;
+	}
+	public int getNumberOnePage() {
+		return numberOnePage;
+	}
+	public void setNumberOnePage(int numberOnePage) {
+		this.numberOnePage = numberOnePage;
 	}
 	public boolean getStyleImgFontFlag() {
 		boolean result = false;
