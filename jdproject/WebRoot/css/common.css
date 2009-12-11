@@ -824,7 +824,7 @@ div.reviews{margin:5px 0}
 	BORDER-TOP: 0px none #FFFFFF; 
 	BORDER-LEFT: 0px none #FFFFFF; 
 	BORDER-BOTTOM: 0px none #FFFFFF;
-	background-color: #ffffe8;
+	background-color: #FFFFFF;
 	}
 
 .page-header {
@@ -1243,22 +1243,22 @@ div.reviews{margin:5px 0}
 .navigation-panel-bar-item-left-header {
   top: 0px;
   left: 0px;
-  height:25px;
+  height:30px;
   padding:0px 0px 0px 0px;
   margin:0px 0px 0px 0px;
-  font-size: 18pt;
-  background-image: url(../css/images/icons/pp_bg.gif);
+  font-size: 14pt;
+  background-image: url(../css/images/icons/header_menu.gif);
   background-repeat: repeat;
   background-position : top left;
 }
 .navigation-product-panel-bar-item {
   top: 0px;
   left: 0px;
-  height:25px;
+  height:28px;
   padding:6px 0px 0px 6px;
   margin:0px 0px 0px 0px;
   font-size: 14px;
-  background-image: url(../css/images/icons/pp_bg.gif);
+  background-image: url(../css/images/icons/header_menu.gif);
   background-repeat: repeat;
   background-position : top left;
 }
@@ -1297,5 +1297,17 @@ div.reviews{margin:5px 0}
 	border-width:0px;
 	border-color:#a1d04e;
 	}
-.operate_title{position:relative;height:29px;background:url(./images/icons/woye_img_x.gif) left -284px repeat-x;border:1px #e3e3e3 solid;z-index:100;}
-
+.operate_title{
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	position:relative;
+	height:29px;
+	background:url(../css/images/icons/footer_bg.gif) left -284px repeat;
+	border:1px #e3e3e3 solid;
+	width:100%;
+	}
+.qnty_button{position:absolute;right:5px;top:4px;}
+.qnty_button_visited{display:block;float:left;margin-right:2px;padding:2px;border:1px #bababa solid;background:#fff;color:#666;}
+.qnty_button a:hover{border:1px #a3a3a3 solid;color:#454545;text-decoration:none;}
+.qnty_button a.selected:link,.qnty_button a.selected:visited{display:block;float:left;margin-right:2px;padding:2px;border:1px #e27a00 solid;background:#fff799;color:#f26522;}
+.qnty_button a.selected:hover{text-decoration:none;}
