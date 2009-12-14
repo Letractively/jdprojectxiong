@@ -1247,7 +1247,7 @@ div.reviews{margin:5px 0}
   padding:0px 0px 0px 0px;
   margin:0px 0px 0px 0px;
   font-size: 14pt;
-  background-image: url(../css/images/icons/header_menu.gif);
+  background-image: url(../css/images/icons/productnav.gif);
   background-repeat: repeat;
   background-position : top left;
 }
@@ -1258,7 +1258,7 @@ div.reviews{margin:5px 0}
   padding:6px 0px 0px 6px;
   margin:0px 0px 0px 0px;
   font-size: 14px;
-  background-image: url(../css/images/icons/header_menu.gif);
+  background-image: url(../css/images/icons/productnav.gif);
   background-repeat: repeat;
   background-position : top left;
 }
@@ -1305,6 +1305,10 @@ div.reviews{margin:5px 0}
 	background:url(../css/images/icons/footer_bg.gif) left -284px repeat;
 	border:1px #e3e3e3 solid;
 	width:100%;
+	}
+.main_header{
+		background:url(../css/images/icons/top_bg.jpg) left 0px repeat;
+		width:100%;
 	}
 .qnty_button{position:absolute;right:5px;top:4px;}
 .qnty_button_visited{display:block;float:left;margin-right:2px;padding:2px;border:1px #bababa solid;background:#fff;color:#666;}
