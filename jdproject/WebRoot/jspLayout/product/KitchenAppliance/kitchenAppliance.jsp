@@ -78,7 +78,7 @@ xmlns:rich="http://richfaces.org/rich">
 										<a4j:actionparam name="number30" value="" assignTo="#{listKitchenApplianceProduct.number30}"></a4j:actionparam>
 										<a4j:actionparam name="number60" value="" assignTo="#{listKitchenApplianceProduct.number60}"></a4j:actionparam>
 										<a4j:actionparam name="number90" value="" assignTo="#{listKitchenApplianceProduct.number90}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="15" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="3" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number30button" reRender="kitchenApplianceContentRegionStyleFormPanel,productList">
 										<h:graphicImage value="/css/images/number30#{listKitchenApplianceProduct.number30}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
@@ -87,7 +87,7 @@ xmlns:rich="http://richfaces.org/rich">
 										<a4j:actionparam name="number30" value="_on" assignTo="#{listKitchenApplianceProduct.number30}"></a4j:actionparam>
 										<a4j:actionparam name="number60" value="" assignTo="#{listKitchenApplianceProduct.number60}"></a4j:actionparam>
 										<a4j:actionparam name="number90" value="" assignTo="#{listKitchenApplianceProduct.number90}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="30" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="6" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number60button" reRender="kitchenApplianceContentRegionStyleFormPanel,productList">
 										<h:graphicImage value="/css/images/number60#{listKitchenApplianceProduct.number60}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
@@ -96,7 +96,7 @@ xmlns:rich="http://richfaces.org/rich">
 										<a4j:actionparam name="number30" value="" assignTo="#{listKitchenApplianceProduct.number30}"></a4j:actionparam>
 										<a4j:actionparam name="number60" value="_on" assignTo="#{listKitchenApplianceProduct.number60}"></a4j:actionparam>
 										<a4j:actionparam name="number90" value="" assignTo="#{listKitchenApplianceProduct.number90}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="60" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="9" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number90button" reRender="kitchenApplianceContentRegionStyleFormPanel,productList">
 										<h:graphicImage value="/css/images/number90#{listKitchenApplianceProduct.number90}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
@@ -105,7 +105,7 @@ xmlns:rich="http://richfaces.org/rich">
 										<a4j:actionparam name="number30" value="" assignTo="#{listKitchenApplianceProduct.number30}"></a4j:actionparam>
 										<a4j:actionparam name="number60" value="" assignTo="#{listKitchenApplianceProduct.number60}"></a4j:actionparam>
 										<a4j:actionparam name="number90" value="_on" assignTo="#{listKitchenApplianceProduct.number90}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="90" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="12" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									
 							</h:panelGroup>
@@ -116,7 +116,7 @@ xmlns:rich="http://richfaces.org/rich">
     			<a4j:region id="kitchenApplianceContentRegionContent" renderRegionOnly="false" selfRendered="true">
     			<h:form id="kitchenApplianceContentRegionContentForm">
     			<h:panelGrid id="productList" columns="1" style="width:100%;" styleClass="table-list-product-panel-grid">
-    			<rich:dataGrid id="productListImg" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="3" elements="10" cellspacing="0" cellpadding="10" first="1" columnClasses="table-list-product-panel-grid-column" value="#{listKitchenApplianceProduct.dataModel}" var="product" rendered="#{listKitchenApplianceProduct.styleImgFlag}" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
+    			<rich:dataGrid id="productListImg" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="3" elements="#{listKitchenApplianceProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" columnClasses="table-list-product-panel-grid-column" value="#{listKitchenApplianceProduct.dataModel}" var="product" rendered="#{listKitchenApplianceProduct.styleImgFlag}" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                  
      				
                  <rich:panel style="border:0px;">
