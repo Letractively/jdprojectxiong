@@ -10,8 +10,13 @@ xmlns:rich="http://richfaces.org/rich">
 <f:subview id="headerMainView">
 <h:form id="headerMainform"> 
 	<a4j:region id="kitchenApplianceHeaderRegion" renderRegionOnly="false" selfRendered="true">
-		<table height="131" cellSpacing="0" cellPadding="0" width="100%" background="${facesContext.externalContext.requestContextPath}/css/images/icons/top_bg.jpg" border="0">
+		<table height="131" cellSpacing="0" cellPadding="0" width="100%" class="main_header" border="0">
 		<tbody>
+		  <tr>
+		  <td width="2px" background="${facesContext.externalContext.requestContextPath}/css/images/icons/topleft_bg.jpg"></td>
+		  <td>
+		  <table>
+		  <tbody>
 		  <tr>
 		    <td vAlign="top" align="left">
 		      <table class="logo" height="59" cellSpacing="0" cellPadding="0" width="100%" align="center" border="0">
@@ -93,7 +98,7 @@ xmlns:rich="http://richfaces.org/rich">
 		          </td>
 		          <td width="100">
 		          	<h:commandLink id="Image81111" onmouseover="MM_swapImage('Image81111','','./css/images/icons/top_bt1a.gif',1)" 
-		            onmouseout="MM_swapImgRestore()" style="height:21; width:85;border:0;"><h:graphicImage url="./css/images/icons/top_bt1a.gif"/></h:commandLink>
+		            onmouseout="MM_swapImgRestore()" style="height:21; width:85;border:0;"></h:commandLink>
 		          
 		          </td>
 		          <td width="100"><a 
@@ -155,7 +160,7 @@ xmlns:rich="http://richfaces.org/rich">
 		            href="http://www.xinhuabookstore.com/search/?keyword=%E6%96%B0%E6%A6%82%E5%BF%B5%E8%8B%B1%E8%AF%AD">新概念英语</A> 
 		            <font face="Verdana"><A class="font1" 
 		            href="http://www.xinhuabookstore.com/search/?keyword=%E6%B0%B4%E7%9F%A5%E9%81%93%E7%AD%94%E6%A1%88">水知道答案</A></font></font> 
-		          </td></tr></tbody></table></td></tr></tbody></table>
+		          </td></tr></tbody></table></td></tr></tbody></table></td><td width="2px" background="${facesContext.externalContext.requestContextPath}/css/images/icons/topright_bg.jpg"></td></tr></tbody></table>
 	</a4j:region>
 						
 					
