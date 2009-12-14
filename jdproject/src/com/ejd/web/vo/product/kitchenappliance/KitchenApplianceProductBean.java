@@ -50,6 +50,7 @@ public class KitchenApplianceProductBean extends PagedBaseBean {
 	private String number60;
 	private String number90;
 	private int numberOnePage;
+	private int oldNumberOnePage;
 	public KitchenApplianceProductBean() {
 		super();
 		this.styleImgFont = "";
@@ -60,6 +61,7 @@ public class KitchenApplianceProductBean extends PagedBaseBean {
 		this.number60 = "";
 		this.number90 = "";
 		this.numberOnePage = 15;
+		this.oldNumberOnePage = 15;
 		this.primaryCategoryCode = HeaderConstants.KITCHEN_APPLIANCE_ID;
 		this.setBrandCode("");
 		this.setProductType(HeaderConstants.KITCHEN_APPLIANCE_NAME);
@@ -90,13 +92,13 @@ public class KitchenApplianceProductBean extends PagedBaseBean {
 		return dataPage;
 	}
 	public DataModel getDataModel(){
-		   if (dataModel == null) {
+		   if (dataModel == null || (this.getOldNumberOnePage() != this.getNumberOnePage())) {
 		     dataModel = new PagedListDataModel<Product>(this.getNumberOnePage()) {
 		     public DataPage<Product> fetchPage(int startRow, int pageSize) {
 		      return getDataPage(startRow, pageSize);
 		     }
 		    };
-		    
+		    this.setOldNumberOnePage(this.getNumberOnePage());
 		    } 
 		   return dataModel;
 		}
@@ -245,6 +247,13 @@ public class KitchenApplianceProductBean extends PagedBaseBean {
 	}
 	public void setNumberOnePage(int numberOnePage) {
 		this.numberOnePage = numberOnePage;
+	}
+	
+	public int getOldNumberOnePage() {
+		return oldNumberOnePage;
+	}
+	public void setOldNumberOnePage(int oldNumberOnePage) {
+		this.oldNumberOnePage = oldNumberOnePage;
 	}
 	public boolean getStyleImgFontFlag() {
 		boolean result = false;
