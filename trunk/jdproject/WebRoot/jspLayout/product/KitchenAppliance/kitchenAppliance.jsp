@@ -22,9 +22,9 @@ xmlns:rich="http://richfaces.org/rich">
 				<a4j:region id="kitchenApplianceSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="kitchenApplianceSearchNavigationRegionForm">
     			<rich:panelBar id="kitchenAppliancepb" styleClass="panel-bar-product-top" contentStyle="background:none;">
-    				<rich:panelBarItem id="kitchenAppliancePbi" headerClass="navigation-panel-bar-item-left-header">
+    				<rich:panelBarItem id="kitchenAppliancePbi" headerClass="navigation-product-top-panel-bar-item-header">
     				<f:facet name="label">
-    					<h:outputText value=""></h:outputText>
+    					<h:outputText value="商品筛选" styleClass="navigation-product-top-panel-bar-item-header-label"></h:outputText>
     				</f:facet>
 						<ui:include id="phoneinp12" src="./navigationTopKitchenAppliance.jsp">
 							<ui:param name="brands" value="#{navigationKitchenAppliance.brandCodeItems}" />
