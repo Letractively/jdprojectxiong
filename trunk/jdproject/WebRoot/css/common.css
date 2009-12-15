@@ -1240,7 +1240,7 @@ div.reviews{margin:5px 0}
   background-repeat: no-repeat;
 }
 
-.navigation-panel-bar-item-left-header {
+.navigation-product-top-panel-bar-item-header {
   top: 0px;
   left: 0px;
   height:30px;
@@ -1251,6 +1251,15 @@ div.reviews{margin:5px 0}
   background-repeat: repeat;
   background-position : top left;
 }
+.navigation-product-top-panel-bar-item-header-label {
+	float:left;
+	padding-left:5px;
+	line-height:30px;
+	background-image:url(../css/images/icons/list.gif) 12px 5px no-repeat;
+	font-size:14px;
+	color:#F87C14;
+	}
+
 .navigation-product-panel-bar-item {
   top: 0px;
   left: 0px;
