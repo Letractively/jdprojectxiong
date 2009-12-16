@@ -650,7 +650,8 @@ div.reviews{margin:5px 0}
 .user-name {
   font-family: Arial, sans-serif;
   font-size: 9pt;
-  font-style: italic;
+  TEXT-INDENT: 12px;
+  text-valign:middle;
 }
 
 .table-background {
@@ -1318,6 +1319,24 @@ div.reviews{margin:5px 0}
 .main_header{
 		background:url(../css/images/icons/top_bg.jpg) left 0px repeat;
 		width:100%;
+	}
+.main_header_login_navigation{
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	height:8px;
+	border:0px #e3e3e3 solid;
+	background:url(../css/images/icons/headerlogin_bg.jpg) left 0px repeat;
+	width:100%;
+	}
+.main_header_login_navigation_others{
+	top: 0px;
+  	left: 0px;
+  	height:5px;
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	position:relative;
+	border:0px #e3e3e3 none;
+	width:100%;
 	}
 .qnty_button{position:absolute;right:5px;top:4px;}
 .qnty_button_visited{display:block;float:left;margin-right:2px;padding:2px;border:1px #bababa solid;background:#fff;color:#666;}
