@@ -9,24 +9,47 @@ xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
 <f:subview id="userLoginAndNavigationSubView">
 <h:form id="userLoginAndNavigationSubForm">
-	<table width="100%" height="38" cellpadding="4" cellspacing="0" style="padding-bottom: 15px;">
+	<table width="100%" cellpadding="0" cellspacing="0" style="padding-bottom: 0px;">
     	<tbody>
+    		<tr>
+    		<td align="right">
     		<a4j:region id="noUserLoginRegion" renderRegionOnly="true" rendered="#{currentUser.userInfo == null || !currentUser.userLoginFlag}" selfRendered="true">
-    			<h:panelGrid id="noUserLoginPg" columns="4">
-    				<h:outputText value="请登陆"></h:outputText>
-    				<h:panelGroup><h:outputText value="用户名:"/><h:inputText id="loginUserId" value="#{currentUser.loginInfo.userId}"/></h:panelGroup>
-    				<h:panelGroup><h:outputText value="密码:"/><h:inputSecret id="loginUserPassword" value="#{currentUser.loginInfo.userPassword}"/></h:panelGroup>
-    				<h:commandButton id="loginInBtn" value="登陆" action="#{currentUser.loginInAction}"><a4j:support event="onclick" reRender="noUserLoginRegion,hasUserLoginRegion"/></h:commandButton>
-    			</h:panelGrid>
+    			<rich:panel id="noUserLoginPg" styleClass="main_header_login_navigation">
+    				<h:panelGrid columns="4" style="vertial-align:middle;text-align:center;">
+    				<h:panelGroup style="text-valign:middle"><h:outputText id="loginUserLabel" value="用户名:" styleClass="user-name"/><h:inputText id="loginUserId" value="#{currentUser.loginInfo.userId}" styleClass="user-name" size="15"/></h:panelGroup>
+    				<h:panelGroup><h:outputText id="loginUserPasswordLabel" value="密码:" styleClass="user-name"/><h:inputSecret id="loginUserPassword" value="#{currentUser.loginInfo.userPassword}" size="12" styleClass="user-name"/></h:panelGroup>
+    				<h:commandButton id="loginInBtn" action="#{currentUser.loginInAction}" image="/css/images/signin.gif"><a4j:support event="onclick" reRender="noUserLoginRegion,hasUserLoginRegion"/></h:commandButton>
+    				<rich:panel id="noUserLoginPgOthersPgPanel" styleClass="main_header_login_navigation_others">
+    						<h:outputLink id="userShoppingCart" value="http://www.sohu.com"><h:outputText id="userShoppingCartText" value="购物车"/></h:outputLink>
+    						<h:outputText id="specchar3" value="-"></h:outputText>
+    						<h:outputLink id="newUserRegistryLink" value="http://www.sohu.com"><h:outputText id="newUserRegistryLinkText" value="新用户注册"/></h:outputLink>
+    						<h:outputText id="specchar1" value="-"></h:outputText>
+    						<h:outputLink id="forgotPasswordLink" value="http://www.sohu.com"><h:outputText id="forgotPasswordLinkText" value="忘记密码"/></h:outputLink>
+    						<h:outputText id="specchar2" value="-"></h:outputText>
+    						<h:outputLink id="helpCenterLink" value="http://www.sohu.com"><h:outputText id="helpCenterLinkText" value="帮助中心"/></h:outputLink>
+    				</rich:panel>
+    				</h:panelGrid>
+    			</rich:panel>
     		</a4j:region>
     		<a4j:region id="hasUserLoginRegion" renderRegionOnly="true" rendered="#{currentUser.userInfo != null || currentUser.userLoginFlag}" selfRendered="true">
-    			<h:panelGrid id="hasUserLoginPg" columns="4">
-    				<h:outputText value="登陆信息"></h:outputText>
-    				<h:panelGroup><h:outputText value="用户名:"/><h:outputText id="loginUserIdText" value="#{currentUser.userInfo.fullName}"/></h:panelGroup>
-    				
-    				<h:commandButton id="loginOutBtn" value="退出" action="#{currentUser.loginOutAction}"><a4j:support event="onclick" reRender="noUserLoginRegion,hasUserLoginRegion"/></h:commandButton>
-    			</h:panelGrid>
+    			<rich:panel id="hasUserLoginPg" styleClass="main_header_login_navigation">
+    				<h:panelGrid columns="4" style="vertial-align:middle;text-align:center;">
+    					<h:panelGroup><h:outputText id="loginInUserLabelLeft" value="您好: "/><h:outputText id="loginUserIdText" value="#{currentUser.userInfo.fullName}"/><h:outputText id="loginInUserLabelRight" value="欢迎回来!"/></h:panelGroup>
+    					<h:commandButton id="loginOutBtn" image="/css/images/signin.gif" action="#{currentUser.loginOutAction}"><a4j:support event="onclick" reRender="noUserLoginRegion,hasUserLoginRegion"/></h:commandButton>
+    					<rich:panel id="UserLoginPgOthersPgPanel" styleClass="main_header_login_navigation_others">
+    						<h:outputLink id="userShoppingCartUserLoginIn" value="http://www.sohu.com"><h:outputText id="userShoppingCartTextUserLoginIn" value="购物车"/></h:outputLink>
+    						<h:outputText id="specchar3UserLoginIn" value="-"></h:outputText>
+    						<h:outputLink id="newUserRegistryLinkUserLoginIn" value="http://www.sohu.com"><h:outputText id="newUserRegistryLinkTextUserLoginIn" value="新用户注册"/></h:outputLink>
+    						<h:outputText id="specchar1UserLoginIn" value="-"></h:outputText>
+    						<h:outputLink id="forgotPasswordLinkUserLoginIn" value="http://www.sohu.com"><h:outputText id="forgotPasswordLinkTextUserLoginIn" value="忘记密码"/></h:outputLink>
+    						<h:outputText id="specchar2UserLoginIn" value="-"></h:outputText>
+    						<h:outputLink id="helpCenterLinkUserLoginIn" value="http://www.sohu.com"><h:outputText id="helpCenterLinkTextUserLoginIn" value="帮助中心"/></h:outputLink>
+    				</rich:panel>
+    				</h:panelGrid>
+    			</rich:panel>
     		</a4j:region>
+    		</td>
+    		</tr>
 		</tbody>
 	</table>
 </h:form>

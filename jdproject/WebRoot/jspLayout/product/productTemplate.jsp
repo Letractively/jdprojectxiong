@@ -33,13 +33,6 @@ xmlns:rich="http://richfaces.org/rich">
 	    	</f:subview>
 	    </ui:insert>
 	</h:panelGrid>
-	<h:panelGrid bgcolor="#bbd6ef" width="100%" style=" height:39;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px">
-		<ui:insert name="userLoginAndNavigation">
-			<f:subview id="userLoginAndNavigationMainView">
-				<ui:include src="./userLoginAndNavigation.jsp" />
-			</f:subview>
-		</ui:insert>
-	</h:panelGrid>
 	</h:panelGrid>
 </h:panelGrid>
 <h:panelGrid columns="1" style="width:100%;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px">
