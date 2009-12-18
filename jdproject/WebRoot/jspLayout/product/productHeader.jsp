@@ -37,7 +37,17 @@ xmlns:rich="http://richfaces.org/rich">
 		            <table height="26" cellSpacing="0" cellPadding="0" align="center" width="100%" border="0">
 		              <tbody>
 		              <tr align="right">
-		               <td>ddddd</td>
+		              <td width="84%"></td>
+		               <td width="16%">
+		               <rich:dropDownMenu value="所有分类 " submitMode="server" direction="bottom-left"  jointPoint="td" event="onmouseover" showDelay="10">
+                			<rich:menuItem value="Suboption2-1" />
+                			<rich:menuItem value="Suboption2-2" />
+               				<rich:menuGroup value="Group2" direction="bottom-left">
+                    		<rich:menuItem value="SuboptionG2-2-1" />
+                    		<rich:menuItem value="SuboptionG2-2-2" />
+                			</rich:menuGroup>
+                		</rich:dropDownMenu>
+						</td>
 		                </tr>
 		                </tbody>
 		               </table>
