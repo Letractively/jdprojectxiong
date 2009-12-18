@@ -650,7 +650,7 @@ div.reviews{margin:5px 0}
 .user-name {
   font-family: Arial, sans-serif;
   font-size: 9pt;
-  TEXT-INDENT: 12px;
+  TEXT-INDENT: 1px;
   text-valign:middle;
 }
 
