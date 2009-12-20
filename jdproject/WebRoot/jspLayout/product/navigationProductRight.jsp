@@ -13,9 +13,9 @@ xmlns:rich="http://richfaces.org/rich">
 			<rich:panelBar id="kitchenApplianceLeftPb" binding="#{productPanelBar.panelBar}" selectedPanel="#{productPanelBar.currentBar}" styleClass="panel-bar-product-left" contentStyle="BACKGROUND-COLOR: #FFFFFF">
     				<rich:panelBarItem id="#{headerTabPanel.kitchenAppliance.mainMenu.name}" name="#{headerTabPanel.kitchenAppliance.mainMenu.name}" headerClass="navigation-product-panel-bar-item">
     				<f:facet name="label">
-    					<h:outputText styleClass="fontb_1" value="#{headerTabPanel.kitchenAppliance.mainMenu.label}"></h:outputText>
+    					<h:outputText id="kitchenApplianceMainLabel" styleClass="fontb_1" value="#{headerTabPanel.kitchenAppliance.mainMenu.label}"></h:outputText>
     				</f:facet>
-    				<rich:dataGrid columns="2" value="#{headerTabPanel.kitchenAppliance.subMenu}" var="kitchenApplianceSubMenu" columnClasses="table-list-product-left-panel-grid-column" styleClass="navigation-left-kitchen_appliance-product-panel-grid-data-grid">
+    				<rich:dataGrid id="kitchenApplianceContentDg" columns="2" value="#{headerTabPanel.kitchenAppliance.subMenu}" var="kitchenApplianceSubMenu" columnClasses="table-list-product-left-panel-grid-column" styleClass="navigation-left-kitchen_appliance-product-panel-grid-data-grid">
     					<a4j:commandLink action="#{headerTabPanel.gotoProduct}" styleClass="font3b" value="#{kitchenApplianceSubMenu.label}" immediate="true">
 								
 										<f:param name="idFirst" value="#{kitchenApplianceSubMenu.idFirst}"></f:param>
@@ -26,8 +26,10 @@ xmlns:rich="http://richfaces.org/rich">
     				</rich:dataGrid>
 					</rich:panelBarItem>
 					<rich:panelBarItem id="#{headerTabPanel.householdAppliance.mainMenu.name}" name="#{headerTabPanel.householdAppliance.mainMenu.name}" headerClass="navigation-product-panel-bar-item">
+    				
     				<f:facet name="label">
-    					<h:outputText styleClass="fontb_1" value="#{headerTabPanel.householdAppliance.mainMenu.label}"></h:outputText>
+    					<a4j:commandLink id="householdApplianceMainLabel" styleClass="fontb_1" value="#{headerTabPanel.householdAppliance.mainMenu.label}"><a4j:actionparam name="householdApplianceMainMenuName" value="#{headerTabPanel.householdAppliance.mainMenu.name}" assignTo="#{productPanelBar.currentBar}"></a4j:actionparam></a4j:commandLink>
+						
     				</f:facet>
     				<rich:dataGrid columns="2" value="#{headerTabPanel.householdAppliance.subMenu}" var="householdApplianceSubMenu" columnClasses="table-list-product-left-panel-grid-column" styleClass="navigation-left-kitchen_appliance-product-panel-grid-data-grid">
     					<a4j:commandLink action="#{headerTabPanel.gotoProduct}" styleClass="font3b" value="#{householdApplianceSubMenu.label}" immediate="true">
@@ -41,7 +43,10 @@ xmlns:rich="http://richfaces.org/rich">
 					</rich:panelBarItem>
 					<rich:panelBarItem id="#{headerTabPanel.personalCare.mainMenu.name}" name="#{headerTabPanel.personalCare.mainMenu.name}" headerClass="navigation-product-panel-bar-item">
     				<f:facet name="label">
-    					<h:outputText styleClass="fontb_1" value="#{headerTabPanel.personalCare.mainMenu.label}"></h:outputText>
+    					<h:outputText id="personalCareMainLabel" styleClass="fontb_1" value="#{headerTabPanel.personalCare.mainMenu.label}"></h:outputText>
+						<a4j:support event="onclick">
+							<a4j:actionparam name="personalCareMainMenuName" value="#{headerTabPanel.personalCare.mainMenu.name}" assignTo="#{productPanelBar.currentBar}"></a4j:actionparam>
+						</a4j:support>
     				</f:facet>
     				<rich:dataGrid columns="2" value="#{headerTabPanel.personalCare.subMenu}" var="personalCareSubMenu" columnClasses="table-list-product-left-panel-grid-column" styleClass="navigation-left-kitchen_appliance-product-panel-grid-data-grid">
     					<a4j:commandLink action="#{headerTabPanel.gotoProduct}" styleClass="font3b" value="#{personalCareSubMenu.label}" immediate="true">
