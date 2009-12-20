@@ -3,10 +3,12 @@ package com.ejd.web.vo.richfaces.header;
 import javax.faces.component.UIComponent;
 import javax.faces.event.ValueChangeEvent;
 
+import org.richfaces.component.html.HtmlPanelBar;
+
 public class ProductPanelBarBean {
 	private static ProductPanelBarBean instance = null;
 	
-	private UIComponent panelBar;
+	private HtmlPanelBar panelBar;
 	
 	private String currentBar = "";
 	
@@ -19,10 +21,10 @@ public class ProductPanelBarBean {
 		System.out.println("Bean.setCurrentTab(): " + currentBar);
 	}
 	
-	public UIComponent getPanelBar() {
+	public HtmlPanelBar getPanelBar() {
 		return panelBar;
 	}
-	public void setPanelBar(UIComponent panelBar) {
+	public void setPanelBar(HtmlPanelBar panelBar) {
 		this.panelBar = panelBar;
 	}
 	
