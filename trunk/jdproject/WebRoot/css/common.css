@@ -751,6 +751,8 @@ div.reviews{margin:5px 0}
   align: left;
 }
 .table-list-product-panel-grid {
+  padding:0px 0px 0px 0px;
+  margin:0px 0px 0px 0px;
   border:1px solid #f5fcff;
   font-size: 10pt;
   BORDER-RIGHT: 1px solid #f5fcff; 
@@ -758,7 +760,7 @@ div.reviews{margin:5px 0}
   BORDER-LEFT: 1px solid #f5fcff; 
   BORDER-BOTTOM: 1px solid #f5fcff; 
   BACKGROUND: #FFFFFF;
-  
+  min-height: 500px;
 }
 .table-list-product-panel-grid-column {
   	font-size: 12pt;
@@ -780,13 +782,18 @@ div.reviews{margin:5px 0}
 }
 
 .table-list-product-panel-grid-header {
-	background-image: url(../css/images/icons/pp_bg.gif); 
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	background-image: url(../css/images/icons/headerlogin_bg.jpg); 
 	background-repeat:repeat;
-	BORDER-RIGHT: #e3e3e3 1px solid; 
-	BORDER-TOP: #e3e3e3 1px solid; 
-	BORDER-LEFT: #e3e3e3 1px solid; 
-	BORDER-BOTTOM: #e3e3e3 1px solid; 
+	BORDER-RIGHT: #e3e3e3 0px solid; 
+	BORDER-TOP: #e3e3e3 0px solid; 
+	BORDER-LEFT: #e3e3e3 0px solid; 
+	BORDER-BOTTOM: #e3e3e3 0px solid; 
 	HEIGHT: 29px;
+	TEXT-ALIGN:LEFT;
+	font-size:12px;
+	color:#F87C14;
 }
 .table-list-product-panel-grid-header-column-one {
 	vAlign: top;
@@ -808,13 +815,15 @@ div.reviews{margin:5px 0}
 	font-size: 20pt;
 }
 .table-list-product-panel-grid-footer {
-	BORDER-RIGHT: 0px none #FFFFFF ; 
-	BORDER-TOP: 0px none #FFFFFF; 
-	BORDER-LEFT: 0px none #FFFFFF; 
-	BORDER-BOTTOM: 0px none #FFFFFF; 
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	border : 0px solid #f3f3f3;
+	background-color: #f3f3f3; 
 }
 
 .table-list-product-panel-grid-data-grid {
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
 	BORDER-RIGHT: 0px none #FFFFFF ; 
 	BORDER-TOP: 0px none #FFFFFF; 
 	BORDER-LEFT: 0px none #FFFFFF; 
@@ -1477,5 +1486,55 @@ div.reviews{margin:5px 0}
 	margin:0px 0px 0px 0px;
 	background-color: #e3e3e3;
 	height: 6px;
+	}
+.rich-menu-item-label{
+	font-size:12px;
+	color:#666699;
+	}
+.rich-menu-item-label-selected {
+	font-size:12px;
+	font-weight:bold;
+	background-color: #e3e3e3;
+	color:#666699;
+	}
+.rich-menu-item-hover{
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	background-color: #e3e3e3;
+	border : 2px solid #e3e3e3;
+	}
+/* datatscr define  */
+.rich-datascr{
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	background-color: #f3f3f3;
+	}
+.rich-dtascroller-table{
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	background-color: #f3f3f3;
+	border : 2px solid #f3f3f3;
+	}
+.rich-datascr-act{
+	border-top-color:#F87C14;
+	color:#ffffff;
+	background-color:#F87C14;
+	font-weight:bold;
+	}
+.rich-datascr-inact{
+	border-top-color:#ffffff;
+	color:black;
+	background-color:#ffffff;
+	}
+.rich-datascr-button{
+	background-color:#FFFFFF;
+	border : 1px solid #f3f3f3;
+	color: #CD6600;
+	}
+	
+	
+.no-product-find {
+	font-size :14px;
+	color:red;
 	}
 
