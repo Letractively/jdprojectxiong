@@ -10,7 +10,7 @@ xmlns:rich="http://richfaces.org/rich">
 <f:view>
 <html>
 	<head>
-    <title>sdsdsdsdsd</title>
+    <title>产品浏览</title>
     </head>
     <body>
     	<ui:composition template="../productTemplate.jsp">
@@ -116,8 +116,11 @@ xmlns:rich="http://richfaces.org/rich">
     			<a4j:region id="kitchenApplianceContentRegionContent" renderRegionOnly="false" selfRendered="true">
     			<h:form id="kitchenApplianceContentRegionContentForm">
     			<h:panelGrid id="productList" columns="1" style="width:100%;" styleClass="table-list-product-panel-grid">
+    			<h:outputText value="抱歉，找不到符合条件的商品!" rendered="#{not (listKitchenApplianceProduct.dataModel.rowCount>0)}" styleClass="no-product-find"></h:outputText>
     			<rich:dataGrid id="productListImg" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="3" elements="#{listKitchenApplianceProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" columnClasses="table-list-product-panel-grid-column" value="#{listKitchenApplianceProduct.dataModel}" var="product" rendered="#{listKitchenApplianceProduct.styleImgFlag}" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
-                 
+                 <f:facet name="header">
+                 	<h:outputText value="共:#{listKitchenApplianceProduct.dataModel.rowCount}件商品" rendered="#{listKitchenApplianceProduct.dataModel.rowCount>0}"></h:outputText>
+      			 </f:facet>
      				
                  <rich:panel style="border:0px;">
                  	 <h:graphicImage value="/productimage/#{product.imageName}"></h:graphicImage>
@@ -131,13 +134,12 @@ xmlns:rich="http://richfaces.org/rich">
                    
                  <f:facet name="footer">
                  	<h:panelGroup>
-                 		<rich:datascroller for="productListImg" id="dcFooterProductList" page="#{listKitchenApplianceProduct.scrollerPage}" pageIndexVar="currentPage" pagesVar="totalPages" maxPages="10" style="width:483px;align:center">
+                 		<rich:datascroller for="productListImg" id="dcFooterProductList" page="#{listKitchenApplianceProduct.scrollerPage}" pageIndexVar="currentPage" pagesVar="totalPages" maxPages="10" rendered="#{listKitchenApplianceProduct.dataModel.rowCount>0}" style="width:483px;align:center">
                  		<f:facet name="controlSeparator">
                  		</f:facet>
                  		<f:facet name="first">
                  		</f:facet>
                  		<f:facet name="first_disabled">
-                 			
                  		</f:facet> 
                  		<f:facet name="last">
                  		</f:facet>
