@@ -101,5 +101,8 @@
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
+  <session-config>
+    <session-timeout>2880</session-timeout>
+  </session-config>
 </web-app>
 
