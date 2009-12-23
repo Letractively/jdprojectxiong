@@ -23,6 +23,7 @@ public abstract class AbstractProduct extends java.lang.Object implements
 	private Integer currentNumber;
 	private String imageName;//Í¼Æ¬Ãû³Æ
 	private String name;
+	private String description;
 	private Stakeholder provider;
 	//private Integer providerId;
 	private String primaryCategoryCode;
@@ -183,7 +184,13 @@ public abstract class AbstractProduct extends java.lang.Object implements
 		this.name = name;
 	}
 
-	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 	public Stakeholder getProvider() {
 		return provider;

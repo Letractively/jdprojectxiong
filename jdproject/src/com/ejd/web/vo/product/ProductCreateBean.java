@@ -374,6 +374,7 @@ public class ProductCreateBean extends ProductBaseBean {
 		newProduct.setStockUpperNumber(this.getProduct().getStockUpperNumber());
 		newProduct.setImageName(this.getProduct().getImageName());
 		newProduct.setName(this.getProduct().getName());
+		newProduct.setDescription(this.getProduct().getDescription());
 		newProduct.setProvider(this.getStakeholderService().getStakeholderById(this.getProduct().getProvider().getId()));
 		newProduct.setPrimaryCategoryCode(this.getProduct().getPrimaryCategoryCode());
 		newProduct.setSecondCategoryCode(this.getProduct().getSecondCategoryCode());
