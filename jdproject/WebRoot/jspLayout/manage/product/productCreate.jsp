@@ -57,6 +57,10 @@ xmlns:rich="http://richfaces.org/rich">
 						<h:inputText value="#{productCreate.product.name}" id="name" maxlength="50">
                     	</h:inputText>
                 		<rich:message for="name" />
+                		<h:outputLabel value="描述:" for="description"></h:outputLabel>
+						<h:inputText value="#{productCreate.product.description}" id="description" maxlength="50">
+                    	</h:inputText>
+                		<rich:message for="description" />
 						<h:outputLabel value="图片:" for="imageName"></h:outputLabel>
 						<h:panelGroup>
 	    					<h:inputText value="#{productCreate.product.imageName}" id="imageName" maxlength="50"/>
