@@ -1432,7 +1432,7 @@ div.reviews{margin:5px 0}
 	background:url(../css/images/icons/select_category.gif) no-repeat; 
 	width:184px;
 	height:28px;
-	color:#fff;
+	color:#666699;
 	font-size:14px;
 	text-align:left;
   	text-indent: 5mm;
@@ -1444,7 +1444,7 @@ div.reviews{margin:5px 0}
 	background:url(../css/images/icons/select_category.gif) no-repeat; 
 	width:184px; 
 	height:28px; 
-	color:#fff; 
+	color:#666699; 
 	font-size:14px;
 	text-align:left;
   	text-indent: 5mm;
@@ -1536,5 +1536,44 @@ div.reviews{margin:5px 0}
 .no-product-find {
 	font-size :14px;
 	color:red;
+	font-weight:bold;
+	}
+.show-product-data-grid-row-one {
+  font-size: 12px;
+  text-align:center;
+}
+.show-product-data-grid-row-two {
+  font-size: 12px;
+  text-align:center;
+  font-weight:bold;
+}
+.show-product-data-grid-row-three {
+  font-size: 12px;
+  text-align:left;
+  text-indent: 12mm;
+}
+.show-product-data-grid-row-four {
+  font-size: 12px;
+  text-align:left;
+  text-indent: 12mm;
+}
+.show-product-data-grid-row-five {
+  font-size: 12px;
+  text-align:left;
+  text-indent: 12mm;
+}
+.show-product-data-grid-row-six {
+  font-size: 12px;
+  text-align:left;
+  text-indent: 12mm;
+}
+.show-product-data-grid-row-seven {
+  font-size: 12px;
+  text-align:left;
+  text-indent: 12mm;
+}
+.show-product-data-grid-price {
+	font-weight:bold;
+	color:#ff6513;
 	}
 
