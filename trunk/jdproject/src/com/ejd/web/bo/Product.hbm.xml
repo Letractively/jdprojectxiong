@@ -39,6 +39,9 @@
         <property name="name" type="java.lang.String">
             <column name="NAME" length="50" />
         </property>
+        <property name="description" type="java.lang.String">
+            <column name="DESCRIPTION" length="200" />
+        </property>
         <many-to-one name="provider" column="PROVIDERID" class="com.ejd.web.bo.Stakeholder" unique="true" fetch="select" lazy="false" cascade="none">
         </many-to-one>
         <property name="primaryCategoryCode" type="java.lang.String">

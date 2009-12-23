@@ -23,6 +23,7 @@ public class ProductVo {
 	private Integer currentNumber;
 	private String imageName;//Í¼Æ¬Ãû³Æ
 	private String name;
+	private String description;
 	private StakeholderVo provider;//only use StakeholderVo
 	//private Integer providerId;
 	private String primaryCategoryCode;
@@ -122,6 +123,12 @@ public class ProductVo {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	public StakeholderVo getProvider() {
 		return provider;

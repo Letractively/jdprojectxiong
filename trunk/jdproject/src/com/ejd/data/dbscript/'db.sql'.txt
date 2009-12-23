@@ -101,6 +101,7 @@ CREATE TABLE  `ejd`.`product` (
   `CURRENTNUMBER` int(11) default 0,
   `IMAGENAME` varchar(50) default NULL,
   `NAME` varchar(50) default NULL,
+  `DESCRIPTION` varchar(200) default NULL,
   `PROVIDERID` int(11) NOT NULL,
   `PRIMARYCATEGORYCODE` varchar(2) NOT NULL,
   `SECONDCATEGORYCODE` varchar(2) NOT NULL,
