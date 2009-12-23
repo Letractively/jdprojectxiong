@@ -78,7 +78,7 @@ xmlns:rich="http://richfaces.org/rich">
 										<a4j:actionparam name="number30" value="" assignTo="#{listKitchenApplianceProduct.number30}"></a4j:actionparam>
 										<a4j:actionparam name="number60" value="" assignTo="#{listKitchenApplianceProduct.number60}"></a4j:actionparam>
 										<a4j:actionparam name="number90" value="" assignTo="#{listKitchenApplianceProduct.number90}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="3" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="15" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number30button" reRender="kitchenApplianceContentRegionStyleFormPanel,productList">
 										<h:graphicImage value="/css/images/number30#{listKitchenApplianceProduct.number30}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
@@ -87,7 +87,7 @@ xmlns:rich="http://richfaces.org/rich">
 										<a4j:actionparam name="number30" value="_on" assignTo="#{listKitchenApplianceProduct.number30}"></a4j:actionparam>
 										<a4j:actionparam name="number60" value="" assignTo="#{listKitchenApplianceProduct.number60}"></a4j:actionparam>
 										<a4j:actionparam name="number90" value="" assignTo="#{listKitchenApplianceProduct.number90}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="6" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="30" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number60button" reRender="kitchenApplianceContentRegionStyleFormPanel,productList">
 										<h:graphicImage value="/css/images/number60#{listKitchenApplianceProduct.number60}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
@@ -96,7 +96,7 @@ xmlns:rich="http://richfaces.org/rich">
 										<a4j:actionparam name="number30" value="" assignTo="#{listKitchenApplianceProduct.number30}"></a4j:actionparam>
 										<a4j:actionparam name="number60" value="_on" assignTo="#{listKitchenApplianceProduct.number60}"></a4j:actionparam>
 										<a4j:actionparam name="number90" value="" assignTo="#{listKitchenApplianceProduct.number90}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="9" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="60" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number90button" reRender="kitchenApplianceContentRegionStyleFormPanel,productList">
 										<h:graphicImage value="/css/images/number90#{listKitchenApplianceProduct.number90}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
@@ -105,7 +105,7 @@ xmlns:rich="http://richfaces.org/rich">
 										<a4j:actionparam name="number30" value="" assignTo="#{listKitchenApplianceProduct.number30}"></a4j:actionparam>
 										<a4j:actionparam name="number60" value="" assignTo="#{listKitchenApplianceProduct.number60}"></a4j:actionparam>
 										<a4j:actionparam name="number90" value="_on" assignTo="#{listKitchenApplianceProduct.number90}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="12" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="90" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									
 							</h:panelGroup>
@@ -123,13 +123,20 @@ xmlns:rich="http://richfaces.org/rich">
       			 </f:facet>
      				
                  <rich:panel style="border:0px;">
+                 	<h:panelGrid columns="1" rowClasses="show-product-data-grid-row-one,show-product-data-grid-row-two,show-product-data-grid-row-three,show-product-data-grid-row-four,show-product-data-grid-row-five,show-product-data-grid-row-six,show-product-data-grid-row-seven">  
                  	 <h:graphicImage value="/productimage/#{product.imageName}"></h:graphicImage>
-                     <h:outputText value="#{product.code}" />
-                     <h:outputText value="#{product.name}" />
-                     <h:outputText value="#{product.purchasePrice}" rendered="#{currentUser.showPurchasePrice}"/>
-                     <h:outputText value="#{product.tradePriceOne}" rendered="#{currentUser.showTradePriceOne}"/>
-                     <h:outputText value="#{product.tradePriceTwo}" rendered="#{currentUser.showTradePriceTwo}"/>
-                     <h:outputText value="#{product.retailPrice}" rendered="#{currentUser.showRetailPrice}"/>
+                 	 <h:panelGroup>
+                 	 <h:outputText value="#{product.brandCode}"/>
+                     <h:outputText value="#{product.name}"/>
+                     <h:outputText value="#{product.description}" style="color:red;"/>
+                     </h:panelGroup>
+                     <h:outputText value="商品编号:#{product.code}"/>
+                     
+                     <h:panelGroup><h:outputLabel value="进货价:" rendered="#{currentUser.showPurchasePrice}"></h:outputLabel><h:outputText value="#{product.purchasePrice}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showPurchasePrice}"/></h:panelGroup>
+                     <h:panelGroup><h:outputLabel value="代理价:" rendered="#{currentUser.showTradePriceOne}"></h:outputLabel><h:outputText value="#{product.tradePriceOne}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showTradePriceOne}"/></h:panelGroup>
+                     <h:panelGroup><h:outputLabel value="经销价:" rendered="#{currentUser.showTradePriceTwo}"></h:outputLabel><h:outputText value="#{product.tradePriceTwo}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showTradePriceTwo}"/></h:panelGroup>
+                     <h:panelGroup><h:outputLabel value="零售价:" rendered="#{currentUser.showRetailPrice}"></h:outputLabel><h:outputText value="#{product.retailPrice}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showRetailPrice}"/></h:panelGroup>
+                     </h:panelGrid>
                  </rich:panel>
                    
                  <f:facet name="footer">
