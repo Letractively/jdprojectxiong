@@ -18,15 +18,11 @@ xmlns:rich="http://richfaces.org/rich">
     				<h:panelGrid columns="4" style="vertial-align:middle;text-align:center;">
     				<h:panelGroup style="text-valign:middle"><h:outputText id="loginUserLabel" value="用户名:" styleClass="user-name"/><h:inputText id="loginUserId" value="#{currentUser.loginInfo.userId}" styleClass="user-name" size="15"/></h:panelGroup>
     				<h:panelGroup><h:outputText id="loginUserPasswordLabel" value="密码:" styleClass="user-name"/><h:inputSecret id="loginUserPassword" value="#{currentUser.loginInfo.userPassword}" size="12" styleClass="user-name"/></h:panelGroup>
-    				<h:commandButton id="loginInBtn" action="#{currentUser.loginInAction}" image="/css/images/signin.gif"><a4j:support event="onclick" reRender="noUserLoginRegion,hasUserLoginRegion"/></h:commandButton>
+    				<h:commandButton id="loginInBtn" action="#{currentUser.loginInAction}" image="/css/images/login.gif"><a4j:support event="onclick" reRender="noUserLoginRegion,hasUserLoginRegion"/></h:commandButton>
     				<rich:panel id="noUserLoginPgOthersPgPanel" styleClass="main_header_login_navigation_others">
-    						<h:outputLink id="userShoppingCart" value="http://www.sohu.com"><h:outputText id="userShoppingCartText" value="购物车"/></h:outputLink>
-    						<h:outputText id="specchar3" value="-"></h:outputText>
     						<h:outputLink id="newUserRegistryLink" value="http://www.sohu.com"><h:outputText id="newUserRegistryLinkText" value="新用户注册"/></h:outputLink>
     						<h:outputText id="specchar1" value="-"></h:outputText>
     						<h:outputLink id="forgotPasswordLink" value="http://www.sohu.com"><h:outputText id="forgotPasswordLinkText" value="忘记密码"/></h:outputLink>
-    						<h:outputText id="specchar2" value="-"></h:outputText>
-    						<h:outputLink id="helpCenterLink" value="http://www.sohu.com"><h:outputText id="helpCenterLinkText" value="帮助中心"/></h:outputLink>
     				</rich:panel>
     				</h:panelGrid>
     			</rich:panel>
@@ -35,15 +31,11 @@ xmlns:rich="http://richfaces.org/rich">
     			<rich:panel id="hasUserLoginPg" styleClass="main_header_login_navigation">
     				<h:panelGrid columns="4" style="vertial-align:middle;text-align:center;">
     					<h:panelGroup><h:outputText id="loginInUserLabelLeft" value="您好: "/><h:outputText id="loginUserIdText" value="#{currentUser.userInfo.fullName}"/><h:outputText id="loginInUserLabelRight" value="欢迎回来!"/></h:panelGroup>
-    					<h:commandButton id="loginOutBtn" image="/css/images/signin.gif" action="#{currentUser.loginOutAction}"><a4j:support event="onclick" reRender="noUserLoginRegion,hasUserLoginRegion"/></h:commandButton>
+    					<h:commandButton id="loginOutBtn" image="/css/images/login.gif" action="#{currentUser.loginOutAction}"><a4j:support event="onclick" reRender="noUserLoginRegion,hasUserLoginRegion"/></h:commandButton>
     					<rich:panel id="UserLoginPgOthersPgPanel" styleClass="main_header_login_navigation_others">
-    						<h:outputLink id="userShoppingCartUserLoginIn" value="http://www.sohu.com"><h:outputText id="userShoppingCartTextUserLoginIn" value="购物车"/></h:outputLink>
-    						<h:outputText id="specchar3UserLoginIn" value="-"></h:outputText>
     						<h:outputLink id="newUserRegistryLinkUserLoginIn" value="http://www.sohu.com"><h:outputText id="newUserRegistryLinkTextUserLoginIn" value="新用户注册"/></h:outputLink>
     						<h:outputText id="specchar1UserLoginIn" value="-"></h:outputText>
     						<h:outputLink id="forgotPasswordLinkUserLoginIn" value="http://www.sohu.com"><h:outputText id="forgotPasswordLinkTextUserLoginIn" value="忘记密码"/></h:outputLink>
-    						<h:outputText id="specchar2UserLoginIn" value="-"></h:outputText>
-    						<h:outputLink id="helpCenterLinkUserLoginIn" value="http://www.sohu.com"><h:outputText id="helpCenterLinkTextUserLoginIn" value="帮助中心"/></h:outputLink>
     				</rich:panel>
     				</h:panelGrid>
     			</rich:panel>

@@ -14,7 +14,8 @@ xmlns:c="http://java.sun.com/jstl/core">
 		<table height="131" cellSpacing="0" cellPadding="0" width="100%" class="main_header" border="0">
 		<tbody>
 		  <tr>
-		  <td width="2px" background="${facesContext.externalContext.requestContextPath}/css/images/icons/topleft_bg.jpg"></td>
+		  <td width="2px" background="${facesContext.externalContext.requestContextPath}/css/images/icons/topleft_bg.jpg">
+		  </td>
 		  <td>
 		  <table>
 		  <tbody>
@@ -23,7 +24,8 @@ xmlns:c="http://java.sun.com/jstl/core">
 		      <table class="logo" height="59" cellSpacing="0" cellPadding="0" width="100%" border="0">
 		        <tbody>
 		        <tr>
-		          <td vAlign="bottom" align="right" width="100%">
+		          <td width="20%"><h:graphicImage url="/css/images/company_logo.gif"></h:graphicImage></td>
+		          <td vAlign="bottom" align="right" width="80%">
 		            <table height="30" cellSpacing="0" cellPadding="0" align="center" width="100%" border="0">
 		              <tbody>
 		              <tr>
@@ -38,7 +40,13 @@ xmlns:c="http://java.sun.com/jstl/core">
 		            <table height="26" cellSpacing="0" cellPadding="0" align="center" width="100%" border="0">
 		              <tbody>
 		              <tr align="right">
-		              <td width="84%"></td>
+		              <td width="84%">
+		              	<h:graphicImage url="/css/images/user_order.jpg" rendered="#{currentUser.userInfo != null || currentUser.userLoginFlag}"></h:graphicImage>
+		              	<h:graphicImage url="/css/images/user_help.jpg"></h:graphicImage>
+		              	<h:graphicImage url="/css/images/user_shopcart.jpg"></h:graphicImage>
+		              	<h:graphicImage url="/css/images/user_home.jpg"></h:graphicImage>
+		              	
+		              </td>
 		               <td width="16%">
 		               <rich:dropDownMenu value="所有分类 " submitMode="server" direction="bottom-left"  jointPoint="td" event="onmouseover" showDelay="10">
                 			<rich:menuGroup value="#{headerTabPanel.kitchenAppliance.mainMenu.label}" direction="bottom-left">
@@ -130,7 +138,7 @@ xmlns:c="http://java.sun.com/jstl/core">
 		      <table class="top_bg2" height="42" cellSpacing="0" cellPadding="0" width="100%" align="center" border="0">
 		        <tbody>
 		        <tr>
-		          <td width="74"><span class="fontb_1">商品搜索:</span></td> 
+		          <td width="280" align="right"><span class="fontb_1">商品搜索:</span></td> 
 		          <td width="160"><h:inputText id="productSearchId" value=""></h:inputText>
 		          </td>
 		          <td width="100">
@@ -148,19 +156,13 @@ xmlns:c="http://java.sun.com/jstl/core">
 		            <table height="18" cellSpacing="0" cellPadding="0" width="100" border="0">
 		              <tbody>
 		              <tr>
-		                <td align="middle" width="130"><a 
-		                  onmouseover="MM_swapImage('Image43','','${facesContext.externalContext.requestContextPath}/css/images/icons/bt_gouwua.gif',0)" 
-		                  onmouseout="MM_swapImgRestore()" 
-		                  href="javascript:view_cart()"><img id="Image43" height="35" 
-		                  src="${facesContext.externalContext.requestContextPath}/css/images/icons/bt_gouwu.gif" width="100" border="0" 
-		                  name="Image43"/></a></td></tr></tbody></table></td>
+		                <td align="middle" width="130">
+		                </td></tr></tbody></table></td>
 		          <td width="210">
 		            <table height="18" cellSpacing="0" cellPadding="0" width="210" border="0">
 		              <tbody>
 		              <tr>
-		                <td align="middle" width="226"><img height="21" 
-		                  src="${facesContext.externalContext.requestContextPath}/css/images/icons/bt_tel.gif" 
-		            width="202"/></td></tr></tbody></table></td></tr></tbody></table>
+		                <td align="middle" width="226"></td></tr></tbody></table></td></tr></tbody></table>
 		      <table height="28" cellSpacing="0" cellPadding="0" width="980" align="center" 
 		      border="0">
 		        <tbody>
