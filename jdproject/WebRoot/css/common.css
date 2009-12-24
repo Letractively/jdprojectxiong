@@ -1572,6 +1572,11 @@ div.reviews{margin:5px 0}
   text-align:left;
   text-indent: 12mm;
 }
+.show-product-data-grid-row-eight{
+  font-size: 12px;
+  text-align:left;
+  text-indent: 16mm;
+	}
 .show-product-data-grid-price {
 	font-weight:bold;
 	color:#ff6513;
