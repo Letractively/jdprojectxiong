@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.faces.model.DataModel;
 
+import net.sf.cglib.beans.BeanCopier;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -21,6 +23,8 @@ import com.ejd.web.bo.Stakeholder;
 import com.ejd.web.vo.product.ProductPrice;
 import com.ejd.web.vo.product.base.RangeParam;
 import com.ejd.web.vo.richfaces.header.HeaderConstants;
+import com.ejd.web.vo.shopcart.InventoryItem;
+import com.ejd.web.vo.shopcart.ShopCartBean;
 
 public class KitchenApplianceProductBean extends PagedBaseBean {
 	public IProductService productService;
