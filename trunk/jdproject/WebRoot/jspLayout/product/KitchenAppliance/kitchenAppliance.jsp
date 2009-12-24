@@ -121,9 +121,9 @@ xmlns:rich="http://richfaces.org/rich">
                  <f:facet name="header">
                  	<h:outputText value="共:#{listKitchenApplianceProduct.dataModel.rowCount}件商品" rendered="#{listKitchenApplianceProduct.dataModel.rowCount>0}"></h:outputText>
       			 </f:facet>
-     				
+     				<a4j:region renderRegionOnly="false" selfRendered="true">
                  <rich:panel style="border:0px;">
-                 	<h:panelGrid columns="1" rowClasses="show-product-data-grid-row-one,show-product-data-grid-row-two,show-product-data-grid-row-three,show-product-data-grid-row-four,show-product-data-grid-row-five,show-product-data-grid-row-six,show-product-data-grid-row-seven">  
+                 	<h:panelGrid columns="1" rowClasses="show-product-data-grid-row-one,show-product-data-grid-row-two,show-product-data-grid-row-three,show-product-data-grid-row-four,show-product-data-grid-row-five,show-product-data-grid-row-six,show-product-data-grid-row-seven,show-product-data-grid-row-eight">  
                  	 <h:graphicImage value="/productimage/#{product.imageName}"></h:graphicImage>
                  	 <h:panelGroup>
                  	 <h:outputText value="#{product.brandCode}"/>
@@ -136,9 +136,17 @@ xmlns:rich="http://richfaces.org/rich">
                      <h:panelGroup><h:outputLabel value="代理价:" rendered="#{currentUser.showTradePriceOne}"></h:outputLabel><h:outputText value="#{product.tradePriceOne}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showTradePriceOne}"/></h:panelGroup>
                      <h:panelGroup><h:outputLabel value="经销价:" rendered="#{currentUser.showTradePriceTwo}"></h:outputLabel><h:outputText value="#{product.tradePriceTwo}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showTradePriceTwo}"/></h:panelGroup>
                      <h:panelGroup><h:outputLabel value="零售价:" rendered="#{currentUser.showRetailPrice}"></h:outputLabel><h:outputText value="#{product.retailPrice}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showRetailPrice}"/></h:panelGroup>
+                     <h:panelGroup>
+                     	<a4j:commandButton image="/css/images/icons/bt1.gif" action="#{shopCart.addInventoryItem}"><a4j:actionparam name="productCode" value="#{product.code}"/></a4j:commandButton>
+                     	<a4j:status>
+                			<f:facet name="start">
+                    			<h:graphicImage  value="/css/images/icons/blue-loading.gif"/>
+               			 	</f:facet>
+            			</a4j:status>
+                     </h:panelGroup>
                      </h:panelGrid>
                  </rich:panel>
-                   
+                   </a4j:region>
                  <f:facet name="footer">
                  	<h:panelGroup>
                  		<rich:datascroller for="productListImg" id="dcFooterProductList" page="#{listKitchenApplianceProduct.scrollerPage}" pageIndexVar="currentPage" pagesVar="totalPages" maxPages="10" rendered="#{listKitchenApplianceProduct.dataModel.rowCount>0}" style="width:483px;align:center">
