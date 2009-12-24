@@ -882,6 +882,16 @@
 		<value>#{loginService}</value>
 	  </managed-property>
     </managed-bean>
+    <managed-bean>
+        <managed-bean-name>shopCart</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.shopcart.ShopCartBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
 	<!-- test -->
 	<managed-bean>
 		<managed-bean-name>demoBean</managed-bean-name>
