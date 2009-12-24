@@ -8,7 +8,7 @@ public class ExistProductStatusBean {
 		new SelectItem(new String("F"),"即将上市"),
 		new SelectItem(new String("N"),"新品"),
 		new SelectItem(new String("H"),"热销"),
-		new SelectItem(new String("S"),"停产"),
+		new SelectItem(new String("S"),"缺货"),
 	};
 
 	public SelectItem[] getStatusItems() {
