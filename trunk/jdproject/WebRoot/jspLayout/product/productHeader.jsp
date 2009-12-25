@@ -11,7 +11,7 @@ xmlns:c="http://java.sun.com/jstl/core">
 <f:subview id="headerMainView">
 <h:form id="headerMainform"> 
 	<a4j:region id="kitchenApplianceHeaderRegion" renderRegionOnly="false" selfRendered="true">
-		<table height="131" cellSpacing="0" cellPadding="0" width="100%" class="main_header" border="0">
+		<table height="131" cellSpacing="0" cellPadding="0" width="998" class="main_header" border="0">
 		<tbody>
 		  <tr>
 		  <td width="2px" background="${facesContext.externalContext.requestContextPath}/css/images/icons/topleft_bg.jpg">

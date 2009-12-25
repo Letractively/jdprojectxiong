@@ -21,7 +21,7 @@ xmlns:rich="http://richfaces.org/rich">
     		<ui:define id="kitchenApplianceSearchNavigation" name="productSearchNavigation">
 				<a4j:region id="kitchenApplianceSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="kitchenApplianceSearchNavigationRegionForm">
-    			<rich:panelBar id="kitchenAppliancepb" styleClass="panel-bar-product-top" contentStyle="background:none;">
+    			<rich:panelBar id="kitchenAppliancepb" styleClass="panel-bar-product-top" style="width:793px;" contentStyle="background:none;">
     				<rich:panelBarItem id="kitchenAppliancePbi" headerClass="navigation-product-top-panel-bar-item-header">
     				<f:facet name="label">
     					<h:outputText value="商品筛选" styleClass="navigation-product-top-panel-bar-item-header-label"></h:outputText>
@@ -36,7 +36,7 @@ xmlns:rich="http://richfaces.org/rich">
 			</a4j:region>
 			</ui:define>
 			<ui:define id="kitchenApplianceContent" name="content">
-    			<h:panelGrid columns="1" style="width:100%;" styleClass="table-row">
+    			<h:panelGrid columns="1" style="width:793px;" styleClass="table-row">
     			<a4j:region id="kitchenApplianceContentRegionStyle" renderRegionOnly="false" selfRendered="true">
     				<h:form id="kitchenApplianceContentRegionStyleForm">
     					<rich:panel id="kitchenApplianceContentRegionStyleFormPanel" styleClass="operate_title">
@@ -115,7 +115,7 @@ xmlns:rich="http://richfaces.org/rich">
     			</a4j:region>
     			<a4j:region id="kitchenApplianceContentRegionContent" renderRegionOnly="false" selfRendered="true">
     			<h:form id="kitchenApplianceContentRegionContentForm">
-    			<h:panelGrid id="productList" columns="1" style="width:100%;" styleClass="table-list-product-panel-grid">
+    			<h:panelGrid id="productList" columns="1" style="width:100%" styleClass="table-list-product-panel-grid">
     			<h:outputText value="抱歉，找不到符合条件的商品!" rendered="#{not (listKitchenApplianceProduct.dataModel.rowCount>0)}" styleClass="no-product-find"></h:outputText>
     			<rich:dataGrid id="productListImg" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="4" elements="#{listKitchenApplianceProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" columnClasses="table-list-product-panel-grid-column" value="#{listKitchenApplianceProduct.dataModel}" var="product" rendered="#{listKitchenApplianceProduct.styleImgFlag}" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                  <f:facet name="header">

@@ -11,11 +11,10 @@ xmlns:c="http://java.sun.com/jstl/core">
 <f:subview id="headerMainView">
 <h:form id="headerMainform"> 
 	<a4j:region id="kitchenApplianceHeaderRegion" renderRegionOnly="false" selfRendered="true">
-		<h:panelGrid columns="3" columnClasses="main-header-left,main-header-center,main-header-right" styleClass="main-header">
-			<h:outputText value=""></h:outputText>
+		<h:panelGrid columns="1"  border="0" columnClasses="main-header-center" styleClass="main-header">
 			<h:panelGroup>
-				<h:panelGrid columns="3" columnClasses="sub-main-header-left,sub-main-header-center,sub-main-header-right">
-					<h:graphicImage url="/css/images/company_logo.gif"></h:graphicImage>
+				<h:panelGrid columns="3" border="0" columnClasses="sub-main-header-left,sub-main-header-center,sub-main-header-right">
+					<h:graphicImage url="/css/images/company_logo.gif" style="border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px;"></h:graphicImage>
 					<h:outputText value=""></h:outputText>
 					<h:panelGrid columns="1" style="align:left;">
 						<h:panelGroup>
@@ -111,7 +110,6 @@ xmlns:c="http://java.sun.com/jstl/core">
 					</h:panelGrid>
 				</h:panelGrid>
 			</h:panelGroup>
-			<h:outputText value=""></h:outputText>
 		</h:panelGrid>
 	</a4j:region>
 						
