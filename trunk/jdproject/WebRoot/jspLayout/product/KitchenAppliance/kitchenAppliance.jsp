@@ -78,7 +78,7 @@ xmlns:rich="http://richfaces.org/rich">
 										<a4j:actionparam name="number30" value="" assignTo="#{listKitchenApplianceProduct.number30}"></a4j:actionparam>
 										<a4j:actionparam name="number60" value="" assignTo="#{listKitchenApplianceProduct.number60}"></a4j:actionparam>
 										<a4j:actionparam name="number90" value="" assignTo="#{listKitchenApplianceProduct.number90}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="15" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="20" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number30button" reRender="kitchenApplianceContentRegionStyleFormPanel,productList">
 										<h:graphicImage value="/css/images/number30#{listKitchenApplianceProduct.number30}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
@@ -87,7 +87,7 @@ xmlns:rich="http://richfaces.org/rich">
 										<a4j:actionparam name="number30" value="_on" assignTo="#{listKitchenApplianceProduct.number30}"></a4j:actionparam>
 										<a4j:actionparam name="number60" value="" assignTo="#{listKitchenApplianceProduct.number60}"></a4j:actionparam>
 										<a4j:actionparam name="number90" value="" assignTo="#{listKitchenApplianceProduct.number90}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="30" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="40" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number60button" reRender="kitchenApplianceContentRegionStyleFormPanel,productList">
 										<h:graphicImage value="/css/images/number60#{listKitchenApplianceProduct.number60}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
@@ -105,7 +105,7 @@ xmlns:rich="http://richfaces.org/rich">
 										<a4j:actionparam name="number30" value="" assignTo="#{listKitchenApplianceProduct.number30}"></a4j:actionparam>
 										<a4j:actionparam name="number60" value="" assignTo="#{listKitchenApplianceProduct.number60}"></a4j:actionparam>
 										<a4j:actionparam name="number90" value="_on" assignTo="#{listKitchenApplianceProduct.number90}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="90" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="100" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									
 							</h:panelGroup>
@@ -117,7 +117,7 @@ xmlns:rich="http://richfaces.org/rich">
     			<h:form id="kitchenApplianceContentRegionContentForm">
     			<h:panelGrid id="productList" columns="1" style="width:100%;" styleClass="table-list-product-panel-grid">
     			<h:outputText value="抱歉，找不到符合条件的商品!" rendered="#{not (listKitchenApplianceProduct.dataModel.rowCount>0)}" styleClass="no-product-find"></h:outputText>
-    			<rich:dataGrid id="productListImg" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="3" elements="#{listKitchenApplianceProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" columnClasses="table-list-product-panel-grid-column" value="#{listKitchenApplianceProduct.dataModel}" var="product" rendered="#{listKitchenApplianceProduct.styleImgFlag}" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
+    			<rich:dataGrid id="productListImg" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="4" elements="#{listKitchenApplianceProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" columnClasses="table-list-product-panel-grid-column" value="#{listKitchenApplianceProduct.dataModel}" var="product" rendered="#{listKitchenApplianceProduct.styleImgFlag}" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                  <f:facet name="header">
                  	<h:outputText value="共:#{listKitchenApplianceProduct.dataModel.rowCount}件商品" rendered="#{listKitchenApplianceProduct.dataModel.rowCount>0}"></h:outputText>
       			 </f:facet>
@@ -232,6 +232,9 @@ xmlns:rich="http://richfaces.org/rich">
              </h:form>
              </a4j:region>
              </h:panelGrid>
+    		</ui:define>
+    		<ui:define id="kitchenApplianceRight" name="right">
+    			<h:outputText value=""></h:outputText>
     		</ui:define>
     	</ui:composition>
     </body>
