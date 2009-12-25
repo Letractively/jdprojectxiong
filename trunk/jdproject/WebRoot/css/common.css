@@ -1218,12 +1218,13 @@ div.reviews{margin:5px 0}
   margin-right-width:0px;
   margin-bottom-width:0px;
   margin-left-width:0px;
-  width:64%;
+  width:82%;
+  min-width:800px;
 }
 .template-right {
   font-size: 10pt;
   vertical-align:top;
-  width:18%;
+  width:1px;
 }
 .product-template-content {
   font-size: 10pt;
