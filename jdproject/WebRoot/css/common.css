@@ -1218,7 +1218,7 @@ div.reviews{margin:5px 0}
   margin-right-width:0px;
   margin-bottom-width:0px;
   margin-left-width:0px;
-  width:82%;
+  width:800px;
   min-width:800px;
 }
 .template-right {
@@ -1328,7 +1328,7 @@ div.reviews{margin:5px 0}
 	}
 .main_header{
 		background:url(../css/images/icons/top_bg.jpg) left 0px repeat;
-		width:100%;
+		width:994;
 	}
 .main_header_login_navigation{
 	padding:0px 0px 0px 0px;
@@ -1581,5 +1581,60 @@ div.reviews{margin:5px 0}
 .show-product-data-grid-price {
 	font-weight:bold;
 	color:#ff6513;
+	}
+.main-header{
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	border-style:none;
+	height: 131px;
+	width:100%;
+	}
+.main-header-left{
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	border-style:none;
+	height: 131px;
+	width: 7px;
+	background:url(../css/images/icons/topleft_bg.jpg) no-repeat;
+	}
+.main-header-center{
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	border-style:none;
+	height: 131px;
+	width: 100%;
+	background:url(../css/images/icons/top_bg.jpg) repeat;
+	}
+.main-header-right{
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	border-style:none;
+	height: 131px;
+	width: 7px;
+	background:url(../css/images/icons/topright_bg.jpg) no-repeat;
+	}
+.sub-main-header-left{
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	border-style:none;
+	align:right;
+	height: 131px;
+	width: 20%;
+	}
+.sub-main-header-center{
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	border-style:none;
+	align:right;
+	height: 131px;
+	width: 20%;
+	}
+.sub-main-header-right{
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	border-style:none;
+	align:right;
+	height: 131px;
+	width: 60%;
 	}
 
