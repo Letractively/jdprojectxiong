@@ -10,6 +10,8 @@ xmlns:rich="http://richfaces.org/rich">
 <f:subview id="kitchenApplianceProductLeftView">
 	<h:form id="kitchenApplianceProductLeftViewForm">
 		<a4j:region id="kitchenApplianceProductLeftViewFormRegion" renderRegionOnly="false" selfRendered="true">
+		<rich:panel headerClass="left-navigation-product-header" styleClass="panel-bar-product-top" bodyClass="left-navigation-product-body">
+			<f:facet name="header"><h:outputLabel value="商品分类"/></f:facet>
 			<rich:panelBar id="kitchenApplianceLeftPb" binding="#{productPanelBar.panelBar}" selectedPanel="#{productPanelBar.currentBar}" width="198"  styleClass="panel-bar-product-left" contentStyle="BACKGROUND-COLOR: #FFFFFF">
     				<rich:panelBarItem id="#{headerTabPanel.kitchenAppliance.mainMenu.name}" name="#{headerTabPanel.kitchenAppliance.mainMenu.name}" headerClass="navigation-product-panel-bar-item">
     				<f:facet name="label">
@@ -111,6 +113,7 @@ xmlns:rich="http://richfaces.org/rich">
     				</rich:dataGrid>
 					</rich:panelBarItem>
 			</rich:panelBar>
+		</rich:panel>
 		</a4j:region>
 	</h:form>
 

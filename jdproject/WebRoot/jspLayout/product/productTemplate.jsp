@@ -14,7 +14,11 @@ xmlns:rich="http://richfaces.org/rich">
 <link rel="STYLESHEET" type="text/css" href="${facesContext.externalContext.requestContextPath}/css/style.css"/>
 <link rel="STYLESHEET" type="text/css" href="${facesContext.externalContext.requestContextPath}/css/index.css"/>
 <link rel="STYLESHEET" type="text/css" href="${facesContext.externalContext.requestContextPath}/css/css.css"/>
-<h:panelGrid columns="1" width="998px" style="WIDTH:100%; border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px;">
+<table class="skr" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td align="center" width="100%">
+<h:panelGrid columns="1" style="WIDTH:998px; border:0 ;BORDER-RIGHT: 10px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top;ALIGN:CENTER; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px;">
 	<h:panelGrid columns="1" cellpadding="0" cellspacing="0" border="0" style="width:100%;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px">
 	<h:panelGrid columns="1" cellpadding="0" cellspacing="0" border="0" style="width:100%;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px" styleClass="headerStyle" columnClasses="headerLeftRightStyle,headerMiddleStyle,headerLeftRightStyle">
 	    <ui:insert name="manageHeaderMainLeft">
@@ -35,14 +39,29 @@ xmlns:rich="http://richfaces.org/rich">
 	</h:panelGrid>
 	</h:panelGrid>
 </h:panelGrid>
-<h:panelGrid columns="1" width="998px" style="WIDTH:100%;MIN-WIDTH:998px;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px">
+</td>
+</tr>
+</tbody>
+</table>
+<table class="skr" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td align="center" width="100%">
+<h:panelGrid columns="1" style="WIDTH:998px;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; ALIGN:CENTER;BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px">
 	<ui:insert name="productStepDisplay">
 		<f:subview id="productStepDisplayView">
 			<h:outputText value="productStepDisplayView"></h:outputText>
 		</f:subview>
 	</ui:insert>
 </h:panelGrid>
-
+</td>
+</tr>
+</tbody>
+</table>
+<table class="skr" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td align="center" width="100%">
 <h:panelGrid columns="3" width="998px"  styleClass="contentStyle" columnClasses="template-left,template-content,template-right">
 	<h:panelGroup id="template-left">
 		<ui:insert name="left">
@@ -77,11 +96,26 @@ xmlns:rich="http://richfaces.org/rich">
 	</h:panelGroup>
 
 </h:panelGrid>
-<table cellpadding="4" cellspacing="0" width="100%">
-<tbody><tr>
-<td align="center" bgcolor="white" width="100%"></td></tr>
-</tbody></table>
-bbb<br/>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="skr" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td align="center" width="100%">
+<h:panelGrid columns="1" style="WIDTH:998px;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; ALIGN:CENTER;BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px">
+	<ui:insert name="footerone">
+		<f:subview id="footerOneView">
+			<h:outputText value="footerone"></h:outputText>
+		</f:subview>
+	</ui:insert>
+</h:panelGrid>
+</td>
+</tr>
+</tbody>
+</table>
+
 <table class="skr" border="0" cellpadding="0" cellspacing="0" width="100%">
 <tbody><tr>
 <td align="center" width="100%">
