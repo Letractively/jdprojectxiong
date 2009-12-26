@@ -34,16 +34,6 @@ p {
 	font-size: 10px;	
 }
 
-body{
-	margin : 0px;
-	background-position : top left;
-	background-repeat : no-repeat;
-	background-color : White;
-	padding-top:0px;
-	font-family: Verdana;
-	font-size:11px;
-}
-
 .page_brick{
 	position : absolute;
 	top : 0px;
@@ -259,7 +249,10 @@ input, select, textarea, button, keygen, isindex, legend, a {
 }
 
 .current-selected {
-	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 0px; PADDING-TOP: 3px; DISPLAY: inline-table; BACKGROUND: #6aa619; COLOR: #ffffff; font-size:12px;
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 0px; PADDING-TOP: 3px; DISPLAY: inline-table; BACKGROUND: #FF9900; COLOR: #ffffff; font-size:12px;
+}
+.current-product-show-number {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 0px; PADDING-TOP: 3px; DISPLAY: inline-table; BACKGROUND: #FF9900; COLOR: #ffffff; font-size:12px;
 }
 .top-product-navigation-option {
 	DISPLAY: table-column; FLOAT: left; MARGIN: 0px 5px; LINE-HEIGHT: 150%; WHITE-SPACE: nowrap; COLOR:gray;font-size:12px;
@@ -600,7 +593,7 @@ hr {
 .rkb  { font-family:arial,helvetica,sans-serif; font-size:80%; font-weight:bold; color:#000000 }
 .rgb  { font-family:arial,helvetica,sans-serif; font-size:80%; font-weight:bold; color:#7D7D7D }
 .rgr  { font-family:arial,helvetica,sans-serif; font-size:80%; color:#7D7D7D }
-.skr  { font-family:arial,helvetica,sans-serif; font-size:60% }
+.skr  { font-family:arial,helvetica,sans-serif; font-size:60%;aling:center;}
 .sgr  { font-family:arial,helvetica,sans-serif; font-size:60%; color:#7D7D7D }
 .rrr  { font-family:arial,helvetica,sans-serif; font-size:80%; color:#FF0000 }
 .srr  { font-family:arial,helvetica,sans-serif; font-size:60%; color:#FF0000 }
@@ -633,7 +626,7 @@ div.reviews{margin:5px 0}
 
 /* define self */
 .headerStyle  {align:center; border:3; cellpadding:0; cellspacing:0; width:100%}
-.contentStyle  {align:center; border:3; cellpadding:0; cellspacing:0; width:100%;}
+.contentStyle  {align:center; border:3; cellpadding:0; cellspacing:0; width:998px;}
 .headerLeftRightStyle  {border-bottom: 0px solid black; width:50%}
 .headerMiddleStyle  {nowrap:nowrap}
 .allStyle {width:90%;align:center}
@@ -1250,7 +1243,30 @@ div.reviews{margin:5px 0}
   background-image: url(./images/icons/number.gif);
   background-repeat: no-repeat;
 }
-
+.left-navigation-product-header {
+  top: 0px;
+  left: 0px;
+  height:26px;
+  padding:0px 0px 0px 0px;
+  margin:0px 0px 0px 0px;
+  font-size: 16px;
+  font-weight:bold;
+  color:#666699;
+  line-height:28px;
+  TEXT-INDENT: 6px;
+  background-image: url(../css/images/icons/siteactivemenubg.gif);
+  background-position : top left;
+  border:0px #f3f3f3 solid;
+}
+.left-navigation-product-body {
+  top: 0px;
+  left: 0px;
+  height:auto;
+  padding:0px 0px 0px 0px;
+  margin:0px 0px 0px 0px;
+  background-position : top left;
+  border:0px #e3e3e3 solid;
+}
 .navigation-product-top-panel-bar-item-header {
   top: 0px;
   left: 0px;
@@ -1328,7 +1344,7 @@ div.reviews{margin:5px 0}
 	}
 .main_header{
 		background:url(../css/images/icons/top_bg.jpg) left 0px repeat;
-		width:994;
+		width:100%;
 	}
 .main_header_login_navigation{
 	padding:0px 0px 0px 0px;
@@ -1539,6 +1555,12 @@ div.reviews{margin:5px 0}
 	color:red;
 	font-weight:bold;
 	}
+.show-product-data-grid-row-zero {
+  font-size: 12px;
+  text-align:left;
+  width:auto;
+  color:#F87C14;
+}
 .show-product-data-grid-row-one {
   font-size: 12px;
   text-align:center;
@@ -1581,6 +1603,38 @@ div.reviews{margin:5px 0}
 .show-product-data-grid-price {
 	font-weight:bold;
 	color:#ff6513;
+	}
+.show-image-font-product-data-grid-column-one {
+  font-size: 12px;
+  text-align:left;
+  text-indent: 22mm;
+  width:20%;
+}
+.show-image-font-product-data-grid-column-two {
+  font-size: 12px;
+  text-align:left;
+  width:60%;
+}
+.show-image-font-product-data-grid-column-three {
+  font-size: 12px;
+  text-align:center;
+  width:20%;
+}
+.show-image-font-product-data-grid-row-one {
+  background-color: #FFFFFF;
+  border:0px #e3e3e3 none;
+}
+.show-image-font-product-data-grid-row-two {
+  background-color: #FFFFFFF;
+  border:0px #e3e3e3 none;
+}
+.show-product-data-grid-panel {
+	position: relative;
+	width: auto;
+	height: 220;
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	border : 0px solid #FFFFFF;
 	}
 .main-header{
 	padding:0px 0px 0px 0px;
@@ -1637,4 +1691,6 @@ div.reviews{margin:5px 0}
 	height: 131px;
 	width: 60%;
 	}
-
+.rich-separator{
+background-color:#ffffff;
+}
