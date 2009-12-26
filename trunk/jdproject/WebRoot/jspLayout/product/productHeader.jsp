@@ -11,12 +11,12 @@ xmlns:c="http://java.sun.com/jstl/core">
 <f:subview id="headerMainView">
 <h:form id="headerMainform"> 
 	<a4j:region id="kitchenApplianceHeaderRegion" renderRegionOnly="false" selfRendered="true">
-		<table height="131" cellSpacing="0" cellPadding="0" width="998" class="main_header" border="0">
+		<table height="131" cellSpacing="0" cellPadding="0" class="main_header" border="0">
 		<tbody>
 		  <tr>
-		  <td width="2px" background="${facesContext.externalContext.requestContextPath}/css/images/icons/topleft_bg.jpg">
+		  <td width="7" background="${facesContext.externalContext.requestContextPath}/css/images/icons/topleft_bg.jpg">
 		  </td>
-		  <td>
+		  <td width="884">
 		  <table>
 		  <tbody>
 		  <tr>
@@ -199,7 +199,7 @@ xmlns:c="http://java.sun.com/jstl/core">
 		            href="http://www.xinhuabookstore.com/search/?keyword=%E6%96%B0%E6%A6%82%E5%BF%B5%E8%8B%B1%E8%AF%AD">新概念英语</A> 
 		            <font face="Verdana"><A class="font1" 
 		            href="http://www.xinhuabookstore.com/search/?keyword=%E6%B0%B4%E7%9F%A5%E9%81%93%E7%AD%94%E6%A1%88">水知道答案</A></font></font> 
-		          </td></tr></tbody></table></td></tr></tbody></table></td><td width="2px" background="${facesContext.externalContext.requestContextPath}/css/images/icons/topright_bg.jpg"></td></tr></tbody></table>
+		          </td></tr></tbody></table></td></tr></tbody></table></td><td width="7" background="${facesContext.externalContext.requestContextPath}/css/images/icons/topright_bg.jpg"></td></tr></tbody></table>
 	</a4j:region>
 						
 					

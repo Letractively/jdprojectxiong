@@ -10,6 +10,8 @@ xmlns:rich="http://richfaces.org/rich">
 <f:subview id="kitchenApplianceProductLeftView">
 	<h:form id="kitchenApplianceProductLeftViewForm">
 		<a4j:region id="kitchenApplianceProductLeftViewFormRegion" renderRegionOnly="false" selfRendered="true">
+			<rich:panel>
+			<f:facet name="header"><h:outputLabel value="商品导航"/></f:facet>
 			<rich:panelBar id="kitchenApplianceLeftPb" styleClass="panel-bar-product-left" contentStyle="BACKGROUND-COLOR: #ffffe8">
     				<rich:panelBarItem id="kitchenApplianceLeftPbi" headerClass="kitchen-appliance-left-navigation-panel-bar-item-header">
     				<f:facet name="label">
@@ -26,6 +28,7 @@ xmlns:rich="http://richfaces.org/rich">
     				</rich:dataGrid>
 					</rich:panelBarItem>
 			</rich:panelBar>
+			</rich:panel>
 		</a4j:region>
 	</h:form>
 
