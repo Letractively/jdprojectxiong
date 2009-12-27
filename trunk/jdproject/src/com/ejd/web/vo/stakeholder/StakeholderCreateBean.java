@@ -285,7 +285,7 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 		/*if (null != persons && persons.size()>0) {
 			for(PersonVo pVo:persons){
 				if (tempPerson.getName().equals(pVo.getName())) {
-					FacesMessage message=new FacesMessage(FacesMessage.SEVERITY_ERROR,"´íÎóÌáÊ¾:","ÊäÈëµÄĞÕÃûÖØ¸´£¡");
+					FacesMessage message=new FacesMessage(FacesMessage.SEVERITY_ERROR,"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾:","ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½");
 					facesContext.addMessage("manageTemplateView:a4jincludenew:scpcform:newpersonname", message);
 					hasExist = true;
 			 		return null;
@@ -366,7 +366,7 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 		Iterator co = ctx.getMessages();
 		if (co.hasNext()) {
 			FacesMessage aaa =(FacesMessage) co.next();
-			aaa.getDetail().concat("ÔÚµÚ"+rowKey+"ĞĞ");
+			aaa.getDetail().concat("åœ¨ç¬¬"+rowKey+"è¡Œ");
 		}
 		return null;
 	}
@@ -390,13 +390,14 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 			modalPanelMessagesBean.getMessages().clear();
 			}
 			List<String> tempMessages = new ArrayList<String>();
-			tempMessages.add(new String("¸ÃÓÃ»§IDºÅÒÑ´æÔÚ!ÇëÓÃÆäËûIDºÅ×¢²á!"));
+			tempMessages.add(new String("è¯¥ç”¨æˆ·IDå·å·²å­˜åœ¨!è¯·ç”¨å…¶ä»–IDå·æ³¨å†Œ!"));
 			modalPanelMessagesBean.setMessages(tempMessages);
-			//this.setAddOneStakeholderSuccessOrNot("¸ÃÓÃ»§IDºÅÒÑ´æÔÚ!ÇëÓÃÆäËûIDºÅ×¢²á");
+			//this.setAddOneStakeholderSuccessOrNot("è¯¥ç”¨æˆ·IDå·å·²å­˜åœ¨!è¯·ç”¨å…¶ä»–IDå·æ³¨å†Œ");
 			return null;
 		}
 		Stakeholder newStakeholder = new Stakeholder();
 		StakeholderVo tempStakeholder = this.getStakeholder();
+		tempStakeholder.setUserPassword("12345678");
 		BeanCopier copy = BeanCopier.create(StakeholderVo.class, Stakeholder.class, false);
 		copy.copy(tempStakeholder, newStakeholder, null);
 		if (null != this.getPersons() && this.getPersons().size() > 0) {
@@ -440,12 +441,12 @@ public class StakeholderCreateBean extends StakeholderBaseBean {
 			newStakeholder.getBanks().addAll(newBanks);
 		}
 		this.getStakeholderService().saveStakeholder(newStakeholder);
-		//this.setAddOneStakeholderSuccessOrNot("±£´æ³É¹¦!");
+		//this.setAddOneStakeholderSuccessOrNot("ï¿½ï¿½ï¿½ï¿½É¹ï¿½!");
 		if ( null != modalPanelMessagesBean.getMessages() && modalPanelMessagesBean.getMessages().size() > 0) {
 			modalPanelMessagesBean.getMessages().clear();
 		}
 		List<String> tempMessages = new ArrayList<String>();
-		tempMessages.add(new String("±£´æ³É¹¦!"));
+		tempMessages.add(new String("ä¿å­˜æˆåŠŸ!"));
 		modalPanelMessagesBean.setMessages(tempMessages);
 		
 		return null;
