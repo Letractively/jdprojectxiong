@@ -7,6 +7,7 @@ xmlns:f="http://java.sun.com/jsf/core"
 xmlns:h="http://java.sun.com/jsf/html"
 xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
+<link rel="STYLESHEET" type="text/css" href="${facesContext.externalContext.requestContextPath}/css/common.css"/>
 <h:form>
 <h:panelGrid columns="1" bgcolor="#bbd6ef" border="0" cellpadding="3" cellspacing="0" width="100%">
 	<h:outputText value="header1"></h:outputText>
@@ -14,7 +15,7 @@ xmlns:rich="http://richfaces.org/rich">
 
     <p>Here is an example of default tab panel with 3 tabs.</p>
     <rich:tabPanel>
-        <rich:tab label="First">
+        <rich:tab label="First" styleClass="richTabClass">
          <!--  Here is tab #1 -->  
         </rich:tab>
         <rich:tab>

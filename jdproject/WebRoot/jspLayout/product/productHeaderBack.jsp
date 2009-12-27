@@ -9,10 +9,10 @@ xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
 <f:subview id="headerMainView">
 <h:form id="headerMainform"> 
-				<rich:tabPanel valueChangeListener="#{headerTabPanel.valueChanged}" headerSpacing="2px" immediate="false" headerClass="rich-tab-header" tabClass="tabClass" activeTabClass="rich-tab-active" width="100%" switchType="ajax" binding="#{headerTabPanel.tabPanel}" selectedTab="#{headerTabPanel.currentTab}" id="tab_panel" headerAlignment="left" height="50px;">
+				<rich:tabPanel valueChangeListener="#{headerTabPanel.valueChanged}"  headerSpacing="0px" immediate="false" headerClass="rich-tab-header" activeTabClass="rich-tab-active" width="100%" switchType="ajax" binding="#{headerTabPanel.tabPanel}" selectedTab="#{headerTabPanel.currentTab}" id="tab_panel" headerAlignment="left" height="50px;">
 					<f:valueChangeListener type="com.ejd.web.vo.richfaces.header.HeaderTabChangeListener"/>
 					
-					<rich:tab onclick="alert('\\'Canon\\' tab clicked');" disabled="#{headerTabPanel.disabledTabName == 'kitchenAppliance'}" name="#{headerTabPanel.kitchenAppliance.mainMenu.name}" label="#{headerTabPanel.kitchenAppliance.mainMenu.label}" reRender="s1,s2" labelWidth="88px">
+					<rich:tab onclick="alert('\\'Canon\\' tab clicked');" disabled="#{headerTabPanel.disabledTabName == 'kitchenAppliance'}" name="#{headerTabPanel.kitchenAppliance.mainMenu.name}" label="#{headerTabPanel.kitchenAppliance.mainMenu.label}" reRender="s1,s2" labelWidth="88px" styleClass="rich-tab-style">
 						<a4j:region id="kitchenApplianceHeaderRegion" renderRegionOnly="false" selfRendered="true">
 							<rich:panel id="kitchenApplianceHeaderRegionPanel" style="width:100%;" styleClass="rich-tabpanel-panel-grid" bodyClass="rich-tabpanel-content-text">
 								<a4j:repeat id="kitchenApplianceRep" value="#{headerTabPanel.kitchenAppliance.subMenu}" var="kitchenApplianceSubMenu">
@@ -31,7 +31,7 @@ xmlns:rich="http://richfaces.org/rich">
 						</a4j:region>
 						
 					</rich:tab>
-					<rich:tab disabled="#{headerTabPanel.disabledTabName == 'householdAppliance'}" name="#{headerTabPanel.householdAppliance.mainMenu.name}" label="#{headerTabPanel.householdAppliance.mainMenu.label}" reRender="s1,s2" labelWidth="88px">
+					<rich:tab disabled="#{headerTabPanel.disabledTabName == 'householdAppliance'}" name="#{headerTabPanel.householdAppliance.mainMenu.name}" label="#{headerTabPanel.householdAppliance.mainMenu.label}" reRender="s1,s2" labelWidth="88px" styleClass="rich-tab-style">
 						<a4j:repeat id="householdApplianceRep" value="#{headerTabPanel.householdAppliance.subMenu}" var="householdApplianceSubMenu">
 							
 							<h:commandLink action="#{headerTabPanel.gotoProduct}" value="#{householdApplianceSubMenu.label}" immediate="true">
@@ -44,7 +44,7 @@ xmlns:rich="http://richfaces.org/rich">
 								
 						</a4j:repeat>
 					</rich:tab>
-					<rich:tab disabled="#{headerTabPanel.disabledTabName == 'personalCare'}" name="#{headerTabPanel.personalCare.mainMenu.name}" label="#{headerTabPanel.personalCare.mainMenu.label}" reRender="s1,s2" labelWidth="88px">
+					<rich:tab disabled="#{headerTabPanel.disabledTabName == 'personalCare'}" name="#{headerTabPanel.personalCare.mainMenu.name}" label="#{headerTabPanel.personalCare.mainMenu.label}" reRender="s1,s2" labelWidth="88px" styleClass="rich-tab-style">
 						<a4j:repeat id="personalCareRep" value="#{headerTabPanel.personalCare.subMenu}" var="personalCareSubMenu">
 							
 							<h:commandLink action="#{headerTabPanel.gotoProduct}" value="#{personalCareSubMenu.label}" immediate="true">
@@ -57,7 +57,7 @@ xmlns:rich="http://richfaces.org/rich">
 								
 						</a4j:repeat>	
 					</rich:tab>
-					<rich:tab disabled="#{headerTabPanel.disabledTabName == 'healthDevice'}" name="#{headerTabPanel.healthDevice.mainMenu.name}" label="#{headerTabPanel.healthDevice.mainMenu.label}" reRender="s1,s2" labelWidth="88px">
+					<rich:tab disabled="#{headerTabPanel.disabledTabName == 'healthDevice'}" name="#{headerTabPanel.healthDevice.mainMenu.name}" label="#{headerTabPanel.healthDevice.mainMenu.label}" reRender="s1,s2" labelWidth="88px" styleClass="rich-tab-style">
 						<a4j:repeat id="healthDeviceRep" value="#{headerTabPanel.healthDevice.subMenu}" var="healthDeviceSubMenu">
 							
 							<h:commandLink action="#{headerTabPanel.gotoProduct}" value="#{healthDeviceSubMenu.label}" immediate="true">
@@ -70,7 +70,7 @@ xmlns:rich="http://richfaces.org/rich">
 								
 						</a4j:repeat>	
 					</rich:tab>
-					<rich:tab disabled="#{headerTabPanel.disabledTabName == 'majorAppliance'}" name="#{headerTabPanel.majorAppliance.mainMenu.name}" label="#{headerTabPanel.majorAppliance.mainMenu.label}" reRender="s1,s2" labelWidth="88px">
+					<rich:tab disabled="#{headerTabPanel.disabledTabName == 'majorAppliance'}" name="#{headerTabPanel.majorAppliance.mainMenu.name}" label="#{headerTabPanel.majorAppliance.mainMenu.label}" reRender="s1,s2" labelWidth="88px" styleClass="rich-tab-style">
 						<a4j:repeat id="majorApplianceRep" value="#{headerTabPanel.majorAppliance.subMenu}" var="majorApplianceSubMenu">
 							
 							<h:commandLink action="#{headerTabPanel.gotoProduct}" value="#{majorApplianceSubMenu.label}" immediate="true">
@@ -83,7 +83,7 @@ xmlns:rich="http://richfaces.org/rich">
 								
 						</a4j:repeat>	
 					</rich:tab>
-					<rich:tab disabled="#{headerTabPanel.disabledTabName == 'phoneDigital'}" name="#{headerTabPanel.phoneDigital.mainMenu.name}" label="#{headerTabPanel.phoneDigital.mainMenu.label}" reRender="s1,s2" labelWidth="88px">
+					<rich:tab disabled="#{headerTabPanel.disabledTabName == 'phoneDigital'}" name="#{headerTabPanel.phoneDigital.mainMenu.name}" label="#{headerTabPanel.phoneDigital.mainMenu.label}" reRender="s1,s2" labelWidth="88px" styleClass="rich-tab-style">
 						<a4j:repeat id="phoneDigitalRep" value="#{headerTabPanel.phoneDigital.subMenu}" var="phoneDigitalSubMenu">
 							
 							<h:commandLink action="#{headerTabPanel.gotoProduct}" value="#{phoneDigitalSubMenu.label}" immediate="true">
@@ -96,7 +96,7 @@ xmlns:rich="http://richfaces.org/rich">
 								
 						</a4j:repeat>	
 					</rich:tab>
-					<rich:tab disabled="#{headerTabPanel.disabledTabName == 'computerNetwork'}" name="#{headerTabPanel.computerNetwork.mainMenu.name}" label="#{headerTabPanel.computerNetwork.mainMenu.label}" reRender="s1,s2" labelWidth="88px">
+					<rich:tab disabled="#{headerTabPanel.disabledTabName == 'computerNetwork'}" name="#{headerTabPanel.computerNetwork.mainMenu.name}" label="#{headerTabPanel.computerNetwork.mainMenu.label}" reRender="s1,s2" labelWidth="88px" styleClass="rich-tab-style">
 						<a4j:repeat id="computerNetworkRep" value="#{headerTabPanel.computerNetwork.subMenu}" var="computerNetworkSubMenu">
 							
 							<h:commandLink action="#{headerTabPanel.gotoProduct}" value="#{computerNetworkSubMenu.label}" immediate="true">
