@@ -19,6 +19,8 @@ xmlns:rich="http://richfaces.org/rich">
     			</ui:include>
     		</ui:define>
     		<ui:define id="kitchenApplianceSearchNavigation" name="productSearchNavigation">
+    			<ui:include id="kitchenApplianceProductHeaderBack" src="../productHeaderBack.jsp">
+    			</ui:include>
 				<a4j:region id="kitchenApplianceSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="kitchenApplianceSearchNavigationRegionForm">
     			<rich:panelBar id="kitchenAppliancepb" styleClass="panel-bar-product-top" style="width:793px;" contentStyle="background:none;">

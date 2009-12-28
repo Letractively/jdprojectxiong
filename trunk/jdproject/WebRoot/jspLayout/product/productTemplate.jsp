@@ -28,7 +28,7 @@ xmlns:rich="http://richfaces.org/rich">
 	    </ui:insert>
 		<ui:insert name="manageHeaderMainMiddle">
 			<f:subview id="manageHeaderMainView2">
-				<ui:include src="./productHeaderBack.jsp" />
+				<ui:include src="../demo.jsp" />
 			</f:subview>
 		</ui:insert>
 		<ui:insert name="manageHeaderMainRight">
