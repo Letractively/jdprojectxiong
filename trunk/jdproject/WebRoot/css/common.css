@@ -302,20 +302,6 @@ input, select, textarea, button, keygen, isindex, legend, a {
 	font-family: Verdana, Arial;
 }
 
-.rich-tab-header {
-	padding:0px 0px 0px 0px;
-	margin:0px 0px 0px 0px;
-	border : 0px solid #ffffff;
-	font-family: Verdana, Arial;
-	font-size:15pt;
-	height:30px;
-}
-.top_tab .rich-tabhdr-side-border {
-}
-
-.top_tab .dr-tbpnl-tbtopbrdr{
-}
-
 .source_frame {
 	border: 1px solid #ACBECE; 
 	margin: 8px 0px 15px 0px;
@@ -1056,39 +1042,82 @@ div.reviews{margin:5px 0}
 				font-size:12px;
 				font-family: Arial
 			}
+			.dr-tbpnl-tbcell-act{
+			border:100px;
+			}
+			.rich-tabhdr-cell-active{
+			border:100px;
+			}
+			.rich-tab-header {
+				padding:0px 0px 0px 0px;
+				margin:0px 0px 0px 0px;
+				font-family: Verdana, Arial;
+				font-size:15pt;
+				height:30px;
+				border:0px solid red;
+			}
 			.richTabClass {
-				border-color: #ffffff;
+				padding:0px 0px 0px 0px;
+				margin:0px 0px 0px 0px;
+				border-width:0px;
+				border-top-color:#ffffff;
 			}
 			
 			.rich-tab-style {
-				border-color: #ffffff;
+				padding:0px 0px 0px 0px;
+				margin:0px 0px 0px 0px;
+				border-width:0px;
+				border-top-color:red;
+				color:red;
 			}
+			
 			
 			.rich-tab-active {
 				padding:0px 0px 0px 0px;
 				margin:0px 0px 0px 0px;
-				background-image: url(../css/demo/image/active_tab_bg.gif);
-				background-position : left top;
-				font-size:15px;
-				font-weight:bold;
-				color: #006699;
+				DISPLAY: block;
+				BACKGROUND: url(../css/images/icons/active_tab_bg.gif) no-repeat left top; 
+				FLOAT: left;
+				background-attachment : fixed;
+				font-size: 14px;
+				text-indent: 1mm;
+				line-height: 16px;
+				color: black;
+				border-width:0px;
+				border-top-color:#ffffff;
+				height:30px;
+				width:72px;
 			}
 			
 			.rich-tab-inactive {
     			padding:0px 0px 0px 0px;
 				margin:0px 0px 0px 0px;
-				background-image: url(../css/demo/image/tab_bg.gif);
-				background-position : left top;
-				font-size:15px;
-				font-weight:bold;
-				color: #006699;
+				DISPLAY: block;
+				BACKGROUND: url(../css/images/icons/tab_bg.gif) no-repeat left top; 
+				FLOAT: left;
+				background-attachment : fixed;
+				font-size: 14px;
+				text-indent: 1mm;
+				line-height:16px;
+				color: #2c629e;
+				height:30px;
+				width:72px;
 			}
 			.rich-tab-label{
+				color:red;
 			
 			}
-			.rich-tabhdr-side-border {
+			.dr-tbpnl-tbbrdr {
+				padding: 0px 0px 0px 0px;
+				margin:0px 0px 0px 0px;
 				border-width:0px;
-				border-color:#FFFFFF;
+				border-style:none;
+			}
+			.rich-tabhdr-side-border {
+				padding: 0px 0px 0px 0px;
+				margin:0px 0px 0px 0px;
+				border-width:0px;
+				border-style:none;
 			}
 			.rich-tab-disabled {
 				font-size: 12px; 
@@ -1115,30 +1144,36 @@ div.reviews{margin:5px 0}
 				padding:0px 0px 0px 0px;
 				margin:0px 0px 0px 0px;
 				border-width: 0px; 
-				border-color:#66BFEC;
-				background-image: url(./images/icons/tab_comtent.jpg);
-				background-color:#66BFEC;
+				border-color:#FFFFFF;
+				background-color:#FFFFFF;
 				height:45px;
 			}.header-menu-btn {
 				padding:0px 0px 0px 0px;
 				margin:0px 0px 0px 0px;
 				border-width: 0px 0px 0px 0px;
 				border-style:outset;
-				background-image: url(./images/icons/tab_comtent.jpg);
 				background-repeat: repeat-x;
 			}
 			.rich-tabpanel-panel-grid {
 				padding:0px 0px 0px 0px;
 				margin:0px 0px 0px 0px;
-				background-image: url(./images/icons/tab_comtent.jpg);
-				background-repeat: repeat;
+				border : 0px solid #FFFFFF;
+				font-family: Arial, sans-serif;
+				font-size:15px;
+  				text-align: left; 
+  				padding-right: 1em;
+  				padding-left: 1em; 
+  				padding-bottom: 0px; 
+  				color: #2c629e; 
 			}
 			.rich-tabpanel-content-text {
 				font-family: Arial, sans-serif;
-				font-color: #FFFFFF;
-				font-size:14px;
-  				font-weight: bold;
+				font-size:15px;
   				text-align: left; 
+  				padding-right: 1em;
+  				padding-left: 1em; 
+  				padding-bottom: 0px; 
+  				color: #2c629e; 
 			}
 			
 .template-left {
