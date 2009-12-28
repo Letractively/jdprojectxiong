@@ -18,26 +18,12 @@ xmlns:rich="http://richfaces.org/rich">
 <tbody>
 <tr>
 <td align="center" width="100%">
-<h:panelGrid columns="1" style="WIDTH:998px; border:0 ;BORDER-RIGHT: 10px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top;ALIGN:CENTER; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px;">
-	<h:panelGrid columns="1" cellpadding="0" cellspacing="0" border="0" style="width:100%;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px">
-	<h:panelGrid columns="1" cellpadding="0" cellspacing="0" border="0" style="width:100%;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px" styleClass="headerStyle" columnClasses="headerLeftRightStyle,headerMiddleStyle,headerLeftRightStyle">
-	    <ui:insert name="manageHeaderMainLeft">
-	    	<f:subview id="manageHeaderMainView1">
-	    		<h:graphicImage url="/css/images/spacer.gif" style="width:100%; height:1"></h:graphicImage>
-	    	</f:subview>
-	    </ui:insert>
-		<ui:insert name="manageHeaderMainMiddle">
-			<f:subview id="manageHeaderMainView2">
-				<ui:include src="../demo.jsp" />
-			</f:subview>
-		</ui:insert>
-		<ui:insert name="manageHeaderMainRight">
-			<f:subview id="manageHeaderMainView3">
-	    		<h:graphicImage url="/css/images/spacer.gif" style="width:100%; height:1"></h:graphicImage>
-	    	</f:subview>
-	    </ui:insert>
-	</h:panelGrid>
-	</h:panelGrid>
+<h:panelGrid columns="1" style="WIDTH:970; border:0 ;BORDER-RIGHT: 10px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top;ALIGN:CENTER; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px;">
+	<ui:insert name="manageHeaderMainMiddle">
+		<f:subview id="manageHeaderMainView2">
+			<ui:include src="../mainHeader.jsp" />
+		</f:subview>
+	</ui:insert>
 </h:panelGrid>
 </td>
 </tr>
@@ -47,7 +33,7 @@ xmlns:rich="http://richfaces.org/rich">
 <tbody>
 <tr>
 <td align="center" width="100%">
-<h:panelGrid columns="1" style="WIDTH:998px;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; ALIGN:CENTER;BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px">
+<h:panelGrid columns="1" style="WIDTH:970;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; ALIGN:CENTER;BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px">
 	<ui:insert name="productStepDisplay">
 		<f:subview id="productStepDisplayView">
 			<h:outputText value="productStepDisplayView"></h:outputText>
@@ -62,7 +48,7 @@ xmlns:rich="http://richfaces.org/rich">
 <tbody>
 <tr>
 <td align="center" width="100%">
-<h:panelGrid columns="3" width="998px"  styleClass="contentStyle" columnClasses="template-left,template-content,template-right">
+<h:panelGrid columns="3" width="970"  styleClass="contentStyle" columnClasses="template-left,template-content,template-right">
 	<h:panelGroup id="template-left">
 		<ui:insert name="left">
 			<f:subview id="leftview">
@@ -104,7 +90,7 @@ xmlns:rich="http://richfaces.org/rich">
 <tbody>
 <tr>
 <td align="center" width="100%">
-<h:panelGrid columns="1" style="WIDTH:998px;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; ALIGN:CENTER;BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px">
+<h:panelGrid columns="1" style="WIDTH:970;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; ALIGN:CENTER;BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px">
 	<ui:insert name="footerone">
 		<f:subview id="footerOneView">
 			<h:outputText value="footerone"></h:outputText>
@@ -119,7 +105,7 @@ xmlns:rich="http://richfaces.org/rich">
 <table class="skr" border="0" cellpadding="0" cellspacing="0" width="100%">
 <tbody><tr>
 <td align="center" width="100%">
-	<h:panelGrid width="998px" style=" height:39;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px">
+	<h:panelGrid width="970" style=" height:39;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px">
 		<ui:insert name="footer">
 			<ui:include src="./productFooter.jsp" />
 		</ui:insert>

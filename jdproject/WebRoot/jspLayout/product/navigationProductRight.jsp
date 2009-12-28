@@ -12,7 +12,7 @@ xmlns:rich="http://richfaces.org/rich">
 		<a4j:region id="kitchenApplianceProductLeftViewFormRegion" renderRegionOnly="false" selfRendered="true">
 		<rich:panel headerClass="left-navigation-product-header" styleClass="panel-bar-product-top" bodyClass="left-navigation-product-body">
 			<f:facet name="header"><h:outputLabel value="商品分类"/></f:facet>
-			<rich:panelBar id="kitchenApplianceLeftPb" binding="#{productPanelBar.panelBar}" selectedPanel="#{productPanelBar.currentBar}" width="198"  styleClass="panel-bar-product-left" contentStyle="BACKGROUND-COLOR: #FFFFFF">
+			<rich:panelBar id="kitchenApplianceLeftPb" binding="#{productPanelBar.panelBar}" selectedPanel="#{productPanelBar.currentBar}" width="140"  styleClass="panel-bar-product-left" contentStyle="BACKGROUND-COLOR: #FFFFFF">
     				<rich:panelBarItem id="#{headerTabPanel.kitchenAppliance.mainMenu.name}" name="#{headerTabPanel.kitchenAppliance.mainMenu.name}" headerClass="navigation-product-panel-bar-item">
     				<f:facet name="label">
     					<a4j:commandLink id="kitchenApplianceMainLabel" styleClass="fontb_1" value="#{headerTabPanel.kitchenAppliance.mainMenu.label}"><a4j:actionparam name="kitchenApplianceMainMenuName" value="#{headerTabPanel.kitchenAppliance.mainMenu.name}" assignTo="#{productPanelBar.currentBar}"></a4j:actionparam></a4j:commandLink>
