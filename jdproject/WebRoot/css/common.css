@@ -592,14 +592,10 @@ a.price:hover{text-decoration:underline}
 div.reviews{margin:5px 0}
 
 /* define self */
-.headerStyle  {align:center; border:3; cellpadding:0; cellspacing:0; width:100%}
-.contentStyle  {align:center; border:3; cellpadding:0; cellspacing:0; width:998px;}
-.headerLeftRightStyle  {border-bottom: 0px solid black; width:50%}
-.headerMiddleStyle  {nowrap:nowrap}
+.headerStyle  {align:center; border:0; cellpadding:0; cellspacing:0; width:970px}
+.contentStyle  {align:center; border:3; cellpadding:0; cellspacing:0; width:970px;}
+.headerMiddleStyle  {align:center; border:0; cellpadding:0; cellspacing:0; width:970px}
 .allStyle {width:90%;align:center}
-.headerleftstyle  {width:20%;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px}
-.headermiddletstyle  {width:62%;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px}
-.headerrightstyle  {width:18%;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px}
 .login-heading {
   font-family: Arial, sans-serif;
   font-size: 26pt;
@@ -1180,7 +1176,7 @@ div.reviews{margin:5px 0}
   font-size: 10pt;
   vertical-align:top;
   border-width: 0px 0px 0px 0px;
-  width:18%;
+  width:140;
 }
 .template-content {
   font-size: 10pt;
@@ -1190,8 +1186,8 @@ div.reviews{margin:5px 0}
   margin-right-width:0px;
   margin-bottom-width:0px;
   margin-left-width:0px;
-  width:800px;
-  min-width:800px;
+  width:820px;
+  min-width:820px;
 }
 .template-right {
   font-size: 10pt;
