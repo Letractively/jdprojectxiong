@@ -1,5 +1,5 @@
 BODY {
-	PADDING-RIGHT: 0px; BACKGROUND-POSITION: center top; PADDING-LEFT: 0px; FONT-SIZE: 12px; BACKGROUND-IMAGE: url(/images/green/body_bg.gif); PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; COLOR: #000000; PADDING-TOP: 0px; BACKGROUND-REPEAT: repeat-y; FONT-FAMILY: "ËÎÌו", Arial, Helvetica, sans-serif; HEIGHT: 100%; BACKGROUND-COLOR: #f3f3f3;ALIGN:CENTER;
+	PADDING-RIGHT: 0px; BACKGROUND-POSITION: center top; PADDING-LEFT: 0px; FONT-SIZE: 12px; BACKGROUND-IMAGE: url(/images/green/body_bg.gif); PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; COLOR: #000000; PADDING-TOP: 0px; BACKGROUND-REPEAT: repeat-y; FONT-FAMILY: Arial, Helvetica, sans-serif; HEIGHT: 100%; BACKGROUND-COLOR: #ffffff;ALIGN:CENTER;
 }
 DIV {
 	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; BORDER-RIGHT-WIDTH: 0px
@@ -65,13 +65,13 @@ TH {
 	FONT-SIZE: 12px
 }
 A:link {
-	FONT-SIZE: 12px; COLOR: #003399; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+	FONT-SIZE: 12px; COLOR: #2c629e; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
 }
 A:visited {
-	FONT-SIZE: 12px; COLOR: #003399; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+	FONT-SIZE: 12px; COLOR: #2c629e; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
 }
 A:hover {
-	FONT-SIZE: 12px; COLOR: #cc0000; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+	FONT-SIZE: 12px; COLOR: #2c629e; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
 }
 .font_top {
 	FONT-SIZE: 14px; COLOR: #ffffcc; LINE-HEIGHT: 24px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
