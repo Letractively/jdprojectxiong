@@ -20,7 +20,7 @@
   <!-- Plugging the "Blue Sky" skin into the project -->
   <context-param> 
     <param-name>org.richfaces.SKIN</param-name> 
-    <param-value>blueSky</param-value> 
+    <param-value>common</param-value> 
   </context-param>
   	<context-param>
 		<param-name>org.richfaces.LoadStyleStrategy</param-name>
