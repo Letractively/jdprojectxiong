@@ -255,7 +255,7 @@ input, select, textarea, button, keygen, isindex, legend, a {
 	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 0px; PADDING-TOP: 3px; DISPLAY: inline-table; BACKGROUND: #FF9900; COLOR: #ffffff; font-size:12px;
 }
 .top-product-navigation-option {
-	DISPLAY: table-column; FLOAT: left; MARGIN: 0px 5px; LINE-HEIGHT: 150%; WHITE-SPACE: nowrap; COLOR:gray;font-size:12px;
+	DISPLAY: table-column; FLOAT: left; MARGIN: 0px 5px; LINE-HEIGHT: 150%; WHITE-SPACE: nowrap; font-size:12px;
 }
 
  .ico{
@@ -606,8 +606,8 @@ div.reviews{margin:5px 0}
 .user-name {
   font-family: Arial, sans-serif;
   font-size: 9pt;
-  TEXT-INDENT: 1px;
-  text-valign:middle;
+  text-indent: 1px;
+  text-align: left;
 }
 
 .table-background {
@@ -774,7 +774,7 @@ div.reviews{margin:5px 0}
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
 	border : 0px solid #f3f3f3;
-	background-color: #f3f3f3; 
+	background-image: url(../css/images/icons/product_select_page_bg.gif); 
 }
 
 .table-list-product-panel-grid-data-grid {
@@ -1072,7 +1072,7 @@ div.reviews{margin:5px 0}
 				padding:0px 0px 0px 0px;
 				margin:0px 0px 0px 0px;
 				DISPLAY: block;
-				BACKGROUND: url(../css/images/icons/active_tab_bg.gif) no-repeat left top; 
+				BACKGROUND: url(../css/images/icons/active_tab_bg.gif) no-repeat 0px 0px;
 				FLOAT: left;
 				background-attachment : fixed;
 				font-size: 14px;
@@ -1089,7 +1089,7 @@ div.reviews{margin:5px 0}
     			padding:0px 0px 0px 0px;
 				margin:0px 0px 0px 0px;
 				DISPLAY: block;
-				BACKGROUND: url(../css/images/icons/tab_bg.gif) no-repeat left top; 
+				BACKGROUND: url(../css/images/icons/tab_bg.gif) no-repeat 0px 0px; 
 				FLOAT: left;
 				background-attachment : fixed;
 				font-size: 14px;
@@ -1240,7 +1240,7 @@ div.reviews{margin:5px 0}
   padding:0px 0px 0px 0px;
   margin:0px 0px 0px 0px;
   background-position : top left;
-  border:0px #e3e3e3 solid;
+  border:1px #e3e3e3 solid;
 }
 .navigation-product-top-panel-bar-item-header {
   top: 0px;
@@ -1249,7 +1249,7 @@ div.reviews{margin:5px 0}
   padding:0px 0px 0px 0px;
   margin:0px 0px 0px 0px;
   font-size: 14pt;
-  background-image: url(../css/images/icons/productnav.gif);
+  background-image: url(../css/images/icons/product_select_header_bg.gif);
   background-repeat: repeat;
   background-position : top left;
 }
@@ -1313,7 +1313,7 @@ div.reviews{margin:5px 0}
 	margin:0px 0px 0px 0px;
 	position:relative;
 	height:29px;
-	background:url(../css/images/icons/footer_bg.gif) left -284px repeat;
+	background:url(../css/images/icons/product-show-style.gif) left 0px repeat;
 	border:1px #e3e3e3 solid;
 	width:100%;
 	}
@@ -1336,7 +1336,6 @@ div.reviews{margin:5px 0}
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
 	position:relative;
-	border:0px #e3e3e3 none;
 	width:100%;
 	}
 .qnty_button{position:absolute;right:5px;top:4px;}
@@ -1499,7 +1498,8 @@ div.reviews{margin:5px 0}
 .rich-datascr{
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
-	background-color: #f3f3f3;
+	background-image: url(../css/images/icons/product_select_page_bg.gif);
+	height:30px;
 	}
 .rich-dtascroller-table{
 	padding:0px 0px 0px 0px;
@@ -1515,7 +1515,8 @@ div.reviews{margin:5px 0}
 	}
 .rich-datascr-inact{
 	border-top-color:#ffffff;
-	color:black;
+	color:#2c629e;
+	font-weight:bold;
 	background-color:#ffffff;
 	}
 .rich-datascr-button{
@@ -1668,4 +1669,29 @@ div.reviews{margin:5px 0}
 	}
 .rich-separator{
 background-color:#ffffff;
+}
+.main-left-product-header{
+  PADDING-RIGHT: 0px; 
+  PADDING-LEFT: 0px; 
+  FONT-SIZE: 14px;
+  FONT-WEIGHT:BOLD;
+  line-height:20px;
+  TEXT-INDENT: 8px;
+  BACKGROUND: url(../css/images/icons/main_product_header_top_bg.gif) no-repeat 0px 0px; 
+  FLOAT: left; 
+  PADDING-BOTTOM: 0px; 
+  MARGIN: 0px 0px 0px 0px; 
+  WIDTH: 140px; 
+  HEIGHT:30px;
+  PADDING-TOP: 6px;
+  border:0px #f3f3f3 solid;
+	}
+.main-left-product-body {
+  top: 0px;
+  left: 0px;
+  height:888px;
+  padding:0px 0px 0px 0px;
+  margin:0px 0px 0px 0px;
+  background-color: #ffffff;
+  border:1px #b8d4e8 solid;
 }
