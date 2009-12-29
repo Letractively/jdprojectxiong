@@ -15,7 +15,7 @@ xmlns:rich="http://richfaces.org/rich">
     <body>
     	<ui:composition template="../productTemplate.jsp">
     		<ui:define id="kitchenApplianceLeft" name="left">
-    			<ui:include id="kitchenApplianceLeftInclude" src="../navigationProductRight.jsp">
+    			<ui:include id="kitchenApplianceLeftInclude" src="../navigationProductLeft.jsp">
     			</ui:include>
     		</ui:define>
     		<ui:define id="kitchenApplianceSearchNavigation" name="productSearchNavigation">
@@ -26,7 +26,9 @@ xmlns:rich="http://richfaces.org/rich">
     			<rich:panelBar id="kitchenAppliancepb" styleClass="panel-bar-product-top" style="width:793px;" contentStyle="background:none;">
     				<rich:panelBarItem id="kitchenAppliancePbi" headerClass="navigation-product-top-panel-bar-item-header">
     				<f:facet name="label">
-    					<h:outputText value="商品筛选" styleClass="navigation-product-top-panel-bar-item-header-label"></h:outputText>
+    					<h:panelGroup>
+    						<h:outputText value="商品筛选" styleClass="navigation-product-top-panel-bar-item-header-label"></h:outputText>
+    					</h:panelGroup>
     				</f:facet>
 						<ui:include id="phoneinp12" src="./navigationTopKitchenAppliance.jsp">
 							<ui:param name="brands" value="#{navigationKitchenAppliance.brandCodeItems}" />
@@ -142,7 +144,7 @@ xmlns:rich="http://richfaces.org/rich">
                      	<h:panelGroup><h:outputLabel value="经销价:" rendered="#{currentUser.showTradePriceTwo}"></h:outputLabel><h:outputText value="#{product.tradePriceTwo}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showTradePriceTwo}"/></h:panelGroup>
                      	<h:panelGroup><h:outputLabel value="零售价:" rendered="#{currentUser.showRetailPrice}"></h:outputLabel><h:outputText value="#{product.retailPrice}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showRetailPrice}"/></h:panelGroup>
                      	<h:panelGroup>
-                     	<a4j:commandButton image="/css/images/icons/bt1.gif" action="#{shopCart.addInventoryItem}"><a4j:actionparam name="productCode" value="#{product.code}"/></a4j:commandButton>
+                     	<a4j:commandButton image="/css/images/icons/buttons-buy.gif" action="#{shopCart.addInventoryItem}"><a4j:actionparam name="productCode" value="#{product.code}"/></a4j:commandButton>
                      	<a4j:status>
                 			<f:facet name="start">
                     			<h:graphicImage  value="/css/images/icons/blue-loading.gif"/>
@@ -212,7 +214,7 @@ xmlns:rich="http://richfaces.org/rich">
                      	</h:panelGroup>
                      	</h:panelGrid>
                      	<h:panelGroup>
-                     	<a4j:commandButton image="/css/images/icons/bt1.gif" action="#{shopCart.addInventoryItem}"><a4j:actionparam name="productCode" value="#{product.code}"/></a4j:commandButton>
+                     	<a4j:commandButton image="/css/images/icons/buttons-buy.gif" action="#{shopCart.addInventoryItem}"><a4j:actionparam name="productCode" value="#{product.code}"/></a4j:commandButton>
                      	<a4j:status>
                 			<f:facet name="start">
                     			<h:graphicImage  value="/css/images/icons/blue-loading.gif"/>
