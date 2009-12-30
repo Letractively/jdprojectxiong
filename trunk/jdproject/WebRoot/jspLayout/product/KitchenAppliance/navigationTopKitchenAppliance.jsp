@@ -15,7 +15,7 @@ xmlns:rich="http://richfaces.org/rich">
 			
 				<td class="selected-new" width="86%">
 					<a4j:repeat var="brand" rowKeyVar="index" value="#{brands}">
-					<a4j:commandLink action="#{navigationKitchenAppliance.clickLink}" ajaxSingle="true" immediate="true" limitToList="true" reRender="productList,brandLabel,secondCategoryLabel">
+					<a4j:commandLink action="#{navigationKitchenAppliance.clickLink}" ajaxSingle="true" style="CURSOR: pointer;" immediate="true" limitToList="true" reRender="productList,brandLabel,secondCategoryLabel">
 						<span class="top-product-navigation-option">
 							#{brand.label}
 						</span>
@@ -33,7 +33,7 @@ xmlns:rich="http://richfaces.org/rich">
 			</td>
 			<td class="selected-new" width="90%">
 				<a4j:repeat var="secondCategory" rowKeyVar="index" value="#{secondCategorys}">
-				<a4j:commandLink action="#{navigationKitchenAppliance.clickLink}" ajaxSingle="true" immediate="true" limitToList="true" reRender="productList,brandLabel,secondCategoryLabel">
+				<a4j:commandLink action="#{navigationKitchenAppliance.clickLink}" ajaxSingle="true" style="CURSOR: pointer;" immediate="true" limitToList="true" reRender="productList,brandLabel,secondCategoryLabel">
 					<span class="top-product-navigation-option">
 						#{secondCategory.label}
 					</span>

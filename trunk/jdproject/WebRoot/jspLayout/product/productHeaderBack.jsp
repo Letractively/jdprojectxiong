@@ -13,7 +13,7 @@ xmlns:rich="http://richfaces.org/rich">
 				<h:panelGroup>
 					<h:outputLabel id="currentProductCategoryLabel" value="当前商品导航:"></h:outputLabel><h:outputText id="currentProductCategoryLabelValue" value="#{headerTabPanel.currentTab}"></h:outputText>
 				</h:panelGroup>
-				<rich:tabPanel valueChangeListener="#{headerTabPanel.valueChanged}"  headerSpacing="0px" immediate="false" headerClass="rich-tab-header" activeTabClass="rich-tab-active" inactiveTabClass="rich-tab-inactive" tabClass="richTabClass" contentClass="rich-tabpanel-panel-grid" width="100%" switchType="ajax" binding="#{headerTabPanel.tabPanel}" selectedTab="#{headerTabPanel.currentTab}" id="tab_panel" headerAlignment="left" height="50px;">
+				<rich:tabPanel valueChangeListener="#{headerTabPanel.valueChanged}"  headerSpacing="0px" immediate="false" headerClass="rich-tab-header" activeTabClass="rich-tab-active" inactiveTabClass="rich-tab-inactive" tabClass="richTabClass" contentClass="main-header-tabpanel-panel-grid" width="100%" switchType="ajax" binding="#{headerTabPanel.tabPanel}" selectedTab="#{headerTabPanel.currentTab}" id="tab_panel" headerAlignment="left" height="50px;">
 					<f:valueChangeListener type="com.ejd.web.vo.richfaces.header.HeaderTabChangeListener"/>
 					
 					<rich:tab onclick="alert('\\'Canon\\' tab clicked');" disabled="#{headerTabPanel.disabledTabName == 'kitchenAppliance'}" name="#{headerTabPanel.kitchenAppliance.mainMenu.name}" label="#{headerTabPanel.kitchenAppliance.mainMenu.label}" reRender="s1,s2" labelWidth="72px" styleClass="rich-tab-style">
