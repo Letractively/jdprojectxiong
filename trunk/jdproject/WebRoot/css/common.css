@@ -709,14 +709,17 @@ div.reviews{margin:5px 0}
 .table-list-product-panel-grid {
   padding:0px 0px 0px 0px;
   margin:0px 0px 0px 0px;
-  border:1px solid #f5fcff;
   font-size: 10pt;
-  BORDER-RIGHT: 1px solid #f5fcff; 
-  BORDER-TOP: 1px solid #f5fcff; 
-  BORDER-LEFT: 1px solid #f5fcff; 
-  BORDER-BOTTOM: 1px solid #f5fcff; 
-  BACKGROUND: #FFFFFF;
+  BORDER-RIGHT: 0px solid #f5fcff; 
+  BORDER-TOP: 0px solid #f5fcff; 
+  BORDER-LEFT: 0px solid #f5fcff; 
+  BORDER-BOTTOM: 0px solid #f5fcff; 
+  BACKGROUND: #f7f7f7;
   min-height: 500px;
+}
+.table-list-product-panel-grid-main-column {
+  padding:0px 0px 0px 0px;
+  margin:0px 0px 0px 0px;
 }
 .table-list-product-panel-grid-column {
   	font-size: 12pt;
@@ -726,6 +729,7 @@ div.reviews{margin:5px 0}
   	BORDER-TOP: 0px none #FFFFFF; 
 	BORDER-LEFT: 0px none #FFFFFF; 
 	BORDER-BOTTOM: 0px none #FFFFFF;
+	BACKGROUND: #f7f7f7;
 }
 .table-list-product-left-panel-grid-column {
   	font-size: 12pt;
@@ -742,10 +746,10 @@ div.reviews{margin:5px 0}
 	margin:0px 0px 0px 0px;
 	background-image: url(../css/images/icons/headerlogin_bg.jpg); 
 	background-repeat:repeat;
-	BORDER-RIGHT: #e3e3e3 0px solid; 
-	BORDER-TOP: #e3e3e3 0px solid; 
-	BORDER-LEFT: #e3e3e3 0px solid; 
-	BORDER-BOTTOM: #e3e3e3 0px solid; 
+	BORDER-RIGHT: 0px solid #e3e3e3 ; 
+	BORDER-TOP: 0px solid #e3e3e3; 
+	BORDER-LEFT: 0px solid #e3e3e3; 
+	BORDER-BOTTOM: 0px solid #e3e3e3; 
 	HEIGHT: 29px;
 	TEXT-ALIGN:LEFT;
 	font-size:12px;
@@ -780,10 +784,10 @@ div.reviews{margin:5px 0}
 .table-list-product-panel-grid-data-grid {
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
-	BORDER-RIGHT: 0px none #FFFFFF ; 
-	BORDER-TOP: 0px none #FFFFFF; 
-	BORDER-LEFT: 0px none #FFFFFF; 
-	BORDER-BOTTOM: 0px none #FFFFFF;
+	BORDER-RIGHT: 0px solid #FFFFFF ; 
+	BORDER-TOP: 0px solid #FFFFFF; 
+	BORDER-LEFT: 0px solid #FFFFFF; 
+	BORDER-BOTTOM: 0px solid #FFFFFF;
 	}
 .navigation-left-kitchen_appliance-product-panel-grid-data-grid {
 	BORDER-RIGHT: 0px none #FFFFFF ; 
@@ -1596,19 +1600,19 @@ div.reviews{margin:5px 0}
 }
 .show-image-font-product-data-grid-row-one {
   background-color: #FFFFFF;
-  border:0px #e3e3e3 none;
+  border:0px solid #e3e3e3;
 }
 .show-image-font-product-data-grid-row-two {
   background-color: #FFFFFFF;
   border:0px #e3e3e3 none;
 }
 .show-product-data-grid-panel {
-	position: relative;
-	width: auto;
-	height: 220;
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
-	border : 0px solid #FFFFFF;
+	position: relative;
+	width: auto;
+	height: 100;
+	border : 1px solid #e2eaed ;
 	}
 .main-header{
 	padding:0px 0px 0px 0px;
