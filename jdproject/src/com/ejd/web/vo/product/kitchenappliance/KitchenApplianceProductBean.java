@@ -64,8 +64,8 @@ public class KitchenApplianceProductBean extends PagedBaseBean {
 		this.number30 = "";
 		this.number60 = "";
 		this.number90 = "";
-		this.numberOnePage = 15;
-		this.oldNumberOnePage = 15;
+		this.numberOnePage = 10;
+		this.oldNumberOnePage = 10;
 		this.primaryCategoryCode = HeaderConstants.KITCHEN_APPLIANCE_ID;
 		this.setBrandCode("");
 		this.setProductType(HeaderConstants.KITCHEN_APPLIANCE_NAME);
