@@ -127,7 +127,7 @@ xmlns:rich="http://richfaces.org/rich">
       			</f:facet>
      				<a4j:region renderRegionOnly="false" selfRendered="true">
                  	<rich:panel styleClass="show-product-data-grid-panel">
-                 	<h:panelGrid columns="1" style="width:300px;height:200px" rowClasses="show-product-data-grid-row-zero,show-product-data-grid-row-one,show-product-data-grid-row-two,show-product-data-grid-row-three,show-product-data-grid-row-four,show-product-data-grid-row-five,show-product-data-grid-row-six,show-product-data-grid-row-seven,show-product-data-grid-row-eight">  
+                 	<h:panelGrid columns="1" style="width:200px;height:200px" rowClasses="show-product-data-grid-row-zero,show-product-data-grid-row-one,show-product-data-grid-row-two,show-product-data-grid-row-three,show-product-data-grid-row-four,show-product-data-grid-row-five,show-product-data-grid-row-six,show-product-data-grid-row-seven,show-product-data-grid-row-eight">  
                  		
                  		<h:outputLabel value="#{rowIndex+1}" styleClass="current-product-show-number"></h:outputLabel>
                  		<h:graphicImage value="/productimage/#{product.imageName}"></h:graphicImage>
