@@ -57,9 +57,9 @@ xmlns:rich="http://richfaces.org/rich">
 		</ui:insert>
 	</h:panelGroup>
 	<h:panelGroup id="template-content">
-		<ui:insert name="productSearchNavigation">
-			<f:subview id="productSearchNavigationView">
-				<h:outputText value="productSearchNavigation"></h:outputText>
+		<ui:insert name="contentHeader">
+			<f:subview id="contentHeaderView">
+				<h:outputText value="contentHeaderNavigation"></h:outputText>
 			</f:subview>
 		</ui:insert>
 		<ui:insert name="content">
