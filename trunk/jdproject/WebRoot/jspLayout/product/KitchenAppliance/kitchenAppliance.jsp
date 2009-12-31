@@ -18,9 +18,11 @@ xmlns:rich="http://richfaces.org/rich">
     			<ui:include id="kitchenApplianceLeftInclude" src="../navigationProductLeft.jsp">
     			</ui:include>
     		</ui:define>
-    		<ui:define id="kitchenApplianceSearchNavigation" name="productSearchNavigation">
-    			<ui:include id="kitchenApplianceProductHeaderBack" src="../productHeaderBack.jsp">
+    		<ui:define id="contentHeader" name="contentHeader">
+    			<ui:include id="contentHeaderHeaderBack" src="../productHeaderBack.jsp">
     			</ui:include>
+			</ui:define>
+			<ui:define id="kitchenApplianceContent" name="content">
 				<a4j:region id="kitchenApplianceSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="kitchenApplianceSearchNavigationRegionForm">
     			<rich:panelBar id="kitchenAppliancepb" styleClass="panel-bar-product-top" style="width:822px;" contentStyle="background:none;">
@@ -37,9 +39,7 @@ xmlns:rich="http://richfaces.org/rich">
 					</rich:panelBarItem>
 				</rich:panelBar>
 				</h:form>
-			</a4j:region>
-			</ui:define>
-			<ui:define id="kitchenApplianceContent" name="content">
+				</a4j:region>
     			<h:panelGrid columns="1" style="width:822px;" styleClass="table-row">
     			<a4j:region id="kitchenApplianceContentRegionStyle" renderRegionOnly="false" selfRendered="true">
     				<h:form id="kitchenApplianceContentRegionStyleForm">
