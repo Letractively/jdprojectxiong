@@ -132,12 +132,14 @@ xmlns:rich="http://richfaces.org/rich">
                  		<h:outputLabel value="#{rowIndex+1}" styleClass="current-product-show-number"></h:outputLabel>
                  		<h:graphicImage value="/productimage/#{product.imageName}"></h:graphicImage>
                  		<h:panelGrid columns="1" style="width:220px;height:160px" rowClasses="show-product-data-grid-row-two,show-product-data-grid-row-three,show-product-data-grid-row-four,show-product-data-grid-row-five,show-product-data-grid-row-six,show-product-data-grid-row-seven,show-product-data-grid-row-eight">
-                 	 	<h:panelGroup>
+                 	 	<h:commandLink>
+                 	 	<h:panelGroup styleClass="font6">
                  	 	<h:outputText value="#{product.brandCode}"/>
                      	<h:outputText value="#{product.name}"/>
                      	<h:outputText value="#{product.description}" style="color:red;"/>
                      	</h:panelGroup>
-                     	<h:outputText value="商品编号:#{product.code}"/>
+						</h:commandLink>
+                     	<h:outputText value="商品编号:#{product.code}" styleClass="gray"/>
                      
                      	<h:panelGroup><h:outputLabel value="进货价:" rendered="#{currentUser.showPurchasePrice}"></h:outputLabel><h:outputText value="#{product.purchasePrice}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showPurchasePrice}"/></h:panelGroup>
                      	<h:panelGroup><h:outputLabel value="代理价:" rendered="#{currentUser.showTradePriceOne}"></h:outputLabel><h:outputText value="#{product.tradePriceOne}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showTradePriceOne}"/></h:panelGroup>
@@ -200,7 +202,7 @@ xmlns:rich="http://richfaces.org/rich">
                  		<h:panelGrid columns="1">
                  		<h:outputLabel value="#{rowIndex+1}" styleClass="current-product-show-number"></h:outputLabel>
                  		<h:graphicImage value="/productimage/#{product.imageName}"></h:graphicImage>
-                 		<h:outputText value="商品编号:#{product.code}"/>
+                 		<h:outputText value="商品编号:#{product.code}" styleClass="gray"/>
                  		</h:panelGrid>
                  	 	<h:panelGrid columns="1" >
                  	 	<h:panelGroup>
@@ -208,7 +210,7 @@ xmlns:rich="http://richfaces.org/rich">
                      	<h:outputText value="#{product.name}" style="font-weight:bold"/>
                      	<h:outputText value="#{product.description}" style="font-weight:bold;color:red;"/>
                      	</h:panelGroup>
-                     	<h:panelGroup>
+                     	<h:panelGroup styleClass="gray">
                      	<h:outputLabel value="进货价:" rendered="#{currentUser.showPurchasePrice}"></h:outputLabel><h:outputText value="#{product.purchasePrice}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showPurchasePrice}"/>
                      	<h:outputLabel value="代理价:" rendered="#{currentUser.showTradePriceOne}"></h:outputLabel><h:outputText value="#{product.tradePriceOne}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showTradePriceOne}"/>
                      	<h:outputLabel value="经销价:" rendered="#{currentUser.showTradePriceTwo}"></h:outputLabel><h:outputText value="#{product.tradePriceTwo}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showTradePriceTwo}"/>
