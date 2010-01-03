@@ -107,7 +107,7 @@ xmlns:rich="http://richfaces.org/rich">
 <td align="center" width="100%">
 	<h:panelGrid width="970" style=" height:39;border:0 ;BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px">
 		<ui:insert name="footer">
-			<ui:include src="./productFooter.jsp" />
+			<ui:include src="../mainFooter.jsp" />
 		</ui:insert>
 	</h:panelGrid>
 </td>
