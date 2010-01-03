@@ -892,6 +892,23 @@
 		<value>#{productService}</value>
 		</managed-property>
     </managed-bean>
+    <!-- start help center  -->
+    <managed-bean>
+		<managed-bean-name>helpPanelMenuState</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.help.HelpPanelMenuStatusBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>helpPanelMenu</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.help.HelpPanelMenuBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+		<property-name>menuState</property-name>
+		<property-class>com.ejd.web.vo.help.HelpPanelMenuStatusBean</property-class>
+		<value>#{helpPanelMenuState}</value>
+		</managed-property>  
+	</managed-bean>
+	<!-- start help center  -->
 	<!-- test -->
 	<managed-bean>
 		<managed-bean-name>demoBean</managed-bean-name>
