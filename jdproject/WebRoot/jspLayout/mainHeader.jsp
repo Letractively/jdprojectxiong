@@ -14,8 +14,8 @@ xmlns:rich="http://richfaces.org/rich">
 <h1 class="logo"><a href="index.php"><img src="${facesContext.externalContext.requestContextPath}/css/images/icons/logo.gif?" alt="5G/五季网络" /></a></h1>
 <ul class="menu">
 <li><a href="${facesContext.externalContext.requestContextPath}/index.jsf"><span class="menu_a">首页</span></a></li>
-<li><a href="network.html">随便看看</a></li>
-<li><a href="help.php">帮助</a></li>
+<li><h:outputLink><h:outputText value="商品浏览" styleClass="menu_a"/></h:outputLink></li>
+<li><h:outputLink value="${facesContext.externalContext.requestContextPath}/jspLayout/help/mainHelp.jsf"><h:outputText value="帮助中心" styleClass="menu_a"/></h:outputLink></li>
 <li><h:outputLink><h:outputText value="询问" styleClass="menu_a"/></h:outputLink></li>
 </ul>
 
