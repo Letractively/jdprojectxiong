@@ -204,10 +204,10 @@ xmlns:rich="http://richfaces.org/rich">
                  		<h:graphicImage value="/productimage/#{product.imageName}"></h:graphicImage>
                  		<h:outputText value="商品编号:#{product.code}" styleClass="gray"/>
                  		</h:panelGrid>
-                 	 	<h:panelGrid columns="1" >
-                 	 	<h:panelGroup>
-                 	 	<h:outputText value="#{product.brandCode}" style="font-weight:bold"/>
-                     	<h:outputText value="#{product.name}" style="font-weight:bold"/>
+                 	 	<h:panelGrid columns="1">
+                 	 	<h:panelGroup styleClass="font6">
+                 	 	<h:outputText value="#{product.brandCode}"/>
+                     	<h:outputText value="#{product.name}"/>
                      	<h:outputText value="#{product.description}" style="font-weight:bold;color:red;"/>
                      	</h:panelGroup>
                      	<h:panelGroup styleClass="gray">
@@ -261,7 +261,75 @@ xmlns:rich="http://richfaces.org/rich">
                  	</h:panelGroup>
                  	</f:facet>              
              	</rich:dataGrid>
-             
+             	
+				<rich:dataGrid id="productListFont" rendered="#{listKitchenApplianceProduct.styleFontFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="1" elements="#{listKitchenApplianceProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" rowClasses="show-image-font-product-data-grid-row-one,show-image-font-product-data-grid-row-two" columnClasses="table-list-product-panel-grid-column" value="#{listKitchenApplianceProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
+                <f:facet name="header">
+                	<h:outputText value="共:#{listKitchenApplianceProduct.dataModel.rowCount}件商品" rendered="#{listKitchenApplianceProduct.dataModel.rowCount>0}"></h:outputText>
+      			</f:facet>
+     				<a4j:region renderRegionOnly="false" selfRendered="true">
+                 	<rich:panel styleClass="show-product-data-grid-panel">
+                 	<h:panelGrid columns="4" columnClasses="show-font-product-data-grid-column-one,show-font-product-data-grid-column-two,show-font-product-data-grid-column-three,show-font-product-data-grid-column-four">  
+                 		<h:panelGrid columns="1">
+						<h:panelGroup>
+                 			<h:outputLabel value="#{rowIndex+1}" styleClass="current-product-show-number"></h:outputLabel>
+                 			<h:outputText value="  商品编号:#{product.code}" styleClass="gray"/>
+						</h:panelGroup>
+                 		</h:panelGrid>
+                 	 	<h:panelGroup styleClass="font6_">
+                 	 	<h:outputText value="#{product.brandCode}"/>
+                     	<h:outputText value="#{product.name}"/>
+                     	<h:outputText value="#{product.description}" style="color:red;"/>
+                     	</h:panelGroup>
+                     	<h:panelGroup styleClass="gray">
+                     	<h:outputLabel value="进货价:" rendered="#{currentUser.showPurchasePrice}"></h:outputLabel><h:outputText value="#{product.purchasePrice}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showPurchasePrice}"/>
+                     	<h:outputLabel value="代理价:" rendered="#{currentUser.showTradePriceOne}"></h:outputLabel><h:outputText value="#{product.tradePriceOne}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showTradePriceOne}"/>
+                     	<h:outputLabel value="经销价:" rendered="#{currentUser.showTradePriceTwo}"></h:outputLabel><h:outputText value="#{product.tradePriceTwo}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showTradePriceTwo}"/>
+                     	<h:outputLabel value="零售价:" rendered="#{currentUser.showRetailPrice}"></h:outputLabel><h:outputText value="#{product.retailPrice}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showRetailPrice}"/>
+                     	</h:panelGroup>
+                     	<h:panelGroup>
+                     	<a4j:commandButton image="/css/images/icons/buttons-buy.gif" action="#{shopCart.addInventoryItem}"><a4j:actionparam name="productCode" value="#{product.code}"/></a4j:commandButton>
+                     	<a4j:status>
+                			<f:facet name="start">
+                    			<h:graphicImage  value="/css/images/icons/blue-loading.gif"/>
+               			 	</f:facet>
+            			</a4j:status>
+                     	</h:panelGroup>
+                    </h:panelGrid>
+                 	</rich:panel>
+                 	<rich:separator lineType="dotted" height="1px"/>
+                 	</a4j:region>
+                 	<f:facet name="footer">
+                 	<h:panelGroup>
+                 		<rich:datascroller for="productListFont" id="FontFooterProductList" page="#{listKitchenApplianceProduct.scrollerPage}" pageIndexVar="currentPage" pagesVar="totalPages" maxPages="10" rendered="#{listKitchenApplianceProduct.dataModel.rowCount>0}" style="width:483px;align:center">
+                 		<f:facet name="controlSeparator">
+                 		</f:facet>
+                 		<f:facet name="first">
+                 		</f:facet>
+                 		<f:facet name="first_disabled">
+                 		</f:facet> 
+                 		<f:facet name="last">
+                 		</f:facet>
+                 		<f:facet name="last_disabled">
+                 		</f:facet>
+                 		<f:facet name="fastrewind">
+                 		</f:facet>
+                 		<f:facet name="fastrewind_disabled">
+                 		</f:facet>
+                 		<f:facet name="previous">
+                 		</f:facet>
+                 		<f:facet name="previous_disabled">
+                 		</f:facet>
+                 		<f:facet name="next">
+                 		</f:facet>
+                 		<f:facet name="next_disabled">
+                 		</f:facet>
+                 		<f:facet name="pages">
+                 		</f:facet>
+                 		
+                 	</rich:datascroller>
+                 	</h:panelGroup>
+                 	</f:facet>              
+             	</rich:dataGrid>
              
              </h:panelGrid>
              </h:form>
