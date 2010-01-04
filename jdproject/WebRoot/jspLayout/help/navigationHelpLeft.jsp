@@ -47,7 +47,7 @@ xmlns:rich="http://richfaces.org/rich">
 			<rich:panelMenu style="width:136px" mode="client"   
    selectedChild="#{menuState.selectedMenuItem}"  
    iconExpandedGroup="disc"   
-   iconCollapsedGroup="disc"   
+   iconCollapsedGroup="disc" 
    iconExpandedTopGroup="chevronUp"   
    iconGroupTopPosition="right"   
    iconCollapsedTopGroup="chevronDown">  
@@ -65,20 +65,96 @@ xmlns:rich="http://richfaces.org/rich">
          action="/select.xhtml"  
          mode="server"/>  
     </rich:panelMenuGroup>  
-    <rich:panelMenuGroup label="Group 2" id="group2">  
-        <rich:panelMenuItem label="Item 1" id="group2_item1"   
+    <rich:panelMenuGroup label="帐户及定单信息" id="group2">  
+        <rich:panelMenuItem label="我的助手" id="group2_item1"   
          actionListener="#{helpPanelMenu.select}"  
          action="/select.xhtml"  
          mode="server"/>  
-     <rich:panelMenuItem label="Item 2" id="group2_item2"   
+     <rich:panelMenuItem label="忘记密码" id="group2_item2"   
          actionListener="#{helpPanelMenu.select}"  
          action="/select.xhtml"  
          mode="server"/>  
-     <rich:panelMenuItem label="Item 3" id="group2_item3"   
+     <rich:panelMenuItem label="取消定单" id="group2_item3"   
+         actionListener="#{helpPanelMenu.select}"  
+         action="/select.xhtml"  
+         mode="server"/>
+     <rich:panelMenuItem label="发票制度" id="group2_item4"   
+         actionListener="#{helpPanelMenu.select}"  
+         action="/select.xhtml"  
+         mode="server"/>   
+    </rich:panelMenuGroup>
+    <rich:panelMenuGroup label="付款/退款方式" id="group3">  
+        <rich:panelMenuItem label="货到付款" id="group3_item1"   
          actionListener="#{helpPanelMenu.select}"  
          action="/select.xhtml"  
          mode="server"/>  
-    </rich:panelMenuGroup>  
+     <rich:panelMenuItem label="网上支付" id="group3_item2"   
+         actionListener="#{helpPanelMenu.select}"  
+         action="/select.xhtml"  
+         mode="server"/>  
+     <rich:panelMenuItem label="支付宝" id="group3_item3"   
+         actionListener="#{helpPanelMenu.select}"  
+         action="/select.xhtml"  
+         mode="server"/>
+     <rich:panelMenuItem label="邮局汇款" id="group3_item4"   
+         actionListener="#{helpPanelMenu.select}"  
+         action="/select.xhtml"  
+         mode="server"/>
+     <rich:panelMenuItem label="银行转账" id="group3_item5"   
+         actionListener="#{helpPanelMenu.select}"  
+         action="/select.xhtml"  
+         mode="server"/>
+     <rich:panelMenuItem label="帐户余额支付" id="group3_item6"   
+         actionListener="#{helpPanelMenu.select}"  
+         action="/select.xhtml"  
+         mode="server"/>
+     <rich:panelMenuItem label="退款帮助" id="group3_item7"   
+         actionListener="#{helpPanelMenu.select}"  
+         action="/select.xhtml"  
+         mode="server"/>
+    </rich:panelMenuGroup>
+    <rich:panelMenuGroup label="订单处理与配送" id="group4">  
+        <rich:panelMenuItem label="货到付款开通范围" id="group4_item1"   
+         actionListener="#{helpPanelMenu.select}"  
+         action="/select.xhtml"  
+         mode="server"/>  
+     <rich:panelMenuItem label="订单状态" id="group4_item2"   
+         actionListener="#{helpPanelMenu.select}"  
+         action="/select.xhtml"  
+         mode="server"/>  
+     <rich:panelMenuItem label="送货方式" id="group4_item3"   
+         actionListener="#{helpPanelMenu.select}"  
+         action="/select.xhtml"  
+         mode="server"/>
+     <rich:panelMenuItem label="配送时间和范围" id="group4_item4"   
+         actionListener="#{helpPanelMenu.select}"  
+         action="/select.xhtml"  
+         mode="server"/>
+     <rich:panelMenuItem label="费收标准" id="group4_item5"   
+         actionListener="#{helpPanelMenu.select}"  
+         action="/select.xhtml"  
+         mode="server"/>
+    </rich:panelMenuGroup>
+    <rich:panelMenuGroup label="商品验货与签收" id="group5">  
+        <rich:panelMenuItem label="商品验货与签收" id="group5_item1"   
+         actionListener="#{helpPanelMenu.select}"  
+         action="/select.xhtml"  
+         mode="server"/>  
+    </rich:panelMenuGroup>
+    <rich:panelMenuGroup label="商品验货与签收" id="group6">  
+        <rich:panelMenuItem label="退/换货政策" id="group6_item1"   
+         actionListener="#{helpPanelMenu.select}"  
+         action="/select.xhtml"  
+         mode="server"/>
+         <rich:panelMenuItem label="退/换货流程" id="group6_item2"   
+         actionListener="#{helpPanelMenu.select}"  
+         action="/select.xhtml"  
+         mode="server"/>
+         <rich:panelMenuItem label="补发货流程" id="group6_item3"   
+         actionListener="#{helpPanelMenu.select}"  
+         action="/select.xhtml"  
+         mode="server"/> 
+    </rich:panelMenuGroup>
  </rich:panelMenu>
 		</rich:panel>
 		</a4j:region>
