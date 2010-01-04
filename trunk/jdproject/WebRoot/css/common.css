@@ -1589,6 +1589,34 @@ div.reviews{margin:5px 0}
 	font-weight:bold;
 	color:#ff6513;
 	}
+.show-font-product-data-grid-column-one {
+  font-size: 12px;
+  text-align:left;
+  text-indent: 0mm;
+  width:15%;
+  color: #999;
+}
+.show-font-product-data-grid-column-two {
+  font-size: 12px;
+  text-align:left;
+  text-indent: 0mm;
+  width:40%;
+  color: #999;
+}
+.show-font-product-data-grid-column-three {
+  font-size: 12px;
+  text-align:left;
+  text-indent: 0mm;
+  width:23%;
+  color: #999;
+}
+.show-font-product-data-grid-column-four {
+  font-size: 12px;
+  text-align:left;
+  text-indent: 0mm;
+  width:22%;
+  color: #999;
+}
 .show-image-font-product-data-grid-column-one {
   font-size: 12px;
   text-align:left;
