@@ -1593,21 +1593,21 @@ div.reviews{margin:5px 0}
   font-size: 12px;
   text-align:left;
   text-indent: 0mm;
-  width:15%;
+  width:18%;
   color: #999;
 }
 .show-font-product-data-grid-column-two {
   font-size: 12px;
   text-align:left;
   text-indent: 0mm;
-  width:40%;
+  width:35%;
   color: #999;
 }
 .show-font-product-data-grid-column-three {
   font-size: 12px;
   text-align:left;
   text-indent: 0mm;
-  width:23%;
+  width:25%;
   color: #999;
 }
 .show-font-product-data-grid-column-four {
@@ -1616,6 +1616,12 @@ div.reviews{margin:5px 0}
   text-indent: 0mm;
   width:22%;
   color: #999;
+}
+.show-font-product-data-grid-row-one {
+ 	
+}
+.show-font-product-data-grid-row-two {
+ 	BACKGROUND: #fcf9e6;
 }
 .show-image-font-product-data-grid-column-one {
   font-size: 12px;
