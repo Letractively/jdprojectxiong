@@ -32,7 +32,7 @@ xmlns:rich="http://richfaces.org/rich">
     						<h:outputText value="商品筛选" styleClass="navigation-product-top-panel-bar-item-header-label"></h:outputText>
     					</h:panelGroup>
     				</f:facet>
-						<ui:include id="phoneinp12" src="./navigationTopKitchenAppliance.jsp">
+						<ui:include id="phoneinp12" src="./SubKitchenAppliance/navigationTopKitchenAppliance.jsp">
 							<ui:param name="brands" value="#{navigationKitchenAppliance.brandCodeItems}" />
 							<ui:param name="secondCategorys" value="#{navigationKitchenAppliance.secondCategoryCodeList}" />
 						</ui:include>
@@ -76,39 +76,39 @@ xmlns:rich="http://richfaces.org/rich">
 									<h:graphicImage value="/css/images/icons/list.gif" style="border:0;vertical-align: middle;"></h:graphicImage>
 									<h:outputText value="        "></h:outputText>
 									<a4j:commandLink id="number15button" reRender="kitchenApplianceContentRegionStyleFormPanel,productList">
-										<h:graphicImage value="/css/images/number15#{listKitchenApplianceProduct.number15}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
+										<h:graphicImage value="/css/images/number15#{listKitchenApplianceProduct.number10}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
 										</h:graphicImage>
-										<a4j:actionparam name="number15" value="_on" assignTo="#{listKitchenApplianceProduct.number15}"></a4j:actionparam>
-										<a4j:actionparam name="number30" value="" assignTo="#{listKitchenApplianceProduct.number30}"></a4j:actionparam>
-										<a4j:actionparam name="number60" value="" assignTo="#{listKitchenApplianceProduct.number60}"></a4j:actionparam>
-										<a4j:actionparam name="number90" value="" assignTo="#{listKitchenApplianceProduct.number90}"></a4j:actionparam>
+										<a4j:actionparam name="number10" value="_on" assignTo="#{listKitchenApplianceProduct.number10}"></a4j:actionparam>
+										<a4j:actionparam name="number20" value="" assignTo="#{listKitchenApplianceProduct.number20}"></a4j:actionparam>
+										<a4j:actionparam name="number40" value="" assignTo="#{listKitchenApplianceProduct.number40}"></a4j:actionparam>
+										<a4j:actionparam name="number100" value="" assignTo="#{listKitchenApplianceProduct.number100}"></a4j:actionparam>
 										<a4j:actionparam name="numberOnePage" value="10" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number30button" reRender="kitchenApplianceContentRegionStyleFormPanel,productList">
-										<h:graphicImage value="/css/images/number30#{listKitchenApplianceProduct.number30}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
+										<h:graphicImage value="/css/images/number30#{listKitchenApplianceProduct.number20}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
 										</h:graphicImage>
-										<a4j:actionparam name="number15" value="" assignTo="#{listKitchenApplianceProduct.number15}"></a4j:actionparam>
-										<a4j:actionparam name="number30" value="_on" assignTo="#{listKitchenApplianceProduct.number30}"></a4j:actionparam>
-										<a4j:actionparam name="number60" value="" assignTo="#{listKitchenApplianceProduct.number60}"></a4j:actionparam>
-										<a4j:actionparam name="number90" value="" assignTo="#{listKitchenApplianceProduct.number90}"></a4j:actionparam>
+										<a4j:actionparam name="number10" value="" assignTo="#{listKitchenApplianceProduct.number10}"></a4j:actionparam>
+										<a4j:actionparam name="number20" value="_on" assignTo="#{listKitchenApplianceProduct.number20}"></a4j:actionparam>
+										<a4j:actionparam name="number40" value="" assignTo="#{listKitchenApplianceProduct.number40}"></a4j:actionparam>
+										<a4j:actionparam name="number100" value="" assignTo="#{listKitchenApplianceProduct.number100}"></a4j:actionparam>
 										<a4j:actionparam name="numberOnePage" value="20" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number60button" reRender="kitchenApplianceContentRegionStyleFormPanel,productList">
-										<h:graphicImage value="/css/images/number60#{listKitchenApplianceProduct.number60}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
+										<h:graphicImage value="/css/images/number60#{listKitchenApplianceProduct.number40}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
 										</h:graphicImage>
-										<a4j:actionparam name="number15" value="" assignTo="#{listKitchenApplianceProduct.number15}"></a4j:actionparam>
-										<a4j:actionparam name="number30" value="" assignTo="#{listKitchenApplianceProduct.number30}"></a4j:actionparam>
-										<a4j:actionparam name="number60" value="_on" assignTo="#{listKitchenApplianceProduct.number60}"></a4j:actionparam>
-										<a4j:actionparam name="number90" value="" assignTo="#{listKitchenApplianceProduct.number90}"></a4j:actionparam>
+										<a4j:actionparam name="number10" value="" assignTo="#{listKitchenApplianceProduct.number10}"></a4j:actionparam>
+										<a4j:actionparam name="number20" value="" assignTo="#{listKitchenApplianceProduct.number20}"></a4j:actionparam>
+										<a4j:actionparam name="number40" value="_on" assignTo="#{listKitchenApplianceProduct.number40}"></a4j:actionparam>
+										<a4j:actionparam name="number100" value="" assignTo="#{listKitchenApplianceProduct.number100}"></a4j:actionparam>
 										<a4j:actionparam name="numberOnePage" value="40" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number90button" reRender="kitchenApplianceContentRegionStyleFormPanel,productList">
-										<h:graphicImage value="/css/images/number90#{listKitchenApplianceProduct.number90}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
+										<h:graphicImage value="/css/images/number90#{listKitchenApplianceProduct.number100}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
 										</h:graphicImage>
-										<a4j:actionparam name="number15" value="" assignTo="#{listKitchenApplianceProduct.number15}"></a4j:actionparam>
-										<a4j:actionparam name="number30" value="" assignTo="#{listKitchenApplianceProduct.number30}"></a4j:actionparam>
-										<a4j:actionparam name="number60" value="" assignTo="#{listKitchenApplianceProduct.number60}"></a4j:actionparam>
-										<a4j:actionparam name="number90" value="_on" assignTo="#{listKitchenApplianceProduct.number90}"></a4j:actionparam>
+										<a4j:actionparam name="number10" value="" assignTo="#{listKitchenApplianceProduct.number10}"></a4j:actionparam>
+										<a4j:actionparam name="number20" value="" assignTo="#{listKitchenApplianceProduct.number20}"></a4j:actionparam>
+										<a4j:actionparam name="number40" value="" assignTo="#{listKitchenApplianceProduct.number40}"></a4j:actionparam>
+										<a4j:actionparam name="number100" value="_on" assignTo="#{listKitchenApplianceProduct.number100}"></a4j:actionparam>
 										<a4j:actionparam name="numberOnePage" value="100" assignTo="#{listKitchenApplianceProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									
