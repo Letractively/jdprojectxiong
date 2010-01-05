@@ -311,6 +311,7 @@ public class HeaderTabPanelBean {
 	
 	//redirt
 	public String gotoProduct(){
+		String result = "";
 		String idFirst = (String) SpringFacesUtil.getRequestParameter("idFirst");
 		String idSecond = (String) SpringFacesUtil.getRequestParameter("idSecond");
 		String productType = (String) SpringFacesUtil.getRequestParameter("productType");
@@ -324,7 +325,35 @@ public class HeaderTabPanelBean {
 			kitchenApplianceProduct.setProductType(productType);
 			kitchenApplianceProduct.setBrandCode("");
 		}
-		return null;
+		String path = "";
+		if (HeaderConstants.KITCHEN_APPLIANCE_ID.equals(idFirst)) {
+			path = HeaderConstants.KITCHEN_APPLIANCE_NAME;
+		}
+		if (HeaderConstants.HOUSEHOLD_APPLIANCE_ID.equals(idFirst)) {
+			path = HeaderConstants.HOUSEHOLD_APPLIANCE_NAME;
+		}
+		if (HeaderConstants.PERSONAL_CARE_ID.equals(idFirst)) {
+			path = HeaderConstants.PERSONAL_CARE_NAME;
+		}
+		if (HeaderConstants.HEALTH_DEVICE_ID.equals(idFirst)) {
+			path = HeaderConstants.HEALTH_DEVICE_NAME;
+		}
+		if (HeaderConstants.MAJOR_APPLIANCE_ID.equals(idFirst)) {
+			path = HeaderConstants.MAJOR_APPLIANCE_NAME;
+		}
+		if (HeaderConstants.PHONE_DIGITAL_ID.equals(idFirst)) {
+			path = HeaderConstants.PHONE_DIGITAL_NAME;
+		}
+		if (HeaderConstants.COMPUTER_NETWORK_ID.equals(idFirst)) {
+			path = HeaderConstants.COMPUTER_NETWORK_NAME;
+		}
+		path = this.setUppercaseOnFirstChar(path);
+		String fileName = productType + ".jsf";
+		return productType;
+	}
+	private String setUppercaseOnFirstChar(String param) {
+		String result = param.replace(param.charAt(0), (char)(param.charAt(0)-32));
+		return result;
 	}
 	
 
