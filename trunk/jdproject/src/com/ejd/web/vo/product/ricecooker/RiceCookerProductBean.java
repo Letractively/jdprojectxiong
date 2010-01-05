@@ -49,6 +49,9 @@ public class RiceCookerProductBean extends PagedBaseBean {
 	private int oldNumberOnePage;
 	public RiceCookerProductBean() {
 		super();
+		this.primaryCategoryLabel = "";
+		this.secondCategoryLabel = "";
+		this.brandLabel = "";
 		this.styleImgFont = "";
 		this.styleFont = "";
 		this.styleImg = "_on";
