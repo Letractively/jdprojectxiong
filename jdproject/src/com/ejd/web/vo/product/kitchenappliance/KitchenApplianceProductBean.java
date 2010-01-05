@@ -49,10 +49,10 @@ public class KitchenApplianceProductBean extends PagedBaseBean {
 	private boolean styleImgFla;
 	private String styleImgFont;
 	private boolean styleImgFontFlag;
-	private String number15;
-	private String number30;
-	private String number60;
-	private String number90;
+	private String number10;
+	private String number20;
+	private String number40;
+	private String number100;
 	private int numberOnePage;
 	private int oldNumberOnePage;
 	public KitchenApplianceProductBean() {
@@ -60,10 +60,10 @@ public class KitchenApplianceProductBean extends PagedBaseBean {
 		this.styleImgFont = "";
 		this.styleFont = "";
 		this.styleImg = "_on";
-		this.number15 = "_on";
-		this.number30 = "";
-		this.number60 = "";
-		this.number90 = "";
+		this.number10 = "_on";
+		this.number20 = "";
+		this.number40 = "";
+		this.number100 = "";
 		this.numberOnePage = 10;
 		this.oldNumberOnePage = 10;
 		this.primaryCategoryCode = HeaderConstants.KITCHEN_APPLIANCE_ID;
@@ -222,29 +222,29 @@ public class KitchenApplianceProductBean extends PagedBaseBean {
 		styleImgFont = imgFont;
 	}
 	
-	public String getNumber15() {
-		return number15;
+	public String getNumber10() {
+		return number10;
 	}
-	public void setNumber15(String number15) {
-		this.number15 = number15;
+	public void setNumber10(String number10) {
+		this.number10 = number10;
 	}
-	public String getNumber30() {
-		return number30;
+	public String getNumber20() {
+		return number20;
 	}
-	public void setNumber30(String number30) {
-		this.number30 = number30;
+	public void setNumber20(String number20) {
+		this.number20 = number20;
 	}
-	public String getNumber60() {
-		return number60;
+	public String getNumber40() {
+		return number40;
 	}
-	public void setNumber60(String number60) {
-		this.number60 = number60;
+	public void setNumber40(String number40) {
+		this.number40 = number40;
 	}
-	public String getNumber90() {
-		return number90;
+	public String getNumber100() {
+		return number100;
 	}
-	public void setNumber90(String number90) {
-		this.number90 = number90;
+	public void setNumber100(String number100) {
+		this.number100 = number100;
 	}
 	public int getNumberOnePage() {
 		return numberOnePage;
