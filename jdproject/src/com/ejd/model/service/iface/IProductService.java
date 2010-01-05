@@ -18,5 +18,6 @@ public interface IProductService {
 	public Product saveProduct(Product product) throws ProductException;
 	public Product saveOrUpdateProduct(Product product) throws ProductException;
 	public List<Product> getKitchenApplianceProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange) throws ProductException;
+	public List<Product> getRiceCookerProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, RangeParam volumeRange, RangeParam powerRange) throws ProductException;
 	public List<String> getBrandCodeListByCategory(String primaryCategoryCode, String secondCategoryCode) throws ProductException;
 }

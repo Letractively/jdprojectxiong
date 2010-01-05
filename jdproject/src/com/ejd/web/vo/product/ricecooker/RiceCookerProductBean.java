@@ -52,6 +52,9 @@ public class RiceCookerProductBean extends PagedBaseBean {
 		this.primaryCategoryLabel = "";
 		this.secondCategoryLabel = "";
 		this.brandLabel = "";
+		this.priceRangeLabel = "";
+		this.volumeRangeLabel = "";
+		this.powerRangeLabel = "";
 		this.styleImgFont = "";
 		this.styleFont = "";
 		this.styleImg = "_on";
@@ -62,16 +65,17 @@ public class RiceCookerProductBean extends PagedBaseBean {
 		this.numberOnePage = 10;
 		this.oldNumberOnePage = 10;
 		this.primaryCategoryCode = HeaderConstants.KITCHEN_APPLIANCE_ID;
+		this.secondCategoryCode = HeaderConstants.subMenu01;
 		this.setBrandCode("");
-		this.setProductType(HeaderConstants.KITCHEN_APPLIANCE_NAME);
+		this.setPriceRange(null);
+		this.setVolumeRange(null);
+		this.setPowerRange(null);
 	}
 	public int getTotalCount() {
 		int totalCount = 0;
 		List alist= new ArrayList();
 		try {
-			if (HeaderConstants.KITCHEN_APPLIANCE_NAME.equals(productType)) {
-				alist = this.getProductService().getKitchenApplianceProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange);
-			}
+			alist = this.getProductService().getRiceCookerProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, volumeRange, powerRange);
 		} catch (ProductException e) {
 			e.printStackTrace();
 		}
