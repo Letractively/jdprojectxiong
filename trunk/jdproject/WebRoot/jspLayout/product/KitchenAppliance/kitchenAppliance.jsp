@@ -262,7 +262,7 @@ xmlns:rich="http://richfaces.org/rich">
                  	</f:facet>              
              	</rich:dataGrid>
              	
-				<rich:dataGrid id="productListFont" rendered="#{listKitchenApplianceProduct.styleFontFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="1" elements="#{listKitchenApplianceProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" rowClasses="show-image-font-product-data-grid-row-one,show-image-font-product-data-grid-row-two" columnClasses="table-list-product-panel-grid-column" value="#{listKitchenApplianceProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
+				<rich:dataGrid id="productListFont" rendered="#{listKitchenApplianceProduct.styleFontFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="1" elements="#{listKitchenApplianceProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" rowClasses="show-font-product-data-grid-row-one,show-font-product-data-grid-row-two" columnClasses="table-list-product-panel-grid-column" value="#{listKitchenApplianceProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                 <f:facet name="header">
                 	<h:outputText value="共:#{listKitchenApplianceProduct.dataModel.rowCount}件商品" rendered="#{listKitchenApplianceProduct.dataModel.rowCount>0}"></h:outputText>
       			</f:facet>
