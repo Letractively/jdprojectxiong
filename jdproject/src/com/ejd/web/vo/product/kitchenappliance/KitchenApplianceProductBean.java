@@ -57,7 +57,7 @@ public class KitchenApplianceProductBean extends PagedBaseBean {
 	private int oldNumberOnePage;
 	public KitchenApplianceProductBean() {
 		super();
-		this.secondCategoryLabel="全部";
+		this.secondCategoryLabel = "全部";
 		this.brandLabel = "全部";
 		this.styleImgFont = "";
 		this.styleFont = "";
