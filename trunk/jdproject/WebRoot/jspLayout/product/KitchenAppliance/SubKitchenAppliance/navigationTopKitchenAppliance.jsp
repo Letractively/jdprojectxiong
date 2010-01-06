@@ -10,7 +10,7 @@ xmlns:rich="http://richfaces.org/rich">
 <ui:composition>
 <tr>
 		<td style="PADDING-LEFT: 8px;width:14%;text-align:left;">
-			<h:outputLabel value="品牌:"></h:outputLabel><h:outputLabel id="brandLabel" styleClass="current-selected" value="#{listKitchenApplianceProduct.brandLabel}"></h:outputLabel>
+			<h:outputLabel value="品牌:" styleClass="current-selected_label"></h:outputLabel><h:outputLabel id="brandLabel" styleClass="current-selected" value="#{listKitchenApplianceProduct.brandLabel}"></h:outputLabel>
 		</td>
 			
 				<td class="selected-new" width="86%">
@@ -29,7 +29,7 @@ xmlns:rich="http://richfaces.org/rich">
 
 <tr>
 			<td style="PADDING-LEFT: 8px;width:15%;text-align:left;">
-				<h:outputLabel value="类别:"></h:outputLabel><h:outputText id="secondCategoryLabel" styleClass="current-selected" value="#{listKitchenApplianceProduct.secondCategoryLabel}"></h:outputText>
+				<h:outputLabel value="类别:" styleClass="current-selected_label"></h:outputLabel><h:outputText id="secondCategoryLabel" styleClass="current-selected" value="#{listKitchenApplianceProduct.secondCategoryLabel}"></h:outputText>
 			</td>
 			<td class="selected-new" width="90%">
 				<a4j:repeat var="secondCategory" rowKeyVar="index" value="#{secondCategorys}">
