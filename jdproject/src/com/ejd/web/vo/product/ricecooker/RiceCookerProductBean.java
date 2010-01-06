@@ -51,10 +51,10 @@ public class RiceCookerProductBean extends PagedBaseBean {
 		super();
 		this.primaryCategoryLabel = "";
 		this.secondCategoryLabel = "";
-		this.brandLabel = "";
-		this.priceRangeLabel = "";
-		this.volumeRangeLabel = "";
-		this.powerRangeLabel = "";
+		this.brandLabel = "全部";
+		this.priceRangeLabel = "全部";
+		this.volumeRangeLabel = "全部";
+		this.powerRangeLabel = "全部";
 		this.styleImgFont = "";
 		this.styleFont = "";
 		this.styleImg = "_on";
