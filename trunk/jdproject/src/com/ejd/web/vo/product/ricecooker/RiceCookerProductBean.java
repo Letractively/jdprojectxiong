@@ -86,9 +86,7 @@ public class RiceCookerProductBean extends PagedBaseBean {
 	public DataPage<Product> getDataPage(int startRow, int pageSize) {
 		DataPage<Product> dataPage = null;
 		try {
-			if (HeaderConstants.KITCHEN_APPLIANCE_NAME.equals(productType)) {
-				dataPage = new DataPage<Product>(getTotalCount(), startRow,this.getProductService().getKitchenApplianceProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange));
-			}
+			dataPage = new DataPage<Product>(getTotalCount(), startRow,this.getProductService().getRiceCookerProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, volumeRange, powerRange));
 		} catch (ProductException e) {
 			e.printStackTrace();
 		}
