@@ -17,9 +17,14 @@ public class ManageBeanConstants {
 	public static final String EXIST_PRODUCT_BRAND_BEAN_NAME = "existProductBrand";
 	//start exist kitchen appliance product brand
 	public static final String LIST_KITCHEN_APPLIANCE_PRODUCT_BEAN_NAME = "listKitchenApplianceProduct";
+	public static final String LIST_RICE_COOKER_PRODUCT_BEAN_NAME = "listRiceCookerProduct";
+	public static final String LIST_INDUCTION_COOKER_PRODUCT_BEAN_NAME = "listInductionCookerProduct";
+	
 	public static final String EXIST_KITCHEN_APPLIANCE_PRODUCT_BRAND_BEAN_NAME = "existKitchenApplianceProductBrand";
 	public static final String EXIST_KITCHEN_APPLIANCE_RICE_COOKER_PRODUCT_BRAND_BEAN_NAME = "existKitchenApplianceRiceCookerProductBrand";
 	public static final String EXIST_KITCHEN_APPLIANCE_INDUCTION_COOKERP_RODUCT_BRAND_BEAN_NAME = "existKitchenApplianceInductionCookerProductBrand";
+	public static final String EXIST_INDUCTION_COOKER_PANEL_TYPE_BEAN_NAME = "existInductionCookerPanelType";
+	public static final String EXIST_INDUCTION_COOKER_FITTING_BEAN_NAME = "existInductionCookerFitting";
 	public static final String EXIST_KITCHEN_APPLIANCE_ELECTRIC_STEW_PAN_PRODUCT_BRAND_BEAN_NAME = "existKitchenApplianceElectricStewPanProductBrand";
 	public static final String EXIST_KITCHEN_APPLIANCE_ELECTRONIC_OVEN_PRODUCT_BRAND_BEAN_NAME = "existKitchenApplianceElectronicOvenProductBrand";
 	public static final String EXIST_KITCHEN_APPLIANCE_FRYER_PRODUCT_BRAND_BEAN_NAME = "existKitchenApplianceFryerProductBrand";
