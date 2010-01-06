@@ -19,8 +19,10 @@ xmlns:rich="http://richfaces.org/rich">
     			</ui:include>
     		</ui:define>
     		<ui:define id="contentHeader" name="contentHeader">
-    			<ui:include id="contentHeaderHeaderBack" src="../productHeaderBack.jsp">
-    			</ui:include>
+    			<f:subview id="loadKitchenApplianceProductHeaderBackView">
+    				<ui:include id="kitchenApplianceContentHeaderHeaderBack" src="../productHeaderBack.jsp">
+    				</ui:include>
+    			</f:subview>
 			</ui:define>
 			<ui:define id="kitchenApplianceContent" name="content">
 				<a4j:region id="kitchenApplianceSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
