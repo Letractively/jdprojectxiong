@@ -118,6 +118,13 @@ public class ProductServiceImpl implements IProductService {
 			throw new ProductException("error");
 		}
 	}
+	public List<Product> getInductionCookerProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, String panelType, String fitting) throws ProductException {
+		try {
+			return productDao.getInductionCookerProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, panelType, fitting);
+		} catch(HibernateObjectRetrievalFailureException he) {
+			throw new ProductException("error");
+		}
+	}
 	public List<String> getBrandCodeListByCategory(String primaryCategoryCode, String secondCategoryCode) throws ProductException {
 		if (null == primaryCategoryCode || "".equals(primaryCategoryCode)) {
 			return null;

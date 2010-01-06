@@ -240,6 +240,63 @@ public class ProductDaoImpl extends HibernateDaoSupport implements IProductDao {
 			return null;
 		}
 	}
+	
+	public List<Product> getInductionCookerProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, String panelType, String fitting) {
+		Map criteria = new HashMap();
+		List<Product> result = new ArrayList();
+		try {
+			String hql="from Product as p where 1=1 ";
+			if (null != primaryCategoryCode && !"".equals(primaryCategoryCode)) {
+				hql = hql + " and p.primaryCategoryCode = :primaryCategoryCode ";
+				criteria.put("primaryCategoryCode", primaryCategoryCode);
+			}
+			
+			if (null != secondCategoryCode && !"".equals(secondCategoryCode)) {
+				hql = hql + " and p.secondCategoryCode = :secondCategoryCode ";
+				criteria.put("secondCategoryCode", secondCategoryCode);
+			}
+			if (null != brandCode && !"".equals(brandCode)) {
+				hql = hql + " and p.brandCode = :brandCode ";
+				criteria.put("brandCode", brandCode);
+			}
+			if (null != priceRange && null != priceRange.getMin()) {
+				hql = hql + " and p.retailPrice >= :pricemin ";
+				criteria.put("pricemin", priceRange.getMin());
+			}
+			if (null != priceRange && null != priceRange.getMax()) {
+				hql = hql + " and p.retailPrice <= :pricemax ";
+				criteria.put("pricemax", priceRange.getMax());
+			}
+			if (null != panelType && !"".equals(panelType)) {
+				hql = hql + " and p.field6 = :panelType ";
+				criteria.put("panelType", panelType);
+			}
+			if (null != fitting && !"".equals(fitting)) {
+				hql = hql + " and p.field7 = :fitting ";
+				criteria.put("fitting", fitting);
+			}
+			
+			SessionFactory sf =(SessionFactory) this.getSessionFactory();
+			Session session = sf.openSession();
+			/*List<Product> products=this.getHibernateTemplate().find(hql, criteria);*/
+			try {
+				Query q = session.createQuery(hql);
+				q.setProperties(criteria);
+				session.beginTransaction();
+				result = q.list();
+				session.flush();
+				} catch (HibernateException e) {
+					e.printStackTrace();
+					session.getTransaction().rollback();
+				} finally {
+					  session.close();
+				  }
+				return result;
+		} catch (Exception e) {
+			logger.error(e);
+			return null;
+		}
+	}
 	public List<String> getBrandCodeListByCategory(String primaryCategoryCode, String secondCategoryCode) {
 		Map criteria = new HashMap();
 		List<String> result = new ArrayList();
