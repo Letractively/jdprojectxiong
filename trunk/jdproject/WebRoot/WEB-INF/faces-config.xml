@@ -860,6 +860,40 @@
 	<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
     <!-- end about kitchenappliance -->
+    <!-- start about rice Cooker  -->
+    <managed-bean>
+        <managed-bean-name>listRiceCookerProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.ricecooker.RiceCookerProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationRiceCooker</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.ricecooker.NavigationRiceCookerBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about rice Cooker  -->
+    <!-- start about rice Cooker  -->
+    <managed-bean>
+        <managed-bean-name>listInductionCookerProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.inductioncooker.InductionCookerProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationInductionCooker</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.inductioncooker.NavigationInductionCookerBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about rice Cooker  -->
     <!-- List Porduct end -->
     
 	<managed-bean>
