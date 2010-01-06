@@ -71,19 +71,19 @@ A:visited {
 	FONT-SIZE: 12px; COLOR: #2c629e; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
 }
 A:hover {
-	FONT-SIZE: 12px; COLOR: #2c629e; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+	FONT-SIZE: 12px; COLOR: #2c629e; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
 }
 .font_top {
-	FONT-SIZE: 14px; COLOR: #ffffcc; LINE-HEIGHT: 24px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+	FONT-SIZE: 12px; COLOR: #2c629e; LINE-HEIGHT: 24px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
 }
 A.font_top:link {
-	FONT-SIZE: 14px; COLOR: #ffffcc; LINE-HEIGHT: 24px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+	FONT-SIZE: 12px; COLOR: #2c629e; LINE-HEIGHT: 24px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
 }
 A.font_top:visited {
-	FONT-SIZE: 14px; COLOR: #ffffcc; LINE-HEIGHT: 24px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+	FONT-SIZE: 12px; COLOR: #2c629e; LINE-HEIGHT: 24px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
 }
 A.font_top:hover {
-	FONT-SIZE: 14px; COLOR: #ffffff; LINE-HEIGHT: 24px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+	FONT-SIZE: 12px; COLOR: #2c629e; LINE-HEIGHT: 24px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none;
 }
 .font_y {
 	FONT-SIZE: 14px; COLOR: #ffffcc; LINE-HEIGHT: 24px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none

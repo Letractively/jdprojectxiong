@@ -248,6 +248,9 @@ input, select, textarea, button, keygen, isindex, legend, a {
 	align:left; 
 }
 
+.current-selected_label {
+	FLOAT: left; COLOR: #7d7d7d; FONT-FAMILY: Arial;FONT-WEIGHT:BOLD;
+}
 .current-selected {
 	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 0px; PADDING-TOP: 3px; DISPLAY: inline-table; BACKGROUND: #a8d0f4; COLOR: #ffffff; font-size:12px;
 }
