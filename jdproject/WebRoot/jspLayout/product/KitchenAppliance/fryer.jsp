@@ -14,7 +14,16 @@ xmlns:rich="http://richfaces.org/rich">
     </head>
     <body>
     	<ui:composition template="../productTemplate.jsp">
-    		
+    		<ui:define id="fryerLeft" name="left">
+    			<ui:include id="fryerLeftInclude" src="../navigationProductLeft.jsp">
+    			</ui:include>
+    		</ui:define>
+    		<ui:define id="contentHeader" name="contentHeader">
+    			<f:subview id="loadFryerProductHeaderBackView">
+    				<ui:include id="fryerContentHeaderHeaderBack" src="../productHeaderBack.jsp">
+    				</ui:include>
+    			</f:subview>
+			</ui:define>
 			<ui:define id="fryerContent" name="content">
 				<a4j:region id="fryerSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="fryerSearchNavigationRegionForm">

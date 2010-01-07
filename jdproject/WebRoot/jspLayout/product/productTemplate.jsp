@@ -52,16 +52,14 @@ xmlns:rich="http://richfaces.org/rich">
 	<h:panelGroup id="template-left">
 		<ui:insert name="left">
 			<f:subview id="leftview">
-				<ui:include id="kitchenApplianceLeftInclude" src="./navigationProductLeft.jsp">
-    			</ui:include>
+				<h:outputText value="lefttext"></h:outputText>
 			</f:subview>
 		</ui:insert>
 	</h:panelGroup>
 	<h:panelGroup id="template-content">
 		<ui:insert name="contentHeader">
 			<f:subview id="contentHeaderView">
-				<ui:include id="kitchenApplianceContentHeaderHeaderBack" src="./productHeaderBack.jsp">
-    			</ui:include>
+				<h:outputText value="contentHeaderNavigation"></h:outputText>
 			</f:subview>
 		</ui:insert>
 		<ui:insert name="content">

@@ -14,7 +14,16 @@ xmlns:rich="http://richfaces.org/rich">
     </head>
     <body>
     	<ui:composition template="../productTemplate.jsp">
-    		
+    		<ui:define id="electricStewPanLeft" name="left">
+    			<ui:include id="electricStewPanLeftInclude" src="../navigationProductLeft.jsp">
+    			</ui:include>
+    		</ui:define>
+    		<ui:define id="contentHeader" name="contentHeader">
+    			<f:subview id="loadElectricStewPanProductHeaderBackView">
+    				<ui:include id="electricStewPanContentHeaderHeaderBack" src="../productHeaderBack.jsp">
+    				</ui:include>
+    			</f:subview>
+			</ui:define>
 			<ui:define id="electricStewPanContent" name="content">
 				<a4j:region id="electricStewPanSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="electricStewPanSearchNavigationRegionForm">
