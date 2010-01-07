@@ -75,7 +75,7 @@ public class RiceCookerProductBean extends PagedBaseBean {
 		int totalCount = 0;
 		List alist= new ArrayList();
 		try {
-			alist = this.getProductService().getRiceCookerProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, volumeRange, powerRange);
+			alist = this.getProductService().getPSBPF1F2ProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, volumeRange, powerRange);
 		} catch (ProductException e) {
 			e.printStackTrace();
 		}
@@ -86,7 +86,7 @@ public class RiceCookerProductBean extends PagedBaseBean {
 	public DataPage<Product> getDataPage(int startRow, int pageSize) {
 		DataPage<Product> dataPage = null;
 		try {
-			dataPage = new DataPage<Product>(getTotalCount(), startRow,this.getProductService().getRiceCookerProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, volumeRange, powerRange));
+			dataPage = new DataPage<Product>(getTotalCount(), startRow,this.getProductService().getPSBPF1F2ProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, volumeRange, powerRange));
 		} catch (ProductException e) {
 			e.printStackTrace();
 		}

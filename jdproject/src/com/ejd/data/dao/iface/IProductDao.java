@@ -20,5 +20,10 @@ public interface IProductDao {
 	public List<Product> getKitchenApplianceProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange);
 	public List<Product> getRiceCookerProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, RangeParam volumeRange, RangeParam powerRange);
 	public List<Product> getInductionCookerProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, String panelType, String fitting);
+	public List<Product> getElectricStewPanProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, RangeParam volumeRange);
+	public List<Product> getElectronicOvenProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, String hotType);
+	public List<Product> getFryerProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange);
+	
+	
 	public List<String> getBrandCodeListByCategory(String primaryCategory, String secondCategory);
 }

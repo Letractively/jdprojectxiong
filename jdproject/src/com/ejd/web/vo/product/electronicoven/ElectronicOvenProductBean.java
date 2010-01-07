@@ -1,4 +1,4 @@
-package com.ejd.web.vo.product.inductioncooker;
+package com.ejd.web.vo.product.electronicoven;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ import com.ejd.web.bo.Product;
 import com.ejd.web.vo.product.base.RangeParam;
 import com.ejd.web.vo.richfaces.header.HeaderConstants;
 
-public class InductionCookerProductBean extends PagedBaseBean {
+public class ElectronicOvenProductBean extends PagedBaseBean {
 	
 	public IProductService productService;
 	public String currentTitleOne;
@@ -30,10 +30,8 @@ public class InductionCookerProductBean extends PagedBaseBean {
 	private String brandLabel;
 	private RangeParam priceRange;
 	private String priceRangeLabel;
-	private String panelType;
-	private String panelTypeLabel;
-	private String fitting;
-	private String fittingLabel;
+	private String hotType;
+	private String hotTypeLabel;
 	//end for search property
 	private DataModel dataModel;
 	
@@ -47,14 +45,13 @@ public class InductionCookerProductBean extends PagedBaseBean {
 	private String number100;
 	private int numberOnePage;
 	private int oldNumberOnePage;
-	public InductionCookerProductBean() {
+	public ElectronicOvenProductBean() {
 		super();
 		this.primaryCategoryLabel = "";
 		this.secondCategoryLabel = "";
 		this.brandLabel = "全部";
 		this.priceRangeLabel = "全部";
-		this.panelTypeLabel = "全部";
-		this.fittingLabel = "全部";
+		this.hotTypeLabel = "全部";
 		this.styleImgFont = "";
 		this.styleFont = "";
 		this.styleImg = "_on";
@@ -65,17 +62,16 @@ public class InductionCookerProductBean extends PagedBaseBean {
 		this.numberOnePage = 10;
 		this.oldNumberOnePage = 10;
 		this.primaryCategoryCode = HeaderConstants.KITCHEN_APPLIANCE_ID;
-		this.secondCategoryCode = HeaderConstants.subMenu02;
+		this.secondCategoryCode = HeaderConstants.subMenu04;
 		this.setBrandCode("");
 		this.setPriceRange(null);
-		this.setPanelType("");
-		this.setFitting("");
+		this.setHotType("");
 	}
 	public int getTotalCount() {
 		int totalCount = 0;
 		List alist= new ArrayList();
 		try {
-			alist = this.getProductService().getPSBPF6F7ProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, panelType, fitting);
+			alist = this.getProductService().getPSBPF6ProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, hotType);
 		} catch (ProductException e) {
 			e.printStackTrace();
 		}
@@ -86,7 +82,7 @@ public class InductionCookerProductBean extends PagedBaseBean {
 	public DataPage<Product> getDataPage(int startRow, int pageSize) {
 		DataPage<Product> dataPage = null;
 		try {
-			dataPage = new DataPage<Product>(getTotalCount(), startRow,this.getProductService().getPSBPF6F7ProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, panelType, fitting));
+			dataPage = new DataPage<Product>(getTotalCount(), startRow,this.getProductService().getPSBPF6ProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, hotType));
 		} catch (ProductException e) {
 			e.printStackTrace();
 		}
@@ -187,29 +183,17 @@ public class InductionCookerProductBean extends PagedBaseBean {
 		this.priceRangeLabel = priceRangeLabel;
 	}
 	
-	public String getPanelType() {
-		return panelType;
+	public String getHotType() {
+		return hotType;
 	}
-	public void setPanelType(String panelType) {
-		this.panelType = panelType;
+	public void setHotType(String hotType) {
+		this.hotType = hotType;
 	}
-	public String getPanelTypeLabel() {
-		return panelTypeLabel;
+	public String getHotTypeLabel() {
+		return hotTypeLabel;
 	}
-	public void setPanelTypeLabel(String panelTypeLabel) {
-		this.panelTypeLabel = panelTypeLabel;
-	}
-	public String getFitting() {
-		return fitting;
-	}
-	public void setFitting(String fitting) {
-		this.fitting = fitting;
-	}
-	public String getFittingLabel() {
-		return fittingLabel;
-	}
-	public void setFittingLabel(String fittingLabel) {
-		this.fittingLabel = fittingLabel;
+	public void setHotTypeLabel(String hotTypeLabel) {
+		this.hotTypeLabel = hotTypeLabel;
 	}
 	public void setDataModel(DataModel dataModel) {
 		this.dataModel = dataModel;

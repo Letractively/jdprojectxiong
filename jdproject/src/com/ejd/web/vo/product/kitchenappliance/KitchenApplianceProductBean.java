@@ -77,7 +77,7 @@ public class KitchenApplianceProductBean extends PagedBaseBean {
 		List alist= new ArrayList();
 		try {
 			if (HeaderConstants.KITCHEN_APPLIANCE_NAME.equals(productType)) {
-				alist = this.getProductService().getKitchenApplianceProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange);
+				alist = this.getProductService().getPSBPProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange);
 			}
 		} catch (ProductException e) {
 			e.printStackTrace();
@@ -90,7 +90,7 @@ public class KitchenApplianceProductBean extends PagedBaseBean {
 		DataPage<Product> dataPage = null;
 		try {
 			if (HeaderConstants.KITCHEN_APPLIANCE_NAME.equals(productType)) {
-				dataPage = new DataPage<Product>(getTotalCount(), startRow,this.getProductService().getKitchenApplianceProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange));
+				dataPage = new DataPage<Product>(getTotalCount(), startRow,this.getProductService().getPSBPProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange));
 			}
 		} catch (ProductException e) {
 			e.printStackTrace();
