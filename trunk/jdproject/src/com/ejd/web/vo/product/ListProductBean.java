@@ -49,7 +49,7 @@ public class ListProductBean extends PagedBaseBean {
 		int totalCount = 0;
 		List alist= new ArrayList();
 		try {
-		alist = this.getProductService().getKitchenApplianceProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange);
+		alist = this.getProductService().getPSBPProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange);
 		} catch (ProductException e) {
 			e.printStackTrace();
 		}
@@ -60,7 +60,7 @@ public class ListProductBean extends PagedBaseBean {
 	public DataPage<Product> getDataPage(int startRow, int pageSize) {
 		DataPage<Product> dataPage = null;
 		try {
-		dataPage = new DataPage<Product>(getTotalCount(), startRow,this.getProductService().getKitchenApplianceProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange));
+		dataPage = new DataPage<Product>(getTotalCount(), startRow,this.getProductService().getPSBPProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange));
 		} catch (ProductException e) {
 			e.printStackTrace();
 		}

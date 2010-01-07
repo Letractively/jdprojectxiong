@@ -1,4 +1,4 @@
-package com.ejd.web.vo.product.inductioncooker;
+package com.ejd.web.vo.product.burntstewpot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ import com.ejd.web.bo.Product;
 import com.ejd.web.vo.product.base.RangeParam;
 import com.ejd.web.vo.richfaces.header.HeaderConstants;
 
-public class InductionCookerProductBean extends PagedBaseBean {
+public class BurntStewpotProductBean extends PagedBaseBean {
 	
 	public IProductService productService;
 	public String currentTitleOne;
@@ -30,10 +30,10 @@ public class InductionCookerProductBean extends PagedBaseBean {
 	private String brandLabel;
 	private RangeParam priceRange;
 	private String priceRangeLabel;
-	private String panelType;
-	private String panelTypeLabel;
-	private String fitting;
-	private String fittingLabel;
+	private RangeParam volumeRange;
+	private String volumeRangeLabel;
+	private RangeParam powerRange;
+	private String powerRangeLabel;
 	//end for search property
 	private DataModel dataModel;
 	
@@ -47,14 +47,14 @@ public class InductionCookerProductBean extends PagedBaseBean {
 	private String number100;
 	private int numberOnePage;
 	private int oldNumberOnePage;
-	public InductionCookerProductBean() {
+	public BurntStewpotProductBean() {
 		super();
 		this.primaryCategoryLabel = "";
 		this.secondCategoryLabel = "";
 		this.brandLabel = "全部";
 		this.priceRangeLabel = "全部";
-		this.panelTypeLabel = "全部";
-		this.fittingLabel = "全部";
+		this.volumeRangeLabel = "全部";
+		this.powerRangeLabel = "全部";
 		this.styleImgFont = "";
 		this.styleFont = "";
 		this.styleImg = "_on";
@@ -65,17 +65,17 @@ public class InductionCookerProductBean extends PagedBaseBean {
 		this.numberOnePage = 10;
 		this.oldNumberOnePage = 10;
 		this.primaryCategoryCode = HeaderConstants.KITCHEN_APPLIANCE_ID;
-		this.secondCategoryCode = HeaderConstants.subMenu02;
+		this.secondCategoryCode = HeaderConstants.subMenu06;
 		this.setBrandCode("");
 		this.setPriceRange(null);
-		this.setPanelType("");
-		this.setFitting("");
+		this.setVolumeRange(null);
+		this.setPowerRange(null);
 	}
 	public int getTotalCount() {
 		int totalCount = 0;
 		List alist= new ArrayList();
 		try {
-			alist = this.getProductService().getPSBPF6F7ProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, panelType, fitting);
+			alist = this.getProductService().getPSBPF1F2ProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, volumeRange, powerRange);
 		} catch (ProductException e) {
 			e.printStackTrace();
 		}
@@ -86,7 +86,7 @@ public class InductionCookerProductBean extends PagedBaseBean {
 	public DataPage<Product> getDataPage(int startRow, int pageSize) {
 		DataPage<Product> dataPage = null;
 		try {
-			dataPage = new DataPage<Product>(getTotalCount(), startRow,this.getProductService().getPSBPF6F7ProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, panelType, fitting));
+			dataPage = new DataPage<Product>(getTotalCount(), startRow,this.getProductService().getPSBPF1F2ProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, volumeRange, powerRange));
 		} catch (ProductException e) {
 			e.printStackTrace();
 		}
@@ -186,30 +186,29 @@ public class InductionCookerProductBean extends PagedBaseBean {
 	public void setPriceRangeLabel(String priceRangeLabel) {
 		this.priceRangeLabel = priceRangeLabel;
 	}
-	
-	public String getPanelType() {
-		return panelType;
+	public RangeParam getVolumeRange() {
+		return volumeRange;
 	}
-	public void setPanelType(String panelType) {
-		this.panelType = panelType;
+	public void setVolumeRange(RangeParam volumeRange) {
+		this.volumeRange = volumeRange;
 	}
-	public String getPanelTypeLabel() {
-		return panelTypeLabel;
+	public String getVolumeRangeLabel() {
+		return volumeRangeLabel;
 	}
-	public void setPanelTypeLabel(String panelTypeLabel) {
-		this.panelTypeLabel = panelTypeLabel;
+	public void setVolumeRangeLabel(String volumeRangeLabel) {
+		this.volumeRangeLabel = volumeRangeLabel;
 	}
-	public String getFitting() {
-		return fitting;
+	public RangeParam getPowerRange() {
+		return powerRange;
 	}
-	public void setFitting(String fitting) {
-		this.fitting = fitting;
+	public void setPowerRange(RangeParam powerRange) {
+		this.powerRange = powerRange;
 	}
-	public String getFittingLabel() {
-		return fittingLabel;
+	public String getPowerRangeLabel() {
+		return powerRangeLabel;
 	}
-	public void setFittingLabel(String fittingLabel) {
-		this.fittingLabel = fittingLabel;
+	public void setPowerRangeLabel(String powerRangeLabel) {
+		this.powerRangeLabel = powerRangeLabel;
 	}
 	public void setDataModel(DataModel dataModel) {
 		this.dataModel = dataModel;
