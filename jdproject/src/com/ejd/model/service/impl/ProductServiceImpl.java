@@ -111,37 +111,37 @@ public class ProductServiceImpl implements IProductService {
 			throw new ProductException("error");
 		}
 	}*/
-	public List<Product> getPSBPF1F2ProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, RangeParam volumeRange, RangeParam powerRange) throws ProductException {
+	public List<Product> getPSBPF1F2ProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, RangeParam f1, RangeParam f2) throws ProductException {
 		try {
-			return productDao.getRiceCookerProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, volumeRange, powerRange);
+			return productDao.getPSBPF1F2ProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, f1, f2);
 		} catch(HibernateObjectRetrievalFailureException he) {
 			throw new ProductException("error");
 		}
 	}
-	public List<Product> getPSBPF6F7ProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, String panelType, String fitting) throws ProductException {
+	public List<Product> getPSBPF6F7ProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, String f6, String f7) throws ProductException {
 		try {
-			return productDao.getInductionCookerProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, panelType, fitting);
+			return productDao.getPSBPF6F7ProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, f6, f7);
 		} catch(HibernateObjectRetrievalFailureException he) {
 			throw new ProductException("error");
 		}
 	}
-	public List<Product> getPSBPF1ProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, RangeParam volumeRange) throws ProductException {
+	public List<Product> getPSBPF1ProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, RangeParam f1) throws ProductException {
 		try {
-			return productDao.getElectricStewPanProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, volumeRange);
+			return productDao.getPSBPF1ProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, f1);
 		} catch(HibernateObjectRetrievalFailureException he) {
 			throw new ProductException("error");
 		}
 	}
-	public List<Product> getPSBPF6ProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, String hotType) throws ProductException {
+	public List<Product> getPSBPF6ProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, String f6) throws ProductException {
 		try {
-			return productDao.getElectronicOvenProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, hotType);
+			return productDao.getPSBPF6ProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, f6);
 		} catch(HibernateObjectRetrievalFailureException he) {
 			throw new ProductException("error");
 		}
 	}
 	public List<Product> getPSBPProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange) throws ProductException {
 		try {
-			return productDao.getFryerProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange);
+			return productDao.getPSBPProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange);
 		} catch(HibernateObjectRetrievalFailureException he) {
 			throw new ProductException("error");
 		}
