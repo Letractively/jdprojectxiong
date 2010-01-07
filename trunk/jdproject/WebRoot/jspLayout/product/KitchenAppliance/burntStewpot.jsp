@@ -14,7 +14,16 @@ xmlns:rich="http://richfaces.org/rich">
     </head>
     <body>
     	<ui:composition template="../productTemplate.jsp">
-    		
+    		<ui:define id="burntStewpotLeft" name="left">
+    			<ui:include id="burntStewpotLeftInclude" src="../navigationProductLeft.jsp">
+    			</ui:include>
+    		</ui:define>
+    		<ui:define id="contentHeader" name="contentHeader">
+    			<f:subview id="loadBurntStewpotProductHeaderBackView">
+    				<ui:include id="burntStewpotContentHeaderHeaderBack" src="../productHeaderBack.jsp">
+    				</ui:include>
+    			</f:subview>
+			</ui:define>
 			<ui:define id="burntStewpotContent" name="content">
 				<a4j:region id="burntStewpotSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="burntStewpotSearchNavigationRegionForm">
