@@ -14,97 +14,97 @@ xmlns:rich="http://richfaces.org/rich">
     </head>
     <body>
     	<ui:composition template="../productTemplate.jsp">
-
-			<ui:define id="inductionCookerContent" name="content">
-				<a4j:region id="inductionCookerSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
-    			<h:form id="inductionCookerSearchNavigationRegionForm">
-    			<rich:panelBar id="inductionCookerpb" styleClass="panel-bar-product-top" style="width:822px;" contentStyle="background:none;">
-    				<rich:panelBarItem id="inductionCookerPbi" headerClass="navigation-product-top-panel-bar-item-header">
+    		
+			<ui:define id="burntStewpotContent" name="content">
+				<a4j:region id="burntStewpotSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
+    			<h:form id="burntStewpotSearchNavigationRegionForm">
+    			<rich:panelBar id="burntStewpotpb" styleClass="panel-bar-product-top" style="width:822px;" contentStyle="background:none;">
+    				<rich:panelBarItem id="burntStewpotPbi" headerClass="navigation-product-top-panel-bar-item-header">
     				<f:facet name="label">
     					<h:panelGroup>
     						<h:outputText value="商品筛选" styleClass="navigation-product-top-panel-bar-item-header-label"></h:outputText>
     					</h:panelGroup>
     				</f:facet>
-						<ui:include id="phoneinp12" src="./SubInductionCooker/navigationTopInductionCooker.jsp">
-							<ui:param name="brands" value="#{navigationInductionCooker.brandCodeItems}" />
-							<ui:param name="priceRangeList" value="#{navigationInductionCooker.priceRangeList}"/>
-							<ui:param name="panelTypeItems" value="#{navigationInductionCooker.panelTypeItems}"/>
-							<ui:param name="fittingItems" value="#{navigationInductionCooker.fittingItems}"/>
+						<ui:include id="phoneinp12" src="./SubBurntStewpot/navigationTopBurntStewpot.jsp">
+							<ui:param name="brands" value="#{navigationBurntStewpot.brandCodeItems}" />
+							<ui:param name="priceRangeList" value="#{navigationBurntStewpot.priceRangeList}"/>
+							<ui:param name="volumeRangeList" value="#{navigationBurntStewpot.volumeRangeList}"/>
+							<ui:param name="powerRangeList" value="#{navigationBurntStewpot.powerRangeList}"/>
 						</ui:include>
 					</rich:panelBarItem>
 				</rich:panelBar>
 				</h:form>
 				</a4j:region>
     			<h:panelGrid columns="1" style="width:822px;" styleClass="table-row">
-    			<a4j:region id="inductionCookerContentRegionStyle" renderRegionOnly="false" selfRendered="true">
-    				<h:form id="inductionCookerContentRegionStyleForm">
-    					<rich:panel id="inductionCookerContentRegionStyleFormPanel" styleClass="operate_title">
+    			<a4j:region id="burntStewpotContentRegionStyle" renderRegionOnly="false" selfRendered="true">
+    				<h:form id="burntStewpotContentRegionStyleForm">
+    					<rich:panel id="burntStewpotContentRegionStyleFormPanel" styleClass="operate_title">
     						<h:panelGrid columns="2" style="width:80%;">
     							<h:panelGroup>
             					<h:outputText value="显示方式"></h:outputText>
             					<h:graphicImage value="/css/images/icons/list.gif" style="border:0;vertical-align: middle;"></h:graphicImage>
 								<h:outputText value="        "></h:outputText>
-								<a4j:commandLink id="imgbutton" reRender="inductionCookerContentRegionStyleFormPanel,productList">
-									<h:graphicImage value="/css/images/i_img#{listInductionCookerProduct.styleImg}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
+								<a4j:commandLink id="imgbutton" reRender="burntStewpotContentRegionStyleFormPanel,productList">
+									<h:graphicImage value="/css/images/i_img#{listBurntStewpotProduct.styleImg}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
 									</h:graphicImage>
-									<a4j:actionparam name="styleImg" value="_on" assignTo="#{listInductionCookerProduct.styleImg}"></a4j:actionparam>
-									<a4j:actionparam name="styleImgFont" value="" assignTo="#{listInductionCookerProduct.styleImgFont}"></a4j:actionparam>
-									<a4j:actionparam name="styleFont" value="" assignTo="#{listInductionCookerProduct.styleFont}"></a4j:actionparam>
+									<a4j:actionparam name="styleImg" value="_on" assignTo="#{listBurntStewpotProduct.styleImg}"></a4j:actionparam>
+									<a4j:actionparam name="styleImgFont" value="" assignTo="#{listBurntStewpotProduct.styleImgFont}"></a4j:actionparam>
+									<a4j:actionparam name="styleFont" value="" assignTo="#{listBurntStewpotProduct.styleFont}"></a4j:actionparam>
 								</a4j:commandLink>
-								<a4j:commandLink id="imgfontbutton" reRender="inductionCookerContentRegionStyleFormPanel,productList">
-									<h:graphicImage value="/css/images/i_imgfont#{listInductionCookerProduct.styleImgFont}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
+								<a4j:commandLink id="imgfontbutton" reRender="burntStewpotContentRegionStyleFormPanel,productList">
+									<h:graphicImage value="/css/images/i_imgfont#{listBurntStewpotProduct.styleImgFont}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
 									</h:graphicImage>
-									<a4j:actionparam name="styleImg" value="" assignTo="#{listInductionCookerProduct.styleImg}"></a4j:actionparam>
-									<a4j:actionparam name="styleImgFont" value="_on" assignTo="#{listInductionCookerProduct.styleImgFont}"></a4j:actionparam>
-									<a4j:actionparam name="styleFont" value="" assignTo="#{listInductionCookerProduct.styleFont}"></a4j:actionparam>
+									<a4j:actionparam name="styleImg" value="" assignTo="#{listBurntStewpotProduct.styleImg}"></a4j:actionparam>
+									<a4j:actionparam name="styleImgFont" value="_on" assignTo="#{listBurntStewpotProduct.styleImgFont}"></a4j:actionparam>
+									<a4j:actionparam name="styleFont" value="" assignTo="#{listBurntStewpotProduct.styleFont}"></a4j:actionparam>
 								</a4j:commandLink>
-								<a4j:commandLink id="fontbutton" reRender="inductionCookerContentRegionStyleFormPanel,productList">
-									<h:graphicImage value="/css/images/i_font#{listInductionCookerProduct.styleFont}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
+								<a4j:commandLink id="fontbutton" reRender="burntStewpotContentRegionStyleFormPanel,productList">
+									<h:graphicImage value="/css/images/i_font#{listBurntStewpotProduct.styleFont}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
 									</h:graphicImage>
-									<a4j:actionparam name="styleImg" value="" assignTo="#{listInductionCookerProduct.styleImg}"></a4j:actionparam>
-									<a4j:actionparam name="styleImgFont" value="" assignTo="#{listInductionCookerProduct.styleImgFont}"></a4j:actionparam>
-									<a4j:actionparam name="styleFont" value="_on" assignTo="#{listInductionCookerProduct.styleFont}"></a4j:actionparam>
+									<a4j:actionparam name="styleImg" value="" assignTo="#{listBurntStewpotProduct.styleImg}"></a4j:actionparam>
+									<a4j:actionparam name="styleImgFont" value="" assignTo="#{listBurntStewpotProduct.styleImgFont}"></a4j:actionparam>
+									<a4j:actionparam name="styleFont" value="_on" assignTo="#{listBurntStewpotProduct.styleFont}"></a4j:actionparam>
 								</a4j:commandLink>
 							</h:panelGroup>
 							<h:panelGroup>
 									<h:outputText value="每页显示数量" style="vertical-align: middle;"></h:outputText>
 									<h:graphicImage value="/css/images/icons/list.gif" style="border:0;vertical-align: middle;"></h:graphicImage>
 									<h:outputText value="        "></h:outputText>
-									<a4j:commandLink id="number15button" reRender="inductionCookerContentRegionStyleFormPanel,productList">
-										<h:graphicImage value="/css/images/number15#{listInductionCookerProduct.number10}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
+									<a4j:commandLink id="number15button" reRender="burntStewpotContentRegionStyleFormPanel,productList">
+										<h:graphicImage value="/css/images/number15#{listBurntStewpotProduct.number10}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
 										</h:graphicImage>
-										<a4j:actionparam name="number10" value="_on" assignTo="#{listInductionCookerProduct.number10}"></a4j:actionparam>
-										<a4j:actionparam name="number20" value="" assignTo="#{listInductionCookerProduct.number20}"></a4j:actionparam>
-										<a4j:actionparam name="number40" value="" assignTo="#{listInductionCookerProduct.number40}"></a4j:actionparam>
-										<a4j:actionparam name="number100" value="" assignTo="#{listInductionCookerProduct.number100}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="10" assignTo="#{listInductionCookerProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="number10" value="_on" assignTo="#{listBurntStewpotProduct.number10}"></a4j:actionparam>
+										<a4j:actionparam name="number20" value="" assignTo="#{listBurntStewpotProduct.number20}"></a4j:actionparam>
+										<a4j:actionparam name="number40" value="" assignTo="#{listBurntStewpotProduct.number40}"></a4j:actionparam>
+										<a4j:actionparam name="number100" value="" assignTo="#{listBurntStewpotProduct.number100}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="10" assignTo="#{listBurntStewpotProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
-									<a4j:commandLink id="number30button" reRender="inductionCookerContentRegionStyleFormPanel,productList">
-										<h:graphicImage value="/css/images/number30#{listInductionCookerProduct.number20}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
+									<a4j:commandLink id="number30button" reRender="burntStewpotContentRegionStyleFormPanel,productList">
+										<h:graphicImage value="/css/images/number30#{listBurntStewpotProduct.number20}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
 										</h:graphicImage>
-										<a4j:actionparam name="number10" value="" assignTo="#{listInductionCookerProduct.number10}"></a4j:actionparam>
-										<a4j:actionparam name="number20" value="_on" assignTo="#{listInductionCookerProduct.number20}"></a4j:actionparam>
-										<a4j:actionparam name="number40" value="" assignTo="#{listInductionCookerProduct.number40}"></a4j:actionparam>
-										<a4j:actionparam name="number100" value="" assignTo="#{listInductionCookerProduct.number100}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="20" assignTo="#{listInductionCookerProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="number10" value="" assignTo="#{listBurntStewpotProduct.number10}"></a4j:actionparam>
+										<a4j:actionparam name="number20" value="_on" assignTo="#{listBurntStewpotProduct.number20}"></a4j:actionparam>
+										<a4j:actionparam name="number40" value="" assignTo="#{listBurntStewpotProduct.number40}"></a4j:actionparam>
+										<a4j:actionparam name="number100" value="" assignTo="#{listBurntStewpotProduct.number100}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="20" assignTo="#{listBurntStewpotProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
-									<a4j:commandLink id="number60button" reRender="inductionCookerContentRegionStyleFormPanel,productList">
-										<h:graphicImage value="/css/images/number60#{listInductionCookerProduct.number40}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
+									<a4j:commandLink id="number60button" reRender="burntStewpotContentRegionStyleFormPanel,productList">
+										<h:graphicImage value="/css/images/number60#{listBurntStewpotProduct.number40}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
 										</h:graphicImage>
-										<a4j:actionparam name="number10" value="" assignTo="#{listInductionCookerProduct.number10}"></a4j:actionparam>
-										<a4j:actionparam name="number20" value="" assignTo="#{listInductionCookerProduct.number20}"></a4j:actionparam>
-										<a4j:actionparam name="number40" value="_on" assignTo="#{listInductionCookerProduct.number40}"></a4j:actionparam>
-										<a4j:actionparam name="number100" value="" assignTo="#{listInductionCookerProduct.number100}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="40" assignTo="#{listInductionCookerProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="number10" value="" assignTo="#{listBurntStewpotProduct.number10}"></a4j:actionparam>
+										<a4j:actionparam name="number20" value="" assignTo="#{listBurntStewpotProduct.number20}"></a4j:actionparam>
+										<a4j:actionparam name="number40" value="_on" assignTo="#{listBurntStewpotProduct.number40}"></a4j:actionparam>
+										<a4j:actionparam name="number100" value="" assignTo="#{listBurntStewpotProduct.number100}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="40" assignTo="#{listBurntStewpotProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
-									<a4j:commandLink id="number90button" reRender="inductionCookerContentRegionStyleFormPanel,productList">
-										<h:graphicImage value="/css/images/number90#{listInductionCookerProduct.number100}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
+									<a4j:commandLink id="number90button" reRender="burntStewpotContentRegionStyleFormPanel,productList">
+										<h:graphicImage value="/css/images/number90#{listBurntStewpotProduct.number100}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
 										</h:graphicImage>
-										<a4j:actionparam name="number10" value="" assignTo="#{listInductionCookerProduct.number10}"></a4j:actionparam>
-										<a4j:actionparam name="number20" value="" assignTo="#{listInductionCookerProduct.number20}"></a4j:actionparam>
-										<a4j:actionparam name="number40" value="" assignTo="#{listInductionCookerProduct.number40}"></a4j:actionparam>
-										<a4j:actionparam name="number100" value="_on" assignTo="#{listInductionCookerProduct.number100}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="100" assignTo="#{listInductionCookerProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="number10" value="" assignTo="#{listBurntStewpotProduct.number10}"></a4j:actionparam>
+										<a4j:actionparam name="number20" value="" assignTo="#{listBurntStewpotProduct.number20}"></a4j:actionparam>
+										<a4j:actionparam name="number40" value="" assignTo="#{listBurntStewpotProduct.number40}"></a4j:actionparam>
+										<a4j:actionparam name="number100" value="_on" assignTo="#{listBurntStewpotProduct.number100}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="100" assignTo="#{listBurntStewpotProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									
 							</h:panelGroup>
@@ -112,13 +112,13 @@ xmlns:rich="http://richfaces.org/rich">
         				</rich:panel>
     				</h:form>
     			</a4j:region>
-    			<a4j:region id="inductionCookerContentRegionContent" renderRegionOnly="false" selfRendered="true">
-    			<h:form id="inductionCookerContentRegionContentForm">
+    			<a4j:region id="burntStewpotContentRegionContent" renderRegionOnly="false" selfRendered="true">
+    			<h:form id="burntStewpotContentRegionContentForm">
     			<h:panelGrid id="productList" columns="1" style="width:100%" styleClass="table-list-product-panel-grid" rowClasses="table-list-product-panel-grid-main-column">
-    			<h:outputText value="抱歉，找不到符合条件的商品!" rendered="#{not (listInductionCookerProduct.dataModel.rowCount>0)}" styleClass="no-product-find"></h:outputText>
-    			<rich:dataGrid id="productListImg" rendered="#{listInductionCookerProduct.styleImgFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="2" elements="#{listInductionCookerProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" columnClasses="table-list-product-panel-grid-column" value="#{listInductionCookerProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
+    			<h:outputText value="抱歉，找不到符合条件的商品!" rendered="#{not (listBurntStewpotProduct.dataModel.rowCount>0)}" styleClass="no-product-find"></h:outputText>
+    			<rich:dataGrid id="productListImg" rendered="#{listBurntStewpotProduct.styleImgFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="2" elements="#{listBurntStewpotProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" columnClasses="table-list-product-panel-grid-column" value="#{listBurntStewpotProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                 <f:facet name="header">
-                	<h:outputText value="共:#{listInductionCookerProduct.dataModel.rowCount}件商品" rendered="#{listInductionCookerProduct.dataModel.rowCount>0}"></h:outputText>
+                	<h:outputText value="共:#{listBurntStewpotProduct.dataModel.rowCount}件商品" rendered="#{listBurntStewpotProduct.dataModel.rowCount>0}"></h:outputText>
       			</f:facet>
      				<a4j:region renderRegionOnly="false" selfRendered="true">
                  	<rich:panel styleClass="show-product-data-grid-panel">
@@ -156,7 +156,7 @@ xmlns:rich="http://richfaces.org/rich">
                     </a4j:region>
                  	<f:facet name="footer">
                  	<h:panelGroup>
-                 		<rich:datascroller for="productListImg" id="dcFooterProductList" page="#{listInductionCookerProduct.scrollerPage}" pageIndexVar="currentPage" pagesVar="totalPages" maxPages="10" rendered="#{listInductionCookerProduct.dataModel.rowCount>0}" style="width:483px;align:center">
+                 		<rich:datascroller for="productListImg" id="dcFooterProductList" page="#{listBurntStewpotProduct.scrollerPage}" pageIndexVar="currentPage" pagesVar="totalPages" maxPages="10" rendered="#{listBurntStewpotProduct.dataModel.rowCount>0}" style="width:483px;align:center">
                  		<f:facet name="controlSeparator">
                  		</f:facet>
                  		<f:facet name="first">
@@ -187,9 +187,9 @@ xmlns:rich="http://richfaces.org/rich">
                  	</f:facet>              
              	</rich:dataGrid>
              	
-             	<rich:dataGrid id="productListImgFont" rendered="#{listInductionCookerProduct.styleImgFontFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="1" elements="#{listInductionCookerProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" rowClasses="show-image-font-product-data-grid-row-one,show-image-font-product-data-grid-row-two" columnClasses="table-list-product-panel-grid-column" value="#{listInductionCookerProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
+             	<rich:dataGrid id="productListImgFont" rendered="#{listBurntStewpotProduct.styleImgFontFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="1" elements="#{listBurntStewpotProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" rowClasses="show-image-font-product-data-grid-row-one,show-image-font-product-data-grid-row-two" columnClasses="table-list-product-panel-grid-column" value="#{listBurntStewpotProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                 <f:facet name="header">
-                	<h:outputText value="共:#{listInductionCookerProduct.dataModel.rowCount}件商品" rendered="#{listInductionCookerProduct.dataModel.rowCount>0}"></h:outputText>
+                	<h:outputText value="共:#{listBurntStewpotProduct.dataModel.rowCount}件商品" rendered="#{listBurntStewpotProduct.dataModel.rowCount>0}"></h:outputText>
       			</f:facet>
      				<a4j:region renderRegionOnly="false" selfRendered="true">
                  	<rich:panel styleClass="show-product-data-grid-panel">
@@ -226,7 +226,7 @@ xmlns:rich="http://richfaces.org/rich">
                  	</a4j:region>
                  	<f:facet name="footer">
                  	<h:panelGroup>
-                 		<rich:datascroller for="productListImgFont" id="imgFontFooterProductList" page="#{listInductionCookerProduct.scrollerPage}" pageIndexVar="currentPage" pagesVar="totalPages" maxPages="10" rendered="#{listInductionCookerProduct.dataModel.rowCount>0}" style="width:483px;align:center">
+                 		<rich:datascroller for="productListImgFont" id="imgFontFooterProductList" page="#{listBurntStewpotProduct.scrollerPage}" pageIndexVar="currentPage" pagesVar="totalPages" maxPages="10" rendered="#{listBurntStewpotProduct.dataModel.rowCount>0}" style="width:483px;align:center">
                  		<f:facet name="controlSeparator">
                  		</f:facet>
                  		<f:facet name="first">
@@ -257,9 +257,9 @@ xmlns:rich="http://richfaces.org/rich">
                  	</f:facet>              
              	</rich:dataGrid>
              	
-				<rich:dataGrid id="productListFont" rendered="#{listInductionCookerProduct.styleFontFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="1" elements="#{listInductionCookerProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" rowClasses="show-font-product-data-grid-row-one,show-font-product-data-grid-row-two" columnClasses="table-list-product-panel-grid-column" value="#{listInductionCookerProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
+				<rich:dataGrid id="productListFont" rendered="#{listBurntStewpotProduct.styleFontFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="1" elements="#{listBurntStewpotProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" rowClasses="show-font-product-data-grid-row-one,show-font-product-data-grid-row-two" columnClasses="table-list-product-panel-grid-column" value="#{listBurntStewpotProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                 <f:facet name="header">
-                	<h:outputText value="共:#{listInductionCookerProduct.dataModel.rowCount}件商品" rendered="#{listInductionCookerProduct.dataModel.rowCount>0}"></h:outputText>
+                	<h:outputText value="共:#{listBurntStewpotProduct.dataModel.rowCount}件商品" rendered="#{listBurntStewpotProduct.dataModel.rowCount>0}"></h:outputText>
       			</f:facet>
      				<a4j:region renderRegionOnly="false" selfRendered="true">
                  	<rich:panel styleClass="show-product-data-grid-panel">
@@ -295,7 +295,7 @@ xmlns:rich="http://richfaces.org/rich">
                  	</a4j:region>
                  	<f:facet name="footer">
                  	<h:panelGroup>
-                 		<rich:datascroller for="productListFont" id="FontFooterProductList" page="#{listInductionCookerProduct.scrollerPage}" pageIndexVar="currentPage" pagesVar="totalPages" maxPages="10" rendered="#{listInductionCookerProduct.dataModel.rowCount>0}" style="width:483px;align:center">
+                 		<rich:datascroller for="productListFont" id="FontFooterProductList" page="#{listBurntStewpotProduct.scrollerPage}" pageIndexVar="currentPage" pagesVar="totalPages" maxPages="10" rendered="#{listBurntStewpotProduct.dataModel.rowCount>0}" style="width:483px;align:center">
                  		<f:facet name="controlSeparator">
                  		</f:facet>
                  		<f:facet name="first">
@@ -331,7 +331,7 @@ xmlns:rich="http://richfaces.org/rich">
              </a4j:region>
              </h:panelGrid>
     		</ui:define>
-    		<ui:define id="inductionCookerRight" name="right">
+    		<ui:define id="burntStewpotRight" name="right">
     			<h:outputText value=""></h:outputText>
     		</ui:define>
     	</ui:composition>
