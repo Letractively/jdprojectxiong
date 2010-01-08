@@ -148,140 +148,157 @@ xmlns:rich="http://richfaces.org/rich">
                 		<rich:message for="introduceFileName" />
 						<f:facet name="footer">
 							<h:panelGroup id="subProduct">
-							<h:panelGrid id="riceCooker" rendered="#{productCreate.isRiceCooker}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
-								<h:outputLabel value="#{productCreate.riceCooker.field1Label}:" for="riceCookerFeild1"></h:outputLabel>
-								<h:inputText value="#{productCreate.riceCooker.field1}" id="riceCookerFeild1"></h:inputText>
+							<h:panelGrid id="riceCooker" rendered="#{productCreate.currProductType == 'riceCooker'}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="容积(L):" for="riceCookerFeild1"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field1}" id="riceCookerFeild1"></h:inputText>
 								<rich:message for="riceCookerFeild1" />
-								<h:outputLabel value="#{productCreate.riceCooker.field2Label}:" for="riceCookerFeild2"></h:outputLabel>
-								<h:inputText value="#{productCreate.riceCooker.field2}" id="riceCookerFeild2"></h:inputText>
+								<h:outputLabel value="功率(W):" for="riceCookerFeild2"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field2}" id="riceCookerFeild2"></h:inputText>
 								<rich:message for="riceCookerFeild2" />
 							</h:panelGrid>
-							<h:panelGrid id="inductionCooker" rendered="#{productCreate.isInductionCooker}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
-								<h:outputLabel value="#{productCreate.inductionCooker.field6Label}:" for="inductionCookerFeild6"></h:outputLabel>
-								<h:selectOneMenu value="#{productCreate.inductionCooker.field6}" id="inductionCookerFeild6">
+							<h:panelGrid id="inductionCooker" rendered="#{productCreate.currProductType == 'inductionCooker'}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="面斑类型:" for="inductionCookerFeild6"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.product.field6}" id="inductionCookerFeild6">
 									<f:selectItems value="#{existInductionCookerPanelType.panelTypeItems}"/>
 								</h:selectOneMenu>
 								<rich:message for="inductionCookerFeild1" />
-								<h:outputLabel value="#{productCreate.inductionCooker.field7Label}:" for="inductionCookerFeild7"></h:outputLabel>
-								<h:selectOneMenu value="#{productCreate.inductionCooker.field7}" id="inductionCookerFeild7">
+								<h:outputLabel value="配件:" for="inductionCookerFeild7"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.product.field7}" id="inductionCookerFeild7">
 									<f:selectItems value="#{existInductionCookerFitting.fittingItems}"/>
 								</h:selectOneMenu>
 								<rich:message for="inductionCookerFeild2" />
 							</h:panelGrid>
-							<h:panelGrid id="electricStewPan" rendered="#{productCreate.isElectricStewPan}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
-								<h:outputLabel value="#{productCreate.electricStewPan.field1Label}:" for="electricStewPanFeild1"></h:outputLabel>
-								<h:inputText value="#{productCreate.electricStewPan.field1}" id="electricStewPanFeild1"></h:inputText>
+							<h:panelGrid id="electricStewPan" rendered="#{productCreate.currProductType == 'electricStewPan'}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="容积(L):" for="electricStewPanFeild1"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field1}" id="electricStewPanFeild1"></h:inputText>
 								<rich:message for="electricStewPanFeild1" />
 								
 							</h:panelGrid>
-							<h:panelGrid id="electronicOven" rendered="#{productCreate.isElectronicOven}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
-								<h:outputLabel value="#{productCreate.electronicOven.field6Label}:" for="electronicOvenFeild6"></h:outputLabel>
-								<h:selectOneMenu value="#{productCreate.electronicOven.field6}" id="electronicOvenFeild6">
+							<h:panelGrid id="electronicOven" rendered="#{productCreate.currProductType == 'electronicOven'}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="加热方式:" for="electronicOvenFeild6"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.product.field6}" id="electronicOvenFeild6">
 									<f:selectItems value="#{existElectronicOvenHotType.hotTypeItems}"/>
 								</h:selectOneMenu>
 								<rich:message for="electronicOvenFeild6" />
 								
 							</h:panelGrid>
-							<h:panelGrid id="burntStewpot" rendered="#{productCreate.isBurntStewpot}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
-								<h:outputLabel value="#{productCreate.burntStewpot.field1Label}:" for="burntStewpotFeild1"></h:outputLabel>
-								<h:inputText value="#{productCreate.burntStewpot.field1}" id="burntStewpotFeild1"></h:inputText>
+							<h:panelGrid id="burntStewpot" rendered="#{productCreate.currProductType == 'burntStewpot'}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="容积(L):" for="burntStewpotFeild1"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field1}" id="burntStewpotFeild1"></h:inputText>
 								<rich:message for="burntStewpotFeild1" />
-								<h:outputLabel value="#{productCreate.burntStewpot.field2Label}:" for="burntStewpotFeild2"></h:outputLabel>
-								<h:inputText value="#{productCreate.burntStewpot.field2}" id="burntStewpotFeild2"></h:inputText>
+								<h:outputLabel value="功率:" for="burntStewpotFeild2"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field2}" id="burntStewpotFeild2"></h:inputText>
 								<rich:message for="burntStewpotFeild2" />
 							</h:panelGrid>
-							<h:panelGrid id="electricPressureCooker" rendered="#{productCreate.isElectricPressureCooker}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
-								<h:outputLabel value="#{productCreate.electricPressureCooker.field1Label}:" for="electricPressureCookerFeild1"></h:outputLabel>
-								<h:inputText value="#{productCreate.electricPressureCooker.field1}" id="electricPressureCookerFeild1"></h:inputText>
+							<h:panelGrid id="electricPressureCooker" rendered="#{productCreate.currProductType == 'electricPressureCooker'}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="容积(L):" for="electricPressureCookerFeild1"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field1}" id="electricPressureCookerFeild1"></h:inputText>
 								<rich:message for="electricPressureCookerFeild1" />
-								<h:outputLabel value="#{productCreate.electricPressureCooker.field6Label}:" for="electricPressureCookerFeild6"></h:outputLabel>
-								<h:selectOneMenu value="#{productCreate.electricPressureCooker.field6}" id="electricPressureCookerFeild6">
+								<h:outputLabel value="控制方式:" for="electricPressureCookerFeild6"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.product.field6}" id="electricPressureCookerFeild6">
 									<f:selectItems value="#{existElectricPressureCookerControlType.controlTypeItems}"/>
 								</h:selectOneMenu>
 								<rich:message for="electricPressureCookerFeild6" />
 							</h:panelGrid>
-							<h:panelGrid id="microwaveOven" rendered="#{productCreate.isMicrowaveOven}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
-								<h:outputLabel value="#{productCreate.microwaveOven.field1Label}:" for="microwaveOvenFeild1"></h:outputLabel>
-								<h:inputText value="#{productCreate.microwaveOven.field1}" id="microwaveOvenFeild1"></h:inputText>
+							<h:panelGrid id="eggCooker" rendered="#{productCreate.currProductType == 'eggCooker'}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="容量(个):" for="eggCookerFeild1"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field1}" id="eggCookerFeild1"></h:inputText>
+								<rich:message for="eggCookerFeild1" />
+								<h:outputLabel value="控制方式:" for="eggCookerFeild6"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.product.field6}" id="eggCookerFeild6">
+									<f:selectItems value="#{existEggCookerTimeType.timeTypeItems}"/>
+								</h:selectOneMenu>
+								<rich:message for="eggCookerFeild6" />
+							</h:panelGrid>
+							<h:panelGrid id="toaster" rendered="#{productCreate.currProductType == 'toaster'}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="类别:" for="toasterFeild6"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.product.field6}" id="toasterFeild6">
+									<f:selectItems value="#{existToasterType.typeItems}"/>
+								</h:selectOneMenu>
+								<rich:message for="toasterFeild6" />
+							</h:panelGrid>
+							<h:panelGrid id="microwaveOven" rendered="#{productCreate.currProductType == 'microwaveOven'}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="容积(L):" for="microwaveOvenFeild1"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field1}" id="microwaveOvenFeild1"></h:inputText>
 								<rich:message for="microwaveOvenFeild1" />
-								<h:outputLabel value="#{productCreate.microwaveOven.field6Label}:" for="microwaveOvenFeild6"></h:outputLabel>
-								<h:selectOneMenu value="#{productCreate.microwaveOven.field6}" id="microwaveOvenFeild6">
+								<h:outputLabel value="控制方式:" for="microwaveOvenFeild6"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.product.field6}" id="microwaveOvenFeild6">
 									<f:selectItems value="#{existElectricPressureCookerControlType.controlTypeItems}"/>
 								</h:selectOneMenu>
 								<rich:message for="microwaveOvenFeild6" />
 							</h:panelGrid>
 							
-							<h:panelGrid id="disinfectionCabinet" rendered="#{productCreate.isDisinfectionCabinet}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
-								<h:outputLabel value="#{productCreate.disinfectionCabinet.field1Label}:" for="disinfectionCabinetFeild1"></h:outputLabel>
-								<h:inputText value="#{productCreate.disinfectionCabinet.field1}" id="disinfectionCabinetFeild1"></h:inputText>
+							<h:panelGrid id="disinfectionCabinet" rendered="#{productCreate.currProductType == 'disinfectionCabinet'}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="容积(L):" for="disinfectionCabinetFeild1"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field1}" id="disinfectionCabinetFeild1"></h:inputText>
 								<rich:message for="disinfectionCabinetFeild1" />
-								<h:outputLabel value="#{productCreate.disinfectionCabinet.field2Label}:" for="disinfectionCabinetFeild2"></h:outputLabel>
-								<h:inputText value="#{productCreate.disinfectionCabinet.field2}" id="disinfectionCabinetFeild2"></h:inputText>
+								<h:outputLabel value="功率(W):" for="disinfectionCabinetFeild2"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field2}" id="disinfectionCabinetFeild2"></h:inputText>
 								<rich:message for="disinfectionCabinetFeild2" />
-								<h:outputLabel value="#{productCreate.disinfectionCabinet.field6Label}:" for="disinfectionCabinetFeild6"></h:outputLabel>
-								<h:selectOneMenu value="#{productCreate.disinfectionCabinet.field6}" id="disinfectionCabinetFeild6">
+								<h:outputLabel value="消毒方式:" for="disinfectionCabinetFeild6"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.product.field6}" id="disinfectionCabinetFeild6">
 									<f:selectItems value="#{existDisinfectionCabinetType.typeItems}"/>
 								</h:selectOneMenu>
 								<rich:message for="disinfectionCabinetFeild6" />
 							</h:panelGrid>
 							
-							<h:panelGrid id="gasStove" rendered="#{productCreate.isGasStove}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
-								<h:outputLabel value="#{productCreate.gasStove.field1Label}:" for="gasStovetFeild1"></h:outputLabel>
-								<h:inputText value="#{productCreate.gasStove.field1}" id="gasStoveFeild1"></h:inputText>
+							<h:panelGrid id="gasStove" rendered="#{productCreate.currProductType == 'gasStove'}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="燃烧器数量(P):" for="gasStovetFeild1"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field1}" id="gasStoveFeild1"></h:inputText>
 								<rich:message for="gasStoveFeild1" />
-								<h:outputLabel value="#{productCreate.gasStove.field6Label}:" for="gasStoveFeild6"></h:outputLabel>
-								<h:selectOneMenu value="#{productCreate.gasStove.field6}" id="gasStoveFeild6">
+								<h:outputLabel value="适用气源:" for="gasStoveFeild6"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.product.field6}" id="gasStoveFeild6">
 									<f:selectItems value="#{existGasStoveGasType.gasTypeItems}"/>
 								</h:selectOneMenu>
 								<rich:message for="gasStoveFeild6" />
-								<h:outputLabel value="#{productCreate.gasStove.field7Label}:" for="gasStoveFeild7"></h:outputLabel>
-								<h:selectOneMenu value="#{productCreate.gasStove.field7}" id="gasStoveFeild7">
+								<h:outputLabel value="安装方式:" for="gasStoveFeild7"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.product.field7}" id="gasStoveFeild7">
 									<f:selectItems value="#{existGasStoveFitType.fitTypeItems}"/>
 								</h:selectOneMenu>
 								<rich:message for="gasStoveFeild7" />
 							</h:panelGrid>
 							
-							<h:panelGrid id="gasWaterHeater" rendered="#{productCreate.isGasWaterHeater}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
-								<h:outputLabel value="#{productCreate.gasWaterHeater.field1Label}:" for="gasWaterHeaterFeild1"></h:outputLabel>
-								<h:inputText value="#{productCreate.gasWaterHeater.field1}" id="gasWaterHeaterFeild1"></h:inputText>
+							<h:panelGrid id="gasWaterHeater" rendered="#{productCreate.currProductType == 'gasWaterHeater'}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="容积(L):" for="gasWaterHeaterFeild1"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field1}" id="gasWaterHeaterFeild1"></h:inputText>
 								<rich:message for="gasWaterHeaterFeild1" />
-								<h:outputLabel value="#{productCreate.gasWaterHeater.field2Label}:" for="gasWaterHeaterFeild2"></h:outputLabel>
-								<h:inputText value="#{productCreate.gasWaterHeater.field2}" id="gasWaterHeaterFeild2"></h:inputText>
+								<h:outputLabel value="热水产率(L/min):" for="gasWaterHeaterFeild2"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field2}" id="gasWaterHeaterFeild2"></h:inputText>
 								<rich:message for="gasWaterHeaterFeild2" />
-								<h:outputLabel value="#{productCreate.gasWaterHeater.field6Label}:" for="gasWaterHeaterFeild6"></h:outputLabel>
-								<h:selectOneMenu value="#{productCreate.gasWaterHeater.field6}" id="gasWaterHeaterFeild6">
+								<h:outputLabel value="气源类型:" for="gasWaterHeaterFeild6"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.product.field6}" id="gasWaterHeaterFeild6">
 									<f:selectItems value="#{existGasStoveGasType.gasTypeItems}"/>
 								</h:selectOneMenu>
 								<rich:message for="gasWaterHeaterFeild6" />
-								<h:outputLabel value="#{productCreate.gasWaterHeater.field7Label}:" for="gasWaterHeaterFeild7"></h:outputLabel>
-								<h:selectOneMenu value="#{productCreate.gasWaterHeater.field7}" id="gasWaterHeaterFeild7">
+								<h:outputLabel value="排烟方式:" for="gasWaterHeaterFeild7"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.product.field7}" id="gasWaterHeaterFeild7">
 									<f:selectItems value="#{existGasWaterHeaterSmokeType.smokeTypeItems}"/>
 								</h:selectOneMenu>
 								<rich:message for="gasWaterHeaterFeild7" />
 							</h:panelGrid>
 							
-							<h:panelGrid id="electricWaterHeater" rendered="#{productCreate.isElectricWaterHeater}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
-								<h:outputLabel value="#{productCreate.electricWaterHeater.field1Label}:" for="electricWaterHeaterFeild1"></h:outputLabel>
-								<h:inputText value="#{productCreate.electricWaterHeater.field1}" id="electricWaterHeaterFeild1"></h:inputText>
+							<h:panelGrid id="electricWaterHeater" rendered="#{productCreate.currProductType == 'electricWaterHeater'}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="容积(L):" for="electricWaterHeaterFeild1"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field1}" id="electricWaterHeaterFeild1"></h:inputText>
 								<rich:message for="electricWaterHeaterFeild1" />
-								<h:outputLabel value="#{productCreate.electricWaterHeater.field2Label}:" for="electricWaterHeaterFeild2"></h:outputLabel>
-								<h:inputText value="#{productCreate.electricWaterHeater.field2}" id="electricWaterHeaterFeild2"></h:inputText>
+								<h:outputLabel value="加热功率(W):" for="electricWaterHeaterFeild2"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field2}" id="electricWaterHeaterFeild2"></h:inputText>
 								<rich:message for="electricWaterHeaterFeild2" />
-								<h:outputLabel value="#{productCreate.electricWaterHeater.field3Label}:" for="electricWaterHeaterFeild3"></h:outputLabel>
-								<h:inputText value="#{productCreate.electricWaterHeater.field3}" id="electricWaterHeaterFeild3"></h:inputText>
+								<h:outputLabel value="额定水压(Mpa):" for="electricWaterHeaterFeild3"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field3}" id="electricWaterHeaterFeild3"></h:inputText>
 								<rich:message for="electricWaterHeaterFeild3" />
-								<h:outputLabel value="#{productCreate.electricWaterHeater.field6Label}:" for="electricWaterHeaterFeild6"></h:outputLabel>
-								<h:selectOneMenu value="#{productCreate.electricWaterHeater.field6}" id="electricWaterHeaterFeild6">
+								<h:outputLabel value="款式:" for="electricWaterHeaterFeild6"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.product.field6}" id="electricWaterHeaterFeild6">
 									<f:selectItems value="#{existElectricWaterHeaterSetType.setTypeItems}"/>
 								</h:selectOneMenu>
 								<rich:message for="electricWaterHeaterFeild6" />
 							</h:panelGrid>
-							<h:panelGrid id="ventilator" rendered="#{productCreate.isVentilator}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
-								<h:outputLabel value="#{productCreate.ventilator.field1Label}:" for="ventilatorFeild1"></h:outputLabel>
-								<h:inputText value="#{productCreate.ventilator.field1}" id="ventilatorFeild1"></h:inputText>
+							<h:panelGrid id="ventilator" rendered="#{productCreate.currProductType == 'ventilator'}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="排风量(m³/min):" for="ventilatorFeild1"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field1}" id="ventilatorFeild1"></h:inputText>
 								<rich:message for="ventilatorFeild1" />
-								<h:outputLabel value="#{productCreate.ventilator.field2Label}:" for="ventilatorFeild2"></h:outputLabel>
-								<h:inputText value="#{productCreate.ventilator.field2}" id="ventilatorFeild2"></h:inputText>
+								<h:outputLabel value="功率(W):" for="ventilatorFeild2"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field2}" id="ventilatorFeild2"></h:inputText>
 								<rich:message for="ventilatorFeild2" />
 							</h:panelGrid>
 							<h:panelGrid columns="2" columnClasses="alight:left">
