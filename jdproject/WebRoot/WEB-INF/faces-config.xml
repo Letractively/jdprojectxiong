@@ -125,6 +125,16 @@
 	<managed-bean-class>com.ejd.web.vo.genl.ExistElectricWaterHeaterSetTypeBean</managed-bean-class>
 	<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existEggCookerTimeType</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistEggCookerTimeTypeBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existToasterType</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistToasterTypeBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 	<!-- start primary product category -->
 	<managed-bean>
 	<managed-bean-name>existProductPrimaryCategory</managed-bean-name>
@@ -857,7 +867,7 @@
     <managed-bean>
 		<managed-bean-name>navigationKitchenAppliance</managed-bean-name>
 		<managed-bean-class>com.ejd.web.vo.product.kitchenappliance.NavigationKitchenApplianceBean</managed-bean-class>
-	<managed-bean-scope>session</managed-bean-scope>
+		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
     <!-- end about kitchenappliance -->
     <!-- start about rice Cooker  -->
@@ -874,7 +884,7 @@
     <managed-bean>
 		<managed-bean-name>navigationRiceCooker</managed-bean-name>
 		<managed-bean-class>com.ejd.web.vo.product.ricecooker.NavigationRiceCookerBean</managed-bean-class>
-	<managed-bean-scope>session</managed-bean-scope>
+		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
     <!-- end about rice Cooker  -->
     <!-- start InductionCooker Cooker  -->
@@ -891,7 +901,7 @@
     <managed-bean>
 		<managed-bean-name>navigationInductionCooker</managed-bean-name>
 		<managed-bean-class>com.ejd.web.vo.product.inductioncooker.NavigationInductionCookerBean</managed-bean-class>
-	<managed-bean-scope>session</managed-bean-scope>
+		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
     <!-- end about InductionCooker  -->
     <!-- start about ElectricStewPan  -->
@@ -908,7 +918,7 @@
     <managed-bean>
 		<managed-bean-name>navigationElectricStewPan</managed-bean-name>
 		<managed-bean-class>com.ejd.web.vo.product.electricstewpan.NavigationElectricStewPanBean</managed-bean-class>
-	<managed-bean-scope>session</managed-bean-scope>
+		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
     <!-- end about ElectricStewPan  -->
     
@@ -926,7 +936,7 @@
     <managed-bean>
 		<managed-bean-name>navigationElectronicOven</managed-bean-name>
 		<managed-bean-class>com.ejd.web.vo.product.electronicoven.NavigationElectronicOvenBean</managed-bean-class>
-	<managed-bean-scope>session</managed-bean-scope>
+		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
     <!-- end about ElectronicOven  -->
     <!-- start about fryer  -->
@@ -943,7 +953,7 @@
     <managed-bean>
 		<managed-bean-name>navigationFryer</managed-bean-name>
 		<managed-bean-class>com.ejd.web.vo.product.fryer.NavigationFryerBean</managed-bean-class>
-	<managed-bean-scope>session</managed-bean-scope>
+		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
     <!-- end about fryer  -->
     <!-- start about BurntStewpot  -->
@@ -960,7 +970,7 @@
     <managed-bean>
 		<managed-bean-name>navigationBurntStewpot</managed-bean-name>
 		<managed-bean-class>com.ejd.web.vo.product.burntstewpot.NavigationBurntStewpotBean</managed-bean-class>
-	<managed-bean-scope>session</managed-bean-scope>
+		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
     <!-- end about BurntStewpot  -->
     <!-- start about ElectricSteamer  -->
@@ -977,9 +987,112 @@
     <managed-bean>
 		<managed-bean-name>navigationElectricSteamer</managed-bean-name>
 		<managed-bean-class>com.ejd.web.vo.product.electricsteamer.NavigationElectricSteamerBean</managed-bean-class>
-	<managed-bean-scope>session</managed-bean-scope>
+		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
     <!-- end about ElectricSteamer  -->
+    <!-- start about ElectricPressureCooker  -->
+    <managed-bean>
+        <managed-bean-name>listElectricPressureCookerProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.electricpressurecooker.ElectricPressureCookerProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationElectricPressureCooker</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.electricpressurecooker.NavigationElectricPressureCookerBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about ElectricPressureCooker  -->
+    <!-- start about fryer  -->
+    <managed-bean>
+        <managed-bean-name>listYogurtMachineProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.yogurtmachine.YogurtMachineProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationYogurtMachine</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.yogurtmachine.NavigationYogurtMachineBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about fryer  -->
+    <!-- start about egg cooker  -->
+    <managed-bean>
+        <managed-bean-name>listEggCookerProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.eggcooker.EggCookerProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationEggCooker</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.eggcooker.NavigationEggCookerBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about egg cooker  -->
+    <!-- start about Whisk  -->
+    <managed-bean>
+        <managed-bean-name>listWhiskProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.whisk.WhiskProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationWhisk</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.whisk.NavigationWhiskBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about Whisk  -->
+    <!-- start about BreadKnife  -->
+    <managed-bean>
+        <managed-bean-name>listBreadKnifeProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.breadknife.BreadKnifeProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationBreadKnife</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.breadknife.NavigationBreadKnifeBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about BreadKnife  -->
+    <!-- start about Toaster  -->
+    <managed-bean>
+        <managed-bean-name>listToasterProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.toaster.ToasterProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationToaster</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.toaster.NavigationToasterBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about Toaster  -->
+    
     
     
     
