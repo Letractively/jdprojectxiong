@@ -24,6 +24,15 @@ public class ManageBeanConstants {
 	public static final String LIST_FRYER_PRODUCT_BEAN_NAME = "listFryerProduct";
 	public static final String LIST_BURNT_STEWPOT_PRODUCT_BEAN_NAME = "listBurntStewpotProduct";
 	public static final String LIST_ELECTRIC_STEAMER_PRODUCT_BEAN_NAME = "listElectricSteamerProduct";
+	public static final String LIST_ELECTRIC_PRESSURE_COOKER_PRODUCT_BEAN_NAME = "listElectricPressureCookerProduct";
+	public static final String LIST_YOGURT_MACHINE_PRODUCT_BEAN_NAME = "listYogurtMachineProduct";
+	public static final String LIST_EGG_COOKER_PRODUCT_BEAN_NAME = "listEggCookerProduct";
+	public static final String LIST_WHISK_PRODUCT_BEAN_NAME = "listWhiskProduct";
+	public static final String LIST_BREAD_KNIFE_PRODUCT_BEAN_NAME = "listBreadKnifeProduct";
+	public static final String LIST_TOASTER_PRODUCT_BEAN_NAME = "listToasterProduct";
+	
+	
+	
 	
 	
 	public static final String EXIST_KITCHEN_APPLIANCE_PRODUCT_BRAND_BEAN_NAME = "existKitchenApplianceProductBrand";
@@ -32,6 +41,17 @@ public class ManageBeanConstants {
 	public static final String EXIST_INDUCTION_COOKER_PANEL_TYPE_BEAN_NAME = "existInductionCookerPanelType";
 	public static final String EXIST_INDUCTION_COOKER_FITTING_BEAN_NAME = "existInductionCookerFitting";
 	public static final String EXIST_ELECTRONIC_OVEN_HOT_TYPE_BEAN_NAME = "existElectronicOvenHotType";
+	public static final String EXIST_EGG_COOKER_TIME_TYPE_BEAN_NAME = "existEggCookerTimeType";
+	public static final String EXIST_TOASTER_TYPE_BEAN_NAME = "existToasterType";
+	
+	
+	
+	public static final String EXIST_ELECTRIC_WATER_HEATER_SET_TYPE_BEAN_NAME = "existElectricWaterHeaterSetType";
+	public static final String EXIST_GAS_WATER_HEATER_SMOKE_TYPE_BEAN_NAME = "existGasWaterHeaterSmokeType";
+	public static final String EXIST_GAS_STOVE_FIT_TYPE_BEAN_NAME = "existGasStoveFitType";
+	public static final String EXIST_GAS_STOVE_GAS_TYPE_BEAN_NAME = "existGasStoveGasType";
+	public static final String EXIST_DISINFECTION_CABINET_TYPE_BEAN_NAME = "existDisinfectionCabinetType";
+	public static final String EXIST_ELECTRIC_PRESSURE_COOKER_CONTROL_TYPE_BEAN_NAME ="existElectricPressureCookerControlType";
 	public static final String EXIST_KITCHEN_APPLIANCE_ELECTRIC_STEW_PAN_PRODUCT_BRAND_BEAN_NAME = "existKitchenApplianceElectricStewPanProductBrand";
 	public static final String EXIST_KITCHEN_APPLIANCE_ELECTRONIC_OVEN_PRODUCT_BRAND_BEAN_NAME = "existKitchenApplianceElectronicOvenProductBrand";
 	public static final String EXIST_KITCHEN_APPLIANCE_FRYER_PRODUCT_BRAND_BEAN_NAME = "existKitchenApplianceFryerProductBrand";
