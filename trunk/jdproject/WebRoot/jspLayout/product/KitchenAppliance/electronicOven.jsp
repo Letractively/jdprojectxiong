@@ -18,12 +18,7 @@ xmlns:rich="http://richfaces.org/rich">
     			<ui:include id="electronicOvenLeftInclude" src="../navigationProductLeft.jsp">
     			</ui:include>
     		</ui:define>
-    		<ui:define id="contentHeader" name="contentHeader">
-    			<f:subview id="loadElectronicOvenProductHeaderBackView">
-    				<ui:include id="electronicOvenContentHeaderHeaderBack" src="../productHeaderBack.jsp">
-    				</ui:include>
-    			</f:subview>
-			</ui:define>
+    		
 			<ui:define id="electronicOvenContent" name="content">
 				<a4j:region id="electronicOvenSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="electronicOvenSearchNavigationRegionForm">

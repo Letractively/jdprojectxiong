@@ -18,12 +18,7 @@ xmlns:rich="http://richfaces.org/rich">
     			<ui:include id="toasterLeftInclude" src="../navigationProductLeft.jsp">
     			</ui:include>
     		</ui:define>
-    		<ui:define id="contentHeader" name="contentHeader">
-    			<f:subview id="loadToasterProductHeaderBackView">
-    				<ui:include id="toasterContentHeaderHeaderBack" src="../productHeaderBack.jsp">
-    				</ui:include>
-    			</f:subview>
-			</ui:define>
+    		
 			<ui:define id="toasterContent" name="content">
 				<a4j:region id="toasterSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="toasterSearchNavigationRegionForm">

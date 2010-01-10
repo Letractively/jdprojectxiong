@@ -18,12 +18,7 @@ xmlns:rich="http://richfaces.org/rich">
     			<ui:include id="yogurtMachineLeftInclude" src="../navigationProductLeft.jsp">
     			</ui:include>
     		</ui:define>
-    		<ui:define id="contentHeader" name="contentHeader">
-    			<f:subview id="loadYogurtMachineProductHeaderBackView">
-    				<ui:include id="yogurtMachineContentHeaderHeaderBack" src="../productHeaderBack.jsp">
-    				</ui:include>
-    			</f:subview>
-			</ui:define>
+    		
 			<ui:define id="yogurtMachineContent" name="content">
 				<a4j:region id="yogurtMachineSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="yogurtMachineSearchNavigationRegionForm">

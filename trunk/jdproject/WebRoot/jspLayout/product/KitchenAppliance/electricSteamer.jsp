@@ -18,12 +18,7 @@ xmlns:rich="http://richfaces.org/rich">
     			<ui:include id="electricSteamerLeftInclude" src="../navigationProductLeft.jsp">
     			</ui:include>
     		</ui:define>
-    		<ui:define id="contentHeader" name="contentHeader">
-    			<f:subview id="loadElectricSteamerProductHeaderBackView">
-    				<ui:include id="electricSteamerContentHeaderHeaderBack" src="../productHeaderBack.jsp">
-    				</ui:include>
-    			</f:subview>
-			</ui:define>
+    		
 			<ui:define id="electricSteamerContent" name="content">
 				<a4j:region id="electricSteamerSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="electricSteamerSearchNavigationRegionForm">
