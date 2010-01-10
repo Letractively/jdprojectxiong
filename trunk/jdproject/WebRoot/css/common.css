@@ -1043,141 +1043,118 @@ div.reviews{margin:5px 0}
 	float: left;
 }
 .bold {
-				font:bold 100%;
-				font-size:12px;
-				font-family: Arial
-			}
-			.dr-tbpnl-tbcell-act{
-			border:100px;
-			}
-			.rich-tabhdr-cell-active{
-			border:100px;
-			}
-			.rich-tab-header {
-				padding:0px 0px 0px 0px;
-				margin:0px 0px 0px 0px;
-				font-family: Verdana, Arial;
-				font-size:15pt;
-				height:30px;
-				border:0px solid red;
-			}
-			.richTabClass {
-				padding:0px 0px 0px 0px;
-				margin:0px 0px 0px 0px;
-				border-width:0px;
-			}
-			
-			.rich-tab-style {
-				padding:0px 0px 0px 0px;
-				margin:0px 0px 0px 0px;
-				border-width:0px;
-				color:red;
-			}
-			
-			
-			.rich-tab-active {
+	font:bold 100%;
+	font-size:12px;
+	font-family: Arial
+}
+
+.rich-tab-active {
+				top: 0px;
+				left: 0px;
 				padding:0px 0px 0px 0px;
 				margin:0px 0px 0px 0px;
 				DISPLAY: block;
-				BACKGROUND: url(../css/images/icons/active_tab_bg.gif) no-repeat 0px 0px;
 				FLOAT: left;
 				background-attachment : fixed;
+				background:url(../css/images/icons/btn3.gif) center 0px no-repeat;
+				BORDER-RIGHT: #fff 0px solid; 
+				BORDER-TOP: #fff 0px solid; 
+				BORDER-LEFT: #fff 0px solid;
+				BORDER-BOTTOM: #fff 0px solid;
 				font-size: 14px;
 				font-weight: bold;
-				text-indent: 1mm;
+				text-indent: 0mm;
 				line-height: 16px;
 				color: black;
-				height:30px;
+				height:28px;
 				width:72px;
 			}
 			
 			.rich-tab-inactive {
+				top: 0px;
+				left: 0px;
     			padding:0px 0px 0px 0px;
 				margin:0px 0px 0px 0px;
 				DISPLAY: block;
-				BACKGROUND: url(../css/images/icons/tab_bg.gif) no-repeat 0px 0px; 
 				FLOAT: left;
 				background-attachment : fixed;
+				background:url(../css/images/icons/btn3.gif) center 1px no-repeat;
+				BORDER-RIGHT: #fff 0px solid; 
+				BORDER-TOP: #fff 0px solid; 
+				BORDER-LEFT: #fff 0px solid;
+				BORDER-BOTTOM: #fff 0px solid;
 				font-size: 12px;
 				font-weight: bold;
-				text-indent: 1mm;
-				line-height: 33px;
+				text-indent: 0mm;
+				line-height: 16px;
 				color: #2c629e;
-				height:30px;
+				height:28px;
 				width:72px;
 			}
-			.rich-tab-label{
-				color:red;
-			
-			}
-			.dr-tbpnl-tbbrdr {
-				padding: 0px 0px 0px 0px;
-				margin:0px 0px 0px 0px;
-				border-width:0px;
-				border-style:none;
-			}
-			.rich-tabhdr-side-border {
-				padding: 0px 0px 0px 0px;
-				margin:0px 0px 0px 0px;
-				border-width:0px;
-				border-style:none;
-			}
-			.rich-tab-disabled {
-				font-size: 12px; 
-				font-family: fantasy; 
-				color:gold;
-			}
-			
-			.rich-tabhdr-cell-inactive, .rich-tabhdr-cell-disabled {
-				padding: 0px 0px 0px 0px;
-				margin:0px 0px 0px 0px;
-			}
-			.rich-tabpanel {
-				padding:0px 0px 0px 0px;
-				margin:0px 0px 0px 0px;
-				border: 0px solid #66BFEC;
-			}
-			
-			.rich-tabpanel-content-position {
-				top: 0px;
+
+
+.rich-tabpanel-header {
+	top: 0px;
 				left: 0px;
+				padding:0px 0px 0px 0px;
+				margin:0px 10px 0px 0px;
+				font-family: Verdana, Arial;
+				font-size:15pt;
+				height:48px;
+				BORDER-RIGHT: #cccccc 2px solid; 
+				BORDER-TOP: #cccccc 2px solid; 
+				BORDER-LEFT: #cccccc 2px solid; 
+				BORDER-BOTTOM: #cccccc 2px solid;
+}
+
+.rich-tabpanel-content {
+	margin-top: 0;
+	border-color: #ebebeb;
+}
+
+.rich-tabpanel-content-position {
+	margin: 0;
+	padding: 0;
+	border-color: #ebebeb;
+}
+
+.rich-tabhdr-side-border {
+	border-color: #66BFEC;
+	border-width: 10px;
+}
+/* set cell header cell*/
+.rich-tabhdr-side-cell {
+	height: 10px;
+	border-width: 0px; 
+	border-color: #fff;
+}
+.rich-tabhdr-cell-active{
+				padding:0px 0px 0px 0px;
+				margin:0px 0px 0px 0px;
+				border: 0px solid #2782D6;
+				height: 20px;
+				float: left;
+				background: #ffffff;
+				width: 72px;
 			}
+			.rich-tabhdr-cell-inactive{
+				padding: 0px 0px 0px 0px;
+				margin: 0px 0px 0px 0px;
+				border: 0px solid #2782D6;
+				height: 20px;
+				float: left;
+				background: #ffffff;
+				width: 72px;
+			}
+.rich-tab-bottom-line {
+	padding: 0;
+	margin: 0;
+	float: left;
+	border-bottom: 1px solid #ebebeb;
+	width: 460px;
+	border-color: #ebebeb;
+}
 			
-			.rich-tabpanel-content {
-				padding:0px 0px 0px 0px;
-				margin:0px 0px 0px 0px;
-				border-width: 0px; 
-				border-color:#FFFFFF;
-				background-color:#FFFFFF;
-				height:45px;
-			}.header-menu-btn {
-				padding:0px 0px 0px 0px;
-				margin:0px 0px 0px 0px;
-				border-width: 0px 0px 0px 0px;
-				border-style:outset;
-				background-repeat: repeat-x;
-			}
-			.rich-tabpanel-panel-grid {
-				padding:0px 0px 0px 0px;
-				margin:0px 0px 0px 0px;
-				border : 0px solid #FFFFFF;
-				font-family: Arial, sans-serif;
-				font-size:15px;
-  				text-align: left; 
-  				padding-right: 1em;
-  				padding-left: 1em; 
-  				padding-bottom: 0px; 
-  				color: #2c629e;
-			}
-			.rich-tabpanel-content-text {
-				font-family: Arial, sans-serif;
-				font-size:15px;
-  				text-align: left; 
-  				padding-right: 1em;
-  				padding-left: 1em; 
-  				padding-bottom: 0px; 
-  				color: #2c629e; 
-			}
 			
 .template-left {
   font-size: 10pt;
@@ -1703,6 +1680,13 @@ div.reviews{margin:5px 0}
   				padding-bottom: 0px; 
   				color: #2c629e;
 			}
+.main-header-tabpanel-content-class {
+				padding:0px 0px 0px 0px;
+				margin:0px 0px 0px 0px;
+				border : 0px solid #FFFFFF;
+				
+  				color: #2c629e;
+}
 .sub-main-header-left{
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
