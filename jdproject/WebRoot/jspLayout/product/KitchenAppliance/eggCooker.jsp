@@ -18,12 +18,7 @@ xmlns:rich="http://richfaces.org/rich">
     			<ui:include id="eggCookerLeftInclude" src="../navigationProductLeft.jsp">
     			</ui:include>
     		</ui:define>
-    		<ui:define id="contentHeader" name="contentHeader">
-    			<f:subview id="loadEggCookerProductHeaderBackView">
-    				<ui:include id="eggCookerContentHeaderHeaderBack" src="../productHeaderBack.jsp">
-    				</ui:include>
-    			</f:subview>
-			</ui:define>
+    		
 			<ui:define id="eggCookerContent" name="content">
 				<a4j:region id="eggCookerSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="eggCookerSearchNavigationRegionForm">

@@ -18,12 +18,7 @@ xmlns:rich="http://richfaces.org/rich">
     			<ui:include id="breadKnifeLeftInclude" src="../navigationProductLeft.jsp">
     			</ui:include>
     		</ui:define>
-    		<ui:define id="contentHeader" name="contentHeader">
-    			<f:subview id="loadBreadKnifeProductHeaderBackView">
-    				<ui:include id="breadKnifeContentHeaderHeaderBack" src="../productHeaderBack.jsp">
-    				</ui:include>
-    			</f:subview>
-			</ui:define>
+    		
 			<ui:define id="breadKnifeContent" name="content">
 				<a4j:region id="breadKnifeSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="breadKnifeSearchNavigationRegionForm">

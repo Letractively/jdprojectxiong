@@ -18,12 +18,7 @@ xmlns:rich="http://richfaces.org/rich">
     			<ui:include id="electricPressureCookerLeftInclude" src="../navigationProductLeft.jsp">
     			</ui:include>
     		</ui:define>
-    		<ui:define id="contentHeader" name="contentHeader">
-    			<f:subview id="loadElectricPressureCookerProductHeaderBackView">
-    				<ui:include id="electricPressureCookerContentHeaderHeaderBack" src="../productHeaderBack.jsp">
-    				</ui:include>
-    			</f:subview>
-			</ui:define>
+    		
 			<ui:define id="electricPressureCookerContent" name="content">
 				<a4j:region id="electricPressureCookerSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="electricPressureCookerSearchNavigationRegionForm">

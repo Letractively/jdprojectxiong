@@ -18,12 +18,7 @@ xmlns:rich="http://richfaces.org/rich">
     			<ui:include id="whiskLeftInclude" src="../navigationProductLeft.jsp">
     			</ui:include>
     		</ui:define>
-    		<ui:define id="contentHeader" name="contentHeader">
-    			<f:subview id="loadWhiskProductHeaderBackView">
-    				<ui:include id="whiskContentHeaderHeaderBack" src="../productHeaderBack.jsp">
-    				</ui:include>
-    			</f:subview>
-			</ui:define>
+    		
 			<ui:define id="whiskContent" name="content">
 				<a4j:region id="whiskSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="whiskSearchNavigationRegionForm">

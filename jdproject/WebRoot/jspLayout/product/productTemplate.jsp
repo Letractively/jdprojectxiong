@@ -59,7 +59,7 @@ xmlns:rich="http://richfaces.org/rich">
 	<h:panelGroup id="template-content">
 		<ui:insert name="contentHeader">
 			<f:subview id="contentHeaderView">
-				<h:outputText value="contentHeaderNavigation"></h:outputText>
+				
 			</f:subview>
 		</ui:insert>
 		<ui:insert name="content">
