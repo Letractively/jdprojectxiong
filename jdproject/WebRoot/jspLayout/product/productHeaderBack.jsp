@@ -121,7 +121,7 @@ xmlns:rich="http://richfaces.org/rich">
 						</a4j:repeat>
 						</rich:panel>	
 					</rich:tab>
-				</rich:tabPanel>	
+				</rich:tabPanel>
 			</a4j:region>
 </h:form>
 </f:subview>		
