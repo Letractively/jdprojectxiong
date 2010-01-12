@@ -10,7 +10,8 @@ xmlns:rich="http://richfaces.org/rich">
 <f:subview id="headerBackView">
 <h:form id="headerMainform">
 			<a4j:region id="kitchenApplianceProductLeftViewFormRegion" renderRegionOnly="false" selfRendered="true">
-				
+				<rich:panel id="mainheaderotherpanel">
+				</rich:panel>
 				<rich:tabPanel valueChangeListener="#{headerTabPanel.valueChanged}"  headerSpacing="0" immediate="false" headerClass="rich-tabpanel-header" activeTabClass="rich-tab-active" inactiveTabClass="rich-tab-inactive" tabClass="richTabClass" contentClass="main-header-tabpanel-content-class" width="100%" switchType="ajax" selectedTab="#{headerTabPanel.currentTab}" id="tab_panel" headerAlignment="left" height="50px;">
 					<f:valueChangeListener type="com.ejd.web.vo.richfaces.header.HeaderTabChangeListener"/>
 					
@@ -18,7 +19,7 @@ xmlns:rich="http://richfaces.org/rich">
 						<rich:panel id="kitchenApplianceHeaderRegionPanel" style="width:100%;" styleClass="rich-tabpanel-panel-grid" bodyClass="rich-tabpanel-content-text">
 								<a4j:repeat id="kitchenApplianceRep" value="#{headerTabPanel.kitchenAppliance.subMenu}" var="kitchenApplianceSubMenu">
 									<span style="rich-tabpanel-content-text">
-									<h:commandLink action="#{headerTabPanel.gotoProduct}" value="#{kitchenApplianceSubMenu.label}" immediate="true"  style="color:#2c629e;font-family:Courier;font-size:12px;width:90">
+									<h:commandLink action="#{headerTabPanel.gotoProduct}" value="#{kitchenApplianceSubMenu.label}" immediate="true"  style="color:#2c629e;font-family:Courier;font-size:12px;width:80">
 								
 										<f:param name="idFirst" value="#{kitchenApplianceSubMenu.idFirst}"></f:param>
 										<f:param name="idSecond" value="#{kitchenApplianceSubMenu.idSecond}"></f:param>
