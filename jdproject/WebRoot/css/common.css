@@ -1049,36 +1049,12 @@ div.reviews{margin:5px 0}
 }
 
 .rich-tab-active {
-				top: 0px;
-				left: 0px;
-				padding:0px 0px 0px 0px;
-				margin:0px 0px 0px 0px;
-				DISPLAY: block;
-				FLOAT: left;
-				background-attachment : fixed;
-				background:url(../css/images/icons/btn3.gif) center 0px no-repeat;
-				BORDER-RIGHT: #fff 0px solid; 
-				BORDER-TOP: #fff 0px solid; 
-				BORDER-LEFT: #fff 0px solid;
-				BORDER-BOTTOM: #fff 0px solid;
-				font-size: 14px;
-				font-weight: bold;
-				text-indent: 0mm;
-				line-height: 16px;
-				color: black;
-				height:28px;
-				width:72px;
-			}
-			
-			.rich-tab-inactive {
-				top: 0px;
-				left: 0px;
-    			padding:0px 0px 0px 0px;
-				margin:0px 0px 0px 0px;
-				DISPLAY: block;
-				FLOAT: left;
-				background-attachment : fixed;
-				background:url(../css/images/icons/btn3.gif) center 1px no-repeat;
+				
+				padding:.8em .3em .8em .3em; 
+				margin:0px 0px 0px 0px; 
+				border-left:1px solid #ccc; 
+				border-right:1px solid #ccc; 
+				background:#f8f8f8 url(../css/images/icons/nav_prim_bg_active.gif) top left repeat-x;;
 				BORDER-RIGHT: #fff 0px solid; 
 				BORDER-TOP: #fff 0px solid; 
 				BORDER-LEFT: #fff 0px solid;
@@ -1086,9 +1062,35 @@ div.reviews{margin:5px 0}
 				font-size: 12px;
 				font-weight: bold;
 				text-indent: 0mm;
-				line-height: 16px;
-				color: #2c629e;
-				height:28px;
+				line-height: 0px;
+				display:block; 
+				color: black; 
+				font-weight:bold; 
+				text-decoration:none; 
+				text-align: center;
+				height:23px;
+				width:72px;
+			}
+			
+			.rich-tab-inactive {
+				top: 0px;
+				left: 0px;
+				DISPLAY: block;
+				background-attachment : fixed;
+				float:left; 
+				margin:.45em .45em 0 .45em; 
+				padding:.9em .3em; 
+				background:#1A4773 url(../css/images/icons/nav_prim_bg.gif) top left repeat-x;
+				BORDER-RIGHT: #fff 0px solid; 
+				BORDER-TOP: #fff 0px solid; 
+				BORDER-LEFT: #fff 0px solid;
+				BORDER-BOTTOM: #fff 0px solid;
+				font-size: 12px;
+				font-weight: bold;
+				text-indent: 0mm;
+				line-height: 0px;
+				color: #fff;
+				height:21px;
 				width:72px;
 			}
 
@@ -1097,20 +1099,21 @@ div.reviews{margin:5px 0}
 	top: 0px;
 				left: 0px;
 				padding:0px 0px 0px 0px;
-				margin:0px 10px 0px 0px;
+				margin:0px 0px 0px 0px;
 				font-family: Verdana, Arial;
 				font-size:15pt;
-				height:48px;
-				background:url(../css/images/icons/pp_bg.gif) center 1px repeat;
-				BORDER-RIGHT: #cccccc 1px solid; 
-				BORDER-TOP: #cccccc 1px solid; 
-				BORDER-LEFT: #cccccc 1px solid; 
+				height:30px;
+				background:url(../css/images/icons/nav_main_bg.gif) bottom 10px repeat-x;
+				BORDER-RIGHT: #cccccc 0px solid; 
+				BORDER-TOP: #cccccc 0px solid; 
+				BORDER-LEFT: #cccccc 0px solid; 
 				BORDER-BOTTOM: #cccccc 0px solid;
 }
 
 .rich-tabpanel-content {
 	margin-top: 0;
 	border-color: #ebebeb;
+	background:url(../css/images/icons/container_bg.jpg) top 10px repeat-x;
 }
 
 .rich-tabpanel-content-position {
@@ -1133,29 +1136,43 @@ div.reviews{margin:5px 0}
 				padding:0px 0px 0px 0px;
 				margin:0px 0px 0px 0px;
 				border: 0px solid #2782D6;
-				height: 20px;
+				height: 30px;
 				float: left;
 				background: #ffffff;
 				width: 72px;
 			}
 			.rich-tabhdr-cell-inactive{
-				padding: 0px 0px 0px 0px;
+				padding: 10px 0px 0px 0px;
 				margin: 0px 0px 0px 0px;
 				border: 0px solid #2782D6;
-				height: 20px;
+				height: 21px;
 				float: left;
-				background: #ffffff;
+				background: #fff;
 				width: 72px;
 			}
 .rich-tab-bottom-line {
-	padding: 0;
-	margin: 0;
 	float: left;
-	border-bottom: 1px solid #ebebeb;
 	width: 460px;
-	border-color: #ebebeb;
+	height: 6px;
+	overflow:hidden; 
+	margin:0; 
+	padding:0 0 0 10px; 
+	background:url(../css/images/icons/nav_main_bg.gif) bottom left repeat-x; list-style-type:none;
+	border-top: #a8d0f4 0px solid;
+	border-right: #dff3fe 0px solid;
+	border-left: #dff3fe 0px solid;
+	border-bottom: #ffffff 0px solid;
 }
-			
+.rich-tabpanel-content-text {
+				font-family: Arial, sans-serif;
+				font-size:15px;
+  				text-align: left; 
+  				background:url(../css/images/icons/container_bg.jpg) top 10px repeat-x;
+  				padding-right: 0em;
+  				padding-left: 0em; 
+  				padding-bottom: 0px; 
+  				color: #2c629e; 
+			}			
 			
 .template-left {
   font-size: 10pt;
