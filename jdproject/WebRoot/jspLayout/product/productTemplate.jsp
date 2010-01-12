@@ -10,10 +10,9 @@ xmlns:rich="http://richfaces.org/rich">
 <f:subview id="manageTemplateView">
 <script src="${facesContext.externalContext.requestContextPath}/css/common.js" type="text/javascript"></script>
 <link rel="STYLESHEET" type="text/css" href="${facesContext.externalContext.requestContextPath}/css/common.css"/>
-<link rel="STYLESHEET" type="text/css" href="${facesContext.externalContext.requestContextPath}/css/top.css"/>
 <link rel="STYLESHEET" type="text/css" href="${facesContext.externalContext.requestContextPath}/css/style.css"/>
-<link rel="STYLESHEET" type="text/css" href="${facesContext.externalContext.requestContextPath}/css/index.css"/>
 <link rel="STYLESHEET" type="text/css" href="${facesContext.externalContext.requestContextPath}/css/css.css"/>
+
 <table class="skr" border="0" cellpadding="0" cellspacing="0" width="100%">
 <tbody>
 <tr>
