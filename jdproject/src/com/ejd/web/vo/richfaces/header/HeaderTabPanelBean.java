@@ -32,6 +32,16 @@ public class HeaderTabPanelBean {
 	
 	private String currentTab = "";
 	
+	private String currentPrimaryCategory = "01";
+	
+	public String getCurrentPrimaryCategory() {
+		return currentPrimaryCategory;
+	}
+
+	public void setCurrentPrimaryCategory(String currentPrimaryCategory) {
+		this.currentPrimaryCategory = currentPrimaryCategory;
+	}
+
 	public String getCurrentTab() {
 		return currentTab;
 	}
@@ -349,6 +359,7 @@ public class HeaderTabPanelBean {
 		}
 		path = this.setUppercaseOnFirstChar(path);
 		String fileName = productType + ".jsf";
+		this.setCurrentPrimaryCategory(idFirst);
 		return productType;
 	}
 	private String setUppercaseOnFirstChar(String param) {
