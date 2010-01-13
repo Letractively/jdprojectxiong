@@ -1,69 +1,21 @@
-.hidelink{
-	padding-top:2px;
-	padding-right:1px;
-	cursor:pointer;
-}
-.demo_fieldset {
-	margin : 0px;
-	border : 1px solid #ACBECE;
-}
-
-.demo_legend {
-	font-weight : bold; 
-	margin : 0px 10px 0px 18px;
-	font-family: Verdana;
-}
-
 form {
 	margin: 0;
 	padding: 0;
 }
-
-* {
-	font-family: Verdana,Arial;
-}
-
-p {
-	margin-top: 0px;
-	margin-bottom: 5px;
-	font-size: 12px;
-	font-family: Verdana,Arial;
-}
-
 .footer-text {
 	font-size: 10px;	
-}
-
-.page_brick{
-	position : absolute;
-	top : 0px;
-	width : 100%;
-} 
-
-li{
-	margin-top : 5px;
-	margin-bottom : 5px;
-	margin-left : -12px;
-}
-ul{
-	margin-top : 10px;
-	margin-bottom : 10px;
-}
-
-.sample-container {
-	padding: 25px 25px 5px 25px;
 }
 
 .top_navbar{
 	position : absolute;
 	top : 2px;
 	right : 0px;
-	font-family : verdana;
+	FONT-FAMILY: Arial,sans-serif;
 	font-size : 11px;
 }
 
-input, select, textarea, button, keygen, isindex, legend, a {
-	font-family : verdana;
+input, select, button, legend, a {
+	FONT-FAMILY: Arial,sans-serif;
 }
 
 .top_navbar td{
@@ -80,78 +32,61 @@ input, select, textarea, button, keygen, isindex, legend, a {
 	color : #000000;
 	text-decoration : underline;
 }
-.skin_chooser{
-	position : absolute;
-	top : 0px;
-	left : 294px;
-	font-family : verdana;
-	font-size : 11px;
-	height : 26px;
+<!-- start rich panel none border style in jsp use bodyClass -->
+.panel-header-none-border{
+	padding: 0px 20px 0px 0px;
+	margin:0px 0px 0px 0px;
+	FONT-FAMILY: Arial,sans-serif;
+	font-size : 12px;
+	font-weight:normal;
+	text-align:right;
+	color:2c629e;
+	border : 0px solid #FFFFFF;
+	background:url(../css/images/icons/bg.gif) bottom left repeat-x; list-style-type:none;
 }
-.skin_chooser td{
-	padding : 0px 0px 0px 10px;
-	background-color : transparent;
+.panel-header-none-border-main-pg-column-one{
+	width:10%;
+	text-align:left;
 }
-.skin_chooser td a{
-	color : #7795AF;
-	text-decoration : none;
+.panel-header-none-border-main-pg-column-two{
+	width:50%;
+	text-align:center;
 }
-.skin_chooser td a:hover{
-	color : #7795AF;
-	text-decoration : underline;
-}
-.skin_chooser .skin_line{
-	font-family : verdana;
-	font-size : 11px;
-}
-.skin_chooser .skin_line .control a{
-	color : #7795AF;
-	text-decoration : none;
-}
-.skin_chooser .skin_line .control a:hover{
-	color : #7795AF;
-	text-decoration : underline;
-}
-.skin_chooser .skin_line a{
-	color : #000000;
-	text-decoration : none;
-}
-.skin_chooser .skin_line a:hover{
-	color : #000000;
-	text-decoration : underline;
-}
+.panel-header-none-border-main-pg-column-three{
+	width:40%;
+	text-align:right;
+	}
+.panel-header-none-border-pg-column{
+	padding: 0px 6px 0px 6px;
+	margin:0px 0px 0px 0px;
+	border : 0px solid #ACBECE;
+	text-align:center;
+	background:url(../css/images/icons/or_navon.gif) bottom left repeat-x; list-style-type:none;
+	}
 
-
-.left_menu{
-	position : absolute;
-	z-index : 10;
-	top : 71px;
-	left : 28px;
-	width : 222px;
-}
-.panel_documents{
+.panel-documents-none-border{
+	padding: 0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
 	background-color: transparent;
-	border : 1px solid #FFFFFF;
-	padding : 10px 10px 10px 20px;
-	border-bottom:none;
+	border : 0px solid #ACBECE;
 }
-.panel_documents div{
+.panel-documents-none-border div{
 	background-color: transparent;
-	font-family : verdana;
-	font-size : 11px;
+	FONT-FAMILY: Arial,sans-serif;
+	font-size : 12px;
 	border:0;
 	padding:0;
 }
 
-.panel_documents a{
+.panel-documents-none-border a{
 	color : #000000;
 	text-decoration : none;
 }
-.panel_documents a:hover{
-	color : #000000;
+.panel-documents-none-border a:hover{
+	color : red;
 	text-decoration : underline;
 }
-
+<!-- end  rich panel none style -->
 .menu_separator{
 	background-color : #ACBECE;
 	height : 5px;
@@ -1172,7 +1107,47 @@ div.reviews{margin:5px 0}
   				padding-left: 0em; 
   				padding-bottom: 0px; 
   				color: #2c629e; 
-			}			
+			}		
+			
+.rich-tool-bar-style {
+	top: 0px;
+	left: 0px;
+	DISPLAY: block;
+	background-attachment : fixed;
+	margin:0px 0px 0px 0px; 
+	padding:0px 0px 0px 0px;
+	height:36px;
+	background: #6293bb url(../css/images/icons/n_bg_r.gif) repeat-x bottom left;
+	font-size: 12px;
+	font-weight: bold;
+	text-indent: 0mm;
+	color: #fff;
+	
+	
+	}
+.rich-tool-bar-first{
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	FONT-FAMILY: Arial,sans-serif;
+	background: #6293bb url(../css/images/icons/n_bg_r.gif) repeat-x bottom left;
+	height:36px;
+	width:20px;
+	
+}		
+.rich-tool-bar-select{
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	border:2px #f3f3f3 solid;
+	FONT-FAMILY: Arial,sans-serif;
+	background: #fff;
+	color: #fff;
+	
+}
+.rich-tool-bar-content-style{
+	FONT-FAMILY: Arial,sans-serif;
+	font-size: 14px;
+	color:#fff;
+	}
 			
 .template-left {
   font-size: 10pt;
