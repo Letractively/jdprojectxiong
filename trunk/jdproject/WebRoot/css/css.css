@@ -1,24 +1,111 @@
-DIV#MainPromotionBanner {
-	BACKGROUND: #feb900; WIDTH: 540px; HEIGHT: 150px
+#logo {
+	FLOAT: left
 }
-#MainPromotionBanner #SlidePlayer {
-	MARGIN: 0px auto; POSITION: relative
+#logo H1 A {
+	DISPLAY: inline; OVERFLOW: hidden; ZOOM: 1; HEIGHT: 35px; outline: none
 }
-#MainPromotionBanner .Slides {
-	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: hidden; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; HEIGHT: 150px
+.menu-bar {
+	Z-INDEX: 20; PADDING-BOTTOM: 10px
 }
-#MainPromotionBanner .Slides LI {
-	FLOAT: left; WIDTH: 540px; HEIGHT: 150px
+.navigation-wrapper {
+	MARGIN: 0px auto; WIDTH: 960px
 }
-#MainPromotionBanner .Slides IMG {
-	BORDER-TOP-WIDTH: 0px; DISPLAY: block; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 540px; HEIGHT: 150px; BORDER-RIGHT-WIDTH: 0px
+.navigation {
+	WIDTH: 960px; BACKGROUND-COLOR: #005eac
 }
-#MainPromotionBanner .SlideTriggers {
-	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; Z-INDEX: 10; RIGHT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; POSITION: absolute; TOP: 126px; HEIGHT: 25px
+.navigation .nav-main {
+	FLOAT: left; MARGIN-LEFT: 6px
 }
-#MainPromotionBanner .SlideTriggers LI {
-	DISPLAY: inline; FONT-SIZE: 0.9em; BACKGROUND: url(/images/green/slide_trigger.gif) no-repeat center center; FLOAT: left; MARGIN: 3px 6px; OVERFLOW: hidden; WIDTH: 16px; CURSOR: pointer; COLOR: #74a8ed; LINE-HEIGHT: 16px; FONT-FAMILY: Arial; HEIGHT: 16px; TEXT-ALIGN: center
+.navigation .nav-main .menu-title A {
+	PADDING-RIGHT: 7px; PADDING-LEFT: 7px; PADDING-BOTTOM: 0px; COLOR: #fff; PADDING-TOP: 0px
 }
-#MainPromotionBanner .SlideTriggers LI.Current {
-	BORDER-TOP-WIDTH: 0px; FONT-WEIGHT: bold; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 1.4em; BACKGROUND: url(/images/green/slide_trigger_c.gif) no-repeat center center; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 0px 6px; WIDTH: 21px; COLOR: #fff; LINE-HEIGHT: 21px; HEIGHT: 21px; BORDER-RIGHT-WIDTH: 0px
+.navigation .nav-main .menu-title A SPAN {
+	FONT-SIZE:15px;
+}
+.navigation .nav-other {
+	BACKGROUND-COLOR: #005eac; FLOAT: right
+}
+.navigation .nav-other .menu {
+	MARGIN: 0px
+}
+.navigation .nav-other .menu .charge A {
+	BACKGROUND-POSITION: 4px -83px; PADDING-LEFT: 20px; BACKGROUND-COLOR:#005eac;
+}
+.navigation .nav-other .menu-title A {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: normal; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.navigation .nav-other .last {
+	MARGIN-RIGHT: 10px
+}
+.nav-shadow {
+	DISPLAY: none; MARGIN: 0px auto; OVERFLOW: hidden; WIDTH: 950px; BORDER-BOTTOM: #254888 1px solid; HEIGHT: 0px
+}
+.dropmenu-holder {
+	FONT-SIZE: 0px; Z-INDEX: 999999; MARGIN: 0px auto; WIDTH: 960px; LINE-HEIGHT: 0; POSITION: relative; HEIGHT: 0px
+}
+.dropmenu-holder  {
+	FONT-SIZE: 12px; LINE-HEIGHT: 1
+}
+.navigation .menu {
+	FLOAT: left; LINE-HEIGHT: 35px; MARGIN-RIGHT: 1px; HEIGHT: 35px
+}
+.navigation .menu-title {
+	FONT-SIZE: 14px
+}
+.navigation .info-edit {
+	MARGIN-LEFT: -5px
+}
+.navigation .menu-title A {
+	PADDING-RIGHT: 5px; DISPLAY: block; PADDING-LEFT: 5px; PADDING-BOTTOM: 0px; COLOR: #fff; PADDING-TOP: 0px; outline: 0
+}
+.navigation .menu-title A.searchcolor {
+	COLOR: #fff
+}
+.navigation .with-arrow A {
+	PADDING-RIGHT: 17px! important; BACKGROUND-COLOR: #005eac;
+}
+.navigation .menu-title A:hover {
+	BACKGROUND-COLOR: #3777bc; TEXT-DECORATION: none
+}
+.navigation .info-edit .menu-title A {
+	PADDING-RIGHT: 0px; DISPLAY: inline; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; COLOR: #d8dfea; PADDING-TOP: 0px
+}
+.navigation .info-edit .menu-title A:hover {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #fff; TEXT-DECORATION: underline
+}
+.navigation .menu-title A .count {
+	FONT-WEIGHT: 700; FONT-SIZE: 14px; COLOR: #fff
+}
+.navigation #searchMenu {
+	MARGIN-RIGHT: 0px
+}
+.navigation #searchMenu .menu-title A {
+	COLOR: #fff
+}
+#navSearch {
+	FLOAT: left; MARGIN: 6px 5px 0px
+}
+#navSearch #search-input {
+	FLOAT: left
+}
+#navSearch #search-submit {
+	BORDER-RIGHT: #084679 1px solid; BORDER-TOP: #084679 1px solid; FLOAT: left; MARGIN-LEFT: 2px; BORDER-LEFT: #084679 1px solid; BORDER-BOTTOM: #084679 1px solid
+}
+#navSearch #search-submit A {
+	BORDER-RIGHT: #fff 0px solid; PADDING-RIGHT: 5px; BORDER-TOP: #fff 1px solid; DISPLAY: inline; PADDING-LEFT: 5px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; VERTICAL-ALIGN: top; BORDER-LEFT: #fff 0px solid; COLOR: #666; LINE-HEIGHT: 18px; PADDING-TOP: 0px; BORDER-BOTTOM: #fff 1px solid; ZOOM: 1; HEIGHT: 18px; BACKGROUND-COLOR: #f7f7f7; TEXT-DECORATION: none
+}
+#navSearch #search-submit A.more {
+	PADDING-RIGHT: 0px; BACKGROUND-POSITION: -142px -20px; PADDING-LEFT: 0px; BACKGROUND-COLOR: #005eac; PADDING-BOTTOM: 0px; ; BEHAVIOR: expression(function(ele){ele.style.behavior="none";Expressions.focus(ele)}(this)); WIDTH: 12px; PADDING-TOP: 0px; BACKGROUND-REPEAT: no-repeat
+}
+#navSearch #search-submit A.more:unknown {
+	BACKGROUND-COLOR: #fff
+}
+#navSearch #search-submit A.focus {
+	BACKGROUND-COLOR: #fff
+}
+#navSearch #search-submit .separator {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: hidden; BORDER-LEFT: #084679 1px solid; PADDING-TOP: 0px; HEIGHT: 20px
+}
+#navSearch #search-input #navSearchInput {
+	BORDER-RIGHT: #315091 1px solid; PADDING-RIGHT: 4px; BORDER-TOP: #315091 1px solid; PADDING-LEFT: 4px; BACKGROUND-COLOR: #005eac; FLOAT: left; PADDING-BOTTOM: 3px; MARGIN: 0px; BORDER-LEFT: #315091 1px solid; WIDTH: 136px; PADDING-TOP: 3px; BORDER-BOTTOM: #315091 1px solid
 }
