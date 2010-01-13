@@ -14,10 +14,7 @@ xmlns:rich="http://richfaces.org/rich">
     </head>
     <body>
     	<ui:composition template="../productTemplate.jsp">
-    		<ui:define id="kitchenApplianceLeft" name="left">
-    			<ui:include id="kitchenApplianceLeftInclude" src="../navigationProductLeft.jsp">
-    			</ui:include>
-    		</ui:define>
+    		
     		
 			<ui:define id="kitchenApplianceContent" name="content">
 				<a4j:region id="kitchenApplianceSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
