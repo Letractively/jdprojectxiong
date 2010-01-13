@@ -69,6 +69,7 @@ input, select, button, legend, a {
 	margin:0px 0px 0px 0px;
 	background-color: transparent;
 	border : 0px solid #ACBECE;
+	text-align:right;
 }
 .panel-documents-none-border div{
 	background-color: transparent;
