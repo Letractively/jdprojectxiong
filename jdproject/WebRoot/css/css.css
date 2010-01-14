@@ -8,10 +8,10 @@
 	Z-INDEX: 20; PADDING-BOTTOM: 10px
 }
 .navigation-wrapper {
-	MARGIN: 0px auto; WIDTH: 960px
+	MARGIN: 0px auto; WIDTH: 970px
 }
 .navigation {
-	WIDTH: 960px; BACKGROUND-COLOR: #005eac
+	WIDTH: 970px; BACKGROUND-COLOR: #005eac
 }
 .navigation .nav-main {
 	FLOAT: left; MARGIN-LEFT: 6px
@@ -20,7 +20,8 @@
 	PADDING-RIGHT: 7px; PADDING-LEFT: 7px; PADDING-BOTTOM: 0px; COLOR: #fff; PADDING-TOP: 0px
 }
 .navigation .nav-main .menu-title A SPAN {
-	FONT-SIZE:15px;
+	FONT-SIZE:13px;
+	FONT-WEIGHT:BOLD;
 }
 .navigation .nav-other {
 	BACKGROUND-COLOR: #005eac; FLOAT: right
@@ -38,10 +39,10 @@
 	MARGIN-RIGHT: 10px
 }
 .nav-shadow {
-	DISPLAY: none; MARGIN: 0px auto; OVERFLOW: hidden; WIDTH: 950px; BORDER-BOTTOM: #254888 1px solid; HEIGHT: 0px
+	DISPLAY: none; MARGIN: 0px auto; OVERFLOW: hidden; WIDTH: 970px; BORDER-BOTTOM: #254888 1px solid; HEIGHT: 0px
 }
 .dropmenu-holder {
-	FONT-SIZE: 0px; Z-INDEX: 999999; MARGIN: 0px auto; WIDTH: 960px; LINE-HEIGHT: 0; POSITION: relative; HEIGHT: 0px
+	FONT-SIZE: 0px; Z-INDEX: 999999; MARGIN: 0px auto; WIDTH: 970px; LINE-HEIGHT: 0; POSITION: relative; HEIGHT: 0px
 }
 .dropmenu-holder  {
 	FONT-SIZE: 12px; LINE-HEIGHT: 1
@@ -54,6 +55,9 @@
 }
 .navigation .info-edit {
 	MARGIN-LEFT: -5px
+}
+.navigation .select {
+	BACKGROUND-COLOR: #3777bc; TEXT-DECORATION: none
 }
 .navigation .menu-title A {
 	PADDING-RIGHT: 5px; DISPLAY: block; PADDING-LEFT: 5px; PADDING-BOTTOM: 0px; COLOR: #fff; PADDING-TOP: 0px; outline: 0
