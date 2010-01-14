@@ -22,7 +22,7 @@ xmlns:rich="http://richfaces.org/rich">
 			<ui:define id="electricStewPanContent" name="content">
 				<a4j:region id="electricStewPanSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="electricStewPanSearchNavigationRegionForm">
-    			<rich:panelBar id="electricStewPanpb" styleClass="panel-bar-product-top" style="width:822px;" contentStyle="background:none;">
+    			<rich:panelBar id="electricStewPanpb" styleClass="panel-bar-product-top" style="width:#{msgs['template.product.content.widthpx']}" contentStyle="background:none;">
     				<rich:panelBarItem id="electricStewPanPbi" headerClass="navigation-product-top-panel-bar-item-header">
     				<f:facet name="label">
     					<h:panelGroup>
@@ -38,7 +38,7 @@ xmlns:rich="http://richfaces.org/rich">
 				</rich:panelBar>
 				</h:form>
 				</a4j:region>
-    			<h:panelGrid columns="1" style="width:822px;" styleClass="table-row">
+    			<h:panelGrid columns="1" style="width:#{msgs['template.product.content.widthpx']}" styleClass="table-row">
     			<a4j:region id="electricStewPanContentRegionStyle" renderRegionOnly="false" selfRendered="true">
     				<h:form id="electricStewPanContentRegionStyleForm">
     					<rich:panel id="electricStewPanContentRegionStyleFormPanel" styleClass="operate_title">

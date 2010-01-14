@@ -22,7 +22,7 @@ xmlns:rich="http://richfaces.org/rich">
 			<ui:define id="whiskContent" name="content">
 				<a4j:region id="whiskSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="whiskSearchNavigationRegionForm">
-    			<rich:panelBar id="whiskpb" styleClass="panel-bar-product-top" style="width:822px;" contentStyle="background:none;">
+    			<rich:panelBar id="whiskpb" styleClass="panel-bar-product-top" style="width:#{msgs['template.product.content.widthpx']}" contentStyle="background:none;">
     				<rich:panelBarItem id="whiskPbi" headerClass="navigation-product-top-panel-bar-item-header">
     				<f:facet name="label">
     					<h:panelGroup>
@@ -37,7 +37,7 @@ xmlns:rich="http://richfaces.org/rich">
 				</rich:panelBar>
 				</h:form>
 				</a4j:region>
-    			<h:panelGrid columns="1" style="width:822px;" styleClass="table-row">
+    			<h:panelGrid columns="1" style="width:#{msgs['template.product.content.widthpx']}" styleClass="table-row">
     			<a4j:region id="whiskContentRegionStyle" renderRegionOnly="false" selfRendered="true">
     				<h:form id="whiskContentRegionStyleForm">
     					<rich:panel id="whiskContentRegionStyleFormPanel" styleClass="operate_title">
