@@ -22,7 +22,7 @@ xmlns:rich="http://richfaces.org/rich">
 			<ui:define id="electronicOvenContent" name="content">
 				<a4j:region id="electronicOvenSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="electronicOvenSearchNavigationRegionForm">
-    			<rich:panelBar id="electronicOvenpb" styleClass="panel-bar-product-top" style="width:822px;" contentStyle="background:none;">
+    			<rich:panelBar id="electronicOvenpb" styleClass="panel-bar-product-top" style="width:#{msgs['template.product.content.widthpx']}" contentStyle="background:none;">
     				<rich:panelBarItem id="electronicOvenPbi" headerClass="navigation-product-top-panel-bar-item-header">
     				<f:facet name="label">
     					<h:panelGroup>
@@ -38,7 +38,7 @@ xmlns:rich="http://richfaces.org/rich">
 				</rich:panelBar>
 				</h:form>
 				</a4j:region>
-    			<h:panelGrid columns="1" style="width:822px;" styleClass="table-row">
+    			<h:panelGrid columns="1" style="width:#{msgs['template.product.content.widthpx']}" styleClass="table-row">
     			<a4j:region id="electronicOvenContentRegionStyle" renderRegionOnly="false" selfRendered="true">
     				<h:form id="electronicOvenContentRegionStyleForm">
     					<rich:panel id="electronicOvenContentRegionStyleFormPanel" styleClass="operate_title">

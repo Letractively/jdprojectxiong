@@ -24,8 +24,7 @@ xmlns:rich="http://richfaces.org/rich">
 					
 				</rich:panel>
 </a4j:region>
-</h:form>
-<h:form id="mainheaderotherform">
+
 <DIV class="menu-bar rr" id="navBar">
 <DIV class="navigation-wrapper">
 <DIV class="navigation clearfix">
@@ -35,28 +34,29 @@ xmlns:rich="http://richfaces.org/rich">
 <DIV class="nav-main">
 <DIV class="menu">
 <DIV class="menu-title"><A 
-href="http://www.renren.com/Home.do?id=739836807"><SPAN>首页</SPAN></A></DIV></DIV>
+href="${facesContext.externalContext.requestContextPath}"><SPAN>首页</SPAN></A></DIV></DIV>
 <DIV class="menu" style="MARGIN: 0px">
-<DIV class="menu-title"><A 
-href="http://renren.com/profile.do?id=739836807">个人主页</A></DIV></DIV>
-<DIV class="menu info-edit">
-<DIV class="menu-title"><A 
-href="http://i.renren.com/shop/view/home.action?wc=10000">装扮</A></DIV></DIV>
+<DIV class="menu-title #{headerTabPanel.currentPrimaryCategory == '01'?'select':''}"><A 
+href="${facesContext.externalContext.requestContextPath}/jspLayout/product/KitchenAppliance/kitchenAppliance.jsf"><SPAN><h:outputText value="#{headerTabPanel.kitchenAppliance.mainMenu.label}"/></SPAN></A></DIV></DIV>
 <DIV class="menu">
-<DIV class="menu-title"><A 
-href="http://friend.renren.com/myfriendlistx.do">好友</A></DIV></DIV>
+<DIV class="menu-title #{headerTabPanel.currentPrimaryCategory == '02'?'select':''}"><A 
+href="http://friend.renren.com/myfriendlistx.do"><SPAN><h:outputText value="#{headerTabPanel.householdAppliance.mainMenu.label}"/></SPAN></A></DIV></DIV>
 <DIV class="menu">
-<DIV class="menu-title with-arrow"><A id="showAppMenu" 
-href="http://app.renren.com/app/apps/list?origin=119">应用</A> </DIV></DIV>
+<DIV class="menu-title #{headerTabPanel.currentPrimaryCategory == '03'?'select':''}"><A 
+href="http://app.renren.com/app/apps/list?origin=119"><SPAN><h:outputText value="#{headerTabPanel.personalCare.mainMenu.label}"/></SPAN></A> </DIV></DIV>
 <DIV class="menu">
-<DIV class="menu-title"><A href="http://game.renren.com/">游戏</A></DIV></DIV>
+<DIV class="menu-title #{headerTabPanel.currentPrimaryCategory == '04'?'select':''}"><A href="http://game.renren.com/"><SPAN><h:outputText value="#{headerTabPanel.healthDevice.mainMenu.label}"/></SPAN></A></DIV></DIV>
 <DIV class="menu">
-<DIV class="menu-title"><A id="global_inbox_link" 
-href="http://msg.renren.com/">站内信</A> </DIV></DIV></DIV>
+<DIV class="menu-title #{headerTabPanel.currentPrimaryCategory == '05'?'select':''}"><A  
+href="http://msg.renren.com/"><SPAN><h:outputText value="#{headerTabPanel.majorAppliance.mainMenu.label}"/></SPAN></A> </DIV></DIV>
+<DIV class="menu">
+<DIV class="menu-title #{headerTabPanel.currentPrimaryCategory == '06'?'select':''}"><A
+href="http://msg.renren.com/"><SPAN><h:outputText value="#{headerTabPanel.phoneDigital.mainMenu.label}"/></SPAN></A> </DIV></DIV>
+<DIV class="menu">
+<DIV class="menu-title #{headerTabPanel.currentPrimaryCategory == '07'?'select':''}"><A
+href="http://msg.renren.com/"><SPAN><h:outputText value="#{headerTabPanel.computerNetwork.mainMenu.label}"/></SPAN></A> </DIV></DIV>
+</DIV>
 <DIV class="nav-other">
-<DIV class="menu">
-<DIV class="menu-title"><A 
-href="http://i.renren.com/pay/upgrade?wc=10000">升级VIP</A> </DIV></DIV>
 <DIV class="menu">
 <DIV class="charge menu-title"><A 
 href="http://pay.renren.com/">充值</A></DIV></DIV>
@@ -69,12 +69,7 @@ href="http://renren.com/profile.do?id=739836807&amp;v=info&amp;act=edit">设置<
 <DIV class="menu last">
 <DIV class="menu-title"><A 
 href="http://www.renren.com/Logout.do?get_check=1714286847">退出</A></DIV></DIV>
-<DIV id="navSearch">
-<FORM id="globalSearchForm" action="http://browse.renren.com/searchEx.do?from=opensearch" method="post">
-<DIV id="search-input"><INPUT class="input-text" id="navSearchInput" tabIndex="1" maxLength="100" size="25" name="q"></INPUT> </DIV>
-<DIV id="search-submit"><A class="submit" id="navSearchSubmit" href="http://browse.renren.com/os.do?_lu=9">搜索</A> 
-<SPAN class="separator"></SPAN><A class="more" id="searchMenuAction"
-href="http://renren.com/profile.do?id=739836807&amp;_hua=64#nogo"></A></DIV></FORM></DIV></DIV></DIV></DIV></DIV></DIV>
+</DIV></DIV></DIV></DIV></DIV>
 </h:form>
 </f:subview>		
 </jsp:root>	

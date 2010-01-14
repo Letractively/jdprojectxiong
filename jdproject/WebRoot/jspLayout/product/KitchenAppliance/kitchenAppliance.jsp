@@ -14,12 +14,15 @@ xmlns:rich="http://richfaces.org/rich">
     </head>
     <body>
     	<ui:composition template="../productTemplate.jsp">
-    		
+    		<ui:define id="kitchenApplianceLeft" name="left">
+    			<ui:include id="kitchenApplianceLeftInclude" src="../navigationProductLeft.jsp">
+    			</ui:include>
+    		</ui:define>
     		
 			<ui:define id="kitchenApplianceContent" name="content">
 				<a4j:region id="kitchenApplianceSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="kitchenApplianceSearchNavigationRegionForm">
-    			<rich:panelBar id="kitchenAppliancepb" styleClass="panel-bar-product-top" style="width:822px;" contentStyle="background:none;">
+    			<rich:panelBar id="kitchenAppliancepb" styleClass="panel-bar-product-top" style="width:#{msgs['template.product.content.widthpx']}" contentStyle="background:none;">
     				<rich:panelBarItem id="kitchenAppliancePbi" headerClass="navigation-product-top-panel-bar-item-header">
     				<f:facet name="label">
     					<h:panelGroup>
@@ -34,7 +37,7 @@ xmlns:rich="http://richfaces.org/rich">
 				</rich:panelBar>
 				</h:form>
 				</a4j:region>
-    			<h:panelGrid columns="1" style="width:822px;" styleClass="table-row">
+    			<h:panelGrid columns="1" style="width:#{msgs['template.product.content.widthpx']}" styleClass="table-row">
     			<a4j:region id="kitchenApplianceContentRegionStyle" renderRegionOnly="false" selfRendered="true">
     				<h:form id="kitchenApplianceContentRegionStyleForm">
     					<rich:panel id="kitchenApplianceContentRegionStyleFormPanel" styleClass="operate_title">

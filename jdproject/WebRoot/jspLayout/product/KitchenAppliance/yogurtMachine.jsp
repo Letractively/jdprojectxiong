@@ -22,7 +22,7 @@ xmlns:rich="http://richfaces.org/rich">
 			<ui:define id="yogurtMachineContent" name="content">
 				<a4j:region id="yogurtMachineSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="yogurtMachineSearchNavigationRegionForm">
-    			<rich:panelBar id="yogurtMachinepb" styleClass="panel-bar-product-top" style="width:822px;" contentStyle="background:none;">
+    			<rich:panelBar id="yogurtMachinepb" styleClass="panel-bar-product-top" style="width:#{msgs['template.product.content.widthpx']}" contentStyle="background:none;">
     				<rich:panelBarItem id="yogurtMachinePbi" headerClass="navigation-product-top-panel-bar-item-header">
     				<f:facet name="label">
     					<h:panelGroup>
@@ -37,7 +37,7 @@ xmlns:rich="http://richfaces.org/rich">
 				</rich:panelBar>
 				</h:form>
 				</a4j:region>
-    			<h:panelGrid columns="1" style="width:822px;" styleClass="table-row">
+    			<h:panelGrid columns="1" style="width:#{msgs['template.product.content.widthpx']}" styleClass="table-row">
     			<a4j:region id="yogurtMachineContentRegionStyle" renderRegionOnly="false" selfRendered="true">
     				<h:form id="yogurtMachineContentRegionStyleForm">
     					<rich:panel id="yogurtMachineContentRegionStyleFormPanel" styleClass="operate_title">

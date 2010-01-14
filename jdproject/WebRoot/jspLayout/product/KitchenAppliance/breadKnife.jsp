@@ -22,7 +22,7 @@ xmlns:rich="http://richfaces.org/rich">
 			<ui:define id="breadKnifeContent" name="content">
 				<a4j:region id="breadKnifeSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="breadKnifeSearchNavigationRegionForm">
-    			<rich:panelBar id="breadKnifepb" styleClass="panel-bar-product-top" style="width:822px;" contentStyle="background:none;">
+    			<rich:panelBar id="breadKnifepb" styleClass="panel-bar-product-top" style="width:#{msgs['template.product.content.widthpx']}" contentStyle="background:none;">
     				<rich:panelBarItem id="breadKnifePbi" headerClass="navigation-product-top-panel-bar-item-header">
     				<f:facet name="label">
     					<h:panelGroup>
@@ -37,7 +37,7 @@ xmlns:rich="http://richfaces.org/rich">
 				</rich:panelBar>
 				</h:form>
 				</a4j:region>
-    			<h:panelGrid columns="1" style="width:822px;" styleClass="table-row">
+    			<h:panelGrid columns="1" style="width:#{msgs['template.product.content.widthpx']}" styleClass="table-row">
     			<a4j:region id="breadKnifeContentRegionStyle" renderRegionOnly="false" selfRendered="true">
     				<h:form id="breadKnifeContentRegionStyleForm">
     					<rich:panel id="breadKnifeContentRegionStyleFormPanel" styleClass="operate_title">

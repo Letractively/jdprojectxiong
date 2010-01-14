@@ -22,7 +22,7 @@ xmlns:rich="http://richfaces.org/rich">
 			<ui:define id="electricPressureCookerContent" name="content">
 				<a4j:region id="electricPressureCookerSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="electricPressureCookerSearchNavigationRegionForm">
-    			<rich:panelBar id="electricPressureCookerpb" styleClass="panel-bar-product-top" style="width:822px;" contentStyle="background:none;">
+    			<rich:panelBar id="electricPressureCookerpb" styleClass="panel-bar-product-top" style="width:#{msgs['template.product.content.widthpx']}" contentStyle="background:none;">
     				<rich:panelBarItem id="electricPressureCookerPbi" headerClass="navigation-product-top-panel-bar-item-header">
     				<f:facet name="label">
     					<h:panelGroup>
@@ -39,7 +39,7 @@ xmlns:rich="http://richfaces.org/rich">
 				</rich:panelBar>
 				</h:form>
 				</a4j:region>
-    			<h:panelGrid columns="1" style="width:822px;" styleClass="table-row">
+    			<h:panelGrid columns="1" style="width:#{msgs['template.product.content.widthpx']}" styleClass="table-row">
     			<a4j:region id="electricPressureCookerContentRegionStyle" renderRegionOnly="false" selfRendered="true">
     				<h:form id="electricPressureCookerContentRegionStyleForm">
     					<rich:panel id="electricPressureCookerContentRegionStyleFormPanel" styleClass="operate_title">

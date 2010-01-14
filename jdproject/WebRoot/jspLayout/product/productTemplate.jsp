@@ -9,6 +9,7 @@ xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
 <f:subview id="manageTemplateView">
 <script src="${facesContext.externalContext.requestContextPath}/css/common.js" type="text/javascript"></script>
+<f:loadBundle basename="com.ejd.resources.messages" var="msgs"/>
 <link rel="STYLESHEET" type="text/css" href="${facesContext.externalContext.requestContextPath}/css/common.css"/>
 <link rel="STYLESHEET" type="text/css" href="${facesContext.externalContext.requestContextPath}/css/style.css"/>
 <link rel="STYLESHEET" type="text/css" href="${facesContext.externalContext.requestContextPath}/css/css.css"/>

@@ -22,7 +22,7 @@ xmlns:rich="http://richfaces.org/rich">
 			<ui:define id="fryerContent" name="content">
 				<a4j:region id="fryerSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="fryerSearchNavigationRegionForm">
-    			<rich:panelBar id="fryerpb" styleClass="panel-bar-product-top" style="width:822px;" contentStyle="background:none;">
+    			<rich:panelBar id="fryerpb" styleClass="panel-bar-product-top" style="width:#{msgs['template.product.content.widthpx']}" contentStyle="background:none;">
     				<rich:panelBarItem id="fryerPbi" headerClass="navigation-product-top-panel-bar-item-header">
     				<f:facet name="label">
     					<h:panelGroup>
@@ -37,7 +37,7 @@ xmlns:rich="http://richfaces.org/rich">
 				</rich:panelBar>
 				</h:form>
 				</a4j:region>
-    			<h:panelGrid columns="1" style="width:822px;" styleClass="table-row">
+    			<h:panelGrid columns="1" style="width:#{msgs['template.product.content.widthpx']}" styleClass="table-row">
     			<a4j:region id="fryerContentRegionStyle" renderRegionOnly="false" selfRendered="true">
     				<h:form id="fryerContentRegionStyleForm">
     					<rich:panel id="fryerContentRegionStyleFormPanel" styleClass="operate_title">
