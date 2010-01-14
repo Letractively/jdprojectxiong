@@ -10,66 +10,34 @@ xmlns:rich="http://richfaces.org/rich">
 <f:subview id="headerBackView">
 <h:form id="mainheaderform">
 <a4j:region id="mainheaderFormRegion" renderRegionOnly="false" selfRendered="true">
-				<rich:panel headerClass="panel-header-none-border" bodyClass="panel-documents-none-border">
-					<h:panelGrid id="headeronenav" columns="10" columnClasses="panel-header-none-border-pg-column,panel-header-none-border-pg-column,panel-header-none-border-pg-column,panel-header-none-border-pg-column,panel-header-none-border-pg-column,panel-header-none-border-pg-column,panel-header-none-border-pg-column,panel-header-none-border-pg-column">
-							<h:outputLink value="www.sohu.com"><h:outputLabel value="eee"/></h:outputLink>
-							<h:outputLink value="www.sohu.com"><h:outputLabel value="fff"/></h:outputLink>
-							<h:outputLink value="www.sohu.com"><h:outputLabel value="ggg"/></h:outputLink>
-							<h:outputLink value="www.sohu.com"><h:outputLabel value="hhh"/></h:outputLink>
-							<h:outputLink value="www.sohu.com"><h:outputLabel value="购物车"/></h:outputLink>
-							<h:outputLink value="${facesContext.externalContext.requestContextPath}/jspLayout/help/mainHelp.jsf" target="_blank"><h:outputLabel value="帮助中心"/><a4j:support event="onclick" immediate="true"/></h:outputLink>
-							<h:outputLink value="www.sohu.com"><h:outputLabel value="登陆"/></h:outputLink>
-							<h:outputLink value="www.sohu.com"><h:outputLabel value="注册"/></h:outputLink>
-					</h:panelGrid>
-					
-				</rich:panel>
-</a4j:region>
+<DIV id="logoarea">
+<DIV id="logoarea_top"><IMG id="logort" alt="" src="${facesContext.externalContext.requestContextPath}/css/images/icons/bg_logo_right.png"></IMG><IMG 
+id="logolt" alt="" src="${facesContext.externalContext.requestContextPath}/css/images/icons/bg_logo_left.png"></IMG><A 
+href="http://slickdeals.net/"><IMG src="${facesContext.externalContext.requestContextPath}/css/images/icons/company_logo.png" style="border:0px #fff solid"></IMG></A>
+<DIV id="ads-top" style="BORDER-RIGHT: #ddd 1px solid; BORDER-TOP: #ddd 1px solid; BORDER-LEFT: #ddd 1px solid; BORDER-BOTTOM: #ddd 1px solid">
 
-<DIV class="menu-bar rr" id="navBar">
-<DIV class="navigation-wrapper">
-<DIV class="navigation clearfix">
-<DIV id="logo">
-<H1><h:commandLink><h:graphicImage url="/css/images/logo.png" style="width:122;height:35;border: 0px solid #ffffff;"></h:graphicImage></h:commandLink></H1></DIV>
-<DIV class="nav-body clearfix">
-<DIV class="nav-main">
-<DIV class="menu">
-<DIV class="menu-title"><A 
-href="${facesContext.externalContext.requestContextPath}"><SPAN>首页</SPAN></A></DIV></DIV>
-<DIV class="menu" style="MARGIN: 0px">
-<DIV class="menu-title #{headerTabPanel.currentPrimaryCategory == '01'?'select':''}"><A 
-href="${facesContext.externalContext.requestContextPath}/jspLayout/product/KitchenAppliance/kitchenAppliance.jsf"><SPAN><h:outputText value="#{headerTabPanel.kitchenAppliance.mainMenu.label}"/></SPAN></A></DIV></DIV>
-<DIV class="menu">
-<DIV class="menu-title #{headerTabPanel.currentPrimaryCategory == '02'?'select':''}"><A 
-href="http://friend.renren.com/myfriendlistx.do"><SPAN><h:outputText value="#{headerTabPanel.householdAppliance.mainMenu.label}"/></SPAN></A></DIV></DIV>
-<DIV class="menu">
-<DIV class="menu-title #{headerTabPanel.currentPrimaryCategory == '03'?'select':''}"><A 
-href="http://app.renren.com/app/apps/list?origin=119"><SPAN><h:outputText value="#{headerTabPanel.personalCare.mainMenu.label}"/></SPAN></A> </DIV></DIV>
-<DIV class="menu">
-<DIV class="menu-title #{headerTabPanel.currentPrimaryCategory == '04'?'select':''}"><A href="http://game.renren.com/"><SPAN><h:outputText value="#{headerTabPanel.healthDevice.mainMenu.label}"/></SPAN></A></DIV></DIV>
-<DIV class="menu">
-<DIV class="menu-title #{headerTabPanel.currentPrimaryCategory == '05'?'select':''}"><A  
-href="http://msg.renren.com/"><SPAN><h:outputText value="#{headerTabPanel.majorAppliance.mainMenu.label}"/></SPAN></A> </DIV></DIV>
-<DIV class="menu">
-<DIV class="menu-title #{headerTabPanel.currentPrimaryCategory == '06'?'select':''}"><A
-href="http://msg.renren.com/"><SPAN><h:outputText value="#{headerTabPanel.phoneDigital.mainMenu.label}"/></SPAN></A> </DIV></DIV>
-<DIV class="menu">
-<DIV class="menu-title #{headerTabPanel.currentPrimaryCategory == '07'?'select':''}"><A
-href="http://msg.renren.com/"><SPAN><h:outputText value="#{headerTabPanel.computerNetwork.mainMenu.label}"/></SPAN></A> </DIV></DIV>
+</DIV></DIV>
+<DIV class="groupmsg" id="dealalertmsgfinal">Wanna find the latest deals on the go? 
+Try out the <A href="http://m.slickdeals.net/"><B>Slickdeals Mobile 
+Website</B></A> on your phone! <A 
+onclick="togglewelcome('dealalertmsgfinal'); return false" 
+href="http://slickdeals.net/coupons.php?&amp;dealalertmsgfinal=1">Hide this 
+message.</A></DIV></DIV>
+<DIV class="menu2" id="menu2">
+	<UL>
+	<LI id="main_menu_00"><A class="menu2one #{headerTabPanel.currentPrimaryCategory == ''?'selected':''}" href="http://slickdeals.net/">首页</A></LI>
+  	<LI id="main_menu_01"><A class="menu2one #{headerTabPanel.currentPrimaryCategory == '01'?'selected':''}" href="http://slickdeals.net/"><h:outputText value="#{headerTabPanel.kitchenAppliance.mainMenu.label}"/></A></LI>
+  	<LI id="main_menu_02"><A class="menu2two #{headerTabPanel.currentPrimaryCategory == '02'?'selected':''}" href="http://slickdeals.net/coupons.php"><h:outputText value="#{headerTabPanel.householdAppliance.mainMenu.label}"/></A></LI>
+  	<LI id="main_menu_03"><A class="menu2three #{headerTabPanel.currentPrimaryCategory == '03'?'selected':''}" href="http://slickdeals.net/forums"><h:outputText value="#{headerTabPanel.personalCare.mainMenu.label}"/></A></LI>
+  	<LI id="main_menu_04"><A class="menu2four #{headerTabPanel.currentPrimaryCategory == '04'?'selected':''}" href="http://blog.slickdeals.net/"><h:outputText value="#{headerTabPanel.healthDevice.mainMenu.label}"/></A></LI>
+  	<LI id="main_menu_05"><A class="menu2five #{headerTabPanel.currentPrimaryCategory == '05'?'selected':''}" href="http://slickdeals.net/forums/sdmisc.php"><h:outputText value="#{headerTabPanel.majorAppliance.mainMenu.label}"/></A></LI>
+	<LI id="main_menu_06"><A class="menu2six #{headerTabPanel.currentPrimaryCategory == '06'?'selected':''}" href="http://slickdeals.net/forums/sdmisc.php"><h:outputText value="#{headerTabPanel.phoneDigital.mainMenu.label}"/></A></LI>
+	<LI id="main_menu_07"><A class="menu2seven #{headerTabPanel.currentPrimaryCategory == '07'?'selected':''}" href="http://slickdeals.net/forums/sdmisc.php"><h:outputText value="#{headerTabPanel.computerNetwork.mainMenu.label}"/></A></LI>
+	</UL>
 </DIV>
-<DIV class="nav-other">
-<DIV class="menu">
-<DIV class="charge menu-title"><A 
-href="http://pay.renren.com/">充值</A></DIV></DIV>
-<DIV class="menu">
-<DIV class="menu-title"><A 
-href="http://invite.renren.com/Invite.do">邀请</A></DIV></DIV>
-<DIV class="menu">
-<DIV class="menu-title" id="optionMenuActive"><A onMouseOver="" 
-href="http://renren.com/profile.do?id=739836807&amp;v=info&amp;act=edit">设置</A></DIV></DIV>
-<DIV class="menu last">
-<DIV class="menu-title"><A 
-href="http://www.renren.com/Logout.do?get_check=1714286847">退出</A></DIV></DIV>
-</DIV></DIV></DIV></DIV></DIV>
+</a4j:region>
+	
+
 </h:form>
 </f:subview>		
 </jsp:root>	
