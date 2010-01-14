@@ -1154,7 +1154,7 @@ div.reviews{margin:5px 0}
   font-size: 10pt;
   vertical-align:top;
   border-width: 0px 0px 0px 0px;
-  width:140;
+  width: 168px;
 }
 .template-content {
   font-size: 10pt;
@@ -1164,13 +1164,13 @@ div.reviews{margin:5px 0}
   margin-right-width:0px;
   margin-bottom-width:0px;
   margin-left-width:0px;
-  width:820px;
-  min-width:820px;
+  width: 791px;
+  min-width: 791px;
 }
 .template-right {
   font-size: 10pt;
   vertical-align:top;
-  width:1px;
+  width: 1px;
 }
 .product-template-content {
   font-size: 10pt;
@@ -1200,15 +1200,15 @@ div.reviews{margin:5px 0}
   top: 0px;
   left: 0px;
   height:26px;
-  padding:0px 0px 0px 0px;
+  padding:1px 1px 1px 1px;
   margin:0px 0px 0px 0px;
   font-size: 16px;
   font-weight:bold;
   color:#666699;
   line-height:28px;
   TEXT-INDENT: 6px;
-  background-image: url(../css/images/icons/siteactivemenubg.gif);
   background-position : top left;
+  background:#ecf5fc;
   border:0px #f3f3f3 solid;
 }
 .left-navigation-product-body {
@@ -1283,8 +1283,11 @@ div.reviews{margin:5px 0}
 	width: auto;height: auto;
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
-	border-width:0px;
-	border-color:#a1d04e;
+	BORDER-RIGHT: #cee1ee 1px solid; 
+	BORDER-TOP: #cee1ee 1px solid; 
+	BORDER-LEFT: #cee1ee 1px solid; 
+	BORDER-BOTTOM: #cee1ee 1px solid; 
+	BACKGROUND-COLOR: #f3faff;
 	}
 .operate_title{
 	padding:0px 0px 0px 0px;

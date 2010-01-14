@@ -7,9 +7,9 @@ xmlns:f="http://java.sun.com/jsf/core"
 xmlns:h="http://java.sun.com/jsf/html"
 xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
-<f:subview id="kitchenApplianceProductLeftView">
-	<h:form id="kitchenApplianceProductLeftViewForm">
-		<a4j:region id="kitchenApplianceProductLeftViewFormRegion" renderRegionOnly="false" selfRendered="true">
+<f:subview id="subHelpLeftView">
+	<h:form id="subHelpLeftViewForm">
+		<a4j:region id="subHelpLeftViewFormRegion" renderRegionOnly="false" selfRendered="true">
 		<rich:panel headerClass="main-left-product-header" styleClass="panel-bar-product-top" bodyClass="main-left-product-body">
 			<f:facet name="header"><h:outputLabel value="帮助中心"/></f:facet>
 			<h:panelGroup>
