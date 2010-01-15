@@ -234,3 +234,99 @@
 	BACKGROUND: url(../css/images/icons/slickdeals/searchbar_go_on.gif) no-repeat; CURSOR: pointer
 }
 
+/* this is for three */
+#header_bar {
+	MARGIN: auto auto 2px; WIDTH: 970px; HEIGHT: 30px
+}
+#header_bar_left {
+	BACKGROUND: url(../css/images/icons/headerbarleft.gif) no-repeat; FLOAT: left; WIDTH: 3px; HEIGHT: 30px
+}
+#header_bar_right {
+	BACKGROUND: url(../css/images/icons/headerbarright.gif) repeat-x right top; FLOAT: left; WIDTH: 967px; HEIGHT: 30px
+}
+#header_bar_right P {
+	DISPLAY: block; FLOAT: left
+}
+#header_bar_right SPAN {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 8px; FLOAT: left; PADDING-BOTTOM: 0px; PADDING-TOP: 4px
+}
+#header_bar_right SPAN.btn {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 8px; PADDING-BOTTOM: 0px; PADDING-TOP: 6px
+}
+#header_bar_right SPAN.txt {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 8px; PADDING-BOTTOM: 0px; LINE-HEIGHT: 30px; PADDING-TOP: 0px
+}
+#header_bar_right UL {
+	FLOAT: right
+}
+#header_bar_right UL LI {
+	PADDING-RIGHT: 10px; MARGIN-TOP: 7px; PADDING-LEFT: 20px; BACKGROUND: url(../images/ico_top.gif) no-repeat; PADDING-BOTTOM: 0px; LINE-HEIGHT: 16px; PADDING-TOP: 0px; HEIGHT: 15px;FLOAT: left;
+}
+#header_bar_right UL LI.fav {
+	BACKGROUND-POSITION: 0px -15px
+}
+#header_bar_right UL LI.msg {
+	BACKGROUND-POSITION: 0px -30px
+}
+#header_bar_right INPUT.txt {
+	BORDER-RIGHT: #7f9db9 1px solid; BORDER-TOP: #7f9db9 1px solid; BORDER-LEFT: #7f9db9 1px solid; WIDTH: 80px; LINE-HEIGHT: 16px; BORDER-BOTTOM: #7f9db9 1px solid; HEIGHT: 16px; BACKGROUND-COLOR: #fff
+}
+#top {
+	MARGIN: auto; WIDTH: 970px; POSITION: relative; HEIGHT: 80px
+}
+#toplogo {
+	FLOAT: left; WIDTH: 225px; PADDING-TOP: 6px
+}
+#topad {
+	FLOAT: right; MARGIN: 6px 0px 0px; OVERFLOW: hidden; HEIGHT: 60px
+}
+#topad UL LI {
+	PADDING-LEFT: 10px
+}
+
+#header_menu {
+	BACKGROUND: url(../css/images/icons/headermenubg.jpg) repeat-x; MARGIN: auto; WIDTH: 970px; HEIGHT: 60px
+}
+#header_menu #header_menu_left {
+	BACKGROUND: url(../css/images/icons/headermenuleft.jpg) no-repeat; FLOAT: left; WIDTH: 10px; HEIGHT: 60px
+}
+#header_menu #header_menu_middle {
+	FLOAT: left; WIDTH: 950px; POSITION: relative; HEIGHT: 60px
+}
+#header_menu #header_menu_right {
+	BACKGROUND: url(../css/images/icons/headermenuright.jpg) no-repeat; FLOAT: right; WIDTH: 10px; HEIGHT: 60px
+}
+#header_menu #header_menu_link {
+	FLOAT: left; HEIGHT: 34px
+}
+#header_menu #header_menu_words {
+	CLEAR: left; FLOAT: left; WIDTH: 100%; HEIGHT: 26px
+}
+#header_menu_link UL LI {
+	BACKGROUND: url(../css/images/icons/headermenuline.jpg) no-repeat right 5px; WIDTH: 100px; LINE-HEIGHT: 27px; POSITION: relative; TEXT-ALIGN: center;FLOAT: left;
+}
+#header_menu_link UL LI.select {
+	RIGHT: 10px; BACKGROUND: url(../css/images/icons/headermenuon.jpg) no-repeat; LEFT: 10px; MARGIN-LEFT: 0px; WIDTH: 100px; BOTTOM: 5px; LINE-HEIGHT: 31px; HEIGHT: 31px; TEXT-ALIGN: center
+}
+#header_menu UL LI A {
+	COLOR: #4778a5
+}
+#header_menu #header_menu_link UL LI A {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #fff
+}
+#header_menu #header_menu_link UL LI.select A {
+	FONT-SIZE: 14px; COLOR: #346989
+}
+#header_menu_words UL LI {
+	PADDING-LEFT: 8px; WIDTH: 570px
+}
+#header_menu_words UL LI.search {
+	PADDING-LEFT: 0px; FLOAT: right; WIDTH: 360px; BOTTOM: 5px; POSITION: relative; TEXT-ALIGN: right
+}
+#header_menu_words UL LI.search TABLE{
+	PADDING-LEFT: 0px; FLOAT: right; WIDTH: 300px; BOTTOM: 16px; POSITION: relative; TEXT-ALIGN: right;COLOR: #346989
+}
+#header_menu_new {
+	LEFT: 290px; POSITION: absolute; TOP: -12px
+}
+
