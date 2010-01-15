@@ -1814,3 +1814,16 @@ background-color:#ffffff;
 .rich-pmenu-item-selected{
 	color: #ffffff;
 	}
+/* this is for search head panelgrid*/
+.header-search-panel-grid-one{
+	width:20%;
+	TEXT-ALIGN: right;
+}
+.header-search-panel-grid-two{
+	width:50%;
+	TEXT-ALIGN: center;
+}
+.header-search-panel-grid-three{
+	width:30%;
+	TEXT-ALIGN: left;
+}
