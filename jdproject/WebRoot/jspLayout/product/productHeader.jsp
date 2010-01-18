@@ -11,73 +11,126 @@ xmlns:c="http://java.sun.com/jstl/core">
 <f:subview id="productHeaderMainView">
 <h:form id="productHeaderMainform"> 
 	<a4j:region id="productHeaderRegion" renderRegionOnly="false" selfRendered="true">
-		<div class="pnavEx">
-		<table border="0" cellpadding="0" cellspacing="0">
+		<div id="GlobalNavigation"><span class="ebay">
+		<div id="gnheader" class="gbhdr">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
 			<tbody>
 			<tr>
-			<td><form method="get" action="http://shop.ebay.com/" name="headerSearch" id="headerSearch">
-				<input name="_from" value="R40" type="hidden"></input>
-				<input name="_trksid" value="m38" type="hidden"></input>
-				<table id="gh_miniSrhBox" class="srchBox" border="0" cellpadding="0" cellspacing="0">
-					<tbody>
+				<td>
+				<div style="display: none;" id="playground"></div>
+				<div id="cobrandHeader"></div>
+				<div id="dynamicmenu-hdrCtr" class="hdrCtr">
+					<table class="logobar" border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tbody>
 						<tr>
-							<td class="fc"></td>
-							<td><input name="_nkw" size="15" maxlength="300" tabindex="1" id="_nkw" type="text"></input><input value="Search" tabindex="2" type="submit"></input></td>
-							<td class="lc"><a id="AdvSearchId" href="http://shop.ebay.com/ebayadvsearch/" rel="nofollow" tabindex="3">Advanced Search</a></td>
+						<td class="logoimg" width="1%" valign="bottom"><a href="http://www.ebay.com/" rel="nofollow"><img src="i_files/logoEbay_x45.gif" alt="From collectibles to cars, buy and sell all kinds of items on eBay" border="0" width="110" height="45"></img></a></td>
+						<td class="mr" width="2%" valign="bottom"><span class="greeting"><!-- BEGIN: GREETING:SIGNEDOUT -->Welcome! <a href="https://signin.ebay.com/ws/eBayISAPI.dll?SignIn" tabindex="-1" rel="nofollow" onclick="return vjo.darwin.core.greetings.VjGreetingsServer.handleClick('https://signin.ebay.com/ws/eBayISAPI.dll?SignIn',event);">Sign in</a> or <a href="https://scgi.ebay.com/ws/eBayISAPI.dll?RegisterEnterInfo" tabindex="-1" id="registerLink" rel="nofollow">register</a>.<!-- END: GREETING:SIGNEDOUT --><span id="bta"></span></span></td>
+						<td id="rbt" valign="bottom"><span class="coupon"></span></td>
+						<td align="right" valign="bottom"><div class="addllinks"><a href="http://pages.ebay.com/sitemap.html">Site Map</a></div></td>
 						</tr>
-					</tbody>
-				</table>
-				<input id="_naf" disabled="disabled" name="_naf" value="1" type="hidden"></input>
-				</form>
-			</td>
-			<td>
-				<table class="pnav" border="0" cellpadding="0" cellspacing="0">
-				<tbody>
-				<tr>
-					<td id="buyitem" class="fc"><a id="Buy" href="http://hub.shop.ebay.com/">Buy</a></td>
-					<td id="sellitem" class="nc"><a id="Sell" href="http://sell.ebay.com/sell">Sell</a></td>
-					<td id="myebayitem" class="nc"><a id="MyEbay" href="http://my.ebay.com/ws/eBayISAPI.dll?MyEbay&amp;gbh=1" rel="nofollow">My eBay</a></td>
-					<td id="communityitem" class="nc"><a id="Community" href="http://hub.ebay.com/community">Community</a></td>
-					<td id="helpitem" class="lc"><a id="Help" href="http://pages.ebay.com/help/index.html">Help</a></td>
-				</tr>
-				</tbody>
-				</table>
-			</td>
-			<td><div></div></td>
+						</tbody>
+					</table>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tbody>
+						<tr>
+						<td class="brnd1"></td>
+						</tr>
+						</tbody>
+					</table>
+					
+
+					<div class="snav">
+						<div class="snavE">
+							<div class="snavW" id="dynamicmenu-snavW">
+								<table border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tbody>
+										<tr>
+											<td class="snav" width="1%">
+												<table border="0" cellpadding="0" cellspacing="0">
+													<tbody>
+														<tr>
+															<td id="browsecategoriesitem" class="fc"><a class="" id="BrowseCategories" href="http://shop.ebay.com/allcategories/all-categories">首页</a></td>
+															<td id="ebaymotorsitem" class="nc"><a title="Buy and sell cars, trucks, vehicle parts, and accessories." href="http://www.motors.ebay.com/">Motors</a></td>
+															<td id="ebaystoresitem" class="nc"><a title="Find more of what you love." href="http://stores.ebay.com/">Stores</a></td>
+															<td id="ebaydealsitem" class="lc"><a title="Great items, deep discounts, and free shipping!" href="http://deals.ebay.com/deals">Daily Deal</a></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+											<td class="poweredBy" width="1%">
+												<div style="height: 0px; display: none;" id="rtm_html_876"></div>
+											</td>
+											<td class="poweredBy" width="100%">
+												<div style="height: 0px; display: none;" id="rtm_html_912"></div>
+											</td>
+                            				<td class="poweredBy" align="right" width="1%"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+		
+					<div class="pnavEx">
+						<table border="0" cellpadding="0" cellspacing="0">
+						<tbody>
+						<tr>
+						<td><form method="get" action="http://shop.ebay.com/" name="headerSearch" id="headerSearch">
+						<input name="_from" value="R40" type="hidden"></input><input name="_trksid" value="m38" type="hidden"></input>
+						<table id="gh_miniSrhBox" class="srchBox" border="0" cellpadding="0" cellspacing="0">
+						<tbody>
+						<tr>
+						<td class="fc"></td>
+						<td><input name="_nkw" size="15" maxlength="300" tabindex="1" id="_nkw" type="text"></input><input value="Search" tabindex="2" type="submit"></input></td>
+						<td class="lc"><a id="AdvSearchId" href="http://shop.ebay.com/ebayadvsearch/" rel="nofollow" tabindex="3">Advanced Search</a></td>
+						</tr>
+						</tbody>
+						</table>
+						<input id="_naf" disabled="disabled" name="_naf" value="1" type="hidden"></input></form>
+						</td>
+						<td>
+							<table class="pnav" border="0" cellpadding="0" cellspacing="0">
+							<tbody>
+							<tr>
+							<td id="buyitem" class="fc"><a class="" id="Buy" href="http://hub.shop.ebay.com/">Buy</a></td>
+							<td id="sellitem" class="nc"><a class="" id="Sell" href="http://sell.ebay.com/sell">Sell</a></td>
+							<td id="myebayitem" class="nc"><a class="" id="MyEbay" href="http://my.ebay.com/ws/eBayISAPI.dll?MyEbay&amp;gbh=1" rel="nofollow">My eBay</a></td>
+							<td id="communityitem" class="nc"><a id="Community" href="http://hub.ebay.com/community">Community</a></td>
+							<td id="helpitem" class="lc"><a id="Help" href="http://pages.ebay.com/help/index.html">Help</a></td>
+							</tr>
+							</tbody>
+							</table>
+						</td>
+						<td><div></div></td>
+						</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+			<div style="visibility: hidden; position: absolute;" id="Community-menu" class="dynmenu"></div>
+			<div style="visibility: hidden; position: absolute;" id="Help-menu" class="dynmenu"></div>
+			<div></div>
+			<div style="display: none;" id="dynMenuCtr">
+			<table border="0" cellpadding="0" cellspacing="0">
+			<tbody>
+			<tr>
+				<td class="dynmenubrdr">##1##</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="crnrlc"><div class="crnrnc"><div class="crnrfc"></div></div></div>
+				</td>
 			</tr>
 			</tbody>
-		</table>
-		</div>
-		<div class="header">
-		<div class="hdrnav">
-		</div>
-		<a onclick="omniTrackGTnSecFeat('Header', 'SP Logo');" href="http://www.superpages.com/" title="Yellow Pages"><img src="${facesContext.externalContext.requestContextPath}/css/images/logo.jpg" class="logo" alt="Yellow Pages"></img></a>
-		
-		<br clear="all"></br>
-		
-		<div class="city">
-		<div class="change_city"><h1 style="display: inline; font-size: 100%;">Yellow Pages </h1><a onclick="omniTrackHeaderLinks('Header', 'Change City');" href="javascript:toggleContent(1,%20'changecity');">Change City</a><img src="Yellow%20Pages%20%20Superpages%20Yellow%20Pages,%20Maps,%20Driving%20Directions,%20Weather_files/arrow.png"></img></div>
-		</div>
-		
-		<br clear="all"></br>
-		
-		<div class="tabs">
-		<ul>
-		<li class="selected"><a href="http://www.superpages.com/"><span>Businesses</span></a></li><li><script type="text/javascript">displayResLink();</script><a onclick="omniTrackHeaderTabs('People');" href="http://find.person.superpages.com/" rel="nofollow"><span>People</span></a></li><li><script type="text/javascript">displayMapLink();</script><a onclick="omniTrackHeaderTabs('Map');" href="http://yellowpages.superpages.com/mapbasedsearch/mapsearch.jsp?L=" rel="nofollow"><span>Maps</span></a></li><li><a onclick="omniTrackHeaderTabs('Cars');" href="http://cars.superpages.com/#sptab" rel="nofollow"><span>Cars</span></a></li>
-		</ul>
-		</div>
-		
-		<div class="form_bar">
-		<form action="http://yellowpages.superpages.com/listings.jsp" method="get" id="h_ypform" name="ypform" onsubmit="checkSTYPE(this); if (verifySimple(this)) {omniTrackHeaderSearch();} else {return false;}">
-		<input name="CS" value="L" class="hidden" type="hidden"></input><input name="MCBP" value="true" class="hidden" type="hidden"></input><input name="search" value="Find It" class="hidden" type="hidden"></input><input name="SRC" value="" class="hidden" type="hidden"></input><input name="STYPE" value="S" class="hidden" type="hidden"></input>
-		<span>What</span>
-		<input style="color: rgb(0, 0, 0);" id="what" class="sfield" name="C" size="20" onkeydown="HandleInputEvents('what');changeTxtColor('what',' ');" onfocus="changeTxtColor('where',' ');changeTxtColor('what',' ');" onclick="MM_setTextOfTextfield('what','','');changeTxtColor('what',' ');" type="text"></input>
-		<span>Where</span>
-		<input style="color: rgb(0, 0, 0);" id="where" class="sfield" name="L" size="20" onkeydown="HandleInputEvents('where');changeTxtColor('where',' ');" onclick="MM_setTextOfTextfield('where','','');changeTxtColor('where',' ');" type="text"></input>
-		<input src="Yellow%20Pages%20%20Superpages%20Yellow%20Pages,%20Maps,%20Driving%20Directions,%20Weather_files/search_btn.gif" alt="Search" class="button" type="image"></input>
-		</form>  
-		</div>
-		</div>
+			</table>
+			</div>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	</div>
+	</span>
+	</div>
 	</a4j:region>					
 </h:form>
 </f:subview>		
