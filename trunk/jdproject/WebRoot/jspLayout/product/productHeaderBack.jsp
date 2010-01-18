@@ -56,6 +56,11 @@ height="65" alt="国外网站大全" src="国外品牌.files/logo.gif" width="22
   <LI class="#{headerTabPanel.currentPrimaryCategory == '05'?'select':''}"><A class="on" href="http://www.qkankan.com/webpic/composite/"><h:outputText value="#{headerTabPanel.majorAppliance.mainMenu.label}"/></A> </LI>
   <LI class="#{headerTabPanel.currentPrimaryCategory == '06'?'select':''}"><A class="on" href="http://www.qkankan.com/zaixianfanyi.html"><h:outputText value="#{headerTabPanel.phoneDigital.mainMenu.label}"/></A> </LI>
   <LI class="#{headerTabPanel.currentPrimaryCategory == '07'?'select':''}"><A class="on" href="http://www.qkankan.com/zaixianfanyi.html"><h:outputText value="#{headerTabPanel.computerNetwork.mainMenu.label}"/></A> </LI>
+  <LI class="#{headerTabPanel.currentPrimaryCategory == '07'?'select':''}"><A class="on" href="http://www.qkankan.com/zaixianfanyi.html"><h:outputText value="#{headerTabPanel.computerNetwork.mainMenu.label}"/></A> </LI>
+  <LI class="#{headerTabPanel.currentPrimaryCategory == '07'?'select':''}"><A class="on" href="http://www.qkankan.com/zaixianfanyi.html"><h:outputText value="#{headerTabPanel.computerNetwork.mainMenu.label}"/></A> </LI>
+  <LI class="#{headerTabPanel.currentPrimaryCategory == '07'?'select':''}"><A class="on" href="http://www.qkankan.com/zaixianfanyi.html"><h:outputText value="#{headerTabPanel.computerNetwork.mainMenu.label}"/></A> </LI>
+  <LI class="#{headerTabPanel.currentPrimaryCategory == '07'?'select':''}"><A class="on" href="http://www.qkankan.com/zaixianfanyi.html"><h:outputText value="#{headerTabPanel.computerNetwork.mainMenu.label}"/></A> </LI>
+  <LI class="#{headerTabPanel.currentPrimaryCategory == '07'?'select':''}"><A class="on" href="http://www.qkankan.com/zaixianfanyi.html"><h:outputText value="#{headerTabPanel.computerNetwork.mainMenu.label}"/></A> </LI>
  </UL>
 </DIV>
 <DIV id="header_menu_new"></DIV>
