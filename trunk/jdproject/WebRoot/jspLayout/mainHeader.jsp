@@ -8,7 +8,7 @@ xmlns:h="http://java.sun.com/jsf/html"
 xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
 <f:subview id="mainHeaderSubView">
-	<ui:include src="./product/productHeader.jsp" />
+	<ui:include src="./product/productHeaderBack1.jsp" />
 </f:subview>
 
 </jsp:root>
