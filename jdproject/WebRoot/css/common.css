@@ -1303,11 +1303,11 @@ div.reviews{margin:5px 0}
 		width:100%;
 	}
 .main_header_login_navigation{
+	top:0;
+	left:0;
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
-	height:8px;
 	border:0px #e3e3e3 solid;
-	background:url(../css/images/icons/headerlogin_bg.jpg) left 0px repeat;
 	width:100%;
 	}
 .main_header_login_navigation_others{
