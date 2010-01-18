@@ -18,7 +18,7 @@ xmlns:rich="http://richfaces.org/rich">
 <tbody>
 <tr>
 <td align="center" width="100%">
-<h:panelGrid columns="1" style="width:100%;min-width:970px; border:0 ;BORDER-RIGHT: 10px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top;ALIGN:CENTER; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px;">
+<h:panelGrid columns="1" style="width:970;min-width:970px; border:0 ;BORDER-RIGHT: 10px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top;ALIGN:CENTER; BORDER-LEFT: 0px ; PADDING-TOP: 0px; BORDER-BOTTOM: 0px;">
 	<ui:insert name="manageHeaderMainMiddle">
 		<f:subview id="manageHeaderMainView2">
 			<ui:include src="../mainHeader.jsp" />
