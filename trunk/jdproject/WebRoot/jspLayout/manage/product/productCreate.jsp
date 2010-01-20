@@ -124,7 +124,11 @@ xmlns:rich="http://richfaces.org/rich">
 						<h:outputLabel value="零售价:" for="retailPrice"></h:outputLabel>
 						<h:inputText value="#{productCreate.product.retailPrice}" id="retailPrice" onchange="if(!(/^[0-9]+(.[0-9]{1,2})?$/.test(this.value))){alert('只能输入1-2位正实数');this.value='0.0';}">
                     	</h:inputText>
-                		<rich:message for="retailPrice" showSummary="false"/>
+                		<rich:message for="purchasePrice" showSummary="false"/>
+                		<h:outputLabel value="积分:" for="integration"></h:outputLabel>
+						<h:inputText value="#{productCreate.product.integration}" id="integration" onchange="if(!(/^[0-9]+(.[0-9]{1,2})?$/.test(this.value))){alert('只能输入1-2位正实数');this.value='0.0';}">
+                    	</h:inputText>
+                		<rich:message for="integration" showSummary="false"/>
 						<h:outputLabel value="经销商价:" for="tradePriceOne"></h:outputLabel>
 						<h:inputText value="#{productCreate.product.tradePriceOne}" id="tradePriceOne" onchange="if(!(/^[0-9]+(.[0-9]{1,2})?$/.test(this.value))){alert('只能输入1-2位正实数');this.value='0.0';}">
                     	</h:inputText>
