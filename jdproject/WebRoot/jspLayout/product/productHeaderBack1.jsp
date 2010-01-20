@@ -10,69 +10,8 @@ xmlns:rich="http://richfaces.org/rich">
 <f:subview id="headerBackView">
 <h:form id="headerMainform">
 			<a4j:region id="kitchenApplianceProductLeftViewFormRegion" renderRegionOnly="false" selfRendered="true">
-				
-				<rich:toolBar height="34" id="mainheaderpronavbar">
-		            <rich:toolBarGroup id="#{headerTabPanel.kitchenAppliance.mainMenu.name}">
-		            	<h:commandLink id="kitchenAppliancebtn" action="#{headerTabPanel.gotoProduct}" immediate="true">
-		              		<h:outputLabel value="#{headerTabPanel.kitchenAppliance.mainMenu.label}" for="kitchenAppliancebtn" />
-		              		<f:param name="idFirst" value="#{headerTabPanel.kitchenAppliance.mainMenu.idFirst}"></f:param>
-							<f:param name="idSecond" value="#{headerTabPanel.kitchenAppliance.mainMenu.idSecond}"></f:param>
-							<f:param name="productType" value="#{headerTabPanel.kitchenAppliance.mainMenu.name}"></f:param>
-		              	</h:commandLink>
-		            </rich:toolBarGroup>
-		            <rich:toolBarGroup id="#{headerTabPanel.householdAppliance.mainMenu.name}">
-		            	<h:commandLink id="householdAppliancebtn" action="#{headerTabPanel.gotoProduct}" immediate="true">
-		              		<h:outputLabel value="#{headerTabPanel.householdAppliance.mainMenu.label}" for="householdAppliancebtn" />
-		              		<f:param name="idFirst" value="#{headerTabPanel.householdAppliance.mainMenu.idFirst}"></f:param>
-							<f:param name="idSecond" value="#{headerTabPanel.householdAppliance.mainMenu.idSecond}"></f:param>
-							<f:param name="productType" value="#{headerTabPanel.householdAppliance.mainMenu.name}"></f:param>
-		              	</h:commandLink>
-		            </rich:toolBarGroup>
-		            <rich:toolBarGroup id="#{headerTabPanel.personalCare.mainMenu.name}">
-		            	<h:commandLink id="personalCarebtn" action="#{headerTabPanel.gotoProduct}" immediate="true">
-		              		<h:outputLabel value="#{headerTabPanel.personalCare.mainMenu.label}" for="personalCarebtn" />
-		              		<f:param name="idFirst" value="#{headerTabPanel.personalCare.mainMenu.idFirst}"></f:param>
-							<f:param name="idSecond" value="#{headerTabPanel.personalCare.mainMenu.idSecond}"></f:param>
-							<f:param name="productType" value="#{headerTabPanel.personalCare.mainMenu.name}"></f:param>
-		              	</h:commandLink>
-		            </rich:toolBarGroup>
-		            <rich:toolBarGroup id="#{headerTabPanel.healthDevice.mainMenu.name}">
-		            	<h:commandLink id="healthDevicebtn" action="#{headerTabPanel.gotoProduct}" immediate="true">
-		              		<h:outputLabel value="#{headerTabPanel.healthDevice.mainMenu.label}" for="healthDevicebtn" />
-		              		<f:param name="idFirst" value="#{headerTabPanel.healthDevice.mainMenu.idFirst}"></f:param>
-							<f:param name="idSecond" value="#{headerTabPanel.healthDevice.mainMenu.idSecond}"></f:param>
-							<f:param name="productType" value="#{headerTabPanel.healthDevice.mainMenu.name}"></f:param>
-		              	</h:commandLink>
-		            </rich:toolBarGroup>
-		            <rich:toolBarGroup id="#{headerTabPanel.majorAppliance.mainMenu.name}">
-		            	<h:commandLink id="majorAppliancebtn" action="#{headerTabPanel.gotoProduct}" immediate="true">
-		              		<h:outputLabel value="#{headerTabPanel.majorAppliance.mainMenu.label}" for="majorAppliancebtn" />
-		              		<f:param name="idFirst" value="#{headerTabPanel.majorAppliance.mainMenu.idFirst}"></f:param>
-							<f:param name="idSecond" value="#{headerTabPanel.majorAppliance.mainMenu.idSecond}"></f:param>
-							<f:param name="productType" value="#{headerTabPanel.majorAppliance.mainMenu.name}"></f:param>
-		              	</h:commandLink>
-		            </rich:toolBarGroup>
-		            <rich:toolBarGroup id="#{headerTabPanel.phoneDigital.mainMenu.name}">
-		            	<h:commandLink id="phoneDigitalbtn" action="#{headerTabPanel.gotoProduct}" immediate="true">
-		              		<h:outputLabel value="#{headerTabPanel.phoneDigital.mainMenu.label}" for="phoneDigitalbtn" />
-		              		<f:param name="idFirst" value="#{headerTabPanel.phoneDigital.mainMenu.idFirst}"></f:param>
-							<f:param name="idSecond" value="#{headerTabPanel.phoneDigital.mainMenu.idSecond}"></f:param>
-							<f:param name="productType" value="#{headerTabPanel.phoneDigital.mainMenu.name}"></f:param>
-		              	</h:commandLink>
-		            </rich:toolBarGroup>
-		            <rich:toolBarGroup id="#{headerTabPanel.computerNetwork.mainMenu.name}" styleClass="rich-toolbar-select">
-		            	<h:commandLink id="computerNetworktn" action="#{headerTabPanel.gotoProduct}" immediate="true">
-		              		<h:outputLabel value="#{headerTabPanel.computerNetwork.mainMenu.label}" for="computerNetworktn" />
-		              		<f:param name="idFirst" value="#{headerTabPanel.computerNetwork.mainMenu.idFirst}"></f:param>
-							<f:param name="idSecond" value="#{headerTabPanel.computerNetwork.mainMenu.idSecond}"></f:param>
-							<f:param name="productType" value="#{headerTabPanel.computerNetwork.mainMenu.name}"></f:param>
-		              	</h:commandLink>
-		            </rich:toolBarGroup>
-		        </rich:toolBar>
-				
 				<rich:tabPanel valueChangeListener="#{headerTabPanel.valueChanged}"  headerSpacing="0" immediate="false" headerClass="rich-tabpanel-header" activeTabClass="rich-tab-active" inactiveTabClass="rich-tab-inactive" tabClass="richTabClass" contentClass="main-header-tabpanel-content-class" width="100%" switchType="ajax" selectedTab="#{headerTabPanel.currentTab}" id="tab_panel" headerAlignment="left" height="50px;">
 					<f:valueChangeListener type="com.ejd.web.vo.richfaces.header.HeaderTabChangeListener"/>
-					
 					<rich:tab onclick="alert('\\'Canon\\' tab clicked');" disabled="#{headerTabPanel.disabledTabName == 'kitchenAppliance'}" name="#{headerTabPanel.kitchenAppliance.mainMenu.name}" label="#{headerTabPanel.kitchenAppliance.mainMenu.label}" reRender="s1,s2" labelWidth="72px" styleClass="rich-tab-style">
 						<rich:panel id="kitchenApplianceHeaderRegionPanel" style="width:100%;" styleClass="rich-tabpanel-panel-grid" bodyClass="rich-tabpanel-content-text">
 								<a4j:repeat id="kitchenApplianceRep" value="#{headerTabPanel.kitchenAppliance.subMenu}" var="kitchenApplianceSubMenu">
@@ -176,7 +115,6 @@ xmlns:rich="http://richfaces.org/rich">
 									<f:param name="productType" value="#{computerNetworkSubMenu.name}"></f:param>
 								
 							</h:commandLink>
-								
 						</a4j:repeat>
 						</rich:panel>	
 					</rich:tab>
