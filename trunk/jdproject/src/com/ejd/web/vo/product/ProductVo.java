@@ -37,6 +37,7 @@ public class ProductVo {
 	private Double tradePriceOne;
 	private Double tradePriceTwo;
 	private Double retailPrice;
+	private Double integration;
 	private String introduceFileName;
 	private Double field1;
     private Double field2;
@@ -184,6 +185,12 @@ public class ProductVo {
 	}
 	public void setRetailPrice(Double retailPrice) {
 		this.retailPrice = retailPrice;
+	}
+	public Double getIntegration() {
+		return integration;
+	}
+	public void setIntegration(Double integration) {
+		this.integration = integration;
 	}
 	public String getIntroduceFileName() {
 		return introduceFileName;

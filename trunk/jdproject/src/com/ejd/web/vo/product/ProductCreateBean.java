@@ -179,6 +179,7 @@ public class ProductCreateBean extends ProductBaseBean {
 		newProduct.setTradePriceOne(this.getProduct().getTradePriceOne());
 		newProduct.setTradePriceTwo(this.getProduct().getTradePriceTwo());
 		newProduct.setRetailPrice(this.getProduct().getRetailPrice());
+		newProduct.setIntegration(this.getProduct().getIntegration());
 		newProduct.setIntroduceFileName(this.getProduct().getIntroduceFileName());
 		//start copy fields value to new product
 		newProduct.setField1(this.getProduct().getField1());
