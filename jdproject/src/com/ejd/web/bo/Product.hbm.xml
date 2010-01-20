@@ -68,6 +68,9 @@
         <property name="retailPrice" type="java.lang.Double">
             <column name="RETAILPRICE" length="50" />
         </property>
+        <property name="integration" type="java.lang.Double">
+            <column name="INTEGRATION" precision="10" />
+        </property>
         <property name="introduceFileName" type="java.lang.String">
             <column name="INTRODUCEFILENAME" length="50" />
         </property>

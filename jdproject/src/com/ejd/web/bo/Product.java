@@ -25,10 +25,10 @@ public class Product extends AbstractProduct implements java.io.Serializable {
 			Stakeholder provider, String primaryCategoryCode,
 			String secondCategoryCode, String brandCode, String status,
 			Double purchaseprice, Double tradePriceOne, Double tradePriceTwo,
-			Double retailPrice, String introduceFileName) {
+			Double retailPrice,Double integration, String introduceFileName) {
 		super(code, manufacturerCode, barcode, spec, unit, stockLowerNumber, stockUpperNumber, currentNumber, imageName,name, provider, primaryCategoryCode,
 				secondCategoryCode, brandCode, status, purchaseprice,
-				tradePriceOne, tradePriceTwo, retailPrice, introduceFileName);
+				tradePriceOne, tradePriceTwo, retailPrice,integration, introduceFileName);
 	}
 
 }

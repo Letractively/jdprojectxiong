@@ -111,6 +111,7 @@ CREATE TABLE  `ejd`.`product` (
   `TRADEPRICEONE` double(10,2) default 0,
   `TRADEPRICETWO` double(10,2) default 0,
   `RETAILPRICE` double(10,2) default 0,
+  `INTEGRATION` double(10,2) default 0,
   `INTRODUCEFILENAME` varchar(50) default NULL,
   `FIELD1` double(10,2),
   `FIELD2` double(10,2),

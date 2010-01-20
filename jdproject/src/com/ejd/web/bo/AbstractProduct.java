@@ -37,6 +37,7 @@ public abstract class AbstractProduct extends java.lang.Object implements
 	private Double tradePriceOne;
 	private Double tradePriceTwo;
 	private Double retailPrice;
+	private Double integration;
 	private String introduceFileName;
     private Double field1;
     private Double field2;
@@ -71,7 +72,7 @@ public abstract class AbstractProduct extends java.lang.Object implements
 			Stakeholder provider, String primaryCategoryCode,
 			String secondCategoryCode, String brandCode, String status,
 			Double purchasePrice, Double tradePriceOne, Double tradePriceTwo,
-			Double retailPrice, String introduceFileName) {
+			Double retailPrice, Double integration, String introduceFileName) {
 		this.code = code;
 		this.manufacturerCode = manufacturerCode;
 		this.barcode = barcode;
@@ -91,6 +92,7 @@ public abstract class AbstractProduct extends java.lang.Object implements
 		this.tradePriceOne = tradePriceOne;
 		this.tradePriceTwo = tradePriceTwo;
 		this.retailPrice = retailPrice;
+		this.integration = integration;
 		this.introduceFileName = introduceFileName;
 	}
 
@@ -262,6 +264,14 @@ public abstract class AbstractProduct extends java.lang.Object implements
 
 	public void setRetailPrice(Double retailPrice) {
 		this.retailPrice = retailPrice;
+	}
+
+	public Double getIntegration() {
+		return integration;
+	}
+
+	public void setIntegration(Double integration) {
+		this.integration = integration;
 	}
 
 	public String getIntroduceFileName() {
