@@ -30,11 +30,10 @@ xmlns:c="http://java.sun.com/jstl/core">
 						</tr>
 						</tbody>
 					</table>
-					<table border="0" cellpadding="0" cellspacing="0" width="100%">
-						<tbody>
-						<tr>
-						<td class="brnd1">
-      						<rich:dropDownMenu value="所有分类 " submitMode="server" direction="bottom-right"  jointPoint="td" event="onclick" showDelay="10">
+					<div class="header-navigation-panel">
+					<h:panelGrid columns="5" cellpadding="0" cellspacing="0" styleClass="header-navigation-panel-grid" columnClasses="header-navigation-panel-grid-column-one,header-navigation-panel-grid-column-two,header-navigation-panel-grid-column-three,header-navigation-panel-grid-column-four,header-navigation-panel-grid-column-five">
+					<h:panelGroup></h:panelGroup>
+					<rich:dropDownMenu value="所有分类 " submitMode="server" direction="bottom-right"  jointPoint="td" event="onmouseover" showDelay="10" labelClass="rich-ddmenu-label-style">
                 			<rich:menuGroup value="#{headerTabPanel.kitchenAppliance.mainMenu.label}" direction="bottom-right">
                     			
                     			<c:forEach items="#{headerTabPanel.kitchenAppliance.subMenu}" var="subMenu">
@@ -113,34 +112,17 @@ xmlns:c="http://java.sun.com/jstl/core">
 								</c:forEach>
                 			</rich:menuGroup>
                 		</rich:dropDownMenu>
-						</td>
-						<td class="brnd1">
-							<div class="search_bar fl">
-							<ul id="search_con" class="use_nav_bg"><b></b>
-								<li>产品编号:</li>
-								<li>
-								   
-									<h:inputText value="Enter search keywords here" id="keywordProductId" style="width: 302px;" onfocus="if (this.value == 'Enter search keywords here') this.value = '';" onblur="if (this.value == '') this.value = '请输入产品ID';"></h:inputText>
-								</li>
-								<li><a href="javascript:void(0);" class="btn_search" onclick="if($('#keyword')[0].value=='Enter search keywords here'){alert('Please submit the keyword!');}else{$('#quick_find_header')[0].submit();}return false;"></a>	</li>
-							</ul>
-							<ul id="shoping_con">
-								<li>
-									<a target="_top" href="http://www.lightinthebox.com/index.php?main_page=shopping_cart" rel="nofollow" title="shopping cart">
-										<span>
-											<img src="${facesContext.externalContext.requestContextPath}/css/images/icons/icon_car.gif" class="fl" border="0"></img>
-											购物车</span>
-									</a>
-								</li>
-							</ul>
-							
-							</div>
-						</td>
-						</tr>
-						</tbody>
-					</table>
-					
-
+						<h:panelGroup id="twothree">
+							<h:outputLabel value="ID:"></h:outputLabel>
+							<h:inputText styleClass="search-input" value=""></h:inputText>
+							<h:commandButton styleClass="search-submit" value="搜索"></h:commandButton>
+						</h:panelGroup>
+					    <h:panelGroup id="pgshoppingcart">
+					    	<h:commandLink><h:outputLabel value="购物车中有"/><h:outputLabel value="#{shopCart.cart.inventoryQuantityTotal}"></h:outputLabel><h:outputLabel value="件商品,合计金额:"/><h:outputLabel value="#{shopCart.cart.inventoryPriceTotal}"></h:outputLabel></h:commandLink><h:outputLink value=""><h:outputLabel value="去结算>"/></h:outputLink>
+					    </h:panelGroup>
+					    <h:panelGroup></h:panelGroup>
+						</h:panelGrid>
+					</div>
 					<div class="snav">
 						<div class="snavE">
 							<div class="snavW" id="dynamicmenu-snavW">
@@ -148,16 +130,14 @@ xmlns:c="http://java.sun.com/jstl/core">
 									<tbody>
 										<tr>
 											<td class="snav" width="1%">
-												<table border="0" cellpadding="0" cellspacing="0">
-													<tbody>
-														<tr>
-															<td id="browsecategoriesitem" class="fc"><a class="" id="BrowseCategories" href="http://shop.ebay.com/allcategories/all-categories">首页</a></td>
-															<td id="ebaymotorsitem" class="nc"><a title="Buy and sell cars, trucks, vehicle parts, and accessories." href="http://www.motors.ebay.com/">Motors</a></td>
-															<td id="ebaystoresitem" class="nc"><a title="Find more of what you love." href="http://stores.ebay.com/">Stores</a></td>
-															<td id="ebaydealsitem" class="lc"><a title="Great items, deep discounts, and free shipping!" href="http://deals.ebay.com/deals">Daily Deal</a></td>
-														</tr>
-													</tbody>
-												</table>
+												<h:panelGrid columns="100" border="0" cellpadding="0" cellspacing="0" styleClass="" columnClasses="fc,nc">
+													<h:outputLink><h:outputText value="首页"/></h:outputLink>
+													<h:outputLink><h:outputText value="首页"/></h:outputLink>
+													<h:outputLink><h:outputText value="首页"/></h:outputLink>
+													<h:outputLink><h:outputText value="首页"/></h:outputLink>
+													<h:outputLink><h:outputText value="首页"/></h:outputLink>
+													<h:outputLink><h:outputText value="首页"/></h:outputLink>	
+												</h:panelGrid>
 											</td>
 											<td class="poweredBy" width="1%">
 												<div style="height: 0px; display: none;" id="rtm_html_876"></div>
@@ -198,7 +178,7 @@ xmlns:c="http://java.sun.com/jstl/core">
 							<td id="sellitem" class="nc"><a class="" id="Sell" href="http://sell.ebay.com/sell">Sell</a></td>
 							<td id="myebayitem" class="nc"><a class="" id="MyEbay" href="http://my.ebay.com/ws/eBayISAPI.dll?MyEbay&amp;gbh=1" rel="nofollow">My eBay</a></td>
 							<td id="communityitem" class="nc"><a id="Community" href="http://hub.ebay.com/community">Community</a></td>
-							<td id="helpitem" class="lc"><a id="Help" href="http://pages.ebay.com/help/index.html">Help</a></td>
+							<td id="helpitem" class="lc"><a id="Help" href="${facesContext.externalContext.requestContextPath}/jspLayout/help/mainHelp.jsf">帮助中心</a></td>
 							</tr>
 							</tbody>
 							</table>
@@ -216,7 +196,7 @@ xmlns:c="http://java.sun.com/jstl/core">
 			<table border="0" cellpadding="0" cellspacing="0">
 			<tbody>
 			<tr>
-				<td class="dynmenubrdr">##1##</td>
+				<td class="dynmenubrdr">aaaaaa</td>
 			</tr>
 			<tr>
 				<td>
