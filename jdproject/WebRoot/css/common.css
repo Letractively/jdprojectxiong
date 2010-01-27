@@ -1751,7 +1751,7 @@ background-color:#ffffff;
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
 	background: url(../css/images/icons/leftright.gif) 0px 0px no-repeat;
-	width: 30px;
+	width: 1px;
 	height: 34px;
 	border-top-style:  none;  
     border-right-style:  none;  
@@ -1771,7 +1771,7 @@ background-color:#ffffff;
 .header-navigation-panel-grid-column-three{
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
-	width:41%;
+	width:43%;
 	background: url(../css/images/icons/main_bg.gif) 0px 0px repeat-x;
 	}
 .header-navigation-panel-grid-column-four{
