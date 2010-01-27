@@ -854,7 +854,7 @@ LI {
 	WIDTH: 183px
 }
 .menu UL LI {
-	BORDER-TOP: #a6a6a6 1px solid; DISPLAY: block; FONT-WEIGHT: bold; BACKGROUND: url(images/bg/menu_arrow_bg.gif?30423) #f5f5f5 no-repeat -1px -121px; FLOAT: left; WIDTH: 180px; LINE-HEIGHT: 24px; HEIGHT: 24px
+	BORDER-TOP: #a6a6a6 1px solid; DISPLAY: block; FONT-WEIGHT: bold; BACKGROUND: url(../css/images/icons/menu_arrow_bg.gif) #f5f5f5 no-repeat -1px -121px; FLOAT: left; WIDTH: 180px; LINE-HEIGHT: 24px; HEIGHT: 24px
 }
 .menu UL UL LI {
 	BORDER-TOP-WIDTH: 0px; BORDER-RIGHT: #a6a6a6 2px solid; PADDING-RIGHT: 0px; BACKGROUND-POSITION: 0px -52px; DISPLAY: block; PADDING-LEFT: 20px; FONT-WEIGHT: normal; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 2px; WIDTH: 161px; LINE-HEIGHT: 140%; PADDING-TOP: 2px; HEIGHT: auto; BACKGROUND-COLOR: #fff
@@ -884,26 +884,26 @@ UNKNOWN {
 	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 1em; Z-INDEX: 1; PADDING-BOTTOM: 0px; MARGIN: -1px; WIDTH: 0px; PADDING-TOP: 0px; BORDER-COLLAPSE: collapse; HEIGHT: 0px
 }
  HTML .menu A:hover {
-	Z-INDEX: 100; BACKGROUND: url(images/bg/menu_arrow_bg.gif?30423) #fff no-repeat -1px -150px; COLOR: #000; POSITION: relative; TEXT-DECORATION: none
+	Z-INDEX: 100; BACKGROUND: url(../css/images/icons/menu_arrow_bg.gif) #fff no-repeat -1px -150px; COLOR: #000; POSITION: relative; TEXT-DECORATION: none
 }
 .menu LI:hover {
 	POSITION: relative
 }
 UNKNOWN {
-	BACKGROUND: url(images/bg/menu_arrow_bg.gif?30423) #fff no-repeat -1px -150px; COLOR: #000
+	BACKGROUND: url(../css/images/icons/menu_arrow_bg.gif) #fff no-repeat -1px -150px; COLOR: #000
 }
 .menu UL UL {
-	BACKGROUND: url(images/bg/menu_arrow_bg.gif?30423) no-repeat 0px 100%; LEFT: 156px; PADDING-BOTTOM: 4px; WIDTH: 183px; POSITION: absolute; TOP: -10000000px; HEIGHT: auto
+	BACKGROUND: url(../css/images/icons/menu_arrow_bg.gif) no-repeat 0px 100%; LEFT: 156px; PADDING-BOTTOM: 4px; WIDTH: 183px; POSITION: absolute; TOP: -10000000px; HEIGHT: auto
 }
 .menu UL :hover UL {
 	TOP: -1px
 }
 
 #menu_index_top LI A:link {
-	MARGIN-TOP: 6px; DISPLAY: block; FONT-WEIGHT: bold; FONT-SIZE: 15px; BACKGROUND: url(images/bg/bg_Sprites.gif?30423) #fff no-repeat -900px -200px; WIDTH: 184px; COLOR: #fff; LINE-HEIGHT: 37px; HEIGHT: 37px
+	MARGIN-TOP: 2px; DISPLAY: block; FONT-WEIGHT: bold; FONT-SIZE: 15px; BACKGROUND: url(../css/images/icons/bg_Sprites.gif) #fff no-repeat -900px -200px; WIDTH: 184px; COLOR: #fff; LINE-HEIGHT: 28px; HEIGHT: 28px
 }
 #menu_index_top LI A:visited {
-	MARGIN-TOP: 6px; DISPLAY: block; FONT-WEIGHT: bold; FONT-SIZE: 15px; BACKGROUND: url(images/bg/bg_Sprites.gif?30423) #fff no-repeat -900px -200px; WIDTH: 184px; COLOR: #fff; LINE-HEIGHT: 37px; HEIGHT: 37px
+	MARGIN-TOP: 2px; DISPLAY: block; FONT-WEIGHT: bold; FONT-SIZE: 15px; BACKGROUND: url(../css/images/icons/bg_Sprites.gif) #fff no-repeat -900px -200px; WIDTH: 184px; COLOR: #fff; LINE-HEIGHT: 28px; HEIGHT: 28px
 }
 #menu_index_top LI A:hover {
 	BACKGROUND-POSITION: -900px -250px
