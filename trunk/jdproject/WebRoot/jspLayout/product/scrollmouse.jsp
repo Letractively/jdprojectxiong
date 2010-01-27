@@ -12,9 +12,9 @@ xmlns:rich="http://richfaces.org/rich">
 <link rel="stylesheet" type="text/css" href="${facesContext.externalContext.requestContextPath}/css/css.css" />
 
 <DIV id="menu_btn" 
-style="Z-INDEX: 200; FLOAT: left; POSITION: relative; HEIGHT: 70px"><SPAN 
+style="Z-INDEX: 200; FLOAT: left; POSITION: relative; HEIGHT: 32px"><SPAN 
 id="litbBtn"
-style="DISPLAY: block; Z-INDEX: 11; BACKGROUND: url(http://image.lightinthebox.com/includes/templates/dev_v2/images/english/button/menu_arrow.gif) no-repeat; LEFT: 160px; OVERFLOW: hidden; WIDTH: 16px; CURSOR: pointer; POSITION: absolute; TOP: 18px; HEIGHT: 17px"></SPAN>
+style="DISPLAY: block; Z-INDEX: 11; BACKGROUND: url(${facesContext.externalContext.requestContextPath}/css/images/icons/i_down2.gif) no-repeat; LEFT: 160px; OVERFLOW: hidden; WIDTH: 16px; CURSOR: pointer; POSITION: absolute; TOP: 18px; HEIGHT: 17px"></SPAN>
 <DIV class="absolute" id="litbCon1">
 <UL id="menu_index_top">
   <LI><A title="See All Categories" 
@@ -76,8 +76,8 @@ style="DISPLAY: block; Z-INDEX: 11; BACKGROUND: url(http://image.lightinthebox.c
 			$("#litbCon2").show();$("#litbBtn").css({backgroundPosition:"0 -16px"});
 		}
 	}
-	 $("#litbBtn").bind("mouseover", function(){alert("bind");closeMenu=false;controlMenu();}); 
-	 $("#litbCon2").hover(function(){alert("hover");closeMenu=false;setTimeout(controlMenu, 2000)}, function(){closeMenu=true;setTimeout(controlMenu, 2000);});
+	 $("#litbBtn").bind("mouseover", function(){closeMenu=false;controlMenu();}); 
+	 $("#litbCon2").hover(function(){closeMenu=false;setTimeout(controlMenu, 1000)}, function(){closeMenu=true;setTimeout(controlMenu, 1000);});
 	</SCRIPT>
 
 <DIV></DIV>
