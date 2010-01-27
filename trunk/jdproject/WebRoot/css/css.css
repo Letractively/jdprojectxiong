@@ -810,31 +810,104 @@ a.white:hover{
 	text-decoration: underline;
 }
 /*position*/
-.relative {position:relative; z-index:1;}
-.absolute {position:absolute;}
-#menu_index_top li a:link,#menu_index_top li a:visited{background:#fff url(../css/images/icons/bg_Sprites.gif) -900px -200px no-repeat;color:#fff;font-size:15px;width:184px;height:37px;display:block;color:#fff;margin-top:6px;font-weight:bold;line-height:37px;}/*#8E0314 */
-#menu_index_top li a:hover {background-position: -900px -250px;}
-/*define menu*/
-.menu {font-size:12px;width:182px;padding-left:2px;background:#8E0314;padding-bottom:4px;float:left; z-index:500; position:relative;}
-.menu ul {background:transparent; float:left;}
-.menu ul ul {width:183px;}
-.menu ul li {float:left;display:block;width:180px;height:24px;line-height:24px;border-top:1px solid #A6A6A6;font-weight:bold;background:#F5F5F5 url(../css/images/icons/menu_arrow_bg.gif) no-repeat -1px -121px;}
-.menu ul ul li {display:block;width:161px;height:auto; line-height:140%;border:0;font-weight:normal;padding:2px 0 2px 20px; border-right:2px solid #a6a6a6;background-position:0 -52px;background-color:#fff;}
-.menu ul ul .b_top {background-position:0 0;border-top:1px solid #A6A6A6;border-right:2px solid #A6A6A6;padding-top:10px;}
-.menu a, .menu a:visited {display:block;float:left;height:100%; width:180px; font-size:1em;text-decoration:none;color:#000; padding:0;text-indent:1em;}
-.menu ul ul li a, .menu ul ul li a:visited {display:inline;color:#000;background:none;text-indent:0;width:auto;}
-.menu ul ul li a:hover {color:#8D0011;background:none;text-decoration:underline;}
-.menu ul ul :hover > a {color:#8D0011;background:none;text-decoration:underline;}
-.menu table {border-collapse:collapse; padding:0; margin:-1px; width:0; height:0; font-size:1em; z-index:1;}
-* html .menu a:hover {color:#000;position:relative; z-index:100; text-decoration:none;background:#fff url(../css/images/icons/menu_arrow_bg.gif) no-repeat -1px -150px;}
-.menu li:hover {position:relative;}
-.menu :hover > a {color:#000;background:#fff url(images/bg/menu_arrow_bg.gif?30423) no-repeat -1px -150px;}
-.menu ul ul {position:absolute;height:0;top:-10000000px;left:156px; width:183px;padding-bottom:4px;height:auto;background:url(../css/images/icons/menu_arrow_bg.gif) no-repeat 0 100%;}
-.menu ul :hover ul {top:-1px;}
+.none {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.h0 {
+	HEIGHT: 0px
+}
+.relative {
+	Z-INDEX: 1; POSITION: relative
+}
+.absolute {
+	POSITION: absolute
+}
+.hide {
+	DISPLAY: none
+}
+.show {
+	CLEAR: both; DISPLAY: block
+}
+.block {
+	DISPLAY: block
+}
+.clear {
+	CLEAR: both
+}
+UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
 /*define for ie6.6 to menu */
 .select-free {z-index: 10;position: absolute;}
 .select-free iframe {display: block; z-index: -1; filter: mask(); left: 0px; width: 183px; position: absolute; top: 0px; height: 20px;}
-/* en_US/e647/GH-LIGER_Ebay_e64710438250_en_US */
+
+.menu {
+	PADDING-LEFT: 2px; FONT-SIZE: 12px; Z-INDEX: 500; BACKGROUND: #8e0314; FLOAT: left; PADDING-BOTTOM: 4px; WIDTH: 182px; POSITION: relative
+}
+.menu UL {
+	BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: left
+}
+.menu UL UL {
+	WIDTH: 183px
+}
+.menu UL LI {
+	BORDER-TOP: #a6a6a6 1px solid; DISPLAY: block; FONT-WEIGHT: bold; BACKGROUND: url(images/bg/menu_arrow_bg.gif?30423) #f5f5f5 no-repeat -1px -121px; FLOAT: left; WIDTH: 180px; LINE-HEIGHT: 24px; HEIGHT: 24px
+}
+.menu UL UL LI {
+	BORDER-TOP-WIDTH: 0px; BORDER-RIGHT: #a6a6a6 2px solid; PADDING-RIGHT: 0px; BACKGROUND-POSITION: 0px -52px; DISPLAY: block; PADDING-LEFT: 20px; FONT-WEIGHT: normal; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 2px; WIDTH: 161px; LINE-HEIGHT: 140%; PADDING-TOP: 2px; HEIGHT: auto; BACKGROUND-COLOR: #fff
+}
+.menu UL UL .b_top {
+	BORDER-RIGHT: #a6a6a6 2px solid; BACKGROUND-POSITION: 0px 0px; BORDER-TOP: #a6a6a6 1px solid; PADDING-TOP: 10px
+}
+.menu A {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; FONT-SIZE: 1em; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 180px; COLOR: #000; TEXT-INDENT: 1em; PADDING-TOP: 0px; HEIGHT: 100%; TEXT-DECORATION: none
+}
+.menu A:visited {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; FONT-SIZE: 1em; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 180px; COLOR: #000; TEXT-INDENT: 1em; PADDING-TOP: 0px; HEIGHT: 100%; TEXT-DECORATION: none
+}
+.menu UL UL LI A {
+	DISPLAY: inline; BACKGROUND: none transparent scroll repeat 0% 0%; WIDTH: auto; COLOR: #000; TEXT-INDENT: 0px
+}
+.menu UL UL LI A:visited {
+	DISPLAY: inline; BACKGROUND: none transparent scroll repeat 0% 0%; WIDTH: auto; COLOR: #000; TEXT-INDENT: 0px
+}
+.menu UL UL LI A:hover {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #8d0011; TEXT-DECORATION: underline
+}
+UNKNOWN {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #8d0011; TEXT-DECORATION: underline
+}
+.menu TABLE {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 1em; Z-INDEX: 1; PADDING-BOTTOM: 0px; MARGIN: -1px; WIDTH: 0px; PADDING-TOP: 0px; BORDER-COLLAPSE: collapse; HEIGHT: 0px
+}
+ HTML .menu A:hover {
+	Z-INDEX: 100; BACKGROUND: url(images/bg/menu_arrow_bg.gif?30423) #fff no-repeat -1px -150px; COLOR: #000; POSITION: relative; TEXT-DECORATION: none
+}
+.menu LI:hover {
+	POSITION: relative
+}
+UNKNOWN {
+	BACKGROUND: url(images/bg/menu_arrow_bg.gif?30423) #fff no-repeat -1px -150px; COLOR: #000
+}
+.menu UL UL {
+	BACKGROUND: url(images/bg/menu_arrow_bg.gif?30423) no-repeat 0px 100%; LEFT: 156px; PADDING-BOTTOM: 4px; WIDTH: 183px; POSITION: absolute; TOP: -10000000px; HEIGHT: auto
+}
+.menu UL :hover UL {
+	TOP: -1px
+}
+
+#menu_index_top LI A:link {
+	MARGIN-TOP: 6px; DISPLAY: block; FONT-WEIGHT: bold; FONT-SIZE: 15px; BACKGROUND: url(images/bg/bg_Sprites.gif?30423) #fff no-repeat -900px -200px; WIDTH: 184px; COLOR: #fff; LINE-HEIGHT: 37px; HEIGHT: 37px
+}
+#menu_index_top LI A:visited {
+	MARGIN-TOP: 6px; DISPLAY: block; FONT-WEIGHT: bold; FONT-SIZE: 15px; BACKGROUND: url(images/bg/bg_Sprites.gif?30423) #fff no-repeat -900px -200px; WIDTH: 184px; COLOR: #fff; LINE-HEIGHT: 37px; HEIGHT: 37px
+}
+#menu_index_top LI A:hover {
+	BACKGROUND-POSITION: -900px -250px
+}/* en_US/e647/GH-LIGER_Ebay_e64710438250_en_US */
 /* b=10438250 */
 
 
