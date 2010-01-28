@@ -6,8 +6,9 @@ xmlns:ui="http://java.sun.com/jsf/facelets"
 xmlns:f="http://java.sun.com/jsf/core"
 xmlns:h="http://java.sun.com/jsf/html"
 xmlns:a4j="http://richfaces.org/a4j"
-xmlns:rich="http://richfaces.org/rich">
-<f:subview id="manageTemplateView">
+xmlns:rich="http://richfaces.org/rich"
+xmlns:c="http://java.sun.com/jstl/core">
+<f:subview id="scrollmouseView">
 <script src="${facesContext.externalContext.requestContextPath}/css/jquery131.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="${facesContext.externalContext.requestContextPath}/css/css.css" />
 
@@ -27,45 +28,25 @@ style="DISPLAY: block; Z-INDEX: 11; BACKGROUND: url(${facesContext.externalConte
   <LI><A title="See All Categories" href="http://www.lightinthebox.com/see-all.html" target="_top"><SPAN>See All Categories</SPAN> </A></LI></UL><!-- ####menu### -->
 <DIV class="menu" id="light_menu">
 <UL>
-  <LI><A title="wholesale Cell Phones" href="http://www.lightinthebox.com/wholesale-Cell-Phones_c206">Cell Phones<!--[if IE 7]><!--></A><!--<![endif]--><!--[if lte IE 6]> 
+  <LI><A title="wholesale Cell Phones" href="http://www.lightinthebox.com/wholesale-Cell-Phones_c206"><h:outputText value="#{headerTabPanel.kitchenAppliance.mainMenu.label}"/><!--[if IE 7]><!--></A><!--<![endif]--><!--[if lte IE 6]> 
   <TABLE>
     <TBODY>
     <TR>
       <TD><![endif]-->
         <UL class="select-free">
           <DIV>
-          <LI class="b_top"><A title="wholesale HiPhone" 
-          href="http://www.lightinthebox.com/wholesale-HiPhone_c1498">HiPhone(172)</A> 
-          </LI>
-          <LI><A title="wholesale Multi Function Cell Phones" 
-          href="http://www.lightinthebox.com/wholesale-Multi-Function-Cell-Phones_c209">Multi 
-          Function Cell Phones(1991)</A> </LI>
-          <LI><A title="wholesale Bar Phone" 
-          href="http://www.lightinthebox.com/wholesale-Bar-Phone_c2204">Bar 
-          Phone(821)</A> </LI>
-          <LI><A title="wholesale Slide Phone" 
-          href="http://www.lightinthebox.com/wholesale-Slide-Phone_c2205">Slide 
-          Phone(246)</A> </LI>
-          <LI><A title="wholesale Flip Phone" 
-          href="http://www.lightinthebox.com/wholesale-Flip-Phone_c2206">Flip 
-          Phone(107)</A> </LI>
-          <LI><A title="wholesale Watch Cell Phone" 
-          href="http://www.lightinthebox.com/wholesale-Watch-Cell-Phone_c1298">Watch 
-          Cell Phone(37)</A> </LI>
-          <LI><A title="wholesale New Cell Phones" 
-          href="http://www.lightinthebox.com/wholesale-New-Cell-Phones_c2706">New 
-          Cell Phones(98)</A> </LI>
-          <LI><A title="wholesale Cheap Cell Phones" 
-          href="http://www.lightinthebox.com/wholesale-Cheap-Cell-Phones_c2740">Cheap 
-          Cell Phones(79)</A> </LI>
-          <LI><A title="wholesale Brand Cell Phones" 
-          href="http://www.lightinthebox.com/wholesale-Brand-Cell-Phones_c207">Brand 
-          Cell Phones(10)</A> </LI>
-          <LI><A title="More Cell Phones" 
-          href="http://www.lightinthebox.com/wholesale-Cell-Phones_c206">All 
-          Cell Phones 
-  </A></LI></DIV></UL><!--[if lte IE 6]></TD></TR></TBODY></TABLE></A><![endif]--></LI>
-</UL></DIV>
+          <c:forEach items="#{headerTabPanel.kitchenAppliance.subMenu}" var="subMenu" begin="1" step="1">
+          	<LI class="#{subMenu.idSecond=='01'?'b_top':''}"><h:commandLink action="#{headerTabPanel.gotoProduct}" title="#{subMenu.label}" immediate="true"><f:param name="idFirst" value="#{subMenu.idFirst}"></f:param>
+										<f:param name="idSecond" value="#{subMenu.idSecond}"></f:param>
+										<f:param name="productType" value="#{subMenu.name}"></f:param>
+										<a4j:actionparam name="kitchenApplianceMainMenuName" value="#{headerTabPanel.kitchenAppliance.mainMenu.name}" assignTo="#{productPanelBar.currentBar}"></a4j:actionparam><h:outputText value="#{subMenu.label}"/></h:commandLink>
+          	</LI>
+									
+		  </c:forEach>
+  	    </DIV>
+  	  </UL><!--[if lte IE 6]></TD></TR></TBODY></TABLE></A><![endif]--></LI>
+</UL>
+</DIV>
 </DIV><!-- EOF Categories Menu --></DIV><!-- ####menu### --></DIV>
 <SCRIPT type="text/javascript">
 	var closeMenu = true;
