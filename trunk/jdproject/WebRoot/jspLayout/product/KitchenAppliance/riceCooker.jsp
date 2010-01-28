@@ -22,7 +22,7 @@ xmlns:rich="http://richfaces.org/rich">
 			<ui:define id="riceCookerContent" name="content">
 				<a4j:region id="riceCookerSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="riceCookerSearchNavigationRegionForm">
-    			<rich:panelBar id="riceCookerpb" styleClass="panel-bar-product-top" style="width:#{msgs['template.product.content.widthpx']}" contentStyle="background:none;">
+    			<rich:panelBar id="riceCookerpb" styleClass="panel-bar-product-top" style="width:#{msgs['template.product.content.widthpx']}" contentStyle="background:none;display:block;">
     				<rich:panelBarItem id="riceCookerPbi" headerClass="navigation-product-top-panel-bar-item-header">
     				<f:facet name="label">
     					<h:panelGroup>
