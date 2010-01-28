@@ -31,10 +31,87 @@ xmlns:c="http://java.sun.com/jstl/core">
 						</tbody>
 					</table>
 					<div class="header-navigation-panel">
-					<h:panelGrid columns="5" cellpadding="0" cellspacing="0" styleClass="header-navigation-panel-grid" columnClasses="header-navigation-panel-grid-column-one,header-navigation-panel-grid-column-two,header-navigation-panel-grid-column-three,header-navigation-panel-grid-column-four,header-navigation-panel-grid-column-five">
-						<h:panelGroup></h:panelGroup>
+					<h:panelGrid columns="5" cellpadding="0" cellspacing="0" styleClass="header-navigation-panel-grid" columnClasses="header-navigation-panel-grid-column-two,header-navigation-panel-grid-column-three,header-navigation-panel-grid-column-four,header-navigation-panel-grid-column-five">
 						<h:panelGroup>
-							<ui:include src="./scrollmouse.jsp"/>
+							<rich:dropDownMenu value="所有分类 " submitMode="server" direction="bottom-right"  jointPoint="td" event="onmouseover" showDelay="10">
+                			<rich:menuGroup value="#{headerTabPanel.kitchenAppliance.mainMenu.label}" direction="bottom-right">
+                    			
+                    			<c:forEach items="#{headerTabPanel.kitchenAppliance.subMenu}" var="subMenu">
+									<rich:menuItem action="#{headerTabPanel.gotoProduct}" value="#{subMenu.label}" submitMode="server">
+										<f:param name="idFirst" value="#{subMenu.idFirst}"></f:param>
+										<f:param name="idSecond" value="#{subMenu.idSecond}"></f:param>
+										<f:param name="productType" value="#{subMenu.name}"></f:param>
+										<a4j:actionparam name="kitchenApplianceMainMenuName" value="#{headerTabPanel.kitchenAppliance.mainMenu.name}" assignTo="#{productPanelBar.currentBar}"></a4j:actionparam>
+									</rich:menuItem>
+								</c:forEach>
+                			</rich:menuGroup>
+                			<rich:menuGroup value="#{headerTabPanel.householdAppliance.mainMenu.label}" direction="bottom-right">
+                    			
+                    			<c:forEach items="#{headerTabPanel.householdAppliance.subMenu}" var="subMenu">
+									<rich:menuItem action="#{headerTabPanel.gotoProduct}" value="#{subMenu.label}" submitMode="server">
+										<f:param name="idFirst" value="#{subMenu.idFirst}"></f:param>
+										<f:param name="idSecond" value="#{subMenu.idSecond}"></f:param>
+										<f:param name="productType" value="#{subMenu.name}"></f:param>
+										<a4j:actionparam name="householdApplianceMainMenuName" value="#{headerTabPanel.householdAppliance.mainMenu.name}" assignTo="#{productPanelBar.currentBar}"></a4j:actionparam>
+									</rich:menuItem>
+								</c:forEach>
+                			</rich:menuGroup>
+               				<rich:menuGroup value="#{headerTabPanel.personalCare.mainMenu.label}" direction="bottom-right">
+                    			
+                    			<c:forEach items="#{headerTabPanel.personalCare.subMenu}" var="subMenu">
+									<rich:menuItem action="#{headerTabPanel.gotoProduct}" value="#{subMenu.label}" submitMode="server">
+										<f:param name="idFirst" value="#{subMenu.idFirst}"></f:param>
+										<f:param name="idSecond" value="#{subMenu.idSecond}"></f:param>
+										<f:param name="productType" value="#{subMenu.name}"></f:param>
+										<a4j:actionparam name="personalCareMainMenuName" value="#{headerTabPanel.personalCare.mainMenu.name}" assignTo="#{productPanelBar.currentBar}"></a4j:actionparam>
+									</rich:menuItem>
+								</c:forEach>
+                			</rich:menuGroup>
+                			<rich:menuGroup value="#{headerTabPanel.healthDevice.mainMenu.label}" direction="bottom-right">
+                    			
+                    			<c:forEach items="#{headerTabPanel.healthDevice.subMenu}" var="subMenu">
+									<rich:menuItem action="#{headerTabPanel.gotoProduct}" value="#{subMenu.label}" submitMode="server">
+										<f:param name="idFirst" value="#{subMenu.idFirst}"></f:param>
+										<f:param name="idSecond" value="#{subMenu.idSecond}"></f:param>
+										<f:param name="productType" value="#{subMenu.name}"></f:param>
+										<a4j:actionparam name="healthDeviceMainMenuName" value="#{headerTabPanel.healthDevice.mainMenu.name}" assignTo="#{productPanelBar.currentBar}"></a4j:actionparam>
+									</rich:menuItem>
+								</c:forEach>
+                			</rich:menuGroup>
+                			<rich:menuGroup value="#{headerTabPanel.majorAppliance.mainMenu.label}" direction="bottom-right">
+                    			
+                    			<c:forEach items="#{headerTabPanel.majorAppliance.subMenu}" var="subMenu">
+									<rich:menuItem action="#{headerTabPanel.gotoProduct}" value="#{subMenu.label}" submitMode="server">
+										<f:param name="idFirst" value="#{subMenu.idFirst}"></f:param>
+										<f:param name="idSecond" value="#{subMenu.idSecond}"></f:param>
+										<f:param name="productType" value="#{subMenu.name}"></f:param>
+										<a4j:actionparam name="majorApplianceMainMenuName" value="#{headerTabPanel.majorAppliance.mainMenu.name}" assignTo="#{productPanelBar.currentBar}"></a4j:actionparam>
+									</rich:menuItem>
+								</c:forEach>
+                			</rich:menuGroup>
+                			<rich:menuGroup value="#{headerTabPanel.phoneDigital.mainMenu.label}" direction="bottom-right">
+                    			
+                    			<c:forEach items="#{headerTabPanel.phoneDigital.subMenu}" var="subMenu">
+									<rich:menuItem action="#{headerTabPanel.gotoProduct}" value="#{subMenu.label}" submitMode="server">
+										<f:param name="idFirst" value="#{subMenu.idFirst}"></f:param>
+										<f:param name="idSecond" value="#{subMenu.idSecond}"></f:param>
+										<f:param name="productType" value="#{subMenu.name}"></f:param>
+										<a4j:actionparam name="phoneDigitalMainMenuName" value="#{headerTabPanel.phoneDigital.mainMenu.name}" assignTo="#{productPanelBar.currentBar}"></a4j:actionparam>
+									</rich:menuItem>
+								</c:forEach>
+                			</rich:menuGroup>
+                			<rich:menuGroup value="#{headerTabPanel.computerNetwork.mainMenu.label}" direction="bottom-right">
+                    			
+                    			<c:forEach items="#{headerTabPanel.computerNetwork.subMenu}" var="subMenu">
+									<rich:menuItem action="#{headerTabPanel.gotoProduct}" value="#{subMenu.label}" submitMode="server">
+										<f:param name="idFirst" value="#{subMenu.idFirst}"></f:param>
+										<f:param name="idSecond" value="#{subMenu.idSecond}"></f:param>
+										<f:param name="productType" value="#{subMenu.name}"></f:param>
+										<a4j:actionparam name="computerNetworkMainMenuName" value="#{headerTabPanel.computerNetwork.mainMenu.name}" assignTo="#{productPanelBar.currentBar}"></a4j:actionparam>
+									</rich:menuItem>
+								</c:forEach>
+                			</rich:menuGroup>
+                			</rich:dropDownMenu>
 						</h:panelGroup>
 						<h:panelGroup id="twothree">
 							<h:outputLabel value="ID:"></h:outputLabel>
