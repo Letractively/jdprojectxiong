@@ -8,6 +8,8 @@ xmlns:h="http://java.sun.com/jsf/html"
 xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
 <ui:composition>
+<table>
+<tbody>
 	<tr>
 		<td style="PADDING-LEFT: 8px;width:14%;text-align:left;">
 			<h:outputLabel value="品牌:" styleClass="current-selected_label"></h:outputLabel><h:outputLabel id="brandLabel" styleClass="current-selected" value="#{listRiceCookerProduct.brandLabel}"></h:outputLabel>
@@ -69,7 +71,8 @@ xmlns:rich="http://richfaces.org/rich">
 			</a4j:repeat>
 		</td> 
 	</tr>
-
+</tbody>
+</table>
 	
 	
 
