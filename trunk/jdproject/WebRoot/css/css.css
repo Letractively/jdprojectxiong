@@ -900,10 +900,10 @@ UNKNOWN {
 }
 
 #menu_index_top LI A:link {
-	MARGIN-TOP: 2px; DISPLAY: block; FONT-WEIGHT: bold; FONT-SIZE: 15px; BACKGROUND: url(../css/images/icons/bg_Sprites.gif) #fff no-repeat -900px -200px; WIDTH: 184px; COLOR: #fff; LINE-HEIGHT: 28px; HEIGHT: 28px
+	MARGIN-TOP: 2px; DISPLAY: block; FONT-WEIGHT: bold; FONT-SIZE: 15px;  WIDTH: 184px; COLOR: #fff; LINE-HEIGHT: 28px; HEIGHT: 28px
 }
 #menu_index_top LI A:visited {
-	MARGIN-TOP: 2px; DISPLAY: block; FONT-WEIGHT: bold; FONT-SIZE: 15px; BACKGROUND: url(../css/images/icons/bg_Sprites.gif) #fff no-repeat -900px -200px; WIDTH: 184px; COLOR: #fff; LINE-HEIGHT: 28px; HEIGHT: 28px
+	MARGIN-TOP: 2px; DISPLAY: block; FONT-WEIGHT: bold; FONT-SIZE: 15px;  WIDTH: 184px; COLOR: #fff; LINE-HEIGHT: 28px; HEIGHT: 28px
 }
 #menu_index_top LI A:hover {
 	BACKGROUND-POSITION: -900px -250px
