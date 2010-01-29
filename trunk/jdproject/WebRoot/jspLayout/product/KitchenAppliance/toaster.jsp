@@ -22,7 +22,7 @@ xmlns:rich="http://richfaces.org/rich">
 			<ui:define id="toasterContent" name="content">
 				<a4j:region id="toasterSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="toasterSearchNavigationRegionForm">
-    			<rich:panelBar id="toasterpb" styleClass="panel-bar-product-top" style="width:#{msgs['template.product.content.widthpx']}" contentStyle="background:none;">
+    			<rich:panelBar id="toasterpb" styleClass="panel-none-border" headerClass="panel-header-none-border" style="width:#{msgs['template.product.content.widthpx']};border-style:none;" contentStyle="panel-documents-none-border">
     				<rich:panelBarItem id="toasterPbi" headerClass="navigation-product-top-panel-bar-item-header">
     				<f:facet name="label">
     					<h:panelGroup>
