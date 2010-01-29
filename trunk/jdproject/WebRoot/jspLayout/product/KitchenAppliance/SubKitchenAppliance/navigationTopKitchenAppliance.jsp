@@ -33,15 +33,20 @@ xmlns:rich="http://richfaces.org/rich">
 			</td>
 			<td class="selected-new" width="90%">
 				<a4j:repeat var="secondCategory" rowKeyVar="index" value="#{secondCategorys}">
-				<a4j:commandLink action="#{navigationKitchenAppliance.clickLink}" ajaxSingle="true" style="CURSOR: pointer;" immediate="true" limitToList="true" reRender="productList,brandLabel,secondCategoryLabel">
-					<span class="top-product-navigation-option">
-						#{secondCategory.label}
-					</span>
+				<a4j:commandLink action="#{navigationKitchenAppliance.clickLink}" ajaxSingle="true" style="CURSOR: pointer;" immediate="true" oncomplete="showText(this)" limitToList="true" reRender="productList,brandLabel,secondCategoryLabel">
+					
+					
+					<h:outputText styleClass="top-product-navigation-option" value="#{secondCategory.label}"></h:outputText>
 					<a4j:actionparam value="#{secondCategory.idSecond}" name="secondCategoryCode"/>
 					<a4j:actionparam value="#{secondCategory.name}" name="model"/>
 					<a4j:actionparam value="#{secondCategory.label}" name="secondCategoryLabel"/>
 				</a4j:commandLink>
 				</a4j:repeat>
+				<script>
+					function showText(object){
+						object.style.background="#FFFFCC";
+					}
+					</script>
 			</td> 
 		</tr>
 
