@@ -647,7 +647,8 @@ div.form_bar input:focus, div.form_bar select:focus {
 * html .pageminwidth,* html .pagecontainer,* html .pagelayout{height:1px;}.g-hlp{color:#666;}.g-pipe{color:#99f;}.g-nav{font-family:Verdana;font-size:x-small;}
 #Shell{margin:0 auto!important;}#globalHeader{position:inherit!important;}.bc_motors{margin:10px 0;}.emlcontent{padding-top:0!important;margin-top:0!important;}
 .gbhdr {
-	min-width:970px;
+	margin:0;padding:0;
+	width:960px;
 	}
 .gbhdr form{margin:0;padding:0;}.hdrCtr{margin-bottom:10px;position:relative;}.hdrCtr img{border:0;vertical-align:bottom;}.logobar{padding-bottom:10px;}
 .logobar .logoimg img{margin-top:10px;}.greeting{vertical-align:bottom;margin:28px 15px 0 10px;display:block;}.addllinks{white-space:nowrap;}.addllinks img{padding-right:5px;}
