@@ -11,7 +11,7 @@ xmlns:c="http://java.sun.com/jstl/core">
 <f:subview id="productHeaderMainView">
 <h:form id="productHeaderMainform"> 
 	<a4j:region id="productHeaderRegion" renderRegionOnly="false" selfRendered="true">
-		<div id="GlobalNavigation"><span class="ebay">
+		<div id="navigation"><span class="ebay">
 		<div id="gnheader" class="gbhdr">
 		<table border="0" cellpadding="0" cellspacing="0" width="100%">
 			<tbody>
@@ -23,10 +23,10 @@ xmlns:c="http://java.sun.com/jstl/core">
 					<table class="logobar" border="0" cellpadding="0" cellspacing="0" width="100%">
 						<tbody>
 						<tr>
-						<td class="logoimg" width="1%" valign="bottom"><a href="http://www.ebay.com/" rel="nofollow"><img src="i_files/logoEbay_x45.gif" alt="From collectibles to cars, buy and sell all kinds of items on eBay" border="0" width="110" height="45"></img></a></td>
-						<td class="mr" width="2%" valign="bottom"><span class="greeting"><!-- BEGIN: GREETING:SIGNEDOUT -->Welcome! <a href="https://signin.ebay.com/ws/eBayISAPI.dll?SignIn" tabindex="-1" rel="nofollow" onclick="return vjo.darwin.core.greetings.VjGreetingsServer.handleClick('https://signin.ebay.com/ws/eBayISAPI.dll?SignIn',event);">Sign in</a> or <a href="https://scgi.ebay.com/ws/eBayISAPI.dll?RegisterEnterInfo" tabindex="-1" id="registerLink" rel="nofollow">register</a>.<!-- END: GREETING:SIGNEDOUT --><span id="bta"></span></span></td>
+						<td class="logoimg" width="1%" valign="bottom"><a href="http://www.ebay.com/" rel="nofollow"><img src="${facesContext.externalContext.requestContextPath}/css/images/icons/logo.gif" alt="From collectibles to cars, buy and sell all kinds of items on eBay" border="0" width="110" height="45"></img></a></td>
+						<td class="mr" width="2%" valign="bottom"><span class="greeting"><!-- BEGIN: GREETING:SIGNEDOUT -->欢迎光临! 请<a href="https://signin.ebay.com/ws/eBayISAPI.dll?SignIn" tabindex="-1" rel="nofollow" onclick="return vjo.darwin.core.greetings.VjGreetingsServer.handleClick('https://signin.ebay.com/ws/eBayISAPI.dll?SignIn',event);">登录</a> 或 <a href="https://scgi.ebay.com/ws/eBayISAPI.dll?RegisterEnterInfo" tabindex="-1" id="registerLink" rel="nofollow">注册</a>.<!-- END: GREETING:SIGNEDOUT --><span id="bta"></span></span></td>
 						<td id="rbt" valign="bottom"><span class="coupon"></span></td>
-						<td align="right" valign="bottom"><div class="addllinks"><a href="http://pages.ebay.com/sitemap.html">Site Map</a></div></td>
+						<td align="right" valign="bottom"><div class="addllinks"><a href="http://pages.ebay.com/sitemap.html">收藏本站</a></div></td>
 						</tr>
 						</tbody>
 					</table>
