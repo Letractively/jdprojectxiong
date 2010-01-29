@@ -33,16 +33,27 @@ input, select, button, legend, a {
 	text-decoration : underline;
 }
 <!-- start rich panel none border style in jsp use bodyClass -->
-.panel-header-none-border{
-	padding: 0px 20px 0px 0px;
+.panel-none-border {
+	width: auto;height: auto;
+	padding: 0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
-	FONT-FAMILY: Arial,sans-serif;
-	font-size : 12px;
-	font-weight:normal;
-	text-align:right;
-	color:2c629e;
-	border : 0px solid #FFFFFF;
-	background:url(../css/images/icons/bg.gif) bottom left repeat-x; list-style-type:none;
+	background-color: transparent;
+	border : 0px solid #ACBECE;
+	}
+.panel-header-none-border{
+	top: 0px;
+  	left: 0px;
+  	height:26px;
+  	padding:0px 0px 0px 0px;
+  	margin:0px 0px 0px 0px;
+  	font-size: 15px;
+  	font-weight:bold;
+  	color:#666699;
+  	line-height:28px;
+  	TEXT-INDENT: 6px;
+  	background-position : top left;
+  	background:#fff;
+  	border:0px #f3f3f3 solid;
 }
 .panel-header-none-border-main-pg-column-one{
 	width:10%;
@@ -88,79 +99,84 @@ input, select, button, legend, a {
 	text-decoration : underline;
 }
 <!-- end  rich panel none style -->
-.menu_separator{
-	background-color : #ACBECE;
-	height : 5px;
-	font-size : 1px;
+<!-- start red rich panel none border style in jsp use bodyClass -->
+.panel-red-border {
+	padding: 0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	background-color: transparent;
+	border : 0px solid #ACBECE;
+	}
+.panel-header-red-border{
+	top: 0px;
+  	left: 0px;
+  	height:22px;
+  	padding:0px 0px 0px 8px;
+  	margin:0px 0px 0px 0px;
+  	font-size: 13px;
+  	font-weight:bold;
+  	color:#fff;
+  	line-height:22px;
+  	TEXT-INDENT: 6px;
+  	background-position : top left;
+  	background:url(../css/images/icons/panel_header_red.jpg) left top no-repeat;
+  	border:0px #f3f3f3 solid;
 }
-
-.panel_menu{
-	background-color : transparent;
-	border : 1px solid #FFFFFF;
-	border-bottom : 0px;
-	background-position : left;
-	background-repeat : repeat-y;
-	background-color : transparent;	
-	padding : 0px 2px 0px 2px;
+.panel-header-red-border-main-pg-column-one{
+	width:10%;
+	text-align:left;
 }
-	html>body .panel_menu {
-		padding : 0;
+.panel-header-red-border-main-pg-column-two{
+	width:50%;
+	text-align:center;
+}
+.panel-header-red-border-main-pg-column-three{
+	width:40%;
+	text-align:right;
+	}
+.panel-header-red-border-pg-column{
+	padding: 0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	border : 0px solid #ACBECE;
+	text-align:center;
+	background:url(../css/images/icons/or_navon.gif) bottom left repeat-x; list-style-type:none;
 	}
 
-	.rich-panelbar-interior  {
-	    zoom: 1;
-	}
-	
-.panel_menu div {
-    background-color:transparent;
-    padding:0;
+.panel-documents-red-border{
+	padding: 0px 0px 0px 8px;
+	margin:0px 0px 0px 0px;
+	background-color: transparent;
+	border : 1px solid #CC3333;
+	BORDER-RIGHT:1px solid #CC3333;
+	BORDER-TOP: #f9f9f9 0px solid;
+	BORDER-LEFT: 1px solid #CC3333;
+	BORDER-BOTTOM: 1px solid #CC3333;
+	text-align:left;
+}
+.panel-documents-red-border div{
+	background-color: transparent;
+	FONT-FAMILY: Arial,sans-serif;
+	font-size : 12px;
+	border:0;
+	padding:0;
 }
 
-.panel_menu div.rich-panelbar {
-    border-color: #ACBECE;
-
-}
-
-.panel_menu div.rich-panelbar-header, .panel_menu div.rich-panelbar-header-act{
-    background-color: #E4EAEF;
-    background-image:none;
-    padding:3px 10px 3px 20px;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
-    color: black;
-}
-.panel_menu .rich-panelbar-content {
-   padding:1px 5px 1px 10px;
-
-
-}
-
-.panel_menu a {
+.panel-documents-red-border a{
 	color : #000000;
 	text-decoration : none;
 }
-
-.panel_menu table .unactive .ico{
-	border : 1px solid #FFFFFF;
+.panel-documents-red-border a:hover{
+	color : red;
+	text-decoration : underline;
 }
-.panel_menu table .active .ico{
-	border : 1px solid #ACBECE;
-}
-.panel_menu table .active .text{
-	color : #FFFFFF;
-	font-family : verdana;
-	font-size : 11px;
-	background-color : #ACBECE;
-	padding-left : 10px
-}
-.panel_menu table * .bold{
-	font-weight:bold;
-}
-.panel_menu table .unactive .text{
-	font-family : verdana;
-	font-size : 11px;
-	padding-left : 10px
-}
+<!-- end  rich panel red style -->
+<!-- start panel bar -->
+.rich-panelbar{
+	BORDER-RIGHT:0px solid #CC3333;
+	BORDER-TOP: 0px solid #CC3333;
+	BORDER-LEFT: 0px solid #CC3333;
+	BORDER-BOTTOM: 0px solid #CC3333;
+	}
+<!-- end panel bar -->
 .text {
 	cursor : pointer;
 	padding:0px 0px 0px 10px;
@@ -673,7 +689,7 @@ div.reviews{margin:5px 0}
 .table-list-product-left-panel-grid-column {
   	font-size: 12pt;
   	align: left;
-  	width:25%;
+  	width:50%;
   	BORDER-RIGHT: 0px none #FFFFFF ; 
   	BORDER-TOP: 0px none #FFFFFF; 
 	BORDER-LEFT: 0px none #FFFFFF; 
@@ -731,6 +747,9 @@ div.reviews{margin:5px 0}
 	BORDER-BOTTOM: 0px solid #FFFFFF;
 	}
 .navigation-left-kitchen_appliance-product-panel-grid-data-grid {
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	text-align:left;
 	BORDER-RIGHT: 0px none #FFFFFF ; 
 	BORDER-TOP: 0px none #FFFFFF; 
 	BORDER-LEFT: 0px none #FFFFFF; 
@@ -1149,7 +1168,7 @@ div.reviews{margin:5px 0}
   font-size: 10pt;
   vertical-align:top;
   border-width: 0px 0px 0px 0px;
-  width: 168px;
+  width: 200px;
 }
 .template-content {
   font-size: 10pt;
@@ -1159,8 +1178,8 @@ div.reviews{margin:5px 0}
   margin-right-width:0px;
   margin-bottom-width:0px;
   margin-left-width:0px;
-  width: 791px;
-  min-width: 791px;
+  width: 770px;
+  min-width: 770px;
 }
 .template-right {
   font-size: 10pt;
@@ -1218,19 +1237,18 @@ div.reviews{margin:5px 0}
 .navigation-product-top-panel-bar-item-header {
   top: 0px;
   left: 0px;
-  height:30px;
-  padding:0px 0px 0px 0px;
+  height:26px;
+  padding:4px 0px 0px 0px;
   margin:0px 0px 0px 0px;
   font-size: 14pt;
-  BORDER-TOP: #a8d0f4 1px solid; 
-  BACKGROUND: #ecf5fc; 
-  BORDER-BOTTOM: #dff3fe 1px solid;
+  BORDER-TOP: #a8d0f4 0px solid; 
+  background:url(../css/images/icons/fenlei.gif) left -258px repeat-x;;
+  BORDER-BOTTOM: #dff3fe 0px solid;
 }
 .navigation-product-top-panel-bar-item-header-label {
 	float:left;
 	padding-left:5px;
 	line-height:30px;
-	background-image:url(../css/images/icons/list.gif) 12px 5px no-repeat;
 	font-size:14px;
 	color:#F87C14;
 	}
