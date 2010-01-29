@@ -42,7 +42,7 @@ xmlns:rich="http://richfaces.org/rich">
     			<h:panelGrid columns="1" style="width:#{msgs['template.product.content.widthpx']}" styleClass="table-row">
     			<a4j:region id="electricPressureCookerContentRegionStyle" renderRegionOnly="false" selfRendered="true">
     				<h:form id="electricPressureCookerContentRegionStyleForm">
-    					<rich:panel id="electricPressureCookerContentRegionStyleFormPanel" styleClass="operate_title">
+    					<rich:panel id="electricPressureCookerContentRegionStyleFormPanel" styleClass="operate-show-style">
     						<h:panelGrid columns="2" style="width:80%;">
     							<h:panelGroup>
             					<h:outputText value="显示方式"></h:outputText>
