@@ -1302,12 +1302,15 @@ div.reviews{margin:5px 0}
 	BORDER-BOTTOM: #cee1ee 1px solid; 
 	BACKGROUND-COLOR: #f3faff;
 	}
-.operate_title{
+.operate-show-style{
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
-	height:29px;
+	height:45px;
 	background:url(../css/images/icons/product-show-style.gif) left 0px repeat;
-	border:1px #e3e3e3 solid;
+	BORDER-RIGHT:1px #e3e3e3 solid;
+	BORDER-LEFT:1px #e3e3e3 solid;
+	BORDER-TOP:1px #e3e3e3 solid;
+	BORDER-BOTTOM:1px #e3e3e3 solid;
 	width:100%;
 	}
 .main_header{
