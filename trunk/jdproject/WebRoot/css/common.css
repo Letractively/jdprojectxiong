@@ -669,8 +669,7 @@ div.reviews{margin:5px 0}
   BORDER-TOP: 0px solid #f5fcff; 
   BORDER-LEFT: 0px solid #f5fcff; 
   BORDER-BOTTOM: 0px solid #f5fcff; 
-  BACKGROUND: #f7f7f7;
-  min-height: 500px;
+  BACKGROUND: #fff;
 }
 .table-list-product-panel-grid-main-column {
   padding:0px 0px 0px 0px;
@@ -679,7 +678,7 @@ div.reviews{margin:5px 0}
 .table-list-product-panel-grid-column {
   	font-size: 12pt;
   	align: left;
-  	width:25%;
+  	width:33%;
   	BORDER-RIGHT: 0px none #FFFFFF ; 
   	BORDER-TOP: 0px none #FFFFFF; 
 	BORDER-LEFT: 0px none #FFFFFF; 
@@ -699,12 +698,12 @@ div.reviews{margin:5px 0}
 .table-list-product-panel-grid-header {
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
-	border-top: #a8d0f4 1px solid; 
-	background: #ecf5fc; 
-	border-right: #dff3fe 1px solid;
-	border-left: #dff3fe 1px solid;
-	border-bottom: #dff3fe 1px solid;
-	height: 29px;
+	BORDER-RIGHT: #ffffff 0px solid; 
+	BORDER-TOP: #ffffff 0px solid; 
+	BACKGROUND: #fffff; 
+	BORDER-LEFT: #ffffff 0px solid; 
+	BORDER-BOTTOM: #ffffff 0px solid; 
+	HEIGHT: 36px;
 	text-align:LEFT;
 	font-size:12px;
 	color:#F87C14;
@@ -1624,7 +1623,7 @@ div.reviews{margin:5px 0}
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
 	position: relative;
-	width: auto;
+	width: 100%;
 	border : 1px solid #e2eaed ;
 	}
 .main-header{
