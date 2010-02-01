@@ -37,7 +37,7 @@ xmlns:rich="http://richfaces.org/rich">
 				</rich:panelBar>
 				</h:form>
 				</a4j:region>
-    			<h:panelGrid columns="1" style="width:#{msgs['template.product.content.widthpx']}" styleClass="table-row">
+    			<h:panelGrid columns="1" style="width:100%" cellspacing="0" cellpadding="0" styleClass="table-row">
     			<a4j:region id="fryerContentRegionStyle" renderRegionOnly="false" selfRendered="true">
     				<h:form id="fryerContentRegionStyleForm">
     					<rich:panel id="fryerContentRegionStyleFormPanel" styleClass="operate-show-style">
@@ -79,7 +79,7 @@ xmlns:rich="http://richfaces.org/rich">
 										<a4j:actionparam name="number20" value="" assignTo="#{listFryerProduct.number20}"></a4j:actionparam>
 										<a4j:actionparam name="number40" value="" assignTo="#{listFryerProduct.number40}"></a4j:actionparam>
 										<a4j:actionparam name="number100" value="" assignTo="#{listFryerProduct.number100}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="10" assignTo="#{listFryerProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="15" assignTo="#{listFryerProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number30button" reRender="fryerContentRegionStyleFormPanel,productList">
 										<h:graphicImage value="/css/images/number30#{listFryerProduct.number20}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
@@ -88,7 +88,7 @@ xmlns:rich="http://richfaces.org/rich">
 										<a4j:actionparam name="number20" value="_on" assignTo="#{listFryerProduct.number20}"></a4j:actionparam>
 										<a4j:actionparam name="number40" value="" assignTo="#{listFryerProduct.number40}"></a4j:actionparam>
 										<a4j:actionparam name="number100" value="" assignTo="#{listFryerProduct.number100}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="20" assignTo="#{listFryerProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="30" assignTo="#{listFryerProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number60button" reRender="fryerContentRegionStyleFormPanel,productList">
 										<h:graphicImage value="/css/images/number60#{listFryerProduct.number40}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
@@ -97,7 +97,7 @@ xmlns:rich="http://richfaces.org/rich">
 										<a4j:actionparam name="number20" value="" assignTo="#{listFryerProduct.number20}"></a4j:actionparam>
 										<a4j:actionparam name="number40" value="_on" assignTo="#{listFryerProduct.number40}"></a4j:actionparam>
 										<a4j:actionparam name="number100" value="" assignTo="#{listFryerProduct.number100}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="40" assignTo="#{listFryerProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="45" assignTo="#{listFryerProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number90button" reRender="fryerContentRegionStyleFormPanel,productList">
 										<h:graphicImage value="/css/images/number90#{listFryerProduct.number100}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
@@ -106,7 +106,7 @@ xmlns:rich="http://richfaces.org/rich">
 										<a4j:actionparam name="number20" value="" assignTo="#{listFryerProduct.number20}"></a4j:actionparam>
 										<a4j:actionparam name="number40" value="" assignTo="#{listFryerProduct.number40}"></a4j:actionparam>
 										<a4j:actionparam name="number100" value="_on" assignTo="#{listFryerProduct.number100}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="100" assignTo="#{listFryerProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="90" assignTo="#{listFryerProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									
 							</h:panelGroup>
@@ -116,19 +116,19 @@ xmlns:rich="http://richfaces.org/rich">
     			</a4j:region>
     			<a4j:region id="fryerContentRegionContent" renderRegionOnly="false" selfRendered="true">
     			<h:form id="fryerContentRegionContentForm">
-    			<h:panelGrid id="productList" columns="1" style="width:100%" styleClass="table-list-product-panel-grid" rowClasses="table-list-product-panel-grid-main-column">
-    			<h:outputText value="抱歉，找不到符合条件的商品!" rendered="#{not (listFryerProduct.dataModel.rowCount>0)}" styleClass="no-product-find"></h:outputText>
-    			<rich:dataGrid id="productListImg" rendered="#{listFryerProduct.styleImgFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="2" elements="#{listFryerProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" columnClasses="table-list-product-panel-grid-column" value="#{listFryerProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
+    			<h:panelGrid id="productList" columns="1" style="width:100%" cellspacing="0" cellpadding="0" styleClass="table-list-product-panel-grid" rowClasses="table-list-product-panel-grid-main-column">
+    			<h:outputText value="抱歉，找不到符合条件的商品!" rendered="#{(null != listFryerProduct.dataModel) and (listFryerProduct.dataModel.rowCount le 0)}" styleClass="no-product-find"></h:outputText>
+    			<rich:dataGrid id="productListImg" rendered="#{listFryerProduct.styleImgFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="3" elements="#{listFryerProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" columnClasses="table-list-product-panel-grid-column" value="#{listFryerProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                 <f:facet name="header">
                 	<h:outputText value="共:#{listFryerProduct.dataModel.rowCount}件商品" rendered="#{listFryerProduct.dataModel.rowCount>0}"></h:outputText>
       			</f:facet>
      				<a4j:region renderRegionOnly="false" selfRendered="true">
                  	<rich:panel styleClass="show-product-data-grid-panel">
-                 	<h:panelGrid columns="3">  
+                 	<h:panelGrid columns="1">  
                  		
                  		<h:outputLabel value="#{rowIndex+1}" styleClass="current-product-show-number"></h:outputLabel>
                  		<h:graphicImage value="/productimage/#{product.imageName}"></h:graphicImage>
-                 		<h:panelGrid columns="1" style="width:220px;height:160px" rowClasses="show-product-data-grid-row-two,show-product-data-grid-row-three,show-product-data-grid-row-four,show-product-data-grid-row-five,show-product-data-grid-row-six,show-product-data-grid-row-seven,show-product-data-grid-row-eight">
+                 		<h:panelGrid columns="1" rowClasses="show-product-data-grid-row-two,show-product-data-grid-row-three,show-product-data-grid-row-four,show-product-data-grid-row-five,show-product-data-grid-row-six,show-product-data-grid-row-seven,show-product-data-grid-row-eight">
                  	 	<h:commandLink>
                  	 	<h:panelGroup styleClass="font6">
                  	 	<h:outputText value="#{product.brandCode}"/>
