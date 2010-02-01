@@ -59,8 +59,8 @@ public class ElectricStewPanProductBean extends PagedBaseBean {
 		this.number20 = "";
 		this.number40 = "";
 		this.number100 = "";
-		this.numberOnePage = 10;
-		this.oldNumberOnePage = 10;
+		this.numberOnePage = 15;
+		this.oldNumberOnePage = 15;
 		this.primaryCategoryCode = HeaderConstants.KITCHEN_APPLIANCE_ID;
 		this.secondCategoryCode = HeaderConstants.subMenu03;
 		this.setBrandCode("");
