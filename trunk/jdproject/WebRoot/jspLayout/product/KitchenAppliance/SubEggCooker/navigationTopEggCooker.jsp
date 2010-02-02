@@ -8,12 +8,14 @@ xmlns:h="http://java.sun.com/jsf/html"
 xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
 <ui:composition>
+<table width="100%">
+<tbody>
 	<tr>
-		<td style="PADDING-LEFT: 8px;width:14%;text-align:left;">
+		<td style="PADDING-LEFT: 8px;width:20%;text-align:left;">
 			<h:outputLabel value="品牌:" styleClass="current-selected_label"></h:outputLabel><h:outputLabel id="brandLabel" styleClass="current-selected" value="#{listEggCookerProduct.brandLabel}"></h:outputLabel>
 		</td>
 			
-		<td class="selected-new" width="86%">
+		<td class="selected-new" width="80%">
 			<a4j:repeat var="brand" rowKeyVar="index" value="#{brands}">
 				<a4j:commandLink action="#{navigationEggCooker.clickLink}" ajaxSingle="true" style="CURSOR: pointer;" immediate="true" limitToList="true" reRender="productList,brandLabel">
 					<span class="top-product-navigation-option">#{brand.label}</span>
@@ -25,10 +27,10 @@ xmlns:rich="http://richfaces.org/rich">
 			
 	</tr>
 	<tr>
-		<td style="PADDING-LEFT: 8px;width:15%;text-align:left;">
+		<td style="PADDING-LEFT: 8px;width:20%;text-align:left;">
 			<h:outputLabel value="价格:" styleClass="current-selected_label"></h:outputLabel><h:outputText id="priceRangeLabel" styleClass="current-selected" value="#{listEggCookerProduct.priceRangeLabel}"></h:outputText>
 		</td>
-		<td class="selected-new" width="90%">
+		<td class="selected-new" width="80%">
 			<a4j:repeat var="priceRange" rowKeyVar="index" value="#{priceRangeList}">
 				<a4j:commandLink action="#{navigationEggCooker.clickLink}" ajaxSingle="true" style="CURSOR: pointer;" immediate="true" limitToList="true" reRender="productList,priceRangeLabel">
 					<span class="top-product-navigation-option">#{priceRange.description}</span>
@@ -40,10 +42,10 @@ xmlns:rich="http://richfaces.org/rich">
 		</td> 
 	</tr>
 	<tr>
-		<td style="PADDING-LEFT: 8px;width:15%;text-align:left;">
+		<td style="PADDING-LEFT: 8px;width:20%;text-align:left;">
 			<h:outputLabel value="额定容量(个):" styleClass="current-selected_label"></h:outputLabel><h:outputText id="volumeRangeLabel" styleClass="current-selected" value="#{listEggCookerProduct.volumeRangeLabel}"></h:outputText>
 		</td>
-		<td class="selected-new" width="90%">
+		<td class="selected-new" width="80%">
 			<a4j:repeat var="volumeRange" rowKeyVar="index" value="#{volumeRangeList}">
 				<a4j:commandLink action="#{navigationEggCooker.clickLink}" ajaxSingle="true" style="CURSOR: pointer;" immediate="true" limitToList="true" reRender="productList,volumeRangeLabel">
 					<span class="top-product-navigation-option">#{volumeRange.description}</span>
@@ -55,10 +57,10 @@ xmlns:rich="http://richfaces.org/rich">
 		</td> 
 	</tr>
 	<tr>
-		<td style="PADDING-LEFT: 8px;width:15%;text-align:left;">
+		<td style="PADDING-LEFT: 8px;width:20%;text-align:left;">
 			<h:outputLabel value="控制方式:" styleClass="current-selected_label"></h:outputLabel><h:outputText id="timeTypeLabel" styleClass="current-selected" value="#{listEggCookerProduct.timeTypeLabel}"></h:outputText>
 		</td>
-		<td class="selected-new" width="90%">
+		<td class="selected-new" width="80%">
 			<a4j:repeat var="timeType" rowKeyVar="index" value="#{timeTypeItems}">
 				<a4j:commandLink action="#{navigationEggCooker.clickLink}" ajaxSingle="true" style="CURSOR: pointer;" immediate="true" limitToList="true" reRender="productList,timeTypeLabel">
 					<span class="top-product-navigation-option">#{timeType.label}</span>
@@ -68,10 +70,8 @@ xmlns:rich="http://richfaces.org/rich">
 			</a4j:repeat>
 		</td> 
 	</tr>
-
-	
-	
-
+</tbody>
+</table>
 </ui:composition>
 </jsp:root>
 
