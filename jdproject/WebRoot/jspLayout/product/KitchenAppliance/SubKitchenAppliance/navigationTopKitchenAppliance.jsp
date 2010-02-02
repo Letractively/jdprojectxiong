@@ -8,12 +8,14 @@ xmlns:h="http://java.sun.com/jsf/html"
 xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
 <ui:composition>
-<tr>
-		<td style="PADDING-LEFT: 8px;width:14%;text-align:left;">
+<table width="100%">
+	<tbody>
+		<tr>
+		<td style="PADDING-LEFT: 8px;width:20%;text-align:left;">
 			<h:outputLabel value="品牌:" styleClass="current-selected_label"></h:outputLabel><h:outputLabel id="brandLabel" styleClass="current-selected" value="#{listKitchenApplianceProduct.brandLabel}"></h:outputLabel>
 		</td>
 			
-				<td class="selected-new" width="86%">
+				<td class="selected-new" width="80%">
 					<a4j:repeat var="brand" rowKeyVar="index" value="#{brands}">
 					<a4j:commandLink action="#{navigationKitchenAppliance.clickLink}" ajaxSingle="true" style="CURSOR: pointer;" immediate="true" limitToList="true" reRender="productList,brandLabel,secondCategoryLabel">
 						<span class="top-product-navigation-option">
@@ -25,13 +27,13 @@ xmlns:rich="http://richfaces.org/rich">
 					</a4j:repeat>
 				</td> 
 			
-	</tr>
+		</tr>
 
-<tr>
-			<td style="PADDING-LEFT: 8px;width:15%;text-align:left;">
+		<tr>
+			<td style="PADDING-LEFT: 8px;width:20%;text-align:left;">
 				<h:outputLabel value="类别:" styleClass="current-selected_label"></h:outputLabel><h:outputText id="secondCategoryLabel" styleClass="current-selected" value="#{listKitchenApplianceProduct.secondCategoryLabel}"></h:outputText>
 			</td>
-			<td class="selected-new" width="90%">
+			<td class="selected-new" width="80%">
 				<a4j:repeat var="secondCategory" rowKeyVar="index" value="#{secondCategorys}">
 				<a4j:commandLink action="#{navigationKitchenAppliance.clickLink}" ajaxSingle="true" style="CURSOR: pointer;" immediate="true" oncomplete="showText(this)" limitToList="true" reRender="productList,brandLabel,secondCategoryLabel">
 					
@@ -49,10 +51,8 @@ xmlns:rich="http://richfaces.org/rich">
 					</script>
 			</td> 
 		</tr>
-
-	
-	
-
+	</tbody>
+</table>
 </ui:composition>
 </jsp:root>
 

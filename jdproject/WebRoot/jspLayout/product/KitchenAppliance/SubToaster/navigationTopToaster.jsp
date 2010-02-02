@@ -8,11 +8,13 @@ xmlns:h="http://java.sun.com/jsf/html"
 xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
 <ui:composition>
+<table width="100%">
+	<tbody>
 	<tr>
-		<td style="PADDING-LEFT: 8px;width:14%;text-align:left;">
+		<td style="PADDING-LEFT: 8px;width:20%;text-align:left;">
 			<h:outputLabel value="品牌:" styleClass="current-selected_label"></h:outputLabel><h:outputLabel id="brandLabel" styleClass="current-selected" value="#{listToasterProduct.brandLabel}"></h:outputLabel>
 		</td>
-		<td class="selected-new" width="86%">
+		<td class="selected-new" width="80%">
 			<a4j:repeat var="brand" rowKeyVar="index" value="#{brands}">
 				<a4j:commandLink action="#{navigationToaster.clickLink}" ajaxSingle="true" style="CURSOR: pointer;" immediate="true" limitToList="true" reRender="productList,brandLabel">
 					<span class="top-product-navigation-option">#{brand.label}</span>
@@ -23,10 +25,10 @@ xmlns:rich="http://richfaces.org/rich">
 		</td> 
 	</tr>
 	<tr>
-		<td style="PADDING-LEFT: 8px;width:15%;text-align:left;">
+		<td style="PADDING-LEFT: 8px;width:20%;text-align:left;">
 			<h:outputLabel value="价格:" styleClass="current-selected_label"></h:outputLabel><h:outputText id="priceRangeLabel" styleClass="current-selected" value="#{listToasterProduct.priceRangeLabel}"></h:outputText>
 		</td>
-		<td class="selected-new" width="90%">
+		<td class="selected-new" width="80%">
 			<a4j:repeat var="priceRange" rowKeyVar="index" value="#{priceRangeList}">
 				<a4j:commandLink action="#{navigationToaster.clickLink}" ajaxSingle="true" style="CURSOR: pointer;" immediate="true" limitToList="true" reRender="productList,priceRangeLabel">
 					<span class="top-product-navigation-option">#{priceRange.description}</span>
@@ -38,10 +40,10 @@ xmlns:rich="http://richfaces.org/rich">
 		</td> 
 	</tr>
 	<tr>
-		<td style="PADDING-LEFT: 8px;width:14%;text-align:left;">
+		<td style="PADDING-LEFT: 8px;width:20%;text-align:left;">
 			<h:outputLabel value="类别:" styleClass="current-selected_label"></h:outputLabel><h:outputLabel id="typeLabel" styleClass="current-selected" value="#{listToasterProduct.typeLabel}"></h:outputLabel>
 		</td>
-		<td class="selected-new" width="86%">
+		<td class="selected-new" width="80%">
 			<a4j:repeat var="type" rowKeyVar="index" value="#{typeItems}">
 				<a4j:commandLink action="#{navigationToaster.clickLink}" ajaxSingle="true" style="CURSOR: pointer;" immediate="true" limitToList="true" reRender="productList,typeLabel">
 					<span class="top-product-navigation-option">#{type.label}</span>
@@ -51,7 +53,8 @@ xmlns:rich="http://richfaces.org/rich">
 			</a4j:repeat>
 		</td> 
 	</tr>
-	
+	</tbody>
+</table>
 
 </ui:composition>
 </jsp:root>
