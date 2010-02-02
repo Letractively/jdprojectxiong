@@ -698,11 +698,11 @@ div.reviews{margin:5px 0}
 .table-list-product-panel-grid-header {
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
-	BORDER-RIGHT: #ffffff 0px solid; 
-	BORDER-TOP: #ffffff 0px solid; 
-	BACKGROUND: #fffff; 
-	BORDER-LEFT: #ffffff 0px solid; 
-	BORDER-BOTTOM: #ffffff 0px solid; 
+	BORDER-RIGHT: 0px none #FFFFFF; 
+	BORDER-TOP: 0px none #FFFFFF; 
+	BACKGROUND: #FFFFFF; 
+	BORDER-LEFT: 0px none #FFFFFF; 
+	BORDER-BOTTOM: 0px none #FFFFFF; 
 	HEIGHT: 36px;
 	text-align:LEFT;
 	font-size:12px;
