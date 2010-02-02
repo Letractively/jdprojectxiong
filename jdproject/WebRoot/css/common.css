@@ -201,10 +201,10 @@ input, select, button, legend, a {
 }
 
 .current-selected_label {
-	FLOAT: left; COLOR: #7d7d7d; FONT-FAMILY: Arial;FONT-WEIGHT:BOLD;
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 1px; PADDING-TOP: 3px;FLOAT: left; COLOR: #7d7d7d; FONT-FAMILY: Arial;FONT-WEIGHT:BOLD;
 }
 .current-selected {
-	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 0px; PADDING-TOP: 3px; DISPLAY: inline-table; BACKGROUND: #a8d0f4; COLOR: #ffffff; font-size:12px;
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 1px; PADDING-TOP: 1px; DISPLAY: inline-table; BACKGROUND: #a8d0f4; COLOR: #ffffff; font-size:12px;
 }
 .current-product-show-number {
 	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 0px; PADDING-TOP: 3px; DISPLAY: inline-table; BACKGROUND: #a8d0f4; COLOR: #ffffff; font-size:12px;
@@ -676,6 +676,8 @@ div.reviews{margin:5px 0}
   margin:0px 0px 0px 0px;
 }
 .table-list-product-panel-grid-column {
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
   	font-size: 12pt;
   	align: left;
   	width:33%;
@@ -683,7 +685,7 @@ div.reviews{margin:5px 0}
   	BORDER-TOP: 0px none #FFFFFF; 
 	BORDER-LEFT: 0px none #FFFFFF; 
 	BORDER-BOTTOM: 0px none #FFFFFF;
-	BACKGROUND: #f7f7f7;
+	BACKGROUND: #FFFFFF;
 }
 .table-list-product-left-panel-grid-column {
   	font-size: 12pt;
@@ -730,11 +732,13 @@ div.reviews{margin:5px 0}
 .table-list-product-panel-grid-footer {
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
-	BORDER-TOP: #dff3fe 1px solid;
-	BORDER-RIGHT: #dff3fe 1px solid;
-	BORDER-LEFT: #dff3fe 1px solid; 
-	BACKGROUND: #ecf5fc; 
-	BORDER-BOTTOM: #a8d0f4 1px solid;
+	BORDER-RIGHT: 1px solid #e3e3e3; 
+	BORDER-TOP: 1px solid #e3e3e3; 
+	BACKGROUND: #e3e3e3; 
+	BORDER-LEFT: 1px solid #e3e3e3; 
+	BORDER-BOTTOM: 1px solid #e3e3e3;
+	text-align: left;
+	vAlign:middle;
 }
 
 .table-list-product-panel-grid-data-grid {
@@ -744,6 +748,7 @@ div.reviews{margin:5px 0}
 	BORDER-TOP: 0px solid #FFFFFF; 
 	BORDER-LEFT: 0px solid #FFFFFF; 
 	BORDER-BOTTOM: 0px solid #FFFFFF;
+	background-color: #FFFFFF;
 	}
 .navigation-left-kitchen_appliance-product-panel-grid-data-grid {
 	padding:0px 0px 0px 0px;
@@ -1499,6 +1504,8 @@ div.reviews{margin:5px 0}
 	
 	
 .no-product-find {
+	padding:6px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
 	font-size :14px;
 	color:red;
 	font-weight:bold;
@@ -1624,7 +1631,15 @@ div.reviews{margin:5px 0}
 	margin:0px 0px 0px 0px;
 	position: relative;
 	width: 100%;
-	border : 1px solid #e2eaed ;
+	min-height:300px;
+	border : 0px solid #e3e3e3 ;
+	}
+.show-product-data-grid-panel-auto-height {
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	position: relative;
+	width: 100%;
+	border : 0px solid #e3e3e3 ;
 	}
 .main-header{
 	padding:0px 0px 0px 0px;
