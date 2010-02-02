@@ -194,7 +194,7 @@ xmlns:rich="http://richfaces.org/rich">
                 	<h:outputText value="共:#{listElectricSteamerProduct.dataModel.rowCount}件商品" rendered="#{listElectricSteamerProduct.dataModel.rowCount>0}"></h:outputText>
       			</f:facet>
      				<a4j:region renderRegionOnly="false" selfRendered="true">
-                 	<rich:panel styleClass="show-product-data-grid-panel">
+                 	<rich:panel styleClass="show-product-data-grid-panel-auto-height">
                  	<h:panelGrid columns="3" columnClasses="show-image-font-product-data-grid-column-one,show-image-font-product-data-grid-column-two,show-image-font-product-data-grid-column-three">  
                  		<h:panelGrid columns="1">
                  		<h:outputLabel value="#{rowIndex+1}" styleClass="current-product-show-number"></h:outputLabel>
@@ -264,7 +264,7 @@ xmlns:rich="http://richfaces.org/rich">
                 	<h:outputText value="共:#{listElectricSteamerProduct.dataModel.rowCount}件商品" rendered="#{listElectricSteamerProduct.dataModel.rowCount>0}"></h:outputText>
       			</f:facet>
      				<a4j:region renderRegionOnly="false" selfRendered="true">
-                 	<rich:panel styleClass="show-product-data-grid-panel">
+                 	<rich:panel styleClass="show-product-data-grid-panel-auto-height">
                  	<h:panelGrid columns="4" columnClasses="show-font-product-data-grid-column-one,show-font-product-data-grid-column-two,show-font-product-data-grid-column-three,show-font-product-data-grid-column-four">  
                  		<h:panelGrid columns="1">
 						<h:panelGroup>
