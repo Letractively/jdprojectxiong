@@ -169,6 +169,75 @@ input, select, button, legend, a {
 	text-decoration : underline;
 }
 <!-- end  rich panel red style -->
+<!-- start  rich panel only body gray style -->
+.panel-gray-border {
+	padding: 0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	background-color: transparent;
+	border : 0px solid #d6d6d6;
+	}
+.panel-header-gray-border{
+	top: 0px;
+  	left: 0px;
+  	padding:0px 0px 0px 0px;
+  	margin:0px 0px 0px 0px;
+  	font-size: 13px;
+  	font-weight:bold;
+  	color:#fff;
+  	line-height:22px;
+  	TEXT-INDENT: 6px;
+  	background-position : top left;
+  	border:0px #d6d6d6 solid;
+}
+.panel-header-gray-border-main-pg-column-one{
+	width:10%;
+	text-align:left;
+}
+.panel-header-gray-border-main-pg-column-two{
+	width:50%;
+	text-align:center;
+}
+.panel-header-gray-border-main-pg-column-three{
+	width:40%;
+	text-align:right;
+	}
+.panel-header-gray-border-pg-column{
+	padding: 0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	border : 0px solid #ACBECE;
+	text-align:center;
+	 list-style-type:none;
+	}
+
+.panel-documents-gray-border{
+	padding: 0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	background-color: transparent;
+	border : 1px solid #d6d6d6;
+	BORDER-RIGHT:1px solid #d6d6d6;
+	BORDER-TOP: 0px none d6d6d6;
+	BORDER-LEFT: 1px solid #d6d6d6;
+	BORDER-BOTTOM: 1px solid #d6d6d6;
+	text-align:left;
+}
+.panel-documents-gray-border div{
+	background-color: transparent;
+	FONT-FAMILY: Arial,sans-serif;
+	font-size : 12px;
+	border:0;
+	padding:0;
+}
+
+.panel-documents-gray-border a{
+	color : #000000;
+	text-decoration : none;
+}
+.panel-documents-gray-border a:hover{
+	color : red;
+	text-decoration : underline;
+}
+
+<!-- end  rich panel only body gray style -->
 <!-- start panel bar -->
 .rich-panelbar{
 	BORDER-RIGHT:0px solid #CC3333;
@@ -748,7 +817,7 @@ div.reviews{margin:5px 0}
 	BORDER-TOP: 0px solid #FFFFFF; 
 	BORDER-LEFT: 0px solid #FFFFFF; 
 	BORDER-BOTTOM: 0px solid #FFFFFF;
-	background-color: #FFFFFF;
+	background-color: transparent;
 	}
 .navigation-left-kitchen_appliance-product-panel-grid-data-grid {
 	padding:0px 0px 0px 0px;
@@ -1605,25 +1674,28 @@ div.reviews{margin:5px 0}
   text-indent: 22mm;
   width:20%;
   color: #999;
+  background-color: transparent;
 }
 .show-image-font-product-data-grid-column-two {
   font-size: 12px;
   text-align:left;
   width:60%;
   color: #999;
+  background-color: transparent;
 }
 .show-image-font-product-data-grid-column-three {
   font-size: 12px;
   text-align:center;
   width:20%;
   color: #999;
+  background-color: transparent;
 }
 .show-image-font-product-data-grid-row-one {
-  background-color: #FFFFFF;
+  background-color: transparent;
   border:0px solid #e3e3e3;
 }
 .show-image-font-product-data-grid-row-two {
-  background-color: #FFFFFFF;
+  background-color: transparent;
   border:0px #e3e3e3 none;
 }
 .show-product-data-grid-panel {
@@ -1633,6 +1705,7 @@ div.reviews{margin:5px 0}
 	width: 100%;
 	min-height:300px;
 	border : 0px solid #e3e3e3 ;
+	background-color: transparent;
 	}
 .show-product-data-grid-panel-auto-height {
 	padding:0px 0px 0px 0px;
@@ -1640,6 +1713,7 @@ div.reviews{margin:5px 0}
 	position: relative;
 	width: 100%;
 	border : 0px solid #e3e3e3 ;
+	background-color: transparent;
 	}
 .main-header{
 	padding:0px 0px 0px 0px;
@@ -1892,4 +1966,42 @@ background-color:#ffffff;
 	FONT-WEIGHT:BOLD;
 	COLOR:#FFFFFF;
 	}
-	
+.product-detail-panel-grid-body-column-one {
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	width:30%;
+	text-align:center;
+	align:center;
+	}
+.product-detail-panel-grid-body-column-two {
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	width:70%;
+	text-align:left;
+	align:left;
+	}
+.product-detail-panel-grid-header-left {
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;BACKGROUND: url(../css/images/icons/product-header-bg.gif) no-repeat left -241px; FLOAT: left; OVERFLOW: hidden; WIDTH: 4px; HEIGHT: 53px
+}
+.product-detail-panel-grid-header-right {
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;BACKGROUND: url(../css/images/icons/product-header-bg.gif) no-repeat -4px -241px; FLOAT: right; OVERFLOW: hidden; WIDTH: 4px; HEIGHT: 53px
+}.product-detail-panel-grid-header-center {
+	padding:0px 0px 0px 6px;
+	margin:0px 0px 0px 0px;BACKGROUND: url(../css/images/icons/product-header-title.gif) repeat-x; WIDTH: 100%; HEIGHT: 53px
+}
+.product-detail-font1 {
+	FONT-SIZE: 15px; 
+	OVERFLOW: hidden; 
+	COLOR: #484848;
+	FONT-WEIGHT:600;
+	LINE-HEIGHT: 22px;
+	}
+.product-detail-font2 {
+	FONT-WEIGHT: normal; 
+	FONT-SIZE: 12px; 
+	OVERFLOW: hidden;
+	COLOR: #f60;
+	}
+

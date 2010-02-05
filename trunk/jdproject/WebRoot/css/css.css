@@ -910,5 +910,92 @@ UNKNOWN {
 	BACKGROUND-POSITION: -900px -250px
 }/* en_US/e647/GH-LIGER_Ebay_e64710438250_en_US */
 /* b=10438250 */
+#productDetailMain {
+	FLOAT: left;
+	}
 
+.producthead {
+	BACKGROUND: url(../css/images/icons/product-header-title.gif) repeat-x; WIDTH: 100%; HEIGHT: 53px
+}
+.producthead .infoTL {
+	BACKGROUND: url(../css/images/icons/product-header-bg.gif) no-repeat left -241px; FLOAT: left; OVERFLOW: hidden; WIDTH: 4px; HEIGHT: 53px
+}
+.producthead .infoTR {
+	BACKGROUND: url(../css/images/icons/product-header-bg.gif) no-repeat -4px -241px; FLOAT: right; OVERFLOW: hidden; WIDTH: 4px; HEIGHT: 53px
+}
+
+.producthead .brand {
+	BORDER-RIGHT: #ededed 1px solid; PADDING-RIGHT: 0px; PADDING-LEFT: 5px; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 108px; PADDING-TOP: 5px; HEIGHT: 47px
+}
+.producthead H1 {
+	FLOAT: left; WIDTH: 80%
+}
+.producthead H2 {
+	FLOAT: left; WIDTH: 80%
+}
+.producthead H1 {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 10px; FONT-SIZE: 15px; PADDING-BOTTOM: 3px; OVERFLOW: hidden; COLOR: #484848; LINE-HEIGHT: 22px; PADDING-TOP: 6px; HEIGHT: 28px;
+}
+.producthead H1 A {
+	COLOR: #484848
+}
+.producthead H2 {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 10px; FONT-WEIGHT: normal; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; OVERFLOW: hidden; COLOR: #f60; LINE-HEIGHT: 16px; PADDING-TOP: 2px; HEIGHT: 16px
+}
+.productInfo {
+	MARGIN-TOP: 10px
+}
+
+.introBody {
+	BORDER-RIGHT: #d6d6d6 1px solid; BORDER-LEFT: #d6d6d6 1px solid
+}
+#productInfo {
+	OVERFLOW: hidden; WIDTH: 100%
+}
+#productInfo DIV {
+	FLOAT: left
+}
+.infoShow {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 9px; PADDING-BOTTOM: 10px; WIDTH: 220px; PADDING-TOP: 10px;TEXT-ALIGN:CENTER;
+}
+.infoShow .mainShow {
+	WIDTH: 220px; HEIGHT: 165px
+}
+.infoShow .scroll {
+	MARGIN-TOP: 3px; OVERFLOW: hidden; WIDTH: 100%; HEIGHT: 36px
+}
+.infoShow .share {
+	PADDING-LEFT: 19px; BACKGROUND: url(http://c1.neweggimages.com.cn/WebResources/2009/Default/Nest/icon/iconA3.gif) no-repeat left -437px; FLOAT: left; MARGIN: 15px 0px 0px 12px; WIDTH: 80px; COLOR: #1e4c9a
+}
+.infoShow .share:hover {
+	COLOR: #f60
+}
+.infoShow .report {
+	PADDING-LEFT: 19px; BACKGROUND: url(http://c1.neweggimages.com.cn/WebResources/2009/Default/Nest/icon/iconA3.gif) no-repeat left -556px; FLOAT: left; MARGIN: 15px 0px 0px; COLOR: #1e4c9a
+}
+.infoShow .report:hover {
+	COLOR: #f60
+}
+.infoBuy {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 20px; PADDING-BOTTOM: 0px; WIDTH: 335px; PADDING-TOP: 10px;TEXT-ALIGN:LEFT;
+}
+.infoBuy .saleInfo {
+	PADDING-BOTTOM: 6px; BORDER-BOTTOM: #f1f1f1 1px solid
+}
+.infoBuy .sale-crazy {
+	PADDING-RIGHT: 24px; PADDING-LEFT: 20px; FONT-SIZE: 16px; BACKGROUND: url(http://c1.neweggimages.com.cn/WebResources/2009/Default/Nest/icon/iconI.gif) no-repeat right top; PADDING-BOTTOM: 0px; MARGIN-LEFT: 5px; PADDING-TOP: 0px
+}
+.infoBuy .saleInfo .groupPrice {
+	POSITION: relative
+}
+.infoBuy .saleInfo .price {
+	POSITION: relative
+}
+
+.infoBuy .saleInfo LI A.memPrice {
+	COLOR: #1e4c9a
+}
+.infoBuy .saleInfo LI A.memPrice:hover {
+	COLOR: #f60
+}
 
