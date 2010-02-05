@@ -143,19 +143,19 @@ public class ProductCreateBean extends ProductBaseBean {
             te= UIComponentUtil.getComponentChildren(component,componentMap); 
         }
 		if ("".equals(this.getProduct().getCode())) {
-			FacesMessage message=new FacesMessage(FacesMessage.SEVERITY_ERROR,"´íÎóÌáÊ¾:","²úÆ·±àÂë²»ÄÜÎª¿Õ£¡");
+			FacesMessage message=new FacesMessage(FacesMessage.SEVERITY_ERROR,"é”™è¯¯æç¤º:","äº§å“ç¼–ç ä¸èƒ½ä¸ºç©º!");
 			facesContext.addMessage(componentMap.get("productCode").getClientId(facesContext), message);
 			return null;
 		}
 		IProductService productService = (IProductService) this.getProductService();
 		Product product = (Product)productService.getProductByCode(this.getProduct().getCode());
 		if (null != product) {
-			FacesMessage message=new FacesMessage(FacesMessage.SEVERITY_ERROR,"´íÎóÌáÊ¾:","²úÆ·±àÂëÒÑ´æÔÚ£¡");
+			FacesMessage message=new FacesMessage(FacesMessage.SEVERITY_ERROR,"é”™è¯¯æç¤º:","äº§å“ç¼–ç å·²å­˜åœ¨!");
 			facesContext.addMessage(componentMap.get("productCode").getClientId(facesContext), message);
 			return null;
 		}
 		if (null == this.getProduct().getProvider() || null == this.getProduct().getProvider().getId()) {
-			FacesMessage message=new FacesMessage(FacesMessage.SEVERITY_ERROR,"´íÎóÌáÊ¾:","ÇëÑ¡ÔñÔ­³§ÉÌ£¡");
+			FacesMessage message=new FacesMessage(FacesMessage.SEVERITY_ERROR,"é”™è¯¯æç¤º:","è¯·é€‰æ‹©åŸå‚å•†!");
 			facesContext.addMessage(componentMap.get("productProviderFullName").getClientId(facesContext), message);
 			return null;
 		}
