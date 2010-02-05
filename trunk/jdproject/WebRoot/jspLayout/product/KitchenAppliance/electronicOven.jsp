@@ -121,7 +121,7 @@ xmlns:rich="http://richfaces.org/rich">
     			<h:outputText value="抱歉，找不到符合条件的商品!" rendered="#{(null != listElectronicOvenProduct.dataModel) and (listElectronicOvenProduct.dataModel.rowCount le 0)}" styleClass="no-product-find"></h:outputText>
     			<rich:dataGrid id="productListImg" rendered="#{listElectronicOvenProduct.styleImgFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="3" elements="#{listElectronicOvenProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" columnClasses="table-list-product-panel-grid-column" value="#{listElectronicOvenProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                 <f:facet name="header">
-                	<h:outputText value="共:#{listElectronicOvenProduct.dataModel.rowCount}件商品" rendered="#{listElectronicOvenProduct.dataModel.rowCount>0}"></h:outputText>
+                	<h:outputText value="产品列表(共有:#{listElectronicOvenProduct.dataModel.rowCount}件商品)" rendered="#{listElectronicOvenProduct.dataModel.rowCount>0}"></h:outputText>
       			</f:facet>
      				<a4j:region renderRegionOnly="false" selfRendered="true">
                  	<rich:panel styleClass="show-product-data-grid-panel">
@@ -192,7 +192,7 @@ xmlns:rich="http://richfaces.org/rich">
              	
              	<rich:dataGrid id="productListImgFont" rendered="#{listElectronicOvenProduct.styleImgFontFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="1" elements="#{listElectronicOvenProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" rowClasses="show-image-font-product-data-grid-row-one,show-image-font-product-data-grid-row-two" columnClasses="table-list-product-panel-grid-column" value="#{listElectronicOvenProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                 <f:facet name="header">
-                	<h:outputText value="共:#{listElectronicOvenProduct.dataModel.rowCount}件商品" rendered="#{listElectronicOvenProduct.dataModel.rowCount>0}"></h:outputText>
+                	<h:outputText value="产品列表(共有:#{listElectronicOvenProduct.dataModel.rowCount}件商品)" rendered="#{listElectronicOvenProduct.dataModel.rowCount>0}"></h:outputText>
       			</f:facet>
      				<a4j:region renderRegionOnly="false" selfRendered="true">
                  	<rich:panel styleClass="show-product-data-grid-panel-auto-height">
@@ -262,7 +262,7 @@ xmlns:rich="http://richfaces.org/rich">
              	
 				<rich:dataGrid id="productListFont" rendered="#{listElectronicOvenProduct.styleFontFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="1" elements="#{listElectronicOvenProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" rowClasses="show-font-product-data-grid-row-one,show-font-product-data-grid-row-two" columnClasses="table-list-product-panel-grid-column" value="#{listElectronicOvenProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                 <f:facet name="header">
-                	<h:outputText value="共:#{listElectronicOvenProduct.dataModel.rowCount}件商品" rendered="#{listElectronicOvenProduct.dataModel.rowCount>0}"></h:outputText>
+                	<h:outputText value="产品列表(共有:#{listElectronicOvenProduct.dataModel.rowCount}件商品)" rendered="#{listElectronicOvenProduct.dataModel.rowCount>0}"></h:outputText>
       			</f:facet>
      				<a4j:region renderRegionOnly="false" selfRendered="true">
                  	<rich:panel styleClass="show-product-data-grid-panel-auto-height">

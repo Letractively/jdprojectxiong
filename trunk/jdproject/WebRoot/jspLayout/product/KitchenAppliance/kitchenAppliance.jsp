@@ -121,7 +121,7 @@ xmlns:rich="http://richfaces.org/rich">
     			<rich:dataGrid id="productListImg" rendered="#{listKitchenApplianceProduct.styleImgFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="3" elements="#{listKitchenApplianceProduct.numberOnePage}" cellspacing="0" cellpadding="0" first="1" columnClasses="table-list-product-panel-grid-column" value="#{listKitchenApplianceProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                 <f:facet name="header">
                 	<h:panelGroup>
-                		<h:outputText value="产品列表("></h:outputText><h:outputText value="共有:#{listKitchenApplianceProduct.dataModel.rowCount}件商品)" rendered="#{listKitchenApplianceProduct.dataModel.rowCount>0}"></h:outputText>
+                		<h:outputText value="产品列表(共有:#{listKitchenApplianceProduct.dataModel.rowCount}件商品)" rendered="#{listKitchenApplianceProduct.dataModel.rowCount>0}"></h:outputText>
                 	</h:panelGroup>
       			</f:facet>
      				<a4j:region renderRegionOnly="false" selfRendered="true">
@@ -131,7 +131,8 @@ xmlns:rich="http://richfaces.org/rich">
                  		<h:outputLabel value="#{rowIndex+1}" styleClass="current-product-show-number"></h:outputLabel>
                  		<h:graphicImage value="/productimage/#{product.imageName}"></h:graphicImage>
                  		<h:panelGrid columns="1" rowClasses="show-product-data-grid-row-two,show-product-data-grid-row-three,show-product-data-grid-row-four,show-product-data-grid-row-five,show-product-data-grid-row-six,show-product-data-grid-row-seven,show-product-data-grid-row-eight">
-                 	 	<h:commandLink>
+                 	 	<h:commandLink action="#{productGlobalNavigation.seeProductDetail}" immediate="true">
+                 	 		<f:param name="productid" value="#{product.id}"></f:param>
                  	 	<h:panelGroup styleClass="font6">
                  	 	<h:outputText value="#{product.brandCode}"/>
                      	<h:outputText value="#{product.name}"/>
@@ -194,7 +195,7 @@ xmlns:rich="http://richfaces.org/rich">
              	<rich:dataGrid id="productListImgFont" rendered="#{listKitchenApplianceProduct.styleImgFontFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="1" elements="#{listKitchenApplianceProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" rowClasses="show-image-font-product-data-grid-row-one,show-image-font-product-data-grid-row-two" columnClasses="table-list-product-panel-grid-column" value="#{listKitchenApplianceProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                 <f:facet name="header">
                 	<h:panelGroup>
-                		<h:outputText value="产品列表("></h:outputText><h:outputText value="共有:#{listKitchenApplianceProduct.dataModel.rowCount}件商品)" rendered="#{listKitchenApplianceProduct.dataModel.rowCount>0}"></h:outputText>
+                		<h:outputText value="产品列表(共有:#{listKitchenApplianceProduct.dataModel.rowCount}件商品)" rendered="#{listKitchenApplianceProduct.dataModel.rowCount>0}"></h:outputText>
                 	</h:panelGroup>
       			</f:facet>
      				<a4j:region renderRegionOnly="false" selfRendered="true">
@@ -266,7 +267,7 @@ xmlns:rich="http://richfaces.org/rich">
 				<rich:dataGrid id="productListFont" rendered="#{listKitchenApplianceProduct.styleFontFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="1" elements="#{listKitchenApplianceProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" rowClasses="show-font-product-data-grid-row-one,show-font-product-data-grid-row-two" columnClasses="table-list-product-panel-grid-column" value="#{listKitchenApplianceProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                 <f:facet name="header">
                 	<h:panelGroup>
-                		<h:outputText value="产品列表("></h:outputText><h:outputText value="共有:#{listKitchenApplianceProduct.dataModel.rowCount}件商品)" rendered="#{listKitchenApplianceProduct.dataModel.rowCount>0}"></h:outputText>
+                		<h:outputText value="产品列表(共有:#{listKitchenApplianceProduct.dataModel.rowCount}件商品)" rendered="#{listKitchenApplianceProduct.dataModel.rowCount>0}"></h:outputText>
                 	</h:panelGroup>
       			</f:facet>
      				<a4j:region renderRegionOnly="false" selfRendered="true">
