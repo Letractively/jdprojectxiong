@@ -1129,6 +1129,26 @@
 		<value>#{productService}</value>
 		</managed-property>
     </managed-bean>
+    <managed-bean>
+        <managed-bean-name>productInfo</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.detail.ProductInfoBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>productGlobalNavigation</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.ProductGlobalNavigationBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
     <!-- start help center  -->
     <managed-bean>
 		<managed-bean-name>helpPanelMenuState</managed-bean-name>
@@ -1689,6 +1709,11 @@
 		<navigation-case>
 			<from-outcome>pcSharingDevice</from-outcome>
 			<to-view-id>/jspLayout/product/ComputerNetwork/pcSharingDevice.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>seeProductDetail</from-outcome>
+			<to-view-id>/jspLayout/product/productDetail.jsp</to-view-id>
+			<redirect/>
 		</navigation-case>
 	</navigation-rule>
 	<!-- end navigation product -->
