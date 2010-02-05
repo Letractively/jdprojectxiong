@@ -121,7 +121,7 @@ xmlns:rich="http://richfaces.org/rich">
     			<h:outputText value="抱歉，找不到符合条件的商品!" rendered="#{(null != listToasterProduct.dataModel) and (listToasterProduct.dataModel.rowCount le 0)}" styleClass="no-product-find"></h:outputText>
     			<rich:dataGrid id="productListImg" rendered="#{listToasterProduct.styleImgFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="3" elements="#{listToasterProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" columnClasses="table-list-product-panel-grid-column" value="#{listToasterProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                 <f:facet name="header">
-                	<h:outputText value="共:#{listToasterProduct.dataModel.rowCount}件商品" rendered="#{listToasterProduct.dataModel.rowCount>0}"></h:outputText>
+                	<h:outputText value="产品列表(共有:#{listToasterProduct.dataModel.rowCount}件商品)" rendered="#{listToasterProduct.dataModel.rowCount>0}"></h:outputText>
       			</f:facet>
      				<a4j:region renderRegionOnly="false" selfRendered="true">
                  	<rich:panel styleClass="show-product-data-grid-panel">
@@ -192,7 +192,7 @@ xmlns:rich="http://richfaces.org/rich">
              	
              	<rich:dataGrid id="productListImgFont" rendered="#{listToasterProduct.styleImgFontFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="1" elements="#{listToasterProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" rowClasses="show-image-font-product-data-grid-row-one,show-image-font-product-data-grid-row-two" columnClasses="table-list-product-panel-grid-column" value="#{listToasterProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                 <f:facet name="header">
-                	<h:outputText value="共:#{listToasterProduct.dataModel.rowCount}件商品" rendered="#{listToasterProduct.dataModel.rowCount>0}"></h:outputText>
+                	<h:outputText value="产品列表(共有:#{listToasterProduct.dataModel.rowCount}件商品)" rendered="#{listToasterProduct.dataModel.rowCount>0}"></h:outputText>
       			</f:facet>
      				<a4j:region renderRegionOnly="false" selfRendered="true">
                  	<rich:panel styleClass="show-product-data-grid-panel-auto-height">
@@ -262,7 +262,7 @@ xmlns:rich="http://richfaces.org/rich">
              	
 				<rich:dataGrid id="productListFont" rendered="#{listToasterProduct.styleFontFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="1" elements="#{listToasterProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" rowClasses="show-font-product-data-grid-row-one,show-font-product-data-grid-row-two" columnClasses="table-list-product-panel-grid-column" value="#{listToasterProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                 <f:facet name="header">
-                	<h:outputText value="共:#{listToasterProduct.dataModel.rowCount}件商品" rendered="#{listToasterProduct.dataModel.rowCount>0}"></h:outputText>
+                	<h:outputText value="产品列表(共有:#{listToasterProduct.dataModel.rowCount}件商品)" rendered="#{listToasterProduct.dataModel.rowCount>0}"></h:outputText>
       			</f:facet>
      				<a4j:region renderRegionOnly="false" selfRendered="true">
                  	<rich:panel styleClass="show-product-data-grid-panel-auto-height">
