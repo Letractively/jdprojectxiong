@@ -9,9 +9,13 @@ import com.ejd.model.exception.ProductException;
 import com.ejd.model.service.iface.IProductService;
 import com.ejd.utils.SpringFacesUtil;
 import com.ejd.web.bo.Product;
+import com.ejd.web.bo.Productunit;
+import com.ejd.web.bo.Stakeholder;
 import com.ejd.web.vo.genl.ExistProductPrimaryCategoryBean;
 import com.ejd.web.vo.product.detail.ProductInfoBean;
+import com.ejd.web.vo.productunit.ProductUnit;
 import com.ejd.web.vo.shopcart.InventoryItem;
+import com.ejd.web.vo.stakeholder.StakeholderVo;
 
 public class ProductGlobalNavigationBean {
 	
@@ -65,11 +69,21 @@ public class ProductGlobalNavigationBean {
 		String id =(String) SpringFacesUtil.getRequestParameter("productid");
 		Product product =(Product) this.getProductService().getProductById(Integer.valueOf(id).intValue());
 		if (null != product) {
+			Productunit productUnit = product.getUnit();
+			ProductUnit newProductUnit = new ProductUnit();
+			BeanCopier copyUnitBean = BeanCopier.create(Productunit.class, ProductUnit.class, false);
+			copyUnitBean.copy(productUnit, newProductUnit, null);
+			Stakeholder stakeholder = product.getProvider();
+			StakeholderVo newStakeholderVo = new StakeholderVo();
+			BeanCopier copyStakeholderBean = BeanCopier.create(Stakeholder.class, StakeholderVo.class, false);
+			copyStakeholderBean.copy(stakeholder, newStakeholderVo, null);
 			ProductInfoBean productInfoBean = (ProductInfoBean) SpringFacesUtil.getManagedBean(ManageBeanConstants.PRODUCT_INFO_BEAN_NAME);
 			productInfoBean.setPreViewId(nowviewId);
 			ProductVo productVo = new ProductVo();
 			BeanCopier copyBean = BeanCopier.create(Product.class, ProductVo.class, false);
 			copyBean.copy(product, productVo, null);
+			productVo.setProvider(newStakeholderVo);
+			productVo.setUnit(newProductUnit);
 			productInfoBean.setProduct(productVo);
 			return "seeProductDetail";
 		} else {
