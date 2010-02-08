@@ -50,8 +50,15 @@ xmlns:rich="http://richfaces.org/rich">
 								<h:graphicImage value="/productimage/#{productInfo.product.imageName}"></h:graphicImage>
 							</a4j:outputPanel>
 							<h:panelGrid columns="2">
-								<h:outputText value="aaa"></h:outputText>
-								<h:outputText value="dd"></h:outputText>
+								<h:outputLabel value="商品编号:"></h:outputLabel><h:outputText value="#{productInfo.product.code}"></h:outputText>
+								<h:outputLabel value="商品型号:"></h:outputLabel><h:outputText value="#{productInfo.product.manufacturerCode}"></h:outputText>
+								<h:outputLabel value="品牌/厂商:"></h:outputLabel><h:outputText value="#{productInfo.product.brandCode} / #{productInfo.product.provider.shortName} "></h:outputText>
+								<h:outputLabel value="库存状况:"></h:outputLabel><h:outputText value="#{productInfo.product.currentNumber >0 ? '有货':'无货'}"></h:outputText>
+								<h:outputLabel value="积分额度:"></h:outputLabel><h:outputText value="#{productInfo.product.integration}"></h:outputText>
+								<h:outputLabel value="进货价:" rendered="#{currentUser.showPurchasePrice}"></h:outputLabel><h:outputText value="#{productInfo.product.purchasePrice}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showPurchasePrice}"/>
+                     			<h:outputLabel value="代理价:" rendered="#{currentUser.showTradePriceOne}"></h:outputLabel><h:outputText value="#{productInfo.product.tradePriceOne}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showTradePriceOne}"/>
+                     			<h:outputLabel value="经销价:" rendered="#{currentUser.showTradePriceTwo}"></h:outputLabel><h:outputText value="#{productInfo.product.tradePriceTwo}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showTradePriceTwo}"/>
+                     			<h:outputLabel value="零售价:" rendered="#{currentUser.showRetailPrice}"></h:outputLabel><h:outputText value="#{productInfo.product.retailPrice}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showRetailPrice}"/>
 							</h:panelGrid>
 					</h:panelGrid>
 				</rich:panel>
