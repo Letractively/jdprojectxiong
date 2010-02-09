@@ -47,7 +47,9 @@ xmlns:rich="http://richfaces.org/rich">
 					</f:facet>
 					<h:panelGrid style="width:99%" columns="2" cellspacing="0" cellpadding="0" columnClasses="product-detail-panel-grid-body-column-one,product-detail-panel-grid-body-column-two">
 							<a4j:outputPanel>
-								<h:graphicImage value="/productimage/#{productInfo.product.imageName}"></h:graphicImage>
+								<h:graphicImage value="/productimage/#{productInfo.product.imageName}"></h:graphicImage><f:verbatim><br/></f:verbatim>
+								<a4j:commandLink style="" action="dd" value="推荐给朋友"></a4j:commandLink>
+								<a4j:commandLink style="" action="aa" value="价格纠错"></a4j:commandLink>
 							</a4j:outputPanel>
 							<h:panelGrid columns="2">
 								<h:outputLabel value="商品编号:"></h:outputLabel><h:outputText value="#{productInfo.product.code}"></h:outputText>
@@ -59,10 +61,34 @@ xmlns:rich="http://richfaces.org/rich">
                      			<h:outputLabel value="代理价:" rendered="#{currentUser.showTradePriceOne}"></h:outputLabel><h:outputText value="#{productInfo.product.tradePriceOne}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showTradePriceOne}"/>
                      			<h:outputLabel value="经销价:" rendered="#{currentUser.showTradePriceTwo}"></h:outputLabel><h:outputText value="#{productInfo.product.tradePriceTwo}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showTradePriceTwo}"/>
                      			<h:outputLabel value="零售价:" rendered="#{currentUser.showRetailPrice}"></h:outputLabel><h:outputText value="#{productInfo.product.retailPrice}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showRetailPrice}"/>
+                     			<f:facet name="footer">
+                     				<h:panelGroup><a4j:commandButton image="/css/images/icons/buynow4.gif"></a4j:commandButton><a4j:commandButton image="/css/images/icons/fav4.gif" style="padding-left:6px;"/></h:panelGroup>
+                     			</f:facet>
 							</h:panelGrid>
 					</h:panelGrid>
 				</rich:panel>
-				
+				<rich:panel style="width:100%" styleClass="panel-none-border" headerClass="panel-header-none-border" bodyClass="panel-documents-none-border">
+					
+					<rich:tabPanel switchType="ajax" headerSpacing="0px">
+				        <rich:tab label="商品描述">
+				            Here is tab #1
+				        </rich:tab>
+				        <rich:tab label="规格参数">
+				            Here is tab #2
+				            <h:inputText value="dfdfdf"></h:inputText>
+				            <a4j:commandButton id="btn1" value="click me" reRender="l1,l2"></a4j:commandButton>
+				            <h:outputText id="l1" value="cvccvcv"></h:outputText>
+				        </rich:tab>
+				        <rich:tab label="包装信息">
+				            Here is tab #3
+				            <h:outputText id="l2" value="fdfdfdf"></h:outputText>
+				        </rich:tab>
+				        <rich:tab label="保修条款">
+				            Here is tab #3
+				            <h:outputText id="l3" value="fdfdfdf"></h:outputText>
+				        </rich:tab>
+				    </rich:tabPanel>
+			    </rich:panel>
     		</ui:define>
     		<ui:define id="kitchenApplianceRight" name="right">
     			<h:outputText value=""></h:outputText>
