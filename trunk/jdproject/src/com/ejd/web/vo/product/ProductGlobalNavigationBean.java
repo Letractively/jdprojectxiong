@@ -1,5 +1,9 @@
 package com.ejd.web.vo.product;
 
+import java.io.File;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 import javax.faces.context.FacesContext;
 
 import net.sf.cglib.beans.BeanCopier;
@@ -85,11 +89,32 @@ public class ProductGlobalNavigationBean {
 			productVo.setProvider(newStakeholderVo);
 			productVo.setUnit(newProductUnit);
 			productInfoBean.setProduct(productVo);
+			String fileName = "http://localhost:8080/jdproject/WEB-INF/jspLayout/subProductDetail/" + productVo.getIntroduceFileName();
+			if (this.checkJspExist(fileName)) {
+				productInfoBean.setSubViewId(productVo.getIntroduceFileName());
+			} else {
+				productInfoBean.setSubViewId("noThisPage.jsp");
+			}
 			return "seeProductDetail";
 		} else {
 			return null;
 		}
 	}
-	
+	private boolean checkJspExist(String fileName){
+		String requestPath="";
+		requestPath = FacesContext.getCurrentInstance().getExternalContext().getRequestContextPath();
+		boolean result = false;
+		try   {  
+	          HttpURLConnection.setFollowRedirects(false);  
+	          HttpURLConnection   con   =  
+	                (HttpURLConnection)   new   URL(fileName).openConnection();  
+	          con.setRequestMethod("HEAD");  
+	          return   (con.getResponseCode()   ==   HttpURLConnection.HTTP_OK);  
+	          }  
+	      catch   (Exception   e)   {  
+	                e.printStackTrace();  
+	                return   false;  
+	                }  
+	      }     
 
 }
