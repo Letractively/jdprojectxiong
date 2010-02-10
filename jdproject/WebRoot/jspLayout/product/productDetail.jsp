@@ -68,26 +68,7 @@ xmlns:rich="http://richfaces.org/rich">
 					</h:panelGrid>
 				</rich:panel>
 				<rich:panel style="width:100%" styleClass="panel-none-border" headerClass="panel-header-none-border" bodyClass="panel-documents-none-border">
-					
-					<rich:tabPanel switchType="ajax" headerSpacing="0px">
-				        <rich:tab label="商品描述">
-				            Here is tab #1
-				        </rich:tab>
-				        <rich:tab label="规格参数">
-				            Here is tab #2
-				            <h:inputText value="dfdfdf"></h:inputText>
-				            <a4j:commandButton id="btn1" value="click me" reRender="l1,l2"></a4j:commandButton>
-				            <h:outputText id="l1" value="cvccvcv"></h:outputText>
-				        </rich:tab>
-				        <rich:tab label="包装信息">
-				            Here is tab #3
-				            <h:outputText id="l2" value="fdfdfdf"></h:outputText>
-				        </rich:tab>
-				        <rich:tab label="保修条款">
-				            Here is tab #3
-				            <h:outputText id="l3" value="fdfdfdf"></h:outputText>
-				        </rich:tab>
-				    </rich:tabPanel>
+					<ui:include src="/WEB-INF/jspLayout/subProductDetail/#{productInfo.subViewId}" />
 			    </rich:panel>
     		</ui:define>
     		<ui:define id="kitchenApplianceRight" name="right">
