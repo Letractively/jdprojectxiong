@@ -10,6 +10,8 @@ public class ProductInfoBean{
 	public String preViewId;
 	
 	private ProductVo product;
+	
+	private String subViewId;
 
 	public IProductService getProductService() {
 		return productService;
@@ -33,6 +35,14 @@ public class ProductInfoBean{
 
 	public void setProduct(ProductVo product) {
 		this.product = product;
+	}
+
+	public String getSubViewId() {
+		return subViewId;
+	}
+
+	public void setSubViewId(String subViewId) {
+		this.subViewId = subViewId;
 	}
 
 	public ProductInfoBean() {
