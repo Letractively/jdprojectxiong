@@ -41,9 +41,7 @@ xmlns:rich="http://richfaces.org/rich">
 									<h:outputText value="#{productInfo.product.description}" styleClass="product-detail-font2"></h:outputText>
 								</h:panelGroup>
 								<h:outputText value="" style="width:4px"></h:outputText>
-							</h:panelGrid>
-							
-						
+							</h:panelGrid>	
 					</f:facet>
 					<h:panelGrid style="width:99%" columns="2" cellspacing="0" cellpadding="0" columnClasses="product-detail-panel-grid-body-column-one,product-detail-panel-grid-body-column-two">
 							<a4j:outputPanel>
@@ -67,7 +65,7 @@ xmlns:rich="http://richfaces.org/rich">
 							</h:panelGrid>
 					</h:panelGrid>
 				</rich:panel>
-				<rich:panel style="width:100%" styleClass="panel-none-border" headerClass="panel-header-none-border" bodyClass="panel-documents-none-border">
+				<rich:panel style="width:100%;padding-top:6px;" styleClass="panel-none-border" headerClass="panel-header-none-border" bodyClass="panel-documents-none-border">
 					<ui:include src="/WEB-INF/jspLayout/subProductDetail/#{productInfo.subViewId}" />
 			    </rich:panel>
     		</ui:define>
