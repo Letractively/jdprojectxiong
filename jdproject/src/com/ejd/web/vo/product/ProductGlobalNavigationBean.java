@@ -3,8 +3,12 @@ package com.ejd.web.vo.product;
 import java.io.File;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Iterator;
+import java.util.Set;
 
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 
 import net.sf.cglib.beans.BeanCopier;
 
@@ -89,7 +93,7 @@ public class ProductGlobalNavigationBean {
 			productVo.setProvider(newStakeholderVo);
 			productVo.setUnit(newProductUnit);
 			productInfoBean.setProduct(productVo);
-			String fileName = "http://localhost:8080/jdproject/WEB-INF/jspLayout/subProductDetail/" + productVo.getIntroduceFileName();
+			String fileName = productVo.getIntroduceFileName();
 			if (this.checkJspExist(fileName)) {
 				productInfoBean.setSubViewId(productVo.getIntroduceFileName());
 			} else {
@@ -101,20 +105,29 @@ public class ProductGlobalNavigationBean {
 		}
 	}
 	private boolean checkJspExist(String fileName){
-		String requestPath="";
-		requestPath = FacesContext.getCurrentInstance().getExternalContext().getRequestContextPath();
 		boolean result = false;
-		try   {  
-	          HttpURLConnection.setFollowRedirects(false);  
-	          HttpURLConnection   con   =  
-	                (HttpURLConnection)   new   URL(fileName).openConnection();  
-	          con.setRequestMethod("HEAD");  
-	          return   (con.getResponseCode()   ==   HttpURLConnection.HTTP_OK);  
-	          }  
-	      catch   (Exception   e)   {  
-	                e.printStackTrace();  
-	                return   false;  
-	                }  
-	      }     
+		try	{
+			FacesContext facesContext = FacesContext.getCurrentInstance();
+			ExternalContext externalContext = facesContext.getExternalContext();
+			Set resourcePaths = externalContext.getResourcePaths("/WEB-INF/jspLayout/subProductDetail");
+			Iterator iterator = resourcePaths.iterator(); 
+			while (iterator.hasNext()) {
+				String path = (String) iterator.next();
+				String tempFileName = path.substring(36, path.length());
+				if (tempFileName.equals(fileName)) {
+					result = true;
+					if (result) {
+						break;
+					}
+				}
+				System.out.println(path);
+			} 
+			return result;
+		}
+		catch(Exception	e){  
+			e.printStackTrace();  
+	        return   false;  
+	    }  
+	}     
 
 }
