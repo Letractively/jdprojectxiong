@@ -8,28 +8,20 @@ xmlns:h="http://java.sun.com/jsf/html"
 xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
 <f:subview id="theproductDetailsubview">
-	<rich:tabPanel switchType="ajax" headerSpacing="0px" headerClass="rich-tabpanel-header">
-				        <rich:tab>
-				        	<f:facet name="label"><h:panelGroup><h:outputLabel value="&#160;&#160;&#160;"></h:outputLabel><h:outputText value="产品描述" styleClass="rich-tab-header-text"></h:outputText></h:panelGroup></f:facet>
-				           10000
-				        </rich:tab>
-				        <rich:tab>
-				        	<f:facet name="label"><h:panelGroup><h:outputLabel value="&#160;&#160;&#160;"></h:outputLabel><h:outputText value="规格参数" styleClass="rich-tab-header-text"></h:outputText></h:panelGroup></f:facet>
-				            Here is tab #2
-				            <h:inputText value="dfdfdf"></h:inputText>
-				            <a4j:commandButton id="btn1" value="click me" reRender="l1,l2"></a4j:commandButton>
-				            <h:outputText id="l1" value="cvccvcv"></h:outputText>
-				        </rich:tab>
-				        <rich:tab>
-				        <f:facet name="label"><h:panelGroup><h:outputLabel value="&#160;&#160;&#160;"></h:outputLabel><h:outputText value="包装信息" styleClass="rich-tab-header-text"></h:outputText></h:panelGroup></f:facet>
-				            Here is tab #3
-				            <h:outputText id="l2" value="fdfdfdf"></h:outputText>
-				        </rich:tab>
-				        <rich:tab>
-				        	<f:facet name="label"><h:panelGroup><h:outputLabel value="&#160;&#160;&#160;"></h:outputLabel><h:outputText value="保修条款" styleClass="rich-tab-header-text"></h:outputText></h:panelGroup></f:facet>
-				            Here is tab #3
-				            <h:outputText id="l3" value="fdfdfdf"></h:outputText>
-				        </rich:tab>
-				    </rich:tabPanel>
+	<rich:panel style="width:100%" styleClass="panel-none-border" headerClass="panel-header-gray-border" bodyClass="panel-documents-gray-border">
+		<f:facet name="header">
+			<h:panelGrid columns="3"  cellspacing="0" cellpadding="0" columnClasses="common-panel-grid-header-left,common-panel-grid-header-center,common-panel-grid-header-right">
+					<h:outputText value="" style="width:4px"></h:outputText>
+					<h:panelGroup>
+						 <h:outputText value="暂无详细信息"></h:outputText>
+					</h:panelGroup>
+					<h:outputText value="" style="width:4px"></h:outputText>
+			</h:panelGrid>	
+		</f:facet>
+		<h:panelGrid columns="1" style="width:100%" headerClass="panel-header-none-border" styleClass="panel-documents-gray-border">
+			<h:outputText value="改商品暂无详细信息,正在准备中......"></h:outputText>
+			<h:panelGroup><h:outputLabel value="如果需要即可了解详细信息,请联系"/></h:panelGroup>
+		</h:panelGrid>
+	</rich:panel>
 </f:subview>		
 </jsp:root>	

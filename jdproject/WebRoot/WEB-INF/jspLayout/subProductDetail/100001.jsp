@@ -8,7 +8,7 @@ xmlns:h="http://java.sun.com/jsf/html"
 xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich">
 <f:subview id="theproductDetailsubview">
-	<rich:tabPanel switchType="ajax" headerSpacing="0px" headerClass="rich-tabpanel-header">
+	<rich:tabPanel switchType="ajax" headerSpacing="0px">
 				        <rich:tab>
 				        	<f:facet name="label"><h:panelGroup><h:outputLabel value="&#160;"></h:outputLabel>产品描述&#160;</h:panelGroup></f:facet>
 				            100001
