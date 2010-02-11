@@ -10,8 +10,17 @@ xmlns:rich="http://richfaces.org/rich">
 <f:subview id="allProductLeftView">
 	<h:form id="allProductLeftViewForm">
 		<a4j:region id="allProductLeftViewFormRegion" renderRegionOnly="false" selfRendered="true">
-		<rich:panel headerClass="panel-header-red-border" styleClass="panel-none-border" bodyClass="panel-documents-red-border">
-			<f:facet name="header"><h:outputLabel value="商品分类"/></f:facet>
+		<rich:panel headerClass="panel-header-none-border" styleClass="panel-none-border" bodyClass="panel-documents-gray-border">
+			<f:facet name="header">
+				<h:panelGrid columns="3"  cellspacing="0" cellpadding="0" columnClasses="common-panel-grid-header-left,common-panel-grid-header-center,common-panel-grid-header-right">
+					<h:outputText value="" style="width:4px"></h:outputText>
+					<h:panelGroup>
+						 <h:outputText value="商品分类" styleClass="product-detail-font1"></h:outputText>
+					</h:panelGroup>
+					<h:outputText value="" style="width:4px"></h:outputText>
+				</h:panelGrid>			
+			
+			</f:facet>
 			
     				<rich:dataGrid id="kitchenApplianceContentDg" rendered="#{headerTabPanel.currentPrimaryCategory == '01'?'true':'false'}" columns="2" value="#{headerTabPanel.kitchenAppliance.subMenu}" var="kitchenApplianceSubMenu" columnClasses="table-list-product-left-panel-grid-column" styleClass="navigation-left-kitchen_appliance-product-panel-grid-data-grid">
     					<h:commandLink action="#{headerTabPanel.gotoProduct}" styleClass="font3b" value="#{kitchenApplianceSubMenu.label}" immediate="true">
