@@ -210,10 +210,9 @@ input, select, button, legend, a {
 	}
 
 .panel-documents-gray-border{
-	padding: 0px 0px 0px 0px;
-	margin:0px 0px 0px 0px;
+	padding: 6px 0px 0px 0px;
+	margin:px 0px 0px 0px;
 	background-color: transparent;
-	border : 1px solid #d6d6d6;
 	BORDER-RIGHT:1px solid #d6d6d6;
 	BORDER-TOP: 0px none d6d6d6;
 	BORDER-LEFT: 1px solid #d6d6d6;
@@ -1089,7 +1088,7 @@ div.reviews{margin:5px 0}
 	BORDER-BOTTOM: 2px solid #a8d0f4;
 	}
 .rich-tab-header-text{
-	padding:0px 12px 0px 6px;
+	padding:0px 12px 0px 8px;
 	margin:0px 0px 0px 0px;
 	}
 .rich-tab-style {
@@ -1101,8 +1100,8 @@ div.reviews{margin:5px 0}
 				DISPLAY: block;
 				background-attachment : fixed;
 				float:left;
-				padding: 0px 0px 0px 0px; 
-				margin:0px 2px 0px 0px; 
+				padding: 0px 2px 0px 0px; 
+				margin:0px 0px 0px 0px; 
 				background:url(../css/images/icons/tabOn_right.gif) right top no-repeat;
 				BORDER-RIGHT: #fff 0px solid; 
 				BORDER-TOP: #fff 0px solid; 
@@ -1111,7 +1110,7 @@ div.reviews{margin:5px 0}
 				font-size: 14px;
 				font-weight: bold;
 				display:block; 
-				color: black; 
+				color: gray; 
 				text-align: center;
 				line-height:28px;
 				height:28px;
@@ -1144,17 +1143,17 @@ div.reviews{margin:5px 0}
 				DISPLAY: block;
 				background-attachment : fixed;
 				float:left;
-				padding: 0px 0px 0px 0px;
-				margin:0px 2px 0px 0px; 
+				padding: 0px 2px 0px 0px;
+				margin:0px 0px 0px 0px; 
 				background:url(../css/images/icons/tabOff_right.gif) right top no-repeat;
 				BORDER-RIGHT: #fff 0px solid; 
 				BORDER-TOP: #fff 0px solid; 
 				BORDER-LEFT: #fff 0px solid;
 				BORDER-BOTTOM: #fff 0px solid;
 				font-size: 14px;
-				font-weight: bold;
+				font-weight: normal;
 				display:block; 
-				color: black; 
+				color: gray; 
 				text-align: center;
 				line-height:28px;
 				height:28px;
@@ -1162,23 +1161,21 @@ div.reviews{margin:5px 0}
 
 
 .rich-tabpanel-header {
-				top: 0px;
-				left: 0px;
 				padding:0px 0px 0px 0px;
 				margin:0px 0px 0px 0px;
-				font-family: Verdana, Arial;
-				font-size:15pt;
-				background:url(../css/images/icons/bg.gif) 100% 100% repeat-x;
-				BORDER-RIGHT: 2px solid #2782D6; 
-				BORDER-TOP: 0px solid #cccccc; 
-				BORDER-LEFT: 0px solid #cccccc; 
-				BORDER-BOTTOM: 2px solid #2782D6;
+				BORDER-RIGHT: 0px solid #ebebeb; 
+				BORDER-TOP: 0px none #ebebeb; 
+				BORDER-LEFT: 0px solid #ebebeb; 
+				BORDER-BOTTOM: 0px solid #ebebeb;
 }
 .rich-tabpanel-content {
-	padding: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 10px;
 	margin: 0px 0px 0px 0px;
-	border-color: #ebebeb;
-	background:url(../css/images/icons/header_bg_main.gif) top 100% repeat-x;
+	BORDER-RIGHT: 1px solid #ebebeb; 
+	BORDER-TOP: 0px none #ebebeb; 
+	BORDER-LEFT: 1px solid #ebebeb; 
+	BORDER-BOTTOM: 1px solid #ebebeb;
+	
 }
 
 .rich-tabpanel-content-position {
@@ -1188,12 +1185,16 @@ div.reviews{margin:5px 0}
 }
 
 .rich-tabhdr-side-border {
-	border-color: #66BFEC;
-	border-width: 2px;
+	padding: 0px px 0px 0px;
+	margin: 0px 0px 0px 0px;
 }
 .rich-tabhdr-side-border img {
+	top: 0px;
+	left: 0px;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
 	width:0px;
-	height:0px;
+	height:100%;
 	}
 /* set cell header cell*/
 .rich-tabhdr-side-cell {
@@ -1204,7 +1205,7 @@ div.reviews{margin:5px 0}
 	height:28px;
 }
 .rich-tabhdr-cell-active{
-				padding:0px 0px 0px 0px;
+				padding:0px 2px 0px 0px;
 				margin:0px 0px 0px 0px;
 				border-top: #a8d0f4 0px solid;
 				border-right: #cccccc 0px solid;
@@ -1214,7 +1215,7 @@ div.reviews{margin:5px 0}
 				height:28px;
 			}
 			.rich-tabhdr-cell-inactive{
-				padding: 0px 0px 0px 0px;
+				padding: 0px 2px 0px 0px;
 				margin: 0px 0px 0px 0px;
 				border-top: #a8d0f4 0px solid;
 				border-right: #ffffff 0px solid;
@@ -1231,7 +1232,7 @@ div.reviews{margin:5px 0}
 	border-right: #dff3fe 0px solid;
 	border-left: #dff3fe 0px solid;
 	border-bottom: #a8d0f4 0px solid;
-	background:url(../css/images/icons/bg_line.gif)) left bottom repeat-x;
+	background:url(../css/images/icons/bg.gif) left bottom repeat-x;
 }
 .rich-tabpanel-content-text {
 				padding: 0px 0px 0px 0px;
@@ -2037,6 +2038,19 @@ background-color:#ffffff;
 	padding:0px 0px 0px 6px;
 	margin:0px 0px 0px 0px;BACKGROUND: url(../css/images/icons/product-header-title.gif) repeat-x; WIDTH: 100%; HEIGHT: 53px
 }
+.common-panel-grid-header-left {
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;BACKGROUND: url(../css/images/icons/product-header-bg.gif) no-repeat left top; FLOAT: left; OVERFLOW: hidden;WIDTH:4px; HEIGHT: 28px;
+}
+.common-panel-grid-header-right {
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;BACKGROUND: url(../css/images/icons/product-header-bg.gif) no-repeat -4px top; FLOAT: right; OVERFLOW: hidden; WIDTH: 4px; HEIGHT: 28px;
+}
+.common-panel-grid-header-center {
+	padding:0px 0px 0px 6px;
+	margin:0px 0px 0px 0px;BACKGROUND: url(../css/images/icons/common-center.gif) repeat-x; WIDTH: 100%; HEIGHT: 28px
+}
+
 .product-detail-font1 {
 	FONT-SIZE: 15px; 
 	OVERFLOW: hidden; 
@@ -2050,4 +2064,14 @@ background-color:#ffffff;
 	OVERFLOW: hidden;
 	COLOR: #f60;
 	}
+.product-detail-common-font {
+	FONT-SIZE: 14px; WORD-BREAK: break-all; LINE-HEIGHT: 180%; TEXT-ALIGN: left; WORD-WRAP: break-word;OVERFLOW-X: hidden; WIDTH: 100%;
+	}
+.product-detail-decoration-underline-font{	
+	font-weight:normal;text-decoration:underline;
+}
+.product-detail-gray-font{	
+	font-weight:bold;
+	color:gray;
+}
 
