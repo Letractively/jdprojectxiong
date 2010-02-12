@@ -40,10 +40,10 @@ xmlns:rich="http://richfaces.org/rich">
     			<h:panelGrid columns="1" style="width:100%" cellspacing="0" cellpadding="0" styleClass="table-row">
     			<a4j:region id="yogurtMachineContentRegionStyle" renderRegionOnly="false" selfRendered="true">
     				<h:form id="yogurtMachineContentRegionStyleForm">
-    					<rich:panel id="yogurtMachineContentRegionStyleFormPanel" styleClass="operate-show-style">
-    						<h:panelGrid columns="2" style="width:80%;">
+    					<rich:panel id="yogurtMachineContentRegionStyleFormPanel" styleClass="panel-none-border" headerClass="panel-header-none-border" bodyClass="operate-show-style">
+    						<h:panelGrid columns="1" style="width:80%;" columnClasses="operate-show-style-column-one">
     							<h:panelGroup>
-            					<h:outputText value="显示方式"></h:outputText>
+            					<h:outputText value="显示方式" style="vertical-align: middle;padding-right:6px;"></h:outputText>
             					<h:graphicImage value="/css/images/icons/list.gif" style="border:0;vertical-align: middle;"></h:graphicImage>
 								<h:outputText value="        "></h:outputText>
 								<a4j:commandLink id="imgbutton" reRender="yogurtMachineContentRegionStyleFormPanel,productList">
@@ -67,13 +67,12 @@ xmlns:rich="http://richfaces.org/rich">
 									<a4j:actionparam name="styleImgFont" value="" assignTo="#{listYogurtMachineProduct.styleImgFont}"></a4j:actionparam>
 									<a4j:actionparam name="styleFont" value="_on" assignTo="#{listYogurtMachineProduct.styleFont}"></a4j:actionparam>
 								</a4j:commandLink>
-							</h:panelGroup>
-							<h:panelGroup>
-									<h:outputText value="每页显示数量" style="vertical-align: middle;"></h:outputText>
+							
+									<h:outputText value="每页显示数量" style="vertical-align: middle;padding-left:88px;"></h:outputText>
 									<h:graphicImage value="/css/images/icons/list.gif" style="border:0;vertical-align: middle;"></h:graphicImage>
 									<h:outputText value="        "></h:outputText>
 									<a4j:commandLink id="number15button" reRender="yogurtMachineContentRegionStyleFormPanel,productList">
-										<h:graphicImage value="/css/images/number15#{listYogurtMachineProduct.number10}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
+										<h:graphicImage value="/css/images/number15#{listYogurtMachineProduct.number10}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
 										</h:graphicImage>
 										<a4j:actionparam name="number10" value="_on" assignTo="#{listYogurtMachineProduct.number10}"></a4j:actionparam>
 										<a4j:actionparam name="number20" value="" assignTo="#{listYogurtMachineProduct.number20}"></a4j:actionparam>
@@ -82,7 +81,7 @@ xmlns:rich="http://richfaces.org/rich">
 										<a4j:actionparam name="numberOnePage" value="15" assignTo="#{listYogurtMachineProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number30button" reRender="yogurtMachineContentRegionStyleFormPanel,productList">
-										<h:graphicImage value="/css/images/number30#{listYogurtMachineProduct.number20}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
+										<h:graphicImage value="/css/images/number30#{listYogurtMachineProduct.number20}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
 										</h:graphicImage>
 										<a4j:actionparam name="number10" value="" assignTo="#{listYogurtMachineProduct.number10}"></a4j:actionparam>
 										<a4j:actionparam name="number20" value="_on" assignTo="#{listYogurtMachineProduct.number20}"></a4j:actionparam>
@@ -91,7 +90,7 @@ xmlns:rich="http://richfaces.org/rich">
 										<a4j:actionparam name="numberOnePage" value="30" assignTo="#{listYogurtMachineProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number60button" reRender="yogurtMachineContentRegionStyleFormPanel,productList">
-										<h:graphicImage value="/css/images/number60#{listYogurtMachineProduct.number40}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
+										<h:graphicImage value="/css/images/number60#{listYogurtMachineProduct.number40}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
 										</h:graphicImage>
 										<a4j:actionparam name="number10" value="" assignTo="#{listYogurtMachineProduct.number10}"></a4j:actionparam>
 										<a4j:actionparam name="number20" value="" assignTo="#{listYogurtMachineProduct.number20}"></a4j:actionparam>
@@ -100,7 +99,7 @@ xmlns:rich="http://richfaces.org/rich">
 										<a4j:actionparam name="numberOnePage" value="45" assignTo="#{listYogurtMachineProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number90button" reRender="yogurtMachineContentRegionStyleFormPanel,productList">
-										<h:graphicImage value="/css/images/number90#{listYogurtMachineProduct.number100}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
+										<h:graphicImage value="/css/images/number90#{listYogurtMachineProduct.number100}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
 										</h:graphicImage>
 										<a4j:actionparam name="number10" value="" assignTo="#{listYogurtMachineProduct.number10}"></a4j:actionparam>
 										<a4j:actionparam name="number20" value="" assignTo="#{listYogurtMachineProduct.number20}"></a4j:actionparam>
