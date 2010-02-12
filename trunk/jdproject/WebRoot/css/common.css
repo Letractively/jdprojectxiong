@@ -1425,13 +1425,17 @@ div.reviews{margin:5px 0}
 .operate-show-style{
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
-	height:45px;
-	background:url(../css/images/icons/product-show-style.gif) left 0px repeat;
+	height:29px;
+	background:url(../css/images/icons/product-show-style.gif) left top repeat-x;
 	BORDER-RIGHT:1px #e3e3e3 solid;
 	BORDER-LEFT:1px #e3e3e3 solid;
 	BORDER-TOP:1px #e3e3e3 solid;
 	BORDER-BOTTOM:1px #e3e3e3 solid;
 	width:100%;
+	}
+.operate-show-style-column-one{
+	padding:3px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
 	}
 .main_header{
 		background:url(../css/images/icons/top_bg.jpg) left 0px repeat;
