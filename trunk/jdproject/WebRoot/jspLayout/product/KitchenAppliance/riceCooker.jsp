@@ -42,10 +42,10 @@ xmlns:rich="http://richfaces.org/rich">
     			<h:panelGrid columns="1" style="width:100%" cellspacing="0" cellpadding="0" styleClass="table-row">
     			<a4j:region id="riceCookerContentRegionStyle" renderRegionOnly="false" selfRendered="true">
     				<h:form id="riceCookerContentRegionStyleForm">
-    					<rich:panel id="riceCookerContentRegionStyleFormPanel" styleClass="operate-show-style">
-    						<h:panelGrid columns="2" style="width:80%;">
-    							<h:panelGroup>
-            					<h:outputText value="显示方式"></h:outputText>
+    					<rich:panel id="riceCookerContentRegionStyleFormPanel" styleClass="panel-none-border" headerClass="panel-header-none-border" bodyClass="operate-show-style">
+    						<h:panelGrid columns="1" style="width:80%;" columnClasses="operate-show-style-column-one">
+    						<h:panelGroup>
+            					<h:outputText value="显示方式" style="vertical-align: middle;padding-right:6px;"></h:outputText>
             					<h:graphicImage value="/css/images/icons/list.gif" style="border:0;vertical-align: middle;"></h:graphicImage>
 								<h:outputText value="        "></h:outputText>
 								<a4j:commandLink id="imgbutton" reRender="riceCookerContentRegionStyleFormPanel,productList">
@@ -69,13 +69,12 @@ xmlns:rich="http://richfaces.org/rich">
 									<a4j:actionparam name="styleImgFont" value="" assignTo="#{listRiceCookerProduct.styleImgFont}"></a4j:actionparam>
 									<a4j:actionparam name="styleFont" value="_on" assignTo="#{listRiceCookerProduct.styleFont}"></a4j:actionparam>
 								</a4j:commandLink>
-							</h:panelGroup>
-							<h:panelGroup>
-									<h:outputText value="每页显示数量" style="vertical-align: middle;"></h:outputText>
+							
+									<h:outputText value="每页显示数量" style="vertical-align: middle;padding-left:88px;"></h:outputText>
 									<h:graphicImage value="/css/images/icons/list.gif" style="border:0;vertical-align: middle;"></h:graphicImage>
 									<h:outputText value="        "></h:outputText>
 									<a4j:commandLink id="number15button" reRender="riceCookerContentRegionStyleFormPanel,productList">
-										<h:graphicImage value="/css/images/number15#{listRiceCookerProduct.number10}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
+										<h:graphicImage value="/css/images/number15#{listRiceCookerProduct.number10}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
 										</h:graphicImage>
 										<a4j:actionparam name="number10" value="_on" assignTo="#{listRiceCookerProduct.number10}"></a4j:actionparam>
 										<a4j:actionparam name="number20" value="" assignTo="#{listRiceCookerProduct.number20}"></a4j:actionparam>
@@ -84,7 +83,7 @@ xmlns:rich="http://richfaces.org/rich">
 										<a4j:actionparam name="numberOnePage" value="15" assignTo="#{listRiceCookerProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number30button" reRender="riceCookerContentRegionStyleFormPanel,productList">
-										<h:graphicImage value="/css/images/number30#{listRiceCookerProduct.number20}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
+										<h:graphicImage value="/css/images/number30#{listRiceCookerProduct.number20}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
 										</h:graphicImage>
 										<a4j:actionparam name="number10" value="" assignTo="#{listRiceCookerProduct.number10}"></a4j:actionparam>
 										<a4j:actionparam name="number20" value="_on" assignTo="#{listRiceCookerProduct.number20}"></a4j:actionparam>
@@ -93,7 +92,7 @@ xmlns:rich="http://richfaces.org/rich">
 										<a4j:actionparam name="numberOnePage" value="30" assignTo="#{listRiceCookerProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number60button" reRender="riceCookerContentRegionStyleFormPanel,productList">
-										<h:graphicImage value="/css/images/number60#{listRiceCookerProduct.number40}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
+										<h:graphicImage value="/css/images/number60#{listRiceCookerProduct.number40}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
 										</h:graphicImage>
 										<a4j:actionparam name="number10" value="" assignTo="#{listRiceCookerProduct.number10}"></a4j:actionparam>
 										<a4j:actionparam name="number20" value="" assignTo="#{listRiceCookerProduct.number20}"></a4j:actionparam>
@@ -102,7 +101,7 @@ xmlns:rich="http://richfaces.org/rich">
 										<a4j:actionparam name="numberOnePage" value="45" assignTo="#{listRiceCookerProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number90button" reRender="riceCookerContentRegionStyleFormPanel,productList">
-										<h:graphicImage value="/css/images/number90#{listRiceCookerProduct.number100}.gif" style="border:0;width:20px;height:17px;vertical-align: middle;">
+										<h:graphicImage value="/css/images/number90#{listRiceCookerProduct.number100}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
 										</h:graphicImage>
 										<a4j:actionparam name="number10" value="" assignTo="#{listRiceCookerProduct.number10}"></a4j:actionparam>
 										<a4j:actionparam name="number20" value="" assignTo="#{listRiceCookerProduct.number20}"></a4j:actionparam>
@@ -118,11 +117,13 @@ xmlns:rich="http://richfaces.org/rich">
     			</a4j:region>
     			<a4j:region id="riceCookerContentRegionContent" renderRegionOnly="false" selfRendered="true">
     			<h:form id="riceCookerContentRegionContentForm">
-    			<h:panelGrid id="productList" columns="1" style="width:100%" cellspacing="0" cellpadding="0" styleClass="table-list-product-panel-grid" rowClasses="table-list-product-panel-grid-main-column">
+    			<h:panelGrid id="productList" columns="1" style="width:100%"  cellspacing="0" cellpadding="0" styleClass="table-list-product-panel-grid" rowClasses="table-list-product-panel-grid-main-column">
     			<h:outputText value="抱歉，找不到符合条件的商品!" rendered="#{(null != listRiceCookerProduct.dataModel) and (listRiceCookerProduct.dataModel.rowCount le 0)}" styleClass="no-product-find"></h:outputText>
-    			<rich:dataGrid id="productListImg" rendered="#{listRiceCookerProduct.styleImgFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="3" elements="#{listRiceCookerProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" columnClasses="table-list-product-panel-grid-column" value="#{listRiceCookerProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
+    			<rich:dataGrid id="productListImg" rendered="#{listRiceCookerProduct.styleImgFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="3" elements="#{listRiceCookerProduct.numberOnePage}" cellspacing="0" cellpadding="0" first="1" columnClasses="table-list-product-panel-grid-column" value="#{listRiceCookerProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                 <f:facet name="header">
-                	<h:outputText value="产品列表(共有:#{listRiceCookerProduct.dataModel.rowCount}件商品)" rendered="#{listRiceCookerProduct.dataModel.rowCount>0}"></h:outputText>
+                	<h:panelGroup>
+                		<h:outputText value="产品列表(共有:#{listRiceCookerProduct.dataModel.rowCount}件商品)" rendered="#{listRiceCookerProduct.dataModel.rowCount>0}"></h:outputText>
+                	</h:panelGroup>
       			</f:facet>
      				<a4j:region renderRegionOnly="false" selfRendered="true">
                  	<rich:panel styleClass="show-product-data-grid-panel">
@@ -131,7 +132,8 @@ xmlns:rich="http://richfaces.org/rich">
                  		<h:outputLabel value="#{rowIndex+1}" styleClass="current-product-show-number"></h:outputLabel>
                  		<h:graphicImage value="/productimage/#{product.imageName}"></h:graphicImage>
                  		<h:panelGrid columns="1" rowClasses="show-product-data-grid-row-two,show-product-data-grid-row-three,show-product-data-grid-row-four,show-product-data-grid-row-five,show-product-data-grid-row-six,show-product-data-grid-row-seven,show-product-data-grid-row-eight">
-                 	 	<h:commandLink>
+                 	 	<h:commandLink action="#{productGlobalNavigation.seeProductDetail}" immediate="true">
+                 	 		<f:param name="productid" value="#{product.id}"></f:param>
                  	 	<h:panelGroup styleClass="font6">
                  	 	<h:outputText value="#{product.brandCode}"/>
                      	<h:outputText value="#{product.name}"/>
@@ -193,7 +195,9 @@ xmlns:rich="http://richfaces.org/rich">
              	
              	<rich:dataGrid id="productListImgFont" rendered="#{listRiceCookerProduct.styleImgFontFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="1" elements="#{listRiceCookerProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" rowClasses="show-image-font-product-data-grid-row-one,show-image-font-product-data-grid-row-two" columnClasses="table-list-product-panel-grid-column" value="#{listRiceCookerProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                 <f:facet name="header">
-                	<h:outputText value="产品列表(共有:#{listRiceCookerProduct.dataModel.rowCount}件商品)" rendered="#{listRiceCookerProduct.dataModel.rowCount>0}"></h:outputText>
+                	<h:panelGroup>
+                		<h:outputText value="产品列表(共有:#{listRiceCookerProduct.dataModel.rowCount}件商品)" rendered="#{listRiceCookerProduct.dataModel.rowCount>0}"></h:outputText>
+                	</h:panelGroup>
       			</f:facet>
      				<a4j:region renderRegionOnly="false" selfRendered="true">
                  	<rich:panel styleClass="show-product-data-grid-panel-auto-height">
@@ -263,7 +267,9 @@ xmlns:rich="http://richfaces.org/rich">
              	
 				<rich:dataGrid id="productListFont" rendered="#{listRiceCookerProduct.styleFontFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="1" elements="#{listRiceCookerProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" rowClasses="show-font-product-data-grid-row-one,show-font-product-data-grid-row-two" columnClasses="table-list-product-panel-grid-column" value="#{listRiceCookerProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                 <f:facet name="header">
-                	<h:outputText value="产品列表(共有:#{listRiceCookerProduct.dataModel.rowCount}件商品)" rendered="#{listRiceCookerProduct.dataModel.rowCount>0}"></h:outputText>
+                	<h:panelGroup>
+                		<h:outputText value="产品列表(共有:#{listRiceCookerProduct.dataModel.rowCount}件商品)" rendered="#{listRiceCookerProduct.dataModel.rowCount>0}"></h:outputText>
+                	</h:panelGroup>
       			</f:facet>
      				<a4j:region renderRegionOnly="false" selfRendered="true">
                  	<rich:panel styleClass="show-product-data-grid-panel-auto-height">
