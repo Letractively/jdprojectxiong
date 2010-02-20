@@ -469,7 +469,74 @@ public class ProductDaoImpl extends HibernateDaoSupport implements IProductDao {
 		}
 	}
 	
-	
+	public List<Product> getPSBPF1F2F6ProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, RangeParam f1, RangeParam f2, String f6) {
+		Map criteria = new HashMap();
+		List<Product> result = new ArrayList();
+		try {
+			String hql="from Product as p where 1=1 ";
+			if (null != primaryCategoryCode && !"".equals(primaryCategoryCode)) {
+				hql = hql + " and p.primaryCategoryCode = :primaryCategoryCode ";
+				criteria.put("primaryCategoryCode", primaryCategoryCode);
+			}
+			
+			if (null != secondCategoryCode && !"".equals(secondCategoryCode)) {
+				hql = hql + " and p.secondCategoryCode = :secondCategoryCode ";
+				criteria.put("secondCategoryCode", secondCategoryCode);
+			}
+			if (null != brandCode && !"".equals(brandCode)) {
+				hql = hql + " and p.brandCode = :brandCode ";
+				criteria.put("brandCode", brandCode);
+			}
+			if (null != priceRange && null != priceRange.getMin()) {
+				hql = hql + " and p.retailPrice >= :pricemin ";
+				criteria.put("pricemin", priceRange.getMin());
+			}
+			if (null != priceRange && null != priceRange.getMax()) {
+				hql = hql + " and p.retailPrice <= :pricemax ";
+				criteria.put("pricemax", priceRange.getMax());
+			}
+			if (null != f1 && null != f1.getMin()) {
+				hql = hql + " and p.field1 >= :volumemin ";
+				criteria.put("volumemin", f1.getMin());
+			}
+			if (null != f1 && null != f1.getMax()) {
+				hql = hql + " and p.field1 <= :volumemax ";
+				criteria.put("volumemax", f1.getMax());
+			}
+			if (null != f2 && null != f2.getMin()) {
+				hql = hql + " and p.field2 >= :f2min ";
+				criteria.put("f2min", f2.getMin());
+			}
+			if (null != f2 && null != f2.getMax()) {
+				hql = hql + " and p.field2 <= :f2max ";
+				criteria.put("f2max", f2.getMax());
+			}
+			if (null != f6 && !"".equals(f6)) {
+				hql = hql + " and p.field6 = :fsix ";
+				criteria.put("fsix", f6);
+			}
+			
+			SessionFactory sf =(SessionFactory) this.getSessionFactory();
+			Session session = sf.openSession();
+			/*List<Product> products=this.getHibernateTemplate().find(hql, criteria);*/
+			try {
+				Query q = session.createQuery(hql);
+				q.setProperties(criteria);
+				session.beginTransaction();
+				result = q.list();
+				session.flush();
+				} catch (HibernateException e) {
+					e.printStackTrace();
+					session.getTransaction().rollback();
+				} finally {
+					  session.close();
+				  }
+				return result;
+		} catch (Exception e) {
+			logger.error(e);
+			return null;
+		}
+	}
 	
 	
 	
