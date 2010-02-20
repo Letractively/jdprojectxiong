@@ -97,6 +97,51 @@
     <servlet-name>Faces Servlet</servlet-name>
     <url-pattern>*.jsf</url-pattern>
   </servlet-mapping>
+  <!-- start freemarker servlet -->
+  	<servlet>
+   <servlet-name>freemarker</servlet-name>
+   <servlet-class>freemarker.ext.servlet.FreemarkerServlet
+   </servlet-class><!-- FreemarkerServlet settings: -->
+   <init-param>
+    <param-name>TemplatePath</param-name>
+    <param-value>/ftl</param-value>
+   </init-param>
+   <init-param>
+    <param-name>NoCache</param-name>
+    <param-value>true</param-value>
+   </init-param>
+   <init-param>
+    <param-name>ContentType</param-name>
+    <param-value>text/html</param-value>
+   </init-param><!-- FreeMarker settings: -->
+   <init-param>
+    <param-name>template_update_delay</param-name>
+    <param-value>0</param-value><!-- 0 is for development only! Use higher value otherwise. -->
+   </init-param>
+   <init-param>
+    <param-name>default_encoding</param-name>
+    <param-value>utf-8</param-value>
+   </init-param>
+   <init-param>
+    <param-name>locale</param-name>
+    <param-value>en_US</param-value>
+   </init-param>
+   <init-param>
+    <param-name>number_format</param-name>
+    <param-value>0.##########</param-value>
+   </init-param>
+   <init-param>  
+    <param-name>auto_import</param-name>  
+    <param-value>"/ftl/eachCategoryProduct.ftl" as model</param-value>  
+	</init-param> 
+   <load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+   	<servlet-name>freemarker</servlet-name>
+   	<url-pattern>*.ftl</url-pattern>
+	</servlet-mapping>
+	<!-- end freemarker servlet -->
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>index.html</welcome-file>

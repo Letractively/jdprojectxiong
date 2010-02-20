@@ -1007,6 +1007,23 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
     <!-- end about ElectricPressureCooker  -->
+    <!-- start about MicrowaveOvenProductBean  -->
+    <managed-bean>
+        <managed-bean-name>listMicrowaveOvenProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.microwaveoven.MicrowaveOvenProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationMicrowaveOven</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.microwaveoven.NavigationMicrowaveOvenBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about MicrowaveOvenProductBean  -->
     <!-- start about fryer  -->
     <managed-bean>
         <managed-bean-name>listYogurtMachineProduct</managed-bean-name>
@@ -1093,6 +1110,23 @@
 	</managed-bean>
     <!-- end about Toaster  -->
     
+    <!-- start about DisinfectionCabinet  -->
+    <managed-bean>
+        <managed-bean-name>listDisinfectionCabinetProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.disinfectioncabinet.DisinfectionCabinetProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationDisinfectionCabinet</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.disinfectioncabinet.NavigationDisinfectionCabinetBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about DisinfectionCabinet  -->
     
     
     
@@ -1208,6 +1242,11 @@
     </managed-bean>
 	
 	<!--  endtest -->
+	<managed-bean>
+		<managed-bean-name>createEachCategoryProduct</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.CreateEachCategoryProductBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
     <navigation-rule>
     	<from-view-id>/*</from-view-id>
   		<navigation-case>
