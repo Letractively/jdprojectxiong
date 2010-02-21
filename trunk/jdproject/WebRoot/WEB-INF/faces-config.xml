@@ -1127,7 +1127,57 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
     <!-- end about DisinfectionCabinet  -->
-    
+    <!-- start about Saucepan  -->
+    <managed-bean>
+        <managed-bean-name>listSaucepanProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.saucepan.SaucepanProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationSaucepan</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.saucepan.NavigationSaucepanBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about Saucepan  -->
+    <!-- start about CuisineMachine  -->
+    <managed-bean>
+        <managed-bean-name>listCuisineMachineProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.cuisinemachine.CuisineMachineProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationCuisineMachine</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.cuisinemachine.NavigationCuisineMachineBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about CuisineMachine  -->
+    <!-- start about MeatChopper  -->
+    <managed-bean>
+        <managed-bean-name>listMeatChopperProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.meatchopper.MeatChopperProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationMeatChopper</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.meatchopper.NavigationMeatChopperBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about MeatChopper  -->
     
     
     
