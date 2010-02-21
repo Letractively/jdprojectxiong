@@ -49,7 +49,13 @@ public abstract class PagedListDataModel<T> extends DataModel {
      */
     @Override
     public int getRowCount() {
-        return getPage().getDatasetSize();
+    	int result = 0;
+    	try {
+    		result = getPage().getDatasetSize();
+    	}catch (Exception e) {
+    		result = 0;
+    	}
+        return result;
     }
     
     /**
