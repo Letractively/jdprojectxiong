@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jsp:root version="1.2"
-xmlns:jsp="http://java.sun.com/JSP/Page"
-xmlns="http://www.w3.org/1999/xhtml"
-xmlns:ui="http://java.sun.com/jsf/facelets"
-xmlns:f="http://java.sun.com/jsf/core"
-xmlns:h="http://java.sun.com/jsf/html"
-xmlns:a4j="http://richfaces.org/a4j"
-xmlns:rich="http://richfaces.org/rich">
-<f:subview id="404errorSubView">
-	<h:outputText value="您访问的页面不存在"></h:outputText>
-</f:subview>
-
-</jsp:root>
+<html>
+<title>
+</title>
+<head></head>
+<body>
+<table>
+	<tbody>
+	<tr>
+	<td>
+		<h4>当前页面发生错误,请稍后浏览</h4>
+	</td>
+	</tr>
+	</tbody>
+	</table>
+</body>
+</html>
