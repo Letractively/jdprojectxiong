@@ -31,7 +31,7 @@ public class NavigationCuisineMachineBean {
 		List<RangeParam> tempPriceRange = new ArrayList<RangeParam>();
 		tempPriceRange.add(new RangeParam(null,null,"全部"));
 		tempPriceRange.add(new RangeParam(new Double(0),new Double(199.9),"0-199.9"));
-		tempPriceRange.add(new RangeParam(new Double(200),new Double(399),"200-499.9"));
+		tempPriceRange.add(new RangeParam(new Double(200),new Double(499),"200-499.9"));
 		tempPriceRange.add(new RangeParam(new Double(500),null,">=500"));
 		this.setPriceRangeList(tempPriceRange);
 	}
