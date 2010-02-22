@@ -1178,6 +1178,126 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
     <!-- end about MeatChopper  -->
+    <!-- start about CoffeeMachine  -->
+    <managed-bean>
+        <managed-bean-name>listCoffeeMachineProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.coffeemachine.CoffeeMachineProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationCoffeeMachine</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.coffeemachine.NavigationCoffeeMachineBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about CoffeeMachine  -->
+    <!-- start about BakingbowlMachine  -->
+    <managed-bean>
+        <managed-bean-name>listBakingbowlMachineProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.bakingbowlmachine.BakingbowlMachineProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationBakingbowlMachine</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.bakingbowlmachine.NavigationBakingbowlMachineBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about BakingbowlMachine  -->
+    <!-- start about GasStove  -->
+    <managed-bean>
+        <managed-bean-name>listGasStoveProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.gasstove.GasStoveProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationGasStove</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.gasstove.NavigationGasStoveBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about GasStove  -->
+    <!-- start about FruitSparseClearingMachine  -->
+    <managed-bean>
+        <managed-bean-name>listFruitSparseClearingMachineProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.fruitsparseclearingmachine.FruitSparseClearingMachineProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationFruitSparseClearingMachine</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.fruitsparseclearingmachine.NavigationFruitSparseClearingMachineBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about FruitSparseClearingMachine  -->
+    <!-- start about FoodProcessingMachine  -->
+    <managed-bean>
+        <managed-bean-name>listFoodProcessingMachineProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.foodprocessingmachine.FoodProcessingMachineProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationFoodProcessingMachine</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.foodprocessingmachine.NavigationFoodProcessingMachineBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about FoodProcessingMachine  -->
+    <!-- start about listJuicerProduct  -->
+    <managed-bean>
+        <managed-bean-name>listJuicerProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.juicer.JuicerProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationJuicer</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.juicer.NavigationJuicerBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about listJuicerProduct  -->
+    <!-- start about listGasWaterHeaterProduct  -->
+    <managed-bean>
+        <managed-bean-name>listGasWaterHeaterProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.gaswaterheater.GasWaterHeaterProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationGasWaterHeater</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.gaswaterheater.NavigationGasWaterHeaterBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about listGasWaterHeaterProduct  -->
+    
     
     
     
