@@ -153,6 +153,20 @@ public class ProductServiceImpl implements IProductService {
 			throw new ProductException("error");
 		}
 	}
+	public List<Product> getPSBPF1F6F7ProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, RangeParam f1, String f6, String f7) throws ProductException {
+		try {
+			return productDao.getPSBPF1F6F7ProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, f1, f6, f7);
+		} catch(HibernateObjectRetrievalFailureException he) {
+			throw new ProductException("error");
+		}
+	}
+	public List<Product> getPSBPF1F2F6F7ProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, RangeParam f1, RangeParam f2, String f6, String f7) throws ProductException {
+		try {
+			return productDao.getPSBPF1F2F6F7ProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, f1, f2, f6, f7);
+		} catch(HibernateObjectRetrievalFailureException he) {
+			throw new ProductException("error");
+		}
+	}
 	public List<Product> getPSBPF1F2F6ProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, RangeParam f1, RangeParam f2, String f6) throws ProductException {
 		try {
 			return productDao.getPSBPF1F2F6ProductByCriteria(primaryCategoryCode, secondCategoryCode, brandCode, priceRange, f1,f2,f6);
