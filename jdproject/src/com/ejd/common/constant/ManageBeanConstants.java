@@ -35,6 +35,13 @@ public class ManageBeanConstants {
 	public static final String LIST_SAUCEPAN_PRODUCT_BEAN_NAME = "listSaucepanProduct";
 	public static final String LIST_CUISINE_MACHINE_PRODUCT_BEAN_NAME = "listCuisineMachineProduct";
 	public static final String LIST_MEAT_CHOPPER_PRODUCT_BEAN_NAME = "listMeatChopperProduct";
+	public static final String LIST_COFFEE_MACHINE_PRODUCT_BEAN_NAME = "listCoffeeMachineProduct";
+	public static final String LIST_BAKINGBOWL_MACHINE_PRODUCT_BEAN_NAME = "listBakingbowlMachineProduct";
+	public static final String LIST_GAS_STOVE_PRODUCT_BEAN_NAME = "listGasStoveProduct";
+	public static final String LIST_FRUIT_SPARSE_CLEARING_MACHINE_PRODUCT_BEAN_NAME = "listFruitSparseClearingMachineProduct";
+	public static final String LIST_FOOD_PROCESSING_MACHINE_PRODUCT_BEAN_NAME = "listFoodProcessingMachineProduct";
+	public static final String LIST_JUICER_PRODUCT_BEAN_NAME = "listJuicerProduct";
+	public static final String LIST_GAS_WATER_HEATER_PRODUCT_BEAN_NAME = "listGasWaterHeaterProduct";
 	
 	
 	
