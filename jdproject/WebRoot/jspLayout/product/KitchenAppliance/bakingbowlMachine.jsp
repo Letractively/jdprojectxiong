@@ -22,7 +22,7 @@ xmlns:rich="http://richfaces.org/rich">
 			<ui:define id="bakingbowlMachineContent" name="content">
 				<a4j:region id="bakingbowlMachineSearchNavigationRegion" renderRegionOnly="false" selfRendered="true">
     			<h:form id="bakingbowlMachineSearchNavigationRegionForm">
-    			<rich:panelBar id="bakingbowlMachinepb" styleClass="panel-none-border" headerClass="panel-header-none-border" style="width:^{msgs['template.product.content.widthpx']};border-style:none;" contentStyle="panel-documents-none-border">
+    			<rich:panelBar id="bakingbowlMachinepb" styleClass="panel-none-border" headerClass="panel-header-none-border" style="width:#{msgs['template.product.content.widthpx']};border-style:none;" contentStyle="panel-documents-none-border">
     				<rich:panelBarItem id="bakingbowlMachinePbi" headerClass="navigation-product-top-panel-bar-item-header">
     				<f:facet name="label">
     					<h:panelGroup>
@@ -30,8 +30,8 @@ xmlns:rich="http://richfaces.org/rich">
     					</h:panelGroup>
     				</f:facet>
 						<ui:include id="phoneinp12" src="./SubBakingbowlMachine/navigationTopBakingbowlMachine.jsp">
-							<ui:param name="brands" value="^{navigationBakingbowlMachine.brandCodeItems}" />
-							<ui:param name="secondCategorys" value="^{navigationBakingbowlMachine.secondCategoryCodeList}" />
+							<ui:param name="brands" value="#{navigationBakingbowlMachine.brandCodeItems}" />
+							<ui:param name="priceRangeList" value="#{navigationBakingbowlMachine.priceRangeList}"/>
 						</ui:include>
 					</rich:panelBarItem>
 				</rich:panelBar>
@@ -47,65 +47,65 @@ xmlns:rich="http://richfaces.org/rich">
             					<h:graphicImage value="/css/images/icons/list.gif" style="border:0;vertical-align: middle;"></h:graphicImage>
 								<h:outputText value="        "></h:outputText>
 								<a4j:commandLink id="imgbutton" reRender="bakingbowlMachineContentRegionStyleFormPanel,productList">
-									<h:graphicImage value="/css/images/i_img^{listBakingbowlMachineProduct.styleImg}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
+									<h:graphicImage value="/css/images/i_img#{listBakingbowlMachineProduct.styleImg}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
 									</h:graphicImage>
-									<a4j:actionparam name="styleImg" value="_on" assignTo="^{listBakingbowlMachineProduct.styleImg}"></a4j:actionparam>
-									<a4j:actionparam name="styleImgFont" value="" assignTo="^{listBakingbowlMachineProduct.styleImgFont}"></a4j:actionparam>
-									<a4j:actionparam name="styleFont" value="" assignTo="^{listBakingbowlMachineProduct.styleFont}"></a4j:actionparam>
+									<a4j:actionparam name="styleImg" value="_on" assignTo="#{listBakingbowlMachineProduct.styleImg}"></a4j:actionparam>
+									<a4j:actionparam name="styleImgFont" value="" assignTo="#{listBakingbowlMachineProduct.styleImgFont}"></a4j:actionparam>
+									<a4j:actionparam name="styleFont" value="" assignTo="#{listBakingbowlMachineProduct.styleFont}"></a4j:actionparam>
 								</a4j:commandLink>
 								<a4j:commandLink id="imgfontbutton" reRender="bakingbowlMachineContentRegionStyleFormPanel,productList">
-									<h:graphicImage value="/css/images/i_imgfont^{listBakingbowlMachineProduct.styleImgFont}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
+									<h:graphicImage value="/css/images/i_imgfont#{listBakingbowlMachineProduct.styleImgFont}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
 									</h:graphicImage>
-									<a4j:actionparam name="styleImg" value="" assignTo="^{listBakingbowlMachineProduct.styleImg}"></a4j:actionparam>
-									<a4j:actionparam name="styleImgFont" value="_on" assignTo="^{listBakingbowlMachineProduct.styleImgFont}"></a4j:actionparam>
-									<a4j:actionparam name="styleFont" value="" assignTo="^{listBakingbowlMachineProduct.styleFont}"></a4j:actionparam>
+									<a4j:actionparam name="styleImg" value="" assignTo="#{listBakingbowlMachineProduct.styleImg}"></a4j:actionparam>
+									<a4j:actionparam name="styleImgFont" value="_on" assignTo="#{listBakingbowlMachineProduct.styleImgFont}"></a4j:actionparam>
+									<a4j:actionparam name="styleFont" value="" assignTo="#{listBakingbowlMachineProduct.styleFont}"></a4j:actionparam>
 								</a4j:commandLink>
 								<a4j:commandLink id="fontbutton" reRender="bakingbowlMachineContentRegionStyleFormPanel,productList">
-									<h:graphicImage value="/css/images/i_font^{listBakingbowlMachineProduct.styleFont}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
+									<h:graphicImage value="/css/images/i_font#{listBakingbowlMachineProduct.styleFont}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
 									</h:graphicImage>
-									<a4j:actionparam name="styleImg" value="" assignTo="^{listBakingbowlMachineProduct.styleImg}"></a4j:actionparam>
-									<a4j:actionparam name="styleImgFont" value="" assignTo="^{listBakingbowlMachineProduct.styleImgFont}"></a4j:actionparam>
-									<a4j:actionparam name="styleFont" value="_on" assignTo="^{listBakingbowlMachineProduct.styleFont}"></a4j:actionparam>
+									<a4j:actionparam name="styleImg" value="" assignTo="#{listBakingbowlMachineProduct.styleImg}"></a4j:actionparam>
+									<a4j:actionparam name="styleImgFont" value="" assignTo="#{listBakingbowlMachineProduct.styleImgFont}"></a4j:actionparam>
+									<a4j:actionparam name="styleFont" value="_on" assignTo="#{listBakingbowlMachineProduct.styleFont}"></a4j:actionparam>
 								</a4j:commandLink>
 							
 									<h:outputText value="每页显示数量" style="vertical-align: middle;padding-left:88px;"></h:outputText>
 									<h:graphicImage value="/css/images/icons/list.gif" style="border:0;vertical-align: middle;"></h:graphicImage>
 									<h:outputText value="        "></h:outputText>
 									<a4j:commandLink id="number15button" reRender="bakingbowlMachineContentRegionStyleFormPanel,productList">
-										<h:graphicImage value="/css/images/number15^{listBakingbowlMachineProduct.number10}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
+										<h:graphicImage value="/css/images/number15#{listBakingbowlMachineProduct.number10}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
 										</h:graphicImage>
-										<a4j:actionparam name="number10" value="_on" assignTo="^{listBakingbowlMachineProduct.number10}"></a4j:actionparam>
-										<a4j:actionparam name="number20" value="" assignTo="^{listBakingbowlMachineProduct.number20}"></a4j:actionparam>
-										<a4j:actionparam name="number40" value="" assignTo="^{listBakingbowlMachineProduct.number40}"></a4j:actionparam>
-										<a4j:actionparam name="number100" value="" assignTo="^{listBakingbowlMachineProduct.number100}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="15" assignTo="^{listBakingbowlMachineProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="number10" value="_on" assignTo="#{listBakingbowlMachineProduct.number10}"></a4j:actionparam>
+										<a4j:actionparam name="number20" value="" assignTo="#{listBakingbowlMachineProduct.number20}"></a4j:actionparam>
+										<a4j:actionparam name="number40" value="" assignTo="#{listBakingbowlMachineProduct.number40}"></a4j:actionparam>
+										<a4j:actionparam name="number100" value="" assignTo="#{listBakingbowlMachineProduct.number100}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="15" assignTo="#{listBakingbowlMachineProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number30button" reRender="bakingbowlMachineContentRegionStyleFormPanel,productList">
-										<h:graphicImage value="/css/images/number30^{listBakingbowlMachineProduct.number20}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
+										<h:graphicImage value="/css/images/number30#{listBakingbowlMachineProduct.number20}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
 										</h:graphicImage>
-										<a4j:actionparam name="number10" value="" assignTo="^{listBakingbowlMachineProduct.number10}"></a4j:actionparam>
-										<a4j:actionparam name="number20" value="_on" assignTo="^{listBakingbowlMachineProduct.number20}"></a4j:actionparam>
-										<a4j:actionparam name="number40" value="" assignTo="^{listBakingbowlMachineProduct.number40}"></a4j:actionparam>
-										<a4j:actionparam name="number100" value="" assignTo="^{listBakingbowlMachineProduct.number100}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="30" assignTo="^{listBakingbowlMachineProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="number10" value="" assignTo="#{listBakingbowlMachineProduct.number10}"></a4j:actionparam>
+										<a4j:actionparam name="number20" value="_on" assignTo="#{listBakingbowlMachineProduct.number20}"></a4j:actionparam>
+										<a4j:actionparam name="number40" value="" assignTo="#{listBakingbowlMachineProduct.number40}"></a4j:actionparam>
+										<a4j:actionparam name="number100" value="" assignTo="#{listBakingbowlMachineProduct.number100}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="30" assignTo="#{listBakingbowlMachineProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number60button" reRender="bakingbowlMachineContentRegionStyleFormPanel,productList">
-										<h:graphicImage value="/css/images/number60^{listBakingbowlMachineProduct.number40}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
+										<h:graphicImage value="/css/images/number60#{listBakingbowlMachineProduct.number40}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
 										</h:graphicImage>
-										<a4j:actionparam name="number10" value="" assignTo="^{listBakingbowlMachineProduct.number10}"></a4j:actionparam>
-										<a4j:actionparam name="number20" value="" assignTo="^{listBakingbowlMachineProduct.number20}"></a4j:actionparam>
-										<a4j:actionparam name="number40" value="_on" assignTo="^{listBakingbowlMachineProduct.number40}"></a4j:actionparam>
-										<a4j:actionparam name="number100" value="" assignTo="^{listBakingbowlMachineProduct.number100}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="45" assignTo="^{listBakingbowlMachineProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="number10" value="" assignTo="#{listBakingbowlMachineProduct.number10}"></a4j:actionparam>
+										<a4j:actionparam name="number20" value="" assignTo="#{listBakingbowlMachineProduct.number20}"></a4j:actionparam>
+										<a4j:actionparam name="number40" value="_on" assignTo="#{listBakingbowlMachineProduct.number40}"></a4j:actionparam>
+										<a4j:actionparam name="number100" value="" assignTo="#{listBakingbowlMachineProduct.number100}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="45" assignTo="#{listBakingbowlMachineProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									<a4j:commandLink id="number90button" reRender="bakingbowlMachineContentRegionStyleFormPanel,productList">
-										<h:graphicImage value="/css/images/number90^{listBakingbowlMachineProduct.number100}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
+										<h:graphicImage value="/css/images/number90#{listBakingbowlMachineProduct.number100}.gif" style="border:0;width:18px;height:18px;vertical-align: middle;">
 										</h:graphicImage>
-										<a4j:actionparam name="number10" value="" assignTo="^{listBakingbowlMachineProduct.number10}"></a4j:actionparam>
-										<a4j:actionparam name="number20" value="" assignTo="^{listBakingbowlMachineProduct.number20}"></a4j:actionparam>
-										<a4j:actionparam name="number40" value="" assignTo="^{listBakingbowlMachineProduct.number40}"></a4j:actionparam>
-										<a4j:actionparam name="number100" value="_on" assignTo="^{listBakingbowlMachineProduct.number100}"></a4j:actionparam>
-										<a4j:actionparam name="numberOnePage" value="90" assignTo="^{listBakingbowlMachineProduct.numberOnePage}"></a4j:actionparam>
+										<a4j:actionparam name="number10" value="" assignTo="#{listBakingbowlMachineProduct.number10}"></a4j:actionparam>
+										<a4j:actionparam name="number20" value="" assignTo="#{listBakingbowlMachineProduct.number20}"></a4j:actionparam>
+										<a4j:actionparam name="number40" value="" assignTo="#{listBakingbowlMachineProduct.number40}"></a4j:actionparam>
+										<a4j:actionparam name="number100" value="_on" assignTo="#{listBakingbowlMachineProduct.number100}"></a4j:actionparam>
+										<a4j:actionparam name="numberOnePage" value="90" assignTo="#{listBakingbowlMachineProduct.numberOnePage}"></a4j:actionparam>
 								    </a4j:commandLink>
 									
 							</h:panelGroup>
@@ -116,37 +116,37 @@ xmlns:rich="http://richfaces.org/rich">
     			<a4j:region id="bakingbowlMachineContentRegionContent" renderRegionOnly="false" selfRendered="true">
     			<h:form id="bakingbowlMachineContentRegionContentForm">
     			<h:panelGrid id="productList" columns="1" style="width:100%"  cellspacing="0" cellpadding="0" styleClass="table-list-product-panel-grid" rowClasses="table-list-product-panel-grid-main-column">
-    			<h:outputText value="抱歉，找不到符合条件的商品!" rendered="^{(null != listBakingbowlMachineProduct.dataModel) and (listBakingbowlMachineProduct.dataModel.rowCount le 0)}" styleClass="no-product-find"></h:outputText>
-    			<rich:dataGrid id="productListImg" rendered="^{listBakingbowlMachineProduct.styleImgFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="3" elements="^{listBakingbowlMachineProduct.numberOnePage}" cellspacing="0" cellpadding="0" first="1" columnClasses="table-list-product-panel-grid-column" value="^{listBakingbowlMachineProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
+    			<h:outputText value="抱歉，找不到符合条件的商品!" rendered="#{(null != listBakingbowlMachineProduct.dataModel) and (listBakingbowlMachineProduct.dataModel.rowCount le 0)}" styleClass="no-product-find"></h:outputText>
+    			<rich:dataGrid id="productListImg" rendered="#{listBakingbowlMachineProduct.styleImgFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="3" elements="#{listBakingbowlMachineProduct.numberOnePage}" cellspacing="0" cellpadding="0" first="1" columnClasses="table-list-product-panel-grid-column" value="#{listBakingbowlMachineProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                 <f:facet name="header">
                 	<h:panelGroup>
-                		<h:outputText value="产品列表(共有:^{listBakingbowlMachineProduct.dataModel.rowCount}件商品)" rendered="^{listBakingbowlMachineProduct.dataModel.rowCount>0}"></h:outputText>
+                		<h:outputText value="产品列表(共有:#{listBakingbowlMachineProduct.dataModel.rowCount}件商品)" rendered="#{listBakingbowlMachineProduct.dataModel.rowCount>0}"></h:outputText>
                 	</h:panelGroup>
       			</f:facet>
      				<a4j:region renderRegionOnly="false" selfRendered="true">
                  	<rich:panel styleClass="show-product-data-grid-panel">
                  	<h:panelGrid columns="1">  
                  		
-                 		<h:outputLabel value="^{rowIndex+1}" styleClass="current-product-show-number"></h:outputLabel>
-                 		<h:graphicImage value="/productimage/^{product.imageName}"></h:graphicImage>
+                 		<h:outputLabel value="#{rowIndex+1}" styleClass="current-product-show-number"></h:outputLabel>
+                 		<h:graphicImage value="/productimage/#{product.imageName}"></h:graphicImage>
                  		<h:panelGrid columns="1" rowClasses="show-product-data-grid-row-two,show-product-data-grid-row-three,show-product-data-grid-row-four,show-product-data-grid-row-five,show-product-data-grid-row-six,show-product-data-grid-row-seven,show-product-data-grid-row-eight">
-                 	 	<h:commandLink action="^{productGlobalNavigation.seeProductDetail}" immediate="true">
-                 	 		<f:param name="productid" value="^{product.id}"></f:param>
+                 	 	<h:commandLink action="#{productGlobalNavigation.seeProductDetail}" immediate="true">
+                 	 		<f:param name="productid" value="#{product.id}"></f:param>
                  	 	<h:panelGroup styleClass="font6">
-                 	 	<h:outputText value="^{product.brandCode}"/>
-                     	<h:outputText value="^{product.name}"/>
-                     	<h:outputText value="^{product.description}" style="color:red;"/>
+                 	 	<h:outputText value="#{product.brandCode}"/>
+                     	<h:outputText value="#{product.name}"/>
+                     	<h:outputText value="#{product.description}" style="color:red;"/>
                      	</h:panelGroup>
 						</h:commandLink>
-                     	<h:outputText value="商品编号:^{product.code}" styleClass="gray"/>
+                     	<h:outputText value="商品编号:#{product.code}" styleClass="gray"/>
                      
-                     	<h:panelGroup><h:outputLabel value="进货价:" rendered="^{currentUser.showPurchasePrice}"></h:outputLabel><h:outputText value="^{product.purchasePrice}" styleClass="show-product-data-grid-price" rendered="^{currentUser.showPurchasePrice}"/></h:panelGroup>
-                     	<h:panelGroup><h:outputLabel value="代理价:" rendered="^{currentUser.showTradePriceOne}"></h:outputLabel><h:outputText value="^{product.tradePriceOne}" styleClass="show-product-data-grid-price" rendered="^{currentUser.showTradePriceOne}"/></h:panelGroup>
-                     	<h:panelGroup><h:outputLabel value="经销价:" rendered="^{currentUser.showTradePriceTwo}"></h:outputLabel><h:outputText value="^{product.tradePriceTwo}" styleClass="show-product-data-grid-price" rendered="^{currentUser.showTradePriceTwo}"/></h:panelGroup>
-                     	<h:panelGroup><h:outputLabel value="零售价:" rendered="^{currentUser.showRetailPrice}"></h:outputLabel><h:outputText value="^{product.retailPrice}" styleClass="show-product-data-grid-price" rendered="^{currentUser.showRetailPrice}"/></h:panelGroup>
+                     	<h:panelGroup><h:outputLabel value="进货价:" rendered="#{currentUser.showPurchasePrice}"></h:outputLabel><h:outputText value="#{product.purchasePrice}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showPurchasePrice}"/></h:panelGroup>
+                     	<h:panelGroup><h:outputLabel value="代理价:" rendered="#{currentUser.showTradePriceOne}"></h:outputLabel><h:outputText value="#{product.tradePriceOne}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showTradePriceOne}"/></h:panelGroup>
+                     	<h:panelGroup><h:outputLabel value="经销价:" rendered="#{currentUser.showTradePriceTwo}"></h:outputLabel><h:outputText value="#{product.tradePriceTwo}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showTradePriceTwo}"/></h:panelGroup>
+                     	<h:panelGroup><h:outputLabel value="零售价:" rendered="#{currentUser.showRetailPrice}"></h:outputLabel><h:outputText value="#{product.retailPrice}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showRetailPrice}"/></h:panelGroup>
                      	<h:panelGroup>
-                     	<a4j:commandButton image="/css/images/icons/buttons-buy.gif" action="^{shopCart.addInventoryItem}"><a4j:actionparam name="productCode" value="^{product.code}"/></a4j:commandButton>
-                     	<a4j:commandButton image="/css/images/icons/buttons-collect.gif" action="^{shopCart.addInventoryItem}"><a4j:actionparam name="productCode" value="^{product.code}"/></a4j:commandButton>
+                     	<a4j:commandButton image="/css/images/icons/buttons-buy.gif" action="#{shopCart.addInventoryItem}"><a4j:actionparam name="productCode" value="#{product.code}"/></a4j:commandButton>
+                     	<a4j:commandButton image="/css/images/icons/buttons-collect.gif" action="#{shopCart.addInventoryItem}"><a4j:actionparam name="productCode" value="#{product.code}"/></a4j:commandButton>
                      	<a4j:status>
                 			<f:facet name="start">
                     			<h:graphicImage  value="/css/images/icons/blue-loading.gif"/>
@@ -160,7 +160,7 @@ xmlns:rich="http://richfaces.org/rich">
                     </a4j:region>
                  	<f:facet name="footer">
                  	<h:panelGroup>
-                 		<rich:datascroller for="productListImg" id="dcFooterProductList" page="^{listBakingbowlMachineProduct.scrollerPage}" pageIndexVar="currentPage" pagesVar="totalPages" maxPages="10" rendered="^{listBakingbowlMachineProduct.dataModel.rowCount>0}" style="width:483px;align:center">
+                 		<rich:datascroller for="productListImg" id="dcFooterProductList" page="#{listBakingbowlMachineProduct.scrollerPage}" pageIndexVar="currentPage" pagesVar="totalPages" maxPages="10" rendered="#{listBakingbowlMachineProduct.dataModel.rowCount>0}" style="width:483px;align:center">
                  		<f:facet name="controlSeparator">
                  		</f:facet>
                  		<f:facet name="first">
@@ -191,35 +191,35 @@ xmlns:rich="http://richfaces.org/rich">
                  	</f:facet>              
              	</rich:dataGrid>
              	
-             	<rich:dataGrid id="productListImgFont" rendered="^{listBakingbowlMachineProduct.styleImgFontFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="1" elements="^{listBakingbowlMachineProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" rowClasses="show-image-font-product-data-grid-row-one,show-image-font-product-data-grid-row-two" columnClasses="table-list-product-panel-grid-column" value="^{listBakingbowlMachineProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
+             	<rich:dataGrid id="productListImgFont" rendered="#{listBakingbowlMachineProduct.styleImgFontFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="1" elements="#{listBakingbowlMachineProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" rowClasses="show-image-font-product-data-grid-row-one,show-image-font-product-data-grid-row-two" columnClasses="table-list-product-panel-grid-column" value="#{listBakingbowlMachineProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                 <f:facet name="header">
                 	<h:panelGroup>
-                		<h:outputText value="产品列表(共有:^{listBakingbowlMachineProduct.dataModel.rowCount}件商品)" rendered="^{listBakingbowlMachineProduct.dataModel.rowCount>0}"></h:outputText>
+                		<h:outputText value="产品列表(共有:#{listBakingbowlMachineProduct.dataModel.rowCount}件商品)" rendered="#{listBakingbowlMachineProduct.dataModel.rowCount>0}"></h:outputText>
                 	</h:panelGroup>
       			</f:facet>
      				<a4j:region renderRegionOnly="false" selfRendered="true">
                  	<rich:panel styleClass="show-product-data-grid-panel-auto-height">
                  	<h:panelGrid columns="3" columnClasses="show-image-font-product-data-grid-column-one,show-image-font-product-data-grid-column-two,show-image-font-product-data-grid-column-three">  
                  		<h:panelGrid columns="1">
-                 		<h:outputLabel value="^{rowIndex+1}" styleClass="current-product-show-number"></h:outputLabel>
-                 		<h:graphicImage value="/productimage/^{product.imageName}"></h:graphicImage>
-                 		<h:outputText value="商品编号:^{product.code}" styleClass="gray"/>
+                 		<h:outputLabel value="#{rowIndex+1}" styleClass="current-product-show-number"></h:outputLabel>
+                 		<h:graphicImage value="/productimage/#{product.imageName}"></h:graphicImage>
+                 		<h:outputText value="商品编号:#{product.code}" styleClass="gray"/>
                  		</h:panelGrid>
                  	 	<h:panelGrid columns="1">
                  	 	<h:panelGroup styleClass="font6">
-                 	 	<h:outputText value="^{product.brandCode}"/>
-                     	<h:outputText value="^{product.name}"/>
-                     	<h:outputText value="^{product.description}" style="font-weight:bold;color:red;"/>
+                 	 	<h:outputText value="#{product.brandCode}"/>
+                     	<h:outputText value="#{product.name}"/>
+                     	<h:outputText value="#{product.description}" style="font-weight:bold;color:red;"/>
                      	</h:panelGroup>
                      	<h:panelGroup styleClass="gray">
-                     	<h:outputLabel value="进货价:" rendered="^{currentUser.showPurchasePrice}"></h:outputLabel><h:outputText value="^{product.purchasePrice}" styleClass="show-product-data-grid-price" rendered="^{currentUser.showPurchasePrice}"/>
-                     	<h:outputLabel value="代理价:" rendered="^{currentUser.showTradePriceOne}"></h:outputLabel><h:outputText value="^{product.tradePriceOne}" styleClass="show-product-data-grid-price" rendered="^{currentUser.showTradePriceOne}"/>
-                     	<h:outputLabel value="经销价:" rendered="^{currentUser.showTradePriceTwo}"></h:outputLabel><h:outputText value="^{product.tradePriceTwo}" styleClass="show-product-data-grid-price" rendered="^{currentUser.showTradePriceTwo}"/>
-                     	<h:outputLabel value="零售价:" rendered="^{currentUser.showRetailPrice}"></h:outputLabel><h:outputText value="^{product.retailPrice}" styleClass="show-product-data-grid-price" rendered="^{currentUser.showRetailPrice}"/>
+                     	<h:outputLabel value="进货价:" rendered="#{currentUser.showPurchasePrice}"></h:outputLabel><h:outputText value="#{product.purchasePrice}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showPurchasePrice}"/>
+                     	<h:outputLabel value="代理价:" rendered="#{currentUser.showTradePriceOne}"></h:outputLabel><h:outputText value="#{product.tradePriceOne}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showTradePriceOne}"/>
+                     	<h:outputLabel value="经销价:" rendered="#{currentUser.showTradePriceTwo}"></h:outputLabel><h:outputText value="#{product.tradePriceTwo}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showTradePriceTwo}"/>
+                     	<h:outputLabel value="零售价:" rendered="#{currentUser.showRetailPrice}"></h:outputLabel><h:outputText value="#{product.retailPrice}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showRetailPrice}"/>
                      	</h:panelGroup>
                      	</h:panelGrid>
                      	<h:panelGroup>
-                     	<a4j:commandButton image="/css/images/icons/buttons-buy.gif" action="^{shopCart.addInventoryItem}"><a4j:actionparam name="productCode" value="^{product.code}"/></a4j:commandButton>
+                     	<a4j:commandButton image="/css/images/icons/buttons-buy.gif" action="#{shopCart.addInventoryItem}"><a4j:actionparam name="productCode" value="#{product.code}"/></a4j:commandButton>
                      	<a4j:status>
                 			<f:facet name="start">
                     			<h:graphicImage  value="/css/images/icons/blue-loading.gif"/>
@@ -232,7 +232,7 @@ xmlns:rich="http://richfaces.org/rich">
                  	</a4j:region>
                  	<f:facet name="footer">
                  	<h:panelGroup>
-                 		<rich:datascroller for="productListImgFont" id="imgFontFooterProductList" page="^{listBakingbowlMachineProduct.scrollerPage}" pageIndexVar="currentPage" pagesVar="totalPages" maxPages="10" rendered="^{listBakingbowlMachineProduct.dataModel.rowCount>0}" style="width:483px;align:center">
+                 		<rich:datascroller for="productListImgFont" id="imgFontFooterProductList" page="#{listBakingbowlMachineProduct.scrollerPage}" pageIndexVar="currentPage" pagesVar="totalPages" maxPages="10" rendered="#{listBakingbowlMachineProduct.dataModel.rowCount>0}" style="width:483px;align:center">
                  		<f:facet name="controlSeparator">
                  		</f:facet>
                  		<f:facet name="first">
@@ -263,10 +263,10 @@ xmlns:rich="http://richfaces.org/rich">
                  	</f:facet>              
              	</rich:dataGrid>
              	
-				<rich:dataGrid id="productListFont" rendered="^{listBakingbowlMachineProduct.styleFontFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="1" elements="^{listBakingbowlMachineProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" rowClasses="show-font-product-data-grid-row-one,show-font-product-data-grid-row-two" columnClasses="table-list-product-panel-grid-column" value="^{listBakingbowlMachineProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
+				<rich:dataGrid id="productListFont" rendered="#{listBakingbowlMachineProduct.styleFontFlag}" headerClass="table-list-product-panel-grid-header" footerClass="table-list-product-panel-grid-footer" width="100%" columns="1" elements="#{listBakingbowlMachineProduct.numberOnePage}" cellspacing="0" cellpadding="10" first="1" rowClasses="show-font-product-data-grid-row-one,show-font-product-data-grid-row-two" columnClasses="table-list-product-panel-grid-column" value="#{listBakingbowlMachineProduct.dataModel}" var="product" rowKeyVar="rowIndex" frame="void" border="0" align="center" styleClass="table-list-product-panel-grid-data-grid">            
                 <f:facet name="header">
                 	<h:panelGroup>
-                		<h:outputText value="产品列表(共有:^{listBakingbowlMachineProduct.dataModel.rowCount}件商品)" rendered="^{listBakingbowlMachineProduct.dataModel.rowCount>0}"></h:outputText>
+                		<h:outputText value="产品列表(共有:#{listBakingbowlMachineProduct.dataModel.rowCount}件商品)" rendered="#{listBakingbowlMachineProduct.dataModel.rowCount>0}"></h:outputText>
                 	</h:panelGroup>
       			</f:facet>
      				<a4j:region renderRegionOnly="false" selfRendered="true">
@@ -274,23 +274,23 @@ xmlns:rich="http://richfaces.org/rich">
                  	<h:panelGrid columns="4" columnClasses="show-font-product-data-grid-column-one,show-font-product-data-grid-column-two,show-font-product-data-grid-column-three,show-font-product-data-grid-column-four">  
                  		<h:panelGrid columns="1">
 						<h:panelGroup>
-                 			<h:outputLabel value="^{rowIndex+1}" styleClass="current-product-show-number"></h:outputLabel>
-                 			<h:outputText value="  商品编号:^{product.code}" styleClass="gray"/>
+                 			<h:outputLabel value="#{rowIndex+1}" styleClass="current-product-show-number"></h:outputLabel>
+                 			<h:outputText value="  商品编号:#{product.code}" styleClass="gray"/>
 						</h:panelGroup>
                  		</h:panelGrid>
                  	 	<h:panelGroup styleClass="font6_">
-                 	 	<h:outputText value="^{product.brandCode}"/>
-                     	<h:outputText value="^{product.name}"/>
-                     	<h:outputText value="^{product.description}" style="color:red;"/>
+                 	 	<h:outputText value="#{product.brandCode}"/>
+                     	<h:outputText value="#{product.name}"/>
+                     	<h:outputText value="#{product.description}" style="color:red;"/>
                      	</h:panelGroup>
                      	<h:panelGroup styleClass="gray">
-                     	<h:outputLabel value="进货价:" rendered="^{currentUser.showPurchasePrice}"></h:outputLabel><h:outputText value="^{product.purchasePrice}" styleClass="show-product-data-grid-price" rendered="^{currentUser.showPurchasePrice}"/>
-                     	<h:outputLabel value="代理价:" rendered="^{currentUser.showTradePriceOne}"></h:outputLabel><h:outputText value="^{product.tradePriceOne}" styleClass="show-product-data-grid-price" rendered="^{currentUser.showTradePriceOne}"/>
-                     	<h:outputLabel value="经销价:" rendered="^{currentUser.showTradePriceTwo}"></h:outputLabel><h:outputText value="^{product.tradePriceTwo}" styleClass="show-product-data-grid-price" rendered="^{currentUser.showTradePriceTwo}"/>
-                     	<h:outputLabel value="零售价:" rendered="^{currentUser.showRetailPrice}"></h:outputLabel><h:outputText value="^{product.retailPrice}" styleClass="show-product-data-grid-price" rendered="^{currentUser.showRetailPrice}"/>
+                     	<h:outputLabel value="进货价:" rendered="#{currentUser.showPurchasePrice}"></h:outputLabel><h:outputText value="#{product.purchasePrice}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showPurchasePrice}"/>
+                     	<h:outputLabel value="代理价:" rendered="#{currentUser.showTradePriceOne}"></h:outputLabel><h:outputText value="#{product.tradePriceOne}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showTradePriceOne}"/>
+                     	<h:outputLabel value="经销价:" rendered="#{currentUser.showTradePriceTwo}"></h:outputLabel><h:outputText value="#{product.tradePriceTwo}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showTradePriceTwo}"/>
+                     	<h:outputLabel value="零售价:" rendered="#{currentUser.showRetailPrice}"></h:outputLabel><h:outputText value="#{product.retailPrice}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showRetailPrice}"/>
                      	</h:panelGroup>
                      	<h:panelGroup>
-                     	<a4j:commandButton image="/css/images/icons/buttons-buy.gif" action="^{shopCart.addInventoryItem}"><a4j:actionparam name="productCode" value="^{product.code}"/></a4j:commandButton>
+                     	<a4j:commandButton image="/css/images/icons/buttons-buy.gif" action="#{shopCart.addInventoryItem}"><a4j:actionparam name="productCode" value="#{product.code}"/></a4j:commandButton>
                      	<a4j:status>
                 			<f:facet name="start">
                     			<h:graphicImage  value="/css/images/icons/blue-loading.gif"/>
@@ -303,7 +303,7 @@ xmlns:rich="http://richfaces.org/rich">
                  	</a4j:region>
                  	<f:facet name="footer">
                  	<h:panelGroup>
-                 		<rich:datascroller for="productListFont" id="FontFooterProductList" page="^{listBakingbowlMachineProduct.scrollerPage}" pageIndexVar="currentPage" pagesVar="totalPages" maxPages="10" rendered="^{listBakingbowlMachineProduct.dataModel.rowCount>0}" style="width:483px;align:center">
+                 		<rich:datascroller for="productListFont" id="FontFooterProductList" page="#{listBakingbowlMachineProduct.scrollerPage}" pageIndexVar="currentPage" pagesVar="totalPages" maxPages="10" rendered="#{listBakingbowlMachineProduct.dataModel.rowCount>0}" style="width:483px;align:center">
                  		<f:facet name="controlSeparator">
                  		</f:facet>
                  		<f:facet name="first">
