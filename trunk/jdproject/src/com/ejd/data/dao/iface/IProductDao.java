@@ -26,6 +26,6 @@ public interface IProductDao {
 	public List<Product> getPSBPF1F6F7ProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, RangeParam volumeRange, String f6, String f7);
 	public List<Product> getPSBPF1F2F6ProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, RangeParam volumeRange, RangeParam f2, String f6);
 	public List<Product> getPSBPF1F2F6F7ProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, RangeParam volumeRange, RangeParam f2, String f6, String f7);
-	
+	public List<Product> getPSBPF1F2F3F4F5F6F7F8F9F10ProductByCriteria(String primaryCategoryCode, String secondCategoryCode, String brandCode, RangeParam priceRange, RangeParam f1, RangeParam f2, RangeParam f3, RangeParam f4, RangeParam f5, String f6, String f7, String f8, String f9, String f10);
 	public List<String> getBrandCodeListByCategory(String primaryCategory, String secondCategory);
 }
