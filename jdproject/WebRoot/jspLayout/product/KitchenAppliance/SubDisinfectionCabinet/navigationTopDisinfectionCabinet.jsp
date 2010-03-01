@@ -58,14 +58,29 @@ xmlns:rich="http://richfaces.org/rich">
 	</tr>
 	<tr>
 		<td style="PADDING-LEFT: 8px;width:20%;text-align:left;">
-			<h:outputLabel value="控制方式:" styleClass="current-selected_label"></h:outputLabel><h:outputText id="controlTypeLabel" styleClass="current-selected" value="#{listDisinfectionCabinetProduct.controlTypeLabel}"></h:outputText>
+			<h:outputLabel value="功率(W):" styleClass="current-selected_label"></h:outputLabel><h:outputText id="powerRangeLabel" styleClass="current-selected" value="#{listDisinfectionCabinetProduct.powerRangeLabel}"></h:outputText>
 		</td>
 		<td class="selected-new" width="80%">
-			<a4j:repeat var="controlType" rowKeyVar="index" value="#{controlTypeItems}">
-				<a4j:commandLink action="#{navigationDisinfectionCabinet.clickLink}" ajaxSingle="true" style="CURSOR: pointer;" immediate="true" limitToList="true" reRender="productList,controlTypeLabel">
-					<span class="top-product-navigation-option">#{controlType.label}</span>
-					<a4j:actionparam value="#{controlType.value}" name="controlType"/>
-					<a4j:actionparam value="#{controlType.label}" name="controlTypeLabel"/>
+			<a4j:repeat var="powerRange" rowKeyVar="index" value="#{powerRangeList}">
+				<a4j:commandLink action="#{navigationDisinfectionCabinet.clickLink}" ajaxSingle="true" style="CURSOR: pointer;" immediate="true" limitToList="true" reRender="productList,powerRangeLabel">
+					<span class="top-product-navigation-option">#{powerRange.description}</span>
+					<a4j:actionparam value="#{powerRange.min}" name="powerRangeMin"/>
+					<a4j:actionparam value="#{powerRange.max}" name="powerRangeMax"/>
+					<a4j:actionparam value="#{powerRange.description}" name="powerRangeLabel"/>
+				</a4j:commandLink>
+			</a4j:repeat>
+		</td> 
+	</tr>
+	<tr>
+		<td style="PADDING-LEFT: 8px;width:20%;text-align:left;">
+			<h:outputLabel value="消毒方式:" styleClass="current-selected_label"></h:outputLabel><h:outputText id="typeItemsLabel" styleClass="current-selected" value="#{listDisinfectionCabinetProduct.typeItemsLabel}"></h:outputText>
+		</td>
+		<td class="selected-new" width="80%">
+			<a4j:repeat var="typeItem" rowKeyVar="index" value="#{typeItems}">
+				<a4j:commandLink action="#{navigationDisinfectionCabinet.clickLink}" ajaxSingle="true" style="CURSOR: pointer;" immediate="true" limitToList="true" reRender="productList,typeItemsLabel">
+					<span class="top-product-navigation-option">#{typeItem.label}</span>
+					<a4j:actionparam value="#{typeItem.value}" name="typeItem"/>
+					<a4j:actionparam value="#{typeItem.label}" name="typeItemLabel"/>
 				</a4j:commandLink>
 			</a4j:repeat>
 		</td> 
