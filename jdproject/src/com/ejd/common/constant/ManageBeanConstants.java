@@ -42,6 +42,8 @@ public class ManageBeanConstants {
 	public static final String LIST_FOOD_PROCESSING_MACHINE_PRODUCT_BEAN_NAME = "listFoodProcessingMachineProduct";
 	public static final String LIST_JUICER_PRODUCT_BEAN_NAME = "listJuicerProduct";
 	public static final String LIST_GAS_WATER_HEATER_PRODUCT_BEAN_NAME = "listGasWaterHeaterProduct";
+	public static final String LIST_ELECTRIC_WATER_HEATER_PRODUCT_BEAN_NAME = "listElectricWaterHeaterProduct";
+	public static final String LIST_VENTILATOR_PRODUCT_BEAN_NAME = "listVentilatorProduct";
 	
 	
 	
