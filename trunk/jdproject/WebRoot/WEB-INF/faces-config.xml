@@ -1297,7 +1297,40 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
     <!-- end about listGasWaterHeaterProduct  -->
-    
+    <!-- start about listElectricWaterHeaterProduct  -->
+    <managed-bean>
+        <managed-bean-name>listElectricWaterHeaterProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.electricwaterheater.ElectricWaterHeaterProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationElectricWaterHeater</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.electricwaterheater.NavigationElectricWaterHeaterBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about listElectricWaterHeaterProduct  -->
+    <!-- start about listElectricVentilatorProduct  -->
+    <managed-bean>
+        <managed-bean-name>listVentilatorProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.ventilator.VentilatorProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationVentilator</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.ventilator.NavigationVentilatorBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about listElectricVentilatorProduct  -->
     
     
     
