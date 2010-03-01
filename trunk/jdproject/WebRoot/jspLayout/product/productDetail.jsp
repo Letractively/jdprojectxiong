@@ -60,7 +60,16 @@ xmlns:rich="http://richfaces.org/rich">
                      			<h:outputLabel value="经销价:" rendered="#{currentUser.showTradePriceTwo}"></h:outputLabel><h:outputText value="#{productInfo.product.tradePriceTwo}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showTradePriceTwo}"/>
                      			<h:outputLabel value="零售价:" rendered="#{currentUser.showRetailPrice}"></h:outputLabel><h:outputText value="#{productInfo.product.retailPrice}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showRetailPrice}"/>
                      			<f:facet name="footer">
-                     				<h:panelGroup><a4j:commandButton image="/css/images/icons/buynow4.gif"></a4j:commandButton><a4j:commandButton image="/css/images/icons/fav4.gif" style="padding-left:6px;"/></h:panelGroup>
+                     				<h:panelGroup >
+                     					<a4j:commandButton image="/css/images/icons/buynow4.gif"></a4j:commandButton><a4j:commandButton image="/css/images/icons/fav4.gif" style="padding-left:6px;"/>
+                     					<h:outputText value="购买后跳转到"></h:outputText>
+                     					<h:selectOneMenu value="#{productInfo.goUrlAfterAdd}">
+                     						<f:selectItem itemLabel="不跳转" itemValue="none"><a4j:support event="onchange" immediate="true"></a4j:support></f:selectItem>
+                     						<f:selectItem itemLabel="回上页" itemValue="goBack"><a4j:support event="onchange" immediate="true"></a4j:support></f:selectItem>
+                     						<f:selectItem itemLabel="购物车" itemValue="goShoppingCart"><a4j:support event="onchange" immediate="true"></a4j:support></f:selectItem>
+                     						
+                     					</h:selectOneMenu>
+                     				</h:panelGroup>
                      			</f:facet>
 							</h:panelGrid>
 					</h:panelGrid>
