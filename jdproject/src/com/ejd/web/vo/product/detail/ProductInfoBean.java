@@ -12,6 +12,8 @@ public class ProductInfoBean{
 	private ProductVo product;
 	
 	private String subViewId;
+	
+	private String goUrlAfterAdd;
 
 	public IProductService getProductService() {
 		return productService;
@@ -45,7 +47,16 @@ public class ProductInfoBean{
 		this.subViewId = subViewId;
 	}
 
+	public String getGoUrlAfterAdd() {
+		return goUrlAfterAdd;
+	}
+
+	public void setGoUrlAfterAdd(String goUrlAfterAdd) {
+		this.goUrlAfterAdd = goUrlAfterAdd;
+	}
+
 	public ProductInfoBean() {
+		this.setGoUrlAfterAdd("none");
 	}
 	
 }
