@@ -59,4 +59,12 @@ public class ProductInfoBean{
 		this.setGoUrlAfterAdd("none");
 	}
 	
+	public String getPreViewIdString() {
+		String result = "home";
+		if (null == this.getPreViewId() || "".equals(this.getPreViewId())) {
+			
+		}
+		return result;
+	}
+	
 }
