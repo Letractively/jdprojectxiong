@@ -69,6 +69,7 @@ xmlns:rich="http://richfaces.org/rich">
                      						<f:selectItem itemLabel="购物车" itemValue="goShoppingCart"><a4j:support event="onchange" immediate="true"></a4j:support></f:selectItem>
                      						
                      					</h:selectOneMenu>
+                     					<h:commandButton action="#{productInfo.preViewId}" value="回"></h:commandButton>
                      				</h:panelGroup>
                      			</f:facet>
 							</h:panelGrid>
