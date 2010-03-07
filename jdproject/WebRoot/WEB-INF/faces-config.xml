@@ -1331,7 +1331,23 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
     <!-- end about listElectricVentilatorProduct  -->
-    
+    <!-- start about listHouseholdApplianceProduct  -->
+    <managed-bean>
+        <managed-bean-name>listHouseholdApplianceProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.householdappliance.HouseholdApplianceProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationHouseholdAppliance</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.householdappliance.NavigationHouseholdApplianceBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about listHouseholdApplianceProduct  -->
     
     
     <!-- List Porduct end -->
