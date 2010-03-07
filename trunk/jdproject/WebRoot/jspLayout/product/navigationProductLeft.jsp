@@ -31,7 +31,7 @@ xmlns:rich="http://richfaces.org/rich">
 								
 						</h:commandLink>
     				</rich:dataGrid>
-					<rich:dataGrid rendered="#{headerTabPanel.currentPrimaryCategory == '02'?'true':'false'}" columns="2" value="#{headerTabPanel.householdAppliance.subMenu}" var="householdApplianceSubMenu" columnClasses="table-list-product-left-panel-grid-column" styleClass="navigation-left-kitchen_appliance-product-panel-grid-data-grid">
+					<rich:dataGrid rendered="#{headerTabPanel.currentPrimaryCategory == '01'?'true':'false'}" columns="2" value="#{headerTabPanel.householdAppliance.subMenu}" var="householdApplianceSubMenu" columnClasses="table-list-product-left-panel-grid-column" styleClass="navigation-left-kitchen_appliance-product-panel-grid-data-grid">
     					<a4j:commandLink action="#{headerTabPanel.gotoProduct}" styleClass="font3b" value="#{householdApplianceSubMenu.label}" immediate="true">
 								
 										<f:param name="idFirst" value="#{householdApplianceSubMenu.idFirst}"></f:param>
@@ -40,7 +40,7 @@ xmlns:rich="http://richfaces.org/rich">
 								
 						</a4j:commandLink>
     				</rich:dataGrid>
-					<rich:dataGrid rendered="#{headerTabPanel.currentPrimaryCategory == '03'?'true':'false'}" columns="2" value="#{headerTabPanel.personalCare.subMenu}" var="personalCareSubMenu" columnClasses="table-list-product-left-panel-grid-column" styleClass="navigation-left-kitchen_appliance-product-panel-grid-data-grid">
+					<rich:dataGrid rendered="#{headerTabPanel.currentPrimaryCategory == '01'?'true':'false'}" columns="2" value="#{headerTabPanel.personalCare.subMenu}" var="personalCareSubMenu" columnClasses="table-list-product-left-panel-grid-column" styleClass="navigation-left-kitchen_appliance-product-panel-grid-data-grid">
     					<a4j:commandLink action="#{headerTabPanel.gotoProduct}" styleClass="font3b" value="#{personalCareSubMenu.label}" immediate="true">
 								
 										<f:param name="idFirst" value="#{personalCareSubMenu.idFirst}"></f:param>
@@ -49,7 +49,7 @@ xmlns:rich="http://richfaces.org/rich">
 								
 						</a4j:commandLink>
     				</rich:dataGrid>
-					<rich:dataGrid rendered="#{headerTabPanel.currentPrimaryCategory == '04'?'true':'false'}" columns="2" value="#{headerTabPanel.healthDevice.subMenu}" var="healthDeviceSubMenu" columnClasses="table-list-product-left-panel-grid-column" styleClass="navigation-left-kitchen_appliance-product-panel-grid-data-grid">
+					<rich:dataGrid rendered="#{headerTabPanel.currentPrimaryCategory == '01'?'true':'false'}" columns="2" value="#{headerTabPanel.healthDevice.subMenu}" var="healthDeviceSubMenu" columnClasses="table-list-product-left-panel-grid-column" styleClass="navigation-left-kitchen_appliance-product-panel-grid-data-grid">
     					<a4j:commandLink action="#{headerTabPanel.gotoProduct}" styleClass="font3b" value="#{healthDeviceSubMenu.label}" immediate="true">
 								
 										<f:param name="idFirst" value="#{healthDeviceSubMenu.idFirst}"></f:param>
@@ -58,7 +58,7 @@ xmlns:rich="http://richfaces.org/rich">
 								
 						</a4j:commandLink>
     				</rich:dataGrid>
-					<rich:dataGrid rendered="#{headerTabPanel.currentPrimaryCategory == '05'?'true':'false'}" columns="2" value="#{headerTabPanel.majorAppliance.subMenu}" var="majorApplianceSubMenu" columnClasses="table-list-product-left-panel-grid-column" styleClass="navigation-left-kitchen_appliance-product-panel-grid-data-grid">
+					<rich:dataGrid rendered="#{headerTabPanel.currentPrimaryCategory == '01'?'true':'false'}" columns="2" value="#{headerTabPanel.majorAppliance.subMenu}" var="majorApplianceSubMenu" columnClasses="table-list-product-left-panel-grid-column" styleClass="navigation-left-kitchen_appliance-product-panel-grid-data-grid">
     					<a4j:commandLink action="#{headerTabPanel.gotoProduct}" styleClass="font3b" value="#{majorApplianceSubMenu.label}" immediate="true">
 								
 										<f:param name="idFirst" value="#{majorApplianceSubMenu.idFirst}"></f:param>
@@ -67,7 +67,7 @@ xmlns:rich="http://richfaces.org/rich">
 								
 						</a4j:commandLink>
     				</rich:dataGrid>
-					<rich:dataGrid rendered="#{headerTabPanel.currentPrimaryCategory == '06'?'true':'false'}" columns="2" value="#{headerTabPanel.phoneDigital.subMenu}" var="phoneDigitalSubMenu" columnClasses="table-list-product-left-panel-grid-column" styleClass="navigation-left-kitchen_appliance-product-panel-grid-data-grid">
+					<rich:dataGrid rendered="#{headerTabPanel.currentPrimaryCategory == '01'?'true':'false'}" columns="2" value="#{headerTabPanel.phoneDigital.subMenu}" var="phoneDigitalSubMenu" columnClasses="table-list-product-left-panel-grid-column" styleClass="navigation-left-kitchen_appliance-product-panel-grid-data-grid">
     					<a4j:commandLink action="#{headerTabPanel.gotoProduct}" styleClass="font3b" value="#{phoneDigitalSubMenu.label}" immediate="true">
 								
 										<f:param name="idFirst" value="#{phoneDigitalSubMenu.idFirst}"></f:param>
@@ -76,7 +76,7 @@ xmlns:rich="http://richfaces.org/rich">
 								
 						</a4j:commandLink>
     				</rich:dataGrid>
-					<rich:dataGrid rendered="#{headerTabPanel.currentPrimaryCategory == '07'?'true':'false'}" columns="2" value="#{headerTabPanel.computerNetwork.subMenu}" var="computerNetworkSubMenu" columnClasses="table-list-product-left-panel-grid-column" styleClass="navigation-left-kitchen_appliance-product-panel-grid-data-grid">
+					<rich:dataGrid rendered="#{headerTabPanel.currentPrimaryCategory == '01'?'true':'false'}" columns="2" value="#{headerTabPanel.computerNetwork.subMenu}" var="computerNetworkSubMenu" columnClasses="table-list-product-left-panel-grid-column" styleClass="navigation-left-kitchen_appliance-product-panel-grid-data-grid">
     					<a4j:commandLink action="#{headerTabPanel.gotoProduct}" styleClass="font3b" value="#{computerNetworkSubMenu.label}" immediate="true">
 								
 										<f:param name="idFirst" value="#{computerNetworkSubMenu.idFirst}"></f:param>
