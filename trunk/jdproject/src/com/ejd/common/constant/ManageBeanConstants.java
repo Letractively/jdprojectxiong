@@ -121,6 +121,16 @@ public class ManageBeanConstants {
     public static final String EXIST_HOUSEHOLD_APPLIANCE_VACUUM_CLEANER_ACCESSORIES_PRODUCT_BRAND_BEAN_NAME = "existHouseholdApplianceVacuumCleanerAccessoriesProductBrand";
     public static final String EXIST_HOUSEHOLD_APPLIANCE_SOCKET_POWER_PRODUCT_BRAND_BEAN_NAME = "existHouseholdApplianceSocketPowerProductBrand";
     //end exist household appliance product brand
+    //start household appliance list product bean
+    public static final String LIST_HOUSEHOLD_APPLIANCE_PRODUCT_BEAN_NAME = "listHouseholdApplianceProduct";
+    
+    
+    
+    //start household appliance list product bean
+    
+    
+    
+    
     //start exist personal care product brand
     public static final String EXIST_PERSONAL_CARE_PRODUCT_BRAND_BEAN_NAME = "existPersonalCareProductBrand";
     public static final String EXIST_PERSONAL_CARE_HAIR_DRYER_PRODUCT_BRAND_BEAN_NAME = "existPersonalCareHairDryerProductBrand";
