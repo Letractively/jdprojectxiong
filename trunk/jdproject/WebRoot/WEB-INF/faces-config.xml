@@ -166,6 +166,11 @@
 	<managed-bean-class>com.ejd.web.vo.genl.ExistHumidifierUseTypeBean</managed-bean-class>
 	<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>existElectricHeaterUseType</managed-bean-name>
+	<managed-bean-class>com.ejd.web.vo.genl.ExistElectricHeaterUseTypeBean</managed-bean-class>
+	<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 	
 	
 	<!-- start primary product category -->
