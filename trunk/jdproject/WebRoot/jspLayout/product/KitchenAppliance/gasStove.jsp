@@ -16,6 +16,7 @@ xmlns:rich="http://richfaces.org/rich">
     	<ui:composition template="../productTemplate.jsp">
     		<ui:define id="gasStoveLeft" name="left">
     			<ui:include id="gasStoveLeftInclude" src="../navigationProductLeft.jsp">
+    				<ui:param name="currentPrimaryCategory" value="kitchenAppliance"/>
     			</ui:include>
     		</ui:define>
     		
