@@ -360,6 +360,16 @@ xmlns:rich="http://richfaces.org/rich">
 								<rich:message for="humidifierFeild6" />
 							</h:panelGrid>
 							
+							<h:panelGrid id="electricHeater" rendered="#{productCreate.currProductType == 'electricHeater'}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="功率(W):" for="electricHeaterFeild1"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field1}" id="electricHeaterFeild1"></h:inputText>
+								<rich:message for="electricHeaterFeild1" />
+								<h:outputLabel value="类型:" for="electricHeaterFeild6"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.product.field6}" id="electricHeaterFeild6">
+									<f:selectItems value="#{existElectricHeaterUseType.useTypeItems}"/>
+								</h:selectOneMenu>
+								<rich:message for="electricHeaterFeild6" />
+							</h:panelGrid>
 							
 							<h:panelGrid columns="2" columnClasses="alight:left">
 								<a4j:commandButton type="image" image="/css/images/blank.gif"></a4j:commandButton>
