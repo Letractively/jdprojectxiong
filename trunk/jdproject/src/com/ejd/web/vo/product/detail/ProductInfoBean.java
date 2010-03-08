@@ -66,5 +66,31 @@ public class ProductInfoBean{
 		}
 		return result;
 	}
-	
+	public String getPrimaryCategoryLabel() {
+		String result = "";
+		if (null != this.getProduct()) {
+			if ("01".equals(this.getProduct().getPrimaryCategoryCode())) {
+				result = "kitchenAppliance";
+			}
+			if ("02".equals(this.getProduct().getPrimaryCategoryCode())) {
+				result = "householdAppliance";
+			}
+			if ("03".equals(this.getProduct().getPrimaryCategoryCode())) {
+				result = "personalCare";
+			}
+			if ("04".equals(this.getProduct().getPrimaryCategoryCode())) {
+				result = "healthDevice";
+			}
+			if ("05".equals(this.getProduct().getPrimaryCategoryCode())) {
+				result = "majorAppliance";
+			}
+			if ("06".equals(this.getProduct().getPrimaryCategoryCode())) {
+				result = "phoneDigital";
+			}
+			if ("07".equals(this.getProduct().getPrimaryCategoryCode())) {
+				result = "computerNetwork";
+			}
+		}
+		return result;
+	}
 }
