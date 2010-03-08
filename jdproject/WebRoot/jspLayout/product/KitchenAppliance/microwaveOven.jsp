@@ -16,6 +16,7 @@ xmlns:rich="http://richfaces.org/rich">
     	<ui:composition template="../productTemplate.jsp">
     		<ui:define id="microwaveOvenLeft" name="left">
     			<ui:include id="microwaveOvenLeftInclude" src="../navigationProductLeft.jsp">
+    				<ui:param name="currentPrimaryCategory" value="kitchenAppliance"/>
     			</ui:include>
     		</ui:define>
     		
