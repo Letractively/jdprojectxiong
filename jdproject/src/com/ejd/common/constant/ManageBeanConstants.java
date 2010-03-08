@@ -123,7 +123,12 @@ public class ManageBeanConstants {
     //end exist household appliance product brand
     //start household appliance list product bean
     public static final String LIST_HOUSEHOLD_APPLIANCE_PRODUCT_BEAN_NAME = "listHouseholdApplianceProduct";
-    
+    public static final String EXIST_ELECTRIC_KETTLE_MATERIAL_TYPE_BEAN_NAME = "existElectricKettleMaterialType";
+    public static final String EXIST_ELECTRIC_FAN_SET_TYPE_BEAN_NAME = "existElectricFanSetType";
+    public static final String EXIST_ELECTRIC_IRON_STEAM_TYPE_BEAN_NAME = "existElectricIronSteamType";
+    public static final String EXIST_VACUUM_CLEANER_POWER_SUPPLY_TYPE_BEAN_NAME = "existVacuumCleanerPowerSupplyType";
+    public static final String EXIST_VACUUM_CLEANER_USE_TYPE_BEAN_NAME = "existVacuumCleanerUseType";
+    public static final String EXIST_HUMIDIFIER_USE_TYPE_BEAN_NAME = "existHumidifierUseType";
     
     
     //start household appliance list product bean
