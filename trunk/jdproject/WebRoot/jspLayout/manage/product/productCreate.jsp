@@ -305,6 +305,62 @@ xmlns:rich="http://richfaces.org/rich">
 								<h:inputText value="#{productCreate.product.field2}" id="ventilatorFeild2"></h:inputText>
 								<rich:message for="ventilatorFeild2" />
 							</h:panelGrid>
+							<h:panelGrid id="electricKettle" rendered="#{productCreate.currProductType == 'electricKettle'}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="容量(L):" for="electricKettleFeild1"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field1}" id="electricKettleFeild1"></h:inputText>
+								<rich:message for="electricKettleFeild1" />
+								<h:outputLabel value="材质:" for="electricKettleFeild6"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.product.field6}" id="electricKettleFeild6">
+									<f:selectItems value="#{existElectricKettleMaterialType.materialTypeItems}"/>
+								</h:selectOneMenu>
+								<rich:message for="electricKettleFeild6" />
+							</h:panelGrid>
+							<h:panelGrid id="electricFan" rendered="#{productCreate.currProductType == 'electricFan'}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="功率(W):" for="electricFanFeild1"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field1}" id="electricFanFeild1"></h:inputText>
+								<rich:message for="electricFanFeild1" />
+								<h:outputLabel value="档位:" for="electricFanFeild2"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field2}" id="electricFanFeild2"></h:inputText>
+								<rich:message for="electricFanFeild2" />
+								<h:outputLabel value="类型:" for="electricFanFeild6"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.product.field6}" id="electricFanFeild6">
+									<f:selectItems value="#{existElectricFanSetType.setTypeItems}"/>
+								</h:selectOneMenu>
+								<rich:message for="electricFanFeild6" />
+							</h:panelGrid>
+							<h:panelGrid id="electricIron" rendered="#{productCreate.currProductType == 'electricIron'}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="类别:" for="electricIronFeild6"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.product.field6}" id="electricIronFeild6">
+									<f:selectItems value="#{existElectricIronSteamType.steamTypeItems}"/>
+								</h:selectOneMenu>
+								<rich:message for="electricIronFeild6" />
+							</h:panelGrid>
+							
+							<h:panelGrid id="vacuumCleaner" rendered="#{productCreate.currProductType == 'vacuumCleaner'}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="供电方式:" for="vacuumCleanerFeild6"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.product.field6}" id="vacuumCleanerFeild6">
+									<f:selectItems value="#{existVacuumCleanerPowerSupplyType.powerSupplyTypeItems}"/>
+								</h:selectOneMenu>
+								<rich:message for="vacuumCleanerFeild6" />
+								<h:outputLabel value="类型:" for="vacuumCleanerFeild7"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.product.field7}" id="vacuumCleanerFeild7">
+									<f:selectItems value="#{existVacuumCleanerUseType.useTypeItems}"/>
+								</h:selectOneMenu>
+								<rich:message for="vacuumCleanerFeild7" />
+							</h:panelGrid>
+							
+							<h:panelGrid id="humidifier" rendered="#{productCreate.currProductType == 'humidifier'}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="容积(L):" for="humidifierFeild1"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field1}" id="humidifierFeild1"></h:inputText>
+								<rich:message for="humidifierFeild1" />
+								<h:outputLabel value="类别:" for="humidifierFeild6"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.product.field6}" id="humidifierFeild6">
+									<f:selectItems value="#{existHumidifierUseType.useTypeItems}"/>
+								</h:selectOneMenu>
+								<rich:message for="humidifierFeild6" />
+							</h:panelGrid>
+							
+							
 							<h:panelGrid columns="2" columnClasses="alight:left">
 								<a4j:commandButton type="image" image="/css/images/blank.gif"></a4j:commandButton>
 								<a4j:commandButton type="image" image="/css/images/createmyaccount.gif" action="#{productCreate.createProduct}"></a4j:commandButton>
