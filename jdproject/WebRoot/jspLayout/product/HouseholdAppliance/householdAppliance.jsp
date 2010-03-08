@@ -16,6 +16,7 @@ xmlns:rich="http://richfaces.org/rich">
     	<ui:composition template="../productTemplate.jsp">
     		<ui:define id="householdApplianceLeft" name="left">
     			<ui:include id="householdApplianceLeftInclude" src="../navigationProductLeft.jsp">
+    			<ui:param name="currentPrimaryCategory" value="householdAppliance"/>
     			</ui:include>
     		</ui:define>
     		
