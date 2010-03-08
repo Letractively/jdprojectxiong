@@ -129,7 +129,7 @@ public class ManageBeanConstants {
     public static final String EXIST_VACUUM_CLEANER_POWER_SUPPLY_TYPE_BEAN_NAME = "existVacuumCleanerPowerSupplyType";
     public static final String EXIST_VACUUM_CLEANER_USE_TYPE_BEAN_NAME = "existVacuumCleanerUseType";
     public static final String EXIST_HUMIDIFIER_USE_TYPE_BEAN_NAME = "existHumidifierUseType";
-    
+    public static final String EXIST_ELECTRIC_HEATER_USE_TYPE_BEAN_NAME = "existElectricHeaterUseType";
     
     //start household appliance list product bean
     
