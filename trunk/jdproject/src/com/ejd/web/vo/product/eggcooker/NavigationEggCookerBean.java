@@ -101,14 +101,18 @@ public String clickLink() {
 		priceRange.setMin(null == priceRangeMin?null:("".equals(priceRangeMin)?null:new Double(priceRangeMin.toString())));
 		priceRange.setMax(null == priceRangeMax?null:("".equals(priceRangeMax)?null:new Double(priceRangeMax.toString())));
 		priceRange.setDescription(null == priceRangeLabel?"全部":("".equals(priceRangeLabel)?"全部":priceRangeLabel.toString()));
-		listEggCookerProduct.setPriceRange(priceRange);
-		listEggCookerProduct.setPriceRangeLabel(priceRange.getDescription());
+		if (null != priceRangeMin || null != priceRangeMax) {
+			listEggCookerProduct.setPriceRange(priceRange);
+			listEggCookerProduct.setPriceRangeLabel(priceRange.getDescription());
+		}
 		RangeParam volumeRange = new RangeParam();
 		volumeRange.setMin(null == volumeRangeMin?null:("".equals(volumeRangeMin)?null:new Double(volumeRangeMin.toString())));
 		volumeRange.setMax(null == volumeRangeMax?null:("".equals(volumeRangeMax)?null:new Double(volumeRangeMax.toString())));
 		volumeRange.setDescription(null == volumeRangeLabel?"全部":("".equals(volumeRangeLabel)?"全部":volumeRangeLabel.toString()));
-		listEggCookerProduct.setVolumeRange(volumeRange);
-		listEggCookerProduct.setVolumeRangeLabel(volumeRange.getDescription());
+		if (null != volumeRangeMin || null != volumeRangeMax) {
+			listEggCookerProduct.setVolumeRange(volumeRange);
+			listEggCookerProduct.setVolumeRangeLabel(volumeRange.getDescription());
+		}
 		if (null != brandCode) {
 			listEggCookerProduct.setBrandCode((String)brandCode);
 		}

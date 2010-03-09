@@ -68,8 +68,10 @@ public String clickLink() {
 		priceRange.setMin(null == priceRangeMin?null:("".equals(priceRangeMin)?null:new Double(priceRangeMin.toString())));
 		priceRange.setMax(null == priceRangeMax?null:("".equals(priceRangeMax)?null:new Double(priceRangeMax.toString())));
 		priceRange.setDescription(null == priceRangeLabel?"全部":("".equals(priceRangeLabel)?"全部":priceRangeLabel.toString()));
-		listCoffeeMachineProduct.setPriceRange(priceRange);
-		listCoffeeMachineProduct.setPriceRangeLabel(priceRange.getDescription());
+		if (null != priceRangeMin || null != priceRangeMax) {
+			listCoffeeMachineProduct.setPriceRange(priceRange);
+			listCoffeeMachineProduct.setPriceRangeLabel(priceRange.getDescription());
+		}
 		if (null != brandCode) {
 			listCoffeeMachineProduct.setBrandCode((String)brandCode);
 		}

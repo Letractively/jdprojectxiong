@@ -105,26 +105,32 @@ public String clickLink() {
 		priceRange.setMin(null == priceRangeMin?null:("".equals(priceRangeMin)?null:new Double(priceRangeMin.toString())));
 		priceRange.setMax(null == priceRangeMax?null:("".equals(priceRangeMax)?null:new Double(priceRangeMax.toString())));
 		priceRange.setDescription(null == priceRangeLabel?"全部":("".equals(priceRangeLabel)?"全部":priceRangeLabel.toString()));
-		listBurntStewpotProduct.setPriceRange(priceRange);
+		if (null != priceRangeMin || null != priceRangeMax) {
+			listBurntStewpotProduct.setPriceRange(priceRange);
+			listBurntStewpotProduct.setPriceRangeLabel(priceRange.getDescription());
+		}
 		RangeParam volumeRange = new RangeParam();
 		volumeRange.setMin(null == volumeRangeMin?null:("".equals(volumeRangeMin)?null:new Double(volumeRangeMin.toString())));
 		volumeRange.setMax(null == volumeRangeMax?null:("".equals(volumeRangeMax)?null:new Double(volumeRangeMax.toString())));
 		volumeRange.setDescription(null == volumeRangeLabel?"全部":("".equals(volumeRangeLabel)?"全部":volumeRangeLabel.toString()));
-		listBurntStewpotProduct.setVolumeRange(volumeRange);
+		if (null != volumeRangeMin || null != volumeRangeMax) {
+			listBurntStewpotProduct.setVolumeRange(volumeRange);
+			listBurntStewpotProduct.setVolumeRangeLabel(volumeRange.getDescription());
+		}
 		RangeParam powerRange = new RangeParam();
 		powerRange.setMin(null == powerRangeMin?null:("".equals(powerRangeMin)?null:new Double(powerRangeMin.toString())));
 		powerRange.setMax(null == powerRangeMax?null:("".equals(powerRangeMax)?null:new Double(powerRangeMax.toString())));
 		powerRange.setDescription(null == powerRangeLabel?"全部":("".equals(powerRangeLabel)?"全部":powerRangeLabel.toString()));
-		listBurntStewpotProduct.setPowerRange(powerRange);
+		if (null != powerRangeMin || null != powerRangeMax) {
+			listBurntStewpotProduct.setPowerRange(powerRange);
+			listBurntStewpotProduct.setPowerRangeLabel(powerRange.getDescription());
+		}
 		if (null != brandCode) {
 			listBurntStewpotProduct.setBrandCode((String)brandCode);
 		}
 		if (null != brandLabel) {
 			listBurntStewpotProduct.setBrandLabel((String)brandLabel);
 		}
-		listBurntStewpotProduct.setPriceRangeLabel(priceRange.getDescription());
-		listBurntStewpotProduct.setVolumeRangeLabel(volumeRange.getDescription());
-		listBurntStewpotProduct.setPowerRangeLabel(powerRange.getDescription());
 		return null;
 	}
 
