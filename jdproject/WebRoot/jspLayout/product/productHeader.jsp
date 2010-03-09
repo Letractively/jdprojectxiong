@@ -8,6 +8,11 @@ xmlns:h="http://java.sun.com/jsf/html"
 xmlns:a4j="http://richfaces.org/a4j"
 xmlns:rich="http://richfaces.org/rich"
 xmlns:c="http://java.sun.com/jstl/core">
+<script>
+	function showmessage() {
+		alert("message");
+	}
+</script>
 <f:subview id="productHeaderMainView">
 <h:form id="productHeaderMainform"> 
 	<a4j:region id="productHeaderRegion" renderRegionOnly="false" selfRendered="true">
@@ -33,11 +38,11 @@ xmlns:c="http://java.sun.com/jstl/core">
 					<div class="header-navigation-panel">
 					<h:panelGrid columns="5" cellpadding="0" cellspacing="0" styleClass="header-navigation-panel-grid" columnClasses="header-navigation-panel-grid-column-two,header-navigation-panel-grid-column-three,header-navigation-panel-grid-column-four,header-navigation-panel-grid-column-five">
 						<h:panelGroup>
-							<rich:dropDownMenu value="所有分类 " submitMode="server" direction="bottom-right"  jointPoint="td" event="onmouseover" showDelay="10">
+							<rich:dropDownMenu value="所有分类 " submitMode="ajax" direction="bottom-right"  jointPoint="td" event="onmouseover" showDelay="10">
                 			<rich:menuGroup value="#{headerTabPanel.kitchenAppliance.mainMenu.label}" direction="bottom-right">
                     			
                     			<c:forEach items="#{headerTabPanel.kitchenAppliance.subMenu}" var="subMenu">
-									<rich:menuItem action="#{headerTabPanel.gotoProduct}" value="#{subMenu.label}" submitMode="server">
+									<rich:menuItem action="#{headerTabPanel.gotoProduct}" value="#{subMenu.label}" submitMode="ajax">
 										<f:param name="idFirst" value="#{subMenu.idFirst}"></f:param>
 										<f:param name="idSecond" value="#{subMenu.idSecond}"></f:param>
 										<f:param name="productType" value="#{subMenu.name}"></f:param>
@@ -48,7 +53,7 @@ xmlns:c="http://java.sun.com/jstl/core">
                 			<rich:menuGroup value="#{headerTabPanel.householdAppliance.mainMenu.label}" direction="bottom-right">
                     			
                     			<c:forEach items="#{headerTabPanel.householdAppliance.subMenu}" var="subMenu">
-									<rich:menuItem action="#{headerTabPanel.gotoProduct}" value="#{subMenu.label}" submitMode="server">
+									<rich:menuItem action="#{headerTabPanel.gotoProduct}" value="#{subMenu.label}" submitMode="ajax">
 										<f:param name="idFirst" value="#{subMenu.idFirst}"></f:param>
 										<f:param name="idSecond" value="#{subMenu.idSecond}"></f:param>
 										<f:param name="productType" value="#{subMenu.name}"></f:param>
@@ -59,7 +64,7 @@ xmlns:c="http://java.sun.com/jstl/core">
                				<rich:menuGroup value="#{headerTabPanel.personalCare.mainMenu.label}" direction="bottom-right">
                     			
                     			<c:forEach items="#{headerTabPanel.personalCare.subMenu}" var="subMenu">
-									<rich:menuItem action="#{headerTabPanel.gotoProduct}" value="#{subMenu.label}" submitMode="server">
+									<rich:menuItem action="#{headerTabPanel.gotoProduct}" value="#{subMenu.label}" submitMode="ajax">
 										<f:param name="idFirst" value="#{subMenu.idFirst}"></f:param>
 										<f:param name="idSecond" value="#{subMenu.idSecond}"></f:param>
 										<f:param name="productType" value="#{subMenu.name}"></f:param>
@@ -70,7 +75,7 @@ xmlns:c="http://java.sun.com/jstl/core">
                 			<rich:menuGroup value="#{headerTabPanel.healthDevice.mainMenu.label}" direction="bottom-right">
                     			
                     			<c:forEach items="#{headerTabPanel.healthDevice.subMenu}" var="subMenu">
-									<rich:menuItem action="#{headerTabPanel.gotoProduct}" value="#{subMenu.label}" submitMode="server">
+									<rich:menuItem action="#{headerTabPanel.gotoProduct}" value="#{subMenu.label}" submitMode="ajax">
 										<f:param name="idFirst" value="#{subMenu.idFirst}"></f:param>
 										<f:param name="idSecond" value="#{subMenu.idSecond}"></f:param>
 										<f:param name="productType" value="#{subMenu.name}"></f:param>
@@ -81,7 +86,7 @@ xmlns:c="http://java.sun.com/jstl/core">
                 			<rich:menuGroup value="#{headerTabPanel.majorAppliance.mainMenu.label}" direction="bottom-right">
                     			
                     			<c:forEach items="#{headerTabPanel.majorAppliance.subMenu}" var="subMenu">
-									<rich:menuItem action="#{headerTabPanel.gotoProduct}" value="#{subMenu.label}" submitMode="server">
+									<rich:menuItem action="#{headerTabPanel.gotoProduct}" value="#{subMenu.label}" submitMode="ajax">
 										<f:param name="idFirst" value="#{subMenu.idFirst}"></f:param>
 										<f:param name="idSecond" value="#{subMenu.idSecond}"></f:param>
 										<f:param name="productType" value="#{subMenu.name}"></f:param>
@@ -92,7 +97,7 @@ xmlns:c="http://java.sun.com/jstl/core">
                 			<rich:menuGroup value="#{headerTabPanel.phoneDigital.mainMenu.label}" direction="bottom-right">
                     			
                     			<c:forEach items="#{headerTabPanel.phoneDigital.subMenu}" var="subMenu">
-									<rich:menuItem action="#{headerTabPanel.gotoProduct}" value="#{subMenu.label}" submitMode="server">
+									<rich:menuItem action="#{headerTabPanel.gotoProduct}" value="#{subMenu.label}" submitMode="ajax">
 										<f:param name="idFirst" value="#{subMenu.idFirst}"></f:param>
 										<f:param name="idSecond" value="#{subMenu.idSecond}"></f:param>
 										<f:param name="productType" value="#{subMenu.name}"></f:param>
@@ -103,7 +108,7 @@ xmlns:c="http://java.sun.com/jstl/core">
                 			<rich:menuGroup value="#{headerTabPanel.computerNetwork.mainMenu.label}" direction="bottom-right">
                     			
                     			<c:forEach items="#{headerTabPanel.computerNetwork.subMenu}" var="subMenu">
-									<rich:menuItem action="#{headerTabPanel.gotoProduct}" value="#{subMenu.label}" submitMode="server">
+									<rich:menuItem action="#{headerTabPanel.gotoProduct}" value="#{subMenu.label}" submitMode="ajax">
 										<f:param name="idFirst" value="#{subMenu.idFirst}"></f:param>
 										<f:param name="idSecond" value="#{subMenu.idSecond}"></f:param>
 										<f:param name="productType" value="#{subMenu.name}"></f:param>
