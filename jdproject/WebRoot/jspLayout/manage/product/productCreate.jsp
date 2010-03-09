@@ -371,6 +371,26 @@ xmlns:rich="http://richfaces.org/rich">
 								<rich:message for="electricHeaterFeild6" />
 							</h:panelGrid>
 							
+							<h:panelGrid id="soymilkMaker" rendered="#{productCreate.currProductType == 'soymilkMaker'}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="容积(L):" for="soymilkMakerFeild1"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field1}" id="soymilkMakerFeild1"></h:inputText>
+								<rich:message for="soymilkMakerFeild1" />
+								<h:outputLabel value="功率(W):" for="soymilkMakerFeild2"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field2}" id="soymilkMakerFeild2"></h:inputText>
+								<rich:message for="soymilkMakerFeild2" />
+								<h:outputLabel value="适用人数:" for="soymilkMakerFeild3"></h:outputLabel>
+								<h:inputText value="#{productCreate.product.field3}" id="soymilkMakerFeild3"></h:inputText>
+								<rich:message for="soymilkMakerFeild3" />
+							</h:panelGrid>
+							
+							<h:panelGrid id="powerTools" rendered="#{productCreate.currProductType == 'powerTools'}" columns="3" rowClasses="table-row" columnClasses="table-one-column,table-two-column,table-three-column" headerClass="page-header" footerClass="table-footer" styleClass="table-background" width="96%">
+								<h:outputLabel value="类别:" for="powerToolsFeild6"></h:outputLabel>
+								<h:selectOneMenu value="#{productCreate.product.field6}" id="powerToolsFeild6">
+									<f:selectItems value="#{existPowerToolsUseType.useTypeItems}"/>
+								</h:selectOneMenu>
+								<rich:message for="powerToolsFeild6" />
+							</h:panelGrid>
+							
 							<h:panelGrid columns="2" columnClasses="alight:left">
 								<a4j:commandButton type="image" image="/css/images/blank.gif"></a4j:commandButton>
 								<a4j:commandButton type="image" image="/css/images/createmyaccount.gif" action="#{productCreate.createProduct}"></a4j:commandButton>
