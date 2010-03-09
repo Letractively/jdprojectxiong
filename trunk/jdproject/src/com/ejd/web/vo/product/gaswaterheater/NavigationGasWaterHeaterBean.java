@@ -148,21 +148,26 @@ public String clickLink() {
 		priceRange.setMin(null == priceRangeMin?null:("".equals(priceRangeMin)?null:new Double(priceRangeMin.toString())));
 		priceRange.setMax(null == priceRangeMax?null:("".equals(priceRangeMax)?null:new Double(priceRangeMax.toString())));
 		priceRange.setDescription(null == priceRangeLabel?"全部":("".equals(priceRangeLabel)?"全部":priceRangeLabel.toString()));
-		listGasWaterHeaterProduct.setPriceRange(priceRange);
-		listGasWaterHeaterProduct.setPriceRangeLabel(priceRange.getDescription());
-		
+		if (null != priceRangeMin || null != priceRangeMax) {
+			listGasWaterHeaterProduct.setPriceRange(priceRange);
+			listGasWaterHeaterProduct.setPriceRangeLabel(priceRange.getDescription());
+		}
 		RangeParam volumeRange = new RangeParam();
 		volumeRange.setMin(null == volumeRangeMin?null:("".equals(volumeRangeMin)?null:new Double(volumeRangeMin.toString())));
 		volumeRange.setMax(null == volumeRangeMax?null:("".equals(volumeRangeMax)?null:new Double(volumeRangeMax.toString())));
 		volumeRange.setDescription(null == volumeRangeLabel?"全部":("".equals(volumeRangeLabel)?"全部":volumeRangeLabel.toString()));
-		listGasWaterHeaterProduct.setVolumeRange(volumeRange);
-		listGasWaterHeaterProduct.setVolumeRangeLabel(volumeRange.getDescription());
+		if (null != volumeRangeMin || null != volumeRangeMax) {
+			listGasWaterHeaterProduct.setVolumeRange(volumeRange);
+			listGasWaterHeaterProduct.setVolumeRangeLabel(volumeRange.getDescription());
+		}
 		RangeParam yieldRange = new RangeParam();
 		yieldRange.setMin(null == yieldRangeMin?null:("".equals(yieldRangeMin)?null:new Double(yieldRangeMin.toString())));
 		yieldRange.setMax(null == yieldRangeMax?null:("".equals(yieldRangeMax)?null:new Double(yieldRangeMax.toString())));
 		yieldRange.setDescription(null == yieldRangeLabel?"全部":("".equals(yieldRangeLabel)?"全部":yieldRangeLabel.toString()));
-		listGasWaterHeaterProduct.setYieldRange(yieldRange);
-		listGasWaterHeaterProduct.setYieldRangeLabel(yieldRange.getDescription());
+		if (null != yieldRangeMin || null != yieldRangeMax) {
+			listGasWaterHeaterProduct.setYieldRange(yieldRange);
+			listGasWaterHeaterProduct.setYieldRangeLabel(yieldRange.getDescription());
+		}
 		if (null != brandCode) {
 			listGasWaterHeaterProduct.setBrandCode((String)brandCode);
 		}

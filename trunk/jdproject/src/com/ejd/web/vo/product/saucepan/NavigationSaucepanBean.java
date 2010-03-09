@@ -66,8 +66,10 @@ public String clickLink() {
 		priceRange.setMin(null == priceRangeMin?null:("".equals(priceRangeMin)?null:new Double(priceRangeMin.toString())));
 		priceRange.setMax(null == priceRangeMax?null:("".equals(priceRangeMax)?null:new Double(priceRangeMax.toString())));
 		priceRange.setDescription(null == priceRangeLabel?"全部":("".equals(priceRangeLabel)?"全部":priceRangeLabel.toString()));
-		listSaucepanProduct.setPriceRange(priceRange);
-		listSaucepanProduct.setPriceRangeLabel(priceRange.getDescription());
+		if (null != priceRangeMin || null != priceRangeMax) {
+			listSaucepanProduct.setPriceRange(priceRange);
+			listSaucepanProduct.setPriceRangeLabel(priceRange.getDescription());
+		}
 		if (null != brandCode) {
 			listSaucepanProduct.setBrandCode((String)brandCode);
 		}
