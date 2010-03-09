@@ -108,26 +108,32 @@ public String clickLink() {
 		priceRange.setMin(null == priceRangeMin?null:("".equals(priceRangeMin)?null:new Double(priceRangeMin.toString())));
 		priceRange.setMax(null == priceRangeMax?null:("".equals(priceRangeMax)?null:new Double(priceRangeMax.toString())));
 		priceRange.setDescription(null == priceRangeLabel?"全部":("".equals(priceRangeLabel)?"全部":priceRangeLabel.toString()));
-		listVentilatorProduct.setPriceRange(priceRange);
+		if (null != priceRangeMin || null != priceRangeMax) {
+			listVentilatorProduct.setPriceRange(priceRange);
+			listVentilatorProduct.setPriceRangeLabel(priceRange.getDescription());
+		}
 		RangeParam windRange = new RangeParam();
 		windRange.setMin(null == windRangeMin?null:("".equals(windRangeMin)?null:new Double(windRangeMin.toString())));
 		windRange.setMax(null == windRangeMax?null:("".equals(windRangeMax)?null:new Double(windRangeMax.toString())));
 		windRange.setDescription(null == windRangeLabel?"全部":("".equals(windRangeLabel)?"全部":windRangeLabel.toString()));
-		listVentilatorProduct.setWindRange(windRange);
+		if (null != windRangeMin || null != windRangeMax) {
+			listVentilatorProduct.setWindRange(windRange);
+			listVentilatorProduct.setWindRangeLabel(windRange.getDescription());
+		}
 		RangeParam powerRange = new RangeParam();
 		powerRange.setMin(null == powerRangeMin?null:("".equals(powerRangeMin)?null:new Double(powerRangeMin.toString())));
 		powerRange.setMax(null == powerRangeMax?null:("".equals(powerRangeMax)?null:new Double(powerRangeMax.toString())));
 		powerRange.setDescription(null == powerRangeLabel?"全部":("".equals(powerRangeLabel)?"全部":powerRangeLabel.toString()));
-		listVentilatorProduct.setPowerRange(powerRange);
+		if (null != powerRangeMin || null != powerRangeMax) {
+			listVentilatorProduct.setPowerRange(powerRange);
+			listVentilatorProduct.setPowerRangeLabel(powerRange.getDescription());
+		}
 		if (null != brandCode) {
 			listVentilatorProduct.setBrandCode((String)brandCode);
 		}
 		if (null != brandLabel) {
 			listVentilatorProduct.setBrandLabel((String)brandLabel);
 		}
-		listVentilatorProduct.setPriceRangeLabel(priceRange.getDescription());
-		listVentilatorProduct.setWindRangeLabel(windRange.getDescription());
-		listVentilatorProduct.setPowerRangeLabel(powerRange.getDescription());
 		return null;
 	}
 

@@ -105,26 +105,32 @@ public String clickLink() {
 		priceRange.setMin(null == priceRangeMin?null:("".equals(priceRangeMin)?null:new Double(priceRangeMin.toString())));
 		priceRange.setMax(null == priceRangeMax?null:("".equals(priceRangeMax)?null:new Double(priceRangeMax.toString())));
 		priceRange.setDescription(null == priceRangeLabel?"全部":("".equals(priceRangeLabel)?"全部":priceRangeLabel.toString()));
-		listRiceCookerProduct.setPriceRange(priceRange);
+		if (null != priceRangeMin || null!= priceRangeMax) {
+			listRiceCookerProduct.setPriceRange(priceRange);
+			listRiceCookerProduct.setPriceRangeLabel(priceRange.getDescription());
+		}
 		RangeParam volumeRange = new RangeParam();
 		volumeRange.setMin(null == volumeRangeMin?null:("".equals(volumeRangeMin)?null:new Double(volumeRangeMin.toString())));
 		volumeRange.setMax(null == volumeRangeMax?null:("".equals(volumeRangeMax)?null:new Double(volumeRangeMax.toString())));
 		volumeRange.setDescription(null == volumeRangeLabel?"全部":("".equals(volumeRangeLabel)?"全部":volumeRangeLabel.toString()));
-		listRiceCookerProduct.setVolumeRange(volumeRange);
+		if (null != volumeRangeMin || null!= volumeRangeMax) {
+			listRiceCookerProduct.setVolumeRange(volumeRange);
+			listRiceCookerProduct.setVolumeRangeLabel(volumeRange.getDescription());
+		}
 		RangeParam powerRange = new RangeParam();
 		powerRange.setMin(null == powerRangeMin?null:("".equals(powerRangeMin)?null:new Double(powerRangeMin.toString())));
 		powerRange.setMax(null == powerRangeMax?null:("".equals(powerRangeMax)?null:new Double(powerRangeMax.toString())));
 		powerRange.setDescription(null == powerRangeLabel?"全部":("".equals(powerRangeLabel)?"全部":powerRangeLabel.toString()));
-		listRiceCookerProduct.setPowerRange(powerRange);
+		if (null != powerRangeMin || null != powerRangeMax) {
+			listRiceCookerProduct.setPowerRange(powerRange);
+			listRiceCookerProduct.setPowerRangeLabel(powerRange.getDescription());
+		}
 		if (null != brandCode) {
 			listRiceCookerProduct.setBrandCode((String)brandCode);
 		}
 		if (null != brandLabel) {
 			listRiceCookerProduct.setBrandLabel((String)brandLabel);
 		}
-		listRiceCookerProduct.setPriceRangeLabel(priceRange.getDescription());
-		listRiceCookerProduct.setVolumeRangeLabel(volumeRange.getDescription());
-		listRiceCookerProduct.setPowerRangeLabel(powerRange.getDescription());
 		return null;
 	}
 

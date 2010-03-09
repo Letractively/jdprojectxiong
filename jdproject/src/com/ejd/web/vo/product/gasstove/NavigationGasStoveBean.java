@@ -124,15 +124,18 @@ public String clickLink() {
 		priceRange.setMin(null == priceRangeMin?null:("".equals(priceRangeMin)?null:new Double(priceRangeMin.toString())));
 		priceRange.setMax(null == priceRangeMax?null:("".equals(priceRangeMax)?null:new Double(priceRangeMax.toString())));
 		priceRange.setDescription(null == priceRangeLabel?"全部":("".equals(priceRangeLabel)?"全部":priceRangeLabel.toString()));
-		listGasStoveProduct.setPriceRange(priceRange);
-		listGasStoveProduct.setPriceRangeLabel(priceRange.getDescription());
-		
+		if (null != priceRangeMin || null != priceRangeMax) {
+			listGasStoveProduct.setPriceRange(priceRange);
+			listGasStoveProduct.setPriceRangeLabel(priceRange.getDescription());
+		}
 		RangeParam numberRange = new RangeParam();
 		numberRange.setMin(null == numberRangeMin?null:("".equals(numberRangeMin)?null:new Double(numberRangeMin.toString())));
 		numberRange.setMax(null == numberRangeMax?null:("".equals(numberRangeMax)?null:new Double(numberRangeMax.toString())));
 		numberRange.setDescription(null == numberRangeLabel?"全部":("".equals(numberRangeLabel)?"全部":numberRangeLabel.toString()));
-		listGasStoveProduct.setNumberRange(numberRange);
-		listGasStoveProduct.setNumberRangeLabel(numberRange.getDescription());
+		if (null != numberRangeMin || null != numberRangeMax) {
+			listGasStoveProduct.setNumberRange(numberRange);
+			listGasStoveProduct.setNumberRangeLabel(numberRange.getDescription());
+		}
 		if (null != brandCode) {
 			listGasStoveProduct.setBrandCode((String)brandCode);
 		}
