@@ -1409,6 +1409,76 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
     <!-- end about listHouseholdApplianceProduct  -->
+    <!-- start about listElectricFanProduct  -->
+    <managed-bean>
+        <managed-bean-name>listElectricFanProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.electricfan.ElectricFanProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationElectricFan</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.electricfan.NavigationElectricFanBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about listElectricFanProduct  -->
+    <!-- start about listElectricIronProduct  -->
+    <managed-bean>
+        <managed-bean-name>listElectricIronProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.electriciron.ElectricIronProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationElectricIron</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.electriciron.NavigationElectricIronBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about listElectricIronProduct  -->
+    <!-- start about listVacuumCleanerProduct  -->
+    <managed-bean>
+        <managed-bean-name>listVacuumCleanerProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.vacuumcleaner.VacuumCleanerProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationVacuumCleaner</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.vacuumcleaner.NavigationVacuumCleanerBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about listVacuumCleanerProduct  -->
+    <!-- start about listHumidifierProduct  -->
+    <managed-bean>
+        <managed-bean-name>listHumidifierProduct</managed-bean-name>
+        <managed-bean-class>com.ejd.web.vo.product.humidifier.HumidifierProductBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+		<property-name>productService</property-name>
+		<property-class>com.ejd.model.service.iface.IProductService</property-class>
+		<value>#{productService}</value>
+		</managed-property>
+    </managed-bean>
+    <managed-bean>
+		<managed-bean-name>navigationHumidifier</managed-bean-name>
+		<managed-bean-class>com.ejd.web.vo.product.humidifier.NavigationHumidifierBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+    <!-- end about listVacuumCleanerProduct  -->
+    
+    
     
     <!-- List Porduct end -->
     
