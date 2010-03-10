@@ -134,6 +134,13 @@ public class ManageBeanConstants {
     
     
     public static final String LIST_ELECTRIC_KETTLE_PRODUCT_BEAN_NAME = "listElectricKettleProduct";
+    public static final String LIST_ELECTRIC_FAN_PRODUCT_BEAN_NAME = "listElectricFanProduct";
+    public static final String LIST_ELECTRIC_IRON_PRODUCT_BEAN_NAME = "listElectricIronProduct";
+    public static final String LIST_VACUUM_CLEANER_PRODUCT_BEAN_NAME = "listVacuumCleanerProduct";
+    public static final String LIST_HUMIDIFIER_PRODUCT_BEAN_NAME = "listHumidifierProduct";
+    
+    
+    
     //start household appliance list product bean
     
     
