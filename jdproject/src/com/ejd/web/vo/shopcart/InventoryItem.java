@@ -8,6 +8,8 @@ public class InventoryItem extends AbstractProduct implements java.io.Serializab
     
     private Integer salesQuantity;
     
+    private boolean selected;
+    
     public InventoryItem(){
     	
     }
@@ -28,6 +30,14 @@ public class InventoryItem extends AbstractProduct implements java.io.Serializab
         salesQuantity++;
     }
 	
+	public boolean isSelected() {
+		return selected;
+	}
+
+	public void setSelected(boolean selected) {
+		this.selected = selected;
+	}
+
 	public Double getSubTotal() {
 		return this.getSalesPrice() * this.getSalesQuantity();
 	}
