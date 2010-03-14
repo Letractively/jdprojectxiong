@@ -16,7 +16,7 @@ public class Inventory implements InventoryInterface {
     // total value of inventory
     private Double inventoryPriceTotal = 0.0;
     private Integer inventoryQuantityTotal = 0;
-    
+    private boolean haveSelected;
     private Map<String,InventoryCategory> categoryInfo;
     
     public Inventory() {
@@ -84,7 +84,20 @@ public class Inventory implements InventoryInterface {
 	public int getInventoryQuantityTotal() {
         return inventoryQuantityTotal;
     }
-	
+	public boolean isHaveSelected() {
+		boolean result = false;
+		if (null != this.getInventory()) {
+			for (InventoryItem tempInventoryItem:inventory) {
+				if (tempInventoryItem.isSelected()) {
+					result = true;
+				}
+				if (result) {
+					break;
+				}
+			}
+		}
+		return result;
+	}
 	public Map<String, InventoryCategory> getCategoryInfo() {
 		return categoryInfo;
 	}
