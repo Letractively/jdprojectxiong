@@ -34,7 +34,7 @@ xmlns:rich="http://richfaces.org/rich">
 						<rich:column sortable="false" style="width:5%;" label="选择">
 							<f:facet name="header"><h:outputText value="选择"/></f:facet>
 							<h:selectBooleanCheckbox value="#{inventory.selected}"><a4j:support event="onclick" reRender="deleteAllBtn"/></h:selectBooleanCheckbox>
-							<f:facet name="footer"><h:commandLink id="deleteAllBtn" value="删除" styleClass="button-default-style" disabled="#{!(shopCart.cart.haveSelected)}"></h:commandLink></f:facet>
+							<f:facet name="footer"><h:commandLink id="deleteAllBtn" value="删除" styleClass="button-default-style" disabled="#{!(shopCart.cart.haveSelected)}" onclick="return confirm('确认删除吗？');"></h:commandLink></f:facet>
 						</rich:column>
 						<rich:column sortable="false" style="width:8%;" label="图片">
 							<f:facet name="header"><h:outputText value="图片"/></f:facet>
@@ -67,9 +67,8 @@ xmlns:rich="http://richfaces.org/rich">
 						</rich:column>
 						<rich:column sortable="false" style="width:18%;" selfSorted="false" label="单项操作">
 							<f:facet name="header"><h:outputText value="单项操作"/></f:facet>
-							<h:panelGroup><a4j:commandLink value="删除" styleClass="button-default-style"/><a4j:commandLink value="移入收藏夹" styleClass="button-default-style"/></h:panelGroup>
+							<h:panelGroup><a4j:commandLink value="删除" styleClass="button-default-style" data="#{inventory.name}" onclick="javascript:var dataName = 'data';return confirm(dataName+'确认删除吗？');"/><a4j:commandLink value="移入收藏夹" styleClass="button-default-style"/></h:panelGroup>
 						</rich:column>
-					
 					</rich:dataTable>
 					</a4j:region>
 				</rich:panel>
