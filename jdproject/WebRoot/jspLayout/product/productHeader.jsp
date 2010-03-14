@@ -124,7 +124,7 @@ xmlns:c="http://java.sun.com/jstl/core">
 							<h:commandButton styleClass="search-submit" value="搜索"></h:commandButton>
 						</h:panelGroup>
 					    <h:panelGroup id="pgshoppingcart">
-					    	<h:commandLink><h:outputLabel value="购物车中有"/><h:outputLabel value="#{shopCart.cart.inventoryQuantityTotal}"></h:outputLabel><h:outputLabel value="件商品,合计金额:"/><h:outputLabel value="#{shopCart.cart.inventoryPriceTotal}"></h:outputLabel></h:commandLink><h:outputLink value=""><h:outputLabel value="去结算>"/></h:outputLink>
+					    	<h:commandLink action="shoppingCart"><h:outputLabel value="购物车中有"/><h:outputLabel value="#{shopCart.cart.inventoryQuantityTotal}"></h:outputLabel><h:outputLabel value="件商品,合计金额:"/><h:outputLabel value="#{shopCart.cart.inventoryPriceTotal}"></h:outputLabel></h:commandLink><h:outputLink value=""><h:outputLabel value="去结算>"/></h:outputLink>
 					    </h:panelGroup>
 					    <h:panelGroup></h:panelGroup>
 						</h:panelGrid>

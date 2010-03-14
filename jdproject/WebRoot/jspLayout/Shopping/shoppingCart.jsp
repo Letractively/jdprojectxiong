@@ -29,46 +29,49 @@ xmlns:rich="http://richfaces.org/rich">
 								<h:outputText value="" style="width:4px"></h:outputText>
 							</h:panelGrid>	
 					</f:facet>
-					<rich:extendedDataTable id="shoppingCartTable" value="#{shopCart.cart.inventory}" var="inventory">
-						<rich:column label="选择">
+					<a4j:region id="shoppingCartDataTableRegion" renderRegionOnly="false" selfRendered="true">
+					<rich:dataTable id="shoppingCartTable" value="#{shopCart.cart.inventory}" var="inventory" frame="box" columns="9" columnClasses="shopping-cart-table-column1,shopping-cart-table-column2,shopping-cart-table-column3,shopping-cart-table-column4,shopping-cart-table-column5,shopping-cart-table-column6,shopping-cart-table-column7,shopping-cart-table-column8,shopping-cart-table-column9" cellpadding="1" cellspacing="1" border="0" sortMode="single" width="100%">
+						<rich:column sortable="false" style="width:5%;" label="选择">
 							<f:facet name="header"><h:outputText value="选择"/></f:facet>
-							<h:selectBooleanCheckbox value="#{inventory.selected}"></h:selectBooleanCheckbox>
+							<h:selectBooleanCheckbox value="#{inventory.selected}"><a4j:support event="onclick" reRender="deleteAllBtn"/></h:selectBooleanCheckbox>
+							<f:facet name="footer"><h:commandLink id="deleteAllBtn" value="删除" styleClass="button-default-style" disabled="#{!(shopCart.cart.haveSelected)}"></h:commandLink></f:facet>
 						</rich:column>
-						<rich:column label="图片">
+						<rich:column sortable="false" style="width:8%;" label="图片">
 							<f:facet name="header"><h:outputText value="图片"/></f:facet>
 							<h:commandLink action="#{productGlobalNavigation.seeProductDetail}" immediate="true"><h:graphicImage value="/productimage/#{inventory.imageName}" styleClass="product-image-in-shopping-cart"/><f:param name="productid" value="#{inventory.id}"></f:param></h:commandLink>
 						</rich:column>
-						<rich:column label="商品名称">
+						<rich:column sortable="false" style="width:22%;" label="商品名称">
 							<f:facet name="header"><h:outputText value="商品名称"/></f:facet>
 							<h:outputText value="#{inventory.name}"></h:outputText>
 						</rich:column>
-						<rich:column label="销售价格">
+						<rich:column sortable="false" style="width:11%;" label="销售价格">
 							<f:facet name="header"><h:outputText value="销售价格"/></f:facet>
 							<h:outputText value="#{inventory.salesPrice}"></h:outputText>
 						</rich:column>
-						<rich:column label="赠送积分">
+						<rich:column sortable="false" style="width:11%;" label="赠送积分">
 							<f:facet name="header"><h:outputText value="赠送积分"/></f:facet>
 							<h:outputText value="#{inventory.integration}"></h:outputText>
 						</rich:column>
-						<rich:column label="购买数量">
+						<rich:column sortable="false" style="width:8%;" headerClass="shopping-cart-table-column-header" label="购买数量">
 							<f:facet name="header"><h:outputText value="购买数量"/></f:facet>
-							<h:outputText value="#{inventory.salesQuantity}"></h:outputText>
+							<rich:inputNumberSpinner value="#{inventory.salesQuantity}" step="1" minValue="1" maxValue="300" inputSize="1" style="align:center"><a4j:support event="onchange" reRender="subTotal"/></rich:inputNumberSpinner>
 						</rich:column>
-						<rich:column label="商品状态">
+						<rich:column sortable="false" style="width:10%;" label="商品状态">
 							<f:facet name="header"><h:outputText value="商品状态"/></f:facet>
 							<h:outputText value="现货" rendered="#{inventory.currentNumber > 0}"></h:outputText>
 							<h:outputText value="需预定" rendered="#{!(inventory.currentNumber > 0)}"></h:outputText>
 						</rich:column>
-						<rich:column label="金额小计">
+						<rich:column sortable="false" style="width:10%;" selfSorted="false" label="金额小计">
 							<f:facet name="header"><h:outputText value="金额小计"/></f:facet>
-							<h:outputText value="#{inventory.salesQuantity * inventory.salesPrice}"></h:outputText>
+							<h:outputText id="subTotal" value="#{inventory.salesQuantity * inventory.salesPrice}"></h:outputText>
 						</rich:column>
-						<rich:column label="单项操作">
+						<rich:column sortable="false" style="width:18%;" selfSorted="false" label="单项操作">
 							<f:facet name="header"><h:outputText value="单项操作"/></f:facet>
-							<h:panelGroup><a4j:commandButton value="删除"/><a4j:commandButton value="移入收藏夹"/></h:panelGroup>
+							<h:panelGroup><a4j:commandLink value="删除" styleClass="button-default-style"/><a4j:commandLink value="移入收藏夹" styleClass="button-default-style"/></h:panelGroup>
 						</rich:column>
 					
-					</rich:extendedDataTable>
+					</rich:dataTable>
+					</a4j:region>
 				</rich:panel>
 			</h:form>
     		</ui:define>
