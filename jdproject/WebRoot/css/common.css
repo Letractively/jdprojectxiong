@@ -1911,7 +1911,7 @@ background-color:#ffffff;
 	cursor: pointer;
 }
 .rich-pmenu-disabled-element{
-		BACKGROUND:: red;
+		BACKGROUND: red;
 	}
 .rich-pmenu-hovered-element{
 		color: #2c629e;
@@ -2092,4 +2092,58 @@ background-color:#ffffff;
 	with:60px;
 	height:60px;
 	}
-
+.shopping-cart-table-column1 {
+	text-align:left;
+	}
+.shopping-cart-table-column2 {
+	text-align:center;
+	}
+.shopping-cart-table-column3 {
+	text-align:left;
+	}
+.shopping-cart-table-column4 {
+	text-align:center;
+	}
+.shopping-cart-table-column5 {
+	text-align:center;
+	}
+.shopping-cart-table-column6 {
+	text-align:center;
+	}
+.shopping-cart-table-column7 {
+	text-align:center;
+	}
+.shopping-cart-table-column8 {
+	text-align:center;
+	}
+.shopping-cart-table-column8 {
+	text-align:center;
+	}
+.shopping-cart-table-column-header{
+	text-align:left;
+	}
+.rich-spinner-input-container{
+	BORDER-RIGHT:#f6f6f6 2px solid;
+	BORDER-TOP: #f9f9f9 2px solid;
+	BORDER-LEFT: #f9f9f9 2px solid;
+	BORDER-BOTTOM: #f9f9f9 2px solid;
+	background:#ffffff;
+	}
+.rich-spinner-buttons{
+	BORDER-RIGHT:#f6f6f6 2px solid;
+	BORDER-TOP: #f9f9f9 2px solid;
+	BORDER-LEFT: #f9f9f9 2px solid;
+	BORDER-BOTTOM: #f9f9f9 2px solid;
+	background:#f9f9f9;
+	}
+.button-default-style {
+	BORDER-RIGHT:#f6f6f6 2px solid;
+	BORDER-TOP: #f9f9f9 2px solid;
+	BORDER-LEFT: #f9f9f9 2px solid;
+	BORDER-BOTTOM: #f9f9f9 2px solid;
+	background-color: #f9f9f9;
+	padding-left: 6px; 
+	padding-right: 6px; 
+	padding-top: 1px; 
+	padding-bottom: 1px; 
+	}
