@@ -33,6 +33,7 @@ xmlns:rich="http://richfaces.org/rich">
     		</ui:define>
     		
 			<ui:define id="kitchenApplianceContent" name="content">
+			<h:form>
 				<rich:panel style="width:100%" styleClass="panel-none-border" headerClass="panel-header-gray-border" bodyClass="panel-documents-gray-border">
 					<f:facet name="header">
 						<h:panelGrid columns="3"  cellspacing="0" cellpadding="0" columnClasses="product-detail-panel-grid-header-left,product-detail-panel-grid-header-center,product-detail-panel-grid-header-right">
@@ -61,16 +62,19 @@ xmlns:rich="http://richfaces.org/rich">
                      			<h:outputLabel value="经销价:" rendered="#{currentUser.showTradePriceTwo}"></h:outputLabel><h:outputText value="#{productInfo.product.tradePriceTwo}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showTradePriceTwo}"/>
                      			<h:outputLabel value="零售价:" rendered="#{currentUser.showRetailPrice}"></h:outputLabel><h:outputText value="#{productInfo.product.retailPrice}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showRetailPrice}"/>
                      			<f:facet name="footer">
-                     				<h:panelGroup >
-                     					<a4j:commandButton image="/css/images/icons/buynow4.gif"></a4j:commandButton><a4j:commandButton image="/css/images/icons/fav4.gif" style="padding-left:6px;"/>
-                     					<h:outputText value="购买后跳转到"></h:outputText>
-                     					<h:selectOneMenu value="#{productInfo.goUrlAfterAdd}">
-                     						<f:selectItem itemLabel="不跳转" itemValue="none"><a4j:support event="onchange" immediate="true"></a4j:support></f:selectItem>
-                     						<f:selectItem itemLabel="回上页" itemValue="goBack"><a4j:support event="onchange" immediate="true"></a4j:support></f:selectItem>
-                     						<f:selectItem itemLabel="购物车" itemValue="goShoppingCart"><a4j:support event="onchange" immediate="true"></a4j:support></f:selectItem>
-                     						
-                     					</h:selectOneMenu>
-                     					<h:commandButton action="#{productInfo.preViewId}" value="回" immediate="true"></h:commandButton>
+                     				<h:panelGroup>
+                     					<a4j:commandButton image="/css/images/icons/buynow4.gif" styleClass="vertical-align"></a4j:commandButton><a4j:commandButton image="/css/images/icons/fav4.gif" style="padding-left:6px" styleClass="vertical-align"/>
+                     					<h:commandLink action="#{productInfo.goContinueBuy}" value="继续购物" immediate="true"><f:param name="goContinueUrl" value="#{productInfo.preContinueBuyPage}"></f:param> </h:commandLink>
+                     					<a4j:outputPanel style="align:right" layout="block">
+                     						<h:outputText value="购买后跳转到"></h:outputText>
+                     						<h:selectOneMenu value="#{productInfo.goUrlAfterAdd}">
+                     						<f:selectItem itemLabel="不跳转" itemValue="none"></f:selectItem>
+                     						<f:selectItem itemLabel="回上页" itemValue="goBack"></f:selectItem>
+                     						<f:selectItem itemLabel="购物车" itemValue="goShoppingCart"></f:selectItem>
+                     						<a4j:support event="onchange"></a4j:support>
+                     						</h:selectOneMenu>
+                     						<h:commandLink action="#{productInfo.goBackByPreViewIdFromOutCome}" value="回上页" immediate="true"><f:param name="goUrl" value="#{productInfo.preViewIdFromOutCome}"></f:param></h:commandLink>
+                     					</a4j:outputPanel>
                      				</h:panelGroup>
                      			</f:facet>
 							</h:panelGrid>
@@ -79,6 +83,7 @@ xmlns:rich="http://richfaces.org/rich">
 				<rich:panel style="width:100%;padding-top:6px;" styleClass="panel-none-border" headerClass="panel-header-none-border" bodyClass="panel-documents-none-border">
 					<ui:include src="/WEB-INF/jspLayout/subProductDetail/#{productInfo.subViewId}" />
 			    </rich:panel>
+			</h:form>
     		</ui:define>
     		<ui:define id="kitchenApplianceRight" name="right">
     			<h:outputText value=""></h:outputText>
