@@ -2103,6 +2103,11 @@
 			<to-view-id>/jspLayout/product/productDetail.jsp</to-view-id>
 			<redirect/>
 		</navigation-case>
+		<navigation-case>
+			<from-outcome>shoppingCart</from-outcome>
+			<to-view-id>/jspLayout/Shopping/shoppingCart.jsp</to-view-id>
+			<redirect/>
+		</navigation-case>
 	</navigation-rule>
 	<!-- end navigation product -->
  	<navigation-rule>
