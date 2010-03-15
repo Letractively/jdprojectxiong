@@ -64,7 +64,7 @@ xmlns:rich="http://richfaces.org/rich">
                      			<f:facet name="footer">
                      				<h:panelGroup>
                      					<a4j:commandButton image="/css/images/icons/buynow4.gif" styleClass="vertical-align"></a4j:commandButton><a4j:commandButton image="/css/images/icons/fav4.gif" style="padding-left:6px" styleClass="vertical-align"/>
-                     					<h:commandLink action="#{productInfo.goContinueBuy}" value="继续购物" immediate="true"><f:param name="goContinueUrl" value="#{productInfo.preContinueBuyPage}"></f:param> </h:commandLink>
+                     					<h:commandLink action="#{productInfo.goContinueBuy}" value="继续购物" styleClass="button-default-style" immediate="true"><f:param name="goContinueUrl" value="#{productInfo.preContinueBuyPage}"></f:param> </h:commandLink>
                      					<a4j:outputPanel style="align:right" layout="block">
                      						<h:outputText value="购买后跳转到"></h:outputText>
                      						<h:selectOneMenu value="#{productInfo.goUrlAfterAdd}">
@@ -73,7 +73,7 @@ xmlns:rich="http://richfaces.org/rich">
                      						<f:selectItem itemLabel="购物车" itemValue="goShoppingCart"></f:selectItem>
                      						<a4j:support event="onchange"></a4j:support>
                      						</h:selectOneMenu>
-                     						<h:commandLink action="#{productInfo.goBackByPreViewIdFromOutCome}" value="回上页" immediate="true"><f:param name="goUrl" value="#{productInfo.preViewIdFromOutCome}"></f:param></h:commandLink>
+                     						<h:commandLink action="#{productInfo.goBackByPreViewIdFromOutCome}" value="回上页" styleClass="button-default-style" immediate="true"><f:param name="goUrl" value="#{productInfo.preViewIdFromOutCome}"></f:param></h:commandLink>
                      					</a4j:outputPanel>
                      				</h:panelGroup>
                      			</f:facet>
