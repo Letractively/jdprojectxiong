@@ -2096,10 +2096,10 @@ background-color:#ffffff;
 	text-align:left;
 	}
 .shopping-cart-table-column2 {
-	text-align:center;
+	text-align:left;
 	}
 .shopping-cart-table-column3 {
-	text-align:left;
+	text-align:center;
 	}
 .shopping-cart-table-column4 {
 	text-align:center;
@@ -2111,9 +2111,6 @@ background-color:#ffffff;
 	text-align:center;
 	}
 .shopping-cart-table-column7 {
-	text-align:center;
-	}
-.shopping-cart-table-column8 {
 	text-align:center;
 	}
 .shopping-cart-table-column8 {
@@ -2147,7 +2144,8 @@ background-color:#ffffff;
 	padding-top: 1px; 
 	padding-bottom: 1px; 
 	}
-.ButtonDefault  { 
+.ButtonDefault  {
+	margin:0px 16px 0px 0px;
 	background-color: #f6f6f6;
 	font-size: 12px; 
 	BACKGROUND: url(../css/images/icons/common-center.gif) repeat-x;
@@ -2157,11 +2155,17 @@ background-color:#ffffff;
 	border-top: #d6d6d6 0px solid; 
 	border-bottom: #d6d6d6 1px solid; 
 	border-right: #d6d6d6 1px solid;
-	padding-left: 8px; 
-	padding-right: 8px; 
+	padding-left: 12px; 
+	padding-right: 12px; 
 	padding-top: 6px; 
 	padding-bottom: 6px; 
 	}
 .vertical-align {
 	vertical-align:middle;
+}
+.table-row-odd {
+	background-color: #f5f5f5;
+}
+.table-row-even {
+	background-color: #ffffff;
 }
