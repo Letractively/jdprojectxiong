@@ -87,6 +87,10 @@ public class ProductGlobalNavigationBean {
 			copyStakeholderBean.copy(stakeholder, newStakeholderVo, null);
 			ProductInfoBean productInfoBean = (ProductInfoBean) SpringFacesUtil.getManagedBean(ManageBeanConstants.PRODUCT_INFO_BEAN_NAME);
 			productInfoBean.setPreViewId(nowviewId);
+			String continueBuyPage = productInfoBean.getPreViewIdFromOutCome();
+			if ((!"shoppingCart".equals(continueBuyPage)) && !"".equals(continueBuyPage)) {
+				productInfoBean.setPreContinueBuyPage(continueBuyPage);
+			}
 			ProductVo productVo = new ProductVo();
 			BeanCopier copyBean = BeanCopier.create(Product.class, ProductVo.class, false);
 			copyBean.copy(product, productVo, null);
