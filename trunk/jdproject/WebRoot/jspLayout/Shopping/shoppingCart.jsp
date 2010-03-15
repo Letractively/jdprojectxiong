@@ -52,14 +52,16 @@ xmlns:rich="http://richfaces.org/rich">
 							<f:facet name="header"><h:outputText value="购买数量"/></f:facet>
 							<rich:inputNumberSpinner value="#{inventory.salesQuantity}" step="1" minValue="1" maxValue="300" inputSize="1" style="align:center"><a4j:support event="onchange" reRender="subTotal"/></rich:inputNumberSpinner>
 						</rich:column>
-						<rich:column sortable="false" style="width:7%;" label="商品状态">
+						<rich:column sortable="false" footerClass="align-right" style="width:7%;" label="商品状态">
 							<f:facet name="header"><h:outputText value="商品状态"/></f:facet>
 							<h:outputText value="现货" rendered="#{inventory.currentNumber > 0}"></h:outputText>
 							<h:outputText value="需预定" rendered="#{!(inventory.currentNumber > 0)}"></h:outputText>
+							<f:facet name="footer"><h:outputText value="金额合计:" style="font-weight:bold;"/></f:facet>
 						</rich:column>
-						<rich:column sortable="false" style="width:7%;" selfSorted="false" label="金额小计">
+						<rich:column sortable="false" style="width:7%;" selfSorted="false" footerClass="align-center" label="金额小计">
 							<f:facet name="header"><h:outputText value="金额小计"/></f:facet>
 							<h:outputText id="subTotal" value="#{inventory.salesQuantity * inventory.salesPrice}"></h:outputText>
+							<f:facet name="footer"><h:outputText value="#{shopCart.cart.inventoryPriceTotal}"/></f:facet>
 						</rich:column>
 						<rich:column sortable="false" style="width:14%;" selfSorted="false" label="单项操作">
 							<f:facet name="header"><h:outputText value="单项操作"/></f:facet>
