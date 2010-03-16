@@ -14,6 +14,12 @@ xmlns:rich="http://richfaces.org/rich">
     </head>
     <body>
     	<ui:composition template="./shoppingTemplate.jsp">
+    		
+    		<ui:define id="productStepDisplayOfShoppingCart" name="productStepDisplay">
+    			<a4j:outputPanel style="font-size:12px;">
+    				<h:outputText value="当前位置 > "></h:outputText><h:outputLink value="${facesContext.externalContext.requestContextPath}/jspLayout/product/productMain.jsf"><h:outputText value="首页"/></h:outputLink>
+    			</a4j:outputPanel>
+			</ui:define>
     		<ui:define id="contentHeader" name="contentHeader">
     				<h:outputText value="我的购物车"></h:outputText>
 			</ui:define>
@@ -30,7 +36,7 @@ xmlns:rich="http://richfaces.org/rich">
 							</h:panelGrid>	
 					</f:facet>
 					<a4j:region id="shoppingCartDataTableRegion" renderRegionOnly="false" selfRendered="true">
-					<rich:dataTable id="shoppingCartTable" value="#{shopCart.cart.inventory}" var="inventory" frame="box" columns="9" rowClasses="table-row-odd,table-row-even" columnClasses="shopping-cart-table-column1,shopping-cart-table-column2,shopping-cart-table-column3,shopping-cart-table-column4,shopping-cart-table-column5,shopping-cart-table-column6,shopping-cart-table-column7,shopping-cart-table-column8" cellpadding="1" cellspacing="1" border="0" sortMode="single" width="100%">
+					<rich:dataTable id="shoppingCartTable" value="#{shopCart.cart.inventory}" var="inventory" frame="box" columns="9" headerClass="shopping-cart-table-header" rowClasses="table-row-odd,table-row-even" columnClasses="shopping-cart-table-column1,shopping-cart-table-column2,shopping-cart-table-column3,shopping-cart-table-column4,shopping-cart-table-column5,shopping-cart-table-column6,shopping-cart-table-column7,shopping-cart-table-column8" cellpadding="1" cellspacing="1" border="0" sortMode="single" width="100%">
 						<rich:column sortable="false" style="width:5%;" label="选择">
 							<f:facet name="header"><h:outputText value="选择"/></f:facet>
 							<h:selectBooleanCheckbox value="#{inventory.selected}"><a4j:support event="onclick" reRender="deleteAllBtn"/></h:selectBooleanCheckbox>
