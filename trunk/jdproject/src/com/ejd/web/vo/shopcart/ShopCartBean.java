@@ -40,5 +40,14 @@ public class ShopCartBean extends ShopCartBaseBean {
 		shopCart.getCart().addInventoryItem(newInventoryItem);
 		System.out.println("==============="+shopCart.getCart().getInventoryPriceTotal());
 	}
+	public String clearShoppingCart() throws ProductException {
+		if (null != this.getCart() && null != this.getCart().getInventory() && (!(this.getCart().getInventory().isEmpty()))) {
+			this.getCart().getInventory().clear();
+			this.getCart().setInventoryPriceTotal(0.0);
+			this.getCart().setInventoryQuantityTotal(0);
+			this.getCart().setHaveSelected(false);
+		}
+		return null;
+	}
 
 }
