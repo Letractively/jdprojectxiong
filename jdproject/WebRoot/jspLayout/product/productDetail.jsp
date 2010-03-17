@@ -63,7 +63,7 @@ xmlns:rich="http://richfaces.org/rich">
                      			<h:outputLabel value="零售价:" rendered="#{currentUser.showRetailPrice}"></h:outputLabel><h:outputText value="#{productInfo.product.retailPrice}" styleClass="show-product-data-grid-price" rendered="#{currentUser.showRetailPrice}"/>
                      			<f:facet name="footer">
                      				<h:panelGroup>
-                     					<a4j:commandButton image="/css/images/icons/buynow4.gif" styleClass="vertical-align"></a4j:commandButton><a4j:commandButton image="/css/images/icons/fav4.gif" style="padding-left:6px" styleClass="vertical-align"/>
+                     					<a4j:commandButton image="/css/images/icons/buynow4.gif" styleClass="vertical-align" action="#{shopCart.addInventoryItemAddGoByParam}"><a4j:actionparam name="productCode" value="#{productInfo.product.code}"/></a4j:commandButton><a4j:commandButton image="/css/images/icons/fav4.gif" style="padding-left:6px" styleClass="vertical-align"/>
                      					<h:commandLink action="#{productInfo.goContinueBuy}" value="继续购物" styleClass="button-default-style" immediate="true"><f:param name="goContinueUrl" value="#{productInfo.preContinueBuyPage}"></f:param> </h:commandLink>
                      					<a4j:outputPanel style="align:right" layout="block">
                      						<h:outputText value="购买后跳转到"></h:outputText>

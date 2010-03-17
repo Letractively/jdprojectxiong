@@ -17,7 +17,7 @@ xmlns:rich="http://richfaces.org/rich">
     		
     		<ui:define id="productStepDisplayOfShoppingCart" name="productStepDisplay">
     			<a4j:outputPanel style="font-size:12px;">
-    				<h:outputText value="当前位置 > "></h:outputText><h:outputLink value="${facesContext.externalContext.requestContextPath}/jspLayout/product/productMain.jsf"><h:outputText value="首页"/></h:outputLink>
+    				<h:outputText value="当前位置 > "></h:outputText><h:outputLink value="${facesContext.externalContext.requestContextPath}/jspLayout/product/productMain.jsf"><h:outputText value="首页"/></h:outputLink><h:outputText value=">我的购物车"></h:outputText>
     			</a4j:outputPanel>
 			</ui:define>
     		<ui:define id="contentHeader" name="contentHeader">
@@ -40,7 +40,7 @@ xmlns:rich="http://richfaces.org/rich">
 						<rich:column sortable="false" style="width:5%;" label="选择">
 							<f:facet name="header"><h:outputText value="选择"/></f:facet>
 							<h:selectBooleanCheckbox value="#{inventory.selected}"><a4j:support event="onclick" reRender="deleteAllBtn"/></h:selectBooleanCheckbox>
-							<f:facet name="footer"><h:commandLink id="deleteAllBtn" value="删除" styleClass="button-default-style" disabled="#{!(shopCart.cart.haveSelected)}" onclick="return confirm('确认删除购物车中选中的商品吗？');"></h:commandLink></f:facet>
+							<f:facet name="footer"><h:commandLink id="deleteAllBtn" action="#{shopCart.removeMulSelectedFromShoppingCart}" immediate="true" value="删除" styleClass="button-default-style" disabled="#{!(shopCart.cart.haveSelected)}" onclick="return confirm('确认删除购物车中选中的商品吗？');"><a4j:support event="onclick" reRender="shoppingCartTable"></a4j:support></h:commandLink></f:facet>
 						</rich:column>
 						<rich:column sortable="false" style="width:42%;" label="商品名称">
 							<f:facet name="header"><h:outputText value="商品名称"/></f:facet>
@@ -56,13 +56,13 @@ xmlns:rich="http://richfaces.org/rich">
 						</rich:column>
 						<rich:column sortable="false" style="width:7%;" headerClass="shopping-cart-table-column-header" label="购买数量">
 							<f:facet name="header"><h:outputText value="购买数量"/></f:facet>
-							<rich:inputNumberSpinner value="#{inventory.salesQuantity}" step="1" minValue="1" maxValue="300" inputSize="1" style="align:center"><a4j:support event="onchange" reRender="subTotal"/></rich:inputNumberSpinner>
+							<rich:inputNumberSpinner value="#{inventory.salesQuantity}" step="1" minValue="1" maxValue="300" inputSize="1" style="align:center"><a4j:support event="onchange" action="#{shopCart.recalCulateIventory}" reRender="shoppingCartTable"/></rich:inputNumberSpinner>
 						</rich:column>
 						<rich:column sortable="false" footerClass="align-right" style="width:7%;" label="商品状态">
 							<f:facet name="header"><h:outputText value="商品状态"/></f:facet>
 							<h:outputText value="现货" rendered="#{inventory.currentNumber > 0}"></h:outputText>
 							<h:outputText value="需预定" rendered="#{!(inventory.currentNumber > 0)}"></h:outputText>
-							<f:facet name="footer"><h:outputText value="金额合计:" style="font-weight:bold;"/></f:facet>
+							<f:facet name="footer"><h:outputText id="allToatl" value="金额合计:" style="font-weight:bold;"/></f:facet>
 						</rich:column>
 						<rich:column sortable="false" style="width:7%;" selfSorted="false" footerClass="align-center" label="金额小计">
 							<f:facet name="header"><h:outputText value="金额小计"/></f:facet>
@@ -71,7 +71,7 @@ xmlns:rich="http://richfaces.org/rich">
 						</rich:column>
 						<rich:column sortable="false" style="width:14%;" selfSorted="false" label="单项操作">
 							<f:facet name="header"><h:outputText value="单项操作"/></f:facet>
-							<h:panelGroup><a4j:commandLink value="删除" styleClass="button-default-style" onclick="javascript:return confirm('确认删除购物车中该商品吗？');"/><a4j:commandLink value="移入收藏夹" styleClass="button-default-style"/></h:panelGroup>
+							<h:panelGroup><h:commandLink action="#{shopCart.removeOneSelectedFromShoppingCart}" immediate="true" value="删除" styleClass="button-default-style" onclick="javascript:return confirm('确认删除购物车中该商品吗？');"><a4j:support event="onclick" reRender="shoppingCartTable"></a4j:support><f:param name="selectedProductId" value="#{inventory.id}"/></h:commandLink><a4j:commandLink value="移入收藏夹" styleClass="button-default-style"/></h:panelGroup>
 						</rich:column>
 					</rich:dataTable>
 				</rich:panel>
