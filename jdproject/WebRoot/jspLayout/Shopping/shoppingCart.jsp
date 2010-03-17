@@ -25,6 +25,7 @@ xmlns:rich="http://richfaces.org/rich">
 			</ui:define>
 			<ui:define id="shoppingCartContent" name="content">
 			<h:form>
+				<a4j:region id="shoppingCartDataTableRegion" renderRegionOnly="false" selfRendered="true">
 				<rich:panel style="width:100%" headerClass="panel-header-none-border" styleClass="panel-none-border" bodyClass="panel-documents-gray-border-none-padding">
 					<f:facet name="header">
 						<h:panelGrid columns="3" style="align:left"  cellspacing="0" cellpadding="0" columnClasses="common-panel-grid-header-left,common-panel-grid-header-center,common-panel-grid-header-right">
@@ -35,7 +36,6 @@ xmlns:rich="http://richfaces.org/rich">
 								<h:outputText value="" style="width:4px"></h:outputText>
 							</h:panelGrid>	
 					</f:facet>
-					<a4j:region id="shoppingCartDataTableRegion" renderRegionOnly="false" selfRendered="true">
 					<rich:dataTable id="shoppingCartTable" value="#{shopCart.cart.inventory}" var="inventory" frame="box" columns="9" headerClass="shopping-cart-table-header" rowClasses="table-row-odd,table-row-even" columnClasses="shopping-cart-table-column1,shopping-cart-table-column2,shopping-cart-table-column3,shopping-cart-table-column4,shopping-cart-table-column5,shopping-cart-table-column6,shopping-cart-table-column7,shopping-cart-table-column8" cellpadding="1" cellspacing="1" border="0" sortMode="single" width="100%">
 						<rich:column sortable="false" style="width:5%;" label="选择">
 							<f:facet name="header"><h:outputText value="选择"/></f:facet>
@@ -74,13 +74,15 @@ xmlns:rich="http://richfaces.org/rich">
 							<h:panelGroup><a4j:commandLink value="删除" styleClass="button-default-style" onclick="javascript:return confirm('确认删除购物车中该商品吗？');"/><a4j:commandLink value="移入收藏夹" styleClass="button-default-style"/></h:panelGroup>
 						</rich:column>
 					</rich:dataTable>
-					</a4j:region>
 				</rich:panel>
-				<rich:panel style="width:100%;padding-top: 10px;padding-left: 28px;" headerClass="panel-header-none-border" styleClass="panel-none-border" bodyClass="panel-documents-none-border">
-					<h:commandLink value="继续购物" styleClass="ButtonDefault" immediate="true" ></h:commandLink>
-					<h:commandLink value="清空购物车" styleClass="ButtonDefault" onclick="javascript:return confirm('确认清空购物车中所有的商品吗？');"></h:commandLink>
-				</rich:panel>
-				
+				<h:panelGrid columns="2" style="width:100%;padding-top: 10px;padding-left: 28px;" headerClass="panel-header-none-border" columnClasses="align-left,align-right" styleClass="panel-none-border">
+					<h:panelGroup>
+						<h:commandLink value="继续购物" styleClass="ButtonDefault" immediate="true"></h:commandLink>
+						<h:commandLink action="#{shopCart.clearShoppingCart}" value="清空购物车" styleClass="ButtonDefault" onclick="javascript:return confirm('确认清空购物车中所有的商品吗？');"></h:commandLink>
+					</h:panelGroup>
+					<h:commandLink value="下订单" styleClass="ButtonYellow" immediate="true"></h:commandLink>
+				</h:panelGrid>
+			</a4j:region>	
 			</h:form>
     		</ui:define>
     	</ui:composition>
