@@ -81,9 +81,21 @@ public class Inventory implements InventoryInterface {
 		// TODO Auto-generated method stub
 		return inventoryPriceTotal;
 	}
+	
+	public void setInventoryPriceTotal(Double inventoryPriceTotal) {
+		this.inventoryPriceTotal = inventoryPriceTotal;
+	}
 	public int getInventoryQuantityTotal() {
         return inventoryQuantityTotal;
     }
+	
+	public void setInventoryQuantityTotal(Integer inventoryQuantityTotal) {
+		this.inventoryQuantityTotal = inventoryQuantityTotal;
+	}
+	
+	public void setHaveSelected(boolean haveSelected) {
+		this.haveSelected = haveSelected;
+	}
 	public boolean isHaveSelected() {
 		boolean result = false;
 		if (null != this.getInventory()) {
