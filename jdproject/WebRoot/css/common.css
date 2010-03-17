@@ -2172,6 +2172,9 @@ background-color:#ffffff;
 .vertical-align {
 	vertical-align:middle;
 }
+.align-left {
+	text-align:left;
+}
 .align-right {
 	text-align:right;
 	}
@@ -2200,3 +2203,19 @@ background-color:#ffffff;
 	border-bottom:1px #E6E6E6 solid;
 	border-top:1px #EFEFEF solid;
 }
+.ButtonYellow  {
+	margin:0px 16px 0px 0px;
+	background-color: #f6f6f6;
+	font-size: 12px; 
+	BACKGROUND: url(../css/images/icons/btnyellowbg.gif) repeat-x;
+	font-weight: bold;
+	line-height:28px;
+	border-left: #FF9933 1px solid; 
+	border-top: #FF9933 0px solid; 
+	border-bottom: #FF9933 1px solid; 
+	border-right: #FF9933 1px solid;
+	padding-left: 12px; 
+	padding-right: 12px; 
+	padding-top: 6px; 
+	padding-bottom: 6px; 
+	}
