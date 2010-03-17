@@ -13,5 +13,6 @@ public interface InventoryInterface {
     public double getInventoryPriceTotal();
     public void addInventoryItem(InventoryItem newItem);
     public void removeInventoryItem(InventoryItem newItem, boolean removeItemOnZero);
+    public void recalculateIventory();
 }
 

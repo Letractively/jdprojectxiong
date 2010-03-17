@@ -139,7 +139,7 @@ public class Inventory implements InventoryInterface {
         recalculateIventory();
 
 	}
-	private void recalculateIventory() {
+	public void recalculateIventory() {
         inventoryPriceTotal = 0.0;
         inventoryQuantityTotal = 0;
         categoryInfo = new HashMap<String,InventoryCategory>();
