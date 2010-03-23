@@ -26,7 +26,7 @@ xmlns:rich="http://richfaces.org/rich">
 			<ui:define id="shoppingCartContent" name="content">
 			<h:form>
 				<a4j:region id="shoppingCartDataTableRegion" renderRegionOnly="false" selfRendered="true">
-				<rich:panel style="width:100%" headerClass="panel-header-none-border" styleClass="panel-none-border" bodyClass="panel-documents-gray-border-none-padding">
+				<rich:panel headerClass="panel-header-none-border" styleClass="panel-none-border" bodyClass="panel-documents-gray-border-none-padding">
 					<f:facet name="header">
 						<h:panelGrid columns="3" style="align:left"  cellspacing="0" cellpadding="0" columnClasses="common-panel-grid-header-left,common-panel-grid-header-center,common-panel-grid-header-right">
 								<h:outputText value="" style="width:4px"></h:outputText>
@@ -80,7 +80,13 @@ xmlns:rich="http://richfaces.org/rich">
 						<h:commandLink value="继续购物" styleClass="ButtonDefault" immediate="true"></h:commandLink>
 						<h:commandLink action="#{shopCart.clearShoppingCart}" value="清空购物车" styleClass="ButtonDefault" onclick="javascript:return confirm('确认清空购物车中所有的商品吗？');"></h:commandLink>
 					</h:panelGroup>
-					<h:commandLink value="下订单" styleClass="ButtonYellow" immediate="true"></h:commandLink>
+					<h:commandLink value="下一步" styleClass="ButtonYellow" immediate="true"></h:commandLink>
+				</h:panelGrid>
+				<h:panelGrid columns="1" headerClass="panel-header-none-border" styleClass="panel-none-border">
+					<h:outputText value="下单三步曲:"></h:outputText>
+					<h:outputText value="第一步：选定需要的商品，点击『购买』按钮进入购物车。如需要多次选购，只需点击『继续购物』即可返回商品页面。选购完毕后请点击『下一步』按钮进入订单结算。"></h:outputText>
+					<h:outputText value="第二步：填写并确认收货人信息，选择您需要的付款方式及送货方式，确认无误后点『提交订单』。"></h:outputText>
+					<h:outputText value="第三步：支付订单货款，然后等待收货或者自行上门提货。"></h:outputText>
 				</h:panelGrid>
 			</a4j:region>	
 			</h:form>
