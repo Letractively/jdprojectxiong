@@ -205,4 +205,5 @@ public class ManageBeanConstants {
     public static final String PRODUCT_BRAND_UTIL_BEAN_NAME = "productBrandUtil";
     public static final String PRODUCT_INFO_BEAN_NAME = "productInfo";
     public static final String SHOP_CART_BEAN_NAME = "shopCart";
+    public static final String REGIST_PAGE_BEAN_NAME = "registPage";
 }

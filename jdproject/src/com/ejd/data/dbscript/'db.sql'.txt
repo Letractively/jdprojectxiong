@@ -37,6 +37,7 @@ CREATE TABLE  `ejd`.`STAKEHOLDER` (
   `PHONE` varchar(100),
   `TAX` varchar(100),
   `URL` varchar(100),
+  `EMAIL` varchar(100),
   `REMARKS` varchar(1000),
   `STATUS` varchar(1) NOT NULL,
   `TYPE` varchar(1) NOT NULL,

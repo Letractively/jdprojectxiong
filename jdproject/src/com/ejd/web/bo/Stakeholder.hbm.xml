@@ -43,6 +43,9 @@
         <property name="url" type="java.lang.String">
             <column name="URL" length="100" />
         </property>
+        <property name="email" type="java.lang.String">
+            <column name="EMAIL" length="100" />
+        </property>
         <property name="remarks" type="java.lang.String">
             <column name="REMARKS" length="1000" />
         </property>
