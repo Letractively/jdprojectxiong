@@ -1549,6 +1549,18 @@
 		</managed-property>  
 	</managed-bean>
 	<!-- start help center  -->
+	<!-- start register center  -->
+	<managed-bean> 
+      <managed-bean-name>registPage</managed-bean-name>
+      <managed-bean-class>com.ejd.web.vo.user.RegistPageBean</managed-bean-class> 
+      <managed-bean-scope>request</managed-bean-scope> 
+      <managed-property>
+		<property-name>stakeholderService</property-name>
+		<property-class>com.ejd.model.service.iface.IStakeholderService</property-class>
+		<value>#{stakeholderService}</value>
+	  </managed-property>
+    </managed-bean>
+    <!-- start register center  -->
 	<!-- test -->
 	<managed-bean>
 		<managed-bean-name>demoBean</managed-bean-name>
