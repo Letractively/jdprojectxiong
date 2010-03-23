@@ -24,6 +24,7 @@ public abstract class AbstractStakeholder extends java.lang.Object implements
 	private String phone;
 	private String tax;
 	private String url;
+	private String email;
 	private String remarks;
 	private String status;
 	private String type;
@@ -170,6 +171,12 @@ public abstract class AbstractStakeholder extends java.lang.Object implements
 		this.url = url;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public String getRemarks() {
 		return this.remarks;
 	}
