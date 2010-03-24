@@ -19,7 +19,7 @@ xmlns:rich="http://richfaces.org/rich">
     			
 			</ui:define>
     		<ui:define id="contentHeader" name="contentHeader">
-    				<h:outputText value="欢迎您注册新蛋会员！"></h:outputText>
+    				<h:outputText value="欢迎您注册新会员！"></h:outputText>
 			</ui:define>
 			<ui:define id="customerRegisterContent" name="content">
 			<h:form>
