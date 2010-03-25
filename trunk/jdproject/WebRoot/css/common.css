@@ -2233,3 +2233,23 @@ background-color:#ffffff;
 .common-panel-grid-row{
 	line-height:28px;
 	}
+.agreement-panel-grid-one{
+	width:15%;
+	text-align:left;
+}
+.agreement-panel-grid-two{
+	width:70%;
+	text-align:left;
+}
+.agreement-panel-grid-three{
+	width:15%;
+	text-align:right;
+}
+input-text {
+	color: #5e5e5e;
+	font-weight: bold;
+	background-color: #ebebeb;
+	border: none;
+	width: 280px;
+	padding: 5px 5px 5px 20px;
+}
