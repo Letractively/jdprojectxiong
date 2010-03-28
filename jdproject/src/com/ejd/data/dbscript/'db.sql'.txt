@@ -42,6 +42,10 @@ CREATE TABLE  `ejd`.`STAKEHOLDER` (
   `STATUS` varchar(1) NOT NULL,
   `TYPE` varchar(1) NOT NULL,
   `TAXACCOUNTS` varchar(100),
+  `INTEGRATION` double(10,2) default 0,
+  `REMAININGAMOUNT` double(10,2) default 0,
+  `TOTALEXPENDAMOUNT` double(10,2) default 0,
+  `CREDITLIMIT` double(10,2) default 0,
   PRIMARY KEY  (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
