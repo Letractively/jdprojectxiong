@@ -17,7 +17,7 @@ public class PaintVerifyCodeBean {
     	GenerateVerifyCode data = (GenerateVerifyCode) obj;
         
         int testLenght = data.getVerifyCode().length();
-        fontSize = 14;
+        fontSize = 28;
         Font font = new Font("Serif", Font.HANGING_BASELINE, fontSize);
         g2d.setFont(font);
         
