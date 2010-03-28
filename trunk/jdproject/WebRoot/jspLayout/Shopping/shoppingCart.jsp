@@ -36,11 +36,12 @@ xmlns:rich="http://richfaces.org/rich">
 								<h:outputText value="" style="width:4px"></h:outputText>
 							</h:panelGrid>	
 					</f:facet>
+					<a4j:outputPanel rendered="#{empty shopCart.cart.inventory}" styleClass="orange-text lh3 f14"><h:outputText value="您还没有挑选商品，赶快选择心爱的商品吧！" style="padding-left:300px;padding-right:300px;"></h:outputText></a4j:outputPanel>
 					<rich:dataTable id="shoppingCartTable" value="#{shopCart.cart.inventory}" var="inventory" frame="box" columns="9" headerClass="shopping-cart-table-header" rowClasses="table-row-odd,table-row-even" columnClasses="shopping-cart-table-column1,shopping-cart-table-column2,shopping-cart-table-column3,shopping-cart-table-column4,shopping-cart-table-column5,shopping-cart-table-column6,shopping-cart-table-column7,shopping-cart-table-column8" cellpadding="1" cellspacing="1" border="0" sortMode="single" width="100%">
 						<rich:column sortable="false" style="width:5%;" label="选择">
 							<f:facet name="header"><h:outputText value="选择"/></f:facet>
 							<h:selectBooleanCheckbox value="#{inventory.selected}"><a4j:support event="onclick" reRender="deleteAllBtn"/></h:selectBooleanCheckbox>
-							<f:facet name="footer"><h:commandLink id="deleteAllBtn" action="#{shopCart.removeMulSelectedFromShoppingCart}" immediate="true" value="删除" styleClass="button-default-style" disabled="#{!(shopCart.cart.haveSelected)}" onclick="return confirm('确认删除购物车中选中的商品吗？');"><a4j:support event="onclick" reRender="shoppingCartTable"></a4j:support></h:commandLink></f:facet>
+							<f:facet name="footer"><h:commandLink id="deleteAllBtn" action="#{shopCart.removeMulSelectedFromShoppingCart}" immediate="true" value="删除" styleClass="button-default-style" disabled="#{!(shopCart.cart.haveSelected)}" onclick="return confirm('确认删除购物车中选中的商品吗？');"><a4j:support event="onclick" reRender="shoppingCartTable,goNextStepBtn,clearShoppingCartBtn"></a4j:support></h:commandLink></f:facet>
 						</rich:column>
 						<rich:column sortable="false" style="width:42%;" label="商品名称">
 							<f:facet name="header"><h:outputText value="商品名称"/></f:facet>
@@ -71,16 +72,16 @@ xmlns:rich="http://richfaces.org/rich">
 						</rich:column>
 						<rich:column sortable="false" style="width:14%;" selfSorted="false" label="单项操作">
 							<f:facet name="header"><h:outputText value="单项操作"/></f:facet>
-							<h:panelGroup><h:commandLink action="#{shopCart.removeOneSelectedFromShoppingCart}" immediate="true" value="删除" styleClass="button-default-style" onclick="javascript:return confirm('确认删除购物车中该商品吗？');"><a4j:support event="onclick" reRender="shoppingCartTable"></a4j:support><f:param name="selectedProductId" value="#{inventory.id}"/></h:commandLink><a4j:commandLink value="移入收藏夹" styleClass="button-default-style"/></h:panelGroup>
+							<h:panelGroup><h:commandLink action="#{shopCart.removeOneSelectedFromShoppingCart}" immediate="true" value="删除" styleClass="button-default-style" onclick="javascript:return confirm('确认删除购物车中该商品吗？');"><a4j:support event="onclick" reRender="shoppingCartTable,goNextStepBtn,clearShoppingCartBtn"></a4j:support><f:param name="selectedProductId" value="#{inventory.id}"/></h:commandLink><a4j:commandLink value="移入收藏夹" styleClass="button-default-style"/></h:panelGroup>
 						</rich:column>
 					</rich:dataTable>
 				</rich:panel>
 				<h:panelGrid columns="2" style="width:100%;padding-top: 10px;padding-left: 28px;" headerClass="panel-header-none-border" columnClasses="align-left,align-right" styleClass="panel-none-border">
 					<h:panelGroup>
 						<h:commandLink value="继续购物" styleClass="ButtonDefault" immediate="true"></h:commandLink>
-						<h:commandLink action="#{shopCart.clearShoppingCart}" value="清空购物车" styleClass="ButtonDefault" onclick="javascript:return confirm('确认清空购物车中所有的商品吗？');"></h:commandLink>
+						<h:commandLink id="clearShoppingCartBtn" action="#{shopCart.clearShoppingCart}" value="清空购物车" disabled="#{empty shopCart.cart.inventory}" styleClass="ButtonDefault" onclick="javascript:return confirm('确认清空购物车中所有的商品吗？');"></h:commandLink>
 					</h:panelGroup>
-					<h:commandLink value="下一步" styleClass="ButtonYellow" immediate="true"></h:commandLink>
+					<h:commandLink id="goNextStepBtn" value="下一步" disabled="#{empty shopCart.cart.inventory}" styleClass="ButtonYellow" immediate="true"></h:commandLink>
 				</h:panelGrid>
 				<h:panelGrid columns="1" headerClass="panel-header-none-border" styleClass="panel-none-border">
 					<h:outputText value="下单三步曲:"></h:outputText>
