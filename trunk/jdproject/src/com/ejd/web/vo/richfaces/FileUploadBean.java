@@ -54,8 +54,8 @@ public class FileUploadBean{
 		return null;
 	}
 	public String sendUploadData() {
-		//String path = SpringFacesUtil.getFacesContext().getExternalContext().getRequestServletPath();
-		String path = SpringFacesUtil.getServletContext().getRealPath("/");
+		String path = SpringFacesUtil.getFacesContext().getExternalContext().getRequestServletPath();
+		//String path = SpringFacesUtil.getServletContext().getRealPath("/");
 		OutputStream out = null;
 		if (null != this.getFiles()) {
 			for(File tempFile:this.getFiles()) {
