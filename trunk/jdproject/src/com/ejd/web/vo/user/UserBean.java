@@ -12,6 +12,7 @@ public class UserBean extends UserBaseBean{
 	private boolean showTradePriceTwo = false;//
 	private boolean showRetailPrice = false;//
 	private Stakeholder userInfo;
+	private String errorMessage;
 	public LoginInfo getLoginInfo() {
 		return loginInfo;
 	}
@@ -74,16 +75,28 @@ public class UserBean extends UserBaseBean{
 	public void setUserInfo(Stakeholder userInfo) {
 		this.userInfo = userInfo;
 	}
+	
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 	public UserBean() {
 	}
 	public String loginInAction() throws LoginException {
+		this.setErrorMessage("");
+		if (null == loginInfo.getUserId() || "".equals(loginInfo.getUserId()) || null == loginInfo.getUserPassword() || "".equals(loginInfo.getUserPassword())) {
+			this.setErrorMessage("请输入用户名和密码!");
+			return null;
+		}
 		Stakeholder stakeholder = null;
 		stakeholder = loginService.loginIn(loginInfo.getUserId(), loginInfo.getUserPassword());
 		if (null == stakeholder) {// no this stakeholder
 			userLoginFlag = false;
-			if (null != this.getUserInfo()) {
-				this.setUserInfo(null);
-			}
+			this.setUserInfo(stakeholder);
+			this.setErrorMessage("请输入正确的用户名和密码");
+			
 		} else { // exist this stakeholder
 			this.setUserInfo(stakeholder);
 			userLoginFlag = true;

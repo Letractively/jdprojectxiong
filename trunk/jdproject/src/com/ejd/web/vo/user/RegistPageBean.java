@@ -1,9 +1,22 @@
 package com.ejd.web.vo.user;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import net.sf.cglib.beans.BeanCopier;
+
 import com.ejd.model.exception.LoginException;
 import com.ejd.model.exception.StakeholderException;
 import com.ejd.model.service.iface.IStakeholderService;
+import com.ejd.utils.SpringFacesUtil;
+import com.ejd.web.bo.Address;
+import com.ejd.web.bo.Bank;
+import com.ejd.web.bo.Person;
 import com.ejd.web.bo.Stakeholder;
+import com.ejd.web.vo.stakeholder.AddressVo;
+import com.ejd.web.vo.stakeholder.BankVo;
+import com.ejd.web.vo.stakeholder.PersonVo;
+import com.ejd.web.vo.stakeholder.StakeholderVo;
 
 public class RegistPageBean {
 	private String userId;
@@ -94,7 +107,35 @@ public class RegistPageBean {
 			this.setErrorMessage("请阅读并决定是否同意用户协议!");
 			return null;
 		}
-		return null;
+		//add new stakeholder;
+		Stakeholder newStakeholder = new Stakeholder();
+		newStakeholder.getConatctMans().add(null);
+		newStakeholder.getAddresses().add(null);
+		newStakeholder.getBanks().add(null);
+		newStakeholder.setUserId(this.getUserId());
+		newStakeholder.setUserPassword(this.getUserPassword());
+		newStakeholder.setFullName(this.getUserId());
+		newStakeholder.setShortName(this.getUserId());
+		newStakeholder.setEmail(this.getEmail());
+		newStakeholder.setStatus("A");
+		newStakeholder.setType("S");
+		newStakeholder.setIntegration(0.0);
+		newStakeholder.setRemainingAmount(0.0);
+		newStakeholder.setTotalExpendAmount(0.0);
+		newStakeholder.setCreditLimit(0.0);
+		this.getStakeholderService().saveStakeholder(newStakeholder);
+		//end added stakeholder;
+		//then login in
+		UserBean userBean = (UserBean) SpringFacesUtil.getManagedBean("currentUser");
+		stakeholder = stakeholderService.getStakeholderByUserId(this.getUserId());
+		userBean.setUserInfo(stakeholder);
+		userBean.setUserLoginFlag(true);
+		LoginInfo tempLoginInfo = new LoginInfo();
+		tempLoginInfo.setUserId(this.getUserId());
+		tempLoginInfo.setUserPassword(this.getUserPassword());
+		userBean.setLoginInfo(tempLoginInfo);
+		// end login in
+		return "registSuccess";
 	}
 
 }
