@@ -28,17 +28,17 @@ xmlns:rich="http://richfaces.org/rich">
 					<f:facet name="header">
 						<h:panelGrid columns="3" style="align:left;"  cellspacing="0" cellpadding="0" columnClasses="common-panel-grid-header-left,common-panel-grid-header-center,common-panel-grid-header-right">
 								<h:outputText value="" style="width:4px"></h:outputText>
-								<h:panelGroup style="width:962px">
-									<H3><h:outputText value="请填写以下信息" styleClass="panel-header-none-border-text"></h:outputText><h:outputText id="registErros" value="#{registPage.errorMessage}" style="color:red;padding-left:12px"/></H3>
+								<h:panelGroup>
+									<H3><h:outputText value="请填写以下信息" styleClass="panel-header-none-border-text"></h:outputText><h:outputText id="registErros" value="#{registPage.errorMessage}" style="color:red;padding-left:12px;font-weight:normal;"/></H3>
 								</h:panelGroup>
 								<h:outputText value="" style="width:4px"></h:outputText>
 							</h:panelGrid>	
 					</f:facet>
 					<h:panelGrid columns="3" columnClasses="common-panel-grid-one,common-panel-grid-two,common-panel-grid-three" rowClasses="common-panel-grid-row">
 						<h:outputLabel value="您的用户名：" for="userId"></h:outputLabel><h:inputText id="userId" value="#{registPage.userId}" styleClass="input-text"><f:validator validatorId="UserValidator"/></h:inputText><h:message for="userId" />
-						<h:outputLabel value="请设置密码：" for="userPassword"></h:outputLabel><h:inputSecret id="userPassword" value="#{registPage.userPassword}" redisplay="true"><f:validator validatorId="PasswordValidator"/></h:inputSecret><h:message for="userPassword" />
-						<h:outputLabel value="请确认密码：" for="verifyPassword"></h:outputLabel><h:inputSecret id="verifyPassword" value="#{registPage.verifyPassword}" redisplay="false"><f:validator validatorId="PasswordValidator"/></h:inputSecret><h:message for="verifyPassword" />
-						<h:outputLabel value="E-mail地址：" for="email"></h:outputLabel><h:inputText id="email" value="#{registPage.email}"><f:validator validatorId="EmailValidator"/></h:inputText><h:message for="email" />
+						<h:outputLabel value="请设置密码：" for="userPassword"></h:outputLabel><h:inputSecret id="userPassword" value="#{registPage.userPassword}" redisplay="true" styleClass="input-text"><f:validator validatorId="PasswordValidator"/></h:inputSecret><h:message for="userPassword" />
+						<h:outputLabel value="请确认密码：" for="verifyPassword"></h:outputLabel><h:inputSecret id="verifyPassword" value="#{registPage.verifyPassword}" redisplay="false" styleClass="input-text"><f:validator validatorId="PasswordValidator"/></h:inputSecret><h:message for="verifyPassword" />
+						<h:outputLabel value="E-mail地址：" for="email"></h:outputLabel><h:inputText id="email" value="#{registPage.email}" styleClass="input-text"><f:validator validatorId="EmailValidator"/></h:inputText><h:message for="email" />
 					</h:panelGrid>
 					</rich:panel>
 					<a4j:outputPanel>
