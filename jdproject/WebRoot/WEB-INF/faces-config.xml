@@ -1561,6 +1561,20 @@
 	  </managed-property>
     </managed-bean>
     <!-- start register center  -->
+    <!-- start generateVerifyCode center  -->
+    <managed-bean>
+  	<managed-bean-name>generateVerifyCode</managed-bean-name>
+  	<managed-bean-class>com.ejd.web.vo.user.GenerateVerifyCode</managed-bean-class>
+  	<managed-bean-scope>request</managed-bean-scope>
+ 	</managed-bean>
+ 	<!-- start generateVerifyCode center  -->
+ 	<!-- start generateVerifyCode center  -->
+    <managed-bean>
+  	<managed-bean-name>PaintVerifyCode</managed-bean-name>
+  	<managed-bean-class>com.ejd.web.vo.user.PaintVerifyCodeBean</managed-bean-class>
+  	<managed-bean-scope>session</managed-bean-scope>
+ 	</managed-bean>
+ 	<!-- start generateVerifyCode center  -->
 	<!-- test -->
 	<managed-bean>
 		<managed-bean-name>demoBean</managed-bean-name>
@@ -2134,6 +2148,13 @@
  		<navigation-case>
 		<from-outcome>stakeholderCreatePersonCreate</from-outcome>
 		<to-view-id>/jspLayout/manage/stakeholderCreatePersonCreate.jsp</to-view-id>
+		</navigation-case>
+ 	</navigation-rule>
+ 	<navigation-rule>
+ 		<from-view-id>/jspLayout/common/customerRegister.jsp</from-view-id>
+ 		<navigation-case>
+		<from-outcome>registSuccess</from-outcome>
+		<to-view-id>/jspLayout/common/customerRegisterSuccess.jsp</to-view-id>
 		</navigation-case>
  	</navigation-rule>
     <!-- validators  -->
