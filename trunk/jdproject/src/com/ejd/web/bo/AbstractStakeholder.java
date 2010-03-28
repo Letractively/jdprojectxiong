@@ -29,7 +29,10 @@ public abstract class AbstractStakeholder extends java.lang.Object implements
 	private String status;
 	private String type;
 	private String taxaccounts;
-
+	private Double integration;
+	private Double remainingAmount;
+	private Double totalExpendAmount;
+	private Double creditLimit; 
 	// Constructors
 
 	/** default constructor */
@@ -208,5 +211,30 @@ public abstract class AbstractStakeholder extends java.lang.Object implements
 	public void setTaxaccounts(String taxaccounts) {
 		this.taxaccounts = taxaccounts;
 	}
+	public Double getIntegration() {
+		return integration;
+	}
+	public void setIntegration(Double integration) {
+		this.integration = integration;
+	}
+	public Double getRemainingAmount() {
+		return remainingAmount;
+	}
+	public void setRemainingAmount(Double remainingAmount) {
+		this.remainingAmount = remainingAmount;
+	}
+	public Double getTotalExpendAmount() {
+		return totalExpendAmount;
+	}
+	public void setTotalExpendAmount(Double totalExpendAmount) {
+		this.totalExpendAmount = totalExpendAmount;
+	}
+	public Double getCreditLimit() {
+		return creditLimit;
+	}
+	public void setCreditLimit(Double creditLimit) {
+		this.creditLimit = creditLimit;
+	}
 
+	
 }

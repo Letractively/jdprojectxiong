@@ -58,6 +58,18 @@
         <property name="taxaccounts" type="java.lang.String">
             <column name="TAXACCOUNTS" length="100" />
         </property>
+        <property name="integration" type="java.lang.Double">
+            <column name="INTEGRATION" precision="10" />
+        </property>
+        <property name="remainingAmount" type="java.lang.Double">
+            <column name="REMAININGAMOUNT" precision="10" />
+        </property>
+        <property name="totalExpendAmount" type="java.lang.Double">
+            <column name="TOTALEXPENDAMOUNT" precision="10" />
+        </property>
+        <property name="creditLimit" type="java.lang.Double">
+            <column name="CREDITLIMIT" precision="10" />
+        </property>
         <list 
             name="conatctMans" 
             table="person"
