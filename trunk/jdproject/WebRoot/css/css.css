@@ -998,4 +998,23 @@ UNKNOWN {
 .infoBuy .saleInfo LI A.memPrice:hover {
 	COLOR: #f60
 }
+/* line */
+.lh1{line-height:140%}
+.lh2{line-height:160%}
+.lh3{line-height:180%}
+.lh4{line-height:200%}
+.lh5{line-height:220%}
+/* font */
+.fB{font-weight:bold;}
+.fN{font-style:normal;}
+.fI{font-style:italic;}
+.fV{font-family:Verdana;}
+.fH{font-family:simhei;}
+.f10{font-size:10px;}
+.f11{font-size:11px;}
+.f12{font-size:12px;}
+.f13{font-size:13px;}
+.f14{font-size:14px;}
+.f16{font-size:16px;}
+.f18{font-size:18px;}
 
