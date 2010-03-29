@@ -14,7 +14,6 @@ xmlns:rich="http://richfaces.org/rich">
     </head>
     <body>
     	<ui:composition template="./commonTemplate.jsp">
-    		
     		<ui:define id="commonStepDisplayOfShoppingCart" name="commonStepDisplay">
     			
 			</ui:define>
@@ -45,7 +44,7 @@ xmlns:rich="http://richfaces.org/rich">
                    				</h:panelGroup>
 							</h:panelGrid>
 							<a4j:outputPanel>
-								<h:panelGroup style="padding-left: 276px;vAlign: bottom;"><h:commandLink id="loginInBtn" value="登陆" action="#{currentUser.loginInAction}" styleClass="ButtonDefault"><f:param name="comeFrom" value="shoppingCart"></f:param></h:commandLink></h:panelGroup>
+								<h:panelGroup style="padding-left: 276px;vAlign: bottom;"><h:commandLink id="loginInBtn" value="登陆" action="#{currentUser.loginInAction}" styleClass="ButtonDefault"><f:param name="comeFrom" value="#{currentUser.comeFrom}"></f:param></h:commandLink></h:panelGroup>
 							</a4j:outputPanel>
 						</rich:panel>
 						
