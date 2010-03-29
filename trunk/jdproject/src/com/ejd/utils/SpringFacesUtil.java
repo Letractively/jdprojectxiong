@@ -85,13 +85,12 @@ public final class SpringFacesUtil {
 	    }
 	    
 	    public static String getViewId(){
-	    	return getViewRoot().getId();
+	    	return getViewRoot().getViewId();
 	    }
 	    
 	    public static String getViewIdStr() {
 	    	String result = null == getViewId()?"":getViewId();
 			if (null != result && !"".equals(result)) {
-				result = "";
 				String[] subFromOutCome = result.split("/");
 				String fromOutCome = subFromOutCome[subFromOutCome.length - 1];
 				int atPosion = fromOutCome.indexOf(".");
