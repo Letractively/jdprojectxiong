@@ -18,7 +18,7 @@ public final class SpringFacesUtil {
   public SpringFacesUtil() {
   }
   /**
-   * ´ÓSpringÖÐ²éÕÒbean.
+   * ï¿½ï¿½Springï¿½Ð²ï¿½ï¿½ï¿½bean.
    * @param beanname String
    * @return Object
    */
@@ -86,6 +86,20 @@ public final class SpringFacesUtil {
 	    
 	    public static String getViewId(){
 	    	return getViewRoot().getId();
+	    }
+	    
+	    public static String getViewIdStr() {
+	    	String result = null == getViewId()?"":getViewId();
+			if (null != result && !"".equals(result)) {
+				result = "";
+				String[] subFromOutCome = result.split("/");
+				String fromOutCome = subFromOutCome[subFromOutCome.length - 1];
+				int atPosion = fromOutCome.indexOf(".");
+				if (atPosion > 0) {
+					result = fromOutCome.substring(0, atPosion);
+				}
+			}
+			return result ;
 	    }
 	    /**
 	     * Get parameter value from request scope.
