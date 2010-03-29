@@ -38,14 +38,14 @@ xmlns:rich="http://richfaces.org/rich">
 							<h:panelGrid columns="3" columnClasses="common-panel-grid-one,common-panel-grid-two,common-panel-grid-three" rowClasses="common-panel-grid-row">
 								<h:outputLabel id="loginUserLabel" value="您的用户名：" for="userId"></h:outputLabel><h:inputText id="userId" value="#{currentUser.loginInfo.userId}" styleClass="input-text"><f:validator validatorId="UserValidator"/></h:inputText><h:message for="userId" />
 								<h:outputLabel id="loginUserPasswordLabel" value="您的密码：" for="userPassword"></h:outputLabel><h:inputSecret id="userPassword" value="#{currentUser.loginInfo.userPassword}" redisplay="false" styleClass="input-text"><f:validator validatorId="PasswordValidator"/></h:inputSecret><h:message for="userPassword" />
-								<h:outputLabel id="loginUserVerifyCodeLabel" value="验证码："></h:outputLabel><h:inputText></h:inputText>
+								<h:outputLabel id="loginUserVerifyCodeLabel" value="验证码："></h:outputLabel><h:inputText id="verifyCode" value="#{currentUser.verifyCode}" styleClass="input-text"></h:inputText>
 								<h:panelGroup>
-                       				<rich:paint2D id="painter" width="98" height="28" data="#{generateVerifyCode}" format="png" paint="#{PaintVerifyCode.paint}" />
+                       				<rich:paint2D id="painter" width="98" height="28" data="#{generateVerifyCode}" format="png" paint="#{paintVerifyCode.paint}" />
                        				<h:commandLink id="getverifycode" value="换一张" actionListener="#{generateVerifyCode.loadVerifyCodeListener}" immediate="true"></h:commandLink>
                    				</h:panelGroup>
 							</h:panelGrid>
 							<a4j:outputPanel>
-								<h:panelGroup style="padding-left: 276px;vAlign: bottom;"><h:commandLink id="loginInBtn" value="登陆" action="#{currentUser.loginInAction}" styleClass="ButtonDefault"><a4j:support event="onclick"/></h:commandLink></h:panelGroup>
+								<h:panelGroup style="padding-left: 276px;vAlign: bottom;"><h:commandLink id="loginInBtn" value="登陆" action="#{currentUser.loginInAction}" styleClass="ButtonDefault"><f:param name="comeFrom" value="shoppingCart"></f:param></h:commandLink></h:panelGroup>
 							</a4j:outputPanel>
 						</rich:panel>
 						
