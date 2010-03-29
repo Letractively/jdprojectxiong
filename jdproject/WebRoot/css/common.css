@@ -2256,11 +2256,11 @@ background-color:#ffffff;
 }
 .input-text {
 	width: 180px;
-	BORDER-RIGHT:#f6f6f6 2px solid;
-	BORDER-TOP: #f9f9f9 2px solid;
-	BORDER-LEFT: #f9f9f9 2px solid;
-	BORDER-BOTTOM: #f9f9f9 2px solid;
-	padding: 2px 1px 2px 1px;
+	BORDER-RIGHT:#d6d6d6 1px solid;
+	BORDER-TOP: #d6d6d6 1px solid;
+	BORDER-LEFT: #d6d6d6 1px solid;
+	BORDER-BOTTOM: #d6d6d6 1px solid;
+	padding: 2px 2px 2px 2px;
 }
 .gray-text {
 	font-size:12px;
