@@ -129,7 +129,6 @@ public class ShopCartBean extends ShopCartBaseBean {
 		if (null != comeFrom && !("".equals(comeFrom))) {
 			SpringFacesUtil.setRequestMapValue("comeFrom", comeFrom);
 		}
-		String dd =(String) SpringFacesUtil.getRequestMapValue("comeFrom");
 		String result = "";
 		UserBean currentUser = (UserBean) SpringFacesUtil.getManagedBean(ManageBeanConstants.CURRENT_USER_BEAN_NAME);
 		if (null == currentUser || null == currentUser.getUserInfo()) {
