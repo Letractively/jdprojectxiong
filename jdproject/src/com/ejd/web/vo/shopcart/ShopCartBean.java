@@ -11,6 +11,7 @@ import com.ejd.utils.SpringFacesUtil;
 import com.ejd.web.bo.Product;
 import com.ejd.web.vo.genl.ExistProductPrimaryCategoryBean;
 import com.ejd.web.vo.product.detail.ProductInfoBean;
+import com.ejd.web.vo.user.UserBean;
 
 public class ShopCartBean extends ShopCartBaseBean {
 	
@@ -122,6 +123,18 @@ public class ShopCartBean extends ShopCartBaseBean {
 	public String recalCulateIventory() throws ProductException {
 		this.getCart().recalculateIventory();
 		return null;
+	}
+	public String gotoGenerateOrder() {
+		String comeFrom = (String) SpringFacesUtil.getRequestParameter("comeFrom");
+		if (null != comeFrom && !("".equals(comeFrom))) {
+			SpringFacesUtil.setRequestMapValue("comeFrom", comeFrom);
+		}
+		String result = "";
+		UserBean currentUser = (UserBean) SpringFacesUtil.getManagedBean(ManageBeanConstants.CURRENT_USER_BEAN_NAME);
+		if (null == currentUser || null == currentUser.getUserInfo()) {
+			result = "customerLogin";
+		}
+		return result;
 	}
 
 }

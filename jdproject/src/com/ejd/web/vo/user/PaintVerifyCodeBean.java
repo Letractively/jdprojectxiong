@@ -9,20 +9,28 @@ public class PaintVerifyCodeBean {
 	
 	private int fontSize;
 	
+	private String verifyCode;
+	
+	public String getVerifyCode() {
+		return verifyCode;
+	}
+	public void setVerifyCode(String verifyCode) {
+		this.verifyCode = verifyCode;
+	}
 	public PaintVerifyCodeBean() {
 		
 	}
     public void paint(Graphics2D g2d, Object obj) {
     
     	GenerateVerifyCode data = (GenerateVerifyCode) obj;
-        
+        this.setVerifyCode(data.getVerifyCode());
         int testLenght = data.getVerifyCode().length();
         fontSize = 28;
         Font font = new Font("Serif", Font.HANGING_BASELINE, fontSize);
         g2d.setFont(font);
         
         int x = 2;
-        int y = 28;
+        int y = 22;
         g2d.translate(x, y);
         Color color = new Color(data.getColor() );
          
