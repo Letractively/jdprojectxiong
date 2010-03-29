@@ -15,6 +15,9 @@ public class UserBean extends UserBaseBean{
 	private Stakeholder userInfo;
 	private String errorMessage;
 	private String verifyCode;
+	private String comeFrom;
+	public UserBean() {
+	}
 	public LoginInfo getLoginInfo() {
 		return loginInfo;
 	}
@@ -91,7 +94,12 @@ public class UserBean extends UserBaseBean{
 	public void setVerifyCode(String verifyCode) {
 		this.verifyCode = verifyCode;
 	}
-	public UserBean() {
+	
+	public String getComeFrom() {
+		return comeFrom;
+	}
+	public void setComeFrom(String comeFrom) {
+		this.comeFrom = comeFrom;
 	}
 	public String loginInAction() throws LoginException {
 		String result = "";
@@ -121,7 +129,7 @@ public class UserBean extends UserBaseBean{
 		}
 		//clear password;
 		this.loginInfo.setUserPassword("");
-		String comeFrom = (String)SpringFacesUtil.getRequestParameter("comeFrom");
+		String comeFrom = this.getComeFrom();
 		if (null != comeFrom && !("".equals(comeFrom))) {
 			result = comeFrom;
 		}
