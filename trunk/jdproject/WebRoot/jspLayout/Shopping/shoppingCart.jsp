@@ -81,7 +81,7 @@ xmlns:rich="http://richfaces.org/rich">
 						<h:commandLink value="继续购物" styleClass="ButtonDefault" immediate="true"></h:commandLink>
 						<h:commandLink id="clearShoppingCartBtn" action="#{shopCart.clearShoppingCart}" value="清空购物车" disabled="#{empty shopCart.cart.inventory}" styleClass="ButtonDefault" onclick="javascript:return confirm('确认清空购物车中所有的商品吗？');"></h:commandLink>
 					</h:panelGroup>
-					<h:commandLink id="goNextStepBtn" value="下一步" disabled="#{empty shopCart.cart.inventory}" styleClass="ButtonYellow" immediate="true"></h:commandLink>
+					<h:commandLink id="goNextStepBtn" action="#{shopCart.gotoGenerateOrder}" value="下一步" disabled="#{empty shopCart.cart.inventory}" styleClass="ButtonYellow" immediate="true"><f:param name="comeFrom" value="shoppingCart"></f:param></h:commandLink>
 				</h:panelGrid>
 				<h:panelGrid columns="1" headerClass="panel-header-none-border" styleClass="panel-none-border">
 					<h:outputText value="下单三步曲:"></h:outputText>
