@@ -1570,7 +1570,7 @@
  	<!-- start generateVerifyCode center  -->
  	<!-- start generateVerifyCode center  -->
     <managed-bean>
-  	<managed-bean-name>PaintVerifyCode</managed-bean-name>
+  	<managed-bean-name>paintVerifyCode</managed-bean-name>
   	<managed-bean-class>com.ejd.web.vo.user.PaintVerifyCodeBean</managed-bean-class>
   	<managed-bean-scope>session</managed-bean-scope>
  	</managed-bean>
@@ -2132,6 +2132,11 @@
 		<navigation-case>
 			<from-outcome>shoppingCart</from-outcome>
 			<to-view-id>/jspLayout/Shopping/shoppingCart.jsp</to-view-id>
+			<redirect/>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>customerLogin</from-outcome>
+			<to-view-id>/jspLayout/common/customerLogin.jsp</to-view-id>
 			<redirect/>
 		</navigation-case>
 	</navigation-rule>
