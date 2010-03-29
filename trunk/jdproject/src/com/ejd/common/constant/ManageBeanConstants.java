@@ -206,4 +206,7 @@ public class ManageBeanConstants {
     public static final String PRODUCT_INFO_BEAN_NAME = "productInfo";
     public static final String SHOP_CART_BEAN_NAME = "shopCart";
     public static final String REGIST_PAGE_BEAN_NAME = "registPage";
+    public static final String PAINT_VERIFY_CODE_BEAN_NAME = "paintVerifyCode";
+    public static final String GENERATE_VERIFY_CODE_BEAN_NAME = "generateVerifyCode";
+    public static final String CURRENT_USER_BEAN_NAME = "currentUser";
 }

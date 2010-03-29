@@ -1,5 +1,6 @@
 package com.ejd.web.vo.user;
 
+import com.ejd.common.constant.ManageBeanConstants;
 import com.ejd.model.exception.LoginException;
 import com.ejd.utils.SpringFacesUtil;
 import com.ejd.web.bo.Stakeholder;
@@ -13,6 +14,7 @@ public class UserBean extends UserBaseBean{
 	private boolean showRetailPrice = false;//
 	private Stakeholder userInfo;
 	private String errorMessage;
+	private String verifyCode;
 	public LoginInfo getLoginInfo() {
 		return loginInfo;
 	}
@@ -82,12 +84,28 @@ public class UserBean extends UserBaseBean{
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
 	}
+	
+	public String getVerifyCode() {
+		return verifyCode;
+	}
+	public void setVerifyCode(String verifyCode) {
+		this.verifyCode = verifyCode;
+	}
 	public UserBean() {
 	}
 	public String loginInAction() throws LoginException {
+		String result = "";
 		this.setErrorMessage("");
 		if (null == loginInfo.getUserId() || "".equals(loginInfo.getUserId()) || null == loginInfo.getUserPassword() || "".equals(loginInfo.getUserPassword())) {
 			this.setErrorMessage("请输入用户名和密码!");
+			return null;
+		}
+		PaintVerifyCodeBean paintVerifyCode = (PaintVerifyCodeBean) SpringFacesUtil.getManagedBean(ManageBeanConstants.PAINT_VERIFY_CODE_BEAN_NAME);
+		if (null == this.getVerifyCode() || "".equals(this.getVerifyCode())) {
+			this.setErrorMessage("请输入验证码!");
+			return null;
+		} else if (!((this.getVerifyCode().toUpperCase()).equals(paintVerifyCode.getVerifyCode().toUpperCase()))) {
+			this.setErrorMessage("输入的验证码有误!");
 			return null;
 		}
 		Stakeholder stakeholder = null;
@@ -101,11 +119,17 @@ public class UserBean extends UserBaseBean{
 			this.setUserInfo(stakeholder);
 			userLoginFlag = true;
 		}
-		return null;
+		//clear password;
+		this.loginInfo.setUserPassword("");
+		String comeFrom = (String)SpringFacesUtil.getRequestParameter("comeFrom");
+		if (null != comeFrom && !("".equals(comeFrom))) {
+			result = comeFrom;
+		}
+		return result;
 	}
 	
 	public String loginOutAction() throws LoginException {
-		UserBean userBean = (UserBean) SpringFacesUtil.getManagedBean("currentUser");
+		UserBean userBean = (UserBean) SpringFacesUtil.getManagedBean(ManageBeanConstants.CURRENT_USER_BEAN_NAME);
 		if (loginService.loginOut(userBean)) {
 			userBean.setUserLoginFlag(false);
 			userBean.setUserInfo(null);
