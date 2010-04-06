@@ -26,3 +26,6 @@ function isDoubleValidate(s){
 	return true;
 
 }
+function processFreshShoppingCartInfoBegin() {
+	processFreshShoppingCartInfo();
+}
