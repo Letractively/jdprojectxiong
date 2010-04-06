@@ -16,6 +16,8 @@ xmlns:c="http://java.sun.com/jstl/core">
 <f:subview id="productHeaderMainView">
 <h:form id="productHeaderMainform"> 
 	<a4j:region id="productHeaderRegion" renderRegionOnly="false" selfRendered="true">
+		<a4j:jsFunction name="processFreshShoppingCartInfo" ajaxSingle="true" limitToList="true" reRender="pgshoppingcart">
+   		</a4j:jsFunction>
 		<div id="navigation"><span class="ebay">
 		<div id="gnheader" class="gbhdr">
 		<table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -123,9 +125,13 @@ xmlns:c="http://java.sun.com/jstl/core">
 							<h:inputText styleClass="search-input" value=""></h:inputText>
 							<h:commandButton styleClass="search-submit" value="搜索"></h:commandButton>
 						</h:panelGroup>
-					    <h:panelGroup id="pgshoppingcart">
+					    <a4j:outputPanel id="pgshoppingcart">
 					    	<h:commandLink action="shoppingCart"><h:outputLabel value="购物车中有"/><h:outputLabel value="#{shopCart.cart.inventoryQuantityTotal}"></h:outputLabel><h:outputLabel value="件商品,合计金额:"/><h:outputLabel value="#{shopCart.cart.inventoryPriceTotal}"></h:outputLabel></h:commandLink><h:outputLink value=""><h:outputLabel value="去结算>"/></h:outputLink>
-					    </h:panelGroup>
+					    	<rich:toolTip followMouse="true" direction="top-right" showDelay="50" styleClass="tooltip" onmouseover="processFreshShoppingCartInfoBegin();return false;">
+					    			<h:outputLabel id="inventoryQuantityTotalIntt" value="#{shopCart.cart.inventoryQuantityTotal}"/>
+					    			<h:outputLabel id="inventoryPriceTotalIntt" value="#{shopCart.cart.inventoryPriceTotal}"/>
+					    	</rich:toolTip>
+					    </a4j:outputPanel>
 					    <h:panelGroup></h:panelGroup>
 						</h:panelGrid>
 					</div>
