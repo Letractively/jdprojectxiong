@@ -130,3 +130,59 @@ CREATE TABLE  `ejd`.`product` (
   `FIELD10` varchar(1),
   PRIMARY KEY  (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `ejd`.`order`;
+CREATE TABLE  `ejd`.`order` (
+  `ID` int(11) NOT NULL,
+  `ORDERID` varchar(20) NOT NULL,
+  `CUSTOMERID` int(11) NOT NULL,
+  `STATUS` varchar(1) default 'A',
+  `CONSIGNEENAME` varchar(100),
+  `CONSIGNEEMOBILE` varchar(30),
+  `CONSIGNEEPHONE` varchar(30),
+  `CONSIGNEEZIP` varchar(6),
+  `CONSIGNEEPROVINCE` varchar(50),
+  `CONSIGNEECITY` varchar(20),
+  `CONSIGNEECOUNTY` varchar(20),
+  `CONSIGNEEADDRESS` varchar(100),
+  `DELIVERYTYPE` varchar(2),
+  `DELIVERYCOST` double(10,2) default 0,
+  `PAYMENTTYPE` varchar(2),
+  `INVOICETYPE` varchar(2),
+  `INVOICECOMPANYNAME` varchar(100),
+  `INVOICECOMPANYADDRESS` varchar(100),
+  `INVOICECOMPANYPHONE` varchar(30),
+  `TAXACCOUNTS` varchar(30),
+  `BANKNAME` varchar(50),
+  `ACCOUNTNUMBER` varchar(30),
+  `INVOICEPOSTADDRESS` varchar(100),
+  `ORDERSENDSESSION` varchar(500),
+  `ORDERGENERATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `ORDERSENDTIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `COUPONSACCOUNT` varchar(10),
+  `COUPONSSCORE` double(10,2),
+  `TOTALLPRICE` double(10,2),
+  `NEEDPAYMENT` double(10,2),
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `ejd`.`orderdetail`;
+CREATE TABLE  `ejd`.`orderdetail` (
+  `ID` int(11) NOT NULL,
+  `ORDERID` int(11) NOT NULL,
+  `PRODUCTID` int(11) NOT NULL,
+  `CODE` varchar(20) NOT NULL,
+  `MANUFACTURERCODE` varchar(20) default NULL,
+  `BARCODE` varchar(50) default NULL,
+  `UNITID` int(11) NOT NULL,
+  `NAME` varchar(50) default NULL,
+  `DESCRIPTION` varchar(200) default NULL,
+  `PROVIDERID` int(11) NOT NULL,
+  `PRIMARYCATEGORYCODE` varchar(2) NOT NULL,
+  `SECONDCATEGORYCODE` varchar(2) NOT NULL,
+  `BRANDCODE` varchar(50),
+  `SALESPRICE` double(10,2) default 0,
+  `SALESQUANTITY` int(11),
+  `INTEGRATION` double(10,2) default 0,
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
