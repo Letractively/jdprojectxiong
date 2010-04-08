@@ -189,6 +189,20 @@ input, select, button, legend, a {
   	background-position : top left;
   	border:1px #d6d6d6 solid;
 }
+.panel-header-gray-border-yellow-bg{
+	top: 0px;
+  	left: 0px;
+  	padding:0px 0px 0px 0px;
+  	margin:0px 0px 0px 0px;
+  	font-size: 13px;
+  	font-weight:bold;
+  	line-height:26px;
+  	height:26px;
+  	TEXT-INDENT: 6px;
+  	background-position : top left;
+  	background:url(../css/images/icons/yellow-header-bg.gif) bottom left repeat-x; list-style-type:none;
+  	border:1px #d6d6d6 solid;
+}
 .panel-header-gray-border-main-pg-column-one{
 	width:10%;
 	text-align:left;
