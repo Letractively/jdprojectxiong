@@ -16,7 +16,6 @@ public class Stakeholder extends AbstractStakeholder implements
 	List<Person> conatctMans = new ArrayList<Person>();
 	List<Address> addresses = new ArrayList<Address>();
 	List<Bank> banks = new ArrayList<Bank>();
-	private Set orders;
 	// Constructors
 
 	/** default constructor */
@@ -63,12 +62,6 @@ public class Stakeholder extends AbstractStakeholder implements
 
 	public void setBanks(List<Bank> banks) {
 		this.banks = banks;
-	}
-	public Set getOrders() {
-		return orders;
-	}
-	public void setOrders(Set orders) {
-		this.orders = orders;
 	}
 
 }

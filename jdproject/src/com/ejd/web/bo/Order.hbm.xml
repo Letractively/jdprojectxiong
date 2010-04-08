@@ -85,11 +85,11 @@
         </property>
         <property name="orderSendTime" column="ORDERSENDTIME" type="timestamp">
         </property>
-        <property name="couponsAccount" type="java.lang.String">
-        	<column name="COUPONSACCOUNT" length="10" />
+        <property name="couponAccount" type="java.lang.String">
+        	<column name="COUPONACCOUNT" length="10" />
         </property> 
-        <property name="couponsScore" type="java.lang.Double">
-            <column name="COUPONSSCORE" precision="10" />
+        <property name="couponScore" type="java.lang.Double">
+            <column name="COUPONSCORE" precision="10" />
         </property>
         <property name="totallPrice" type="java.lang.Double">
             <column name="TOTALLPRICE" precision="10" />
