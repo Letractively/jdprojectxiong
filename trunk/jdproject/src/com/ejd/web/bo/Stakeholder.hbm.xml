@@ -103,17 +103,5 @@
         <index column="SORTORDER"></index>
         <one-to-many class="com.ejd.web.bo.Bank"/>
         </list>
-        <set 
-            name="orders" 
-            table="order"
-            lazy="false"
-            inverse="true"
-            cascade="all-delete-orphan"
-            sort="unsorted"
-            order-by="ORDERGENERATETIME ASC">
-        <key column="ORDERID">
-        </key>
-        <one-to-many class="com.ejd.web.bo.Order"/>
-        </set>
     </class>
 </hibernate-mapping>

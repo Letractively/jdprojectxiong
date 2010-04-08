@@ -157,10 +157,10 @@ CREATE TABLE  `ejd`.`order` (
   `ACCOUNTNUMBER` varchar(30),
   `INVOICEPOSTADDRESS` varchar(100),
   `ORDERSENDSESSION` varchar(500),
-  `ORDERGENERATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `ORDERSENDTIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `COUPONSACCOUNT` varchar(10),
-  `COUPONSSCORE` double(10,2),
+  `ORDERGENERATETIME` timestamp,
+  `ORDERSENDTIME` timestamp,
+  `COUPONACCOUNT` varchar(10),
+  `COUPONSCORE` double(10,2),
   `TOTALLPRICE` double(10,2),
   `NEEDPAYMENT` double(10,2),
   PRIMARY KEY  (`ID`)
@@ -184,5 +184,18 @@ CREATE TABLE  `ejd`.`orderdetail` (
   `SALESPRICE` double(10,2) default 0,
   `SALESQUANTITY` int(11),
   `INTEGRATION` double(10,2) default 0,
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `ejd`.`coupon`;
+CREATE TABLE  `ejd`.`coupon` (
+  `ID` int(11) NOT NULL,
+  `COUPONACCOUNT` varchar(20) NOT NULL,
+  `COUPONSCORE` double(10,2) default 0,
+  `STATUS` varchar(50),
+  `AVAILABLEDATE` timestamp,
+  `CREATEDATE` timestamp,
+  `CREATEBY` varchar(20),
+  `USERID` varchar(20),
   PRIMARY KEY  (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

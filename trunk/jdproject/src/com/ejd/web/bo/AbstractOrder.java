@@ -33,8 +33,9 @@ public class AbstractOrder extends java.lang.Object implements Serializable {
 	private String orderSendSession;
 	private java.sql.Timestamp orderGenerateTime;
 	private java.sql.Timestamp orderSendTime;
-	private String couponsAccount;
-	private Double couponsScore;
+	private String couponAccount;
+	private Double couponScore;
+	private Double integrationScore;
 	private Double totallPrice;
 	private Double needPayment;
 	private Set orderDetails = new HashSet();
@@ -194,17 +195,24 @@ public class AbstractOrder extends java.lang.Object implements Serializable {
 	public void setOrderSendTime(Timestamp orderSendTime) {
 		this.orderSendTime = orderSendTime;
 	}
-	public String getCouponsAccount() {
-		return couponsAccount;
+	public String getCouponAccount() {
+		return couponAccount;
 	}
-	public void setCouponsAccount(String couponsAccount) {
-		this.couponsAccount = couponsAccount;
+	public void setCouponAccount(String couponAccount) {
+		this.couponAccount = couponAccount;
 	}
-	public Double getCouponsScore() {
-		return couponsScore;
+	public Double getCouponScore() {
+		return couponScore;
 	}
-	public void setCouponsScore(Double couponsScore) {
-		this.couponsScore = couponsScore;
+	public void setCouponScore(Double couponScore) {
+		this.couponScore = couponScore;
+	}
+	
+	public Double getIntegrationScore() {
+		return integrationScore;
+	}
+	public void setIntegrationScore(Double integrationScore) {
+		this.integrationScore = integrationScore;
 	}
 	public Double getTotallPrice() {
 		return totallPrice;
