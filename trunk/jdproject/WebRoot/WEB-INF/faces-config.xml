@@ -1511,6 +1511,11 @@
 		<property-class>com.ejd.model.service.iface.IProductService</property-class>
 		<value>#{productService}</value>
 		</managed-property>
+		<managed-property>
+		<property-name>couponService</property-name>
+		<property-class>com.ejd.model.service.iface.ICouponService</property-class>
+		<value>#{couponService}</value>
+		</managed-property>
     </managed-bean>
     <managed-bean>
         <managed-bean-name>productInfo</managed-bean-name>

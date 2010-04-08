@@ -33,6 +33,8 @@
 				<value>com/ejd/web/bo/Person.hbm.xml</value>
 				<value>com/ejd/web/bo/Product.hbm.xml</value>
 				<value>com/ejd/web/bo/Order.hbm.xml</value>
+				<value>com/ejd/web/bo/OrderDetail.hbm.xml</value>
+				<value>com/ejd/web/bo/Coupon.hbm.xml</value>
 				<!-- <value>com/kuaican/web/bo/Customer.hbm.xml</value>
 				<value>com/kuaican/web/bo/Dish.hbm.xml</value>
 				<value>com/kuaican/web/bo/Orders.hbm.xml</value>
@@ -129,6 +131,16 @@
     <bean id="loginService" class="com.ejd.model.service.impl.LoginServiceImpl" scope="singleton" depends-on="productDao">
 		<property name="loginDao">
 			<ref bean="loginDao" />
+		</property>
+	</bean>
+	<bean id="couponDao" class="com.ejd.data.dao.impl.CouponDaoImpl" scope="singleton">
+    	<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+    </bean>
+    <bean id="couponService" class="com.ejd.model.service.impl.CouponServiceImpl" scope="singleton" depends-on="couponDao">
+		<property name="couponDao">
+			<ref bean="couponDao" />
 		</property>
 	</bean>
 	<bean id="productBrandUtil" class="com.ejd.utils.ProductBrandUtil" scope="singleton">
