@@ -1,3 +1,4 @@
+create database ejd default character set utf8;
 DROP TABLE IF EXISTS `ejd`.`PRODUCTBRAND`;
 CREATE TABLE  `ejd`.`PRODUCTBRAND` (
   `ID` int(11) NOT NULL,
