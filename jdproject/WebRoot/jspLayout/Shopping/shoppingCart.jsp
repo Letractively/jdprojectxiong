@@ -48,8 +48,8 @@ xmlns:rich="http://richfaces.org/rich">
 							<h:commandLink action="#{productGlobalNavigation.seeProductDetail}" immediate="true"><h:outputText value="#{inventory.name}"></h:outputText><f:param name="productid" value="#{inventory.id}"></f:param></h:commandLink>
 						</rich:column>
 						<rich:column sortable="false" style="width:8%;" label="销售价格">
-							<f:facet name="header"><h:outputText value="销售价格"/></f:facet>
-							<h:outputText value="#{inventory.salesPrice}"></h:outputText>
+							<f:facet name="header"><h:outputText value="销售价格(元)"/></f:facet>
+							<h:outputText value="#{inventory.salesPrice}"><f:convertNumber pattern="###,##0.00"/></h:outputText>
 						</rich:column>
 						<rich:column sortable="false" style="width:8%;" label="赠送积分">
 							<f:facet name="header"><h:outputText value="赠送积分"/></f:facet>
@@ -57,7 +57,7 @@ xmlns:rich="http://richfaces.org/rich">
 						</rich:column>
 						<rich:column sortable="false" style="width:7%;" headerClass="shopping-cart-table-column-header" label="购买数量">
 							<f:facet name="header"><h:outputText value="购买数量"/></f:facet>
-							<rich:inputNumberSpinner value="#{inventory.salesQuantity}" step="1" minValue="1" maxValue="300" inputSize="1" style="align:center"><a4j:support event="onchange" action="#{shopCart.recalCulateIventory}" oncomplete="processFreshShoppingCartInfo();" reRender="shoppingCartTable"/><f:convertNumber pattern="0" /></rich:inputNumberSpinner>
+							<rich:inputNumberSpinner value="#{inventory.salesQuantity}" step="1" minValue="1" maxValue="300" inputSize="1" style="align:center"><a4j:support event="onchange" action="#{shopCart.recalCulateIventory}" oncomplete="processFreshShoppingCartInfo();" reRender="shoppingCartTable,inventoryPriceTotal,needPaymentAll"/><f:convertNumber pattern="0" /></rich:inputNumberSpinner>
 						</rich:column>
 						<rich:column sortable="false" footerClass="align-right" style="width:7%;" label="商品状态">
 							<f:facet name="header"><h:outputText value="商品状态"/></f:facet>
@@ -66,9 +66,9 @@ xmlns:rich="http://richfaces.org/rich">
 							<f:facet name="footer"><h:outputText id="allToatl" value="金额合计:" style="font-weight:bold;"/></f:facet>
 						</rich:column>
 						<rich:column sortable="false" style="width:7%;" selfSorted="false" footerClass="align-center" label="金额小计">
-							<f:facet name="header"><h:outputText value="金额小计"/></f:facet>
-							<h:outputText id="subTotal" value="#{inventory.salesQuantity * inventory.salesPrice}"></h:outputText>
-							<f:facet name="footer"><h:outputText value="#{shopCart.cart.inventoryPriceTotal}"/></f:facet>
+							<f:facet name="header"><h:outputText value="金额小计(元)"/></f:facet>
+							<h:outputText id="subTotal" value="#{inventory.salesQuantity * inventory.salesPrice}"><f:convertNumber pattern="###,##0.00"/></h:outputText>
+							<f:facet name="footer"><h:outputText value="#{shopCart.cart.inventoryPriceTotal}"><f:convertNumber pattern="###,##0.00"/></h:outputText></f:facet>
 						</rich:column>
 						<rich:column sortable="false" style="width:14%;" selfSorted="false" label="单项操作">
 							<f:facet name="header"><h:outputText value="单项操作"/></f:facet>
@@ -82,14 +82,14 @@ xmlns:rich="http://richfaces.org/rich">
 							<h:outputText value="我要使用优惠券及积分"></h:outputText>
 						</h:panelGroup>	
 					</f:facet>
-					<h:panelGrid columns="2">
+					<h:panelGrid columns="2" columnClasses="width-eighty,width-twenty">
 						<h:panelGrid columns="3">
 							<h:outputText value="优惠券号码"></h:outputText><h:inputText id="shoppingCartCouponsAccount" value="#{shopCart.couponAccount}"></h:inputText><h:panelGroup><h:commandLink action="#{shopCart.selectOneCoupon}" value="使用优惠券" disabled="#{empty shopCart.cart.inventory}" styleClass="button-default-style"><a4j:support event="onclick" reRender="couponErrorMessage"></a4j:support></h:commandLink><h:graphicImage id="couponCheckImage" value="/css/images/icons/IconYes.gif" rendered="#{shopCart.couponChecked}"></h:graphicImage><h:outputText value="本张券面额:#{shopCart.couponScore}元" rendered="#{shopCart.couponChecked}"></h:outputText><h:outputText id="couponErrorMessage" value="#{shopCart.couponErrorMessage}"/></h:panelGroup>
-							<h:outputText value="使用积分值"></h:outputText><rich:inputNumberSpinner id="shoppingCartIntegrationScore" value="#{shopCart.integrationScore}" minValue="0" maxValue="#{currentUser.userInfo.integration}" step="1" disabled="#{(empty shopCart.cart.inventory) or !(shopCart.integrationChecked)}" immediate="true"><f:convertNumber pattern="0" /><a4j:support event="onchange" reRender="messageOfUseIntegration"></a4j:support></rich:inputNumberSpinner><h:panelGroup><h:commandLink action="#{shopCart.useIntegrationLink}" value="使用积分" rendered="#{!(shopCart.integrationChecked)}" disabled="#{empty shopCart.cart.inventory}" styleClass="button-default-style"></h:commandLink><h:commandLink action="#{shopCart.notUseIntegrationLink}" value="不使用积分" rendered="#{shopCart.integrationChecked}" styleClass="button-default-style"></h:commandLink><h:graphicImage id="integrationCheckImage" value="/css/images/icons/IconYes.gif" rendered="#{shopCart.integrationChecked}"></h:graphicImage><h:outputText id="messageOfUseIntegration" value="您能使用的积分范围是0-#{currentUser.userInfo.integration},当前已使用等值金额为:#{shopCart.integrationScore/10}" rendered="#{shopCart.integrationChecked}"></h:outputText></h:panelGroup>
+							<h:outputText value="使用积分值"></h:outputText><rich:inputNumberSpinner id="shoppingCartIntegrationScore" value="#{shopCart.integrationScore}" minValue="0" maxValue="#{currentUser.userInfo.integration}" step="1" disabled="#{(empty shopCart.cart.inventory) or !(shopCart.integrationChecked)}" immediate="true"><f:convertNumber pattern="0" /><a4j:support event="onchange" reRender="messageOfUseIntegration,needPaymentAll"></a4j:support></rich:inputNumberSpinner><h:panelGroup><h:commandLink action="#{shopCart.useIntegrationLink}" value="使用积分" rendered="#{!(shopCart.integrationChecked)}" disabled="#{empty shopCart.cart.inventory}" styleClass="button-default-style"></h:commandLink><h:commandLink action="#{shopCart.notUseIntegrationLink}" value="不使用积分" rendered="#{shopCart.integrationChecked}" styleClass="button-default-style"></h:commandLink><h:graphicImage id="integrationCheckImage" value="/css/images/icons/IconYes.gif" rendered="#{shopCart.integrationChecked}"></h:graphicImage><h:outputText id="messageOfUseIntegration" value="您能使用的积分范围是0-#{currentUser.userInfo.integration},当前已使用等值金额为:#{shopCart.integrationScore/10}" rendered="#{shopCart.integrationChecked}"></h:outputText></h:panelGroup>
 						</h:panelGrid>
 						<h:panelGrid columns="2">
-							<h:outputText value="商品总额"></h:outputText><h:outputText value="#{shopCart.cart.inventoryPriceTotal}"/>
-							<h:outputText value="商品总额"></h:outputText><h:outputText value="#{shopCart.cart.inventoryPriceTotal}"/>
+							<h:outputText value="商品总额(元)"></h:outputText><h:outputText id="inventoryPriceTotal" value="#{shopCart.cart.inventoryPriceTotal}"><f:convertNumber pattern="###,##0.00"/></h:outputText>
+							<h:outputText value="应付总额(元)"></h:outputText><h:outputText id="needPaymentAll" value="#{shopCart.needPayment}"><f:convertNumber pattern="###,##0.00"/></h:outputText>
 						</h:panelGrid>
 					</h:panelGrid>
 				</rich:panel>
