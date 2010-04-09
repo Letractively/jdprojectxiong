@@ -1,5 +1,6 @@
 package com.ejd.web.vo.shopcart;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import net.sf.cglib.beans.BeanCopier;
@@ -92,6 +93,13 @@ public class ShopCartBean extends ShopCartBaseBean {
 
 	public void setIntegrationErrorMessage(String integrationErrorMessage) {
 		this.integrationErrorMessage = integrationErrorMessage;
+	}
+	
+	public Double getNeedPayment(){
+		double couponScore = (null == this.getCouponScore())?0.0:(new Double(this.getCouponScore())).doubleValue();
+		double integrationScore = (null == this.getIntegrationScore())?0.0:(new Double(this.getIntegrationScore())).doubleValue() / 10;
+		double result = this.getCart().getInventoryPriceTotal() - couponScore - integrationScore;
+		return new Double(result);
 	}
 
 	public ShopCartBean() {
@@ -208,31 +216,37 @@ public class ShopCartBean extends ShopCartBaseBean {
 		coupon = this.getCouponService().getCouponByAccount(this.getCouponAccount());
 		if (null == coupon) {
 			this.setCouponChecked(false);
+			this.setCouponScore(null);
 			this.setCouponErrorMessage("该优惠券不存在!");
 			return null;
 		} else {
 			if (null == coupon.getStatus() || "".equals(coupon.getStatus())) {
 				this.setCouponChecked(false);
+				this.setCouponScore(null);
 				this.setCouponErrorMessage("该优惠券状态不确定,暂不能使用!");
 				return null;
 			}
 			if ("U".equals(coupon.getStatus())) {
 				this.setCouponChecked(false);
+				this.setCouponScore(null);
 				this.setCouponErrorMessage("该优惠券已使用!");
 				return null;
 			}
 			if ("D".equals(coupon.getStatus())) {
 				this.setCouponChecked(false);
+				this.setCouponScore(null);
 				this.setCouponErrorMessage("该优惠券已弃用!");
 				return null;
 			}
 			if (!("A".equals(coupon.getStatus()))) {
 				this.setCouponChecked(false);
+				this.setCouponScore(null);
 				this.setCouponErrorMessage("该优惠券非激活状态,不能使用!");
 				return null;
 			} else {
 				if (coupon.getAvailableDate().before(DateTimeUtil.getCurrentTimestamp())) {
 					this.setCouponChecked(false);
+					this.setCouponScore(null);
 					this.setCouponErrorMessage("该优惠券已过期!");
 					return null;
 				} else {
