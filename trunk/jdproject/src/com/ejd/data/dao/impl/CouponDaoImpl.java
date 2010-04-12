@@ -85,7 +85,7 @@ public class CouponDaoImpl extends HibernateDaoSupport implements ICouponDao {
 	public Coupon getCouponById(Integer id) {
 		// TODO Auto-generated method stub
 		try {
-			Coupon coupon =(Coupon)this.getHibernateTemplate().get(Productunit.class, id);
+			Coupon coupon =(Coupon)this.getHibernateTemplate().get(Coupon.class, id);
 			return coupon;
 		} catch (Exception e) {
 			logger.error(e);
