@@ -1,7 +1,12 @@
 package com.ejd.data.dao.impl;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.List;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.ejd.data.dao.iface.IConsigneeDao;
@@ -34,9 +39,23 @@ public class ConsigneeDaoImpl extends HibernateDaoSupport implements IConsigneeD
         }
 	}
 
-	public boolean delConsigneeByStakeholderId(Integer stakeholderId) {
+	public boolean delConsigneeByStakeholderId(Integer stakeholderId)  {
 		// TODO Auto-generated method stub
-		return false;
+		try{
+			SessionFactory sf =(SessionFactory) this.getSessionFactory();
+			Session session = sf.openSession();
+			Transaction tx = session.beginTransaction();
+			Connection con=session.connection();
+			PreparedStatement stmt=con.prepareStatement("delete CONSIGNEE where STAKEHOLDERID = " + stakeholderId );
+			stmt.executeQuery();
+			tx.commit();
+			return true;
+		}catch (Exception e) {
+			logger.error(e);
+			return false;
+		}finally {
+			
+		}
 	}
 
 	public List<Consignee> getAllConsignee() {
