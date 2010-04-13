@@ -10,18 +10,18 @@ xmlns:rich="http://richfaces.org/rich">
 <f:view>
 <html>
 	<head>
-    <title>购物车</title>
+    <title>定单信息确认</title>
     </head>
     <body>
     	<ui:composition template="./shoppingTemplate.jsp">
     		
-    		<ui:define id="productStepDisplayOfShoppingCart" name="productStepDisplay">
+    		<ui:define id="productStepDisplayOfGenerateOrder" name="productStepDisplay">
     			<a4j:outputPanel style="font-size:12px;">
-    				<h:outputText value="当前位置 > "></h:outputText><h:outputLink value="${facesContext.externalContext.requestContextPath}/jspLayout/product/productMain.jsf"><h:outputText value="首页"/></h:outputLink><h:outputText value=">我的购物车"></h:outputText>
+    				
     			</a4j:outputPanel>
 			</ui:define>
     		<ui:define id="contentHeader" name="contentHeader">
-    				<h:outputText value="我的购物车"></h:outputText>
+    				<h:outputText value="核对订单并确认"></h:outputText>
 			</ui:define>
 			<ui:define id="shoppingCartContent" name="content">
 			<h:form>
@@ -31,50 +31,24 @@ xmlns:rich="http://richfaces.org/rich">
 						<h:panelGrid columns="3" style="align:left"  cellspacing="0" cellpadding="0" columnClasses="common-panel-grid-header-left,common-panel-grid-header-center,common-panel-grid-header-right">
 								<h:outputText value="" style="width:4px"></h:outputText>
 								<h:panelGroup>
-									<h:outputText value="我已挑选的商品"></h:outputText>
+									<h:outputText value="请确认以下信息，然后提交订单"></h:outputText>
 								</h:panelGroup>
 								<h:outputText value="" style="width:4px"></h:outputText>
 							</h:panelGrid>	
 					</f:facet>
-					<a4j:outputPanel rendered="#{empty shopCart.cart.inventory}" styleClass="orange-text lh3 f14"><h:outputText value="您还没有挑选商品，赶快选择心爱的商品吧！" style="padding-left:300px;padding-right:300px;"></h:outputText></a4j:outputPanel>
-					<rich:dataTable id="shoppingCartTable" value="#{shopCart.cart.inventory}" var="inventory" frame="box" columns="9" headerClass="shopping-cart-table-header" rowClasses="table-row-odd,table-row-even" columnClasses="shopping-cart-table-column1,shopping-cart-table-column2,shopping-cart-table-column3,shopping-cart-table-column4,shopping-cart-table-column5,shopping-cart-table-column6,shopping-cart-table-column7,shopping-cart-table-column8" cellpadding="1" cellspacing="1" border="0" sortMode="single" width="100%">
-						<rich:column sortable="false" style="width:5%;" label="选择">
-							<f:facet name="header"><h:outputText value="选择"/></f:facet>
-							<h:selectBooleanCheckbox value="#{inventory.selected}"><a4j:support event="onclick" reRender="deleteAllBtn"/></h:selectBooleanCheckbox>
-							<f:facet name="footer"><h:commandLink id="deleteAllBtn" action="#{shopCart.removeMulSelectedFromShoppingCart}" immediate="true" value="删除" styleClass="button-delete-all-style" disabled="#{!(shopCart.cart.haveSelected)}" onclick="return confirm('确认删除购物车中选中的商品吗？');"><a4j:support event="onclick" reRender="shoppingCartTable,goNextStepBtn,clearShoppingCartBtn"></a4j:support></h:commandLink></f:facet>
-						</rich:column>
-						<rich:column sortable="false" style="width:42%;" label="商品名称">
-							<f:facet name="header"><h:outputText value="商品名称"/></f:facet>
-							<h:commandLink action="#{productGlobalNavigation.seeProductDetail}" immediate="true"><h:outputText value="#{inventory.name}"></h:outputText><f:param name="productid" value="#{inventory.id}"></f:param></h:commandLink>
-						</rich:column>
-						<rich:column sortable="false" style="width:8%;" label="销售价格">
-							<f:facet name="header"><h:outputText value="销售价格(元)"/></f:facet>
-							<h:outputText value="#{inventory.salesPrice}"><f:convertNumber pattern="###,##0.00"/></h:outputText>
-						</rich:column>
-						<rich:column sortable="false" style="width:8%;" label="赠送积分">
-							<f:facet name="header"><h:outputText value="赠送积分"/></f:facet>
-							<h:outputText value="#{inventory.integration}"></h:outputText>
-						</rich:column>
-						<rich:column sortable="false" style="width:7%;" headerClass="shopping-cart-table-column-header" label="购买数量">
-							<f:facet name="header"><h:outputText value="购买数量"/></f:facet>
-							<rich:inputNumberSpinner value="#{inventory.salesQuantity}" step="1" minValue="1" maxValue="300" inputSize="1" style="align:center"><a4j:support event="onchange" action="#{shopCart.recalCulateIventory}" oncomplete="processFreshShoppingCartInfo();" reRender="shoppingCartTable,inventoryPriceTotal,needPaymentAll"/><f:convertNumber pattern="0" /></rich:inputNumberSpinner>
-						</rich:column>
-						<rich:column sortable="false" footerClass="align-right" style="width:7%;" label="商品状态">
-							<f:facet name="header"><h:outputText value="商品状态"/></f:facet>
-							<h:outputText value="现货" rendered="#{inventory.currentNumber > 0}"></h:outputText>
-							<h:outputText value="需预定" rendered="#{!(inventory.currentNumber > 0)}"></h:outputText>
-							<f:facet name="footer"><h:outputText id="allToatl" value="金额合计:" style="font-weight:bold;"/></f:facet>
-						</rich:column>
-						<rich:column sortable="false" style="width:7%;" selfSorted="false" footerClass="align-center" label="金额小计">
-							<f:facet name="header"><h:outputText value="金额小计(元)"/></f:facet>
-							<h:outputText id="subTotal" value="#{inventory.salesQuantity * inventory.salesPrice}"><f:convertNumber pattern="###,##0.00"/></h:outputText>
-							<f:facet name="footer"><h:outputText value="#{shopCart.cart.inventoryPriceTotal}"><f:convertNumber pattern="###,##0.00"/></h:outputText></f:facet>
-						</rich:column>
-						<rich:column sortable="false" style="width:14%;" selfSorted="false" label="单项操作">
-							<f:facet name="header"><h:outputText value="单项操作"/></f:facet>
-							<h:panelGroup><h:commandLink action="#{shopCart.removeOneSelectedFromShoppingCart}" immediate="true" value="删除" styleClass="button-default-style" onclick="javascript:return confirm('确认删除购物车中该商品吗？');"><a4j:support event="onclick" reRender="shoppingCartTable,goNextStepBtn,clearShoppingCartBtn"></a4j:support><f:param name="selectedProductId" value="#{inventory.id}"/></h:commandLink><a4j:commandLink value="移入收藏夹" styleClass="button-default-style"/></h:panelGroup>
-						</rich:column>
-					</rich:dataTable>
+					<a4j:outputPanel id="viewAddress">
+						<h:panelGrid columns="2">
+							<f:facet name="header"><h:panelGroup><h:outputText value="收货人信息"></h:outputText><h:commandLink><h:outputText value="[修改]"/></h:commandLink><h:commandLink><h:outputText value="[选择其它]"/></h:commandLink></h:panelGroup></f:facet>
+							<h:outputText value="收货联系人"></h:outputText><h:outputText value="#{generateOrderPage.consigneeName}"></h:outputText>
+							<h:outputText value="手机"></h:outputText><h:outputText value="#{generateOrderPage.consigneeMobile}"></h:outputText>
+							<h:outputText value="联系电话"></h:outputText><h:outputText value="#{generateOrderPage.consigneePhone}"></h:outputText>
+							<h:outputText value="地区"></h:outputText><h:outputText value="#{generateOrderPage.consigneeProvince}"></h:outputText>
+							<h:outputText value="联系地址"></h:outputText><h:outputText value="#{generateOrderPage.consigneeAddress}"></h:outputText>
+							<h:outputText value="邮编"></h:outputText><h:outputText value="#{generateOrderPage.consigneeZip}"></h:outputText>
+						</h:panelGrid>
+					</a4j:outputPanel>
+					<a4j:outputPanel id="editAddress">
+					</a4j:outputPanel>
 				</rich:panel>
 				<rich:panel headerClass="panel-header-gray-border-yellow-bg" styleClass="panel-none-border" bodyClass="panel-documents-gray-border-none-padding">
 					<f:facet name="header">
