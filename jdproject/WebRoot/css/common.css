@@ -2176,6 +2176,17 @@ background-color:#ffffff;
 	padding-top: 1px; 
 	padding-bottom: 1px; 
 	}
+.button-delete-all-style {
+	BORDER-RIGHT:#f6f6f6 2px solid;
+	BORDER-TOP: #f9f9f9 2px solid;
+	BORDER-LEFT: #f9f9f9 2px solid;
+	BORDER-BOTTOM: #f9f9f9 2px solid;
+	background-color: #f9f9f9;
+	padding-left: 2px; 
+	padding-right: 2px; 
+	padding-top: 1px; 
+	padding-bottom: 1px; 
+	}
 .ButtonDefault  {
 	margin:0px 16px 0px 0px;
 	font-size: 12px; 
