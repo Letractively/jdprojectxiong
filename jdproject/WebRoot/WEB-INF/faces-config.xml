@@ -1537,6 +1537,11 @@
 		<value>#{productService}</value>
 		</managed-property>
     </managed-bean>
+    <managed-bean> 
+      <managed-bean-name>generateOrderPage</managed-bean-name>
+      <managed-bean-class>com.ejd.web.vo.shopcart.GenerateOrderPageBean</managed-bean-class> 
+      <managed-bean-scope>session</managed-bean-scope> 
+    </managed-bean>
     <!-- start help center  -->
     <managed-bean>
 		<managed-bean-name>helpPanelMenuState</managed-bean-name>
