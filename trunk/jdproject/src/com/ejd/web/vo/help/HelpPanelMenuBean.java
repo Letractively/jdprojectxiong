@@ -19,6 +19,8 @@ public class HelpPanelMenuBean {
 	
 	public void select (ActionEvent event) {  
 		menuState.setSelectedMenuItem(event.getComponent().getId());  
+		System.out.println(event.getComponent().getId());
+		System.out.println(event.getComponent().getAttributes().get("value"));
 	}
 
 }
