@@ -22,7 +22,9 @@ xmlns:rich="http://richfaces.org/rich">
     			<h:outputText value=""></h:outputText>
 			</ui:define>
 			<ui:define id="kitchenApplianceContent" name="content">
-				<h:outputText value="helpcontent"></h:outputText>
+				<a4j:region id="maiHelpRegion">
+					<a4j:include viewId="/richfaces/include/examples/wstep1.xhtml" />
+				</a4j:region>
     		</ui:define>
     		<ui:define id="kitchenApplianceRight" name="right">
     			<h:outputText value=""></h:outputText>
