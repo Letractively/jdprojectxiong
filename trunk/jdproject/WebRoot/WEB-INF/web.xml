@@ -86,7 +86,15 @@
   <listener>
     <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
   </listener>
-  
+  <filter> 
+	<filter-name>RightFilter</filter-name> 
+	<filter-class>com.ejd.web.vo.genl.RightFilter</filter-class> 
+  </filter> 
+	<filter-mapping> 
+	<filter-name>RightFilter</filter-name> 
+	<url-pattern>/jspLayout/manage/*</url-pattern>
+	<url-pattern>/jspLayout/Shopping/*</url-pattern> 
+	</filter-mapping>
   <!-- Faces Servlet -->
   <servlet>
     <servlet-name>Faces Servlet</servlet-name>
@@ -149,6 +157,7 @@
   <session-config>
     <session-timeout>2880</session-timeout>
   </session-config>
+  	  
    <!-- 400错误 请求无效 -->
     <error-page>
         <error-code>400</error-code>
