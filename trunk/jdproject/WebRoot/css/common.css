@@ -1501,7 +1501,7 @@ div.reviews{margin:5px 0}
 .rich-menu-separator{
 	font-size:0;
 	border-top:1px solid;
-	margin:2px 0 2px 24px;
+	margin:2px 0 2px 0px;
 	cursor:default;}
 .rich-menu-item{
 	padding:1px 35px 1px 1px;
@@ -1909,52 +1909,56 @@ background-color:#ffffff;
   padding-bottom: 1px; 
 }
 .rich-pmenu {
-			overflow: hidden;
-			padding-right: 0px;
-			font-color: #2c629e;
+	padding:0px 0px 0px 0px;
+  	margin:0px 0px 0px 0px;
+	overflow: hidden;
+	text-align:left;
+	font-color: #5d5d5d;
 }
 .rich-pmenu-top-group {
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
-	height: 28px;
-	BORDER-TOP: #a8d0f4 1px solid; 
-  	BACKGROUND: #ecf5fc; 
-  	BORDER-BOTTOM: #dff3fe 1px solid;
+	height: 23px;
+	BORDER-TOP: #a8d0f4 0px solid; 
+  	BACKGROUND: url(../css/images/icons/title_bg.gif) repeat-x; WIDTH: 100%; HEIGHT: 23px; 
+  	BORDER-BOTTOM: #dff3fe 0px solid;
 	background-repeat: repeat-x;
-	background-position: left top;
+	background-position: left top;  
 	cursor: pointer;
 }
 .rich-pmenu-disabled-element{
 		BACKGROUND: red;
 	}
 .rich-pmenu-hovered-element{
-		color: #2c629e;
-		background: #ecf5fc;
+		font-weight:bolder;
+		BACKGROUND: url(../css/images/icons/title_bg.gif) repeat-x; WIDTH: 100%; HEIGHT: 23px;
 	}
 .rich-pmenu-top-group-self-icon{
 	
 	}
 .rich-pmenu-top-group-self-label{
-		font-weight:bold;
+		font-weight:bolder;
 	}
 .rich-pmenu-group{
-		color: #2c629e;
+		color: #5d5d5d;
 	
 	}
 .rich-pmenu-group-self-icon{
 	
 	}
 .rich-pmenu-group-self-label{
-		font-weight:bold;
+	color:#5d5d5d;
+	font-size:12px;
+	font-weight:bolder;
 	}
 .rich-pmenu-item{
+	height: 23px;
 	}
 .rich-pmenu-item-icon{
 	}
 .rich-pmenu-item-label{
 	}
 .rich-pmenu-item-selected{
-	color: #ffffff;
 	}
 /* this is for search head panelgrid*/
 .header-search-panel-grid-one{
