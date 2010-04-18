@@ -14,19 +14,19 @@ xmlns:rich="http://richfaces.org/rich">
     </head>
     <body>
     	<ui:composition template="./helpTemplate.jsp">
-    		<ui:define id="kitchenApplianceLeft" name="left">
+    		<ui:define id="helpLeft" name="left">
     			<ui:include id="kitchenApplianceLeftInclude" src="./navigationHelpLeft.jsp">
     			</ui:include>
     		</ui:define>
     		<ui:define id="contentHeader" name="contentHeader">
     			<h:outputText value=""></h:outputText>
 			</ui:define>
-			<ui:define id="kitchenApplianceContent" name="content">
+			<ui:define id="helpContent" name="content">
 				<a4j:region id="maiHelpRegion">
-					<a4j:include viewId="/richfaces/include/examples/wstep1.xhtml" />
+					<a4j:include viewId="/jspLayout/help/subHelp/#{helpPanelMenu.menuState.selectedMenuItemValue}" />
 				</a4j:region>
     		</ui:define>
-    		<ui:define id="kitchenApplianceRight" name="right">
+    		<ui:define id="helpRight" name="right">
     			<h:outputText value=""></h:outputText>
     		</ui:define>
     	</ui:composition>

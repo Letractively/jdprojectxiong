@@ -15,7 +15,7 @@ xmlns:rich="http://richfaces.org/rich">
 				<h:panelGrid columns="3" style="align:left"  cellspacing="0" cellpadding="0" columnClasses="common-panel-grid-header-left,common-panel-grid-header-center,common-panel-grid-header-right">
 					<h:outputText value="" style="width:4px"></h:outputText>
 						<h:panelGroup>
-							<h:outputText value="帮助中心"></h:outputText>
+							<h:outputText value="帮助中心" styleClass="header-text-style"></h:outputText>
 						</h:panelGroup>
 					<h:outputText value="" style="width:4px"></h:outputText>
 				</h:panelGrid>	
@@ -30,22 +30,22 @@ xmlns:rich="http://richfaces.org/rich">
 			   <rich:panelMenuGroup label="新手上路" id="group1" expanded="true">  
 			     <rich:panelMenuItem label="新用户注册" id="group1_item1" 
 			         actionListener="#{helpPanelMenu.select}"  
-			         action="/select.xhtml"  
-			         mode="ajax" value="111"/>  
+			         action="newCustomerRegister"  
+			         mode="server" value="newCustomerRegister.jsp" immediate="true" reRender="maiHelpRegion"/>  
 			     <rich:panelMenuItem label="订购流程" id="group1_item2"   
 			         actionListener="#{helpPanelMenu.select}"  
-			         action="/select.xhtml"  
-			         mode="ajax" value="222"/>  
+			         action="orderFlow"  
+			         mode="server" value="orderFlow.jsp" immediate="true" reRender="maiHelpRegion"/>  
 			     <rich:panelMenuItem label="商品缺货" id="group1_item3"   
 			         actionListener="#{helpPanelMenu.select}"  
-			         action="/select.xhtml"  
-			         mode="ajax" value="333"/>  
+			         action="shortageOfGoods"  
+			         mode="server" value="shortageOfGoods.jsp" immediate="true" reRender="maiHelpRegion"/>  
 			    </rich:panelMenuGroup>  
 			    <rich:panelMenuGroup label="帐户及定单信息" id="group2" expanded="true">  
 			        <rich:panelMenuItem label="我的助手" id="group2_item1"   
 			         actionListener="#{helpPanelMenu.select}"  
-			         action="/select.xhtml"  
-			         mode="ajax"/>  
+			         action="myAssistant"  
+			         mode="ajax" value="myAssistant.jsp" immediate="true" reRender="mainHelpRegion"/>  
 			     <rich:panelMenuItem label="忘记密码" id="group2_item2"   
 			         actionListener="#{helpPanelMenu.select}"  
 			         action="/select.xhtml"  
