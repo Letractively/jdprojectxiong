@@ -43,7 +43,7 @@ public class RightFilter implements Filter {
 			currentUser.setComeFrom(SpringFacesUtil.getViewIdStr());
 			result = "customerLogin";
 		}*/
-		if(uri.startsWith("/jspLayout/manage")) {
+		if (uri.startsWith("/jspLayout/manage")) {
 			if(null == currentUser || null == currentUser.getUserInfo() || "M".equalsIgnoreCase(currentUser.getUserInfo().getType())) {
 				request.setAttribute("errormessage","您没有这个权限,您可尝试重新登陆!");
 				request.getRequestDispatcher("/jspLayout/common/customerLogin.jsf").forward(sreq,sres);
@@ -51,13 +51,17 @@ public class RightFilter implements Filter {
 			} 
 		} 
 		//判断manage级别网页的浏览权限 
-		if(uri.startsWith("/jspLayout/Shopping/generateOrder.jsf")) {
+		if (uri.startsWith("/jspLayout/Shopping/generateOrder.jsf")) {
 			if (null == currentUser || null == currentUser.getUserInfo()) {
 				request.setAttribute("errormessage","您没有这个权限,您可尝试重新登陆!");
 				request.getRequestDispatcher("/jspLayout/common/customerLogin.jsf").forward(sreq,sres);
 				return;
 			}
-		} 
+		}
+		if (uri.startsWith("/jspLayout/help/subHelp")) {
+			request.getRequestDispatcher("/jspLayout/help/mainHelp.jsf").forward(sreq,sres);
+			return;
+		}
 		request.getRequestDispatcher(uri).forward(sreq,sres);
 	}
 	//下面还可以添加其他的用户权限，省去。 
