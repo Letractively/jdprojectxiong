@@ -188,7 +188,7 @@ xmlns:c="http://java.sun.com/jstl/core">
 							<tr>
 							<td id="buyitem" class="fc"><a class="" id="Buy" href="http://hub.shop.ebay.com/">Buy</a></td>
 							<td id="sellitem" class="nc"><a class="" id="Sell" href="http://sell.ebay.com/sell">Sell</a></td>
-							<td id="mycenteritem" class="nc"><a class="" id="ManageCenter" href="${facesContext.externalContext.requestContextPath}/jspLayout/customer/customerMain.jsf" rel="nofollow">管理中心</a></td>
+							<td id="mycenteritem" class="nc"><a class="" id="ManageCenter" href="${facesContext.externalContext.requestContextPath}/jspLayout/customer/mainCustomer.jsf" rel="nofollow">管理中心</a></td>
 							<td id="communityitem" class="nc"><a id="Community" href="http://hub.ebay.com/community">Community</a></td>
 							<td id="helpitem" class="lc"><a id="Help" href="${facesContext.externalContext.requestContextPath}/jspLayout/help/mainHelp.jsf">帮助中心</a></td>
 							</tr>
