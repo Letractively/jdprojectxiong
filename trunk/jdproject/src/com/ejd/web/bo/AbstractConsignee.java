@@ -3,6 +3,7 @@ package com.ejd.web.bo;
 public class AbstractConsignee extends java.lang.Object implements java.io.Serializable{
 	private Integer id;
 	private Integer stakeholderId;
+	private String shortName;
 	private String consigneeName;
 	private String consigneeMobile;
 	private String consigneePhone;
@@ -11,7 +12,7 @@ public class AbstractConsignee extends java.lang.Object implements java.io.Seria
 	private String consigneeCity;
 	private String consigneeCounty;
 	private String consigneeAddress;
-
+	private String remark;
 	public AbstractConsignee(){
 		
 	}
@@ -30,6 +31,14 @@ public class AbstractConsignee extends java.lang.Object implements java.io.Seria
 
 	public void setStakeholderId(Integer stakeholderId) {
 		this.stakeholderId = stakeholderId;
+	}
+
+	public String getShortName() {
+		return shortName;
+	}
+
+	public void setShortName(String shortName) {
+		this.shortName = shortName;
 	}
 
 	public String getConsigneeName() {
@@ -94,6 +103,14 @@ public class AbstractConsignee extends java.lang.Object implements java.io.Seria
 
 	public void setConsigneeAddress(String consigneeAddress) {
 		this.consigneeAddress = consigneeAddress;
+	}
+
+	public String getRemark() {
+		return remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
 	}
 	
 }
