@@ -93,7 +93,8 @@
 	<filter-mapping> 
 	<filter-name>RightFilter</filter-name> 
 	<url-pattern>/jspLayout/manage/*</url-pattern>
-	<url-pattern>/jspLayout/Shopping/*</url-pattern> 
+	<url-pattern>/jspLayout/Shopping/*</url-pattern>
+	<url-pattern>/jspLayout/help/subHelp/*</url-pattern>
 	</filter-mapping>
   <!-- Faces Servlet -->
   <servlet>

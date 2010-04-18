@@ -1547,11 +1547,16 @@
 		<managed-bean-name>helpPanelMenuState</managed-bean-name>
 		<managed-bean-class>com.ejd.web.vo.help.HelpPanelMenuStatusBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+		<property-name>selectedMenuItemValue</property-name>
+		<property-class>java.lang.String</property-class>
+		<value>newCustomerRegister.jsp</value>
+		</managed-property> 
 	</managed-bean>
 	<managed-bean>
 		<managed-bean-name>helpPanelMenu</managed-bean-name>
 		<managed-bean-class>com.ejd.web.vo.help.HelpPanelMenuBean</managed-bean-class>
-		<managed-bean-scope>request</managed-bean-scope>
+		<managed-bean-scope>session</managed-bean-scope>
 		<managed-property>
 		<property-name>menuState</property-name>
 		<property-class>com.ejd.web.vo.help.HelpPanelMenuStatusBean</property-class>
@@ -1634,6 +1639,10 @@
 	</managed-bean>
     <navigation-rule>
     	<from-view-id>/*</from-view-id>
+    	<navigation-case>
+     		<from-outcome>index</from-outcome>
+    		<to-view-id>/jspLayout/product/productMain.jsp</to-view-id>
+  		</navigation-case>
   		<navigation-case>
      		<from-outcome>manageLogin</from-outcome>
     		<to-view-id>/jspLayout/manage/manageMain.jsp</to-view-id>
@@ -2149,6 +2158,20 @@
 			<to-view-id>/jspLayout/common/customerLogin.jsp</to-view-id>
 			<redirect/>
 		</navigation-case>
+		<!-- start customer navigation -->
+		
+		<navigation-case>
+			<from-outcome>mainCustomer</from-outcome>
+			<to-view-id>/jspLayout/customer/mainCustomer.jsp</to-view-id>
+			<redirect/>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consigneeCustomer</from-outcome>
+			<to-view-id>/jspLayout/customer/consigneeCustomer.jsp</to-view-id>
+			<redirect/>
+		</navigation-case>
+		
+		<!-- end customer navigation -->
 	</navigation-rule>
 	<!-- end navigation product -->
  	<navigation-rule>
