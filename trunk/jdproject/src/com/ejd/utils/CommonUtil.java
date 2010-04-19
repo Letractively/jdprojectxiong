@@ -21,6 +21,9 @@ package com.ejd.utils;
 import java.util.*;
 import java.sql.Timestamp;
 
+import com.ejd.common.constant.ManageBeanConstants;
+import com.ejd.web.vo.user.UserBean;
+
 public class CommonUtil {
     public CommonUtil() {
 
@@ -1587,5 +1590,13 @@ public static String unescape(String s) {
             String s = (String) l3.get(i);
             System.out.println("s = " + s);
         }
+    }
+    public static String checkCurrentUser() {
+    	String result = null;
+    	UserBean currentUser = (UserBean) SpringFacesUtil.getManagedBean(ManageBeanConstants.CURRENT_USER_BEAN_NAME);
+		if (null == currentUser || null == currentUser.getUserInfo()) {
+			result = "customerLogin";
+		}
+		return result;
     }
 }

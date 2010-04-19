@@ -62,6 +62,13 @@ public class RightFilter implements Filter {
 			request.getRequestDispatcher("/jspLayout/help/mainHelp.jsf").forward(sreq,sres);
 			return;
 		}
+		if (uri.startsWith("/jspLayout/customer/")) {
+			if (null == currentUser || null == currentUser.getUserInfo()) {
+				request.setAttribute("errormessage","您没有这个权限,您可尝试重新登陆!");
+				request.getRequestDispatcher("/jspLayout/common/customerLogin.jsf").forward(sreq,sres);
+				return;
+			}
+		}
 		request.getRequestDispatcher(uri).forward(sreq,sres);
 	}
 	//下面还可以添加其他的用户权限，省去。 

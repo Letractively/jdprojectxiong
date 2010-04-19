@@ -4,15 +4,18 @@ public class AbstractConsignee extends java.lang.Object implements java.io.Seria
 	private Integer id;
 	private Integer stakeholderId;
 	private String shortName;
+	private String invoiceCompanyName;//the invoice title
 	private String consigneeName;
 	private String consigneeMobile;
 	private String consigneePhone;
+	private String consigneeTax;
 	private String consigneeZip;
 	private String consigneeProvince;
 	private String consigneeCity;
 	private String consigneeCounty;
 	private String consigneeAddress;
 	private String remark;
+	private boolean selected;
 	public AbstractConsignee(){
 		
 	}
@@ -41,6 +44,14 @@ public class AbstractConsignee extends java.lang.Object implements java.io.Seria
 		this.shortName = shortName;
 	}
 
+	public String getInvoiceCompanyName() {
+		return invoiceCompanyName;
+	}
+
+	public void setInvoiceCompanyName(String invoiceCompanyName) {
+		this.invoiceCompanyName = invoiceCompanyName;
+	}
+
 	public String getConsigneeName() {
 		return consigneeName;
 	}
@@ -63,6 +74,14 @@ public class AbstractConsignee extends java.lang.Object implements java.io.Seria
 
 	public void setConsigneePhone(String consigneePhone) {
 		this.consigneePhone = consigneePhone;
+	}
+
+	public String getConsigneeTax() {
+		return consigneeTax;
+	}
+
+	public void setConsigneeTax(String consigneeTax) {
+		this.consigneeTax = consigneeTax;
 	}
 
 	public String getConsigneeZip() {
@@ -111,6 +130,14 @@ public class AbstractConsignee extends java.lang.Object implements java.io.Seria
 
 	public void setRemark(String remark) {
 		this.remark = remark;
+	}
+
+	public boolean isSelected() {
+		return selected;
+	}
+
+	public void setSelected(boolean selected) {
+		this.selected = selected;
 	}
 	
 }

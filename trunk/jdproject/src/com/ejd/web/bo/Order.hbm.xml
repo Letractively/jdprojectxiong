@@ -30,6 +30,9 @@
         <property name="consigneePhone" type="java.lang.String">
             <column name="CONSIGNEEPHONE" length="30" />
         </property>
+        <property name="consigneeTax" type="java.lang.String">
+            <column name="CONSIGNEETAX" length="30" />
+        </property>
         <property name="consigneeZip" type="java.lang.String">
             <column name="CONSIGNEEZIP" length="6" />
         </property>
