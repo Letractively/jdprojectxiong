@@ -1590,6 +1590,19 @@
   	<managed-bean-scope>session</managed-bean-scope>
  	</managed-bean>
  	<!-- start generateVerifyCode center  -->
+ 	
+ 	<!-- start Edit Consignee Page Bean  -->
+ 	<managed-bean>
+  	<managed-bean-name>editConsigneePage</managed-bean-name>
+  	<managed-bean-class>com.ejd.web.vo.customer.EditConsigneePageBean</managed-bean-class>
+  	<managed-bean-scope>session</managed-bean-scope>
+ 	</managed-bean>
+ 	<managed-bean>
+  	<managed-bean-name>customerNavigationPage</managed-bean-name>
+  	<managed-bean-class>com.ejd.web.vo.customer.CustomerNavigationPageBean</managed-bean-class>
+  	<managed-bean-scope>session</managed-bean-scope>
+ 	</managed-bean>
+ 	<!-- end Edit Consignee Page Bean  -->
 	<!-- test -->
 	<managed-bean>
 		<managed-bean-name>demoBean</managed-bean-name>

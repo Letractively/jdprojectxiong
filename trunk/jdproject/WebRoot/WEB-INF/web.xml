@@ -95,6 +95,7 @@
 	<url-pattern>/jspLayout/manage/*</url-pattern>
 	<url-pattern>/jspLayout/Shopping/*</url-pattern>
 	<url-pattern>/jspLayout/help/subHelp/*</url-pattern>
+	<url-pattern>/jspLayout/customer/*</url-pattern>
 	</filter-mapping>
   <!-- Faces Servlet -->
   <servlet>
