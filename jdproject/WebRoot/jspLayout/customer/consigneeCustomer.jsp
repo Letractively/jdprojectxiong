@@ -42,30 +42,30 @@ xmlns:rich="http://richfaces.org/rich">
             			</ul>
         				</f:facet>
 					</rich:panel>
-					<a4j:outputPanel id="consigneeTable" style="width:100%">
-						<table border="1" cellpadding="0" cellspacing="0" class="form_table">
+					<rich:panel id="consigneeTable" style="width:100%" bodyClass="info_area">
+						<table border="1" cellpadding="0" width="100%" cellspacing="0" class="form_table">
 				            <thead class="t_hue4">
 				                <tr class="title1">
-				                    <th class="td-gray" style="width: 50px"><h:outputText value="设为默认" /></th>
-				                    <th class="td-gray" style="width: 80px"><h:outputText value="地址简称" /></th>
-				                    <th class="td-gray" style="width: 60px"><h:outputText value="收货人" /></th>
-				                    <th class="td-gray" style="width: 90px"><h:outputText value="手机" /></th>
-				                    <th class="td-gray" style="width: 100px"><h:outputText value="电话" /></th>
-									<th class="td-gray" style="text-align:left;width: 100px"><h:outputText value="详细地址" /></th>
-									<th class="td-gray" style="width: 50px"><h:outputText value="邮政编码" /></th>
-									<th class="td-gray" style="width: 52px"><h:outputText value="操作" /></th>
+				                    <th class="td-gray" width="7%"><h:outputText value="设为默认" /></th>
+				                    <th class="td-gray" width="11%"><h:outputText value="地址简称" /></th>
+				                    <th class="td-gray" width="8%"><h:outputText value="收货人" /></th>
+				                    <th class="td-gray" width="12%"><h:outputText value="手机" /></th>
+				                    <th class="td-gray" width="15%"><h:outputText value="电话" /></th>
+									<th class="td-gray" width="20%"><h:outputText value="详细地址" /></th>
+									<th class="td-gray" width="8%"><h:outputText value="邮政编码" /></th>
+									<th class="td-gray" width="8%"><h:outputText value="操作" /></th>
 				                </tr>
 				            </thead>
 				            <tbody>
+				            	<a4j:repeat value="#{editConsigneePage.consignees}" var="consignee">
 								<tr>
-									<td><input name="defaultAddress" id="defaultAddress_2815" 
-value="2815" onclick="setDefaultAddress(this.value);" type="radio"/></td>
-									<td>(家庭地址)</td>
-									<td>我自己</td>
-									<td>13658958986</td>
-									<td>020-25658958</td>
-									<td class="left" title="广东省佛山市禅城区">广东省佛山市禅城区广东省佛山市禅城区</td>
-									<td><span class="f11">435678</span></td>
+									<td><h:selectOneRadio value="#{consignee.selected}"/></td>
+									<td><h:outputLabel value="#{consignee.shortName}"/></td>
+									<td><h:outputLabel value="#{consignee.consigneeName}"/></td>
+									<td><h:outputLabel value="#{consignee.consigneeMobile}"/></td>
+									<td><h:outputLabel value="#{consignee.consigneePhone}"/></td>
+									<td class="left" title=""><h:outputLabel value="#{consignee.consigneeAddress}"/></td>
+									<td><h:outputLabel value="#{consignee.consigneeZip}"/></td>
 									<td>
 									<a href="javascript:void(2815);" 
 onclick="changeModAddress(2815);lockedRow(this);">修改</a>
@@ -73,57 +73,76 @@ onclick="changeModAddress(2815);lockedRow(this);">修改</a>
 onclick="changeDelAddress(2815);">删除</a>
 									</td>
 								  </tr>
+								  </a4j:repeat>
 							</tbody>
 						</table>
-					</a4j:outputPanel>
-					<rich:panel id="consigneeInfoDetail" style="boder-style:none;" bodyClass="info_area">
-						<rich:panel id="consigneeInfoTitle" bodyClass="info-title">
-							<h:outputText value="添加/修改"></h:outputText>
-						</rich:panel>
-						<rich:panel id="consigneeInfoContent" headerClass="header-error-messages" bodyClass="info-content">
-							<f:facet name="header"><h:outputText value="errormessage" style="width:100%"/></f:facet>
-							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
-								<h:outputText value="地址简称"></h:outputText>
-								<h:inputText value="dd"></h:inputText>
-								<h:outputLabel value="简单易记的地址名称，如“家”，“我的公司”等。"></h:outputLabel>
-							</h:panelGrid>
-							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
-								<h:outputText value="地址简称"></h:outputText>
-								<h:inputText value="dd"></h:inputText>
-								<h:outputLabel value="简单易记的地址名称，如“家”，“我的公司”等。"></h:outputLabel>
-							</h:panelGrid>
-							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
-								<h:outputText value="地址简称"></h:outputText>
-								<h:inputText value="dd"></h:inputText>
-								<h:outputLabel value="简单易记的地址名称，如“家”，“我的公司”等。"></h:outputLabel>
-							</h:panelGrid>
-							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
-								<h:outputText value="地址简称"></h:outputText>
-								<h:inputText value="dd"></h:inputText>
-								<h:outputLabel value="简单易记的地址名称，如“家”，“我的公司”等。"></h:outputLabel>
-							</h:panelGrid>
-							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
-								<h:outputText value="地址简称"></h:outputText>
-								<h:inputText value="dd"></h:inputText>
-								<h:outputLabel value="简单易记的地址名称，如“家”，“我的公司”等。"></h:outputLabel>
-							</h:panelGrid>
-							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
-								<h:outputText value="地址简称"></h:outputText>
-								<h:inputText value="dd"></h:inputText>
-								<h:outputLabel value="简单易记的地址名称，如“家”，“我的公司”等。"></h:outputLabel>
-							</h:panelGrid>
-							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
-								<h:outputText value="地址简称"></h:outputText>
-								<h:inputText value="dd"></h:inputText>
-								<h:outputLabel value="简单易记的地址名称，如“家”，“我的公司”等。"></h:outputLabel>
-							</h:panelGrid>
-							<h:panelGrid columns="3">
-								<h:outputText value="地址简称"></h:outputText>
-								<h:inputTextarea  value="dd"></h:inputTextarea>
-								<h:outputLabel value="简单易记的地址名称，如“家”，“我的公司”等。"></h:outputLabel>
-							</h:panelGrid>
-						</rich:panel>
 					</rich:panel>
+					<rich:panel id="consigneeInfoTitle" style="width:100%" bodyClass="info-title">
+						<h:outputText value="添加/修改"></h:outputText>
+					</rich:panel>
+					<rich:panel id="consigneeInfoContent" style="width:100%" headerClass="header-error-messages" bodyClass="info-content">
+						<f:facet name="header"><h:outputText value="#{editConsigneePage.errorMessages}" style="width:100%"/></f:facet>
+							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
+								<h:outputText value="发票抬头："></h:outputText>
+								<h:inputText value="#{editConsigneePage.consignee.invoiceCompanyName}" styleClass="input-text-full-length" style="border:1px solid #d6d6d6"></h:inputText>
+								<h:panelGroup><h:outputText/></h:panelGroup>
+							</h:panelGrid>
+							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
+								<h:outputText value="地址简称："></h:outputText>
+								<h:inputText value="#{editConsigneePage.consignee.shortName}" styleClass="input-text-full-length" style="border:1px solid #d6d6d6"></h:inputText>
+								<h:panelGroup><h:outputText value="*" styleClass="red-text"></h:outputText><h:outputLabel value="简单易记的地址名称，如“家”，“我的公司”等"></h:outputLabel></h:panelGroup>
+							</h:panelGrid>
+							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
+								<h:outputText value="收货人："></h:outputText>
+								<h:inputText value="#{editConsigneePage.consignee.consigneeName}" styleClass="input-text-full-length" style="border:1px solid #d6d6d6;width:66%"></h:inputText>
+								<h:panelGroup><h:outputText value="*" styleClass="red-text"></h:outputText><h:outputLabel value="请填写准确的收货人信息。"></h:outputLabel></h:panelGroup>
+							</h:panelGrid>
+							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
+								<h:outputText value="手机："></h:outputText>
+								<h:inputText value="#{editConsigneePage.consignee.consigneeMobile}" styleClass="input-text-full-length" style="border:1px solid #d6d6d6"></h:inputText>
+								<h:panelGroup><h:outputText value="*" styleClass="red-text"></h:outputText><h:outputLabel value="及时联系方式（免费短消息、电话）。"></h:outputLabel></h:panelGroup>
+							</h:panelGrid>
+							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
+								<h:outputText value="电话："></h:outputText>
+								<h:inputText value="#{editConsigneePage.consignee.consigneePhone}" styleClass="input-text-full-length" style="border:1px solid #d6d6d6"></h:inputText>
+								<h:panelGroup><h:outputText value="*" styleClass="red-text"></h:outputText><h:outputLabel value="可填写多个号码，中间请用英文逗号  ,  隔开。"></h:outputLabel></h:panelGroup>
+							</h:panelGrid>
+							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
+								<h:outputText value="传真："></h:outputText>
+								<h:inputText value="#{editConsigneePage.consignee.consigneeTax}" styleClass="input-text-full-length" style="border:1px solid #d6d6d6"></h:inputText>
+								<h:panelGroup><h:outputText/></h:panelGroup>
+							</h:panelGrid>
+							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-three,panel-grid-two">
+								<h:outputText value="地区："></h:outputText>
+								<h:panelGroup>
+									<h:inputText value="#{editConsigneePage.consignee.consigneeProvince}" styleClass="input-text-full-length" style="border:1px solid #d6d6d6;width:120px"></h:inputText><h:outputText value="省" style="vertical-align:middle;"></h:outputText>
+									<h:inputText value="#{editConsigneePage.consignee.consigneeCity}" styleClass="input-text-full-length" style="border:1px solid #d6d6d6;width:120px"></h:inputText><h:outputText value="市" style="vertical-align:middle;"></h:outputText>
+									<h:inputText value="#{editConsigneePage.consignee.consigneeCounty}" styleClass="input-text-full-length" style="border:1px solid #d6d6d6;width:80px"></h:inputText><h:outputText value="县（区）" style="vertical-align:middle;"></h:outputText>
+								</h:panelGroup>
+								<h:panelGroup><h:outputText value="*" styleClass="red-text"></h:outputText><h:outputLabel value="请详细填写省、市、县（区）。"/></h:panelGroup>
+							</h:panelGrid>
+							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-three,panel-grid-two">
+								<h:outputText value="详细地址："></h:outputText>
+								<h:inputText value="#{editConsigneePage.consignee.consigneeAddress}" styleClass="input-text-full-length" style="border:1px solid #d6d6d6"></h:inputText>
+								<h:panelGroup><h:outputText value="*" styleClass="red-text"></h:outputText><h:outputLabel value="请务必详细填写，以保证货物准确递送。"></h:outputLabel></h:panelGroup>
+							</h:panelGrid>
+							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
+								<h:outputText value="邮编："></h:outputText>
+								<h:inputText value="#{editConsigneePage.consignee.consigneeZip}" styleClass="input-text-full-length" style="border:1px solid #d6d6d6;width:66%"></h:inputText>
+								<h:panelGroup><h:outputText value="*" styleClass="red-text"></h:outputText><h:outputLabel value="请准确填写邮编。"></h:outputLabel></h:panelGroup>
+							</h:panelGrid>
+							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-three,panel-grid-two">
+								<h:outputText value="配送备注："></h:outputText>
+								<h:inputTextarea  value="#{editConsigneePage.consignee.remark}" styleClass="input-text-full-length" style="height:99px;"></h:inputTextarea>
+								<h:outputLabel value=""></h:outputLabel>
+							</h:panelGrid>
+							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-three,panel-grid-two">
+								<h:outputText value=""></h:outputText>
+								<h:panelGroup><h:selectBooleanCheckbox value="#{editConsigneePage.consignee.selected}" style="margin:16px 0px 0px 0px;vertical-align:bottom;"></h:selectBooleanCheckbox><h:outputLabel style="margin:16px 0px 0px 0px;vertical-align:bottom;" value="设定此地址为默认收货地址"/></h:panelGroup>
+								<h:outputLabel value=""></h:outputLabel>
+							</h:panelGrid>
+					</rich:panel>
+					
 				</a4j:region>
     		</ui:define>
     		<ui:define id="customerRight" name="right">

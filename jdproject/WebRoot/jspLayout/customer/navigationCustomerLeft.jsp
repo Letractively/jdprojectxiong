@@ -53,8 +53,9 @@ xmlns:rich="http://richfaces.org/rich">
 			         action="/select.xhtml"  
 			         mode="ajax"/>  
 			     <rich:panelMenuItem label="管理收货信息" id="group3_item2"   
-			         action="consigneeCustomer"  
-			         mode="server"/>  
+			         action="#{customerNavigationPage.clickActionByConsignee}"  immediate="true"
+			         mode="server"><a4j:actionparam name="paramItem" value="consigneeCustomer" assignTo="#{customerNavigationPage.param}"/>
+   				</rich:panelMenuItem>
 			     <rich:panelMenuItem label="修改帐户密码" id="group3_item3"   
 			         action="/select.xhtml"  
 			         mode="ajax"/>
