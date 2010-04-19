@@ -14,6 +14,7 @@ public class AbstractOrder extends java.lang.Object implements Serializable {
 	private String consigneeName;
 	private String consigneeMobile;
 	private String consigneePhone;
+	private String consigneeTax;
 	private String consigneeZip;
 	private String consigneeProvince;
 	private String consigneeCity;
@@ -80,6 +81,12 @@ public class AbstractOrder extends java.lang.Object implements Serializable {
 	}
 	public void setConsigneePhone(String consigneePhone) {
 		this.consigneePhone = consigneePhone;
+	}
+	public String getConsigneeTax() {
+		return consigneeTax;
+	}
+	public void setConsigneeTax(String consigneeTax) {
+		this.consigneeTax = consigneeTax;
 	}
 	public String getConsigneeZip() {
 		return consigneeZip;

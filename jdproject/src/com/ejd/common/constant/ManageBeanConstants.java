@@ -209,4 +209,6 @@ public class ManageBeanConstants {
     public static final String PAINT_VERIFY_CODE_BEAN_NAME = "paintVerifyCode";
     public static final String GENERATE_VERIFY_CODE_BEAN_NAME = "generateVerifyCode";
     public static final String CURRENT_USER_BEAN_NAME = "currentUser";
+    public static final String CONSIGNEE_SERVICE_BEAN_NAME = "consigneeService";
+    public static final String EDIT_CONSIGNEE_PAGE_BEAN_NAME = "editConsigneePage";
 }

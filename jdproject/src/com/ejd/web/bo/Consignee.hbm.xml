@@ -16,6 +16,9 @@
         <property name="shortName" type="java.lang.String">
             <column name="SHORTNAME" length="50" />
         </property>
+        <property name="invoiceCompanyName" type="java.lang.String">
+            <column name="INVOICECOMPANYNAME" length="100" />
+        </property>
         <property name="consigneeName" type="java.lang.String">
             <column name="CONSIGNEENAME" length="100" />
         </property>
@@ -24,6 +27,9 @@
         </property>
         <property name="consigneePhone" type="java.lang.String">
             <column name="CONSIGNEEPHONE" length="30" />
+        </property>
+        <property name="consigneeTax" type="java.lang.String">
+            <column name="CONSIGNEETAX" length="30" />
         </property>
         <property name="consigneeZip" type="java.lang.String">
             <column name="CONSIGNEEZIP" length="6" />
@@ -43,5 +49,8 @@
         <property name="remark" type="java.lang.String">
             <column name="REMARK" length="200" />
         </property>
+        <property name="selected" not-null="true" >
+   			<column sql-type="BOOLEAN" not-null="true" name="SELECT" />
+		</property>
     </class>
 </hibernate-mapping>
