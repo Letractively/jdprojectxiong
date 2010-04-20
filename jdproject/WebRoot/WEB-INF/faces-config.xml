@@ -1596,6 +1596,12 @@
   	<managed-bean-name>editConsigneePage</managed-bean-name>
   	<managed-bean-class>com.ejd.web.vo.customer.EditConsigneePageBean</managed-bean-class>
   	<managed-bean-scope>session</managed-bean-scope>
+  	<managed-property>
+		<property-name>consigneeService</property-name>
+		<property-class>com.ejd.model.service.iface.IConsigneeService</property-class>
+		<value>#{consigneeService}</value>
+	 </managed-property>
+  	
  	</managed-bean>
  	<managed-bean>
   	<managed-bean-name>customerNavigationPage</managed-bean-name>
