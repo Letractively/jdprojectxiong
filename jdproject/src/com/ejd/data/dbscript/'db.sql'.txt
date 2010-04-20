@@ -217,6 +217,6 @@ CREATE TABLE  `ejd`.`consignee` (
   `CONSIGNEECOUNTY` varchar(20),
   `CONSIGNEEADDRESS` varchar(100),
   `REMARK` varchar(200),
-  `SELECT` BOOLEAN default false,
+  `SELECTED` BOOLEAN,
   PRIMARY KEY  (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

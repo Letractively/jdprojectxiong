@@ -10,7 +10,7 @@
             <column name="ID" />
             <generator class="increment" />
         </id>
-        <property name="stakeholderId" type="java.lang.String">
+        <property name="stakeholderId" type="java.lang.Integer">
             <column name="STAKEHOLDERID" length="20" not-null="true" />
         </property>
         <property name="shortName" type="java.lang.String">
@@ -50,7 +50,7 @@
             <column name="REMARK" length="200" />
         </property>
         <property name="selected" not-null="true" >
-   			<column sql-type="BOOLEAN" not-null="true" name="SELECT" />
+   			<column sql-type="BOOLEAN" not-null="true" name="SELECTED" />
 		</property>
     </class>
 </hibernate-mapping>
