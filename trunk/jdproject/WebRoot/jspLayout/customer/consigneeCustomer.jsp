@@ -14,7 +14,7 @@ xmlns:rich="http://richfaces.org/rich">
     </head>
     <body>
     	<ui:composition template="./customerTemplate.jsp">
-			<ui:define id="customerStepDisplay" name="stepDisplay">
+    		<ui:define id="customerStepDisplay" name="stepDisplay">
 				<h:form id="stepForm">
     			<a4j:outputPanel styleClass="step-display-output-panel">
     				<h:outputText value="当前位置"></h:outputText><h:commandLink action="index" styleClass="step-display-output-panel-link"><h:outputText value="首页"/></h:commandLink>
@@ -32,7 +32,8 @@ xmlns:rich="http://richfaces.org/rich">
     			<h:outputText value=""></h:outputText>
 			</ui:define>
 			<ui:define id="customerContent" name="content">
-				<a4j:region id="mainConsigneeRegion">
+				<h:form id="customerConsigneeForm">
+				<a4j:region id="mainConsigneeRegion" renderRegionOnly="false" selfRendered="true">
 					<rich:panel id="messageTitle" headerClass="messageTitle" style="width:100%">
 						<f:facet name="header">
 						<ul style="padding-left: 30px;">
@@ -59,7 +60,7 @@ xmlns:rich="http://richfaces.org/rich">
 				            <tbody>
 				            	<a4j:repeat value="#{editConsigneePage.consignees}" var="consignee">
 								<tr>
-									<td><h:selectOneRadio value="#{consignee.selected}"/></td>
+									<td><h:selectBooleanCheckbox value="#{consignee.selected}"/></td>
 									<td><h:outputLabel value="#{consignee.shortName}"/></td>
 									<td><h:outputLabel value="#{consignee.consigneeName}"/></td>
 									<td><h:outputLabel value="#{consignee.consigneeMobile}"/></td>
@@ -84,7 +85,7 @@ onclick="changeDelAddress(2815);">删除</a>
 						<f:facet name="header"><h:outputText value="#{editConsigneePage.errorMessages}" style="width:100%"/></f:facet>
 							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
 								<h:outputText value="发票抬头："></h:outputText>
-								<h:inputText value="#{editConsigneePage.consignee.invoiceCompanyName}" styleClass="input-text-full-length" style="border:1px solid #d6d6d6"></h:inputText>
+								<h:inputText id="invoiceCompanyName" value="#{editConsigneePage.consignee.invoiceCompanyName}" styleClass="input-text-full-length" style="border:1px solid #d6d6d6"></h:inputText>
 								<h:panelGroup><h:outputText/></h:panelGroup>
 							</h:panelGrid>
 							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
@@ -141,14 +142,20 @@ onclick="changeDelAddress(2815);">删除</a>
 								<h:panelGroup><h:selectBooleanCheckbox value="#{editConsigneePage.consignee.selected}" style="margin:16px 0px 0px 0px;vertical-align:bottom;"></h:selectBooleanCheckbox><h:outputLabel style="margin:16px 0px 0px 0px;vertical-align:bottom;" value="设定此地址为默认收货地址"/></h:panelGroup>
 								<h:outputLabel value=""></h:outputLabel>
 							</h:panelGrid>
+							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-three,panel-grid-two">
+								<h:outputText value=""></h:outputText>
+								<h:panelGroup><a4j:commandLink action="#{editConsigneePage.commitConsignee}" value="提交" id="tijiao" styleClass="ButtonDefault"></a4j:commandLink><h:commandLink action="#{editConsigneePage.reSetConsignee}" value="重置" immediate="false" styleClass="ButtonDefault"><a4j:support event="onclick" reRender="invoiceCompanyName"></a4j:support></h:commandLink></h:panelGroup>
+								<h:outputLabel value=""></h:outputLabel>
+							</h:panelGrid>
 					</rich:panel>
-					
 				</a4j:region>
+				</h:form>
     		</ui:define>
     		<ui:define id="customerRight" name="right">
     			<h:outputText value=""></h:outputText>
     		</ui:define>
     	</ui:composition>
+    	
     </body>
 </html>	
 </f:view>		
