@@ -78,6 +78,7 @@ onclick="changeDelAddress(2815);">删除</a>
 							</tbody>
 						</table>
 					</rich:panel>
+					
 					<rich:panel id="consigneeInfoTitle" style="width:100%" bodyClass="info-title">
 						<h:outputText value="添加/修改"></h:outputText>
 					</rich:panel>
@@ -144,7 +145,7 @@ onclick="changeDelAddress(2815);">删除</a>
 							</h:panelGrid>
 							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-three,panel-grid-two">
 								<h:outputText value=""></h:outputText>
-								<h:panelGroup><a4j:commandLink action="#{editConsigneePage.commitConsignee}" value="提交" id="tijiao" styleClass="ButtonDefault"></a4j:commandLink><h:commandLink action="#{editConsigneePage.reSetConsignee}" value="重置" immediate="false" styleClass="ButtonDefault"><a4j:support event="onclick" reRender="invoiceCompanyName"></a4j:support></h:commandLink></h:panelGroup>
+								<h:panelGroup><a4j:commandLink action="#{editConsigneePage.commitConsignee}" value="提交" id="tijiao" styleClass="ButtonDefault" reRender="consigneeTable"></a4j:commandLink><h:commandLink action="#{editConsigneePage.reSetConsignee}" value="重置" immediate="false" styleClass="ButtonDefault"><a4j:support event="onclick" reRender="invoiceCompanyName"></a4j:support></h:commandLink></h:panelGroup>
 								<h:outputLabel value=""></h:outputLabel>
 							</h:panelGrid>
 					</rich:panel>
