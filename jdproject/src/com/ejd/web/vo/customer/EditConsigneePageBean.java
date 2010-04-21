@@ -121,7 +121,19 @@ public class EditConsigneePageBean {
 			if (null == newConsignee.getStakeholderId() || "".equals(newConsignee.getStakeholderId())) {
 				newConsignee.setStakeholderId(currentUser.getUserInfo().getId());
 			}
-			this.getConsigneeService().saveConsignee(newConsignee);
+			try {
+				this.getConsigneeService().saveConsignee(newConsignee);
+				EditConsigneePageBean editConsignedPage = (EditConsigneePageBean)SpringFacesUtil.getManagedBean(ManageBeanConstants.EDIT_CONSIGNEE_PAGE_BEAN_NAME);
+				BeanCopier copyHere = BeanCopier.create(Consignee.class, ConsigneeVo.class, false);
+				ConsigneeVo newConsigneeVo = new ConsigneeVo();
+				copyHere.copy(newConsignee, newConsigneeVo, null);
+				editConsignedPage.getConsignees().add(newConsigneeVo);
+			} catch (ConsigneeException e) {
+				
+			}
+			finally {
+				
+			}
 		}
 		return null;
 	}
