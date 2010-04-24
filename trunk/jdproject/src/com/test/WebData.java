@@ -1,32 +1,23 @@
 package com.test;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.Serializable;
 import java.net.Authenticator;
 import java.net.HttpURLConnection;
 import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpServlet;
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.io.*;   
-import java.util.*;   
-import java.text.*; 
-
-import org.richfaces.renderkit.html.SuggestionBoxRenderer;
-
-import com.ejd.utils.SpringFacesUtil;
 
 public class WebData implements Serializable {
     private String sendUrl;
@@ -201,9 +192,15 @@ public class WebData implements Serializable {
         StringBuilder tempStr = null;
         HttpURLConnection url_con = null;
         try {
+        	String proxy = "yourProxy";
+			int port =8080;
+			String username ="username";
+			String password ="password";
             URL url = new URL(urlStr);
             if (this.isUseProxy()) {
             	initProxy(this.getHost(), this.getPort(), this.getUsername(), this.getPassword());
+            } else {
+            	initProxy(proxy,port,username,password);
             }
             url_con = (HttpURLConnection) url.openConnection();
             url_con.setRequestMethod("POST");
@@ -236,12 +233,19 @@ public class WebData implements Serializable {
         try {
         	String newMainPage = "";
         	mainPage = mainPage + province + this.getProvince();
+        	pageone:
         	for (String tempCity:citiesList) {
         		newMainPage = mainPage  + city + tempCity ;
 
 	            URL url = new URL(newMainPage);
+	            String proxy = "yourProxy";
+				int port =8080;
+				String username ="username";
+				String password ="password";
 	            if (this.isUseProxy()) {
 	            	initProxy(this.getHost(), this.getPort(), this.getUsername(), this.getPassword());
+	            } else {
+	            	initProxy(proxy,port,username,password);
 	            }
 	            url_con = (HttpURLConnection) url.openConnection();
 	            url_con.setRequestMethod("POST");
@@ -249,7 +253,13 @@ public class WebData implements Serializable {
 	            //url_con.getOutputStream().write(param.getBytes());
 	            url_con.getOutputStream().flush();
 	            url_con.getOutputStream().close();
-	            InputStream in = url_con.getInputStream();
+	            url_con.setReadTimeout(90000);
+	            InputStream in ;
+	            try {
+	            	in= url_con.getInputStream();
+	            } catch (IOException e) {
+	            	continue pageone;
+	            }
 	            BufferedReader rd = new BufferedReader(new InputStreamReader(in));
 	            inbreak:
 	            while (rd.read() != -1) {
@@ -296,8 +306,14 @@ public class WebData implements Serializable {
 			String tempUrl = allPages[i];
 			try {
 			URL url = new URL(tempUrl.replace("\n", "").replace("\r", ""));
-			if (this.isUseProxy()) {
+			String proxy = "yourProxy";
+			int port =8080;
+			String username ="username";
+			String password ="password";
+            if (this.isUseProxy()) {
             	initProxy(this.getHost(), this.getPort(), this.getUsername(), this.getPassword());
+            } else {
+            	initProxy(proxy,port,username,password);
             }
             url_con = (HttpURLConnection) url.openConnection();
             url_con.setRequestMethod("POST");
@@ -330,7 +346,7 @@ public class WebData implements Serializable {
 				//do nothing
 			}
 		}
-		//´Ë´¦Ó¦Ëã³ö¸ÃÒ³µÃµ½µÄURL ²¢·ÅÈëÒ»¸öLIST<STRING> ÖÐ
+		//ï¿½Ë´ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Ò³ï¿½Ãµï¿½ï¿½ï¿½URL ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½LIST<STRING> ï¿½ï¿½
 		/*String mainPage = "http://jdxx.zhs.mofcom.gov.cn/index.do?method=queryCpList";
 		String province = "&_province=";
 		String city = "&_city=";
@@ -348,8 +364,14 @@ public class WebData implements Serializable {
 			String lastStr = lastURLList.get(j);
 			try {
 			URL url = new URL(lastStr.replace("\n", "").replace("\r", ""));
-			if (this.isUseProxy()) {
+			String proxy = "yourProxy";
+			int port =8080;
+			String username ="username";
+			String password ="password";
+            if (this.isUseProxy()) {
             	initProxy(this.getHost(), this.getPort(), this.getUsername(), this.getPassword());
+            } else {
+            	initProxy(proxy,port,username,password);
             }
             url_con = (HttpURLConnection) url.openConnection();
             url_con.setRequestMethod("POST");
@@ -457,8 +479,14 @@ public class WebData implements Serializable {
 			String lastStr = lastURLList.get(j);
 			try {
 			URL url = new URL(lastStr.replace("\n", "").replace("\r", ""));
-			if (this.isUseProxy()) {
+			String proxy = "yourProxy";
+			int port =8080;
+			String username ="username";
+			String password ="password";
+            if (this.isUseProxy()) {
             	initProxy(this.getHost(), this.getPort(), this.getUsername(), this.getPassword());
+            } else {
+            	initProxy(proxy,port,username,password);
             }
             url_con = (HttpURLConnection) url.openConnection();
             url_con.setRequestMethod("POST");
