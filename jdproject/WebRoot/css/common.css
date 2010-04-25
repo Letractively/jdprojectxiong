@@ -2403,7 +2403,7 @@ background-color:#ffffff;
 .form_table td.right{text-align:right;}
 .form_table td.title1{color:#333;}
 .form_table td.title2{background:#F1F1F1;}
-.t_hue4{border-collapse:collapse;border:1px #E3E3E3 solid;color:#222;height:25px;}
+.t_hue4{border-collapse:collapse;border:1px #E3E3E3 solid;color:#222;height:25px;font-weight:normal;}
 .t_hue4 tr.title1 th{background:#F1F1F1;padding:5px;font-weight:normal;}
 .mb15{margin-bottom:15px;}
 .td-gray,a.td-gray:link,a.td-gray:visited{color:#666;}
