@@ -29,3 +29,6 @@ function isDoubleValidate(s){
 function processFreshShoppingCartInfoBegin() {
 	processFreshShoppingCartInfo();
 }
+function selecteCurrConsignee() {
+	selecteCurrConsigneeFunction();
+}
