@@ -1,7 +1,10 @@
 package com.ejd.web.vo.customer;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+
+import org.apache.commons.beanutils.PropertyUtils;
 
 import net.sf.cglib.beans.BeanCopier;
 
@@ -10,16 +13,14 @@ import com.ejd.model.exception.ConsigneeException;
 import com.ejd.model.service.iface.IConsigneeService;
 import com.ejd.utils.SpringFacesUtil;
 import com.ejd.web.bo.Consignee;
+import com.ejd.web.vo.genl.AbstractExtendedTableDataModel;
 import com.ejd.web.vo.user.UserBean;
 
-public class EditConsigneePageBean {
+public class EditConsigneePageBean extends AbstractExtendedTableDataModel<ConsigneeVo,ConsigneeVo>{
 	
 	IConsigneeService consigneeService;
 	
-	List<ConsigneeVo> consignees  = new ArrayList<ConsigneeVo>();
 	private String action;
-	
-	private ConsigneeVo consignee;
 	
 	public String errorMessages;
 
@@ -39,14 +40,6 @@ public class EditConsigneePageBean {
 		this.errorMessages = errorMessages;
 	}
 
-	public List<ConsigneeVo> getConsignees() {
-		return consignees;
-	}
-
-	public void setConsignees(List<ConsigneeVo> consignees) {
-		this.consignees = consignees;
-	}
-
 	public String getAction() {
 		return action;
 	}
@@ -55,54 +48,70 @@ public class EditConsigneePageBean {
 		this.action = action;
 	}
 
-	public ConsigneeVo getConsignee() {
-		return consignee;
+	
+	public Object getIdItem(ConsigneeVo item) {
+		return item.getId();
+	}
+	
+	public EditConsigneePageBean() {
+		super();
 	}
 
-	public void setConsignee(ConsigneeVo consignee) {
-		this.consignee = consignee;
-	}
-	
-	public EditConsigneePageBean () {
-		
-	}
-	
 	public EditConsigneePageBean (String newAnother) {
-		this.consignee = new ConsigneeVo();
-		this.consignee.setSelected(false);
+		super();
+		ConsigneeVo consigneeVo = new ConsigneeVo();
+		consigneeVo.setSelected(false);
+		this.setEditData(consigneeVo);
 	}
 	public void createNewConsignee () {
-		this.consignee = new ConsigneeVo();
-		this.consignee.setInvoiceCompanyName("");
-		this.consignee.setConsigneeName("");
-		this.consignee.setConsigneeMobile("");
-		this.consignee.setConsigneePhone("");
-		this.consignee.setConsigneeTax("");
-		this.consignee.setConsigneeZip("");
-		this.consignee.setConsigneeProvince("");
-		this.consignee.setConsigneeCity("");
-		this.consignee.setConsigneeCounty("");
-		this.consignee.setConsigneeAddress("");
-		this.consignee.setSelected(false);
+		ConsigneeVo newConsignee = new ConsigneeVo();
+		newConsignee.setInvoiceCompanyName("");
+		newConsignee.setConsigneeName("");
+		newConsignee.setConsigneeMobile("");
+		newConsignee.setConsigneePhone("");
+		newConsignee.setConsigneeTax("");
+		newConsignee.setConsigneeZip("");
+		newConsignee.setConsigneeProvince("");
+		newConsignee.setConsigneeCity("");
+		newConsignee.setConsigneeCounty("");
+		newConsignee.setConsigneeAddress("");
+		newConsignee.setSelected(false);
+		this.setEditData(newConsignee);
 	}
 	
 	public String reSetConsignee() {
 		EditConsigneePageBean editConsignedPage = (EditConsigneePageBean)SpringFacesUtil.getManagedBean(ManageBeanConstants.EDIT_CONSIGNEE_PAGE_BEAN_NAME);
-		editConsignedPage.getConsignee().setId(null);
-		editConsignedPage.getConsignee().setStakeholderId(null);
-		editConsignedPage.getConsignee().setShortName("");
-		editConsignedPage.getConsignee().setInvoiceCompanyName("");
-		editConsignedPage.getConsignee().setConsigneeName("");
-		editConsignedPage.getConsignee().setConsigneeMobile("");
-		editConsignedPage.getConsignee().setConsigneePhone("");
-		editConsignedPage.getConsignee().setConsigneeTax("");
-		editConsignedPage.getConsignee().setConsigneeZip("");
-		editConsignedPage.getConsignee().setConsigneeProvince("");
-		editConsignedPage.getConsignee().setConsigneeCity("");
-		editConsignedPage.getConsignee().setConsigneeCounty("");
-		editConsignedPage.getConsignee().setConsigneeAddress("");
-		editConsignedPage.getConsignee().setRemark("");
-		editConsignedPage.getConsignee().setSelected(Boolean.FALSE);
+		if ("new".equals(editConsignedPage.getAction())) {
+			editConsignedPage.getEditData().setId(null);
+			editConsignedPage.getEditData().setStakeholderId(null);
+			editConsignedPage.getEditData().setShortName("");
+			editConsignedPage.getEditData().setInvoiceCompanyName("");
+			editConsignedPage.getEditData().setConsigneeName("");
+			editConsignedPage.getEditData().setConsigneeMobile("");
+			editConsignedPage.getEditData().setConsigneePhone("");
+			editConsignedPage.getEditData().setConsigneeTax("");
+			editConsignedPage.getEditData().setConsigneeZip("");
+			editConsignedPage.getEditData().setConsigneeProvince("");
+			editConsignedPage.getEditData().setConsigneeCity("");
+			editConsignedPage.getEditData().setConsigneeCounty("");
+			editConsignedPage.getEditData().setConsigneeAddress("");
+			editConsignedPage.getEditData().setRemark("");
+			editConsignedPage.getEditData().setSelected(Boolean.FALSE);
+		} else if ("edit".equals(editConsignedPage.getAction())) {
+			editConsignedPage.getEditData().setShortName(editConsignedPage.getSelectedData().getShortName());
+			editConsignedPage.getEditData().setInvoiceCompanyName(editConsignedPage.getSelectedData().getInvoiceCompanyName());
+			editConsignedPage.getEditData().setConsigneeName(editConsignedPage.getSelectedData().getConsigneeName());
+			editConsignedPage.getEditData().setConsigneeMobile(editConsignedPage.getSelectedData().getConsigneeMobile());
+			editConsignedPage.getEditData().setConsigneePhone(editConsignedPage.getSelectedData().getConsigneePhone());
+			editConsignedPage.getEditData().setConsigneeTax(editConsignedPage.getSelectedData().getConsigneeTax());
+			editConsignedPage.getEditData().setConsigneeZip(editConsignedPage.getSelectedData().getConsigneeZip());
+			editConsignedPage.getEditData().setConsigneeProvince(editConsignedPage.getSelectedData().getConsigneeProvince());
+			editConsignedPage.getEditData().setConsigneeCity(editConsignedPage.getSelectedData().getConsigneeCity());
+			editConsignedPage.getEditData().setConsigneeCounty(editConsignedPage.getSelectedData().getConsigneeCounty());
+			editConsignedPage.getEditData().setConsigneeAddress(editConsignedPage.getSelectedData().getConsigneeAddress());
+			editConsignedPage.getEditData().setRemark(editConsignedPage.getSelectedData().getRemark());
+			editConsignedPage.getEditData().setSelected(editConsignedPage.getSelectedData().isSelected());
+		}
 		editConsignedPage.setErrorMessages("");
 		return null;
 	}
@@ -117,7 +126,7 @@ public class EditConsigneePageBean {
 		if (null != this.getAction() && "new".equals(this.getAction())) {
 			Consignee newConsignee = new Consignee();
 			BeanCopier copy = BeanCopier.create(ConsigneeVo.class, Consignee.class, false);
-			copy.copy(this.getConsignee(),newConsignee,null);
+			copy.copy(this.getEditData(),newConsignee,null);
 			if (null == newConsignee.getStakeholderId() || "".equals(newConsignee.getStakeholderId())) {
 				newConsignee.setStakeholderId(currentUser.getUserInfo().getId());
 			}
@@ -127,7 +136,7 @@ public class EditConsigneePageBean {
 				BeanCopier copyHere = BeanCopier.create(Consignee.class, ConsigneeVo.class, false);
 				ConsigneeVo newConsigneeVo = new ConsigneeVo();
 				copyHere.copy(newConsignee, newConsigneeVo, null);
-				editConsignedPage.getConsignees().add(newConsigneeVo);
+				editConsignedPage.getDatas().add(newConsigneeVo);
 			} catch (ConsigneeException e) {
 				
 			}
@@ -135,6 +144,26 @@ public class EditConsigneePageBean {
 				
 			}
 		}
+		return null;
+	}
+	
+	public String requireUpdateConsignee() throws ConsigneeException {
+		Iterator<Object> iterator = getSelection().getKeys();
+		while (iterator.hasNext()){
+			Object key = iterator.next();
+			this.getTable().setRowKey(key);
+			if (this.getTable().isRowAvailable()) {
+				setSelectedData((ConsigneeVo) this.getTable().getRowData());
+				try {
+					PropertyUtils.copyProperties(this.getEditData(),this.getSelectedData());
+				} catch(Exception e)
+				{
+					System.out.println(e.toString());
+				}
+
+			}
+		}
+		
 		return null;
 	}
 
