@@ -49,8 +49,8 @@ public class CustomerNavigationPageBean {
 				newConsignees.add(consigneeVo);
 			}
 		}
-		editConsignedPage.setConsignees(newConsignees);
-		editConsignedPage.setConsignee(new ConsigneeVo(false));
+		editConsignedPage.setDatas(newConsignees);
+		editConsignedPage.setEditData(new ConsigneeVo(false));
 		editConsignedPage.setErrorMessages("");
 		editConsignedPage.setAction(new String ("new"));
 		result = this.getParam();
