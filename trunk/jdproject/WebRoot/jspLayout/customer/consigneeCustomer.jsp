@@ -43,9 +43,9 @@ xmlns:rich="http://richfaces.org/rich">
             			</ul>
         				</f:facet>
 					</rich:panel>
-					<rich:extendedDataTable value="#{editConsigneePage.currDataModel}" var="consignee" id="table" rows="#{editConsigneePage.recordNumberShow}" frame="below" border="1" width="100%" 
-            		cellpadding="0" cellspacing="0" lang="zh-cn"
-            		headerClass="t_hue4"	styleClass="form_table"  columnClasses="td-gray"
+					<rich:extendedDataTable value="#{editConsigneePage.currDataModel}" var="consignee" id="table" rows="#{editConsigneePage.recordNumberShow}" frame="below" border="1" width="100%"  height="115px"
+            		cellpadding="0" cellspacing="0" lang="zh-cn" 
+            		headerClass="t_hue4"	styleClass="form_table"  columnClasses="td-gray,td-gray,td-gray,td-gray,td-gray,td-gray,td-gray"
             		sortMode="#{editConsigneePage.sortMode}" 
                 	selectionMode="#{editConsigneePage.selectionMode}"
                 	selection="#{editConsigneePage.selection}"
@@ -92,17 +92,7 @@ xmlns:rich="http://richfaces.org/rich">
                 			</f:facet>
                 			<h:outputLabel value="#{consignee.consigneeZip}"/>
             			</rich:column>
-						<rich:column id="columneight" sortable="false"  label="操作" >
-                			<f:facet name="header">
-                    			<h:outputText id="headerconsigneeoperate" value="操作"/>
-                			</f:facet>
-                			<a4j:commandLink  oncomplete="selecteCurrConsignee()" value="修改"></a4j:commandLink>
-							<a4j:jsFunction ajaxSingle="true" name="selecteCurrConsigneeFunction" action="#{editConsigneePage.requireUpdateConsignee}" reRender="consigneeInfoContent">
-   								
-   							</a4j:jsFunction>
-							<a4j:commandLink value="删除" onclick="javascript:alert('dddddd')"></a4j:commandLink>
-            			</rich:column>
-            		
+						
 						<a4j:support id="supportone" event="onselectionchange" ignoreDupResponses="true" requestDelay="1"  action="#{editConsigneePage.takeSelection}"  reRender="consigneeInfoContent" ajaxSingle="true"/>
             			
         				</rich:extendedDataTable>
