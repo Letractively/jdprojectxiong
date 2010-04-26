@@ -2407,6 +2407,7 @@ background-color:#ffffff;
 .t_hue4 tr.title1 th{background:#F1F1F1;padding:5px;font-weight:normal;}
 .mb15{margin-bottom:15px;}
 .td-gray,a.td-gray:link,a.td-gray:visited{color:#666;}
+.td-gray-8,a.td-gray-8:link,a.td-gray-8:visited{color:#666;widht:15%;}
 
 .panel-grid-one {
 	padding:0px 6px 0px 0px;
