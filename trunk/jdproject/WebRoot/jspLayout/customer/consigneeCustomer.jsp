@@ -43,7 +43,7 @@ xmlns:rich="http://richfaces.org/rich">
             			</ul>
         				</f:facet>
 					</rich:panel>
-					<rich:extendedDataTable value="#{editConsigneePage.currDataModel}" var="consignee" id="table" rows="#{editConsigneePage.recordNumberShow}" frame="below" border="1" width="100%"  height="115px"
+					<rich:dataTable value="#{editConsigneePage.currDataModel}" var="consignee" id="table" rows="#{editConsigneePage.recordNumberShow}" frame="below" border="1" width="100%"  height="115px"
             		cellpadding="0" cellspacing="0" lang="zh-cn" 
             		headerClass="t_hue4"	styleClass="form_table"  columnClasses="td-gray,td-gray,td-gray,td-gray,td-gray,td-gray,td-gray"
             		sortMode="#{editConsigneePage.sortMode}" 
@@ -95,7 +95,7 @@ xmlns:rich="http://richfaces.org/rich">
 						
 						<a4j:support id="supportone" event="onselectionchange" ignoreDupResponses="true" requestDelay="1"  action="#{editConsigneePage.takeSelection}"  reRender="consigneeInfoContent" ajaxSingle="true"/>
             			
-        				</rich:extendedDataTable>
+        				</rich:dataTable>
       					<rich:datascroller align="left" for="table" maxPages="20"
 						page="#{productUnitEdit.scrollerPage}" id="sc2"/>
 					
