@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.faces.component.UIData;
+
 import org.apache.commons.beanutils.PropertyUtils;
 
 import net.sf.cglib.beans.BeanCopier;
