@@ -43,7 +43,7 @@ xmlns:rich="http://richfaces.org/rich">
             			</ul>
         				</f:facet>
 					</rich:panel>
-					<rich:dataTable value="#{editConsigneePage.currDataModel}" var="consignee" id="table" rows="#{editConsigneePage.recordNumberShow}" frame="below" border="1" width="100%"  height="115px"
+					<rich:extendedDataTable value="#{editConsigneePage.currDataModel}" var="consignee" id="table" rows="#{editConsigneePage.recordNumberShow}" frame="below" border="1" width="100%"  height="#{editConsigneePage.recordNumberShow*25}px"
             		cellpadding="0" cellspacing="0" lang="zh-cn" 
             		headerClass="t_hue4"	styleClass="form_table"  columnClasses="td-gray,td-gray,td-gray,td-gray,td-gray,td-gray,td-gray"
             		sortMode="#{editConsigneePage.sortMode}" 
@@ -92,10 +92,18 @@ xmlns:rich="http://richfaces.org/rich">
                 			</f:facet>
                 			<h:outputLabel value="#{consignee.consigneeZip}"/>
             			</rich:column>
+
+						<rich:column id="columneight" sortable="false"  label="操作">
+                			<f:facet name="header">
+                    			<h:outputText id="headercaozuo" value="操作"/>
+                			</f:facet>
+                			<h:commandLink action="#{editConsigneePage.requireUpdateConsignee}" value="修改" immediate="true"><a4j:support event="onclick" reRender="consigneeInfoContent"></a4j:support></h:commandLink>
+							<h:commandLink value="删除"></h:commandLink>
+            			</rich:column>
 						
 						<a4j:support id="supportone" event="onselectionchange" ignoreDupResponses="true" requestDelay="1"  action="#{editConsigneePage.takeSelection}"  reRender="consigneeInfoContent" ajaxSingle="true"/>
             			
-        				</rich:dataTable>
+        				</rich:extendedDataTable>
       					<rich:datascroller align="left" for="table" maxPages="20"
 						page="#{productUnitEdit.scrollerPage}" id="sc2"/>
 					
