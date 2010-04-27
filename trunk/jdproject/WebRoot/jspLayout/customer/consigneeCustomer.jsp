@@ -93,14 +93,6 @@ xmlns:rich="http://richfaces.org/rich">
                 			<h:outputLabel value="#{consignee.consigneeZip}"/>
             			</rich:column>
 
-						<rich:column id="columneight" sortable="false"  label="操作">
-                			<f:facet name="header">
-                    			<h:outputText id="headercaozuo" value="操作"/>
-                			</f:facet>
-                			<h:commandLink action="#{editConsigneePage.requireUpdateConsignee}" value="修改" immediate="true"><a4j:support event="onclick" reRender="consigneeInfoContent"></a4j:support></h:commandLink>
-							<h:commandLink value="删除"></h:commandLink>
-            			</rich:column>
-						
 						<a4j:support id="supportone" event="onselectionchange" ignoreDupResponses="true" requestDelay="1"  action="#{editConsigneePage.takeSelection}"  reRender="consigneeInfoContent" ajaxSingle="true"/>
             			
         				</rich:extendedDataTable>
