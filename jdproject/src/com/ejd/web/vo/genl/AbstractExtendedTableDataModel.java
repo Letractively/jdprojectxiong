@@ -33,7 +33,7 @@ public class AbstractExtendedTableDataModel<T,V> {
 	private String selectionMode="single";
 	private int scrollerPage;
 	private int recordNumberShow = 10;
-	private UIDataTable table;
+	private UIExtendedDataTable table;
 	private ExtendedTableDataModel<T> dataModel;
 	private List<T> datas = new ArrayList<T>();
 	private SimpleSelection selection = new SimpleSelection();
@@ -64,10 +64,10 @@ public class AbstractExtendedTableDataModel<T,V> {
 		this.recordNumberShow = recordNumberShow;
 	}
 	
-	public UIDataTable getTable() {
+	public UIExtendedDataTable getTable() {
 		return table;
 	}
-	public void setTable(UIDataTable table) {
+	public void setTable(UIExtendedDataTable table) {
 		this.table = table;
 	}
 	public ExtendedTableDataModel<T> getDataModel() {
