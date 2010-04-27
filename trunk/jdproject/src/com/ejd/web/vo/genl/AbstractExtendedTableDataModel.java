@@ -3,6 +3,7 @@ package com.ejd.web.vo.genl;
 import java.lang.reflect.ParameterizedType;
 
 import org.apache.commons.beanutils.PropertyUtils;
+import org.richfaces.component.UIDataTable;
 import org.richfaces.component.UIExtendedDataTable;
 import org.richfaces.model.DataProvider;
 import org.richfaces.model.ExtendedTableDataModel;
@@ -32,7 +33,7 @@ public class AbstractExtendedTableDataModel<T,V> {
 	private String selectionMode="single";
 	private int scrollerPage;
 	private int recordNumberShow = 10;
-	private UIExtendedDataTable table;
+	private UIDataTable table;
 	private ExtendedTableDataModel<T> dataModel;
 	private List<T> datas = new ArrayList<T>();
 	private SimpleSelection selection = new SimpleSelection();
@@ -62,10 +63,11 @@ public class AbstractExtendedTableDataModel<T,V> {
 	public void setRecordNumberShow(int recordNumberShow) {
 		this.recordNumberShow = recordNumberShow;
 	}
-	public UIExtendedDataTable getTable() {
+	
+	public UIDataTable getTable() {
 		return table;
 	}
-	public void setTable(UIExtendedDataTable table) {
+	public void setTable(UIDataTable table) {
 		this.table = table;
 	}
 	public ExtendedTableDataModel<T> getDataModel() {
