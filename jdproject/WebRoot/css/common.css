@@ -1635,21 +1635,21 @@ div.reviews{margin:5px 0}
 	height:30px;
 	}
 .rich-dtascroller-table{
-	padding:0px 0px 0px 0px;
+	padding:6px 0px 6px 0px;
 	margin:0px 0px 0px 0px;
-	background-color: #a8d0f4;
-	border : 2px solid #ecf5fc;
+	background-color: #ffffff;
+	border : 0px solid #ecf5fc;
 	}
 .rich-datascr-act{
-	border-top-color:#F87C14;
-	color:#ffffff;
-	background-color:#F87C14;
-	font-weight:bold;
+	border-top-color:#ffffff;
+	color:#2c629e;
+	background-color:#ffffff;
+	font-weight:700;
 	}
 .rich-datascr-inact{
 	border-top-color:#ffffff;
 	color:#2c629e;
-	font-weight:bold;
+	font-weight:normal;
 	background-color:#ffffff;
 	}
 .rich-datascr-button{
