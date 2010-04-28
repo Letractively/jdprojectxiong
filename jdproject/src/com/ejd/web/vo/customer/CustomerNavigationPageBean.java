@@ -5,6 +5,7 @@ import java.util.List;
 
 import net.sf.cglib.beans.BeanCopier;
 
+import com.ejd.common.constant.CommonConstants;
 import com.ejd.common.constant.ManageBeanConstants;
 import com.ejd.model.exception.ConsigneeException;
 import com.ejd.model.service.iface.IConsigneeService;
@@ -52,7 +53,7 @@ public class CustomerNavigationPageBean {
 		editConsignedPage.setDatas(newConsignees);
 		editConsignedPage.setEditData(new ConsigneeVo(false));
 		editConsignedPage.setErrorMessages("");
-		editConsignedPage.setAction(new String ("new"));
+		editConsignedPage.setAction(new String (CommonConstants.ACTION_NEW_TYPE));
 		result = this.getParam();
 		return result;
 	}
