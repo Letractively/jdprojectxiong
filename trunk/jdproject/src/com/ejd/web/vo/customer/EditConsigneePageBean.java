@@ -5,17 +5,25 @@ import java.util.Iterator;
 import java.util.List;
 
 import javax.faces.component.UIData;
+import javax.faces.context.FacesContext;
 
 import org.apache.commons.beanutils.PropertyUtils;
+import org.springframework.context.ApplicationContext;
+import org.springframework.web.jsf.FacesContextUtils;
 
 import net.sf.cglib.beans.BeanCopier;
 
+import com.ejd.common.constant.CommonConstants;
 import com.ejd.common.constant.ManageBeanConstants;
 import com.ejd.model.exception.ConsigneeException;
+import com.ejd.model.exception.ProductUnitException;
 import com.ejd.model.service.iface.IConsigneeService;
+import com.ejd.model.service.iface.IProductUnitService;
 import com.ejd.utils.SpringFacesUtil;
 import com.ejd.web.bo.Consignee;
+import com.ejd.web.bo.Productunit;
 import com.ejd.web.vo.genl.AbstractExtendedTableDataModel;
+import com.ejd.web.vo.productunit.ProductUnit;
 import com.ejd.web.vo.user.UserBean;
 
 public class EditConsigneePageBean extends AbstractExtendedTableDataModel<ConsigneeVo,ConsigneeVo>{
@@ -82,8 +90,9 @@ public class EditConsigneePageBean extends AbstractExtendedTableDataModel<Consig
 	}
 	
 	public String reSetConsignee() {
+		operationAfterExeAction();
 		EditConsigneePageBean editConsignedPage = (EditConsigneePageBean)SpringFacesUtil.getManagedBean(ManageBeanConstants.EDIT_CONSIGNEE_PAGE_BEAN_NAME);
-		if ("new".equals(editConsignedPage.getAction())) {
+		if (CommonConstants.ACTION_NEW_TYPE.equals(editConsignedPage.getAction())) {
 			editConsignedPage.getEditData().setId(null);
 			editConsignedPage.getEditData().setStakeholderId(null);
 			editConsignedPage.getEditData().setShortName("");
@@ -99,7 +108,7 @@ public class EditConsigneePageBean extends AbstractExtendedTableDataModel<Consig
 			editConsignedPage.getEditData().setConsigneeAddress("");
 			editConsignedPage.getEditData().setRemark("");
 			editConsignedPage.getEditData().setSelected(Boolean.FALSE);
-		} else if ("edit".equals(editConsignedPage.getAction())) {
+		} else if (CommonConstants.ACTION_EIDT_TYPE.equals(editConsignedPage.getAction())) {
 			editConsignedPage.getEditData().setShortName(editConsignedPage.getSelectedData().getShortName());
 			editConsignedPage.getEditData().setInvoiceCompanyName(editConsignedPage.getSelectedData().getInvoiceCompanyName());
 			editConsignedPage.getEditData().setConsigneeName(editConsignedPage.getSelectedData().getConsigneeName());
@@ -119,13 +128,19 @@ public class EditConsigneePageBean extends AbstractExtendedTableDataModel<Consig
 	}
 	
 	public String commitConsignee() throws ConsigneeException {
+		operationAfterExeAction();
 		String result = null;
 		UserBean currentUser = (UserBean) SpringFacesUtil.getManagedBean(ManageBeanConstants.CURRENT_USER_BEAN_NAME);
 		if (null == currentUser || null == currentUser.getUserInfo()) {
 			result = "customerLogin";
 		}
 		//add consignee
-		if (null != this.getAction() && "new".equals(this.getAction())) {
+		if (null != this.getAction() && CommonConstants.ACTION_NEW_TYPE.equals(this.getAction())) {
+			List<Consignee> allConsingeesOfUser = this.getConsigneeService().getConsigneeByStakeholderId(currentUser.getUserInfo().getId());
+			if (null != allConsingeesOfUser && allConsingeesOfUser.size() > CommonConstants.MAX_CONSIGNEES_OF_USER) {
+				this.setErrorMessages("对不起!您最多能添加 " + String.valueOf(CommonConstants.MAX_CONSIGNEES_OF_USER) + "项收货地址!");
+				return null;
+			}
 			Consignee newConsignee = new Consignee();
 			BeanCopier copy = BeanCopier.create(ConsigneeVo.class, Consignee.class, false);
 			copy.copy(this.getEditData(),newConsignee,null);
@@ -150,6 +165,7 @@ public class EditConsigneePageBean extends AbstractExtendedTableDataModel<Consig
 	}
 	
 	public String requireUpdateConsignee() throws ConsigneeException {
+		operationAfterExeAction();
 		Iterator<Object> iterator = getSelection().getKeys();
 		while (iterator.hasNext()){
 			Object key = iterator.next();
@@ -167,6 +183,39 @@ public class EditConsigneePageBean extends AbstractExtendedTableDataModel<Consig
 		}
 		
 		return null;
+	}
+	public String selfTakeSelection() throws ConsigneeException {
+		operationAfterExeAction();
+		takeSelection();
+		this.setAction("");
+		return null;
+	}
+	public String deleteConsignee() throws ConsigneeException {
+		operationAfterExeAction();
+		if (this.getEditData() == null) {
+			this.setErrorMessages("您未选择要删除的数据!");
+			return null;
+		} else if (this.getEditData().getId() == null || "".equals(this.getEditData().getId())) {
+			this.setErrorMessages("您未选择要删除的数据!");
+			return null;
+		}
+		Consignee productUnit =(Consignee) this.getConsigneeService().getConsigneeById(this.getEditData().getId());
+		
+		if (productUnit == null) {
+			this.setErrorMessages("您找到匹配的数据供删除!");
+			return null;
+		} else {
+			this.getConsigneeService().delConsigneeById(this.getEditData().getId());
+			this.setErrorMessages("您选择的收货地址:" + this.getEditData().getShortName() + " 已成功删除!");
+			this.getDatas().remove(this.getSelectedData());
+			ConsigneeVo newConsigneeVo = new ConsigneeVo();
+			newConsigneeVo.setSelected(false);
+			this.setEditData(newConsigneeVo);
+		}
+		return null;
+	}
+	private void operationAfterExeAction(){
+		this.setErrorMessages("");
 	}
 
 }
