@@ -44,7 +44,7 @@ xmlns:rich="http://richfaces.org/rich">
         				</f:facet>
 					</rich:panel>
 					<rich:extendedDataTable value="#{editConsigneePage.currDataModel}" var="consignee" id="table" rows="#{editConsigneePage.recordNumberShow}" frame="below" border="1" width="100%"  height="#{editConsigneePage.recordNumberShow*25}px"
-            		cellpadding="0" cellspacing="0" lang="zh-cn" 
+            		cellpadding="0" cellspacing="0" lang="zh-cn" noDataLabel=""
             		headerClass="t_hue4"	styleClass="form_table"  columnClasses="td-gray,td-gray,td-gray,td-gray,td-gray,td-gray,td-gray"
             		sortMode="#{editConsigneePage.sortMode}" 
                 	selectionMode="#{editConsigneePage.selectionMode}"
@@ -90,14 +90,14 @@ xmlns:rich="http://richfaces.org/rich">
                 			<f:facet name="header">
                     			<h:outputText id="headerconsigneezip" value="邮政编码"/>
                 			</f:facet>
-                			<h:outputLabel value="#{consignee.consigneeZip}"/>
+                			<h:outputLabel value="#{consignee.consigneeZip}"/><h:outputLabel value="#{productUnitEdit.scrollerPage}"></h:outputLabel>
             			</rich:column>
 
-						<a4j:support id="supportone" event="onselectionchange" ignoreDupResponses="true" requestDelay="1"  action="#{editConsigneePage.takeSelection}"  reRender="consigneeInfoContent" ajaxSingle="true"/>
+						<a4j:support id="supportone" event="onselectionchange" ignoreDupResponses="true" requestDelay="1"  action="#{editConsigneePage.selfTakeSelection}"  reRender="consigneeInfoContent" ajaxSingle="true"/>
             			
         				</rich:extendedDataTable>
-      					<rich:datascroller align="left" for="table" maxPages="20"
-						page="#{productUnitEdit.scrollerPage}" id="sc2"/>
+      					<rich:datascroller id="tableScroller" align="left" for="table" maxPages="20"
+						page="#{productUnitEdit.scrollerPage}"/>
 					
 					
 					<rich:panel id="consigneeInfoTitle" style="width:100%" bodyClass="info-title">
@@ -166,7 +166,11 @@ xmlns:rich="http://richfaces.org/rich">
 							</h:panelGrid>
 							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-three,panel-grid-two">
 								<h:outputText value=""></h:outputText>
-								<h:panelGroup><a4j:commandLink action="#{editConsigneePage.commitConsignee}" value="提交" id="tijiao" styleClass="ButtonDefault" reRender="consigneeTable"></a4j:commandLink><h:commandLink action="#{editConsigneePage.reSetConsignee}" value="重置" immediate="false" styleClass="ButtonDefault"><a4j:support event="onclick" reRender="invoiceCompanyName"></a4j:support></h:commandLink></h:panelGroup>
+								<h:panelGroup>
+								<a4j:commandLink action="#{editConsigneePage.commitConsignee}" value="提交" id="tijiao" styleClass="ButtonDefault" reRender="table,tableScroller,consigneeInfoContent"></a4j:commandLink>
+								<a4j:commandLink action="#{editConsigneePage.reSetConsignee}" value="重置" immediate="false" styleClass="ButtonDefault" reRender="table,tableScroller,consigneeInfoContent"></a4j:commandLink>
+								<a4j:commandLink action="#{editConsigneePage.deleteConsignee}" value="删除" onclick="if (#{empty editConsigneePage.editData.id}) {alert('当前无数据可以删除');} else {if (!confirm('确认删除此记录吗?')) return false;}" id="deleButton" styleClass="ButtonDefault"  reRender="table,tableScroller,consigneeInfoContent"></a4j:commandLink>
+								</h:panelGroup>
 								<h:outputLabel value=""></h:outputLabel>
 							</h:panelGrid>
 					</rich:panel>
