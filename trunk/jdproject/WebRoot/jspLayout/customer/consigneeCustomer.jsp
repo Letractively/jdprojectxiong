@@ -90,7 +90,7 @@ xmlns:rich="http://richfaces.org/rich">
                 			<f:facet name="header">
                     			<h:outputText id="headerconsigneezip" value="邮政编码"/>
                 			</f:facet>
-                			<h:outputLabel value="#{consignee.consigneeZip}"/><h:outputLabel value="#{editConsigneePage.pageRows*15}"></h:outputLabel>
+                			<h:outputLabel value="#{consignee.consigneeZip}"/>
             			</rich:column>
 
 						<a4j:support id="supportone" event="onselectionchange" ignoreDupResponses="true" requestDelay="1"  action="#{editConsigneePage.selfTakeSelection}"  reRender="consigneeInfoContent" ajaxSingle="true"/>
