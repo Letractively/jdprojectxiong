@@ -43,7 +43,7 @@ xmlns:rich="http://richfaces.org/rich">
             			</ul>
         				</f:facet>
 					</rich:panel>
-					<rich:extendedDataTable value="#{editConsigneePage.currDataModel}" var="consignee" id="table" rows="#{editConsigneePage.recordNumberShow}" frame="above" border="1" width="100%"  height="#{editConsigneePage.pageRows*15}px"
+					<rich:extendedDataTable value="#{editConsigneePage.currDataModel}" var="consignee" id="table" rows="#{editConsigneePage.recordNumberShow}" frame="above" border="1" width="100%"  height="#{editConsigneePage.pageRows*25}px"
             		cellpadding="0" cellspacing="0" lang="zh-cn" 
             		headerClass="t_hue4" styleClass="form_table" rowClasses="table-row-odd" selectedClass="table-row-selected"  columnClasses=""
             		sortMode="#{editConsigneePage.sortMode}" 
