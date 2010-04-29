@@ -32,7 +32,6 @@ public class AbstractExtendedTableDataModel<T,V> {
 	private String sortMode="single";
 	private String selectionMode="single";
 	private int scrollerPage;
-	private int pageRows = 0;
 	private int recordNumberShow = 10;
 	private UIExtendedDataTable table;
 	private ExtendedTableDataModel<T> dataModel;
