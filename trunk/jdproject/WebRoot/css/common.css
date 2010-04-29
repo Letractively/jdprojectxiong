@@ -2246,6 +2246,14 @@ background-color:#ffffff;
 	border-bottom: #d6d6d6 1px solid; 
 	border-right: #d6d6d6 0px solid;
 }
+.table-row-selected {
+	height:28px;
+	border-left: #d6d6d6 0px solid; 
+	border-top: #d6d6d6 0px solid; 
+	border-bottom: #d6d6d6 1px solid; 
+	border-right: #d6d6d6 0px solid;
+	background:url(../css/images/icons/yellow-header-bg.gif) bottom left repeat-x; list-style-type:none;
+}
 .header-step-display{
 	height:25px;
 	background:url(../css/images/icons/stepdisplay.gif) 0 0 repeat-x;
