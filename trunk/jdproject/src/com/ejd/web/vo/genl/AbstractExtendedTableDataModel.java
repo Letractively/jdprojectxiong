@@ -32,6 +32,7 @@ public class AbstractExtendedTableDataModel<T,V> {
 	private String sortMode="single";
 	private String selectionMode="single";
 	private int scrollerPage;
+	private int pageRows = 0;
 	private int recordNumberShow = 10;
 	private UIExtendedDataTable table;
 	private ExtendedTableDataModel<T> dataModel;
@@ -59,6 +60,10 @@ public class AbstractExtendedTableDataModel<T,V> {
 	}
 	public int getRecordNumberShow() {
 		return recordNumberShow;
+	}
+	public int getPageRows() {
+		return this.getTable().getRowCount();
+		
 	}
 	public void setRecordNumberShow(int recordNumberShow) {
 		this.recordNumberShow = recordNumberShow;
