@@ -43,7 +43,7 @@ xmlns:rich="http://richfaces.org/rich">
             			</ul>
         				</f:facet>
 					</rich:panel>
-					<rich:extendedDataTable value="#{editConsigneePage.currDataModel}" var="consignee" id="table" rows="#{editConsigneePage.recordNumberShow}" frame="above" border="1" width="100%"  height="#{editConsigneePage.pageRows*25}px"
+					<rich:extendedDataTable value="#{editConsigneePage.currDataModel}" var="consignee" id="table" rows="#{editConsigneePage.recordNumberShow}" frame="above" border="1" width="100%"  height="#{(editConsigneePage.pageRows+1)*25+28}px"
             		cellpadding="0" cellspacing="0" lang="zh-cn" 
             		headerClass="t_hue4" styleClass="form_table" rowClasses="table-row-odd" selectedClass="table-row-selected"  columnClasses=""
             		sortMode="#{editConsigneePage.sortMode}" 
@@ -90,14 +90,14 @@ xmlns:rich="http://richfaces.org/rich">
                 			<f:facet name="header">
                     			<h:outputText id="headerconsigneezip" value="邮政编码"/>
                 			</f:facet>
-                			<h:outputLabel value="#{consignee.consigneeZip}"/>
+                			<h:outputLabel value="#{consignee.consigneeZip}"/><h:outputLabel value="#{editConsigneePage.pageRows}"></h:outputLabel>
             			</rich:column>
 
 						<a4j:support id="supportone" event="onselectionchange" ignoreDupResponses="true" requestDelay="1"  action="#{editConsigneePage.selfTakeSelection}"  reRender="consigneeInfoContent" ajaxSingle="true"/>
             			
         				</rich:extendedDataTable>
       					<rich:datascroller id="tableScroller" align="left" for="table" maxPages="20"
-						page="#{productUnitEdit.scrollerPage}"/>
+						page="#{editConsigneePage.scrollerPage}"/>
 					
 					
 					<rich:panel id="consigneeInfoTitle" style="width:100%" bodyClass="info-title">
