@@ -64,6 +64,12 @@ public class AbstractExtendedTableDataModel<T,V> {
 		return this.getTable().getRowCount();
 		
 	}
+	public int getDataCounts() {
+		if (null == this.getDatas()) {
+			return 0;
+		}
+		return this.getDatas().size();
+	}
 	public void setRecordNumberShow(int recordNumberShow) {
 		this.recordNumberShow = recordNumberShow;
 	}
