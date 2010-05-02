@@ -43,60 +43,58 @@ xmlns:rich="http://richfaces.org/rich">
             			</ul>
         				</f:facet>
 					</rich:panel>
-					<rich:extendedDataTable value="#{editConsigneePage.currDataModel}" var="consignee" id="table" rows="#{editConsigneePage.recordNumberShow}" frame="above" border="1" width="100%"  height="#{(editConsigneePage.pageRows+1)*25+28}px"
+					<rich:extendedDataTable value="#{editConsigneePage.currDataModel}" var="consignee" id="table" rows="#{editConsigneePage.recordNumberShow}" frame="above" border="1" width="100%" style="padding:0px 0px 0px 0px;margin:0px 0px 0px 0px;vertical-align:top;" height="#{(editConsigneePage.pageRows+1)*25+25}px"
             		cellpadding="0" cellspacing="0" lang="zh-cn" 
-            		headerClass="t_hue4" styleClass="form_table" rowClasses="table-row-odd" selectedClass="table-row-selected"  columnClasses=""
+            		headerClass="t_hue4" styleClass="form_table" rowClasses="table-row-odd" selectedClass="table-row-selected"  
             		sortMode="#{editConsigneePage.sortMode}" 
                 	selectionMode="#{editConsigneePage.selectionMode}"
                 	selection="#{editConsigneePage.selection}"
                 	binding="#{editConsigneePage.table}">
-						<rich:column id="columnone" sortable="false" label="为默认">
+					<a4j:support id="supportone" event="onselectionchange" ignoreDupResponses="true" requestDelay="1"  action="#{editConsigneePage.selfTakeSelection}"  reRender="consigneeInfoContent" ajaxSingle="true"/>
+						<rich:column id="columnone" width="8%" sortable="false" label="为默认">
                 			<f:facet name="header">
                     			<h:outputText id="headerselected" value="设为默认"/>
                 			</f:facet>
                 			<h:selectBooleanCheckbox value="#{consignee.selected}"></h:selectBooleanCheckbox>
             			</rich:column> 
-            			<rich:column id="columntwo" sortable="false" label="地址简称">
+            			<rich:column id="columntwo" width="15%" sortable="false" label="地址简称">
                 			<f:facet name="header">
                     			<h:outputText id="headershortname" value="地址简称"/>
                 			</f:facet>
                 			<h:outputLabel value="#{consignee.shortName}"/>
             			</rich:column>
-						<rich:column id="columnthree" sortable="false"  label="收货人">
+						<rich:column id="columnthree" width="15%" sortable="false"  label="收货人">
                 			<f:facet name="header">
                     			<h:outputText id="headerconsigneename" value="收货人"/>
                 			</f:facet>
                 			<h:outputLabel value="#{consignee.consigneeName}"/>
             			</rich:column>
-						<rich:column id="columnfoure" sortable="false"  label="手机">
+						<rich:column id="columnfoure" width="15%" sortable="false"  label="手机">
                 			<f:facet name="header">
                     			<h:outputText id="headerconsigneemobile" value="手机"/>
                 			</f:facet>
                 			<h:outputLabel value="#{consignee.consigneeMobile}"/>
             			</rich:column>
-						<rich:column id="columnfive" sortable="false"  label="电话">
+						<rich:column id="columnfive" width="15%" sortable="false"  label="电话">
                 			<f:facet name="header">
                     			<h:outputText id="headerconsigneephone" value="电话"/>
                 			</f:facet>
                 			<h:outputLabel value="#{consignee.consigneePhone}"/>
             			</rich:column>
-						<rich:column id="columnsix" sortable="false"  label="详细地址">
+						<rich:column id="columnsix" width="25%" sortable="false"  label="详细地址">
                 			<f:facet name="header">
                     			<h:outputText id="headerconsigneeaddress" value="详细地址"/>
                 			</f:facet>
                 			<h:outputLabel value="#{consignee.consigneeAddress}"/>
             			</rich:column>
-						<rich:column id="columnseven" sortable="false"  label="邮政编码">
+						<rich:column id="columnseven" width="8%" sortable="false"  label="邮政编码">
                 			<f:facet name="header">
                     			<h:outputText id="headerconsigneezip" value="邮政编码"/>
                 			</f:facet>
-                			<h:outputLabel value="#{consignee.consigneeZip}"/><h:outputLabel value="#{editConsigneePage.pageRows}"></h:outputLabel>
+                			<h:outputLabel value="#{consignee.consigneeZip}"/>
             			</rich:column>
-
-						<a4j:support id="supportone" event="onselectionchange" ignoreDupResponses="true" requestDelay="1"  action="#{editConsigneePage.selfTakeSelection}"  reRender="consigneeInfoContent" ajaxSingle="true"/>
-            			
         				</rich:extendedDataTable>
-      					<rich:datascroller id="tableScroller" align="left" for="table" maxPages="20"
+      					<rich:datascroller id="tableScroller" align="left" for="table" maxPages="20" rendered="#{editConsigneePage.dataCounts > editConsigneePage.recordNumberShow}"
 						page="#{editConsigneePage.scrollerPage}"/>
 					
 					
@@ -104,7 +102,7 @@ xmlns:rich="http://richfaces.org/rich">
 						<h:outputText value="添加/修改"></h:outputText>
 					</rich:panel>
 					<rich:panel id="consigneeInfoContent" style="width:100%" headerClass="header-error-messages" bodyClass="info-content">
-						<f:facet name="header"><h:outputText value="#{editConsigneePage.errorMessages}" style="width:100%"/></f:facet>
+						<f:facet name="header"><h:outputText value="#{editConsigneePage.errorMessages}" style="width:100%" styleClass="error-messages"/></f:facet>
 							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
 								<h:outputText value="发票抬头："></h:outputText>
 								<h:inputText id="invoiceCompanyName" value="#{editConsigneePage.editData.invoiceCompanyName}" styleClass="input-text-full-length" style="border:1px solid #d6d6d6"></h:inputText>
