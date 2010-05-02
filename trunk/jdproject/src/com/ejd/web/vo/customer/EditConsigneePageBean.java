@@ -137,7 +137,7 @@ public class EditConsigneePageBean extends AbstractExtendedTableDataModel<Consig
 		//add consignee
 		if (null != this.getAction() && CommonConstants.ACTION_NEW_TYPE.equals(this.getAction())) {
 			List<Consignee> allConsingeesOfUser = this.getConsigneeService().getConsigneeByStakeholderId(currentUser.getUserInfo().getId());
-			if (null != allConsingeesOfUser && allConsingeesOfUser.size() > CommonConstants.MAX_CONSIGNEES_OF_USER) {
+			if (null != allConsingeesOfUser && allConsingeesOfUser.size() >= CommonConstants.MAX_CONSIGNEES_OF_USER) {
 				this.setErrorMessages("对不起!您最多能添加 " + String.valueOf(CommonConstants.MAX_CONSIGNEES_OF_USER) + "项收货地址!");
 				return null;
 			}
