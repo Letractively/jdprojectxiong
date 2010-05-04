@@ -2233,10 +2233,10 @@ background-color:#ffffff;
 .table-row-odd {
 	background-color: #ffffff;
 	height:25px;
-	border-left: #d6d6d6 0px solid; 
+	border-left: #d6d6d6 1px solid; 
 	border-top: #d6d6d6 0px solid; 
 	border-bottom: #d6d6d6 1px solid; 
-	border-right: #d6d6d6 0px solid;
+	border-right: #d6d6d6 1px solid;
 }
 .table-row-even {
 	background-color: #f5f5f5;
@@ -2248,10 +2248,10 @@ background-color:#ffffff;
 }
 .table-row-selected {
 	height:25px;
-	border-left: #d6d6d6 0px solid; 
+	border-left: #d6d6d6 1px solid; 
 	border-top: #d6d6d6 0px solid; 
 	border-bottom: #d6d6d6 1px solid; 
-	border-right: #d6d6d6 0px solid;
+	border-right: #d6d6d6 1px solid;
 	background:url(../css/images/icons/yellow-header-bg.gif) bottom left repeat-x; list-style-type:none;
 }
 .header-step-display{
@@ -2432,16 +2432,25 @@ background-color:#ffffff;
 	margin:0px 0px 0px 0px;
 	position:relative;
 	}
+.rich-extdt-header{
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	height:0px;
+	}
 .extdt-outerdiv {
 	top:0;
 	left:0;
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
 	position:relative;
+	background-color:black;
 	}
 .extdt-innerdiv {
+	top:0;
+	left:0;
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
+	position:relative;
 	vertical-align:top;
 	background-color:green;
 	}
@@ -2459,8 +2468,9 @@ background-color:#ffffff;
 	margin:0px 0px 0px 0px;
 	vertical-align:top;
 	position:relative;
+	height:0px;
 	}
-.form_table{left:0;top:0;position:relative; border:1px #E3E3E3 solid;background-color:#222;height:100%}
+.form_table{left:0;top:0;position:relative; border:0px #E3E3E3 solid;background-color:red;vAlign: top;}
 .form_table colgroup{
 	width:100%}
 .form_table td{padding:0px 2px 0px 2px;}
