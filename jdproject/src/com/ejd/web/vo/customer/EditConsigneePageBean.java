@@ -6,8 +6,11 @@ import java.util.List;
 
 import javax.faces.component.UIData;
 import javax.faces.context.FacesContext;
+import javax.faces.model.DataModel;
 
 import org.apache.commons.beanutils.PropertyUtils;
+import org.richfaces.model.DataProvider;
+import org.richfaces.model.ExtendedTableDataModel;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.jsf.FacesContextUtils;
 
@@ -15,6 +18,7 @@ import net.sf.cglib.beans.BeanCopier;
 
 import com.ejd.common.constant.CommonConstants;
 import com.ejd.common.constant.ManageBeanConstants;
+import com.ejd.common.datapage.DataPage;
 import com.ejd.model.exception.ConsigneeException;
 import com.ejd.model.exception.ProductUnitException;
 import com.ejd.model.service.iface.IConsigneeService;
@@ -23,10 +27,12 @@ import com.ejd.utils.SpringFacesUtil;
 import com.ejd.web.bo.Consignee;
 import com.ejd.web.bo.Productunit;
 import com.ejd.web.vo.genl.AbstractExtendedTableDataModel;
+import com.ejd.web.vo.genl.AbstractTableDataModel;
+import com.ejd.web.vo.genl.ITableDataModel;
 import com.ejd.web.vo.productunit.ProductUnit;
 import com.ejd.web.vo.user.UserBean;
 
-public class EditConsigneePageBean extends AbstractExtendedTableDataModel<ConsigneeVo,ConsigneeVo>{
+public class EditConsigneePageBean extends AbstractTableDataModel<ConsigneeVo,ConsigneeVo> implements ITableDataModel {
 	
 	IConsigneeService consigneeService;
 	
@@ -165,7 +171,7 @@ public class EditConsigneePageBean extends AbstractExtendedTableDataModel<Consig
 	}
 	
 	public String requireUpdateConsignee() throws ConsigneeException {
-		operationAfterExeAction();
+		/*operationAfterExeAction();
 		Iterator<Object> iterator = getSelection().getKeys();
 		while (iterator.hasNext()){
 			Object key = iterator.next();
@@ -180,13 +186,13 @@ public class EditConsigneePageBean extends AbstractExtendedTableDataModel<Consig
 				}
 
 			}
-		}
+		}*/
 		
 		return null;
 	}
 	public String selfTakeSelection() throws ConsigneeException {
 		operationAfterExeAction();
-		takeSelection();
+		//takeSelection();
 		this.setAction("");
 		return null;
 	}
@@ -216,6 +222,51 @@ public class EditConsigneePageBean extends AbstractExtendedTableDataModel<Consig
 	}
 	private void operationAfterExeAction(){
 		this.setErrorMessages("");
+	}
+	// getTotalCount() in this bean not used , so it's not need to realize
+	public int getTotalCount() {
+		return 0;
+	}
+	// getDataPage() in this bean not used , so it's not need to realize
+	public DataPage<ConsigneeVo> getDataPage(int startRow, int pageSize) {
+		return null;
+	}
+	// getDataPage() in this bean not used , so it's not need to realize
+	public DataModel getDataModel(){
+		return null;
+	}
+	//in this bean data must from DB first.
+	public DataModel getCurrDataModel() {
+		 DataModel cdataModel = null;
+		 cdataModel= new ExtendedTableDataModel<ConsigneeVo>(new DataProvider<ConsigneeVo>(){
+
+			private static final long serialVersionUID = 5054087821033164847L;
+
+			public ConsigneeVo getItemByKey(Object key) {
+				for(ConsigneeVo c : getDatas()){
+					if (key.equals(getKey(c))){
+						return c;
+					}
+				}
+				return null;
+			}
+
+			public List<ConsigneeVo> getItemsByRange(int firstRow, int endRow) {
+				return getDatas().subList(firstRow, endRow);
+			}
+
+			public Object getKey(ConsigneeVo item) {
+				return getIdItem(item);
+			}
+
+			public int getRowCount() {
+				return getDatas().size();
+			}
+			
+		});
+	
+	return cdataModel;
+		
 	}
 
 }
