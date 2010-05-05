@@ -43,14 +43,11 @@ xmlns:rich="http://richfaces.org/rich">
             			</ul>
         				</f:facet>
 					</rich:panel>
-					<rich:extendedDataTable value="#{editConsigneePage.currDataModel}" var="consignee" id="table" rows="#{editConsigneePage.recordNumberShow}" frame="above" border="1" width="100%" style="padding:0px 0px 0px 0px;margin:0px 0px 0px 0px;vertical-align:top;" height="#{(editConsigneePage.pageRows+1)*25+25}px"
+					<rich:dataTable value="#{editConsigneePage.currDataModel}" var="consignee" id="table" rows="#{editConsigneePage.numberOnePage}" frame="vsides" border="1" width="100%" style="padding:0px 0px 0px 0px;margin:0px 0px 0px 0px;vertical-align:top;"
             		cellpadding="0" cellspacing="0" lang="zh-cn" 
-            		headerClass="t_hue4" styleClass="form_table" rowClasses="table-row-odd" selectedClass="table-row-selected"  
+            		styleClass="extdt_table" rowClasses="table-row-odd" 
             		sortMode="#{editConsigneePage.sortMode}" 
-                	selectionMode="#{editConsigneePage.selectionMode}"
-                	selection="#{editConsigneePage.selection}"
                 	binding="#{editConsigneePage.table}">
-					<a4j:support id="supportone" event="onselectionchange" ignoreDupResponses="true" requestDelay="1"  action="#{editConsigneePage.selfTakeSelection}"  reRender="consigneeInfoContent" ajaxSingle="true"/>
 						<rich:column id="columnone" width="8%" sortable="false" label="为默认">
                 			<f:facet name="header">
                     			<h:outputText id="headerselected" value="设为默认"/>
@@ -93,8 +90,8 @@ xmlns:rich="http://richfaces.org/rich">
                 			</f:facet>
                 			<h:outputLabel value="#{consignee.consigneeZip}"/>
             			</rich:column>
-        				</rich:extendedDataTable>
-      					<rich:datascroller id="tableScroller" align="left" for="table" maxPages="20" rendered="#{editConsigneePage.dataCounts > editConsigneePage.recordNumberShow}"
+        				</rich:dataTable>
+      					<rich:datascroller id="tableScroller" align="left" for="table" maxPages="20" rendered="#{editConsigneePage.dataCounts > editConsigneePage.numberOnePage}"
 						page="#{editConsigneePage.scrollerPage}"/>
 					
 					
