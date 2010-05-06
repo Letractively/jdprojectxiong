@@ -28,7 +28,7 @@ public class CustomerNavigationPageBean {
 	public CustomerNavigationPageBean() {
 		
 	}
-	public String clickActionByConsignee() throws ConsigneeException {
+	public String clickActionByConsigneeCustomer() throws ConsigneeException {
 		String result = null;
 		if (null == this.getParam() || "".equals(this.getParam())) {
 			return result;
@@ -57,7 +57,18 @@ public class CustomerNavigationPageBean {
 		result = this.getParam();
 		return result;
 	}
-	
+	public String clickActionByShoppingCart() throws ConsigneeException {
+		String result = null;
+		if (null == this.getParam() || "".equals(this.getParam())) {
+			return result;
+		}
+		UserBean currentUser = (UserBean) SpringFacesUtil.getManagedBean(ManageBeanConstants.CURRENT_USER_BEAN_NAME);
+		if (null == currentUser || null == currentUser.getUserInfo()) {
+			result = "customerLogin";
+		}
+		result = this.getParam();
+		return result;
+	}
 	
 
 }
