@@ -43,9 +43,9 @@ xmlns:rich="http://richfaces.org/rich">
             			</ul>
         				</f:facet>
 					</rich:panel>
-					<rich:dataTable value="#{editConsigneePage.currDataModel}" var="consignee" id="table" rows="#{editConsigneePage.numberOnePage}" frame="vsides" border="1" width="100%" style="padding:0px 0px 0px 0px;margin:0px 0px 0px 0px;vertical-align:top;"
+					<rich:dataTable value="#{editConsigneePage.currDataModel}" var="consignee" id="table" rows="#{editConsigneePage.numberOnePage}" frame="vsides" border="0" width="100%" style="padding:0px 0px 0px 0px;margin:0px 0px 0px 0px;vertical-align:top;"
             		cellpadding="0" cellspacing="0" lang="zh-cn" 
-            		styleClass="extdt_table" rowClasses="table-row-odd" 
+            		headerClass="data_table_header" styleClass="data_table" rowClasses="table-row-odd" columnClasses="align-center,align-center,align-center,align-center,align-center,align-left,align-center,align-center"
             		sortMode="#{editConsigneePage.sortMode}" 
                 	binding="#{editConsigneePage.table}">
 						<rich:column id="columnone" width="8%" sortable="false" label="为默认">
@@ -54,25 +54,25 @@ xmlns:rich="http://richfaces.org/rich">
                 			</f:facet>
                 			<h:selectBooleanCheckbox value="#{consignee.selected}"></h:selectBooleanCheckbox>
             			</rich:column> 
-            			<rich:column id="columntwo" width="15%" sortable="false" label="地址简称">
+            			<rich:column id="columntwo" width="12%" sortable="false" label="地址简称">
                 			<f:facet name="header">
                     			<h:outputText id="headershortname" value="地址简称"/>
                 			</f:facet>
                 			<h:outputLabel value="#{consignee.shortName}"/>
             			</rich:column>
-						<rich:column id="columnthree" width="15%" sortable="false"  label="收货人">
+						<rich:column id="columnthree" width="12%" sortable="false"  label="收货人">
                 			<f:facet name="header">
                     			<h:outputText id="headerconsigneename" value="收货人"/>
                 			</f:facet>
                 			<h:outputLabel value="#{consignee.consigneeName}"/>
             			</rich:column>
-						<rich:column id="columnfoure" width="15%" sortable="false"  label="手机">
+						<rich:column id="columnfoure" width="12%" sortable="false"  label="手机">
                 			<f:facet name="header">
                     			<h:outputText id="headerconsigneemobile" value="手机"/>
                 			</f:facet>
                 			<h:outputLabel value="#{consignee.consigneeMobile}"/>
             			</rich:column>
-						<rich:column id="columnfive" width="15%" sortable="false"  label="电话">
+						<rich:column id="columnfive" width="12%" sortable="false"  label="电话">
                 			<f:facet name="header">
                     			<h:outputText id="headerconsigneephone" value="电话"/>
                 			</f:facet>
@@ -84,11 +84,17 @@ xmlns:rich="http://richfaces.org/rich">
                 			</f:facet>
                 			<h:outputLabel value="#{consignee.consigneeAddress}"/>
             			</rich:column>
-						<rich:column id="columnseven" width="8%" sortable="false"  label="邮政编码">
+						<rich:column id="columnseven" width="10%" sortable="false"  label="邮政编码">
                 			<f:facet name="header">
                     			<h:outputText id="headerconsigneezip" value="邮政编码"/>
                 			</f:facet>
                 			<h:outputLabel value="#{consignee.consigneeZip}"/>
+            			</rich:column>
+						<rich:column id="columneight" width="10%" sortable="false"  label="操作">
+                			<f:facet name="header">
+                    			<h:outputText id="headerconsigneeoperate" value="操作"/>
+                			</f:facet>
+                			<a4j:commandLink action="#{editConsigneePage.requireUpdateConsignee}" value="修改" reRender="consigneeInfoContent"></a4j:commandLink><h:commandLink value="删除"></h:commandLink>
             			</rich:column>
         				</rich:dataTable>
       					<rich:datascroller id="tableScroller" align="left" for="table" maxPages="20" rendered="#{editConsigneePage.dataCounts > editConsigneePage.numberOnePage}"
