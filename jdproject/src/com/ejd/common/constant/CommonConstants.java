@@ -7,6 +7,6 @@ public class CommonConstants {
 	public static final String VALUE_GO_BACK = "goBack";
 	public static final String VALUE_GO_SHOPPING_CART = "goShoppingCart";
 	public static final String ACTION_NEW_TYPE = "NEW";
-	public static final String ACTION_EIDT_TYPE = "EDIT";
+	public static final String ACTION_EDIT_TYPE = "EDIT";
 	public static final int MAX_CONSIGNEES_OF_USER = 10;
 }

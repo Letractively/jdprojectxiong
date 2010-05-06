@@ -38,7 +38,7 @@ import com.ejd.web.vo.genl.ITableDataModel;
 import com.ejd.web.vo.productunit.ProductUnit;
 import com.ejd.web.vo.user.UserBean;
 
-public class EditConsigneePageBean extends AbstractTableDataModel<ConsigneeVo,ConsigneeVo> implements ITableDataModel {
+public class EditConsigneePageBean extends AbstractTableDataModel<ConsigneeVo,ConsigneeVo> implements ITableDataModel<ConsigneeVo> {
 	
 	IConsigneeService consigneeService;
 	
@@ -77,6 +77,7 @@ public class EditConsigneePageBean extends AbstractTableDataModel<ConsigneeVo,Co
 	
 	public EditConsigneePageBean() {
 		super();
+		this.setNumberOnePage(CommonConstants.MAX_CONSIGNEES_OF_USER);
 	}
 
 	public EditConsigneePageBean (String newAnother) {
@@ -120,7 +121,7 @@ public class EditConsigneePageBean extends AbstractTableDataModel<ConsigneeVo,Co
 			editConsignedPage.getEditData().setConsigneeAddress("");
 			editConsignedPage.getEditData().setRemark("");
 			editConsignedPage.getEditData().setSelected(Boolean.FALSE);
-		} else if (CommonConstants.ACTION_EIDT_TYPE.equals(editConsignedPage.getAction())) {
+		} else if (CommonConstants.ACTION_EDIT_TYPE.equals(editConsignedPage.getAction())) {
 			editConsignedPage.getEditData().setShortName(editConsignedPage.getSelectedData().getShortName());
 			editConsignedPage.getEditData().setInvoiceCompanyName(editConsignedPage.getSelectedData().getInvoiceCompanyName());
 			editConsignedPage.getEditData().setConsigneeName(editConsignedPage.getSelectedData().getConsigneeName());
@@ -173,10 +174,27 @@ public class EditConsigneePageBean extends AbstractTableDataModel<ConsigneeVo,Co
 				
 			}
 		}
+		//edit consignee
+		if (null != this.getAction() && CommonConstants.ACTION_EDIT_TYPE.equals(this.getAction())) {
+			BeanCopier copyHere = BeanCopier.create(ConsigneeVo.class, Consignee.class, false);
+			Consignee consignee = new Consignee();
+			copyHere.copy(this.getEditData(), consignee, null);
+			this.getConsigneeService().saveOrUpdateConsignee(consignee);
+			this.setSelectedData(this.getEditData());
+			List<ConsigneeVo> dataLists = this.getDatas();
+			for (ConsigneeVo cVo:dataLists) {
+				if (this.getEditData().getId().equals(cVo.getId())) {
+					BeanCopier copyHere1 = BeanCopier.create(ConsigneeVo.class, ConsigneeVo.class, false);
+					copyHere1.copy(this.getEditData(), cVo, null);
+				}
+			}
+			
+		}
 		return null;
 	}
 	
 	public String requireUpdateConsignee() throws ConsigneeException {
+		operationAfterExeAction();
 		Map<String,UIComponent> componentMap = new HashMap<String,UIComponent>();
 		List<UIComponent> te= new ArrayList<UIComponent>();
 		UIViewRoot currentViewRoot = FacesContext.getCurrentInstance().getViewRoot();
@@ -187,6 +205,7 @@ public class EditConsigneePageBean extends AbstractTableDataModel<ConsigneeVo,Co
 		setSelectedData((ConsigneeVo) tempTable.getRowData());
 		try {
 			PropertyUtils.copyProperties(this.getEditData(),this.getSelectedData());
+			this.setAction(CommonConstants.ACTION_EDIT_TYPE);
 		} catch(Exception e)
 		{
 			System.out.println(e.toString());
@@ -208,10 +227,10 @@ public class EditConsigneePageBean extends AbstractTableDataModel<ConsigneeVo,Co
 			this.setErrorMessages("您未选择要删除的数据!");
 			return null;
 		}
-		Consignee productUnit =(Consignee) this.getConsigneeService().getConsigneeById(this.getEditData().getId());
+		Consignee curConsignee =(Consignee) this.getConsigneeService().getConsigneeById(this.getEditData().getId());
 		
-		if (productUnit == null) {
-			this.setErrorMessages("您找到匹配的数据供删除!");
+		if (null == curConsignee) {
+			this.setErrorMessages("未找到匹配的数据供删除!");
 			return null;
 		} else {
 			this.getConsigneeService().delConsigneeById(this.getEditData().getId());
@@ -221,6 +240,46 @@ public class EditConsigneePageBean extends AbstractTableDataModel<ConsigneeVo,Co
 			newConsigneeVo.setSelected(false);
 			this.setEditData(newConsigneeVo);
 		}
+		return null;
+	}
+	public String deleteConsigneeByEachItem() throws ConsigneeException {
+		operationAfterExeAction();
+		Map<String,UIComponent> componentMap = new HashMap<String,UIComponent>();
+		List<UIComponent> te= new ArrayList<UIComponent>();
+		UIViewRoot currentViewRoot = FacesContext.getCurrentInstance().getViewRoot();
+		for(UIComponent component : currentViewRoot.getChildren()){ 
+            te= UIComponentUtil.getComponentChildren(component,componentMap); 
+        }
+		UIData tempTable = (UIData) componentMap.get("table");
+		ConsigneeVo delConsigneeVo = (ConsigneeVo) tempTable.getRowData();
+		System.out.println(delConsigneeVo.getId().toString());
+		Consignee curConsignee =(Consignee) this.getConsigneeService().getConsigneeById(delConsigneeVo.getId().intValue());
+		if (null == curConsignee) {
+			this.setErrorMessages("未找到匹配的数据供删除!");
+			return null;
+		} else {
+			this.getConsigneeService().delConsigneeById(delConsigneeVo.getId().intValue());
+			this.getDatas().remove(delConsigneeVo);
+			System.out.println("removed  success=========================");
+			//clear EditData and selectedData if delete data same as.
+			if (null != this.getEditData() && (this.getEditData().getId() == (delConsigneeVo.getId()))) {
+				System.out.println("11111111111111111=========================");
+				ConsigneeVo newConsigneeVo = new ConsigneeVo();
+				newConsigneeVo.setSelected(false);
+				this.setEditData(newConsigneeVo);
+				this.setSelectedData(newConsigneeVo);
+			}
+		}
+		return null;
+	}
+	
+	public String preDddConsignee(){
+		operationAfterExeAction();
+		this.setAction(CommonConstants.ACTION_NEW_TYPE);
+		ConsigneeVo newConsigneeVo = new ConsigneeVo();
+		newConsigneeVo.setSelected(false);
+		this.setEditData(newConsigneeVo);
+		this.setSelectedData(newConsigneeVo);
 		return null;
 	}
 	private void operationAfterExeAction(){
