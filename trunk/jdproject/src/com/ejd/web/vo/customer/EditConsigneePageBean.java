@@ -1,10 +1,15 @@
 package com.ejd.web.vo.customer;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
+import javax.faces.component.UIComponent;
+import javax.faces.component.UIViewRoot;
 import javax.faces.component.UIData;
+import javax.faces.event.ActionEvent;
 import javax.faces.context.FacesContext;
 import javax.faces.model.DataModel;
 
@@ -24,6 +29,7 @@ import com.ejd.model.exception.ProductUnitException;
 import com.ejd.model.service.iface.IConsigneeService;
 import com.ejd.model.service.iface.IProductUnitService;
 import com.ejd.utils.SpringFacesUtil;
+import com.ejd.utils.UIComponentUtil;
 import com.ejd.web.bo.Consignee;
 import com.ejd.web.bo.Productunit;
 import com.ejd.web.vo.genl.AbstractExtendedTableDataModel;
@@ -171,23 +177,20 @@ public class EditConsigneePageBean extends AbstractTableDataModel<ConsigneeVo,Co
 	}
 	
 	public String requireUpdateConsignee() throws ConsigneeException {
-		/*operationAfterExeAction();
-		Iterator<Object> iterator = getSelection().getKeys();
-		while (iterator.hasNext()){
-			Object key = iterator.next();
-			this.getTable().setRowKey(key);
-			if (this.getTable().isRowAvailable()) {
-				setSelectedData((ConsigneeVo) this.getTable().getRowData());
-				try {
-					PropertyUtils.copyProperties(this.getEditData(),this.getSelectedData());
-				} catch(Exception e)
-				{
-					System.out.println(e.toString());
-				}
-
-			}
-		}*/
-		
+		Map<String,UIComponent> componentMap = new HashMap<String,UIComponent>();
+		List<UIComponent> te= new ArrayList<UIComponent>();
+		UIViewRoot currentViewRoot = FacesContext.getCurrentInstance().getViewRoot();
+		for(UIComponent component : currentViewRoot.getChildren()){ 
+            te= UIComponentUtil.getComponentChildren(component,componentMap); 
+        }
+		UIData tempTable = (UIData) componentMap.get("table");
+		setSelectedData((ConsigneeVo) tempTable.getRowData());
+		try {
+			PropertyUtils.copyProperties(this.getEditData(),this.getSelectedData());
+		} catch(Exception e)
+		{
+			System.out.println(e.toString());
+		}
 		return null;
 	}
 	public String selfTakeSelection() throws ConsigneeException {
