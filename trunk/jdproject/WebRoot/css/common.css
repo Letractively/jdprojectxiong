@@ -2182,15 +2182,19 @@ background-color:#ffffff;
 	background:#f9f9f9;
 	}
 .button-default-style {
-	BORDER-RIGHT:#f6f6f6 2px solid;
-	BORDER-TOP: #f9f9f9 2px solid;
-	BORDER-LEFT: #f9f9f9 2px solid;
-	BORDER-BOTTOM: #f9f9f9 2px solid;
+	BORDER-RIGHT:#ddd 1px solid;
+	BORDER-TOP: #ddd 1px solid;
+	BORDER-LEFT: #ddd 1px solid;
+	BORDER-BOTTOM: #ddd 1px solid;
 	background-color: #f9f9f9;
+	text-align:center;
+	vertical-align:middle;
+	margin: 0px 0px 0px 8px;
 	padding-left: 6px; 
 	padding-right: 6px; 
-	padding-top: 1px; 
-	padding-bottom: 1px; 
+	padding-top: 2px; 
+	padding-bottom: 2px; 
+	cursor:pointer;
 	}
 .button-delete-all-style {
 	BORDER-RIGHT:#f6f6f6 2px solid;
