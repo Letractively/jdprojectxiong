@@ -31,8 +31,10 @@ xmlns:rich="http://richfaces.org/rich">
 			         action="newCustomerRegister"  
 			         mode="server" immediate="true" />  
 			     <rich:panelMenuItem label="购物车" id="group1_item2"   
-			         action="orderFlow"  
-			         mode="server" immediate="true" />  
+			         action="#{customerNavigationPage.clickActionByShoppingCart}"
+			         mode="server" immediate="true" >
+			         <a4j:actionparam name="paramItem" value="shoppingCart" assignTo="#{customerNavigationPage.param}"/>
+			     </rich:panelMenuItem>
 			    </rich:panelMenuGroup>  
 			    <rich:panelMenuGroup label="服务中心" id="group2" expanded="true">  
 			        <rich:panelMenuItem label="我的咨询" id="group2_item1"   
@@ -53,7 +55,7 @@ xmlns:rich="http://richfaces.org/rich">
 			         action="/select.xhtml"  
 			         mode="ajax"/>  
 			     <rich:panelMenuItem label="管理收货信息" id="group3_item2"   
-			         action="#{customerNavigationPage.clickActionByConsignee}"  immediate="true"
+			         action="#{customerNavigationPage.clickActionByConsigneeCustomer}"  immediate="true"
 			         mode="server"><a4j:actionparam name="paramItem" value="consigneeCustomer" assignTo="#{customerNavigationPage.param}"/>
    				</rich:panelMenuItem>
 			     <rich:panelMenuItem label="修改帐户密码" id="group3_item3"   
