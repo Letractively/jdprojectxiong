@@ -37,13 +37,13 @@ xmlns:rich="http://richfaces.org/rich">
 							</h:panelGrid>	
 					</f:facet>
 					<a4j:outputPanel rendered="#{empty shopCart.cart.inventory}" styleClass="orange-text lh3 f14"><h:outputText value="您还没有挑选商品，赶快选择心爱的商品吧！" style="padding-left:300px;padding-right:300px;"></h:outputText></a4j:outputPanel>
-					<rich:dataTable id="shoppingCartTable" value="#{shopCart.cart.inventory}" var="inventory" frame="box" columns="9" headerClass="shopping-cart-table-header" rowClasses="table-row-odd,table-row-even" columnClasses="shopping-cart-table-column1,shopping-cart-table-column2,shopping-cart-table-column3,shopping-cart-table-column4,shopping-cart-table-column5,shopping-cart-table-column6,shopping-cart-table-column7,shopping-cart-table-column8" cellpadding="1" cellspacing="1" border="0" sortMode="single" width="100%">
+					<rich:dataTable id="shoppingCartTable" value="#{shopCart.cart.inventory}" var="inventory" frame="box" columns="9" headerClass="shopping-cart-table-header" rowClasses="table-row-cart-odd,table-row-cart-even" columnClasses="shopping-cart-table-column1,shopping-cart-table-column2,shopping-cart-table-column3,shopping-cart-table-column4,shopping-cart-table-column5,shopping-cart-table-column6,shopping-cart-table-column7,shopping-cart-table-column8" cellpadding="1" cellspacing="1" border="0" sortMode="single" width="100%">
 						<rich:column sortable="false" style="width:5%;" label="选择">
 							<f:facet name="header"><h:outputText value="选择"/></f:facet>
 							<h:selectBooleanCheckbox value="#{inventory.selected}"><a4j:support event="onclick" reRender="deleteAllBtn"/></h:selectBooleanCheckbox>
 							<f:facet name="footer"><h:commandLink id="deleteAllBtn" action="#{shopCart.removeMulSelectedFromShoppingCart}" immediate="true" value="删除" styleClass="button-delete-all-style" disabled="#{!(shopCart.cart.haveSelected)}" onclick="return confirm('确认删除购物车中选中的商品吗？');"><a4j:support event="onclick" reRender="shoppingCartTable,goNextStepBtn,clearShoppingCartBtn"></a4j:support></h:commandLink></f:facet>
 						</rich:column>
-						<rich:column sortable="false" style="width:42%;" label="商品名称">
+						<rich:column sortable="false" style="width:40%;word-break:break-all;" label="商品名称">
 							<f:facet name="header"><h:outputText value="商品名称"/></f:facet>
 							<h:commandLink action="#{productGlobalNavigation.seeProductDetail}" immediate="true"><h:outputText value="#{inventory.name}"></h:outputText><f:param name="productid" value="#{inventory.id}"></f:param></h:commandLink>
 						</rich:column>
@@ -70,7 +70,7 @@ xmlns:rich="http://richfaces.org/rich">
 							<h:outputText id="subTotal" value="#{inventory.salesQuantity * inventory.salesPrice}"><f:convertNumber pattern="###,##0.00"/></h:outputText>
 							<f:facet name="footer"><h:outputText value="#{shopCart.cart.inventoryPriceTotal}"><f:convertNumber pattern="###,##0.00"/></h:outputText></f:facet>
 						</rich:column>
-						<rich:column sortable="false" style="width:14%;" selfSorted="false" label="单项操作">
+						<rich:column sortable="false" style="width:16%;" selfSorted="false" label="单项操作">
 							<f:facet name="header"><h:outputText value="单项操作"/></f:facet>
 							<h:panelGroup><h:commandLink action="#{shopCart.removeOneSelectedFromShoppingCart}" immediate="true" value="删除" styleClass="button-default-style" onclick="javascript:return confirm('确认删除购物车中该商品吗？');"><a4j:support event="onclick" reRender="shoppingCartTable,goNextStepBtn,clearShoppingCartBtn"></a4j:support><f:param name="selectedProductId" value="#{inventory.id}"/></h:commandLink><a4j:commandLink value="移入收藏夹" styleClass="button-default-style"/></h:panelGroup>
 						</rich:column>
