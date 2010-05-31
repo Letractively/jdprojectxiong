@@ -1,8 +1,11 @@
 package com.ejd.web.vo.user;
 
+import java.util.List;
+
 import com.ejd.common.constant.ManageBeanConstants;
 import com.ejd.model.exception.LoginException;
 import com.ejd.utils.SpringFacesUtil;
+import com.ejd.web.bo.Person;
 import com.ejd.web.bo.Stakeholder;
 
 public class UserBean extends UserBaseBean{
@@ -124,6 +127,12 @@ public class UserBean extends UserBaseBean{
 			this.setErrorMessage("请输入正确的用户名和密码");
 			
 		} else { // exist this stakeholder
+			List<Person> persons = stakeholder.getConatctMans();
+			for (int j = persons.size()-1 ;j >=0 ; j--) {
+				if (null == persons.get(j)) {
+					persons.remove(j);
+				}
+			}
 			this.setUserInfo(stakeholder);
 			userLoginFlag = true;
 		}

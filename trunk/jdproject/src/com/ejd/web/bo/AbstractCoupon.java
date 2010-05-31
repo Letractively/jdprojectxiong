@@ -6,12 +6,15 @@ import java.sql.Timestamp;
 public class AbstractCoupon implements Serializable {
 	private Integer id;
 	private String couponAccount;
+	private String couponType;
 	private Double couponScore;
+	private Double minimumChrge;
 	private String status;
 	private Timestamp availableDate;
 	private Timestamp createDate;
 	private String createBy;
 	private String userId;
+	private String presentId;
 	
 	public AbstractCoupon() {
 		
@@ -33,12 +36,28 @@ public class AbstractCoupon implements Serializable {
 		this.couponAccount = couponAccount;
 	}
 
+	public String getCouponType() {
+		return couponType;
+	}
+
+	public void setCouponType(String couponType) {
+		this.couponType = couponType;
+	}
+
 	public Double getCouponScore() {
 		return couponScore;
 	}
 
 	public void setCouponScore(Double couponScore) {
 		this.couponScore = couponScore;
+	}
+
+	public Double getMinimumChrge() {
+		return minimumChrge;
+	}
+
+	public void setMinimumChrge(Double minimumChrge) {
+		this.minimumChrge = minimumChrge;
 	}
 
 	public String getStatus() {
@@ -79,6 +98,14 @@ public class AbstractCoupon implements Serializable {
 
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+
+	public String getPresentId() {
+		return presentId;
+	}
+
+	public void setPresentId(String presentId) {
+		this.presentId = presentId;
 	}
 	
 }

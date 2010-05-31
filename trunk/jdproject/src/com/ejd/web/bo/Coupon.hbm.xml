@@ -13,8 +13,14 @@
         <property name="couponAccount" type="java.lang.String">
             <column name="COUPONACCOUNT" length="20" not-null="true" />
         </property>
+        <property name="couponType" type="java.lang.String">
+            <column name="COUPONACTYPE" length="20" not-null="true" />
+        </property>
         <property name="couponScore" type="java.lang.Double">
             <column name="COUPONSCORE" precision="10" />
+        </property>
+        <property name="minimumChrge" type="java.lang.Double">
+            <column name="MINIMUMCHRGE" precision="10" />
         </property>
         <property name="status" type="java.lang.String">
             <column name="STATUS" length="2" not-null="true" />
@@ -28,6 +34,9 @@
         </property>
         <property name="userId" type="java.lang.String">
             <column name="USERID" length="20"/>
+        </property>
+        <property name="presentId" type="java.lang.String">
+            <column name="PRESENTID" length="20"/>
         </property>
     </class>
 </hibernate-mapping>

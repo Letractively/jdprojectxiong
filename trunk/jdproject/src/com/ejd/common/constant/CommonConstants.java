@@ -9,4 +9,5 @@ public class CommonConstants {
 	public static final String ACTION_NEW_TYPE = "NEW";
 	public static final String ACTION_EDIT_TYPE = "EDIT";
 	public static final int MAX_CONSIGNEES_OF_USER = 10;
+	public static final int MAX_PERSONS_OF_USER = 10;
 }
