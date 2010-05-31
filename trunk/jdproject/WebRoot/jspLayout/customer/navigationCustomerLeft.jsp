@@ -52,15 +52,19 @@ xmlns:rich="http://richfaces.org/rich">
 			    </rich:panelMenuGroup>
 			    <rich:panelMenuGroup label="个人信息" id="group3" expanded="true">  
 			        <rich:panelMenuItem label="管理个人信息" id="group3_item1"   
-			         action="/select.xhtml"  
-			         mode="ajax"/>  
+			         action="#{customerNavigationPage.clickActionByCustomerUpdateInfo}"
+			         mode="server" immediate="true" >
+			         <a4j:actionparam name="paramItem" value="customerUpdateInfo" assignTo="#{customerNavigationPage.param}"/>
+			     </rich:panelMenuItem>  
 			     <rich:panelMenuItem label="管理收货信息" id="group3_item2"   
 			         action="#{customerNavigationPage.clickActionByConsigneeCustomer}"  immediate="true"
 			         mode="server"><a4j:actionparam name="paramItem" value="consigneeCustomer" assignTo="#{customerNavigationPage.param}"/>
    				</rich:panelMenuItem>
 			     <rich:panelMenuItem label="修改帐户密码" id="group3_item3"   
-			         action="/select.xhtml"  
-			         mode="ajax"/>
+			         action="#{customerNavigationPage.clickActionByCustomerUpdatePassword}"
+			         mode="server" immediate="true" >
+			         <a4j:actionparam name="paramItem" value="customerUpdatePassword" assignTo="#{customerNavigationPage.param}"/>
+			     </rich:panelMenuItem>
 			     <rich:panelMenuItem label="我的积分" id="group3_item4"   
 			         action="/select.xhtml"  
 			         mode="ajax"/>

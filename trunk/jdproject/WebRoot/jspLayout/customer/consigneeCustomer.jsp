@@ -114,22 +114,22 @@ xmlns:rich="http://richfaces.org/rich">
 							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
 								<h:outputText value="地址简称："></h:outputText>
 								<h:inputText value="#{editConsigneePage.editData.shortName}" styleClass="input-text-full-length" style="border:1px solid #d6d6d6"></h:inputText>
-								<h:panelGroup><h:outputText value="*" styleClass="red-text"></h:outputText><h:outputLabel value="简单易记的地址名称，如“家”，“我的公司”等"></h:outputLabel></h:panelGroup>
+								<h:panelGroup><h:outputText value="*" styleClass="red-text"></h:outputText><h:outputLabel styleClass="orange-text" value="简单易记的地址名称，如“家”，“我的公司”等"></h:outputLabel></h:panelGroup>
 							</h:panelGrid>
 							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
 								<h:outputText value="收货人："></h:outputText>
 								<h:inputText value="#{editConsigneePage.editData.consigneeName}" styleClass="input-text-full-length" style="border:1px solid #d6d6d6;width:66%"></h:inputText>
-								<h:panelGroup><h:outputText value="*" styleClass="red-text"></h:outputText><h:outputLabel value="请填写准确的收货人信息。"></h:outputLabel></h:panelGroup>
+								<h:panelGroup><h:outputText value="*" styleClass="red-text"></h:outputText><h:outputLabel styleClass="orange-text" value="请填写准确的收货人信息。"></h:outputLabel></h:panelGroup>
 							</h:panelGrid>
 							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
 								<h:outputText value="手机："></h:outputText>
 								<h:inputText value="#{editConsigneePage.editData.consigneeMobile}" styleClass="input-text-full-length" style="border:1px solid #d6d6d6"></h:inputText>
-								<h:panelGroup><h:outputText value="*" styleClass="red-text"></h:outputText><h:outputLabel value="及时联系方式（免费短消息、电话）。"></h:outputLabel></h:panelGroup>
+								<h:panelGroup><h:outputText value="*" styleClass="red-text"></h:outputText><h:outputLabel styleClass="orange-text" value="及时联系方式（免费短消息、电话）。"></h:outputLabel></h:panelGroup>
 							</h:panelGrid>
 							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
 								<h:outputText value="电话："></h:outputText>
 								<h:inputText value="#{editConsigneePage.editData.consigneePhone}" styleClass="input-text-full-length" style="border:1px solid #d6d6d6"></h:inputText>
-								<h:panelGroup><h:outputText value="*" styleClass="red-text"></h:outputText><h:outputLabel value="可填写多个号码，中间请用英文逗号  ,  隔开。"></h:outputLabel></h:panelGroup>
+								<h:panelGroup><h:outputText value="*" styleClass="red-text"></h:outputText><h:outputLabel styleClass="orange-text" value="可填写多个号码，中间请用英文逗号  ,  隔开。"></h:outputLabel></h:panelGroup>
 							</h:panelGrid>
 							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
 								<h:outputText value="传真："></h:outputText>
@@ -143,17 +143,17 @@ xmlns:rich="http://richfaces.org/rich">
 									<h:inputText value="#{editConsigneePage.editData.consigneeCity}" styleClass="input-text-full-length" style="border:1px solid #d6d6d6;width:120px"></h:inputText><h:outputText value="市" style="vertical-align:middle;"></h:outputText>
 									<h:inputText value="#{editConsigneePage.editData.consigneeCounty}" styleClass="input-text-full-length" style="border:1px solid #d6d6d6;width:80px"></h:inputText><h:outputText value="县（区）" style="vertical-align:middle;"></h:outputText>
 								</h:panelGroup>
-								<h:panelGroup><h:outputText value="*" styleClass="red-text"></h:outputText><h:outputLabel value="请详细填写省、市、县（区）。"/></h:panelGroup>
+								<h:panelGroup><h:outputText value="*" styleClass="red-text"></h:outputText><h:outputLabel styleClass="orange-text" value="请详细填写省、市、县（区）。"/></h:panelGroup>
 							</h:panelGrid>
 							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-three,panel-grid-two">
 								<h:outputText value="详细地址："></h:outputText>
 								<h:inputText value="#{editConsigneePage.editData.consigneeAddress}" styleClass="input-text-full-length" style="border:1px solid #d6d6d6"></h:inputText>
-								<h:panelGroup><h:outputText value="*" styleClass="red-text"></h:outputText><h:outputLabel value="请务必详细填写，以保证货物准确递送。"></h:outputLabel></h:panelGroup>
+								<h:panelGroup><h:outputText value="*" styleClass="red-text"></h:outputText><h:outputLabel styleClass="orange-text" value="请务必详细填写，以保证货物准确递送。"></h:outputLabel></h:panelGroup>
 							</h:panelGrid>
 							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-two,panel-grid-three">
 								<h:outputText value="邮编："></h:outputText>
 								<h:inputText value="#{editConsigneePage.editData.consigneeZip}" styleClass="input-text-full-length" style="border:1px solid #d6d6d6;width:66%"></h:inputText>
-								<h:panelGroup><h:outputText value="*" styleClass="red-text"></h:outputText><h:outputLabel value="请准确填写邮编。"></h:outputLabel></h:panelGroup>
+								<h:panelGroup><h:outputText value="*" styleClass="red-text"></h:outputText><h:outputLabel styleClass="orange-text" value="请准确填写邮编。"></h:outputLabel></h:panelGroup>
 							</h:panelGrid>
 							<h:panelGrid columns="3" width="100%" styleClass="panel-grid-row-padding" columnClasses="panel-grid-one,panel-grid-three,panel-grid-two">
 								<h:outputText value="配送备注："></h:outputText>
