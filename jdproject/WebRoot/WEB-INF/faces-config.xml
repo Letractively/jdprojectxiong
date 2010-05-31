@@ -1609,6 +1609,38 @@
   	<managed-bean-scope>session</managed-bean-scope>
  	</managed-bean>
  	<!-- end Edit Consignee Page Bean  -->
+ 	<!-- start Edit customer Page Bean  -->
+ 	<managed-bean>
+  	<managed-bean-name>customerUpdateInfoPage</managed-bean-name>
+  	<managed-bean-class>com.ejd.web.vo.customer.CustomerUpdateInfoPageBean</managed-bean-class>
+  	<managed-bean-scope>session</managed-bean-scope>
+  	<managed-property>
+	<property-name>stakeholderService</property-name>
+	<property-class>com.ejd.model.service.iface.IStakeholderService</property-class>
+	<value>#{stakeholderService}</value>
+	</managed-property>
+ 	</managed-bean>
+ 	<managed-bean>
+  	<managed-bean-name>editPersonPage</managed-bean-name>
+  	<managed-bean-class>com.ejd.web.vo.customer.EditPersonPageBean</managed-bean-class>
+  	<managed-bean-scope>session</managed-bean-scope>
+  	<managed-property>
+	<property-name>stakeholderService</property-name>
+	<property-class>com.ejd.model.service.iface.IStakeholderService</property-class>
+	<value>#{stakeholderService}</value>
+	</managed-property>
+  	</managed-bean>
+ 	<managed-bean>
+  	<managed-bean-name>customerUpdatePasswordPage</managed-bean-name>
+  	<managed-bean-class>com.ejd.web.vo.customer.CustomerUpdatePasswordPageBean</managed-bean-class>
+  	<managed-bean-scope>session</managed-bean-scope>
+  	<managed-property>
+	<property-name>stakeholderService</property-name>
+	<property-class>com.ejd.model.service.iface.IStakeholderService</property-class>
+	<value>#{stakeholderService}</value>
+	</managed-property>
+ 	</managed-bean>
+ 	<!-- end Edit customer Page Bean  -->
 	<!-- test -->
 	<managed-bean>
 		<managed-bean-name>demoBean</managed-bean-name>
@@ -2187,6 +2219,17 @@
 		<navigation-case>
 			<from-outcome>consigneeCustomer</from-outcome>
 			<to-view-id>/jspLayout/customer/consigneeCustomer.jsp</to-view-id>
+			<redirect/>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>customerUpdatePassword</from-outcome>
+			<to-view-id>/jspLayout/customer/customerUpdatePassword.jsp</to-view-id>
+			<redirect/>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>customerUpdateInfo</from-outcome>
+			<to-view-id>/jspLayout/customer/customerUpdateInfo.jsp</to-view-id>
 			<redirect/>
 		</navigation-case>
 		
