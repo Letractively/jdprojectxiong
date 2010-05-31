@@ -32,3 +32,7 @@ function processFreshShoppingCartInfoBegin() {
 function selecteCurrConsignee() {
 	selecteCurrConsigneeFunction();
 }
+function reClickActionByCustomerUpdateInfo(){
+	alert("re click action by customer update info");
+	clickActionByCustomerUpdateInfoFunction();
+}
