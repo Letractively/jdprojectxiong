@@ -1,5 +1,7 @@
 package com.ejd.common.constant;
 
+import com.ejd.web.vo.customer.CustomerUpdatePasswordPageBean;
+
 public class ManageBeanConstants {
 	
 	public static final String POPUP_STAKEHOLDER_BEAN_NAME = "popupStakeholder";
@@ -211,4 +213,8 @@ public class ManageBeanConstants {
     public static final String CURRENT_USER_BEAN_NAME = "currentUser";
     public static final String CONSIGNEE_SERVICE_BEAN_NAME = "consigneeService";
     public static final String EDIT_CONSIGNEE_PAGE_BEAN_NAME = "editConsigneePage";
+    public static final String EDIT_PERSON_PAGE_BEAN_NAME = "editPersonPage";
+    public static final String CUSTOMER_UPDATE_PASSWORD_PAGE_BEAN_NAME = "customerUpdatePasswordPage";
+    public static final String CUSTOMER_UPDATE_INFO_PAGE_BEAN_NAME = "customerUpdateInfoPage";
+    public static final String STAKEHOLDER_SERVICE_BEAN_NAME = "stakeholderService";
 }

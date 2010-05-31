@@ -193,12 +193,15 @@ DROP TABLE IF EXISTS `ejd`.`coupon`;
 CREATE TABLE  `ejd`.`coupon` (
   `ID` int(11) NOT NULL,
   `COUPONACCOUNT` varchar(20) NOT NULL,
+  `COUPONACTYPE` varchar(20),
   `COUPONSCORE` double(10,2) default 0,
+  `MINIMUMCHRGE` double(10,2) default 100,
   `STATUS` varchar(50),
   `AVAILABLEDATE` timestamp,
   `CREATEDATE` timestamp,
   `CREATEBY` varchar(20),
   `USERID` varchar(20),
+  `PRESENTID` varchar(20),
   PRIMARY KEY  (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 DROP TABLE IF EXISTS `ejd`.`consignee`;

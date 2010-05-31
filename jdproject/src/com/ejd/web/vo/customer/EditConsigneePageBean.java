@@ -234,11 +234,12 @@ public class EditConsigneePageBean extends AbstractTableDataModel<ConsigneeVo,Co
 			return null;
 		} else {
 			this.getConsigneeService().delConsigneeById(this.getEditData().getId());
-			this.setErrorMessages("您选择的收货地址:" + this.getEditData().getShortName() + " 已成功删除!");
+			this.setErrorMessages("您选择的联系人:" + this.getEditData().getShortName() + " 已成功删除!");
 			this.getDatas().remove(this.getSelectedData());
 			ConsigneeVo newConsigneeVo = new ConsigneeVo();
 			newConsigneeVo.setSelected(false);
 			this.setEditData(newConsigneeVo);
+			this.setAction(CommonConstants.ACTION_NEW_TYPE);
 		}
 		return null;
 	}
@@ -268,6 +269,7 @@ public class EditConsigneePageBean extends AbstractTableDataModel<ConsigneeVo,Co
 				newConsigneeVo.setSelected(false);
 				this.setEditData(newConsigneeVo);
 				this.setSelectedData(newConsigneeVo);
+				this.setAction(CommonConstants.ACTION_NEW_TYPE);
 			}
 		}
 		return null;
@@ -314,7 +316,7 @@ public class EditConsigneePageBean extends AbstractTableDataModel<ConsigneeVo,Co
 			}
 
 			public List<ConsigneeVo> getItemsByRange(int firstRow, int endRow) {
-				return getDatas().subList(firstRow, endRow);
+				return (null != getDatas())?getDatas().subList(firstRow, endRow):null;
 			}
 
 			public Object getKey(ConsigneeVo item) {
@@ -322,7 +324,7 @@ public class EditConsigneePageBean extends AbstractTableDataModel<ConsigneeVo,Co
 			}
 
 			public int getRowCount() {
-				return getDatas().size();
+				return (null != getDatas())?getDatas().size():0;
 			}
 			
 		});

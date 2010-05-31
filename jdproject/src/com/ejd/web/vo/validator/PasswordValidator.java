@@ -29,7 +29,14 @@ public class PasswordValidator implements Validator,Serializable {
 	public void validate(FacesContext context, UIComponent component, Object obj)
 			throws ValidatorException {
 		// TODO Auto-generated method stub
-		String password=(String)obj;
+		String password = "";
+		if (null == obj) {
+			FacesMessage message=new FacesMessage(FacesMessage.SEVERITY_ERROR,"错误提示:","密码必须输入!");
+	 		throw new ValidatorException(message);
+		}
+		else {
+			password=(String)obj;
+		}
 		if (password.length()<6 || password.length()==0)
 	 	{
 	 		FacesMessage message=new FacesMessage(FacesMessage.SEVERITY_ERROR,"错误提示:","您输入的密码长度为\""+password.length()+"\"不满足6-24位的要求");

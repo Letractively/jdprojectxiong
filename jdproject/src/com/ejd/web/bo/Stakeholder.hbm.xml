@@ -70,38 +70,38 @@
         <property name="creditLimit" type="java.lang.Double">
             <column name="CREDITLIMIT" precision="10" />
         </property>
-        <list 
+        <bag 
             name="conatctMans" 
             table="person"
             lazy="false"
             inverse="true"
+            order-by="SORTORDER asc"
             cascade="all-delete-orphan">
         <key column="STAKEHOLDERID">
         </key>
-        <index column="SORTORDER"></index>
         <one-to-many class="com.ejd.web.bo.Person"/>
-        </list>
-        <list 
+        </bag>
+        <bag 
             name="addresses" 
             table="address"
             lazy="false"
             inverse="true"
+            order-by="SORTORDER asc"
             cascade="all-delete-orphan">
         <key column="STAKEHOLDERID">
         </key>
-        <index column="SORTORDER"></index>
         <one-to-many class="com.ejd.web.bo.Address"/>
-        </list>
-        <list 
+        </bag>
+        <bag 
             name="banks" 
             table="bank"
             lazy="false"
             inverse="true"
+            order-by="SORTORDER asc"
             cascade="all-delete-orphan">
         <key column="STAKEHOLDERID">
         </key>
-        <index column="SORTORDER"></index>
         <one-to-many class="com.ejd.web.bo.Bank"/>
-        </list>
+        </bag>
     </class>
 </hibernate-mapping>
