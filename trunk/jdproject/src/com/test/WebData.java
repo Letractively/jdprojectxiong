@@ -247,37 +247,48 @@ public class WebData implements Serializable {
 	            } else {
 	            	initProxy(proxy,port,username,password);
 	            }
-	            url_con = (HttpURLConnection) url.openConnection();
-	            url_con.setRequestMethod("POST");
-	            url_con.setDoOutput(true);
-	            //url_con.getOutputStream().write(param.getBytes());
-	            url_con.getOutputStream().flush();
-	            url_con.getOutputStream().close();
-	            url_con.setReadTimeout(90000);
-	            InputStream in ;
 	            try {
-	            	in= url_con.getInputStream();
+		            url_con = (HttpURLConnection) url.openConnection();
+		            url_con.setRequestMethod("POST");
+		            url_con.setDoOutput(true);
+		            //url_con.getOutputStream().write(param.getBytes());
+		            url_con.getOutputStream().flush();
+		            url_con.getOutputStream().close();
+		            url_con.setReadTimeout(90000);
+		            InputStream in = null ;
+		            try {
+		            	in= url_con.getInputStream();
+		            	BufferedReader rd = new BufferedReader(new InputStreamReader(in));
+			            inbreak:
+			            while (rd.read() != -1) {
+			            	String tempsss = rd.readLine();
+			                if (tempsss.indexOf("javascript:skip") < 0) {
+			                	continue;
+			                } else  {
+			                	int place = tempsss.lastIndexOf("javascript:skip");
+			                	int  lengthall = tempsss.length();
+			                	String tempS= tempsss.substring(place,175);
+			                	String[] dd = tempS.split("'");
+			                	int pageNumber = new Integer(dd[1]).intValue();
+			                	for (int j = 1;j <= pageNumber; j++) {
+			                	tempStr = tempStr +"\n" + newMainPage+ "&cpf.cpage=" + j ; 
+			                	}
+			                	break inbreak;
+			                }
+			            }
+		            } catch (IOException e) {
+		            	continue pageone;
+		            } finally {
+		            	
+		            	in.close();
+		            }
+	            
 	            } catch (IOException e) {
-	            	continue pageone;
+	            	// do nothing
+	            }finally {
+	            	url_con.disconnect();
 	            }
-	            BufferedReader rd = new BufferedReader(new InputStreamReader(in));
-	            inbreak:
-	            while (rd.read() != -1) {
-	            	String tempsss = rd.readLine();
-	                if (tempsss.indexOf("javascript:skip") < 0) {
-	                	continue;
-	                } else  {
-	                	int place = tempsss.lastIndexOf("javascript:skip");
-	                	int  lengthall = tempsss.length();
-	                	String tempS= tempsss.substring(place,175);
-	                	String[] dd = tempS.split("'");
-	                	int pageNumber = new Integer(dd[1]).intValue();
-	                	for (int j = 1;j <= pageNumber; j++) {
-	                	tempStr = tempStr +"\n" + newMainPage+ "&cpf.cpage=" + j ; 
-	                	}
-	                	break inbreak;
-	                }
-	            }
+	            
         	}
         } catch (Exception e) {
         	
@@ -322,29 +333,34 @@ public class WebData implements Serializable {
             url_con.getOutputStream().flush();
             url_con.getOutputStream().close();
             url_con.setReadTimeout(90000);
-            InputStream in ;
+            InputStream in = null ;
             try {
             	in= url_con.getInputStream();
+            	BufferedReader rd = new BufferedReader(new InputStreamReader(in));
+                inbreak:
+                while (rd.read() != -1) {
+                	String tempsss = rd.readLine();
+                    if (tempsss.indexOf("/index.shtml?method=viewCp&id=") < 0) {
+                    	continue;
+                    } else  {
+                    	int place = tempsss.indexOf("/index.shtml?method=viewCp&id=");
+                    	int placeRight = tempsss.indexOf("target=\"_blank");
+                    	int  lengthall = tempsss.length();
+                    	String tempS= tempsss.substring(place+30,placeRight-2);
+                    	lastURLList.add("http://jdxx.zhs.mofcom.gov.cn/index.shtml?method=viewCp&id="+tempS);
+                    }
+                }
             } catch (IOException e) {
             	continue pageweb;
+            } finally {
+            	in.close();
             }
-            BufferedReader rd = new BufferedReader(new InputStreamReader(in));
-            inbreak:
-            while (rd.read() != -1) {
-            	String tempsss = rd.readLine();
-                if (tempsss.indexOf("/index.shtml?method=viewCp&id=") < 0) {
-                	continue;
-                } else  {
-                	int place = tempsss.indexOf("/index.shtml?method=viewCp&id=");
-                	int placeRight = tempsss.indexOf("target=\"_blank");
-                	int  lengthall = tempsss.length();
-                	String tempS= tempsss.substring(place+30,placeRight-2);
-                	lastURLList.add("http://jdxx.zhs.mofcom.gov.cn/index.shtml?method=viewCp&id="+tempS);
-                }
-            }
-			} finally {
-				//do nothing
-			}
+        
+		} catch (IOException e) {
+			
+		}finally {
+			url_con.disconnect();
+		}
 		}
 		//�˴�Ӧ����ҳ�õ���URL ������һ��LIST<STRING> ��
 		/*String mainPage = "http://jdxx.zhs.mofcom.gov.cn/index.do?method=queryCpList";
@@ -383,47 +399,51 @@ public class WebData implements Serializable {
             	continue success;
             }
             url_con.setReadTimeout(90000);
-            InputStream in;
+            InputStream in = null;
             try {
             	in = url_con.getInputStream();
-            	
+            	BufferedReader rd = new BufferedReader(new InputStreamReader(in));
+                inbreak:
+                while (rd.read() != -1) {
+                	
+                	String tempsss = rd.readLine();
+                	String tempS = "";
+                	
+                	 if (tempsss.indexOf("<td>") < 0 ) {
+                		 if (tempsss.indexOf("title>") >=0) {
+                			int place = tempsss.indexOf("title>");
+                     		int placeRight = tempsss.indexOf("</title>");
+                     		tempS = tempsss.substring(place+6,placeRight).replaceAll("&nbsp;", "");
+                		 } else {
+                			 continue;
+                		 }
+                    } else  {
+                    	if (tempsss.indexOf("<td>") > 0) {
+    	                	int place = tempsss.indexOf("<td>");
+    	                	int placeRight = tempsss.indexOf("</td>");
+    	                	int  lengthall = tempsss.length();
+    	                	tempS= tempsss.substring(place+4,placeRight).replaceAll("&nbsp;", "");
+                    	}
+                    	
+                    }
+                	 if (!("".equals(tempS))) {
+                		 currentPageData = currentPageData + "|" + tempS;
+                	 }
+                }
             } catch (IOException e) {
             	errorData.append("\n"+lastStr.replace("\n", "").replace("\r", ""));
             	continue success;
+            } finally {
+            	in.close();
             }
-            BufferedReader rd = new BufferedReader(new InputStreamReader(in));
-            inbreak:
-            while (rd.read() != -1) {
-            	
-            	String tempsss = rd.readLine();
-            	String tempS = "";
-            	
-            	 if (tempsss.indexOf("<td>") < 0 ) {
-            		 if (tempsss.indexOf("title>") >=0) {
-            			int place = tempsss.indexOf("title>");
-                 		int placeRight = tempsss.indexOf("</title>");
-                 		tempS = tempsss.substring(place+6,placeRight).replaceAll("&nbsp;", "");
-            		 } else {
-            			 continue;
-            		 }
-                } else  {
-                	if (tempsss.indexOf("<td>") > 0) {
-	                	int place = tempsss.indexOf("<td>");
-	                	int placeRight = tempsss.indexOf("</td>");
-	                	int  lengthall = tempsss.length();
-	                	tempS= tempsss.substring(place+4,placeRight).replaceAll("&nbsp;", "");
-                	}
-                	
-                }
-            	 if (!("".equals(tempS))) {
-            		 currentPageData = currentPageData + "|" + tempS;
-            	 }
-            }
+            
             if (!("".equals(currentPageData))) {
             	lastData.append("\n" + currentPageData);
             }
+		} catch (IOException e){
+			
 		} finally {
-			// do thing
+			url_con.disconnect();
 		}
 		}
 		this.wirteStringTofile(lastData.toString()+"\n"+lastURLList.size()+errorData.toString());
@@ -498,47 +518,51 @@ public class WebData implements Serializable {
             	continue successa;
             }
             url_con.setReadTimeout(90000);
-            InputStream in;
+            InputStream in = null;
             try {
             	in = url_con.getInputStream();
-            	
+            	BufferedReader rd = new BufferedReader(new InputStreamReader(in));
+                inbreak:
+                while (rd.read() != -1) {
+                	
+                	String tempsss = rd.readLine();
+                	String tempS = "";
+                	
+                	 if (tempsss.indexOf("<td>") < 0 ) {
+                		 if (tempsss.indexOf("title>") >=0) {
+                			int place = tempsss.indexOf("title>");
+                     		int placeRight = tempsss.indexOf("</title>");
+                     		tempS = tempsss.substring(place+6,placeRight).replaceAll("&nbsp;", "");
+                		 } else {
+                			 continue;
+                		 }
+                    } else  {
+                    	if (tempsss.indexOf("<td>") > 0) {
+    	                	int place = tempsss.indexOf("<td>");
+    	                	int placeRight = tempsss.indexOf("</td>");
+    	                	int  lengthall = tempsss.length();
+    	                	tempS= tempsss.substring(place+4,placeRight).replaceAll("&nbsp;", "");
+                    	}
+                    	
+                    }
+                	 if (!("".equals(tempS))) {
+                		 currentPageData = currentPageData + "|" + tempS;
+                	 }
+                }
             } catch (IOException e) {
             	errorData.append("\n"+lastStr.replace("\n", "").replace("\r", ""));
             	continue successa;
+            } finally {
+            	in.close();
             }
-            BufferedReader rd = new BufferedReader(new InputStreamReader(in));
-            inbreak:
-            while (rd.read() != -1) {
-            	
-            	String tempsss = rd.readLine();
-            	String tempS = "";
-            	
-            	 if (tempsss.indexOf("<td>") < 0 ) {
-            		 if (tempsss.indexOf("title>") >=0) {
-            			int place = tempsss.indexOf("title>");
-                 		int placeRight = tempsss.indexOf("</title>");
-                 		tempS = tempsss.substring(place+6,placeRight).replaceAll("&nbsp;", "");
-            		 } else {
-            			 continue;
-            		 }
-                } else  {
-                	if (tempsss.indexOf("<td>") > 0) {
-	                	int place = tempsss.indexOf("<td>");
-	                	int placeRight = tempsss.indexOf("</td>");
-	                	int  lengthall = tempsss.length();
-	                	tempS= tempsss.substring(place+4,placeRight).replaceAll("&nbsp;", "");
-                	}
-                	
-                }
-            	 if (!("".equals(tempS))) {
-            		 currentPageData = currentPageData + "|" + tempS;
-            	 }
-            }
+            
             if (!("".equals(currentPageData))) {
             	lastData.append("\n" + currentPageData);
             }
-		} finally {
-			// do thing
+		}catch (IOException e) {
+			
+		}finally {
+			url_con.disconnect();
 		}
 		}
 		this.wirteErrorStringTofile(lastData.toString()+"\n"+lastURLList.size()+errorData.toString());
